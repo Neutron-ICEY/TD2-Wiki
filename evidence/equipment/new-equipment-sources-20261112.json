@@ -1,0 +1,386 @@
+{
+  "review_date": "2026-11-12",
+  "resource_source": "Steam build 26413016 / existing Hunter export; current files reused",
+  "damage_to_armor": {
+    "attribute_uid": "5D4179F15BF55AD400032C6E0119EB78",
+    "profiles": {
+      "player_gear_gloves_d_named_01_config": {
+        "Orange": [
+          {
+            "attribute_uid": "5D4179F15BF55AD400032C6E0119EB78",
+            "percentile": "130.0",
+            "named": "TRUE",
+            "pools": [
+              "B00501356A587CB800023C4294689269"
+            ]
+          }
+        ],
+        "Prototype": [
+          {
+            "attribute_uid": "5D4179F15BF55AD400032C6E0119EB78",
+            "percentile": "183.75",
+            "named": "TRUE",
+            "pools": [
+              "B00501356A587CB800023C4294689269"
+            ]
+          }
+        ]
+      },
+      "player_gear_gloves_t_01_named_config": {
+        "Orange": [
+          {
+            "attribute_uid": "5D4179F15BF55AD400032C6E0119EB78",
+            "percentile": "130.0",
+            "named": "TRUE",
+            "pools": [
+              "B00501356A587CB800023C4294689269"
+            ]
+          }
+        ],
+        "Prototype": [
+          {
+            "attribute_uid": "5D4179F15BF55AD400032C6E0119EB78",
+            "percentile": "183.75",
+            "named": "TRUE",
+            "pools": [
+              "B00501356A587CB800023C4294689269"
+            ]
+          }
+        ]
+      }
+    },
+    "pool_attribute": {
+      "type": "AttributeData",
+      "properties": [
+        "myAttribute 5D4179F15BF55AD400032C6E0119EB78",
+        "myRangeMax = Percent_1_to_5 00000000000000000000000000000000"
+      ],
+      "children": [
+        {
+          "type": "myRangeMin",
+          "properties": [],
+          "children": [
+            {
+              "type": "ItemGenerationBracketedCurveFormula",
+              "properties": [
+                "myC 0.01"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "myQualityModifiers",
+          "properties": [],
+          "children": [
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Grey",
+                "myModifier 0.8"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Green"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Blue",
+                "myModifier 1.1"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Purple",
+                "myModifier 1.1"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Orange",
+                "myModifier 1.2"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Exotic",
+                "myModifier 1.2"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality GearSet",
+                "myModifier 1.2"
+              ],
+              "children": []
+            },
+            {
+              "type": "QualityCurveModifier",
+              "properties": [
+                "myQuality Prototype",
+                "myModifier 1.2",
+                "myPrototypeMax 1.8"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "native_format": {
+      "myBonusType": "Percentage",
+      "myUnit": "Value",
+      "myUINumDecimals": "1",
+      "myRoundMode": "Ceiling"
+    },
+    "ui_value": "8.0",
+    "basis": "Prior explicit Value and user confirmation that Ghost matches Contractor; identical current native Orange / Prototype configurations verified independently.",
+    "limit": "Percentile interpolation and UI rounding are not established; Prototype 183.75 is not an 8.0% UI claim. No new numerical rule was invented."
+  },
+  "ghost_source": {
+    "item_uid": "B00501356A96AE0E0009BCFE54AFCA07",
+    "entry": "hunter/interaction/settings/interact_loot_table_equipment_special_dru.minteractionsetup",
+    "table": "hunter/game system data/juice/loot/loottables/ltdrp_container_equipment_special_dru.mloottable",
+    "referenced_uid": "B5AFC8E46A7C59950003816E2426366E",
+    "defined_uid": "B00501356A97F4BA00037FD9FDCF9C0B",
+    "incoming_same_bytes": true,
+    "native_status": "UID mismatch; not a closed native route",
+    "observed_status": "current_confirmed",
+    "user_evidence": "2026-11-12：中央公园残响 DLC 彩蛋猎人，击杀后获取钥匙，开猎人箱子获取幽灵手套。"
+  },
+  "native_routes": {
+    "guardian_drop": {
+      "rows": 25,
+      "closed": 25,
+      "targets": {
+        "B00501356A969CA5000897A6CFB8D0C0": {
+          "slot": "backpack",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_backpack_01.mitem"
+        },
+        "B00501356A969E0A000952B229762901": {
+          "slot": "kneepads",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_kneepads_01.mitem"
+        },
+        "B00501356A969D7B000909F4F3A377A4": {
+          "slot": "gloves",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_gloves_01.mitem"
+        },
+        "B00501356A969DCC00093453F3D3AECF": {
+          "slot": "holster",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_holster_01.mitem"
+        },
+        "B00501356A969E4C0009737E1DF4C481": {
+          "slot": "mask",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_mask_01.mitem"
+        }
+      },
+      "entries": [
+        "hunter/game system data/juice/ai/npc/rog_boss_alpha_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/ai/npc/rog_boss_bravo_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/ai/npc/rog_boss_charlie_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/ai/npc/rog_boss_delta_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/ai/npc/rog_boss_echo_dru_rogueagent.mnpc"
+      ],
+      "source_contexts": [
+        "hunter/game system data/juice/ai/npc/rog_boss_alpha_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_hollow.mloottable",
+        "hunter/game system data/juice/ai/npc/rog_boss_bravo_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_vulture.mloottable",
+        "hunter/game system data/juice/ai/npc/rog_boss_charlie_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_thorn.mloottable",
+        "hunter/game system data/juice/ai/npc/rog_boss_delta_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_specter.mloottable",
+        "hunter/game system data/juice/ai/npc/rog_boss_echo_dru_rogueagent.mnpc",
+        "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_mire.mloottable"
+      ]
+    },
+    "pearl_reward": {
+      "rows": 5,
+      "closed": 5,
+      "targets": {
+        "B00501356A969CED0008BFD99117765E": {
+          "slot": "chest",
+          "source": "hunter/game system data/juice/item/player_gear_set_c1_chest_01.mitem"
+        }
+      },
+      "entries": [
+        "hunter/game system data/juice/mission/mm53_thepearl.mmission"
+      ],
+      "source_contexts": [
+        "hunter/game system data/juice/mission/mm53_thepearl.mmission",
+        "hunter/game system data/juice/rewards/rwg_mm53_thepearl.mreward",
+        "hunter/game system data/juice/rewards/rwref_mm53_thepearl.mreward",
+        "hunter/game system data/juice/loot/loottables/ltref_mm53_thepearl.mloottable"
+      ]
+    },
+    "airport_climax_reward": {
+      "rows": 6,
+      "closed": 4,
+      "targets": {
+        "B00501356A8FE11300037E60A33CDC61": {
+          "slot": "gloves",
+          "source": "hunter/game system data/juice/item/player_gear_gloves_exotic_07.mitem"
+        }
+      },
+      "entries": [
+        "hunter/game system data/juice/mission/jnv04_airport.mmission"
+      ],
+      "source_contexts": [
+        "hunter/game system data/juice/mission/jnv04_airport.mmission",
+        "hunter/game system data/juice/mission/prime target climax data/ptclimax_y8s3_jnv04_airport.mmissionprimetargetclimaxdata",
+        "hunter/game system data/juice/primetargetcampaign/y8s3_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+        "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y8s3_jnv04_airport.mreward",
+        "hunter/game system data/juice/loot/loottables/ltdrp_y8s3_rewards_mission_difficulty.mloottable"
+      ]
+    }
+  },
+  "localized_mission_titles": {
+    "A719E9146903596F0007F120A385C402": "中央公园",
+    "0B9940F36A2016760008024BC3622326": "华盛顿国际机场：鲍比·古兹曼"
+  },
+  "apex_dedicated_material": {
+    "checked": {
+      "hunter/game system data/juice/crafting/deconstruction_definitions.juice": [],
+      "hunter/game system data/juice/crafting/crafting_definitions.juice": [],
+      "hunter/game system data/juice/currencies/currencies.rejuice": []
+    },
+    "conclusion": "No dedicated currency association is configured in the current crafting/deconstruction/currency definitions; common materials still apply. No absence claim beyond these definitions."
+  },
+  "bear_teasers": "RewardItem entries with myIsRewardUsedAsTeaser TRUE are UI-only per rewards.fruit:135. Actual reward follows RewardLoot to a distinct table; two Legendary persistent-flag branches remain unconfirmed by the runtime evaluator.",
+  "sources": {
+    "hunter/game system data/juice/itemgeneration/configs/configs_gear_gloves_code1_data23.mitemgenerationconfigs": {
+      "sha256": "99c3f93615b6fb5b91025833be64752ba0e59ef3ee3260318c2955874e9de06c",
+      "bytes": 268691
+    },
+    "hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists": {
+      "sha256": "3258bf925af7e03db13c5af12a791aef7c4ae05db49f9f6773ff6b807b631ed5",
+      "bytes": 65777
+    },
+    "hunter/interaction/settings/interact_loot_table_equipment_special_dru.minteractionsetup": {
+      "sha256": "68d32c321df8b8686869594ffcf853adbf9a7b97a26d71f56d8ff314404c4319",
+      "bytes": 1282
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_container_equipment_special_dru.mloottable": {
+      "sha256": "0396c00998931504af02543f7912e2591d7e42f9f27db8567f561e15a3c9ba6c",
+      "bytes": 1170
+    },
+    "hunter/game system data/juice/crafting/deconstruction_definitions.juice": {
+      "sha256": "dc5fdb5d81abe371a55d9cf57292da850394dd947e7e62edecb9cb17fc136b3e",
+      "bytes": 91099
+    },
+    "hunter/game system data/juice/crafting/crafting_definitions.juice": {
+      "sha256": "e69122036e54394dc842d091b38fcc0683898632b132972f1a22094b9356b03b",
+      "bytes": 412192
+    },
+    "hunter/game system data/juice/currencies/currencies.rejuice": {
+      "sha256": "1ee08ea3b84030e78ab18ba78a9b8f3ed3c0a77adc63e32ce628fdbc55df7dcb",
+      "bytes": 291736
+    },
+    "hunter/game system data/juice/ai/npc/rog_boss_alpha_dru_rogueagent.mnpc": {
+      "sha256": "3790890111e57b173cc1cf19418b2c2bf18358c68aad0ec7eaf06a3bc170508e",
+      "bytes": 2706
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_hollow.mloottable": {
+      "sha256": "a0d66597e4d56ba00e70f5b87b71fc2344e735a300864ade2b3eeb7790691b9d",
+      "bytes": 9172
+    },
+    "hunter/game system data/juice/ai/npc/rog_boss_bravo_dru_rogueagent.mnpc": {
+      "sha256": "db1460f14006758686a20513fe606db8b210b629974f23abeaa9a20aa01e23d8",
+      "bytes": 2739
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_vulture.mloottable": {
+      "sha256": "f2d16683c2ca55748e7fcfb6d9deb59a1182ded7402470540d8aa44e456c04ea",
+      "bytes": 9175
+    },
+    "hunter/game system data/juice/ai/npc/rog_boss_charlie_dru_rogueagent.mnpc": {
+      "sha256": "0a4d310ced4a70be43cfdbdf0e693691c176c12ecdd16e978e4b57f0161a64cd",
+      "bytes": 2752
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_thorn.mloottable": {
+      "sha256": "8e0d24f69c6158a3996b3839d308e78daa04dc9009a7bbdc1584870ae2a30e58",
+      "bytes": 9163
+    },
+    "hunter/game system data/juice/ai/npc/rog_boss_delta_dru_rogueagent.mnpc": {
+      "sha256": "1bfbb22225a35c3a7515778c5bde9b0a08313395968838e1e69a287de4f33071",
+      "bytes": 2695
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_specter.mloottable": {
+      "sha256": "711900b3ad893af767af8a0175dc9fb1e84b6a91263b19561fbf6fe6f52105a0",
+      "bytes": 9828
+    },
+    "hunter/game system data/juice/ai/npc/rog_boss_echo_dru_rogueagent.mnpc": {
+      "sha256": "512cd09380cab500007a353305504383f1bfe3342227f1a331394f1de25cc16b",
+      "bytes": 2717
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_npc_guardians_mire.mloottable": {
+      "sha256": "0de830f3a06c55a3e07a3cb992e7637bdf2f04446274f4352bc396c7e05b84d7",
+      "bytes": 8797
+    },
+    "hunter/game system data/juice/mission/mm53_thepearl.mmission": {
+      "sha256": "f59dd48b1bf9f73a0dafeb37e5aeab896ccbd238ece0ba4eb81a85a91f3c369a",
+      "bytes": 31343
+    },
+    "hunter/game system data/juice/rewards/rwg_mm53_thepearl.mreward": {
+      "sha256": "243a5cac117c2dfa94fe7b12eead9d4a246846f5c6c100da867bcc1b0670aaaa",
+      "bytes": 3708
+    },
+    "hunter/game system data/juice/rewards/rwref_mm53_thepearl.mreward": {
+      "sha256": "e85fc6269d425f95afb675b9e741d527cbea5c6a5591da78943c2dfda8e82024",
+      "bytes": 937
+    },
+    "hunter/game system data/juice/loot/loottables/ltref_mm53_thepearl.mloottable": {
+      "sha256": "21574f5fea001b199f79762a92ee3bd21c56db269e49bd7bdf18b49255023007",
+      "bytes": 6308
+    },
+    "hunter/game system data/juice/mission/jnv04_airport.mmission": {
+      "sha256": "2f5b88b8d323f11375bcc43a9b2fe23fc4001df1fedf3469f11f08047f4e20ca",
+      "bytes": 3218
+    },
+    "hunter/game system data/juice/mission/prime target climax data/ptclimax_y8s3_jnv04_airport.mmissionprimetargetclimaxdata": {
+      "sha256": "946f0f6606ed2c365aa0533868b1462882704b8871447e00f7f861b8da1a66ff",
+      "bytes": 17620
+    },
+    "hunter/game system data/juice/primetargetcampaign/y8s3_prime_target_ptplaylist.mprimetargetcampaignplaylist": {
+      "sha256": "c960890b23465fa9d307681a0fa4e26fae6c7557360b536640f3e9c949bec9b9",
+      "bytes": 6979
+    },
+    "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y8s3_jnv04_airport.mreward": {
+      "sha256": "c1584ebc8e0e00ca66844f3461f2410ec22c3e79652918fd330600740cd86ad8",
+      "bytes": 3453
+    },
+    "hunter/game system data/juice/loot/loottables/ltdrp_y8s3_rewards_mission_difficulty.mloottable": {
+      "sha256": "7803c2d982fb257df17d94ba1ef21241d9646bf99df06ccb5fef7c4b1fc4cc12",
+      "bytes": 6703
+    },
+    "hunter/game system data/fruit/rewards/rewards.fruit": {
+      "sha256": "2effe43df6519c201f127fee4538ec63238d7f5b9229dd96c3d0cac44e39af30",
+      "bytes": 13653
+    },
+    "hunter/game system data/fruit/loot/lootconditions.fruit": {
+      "sha256": "f2c889e452c1fbec6e5542548c09b3d05806fa546c0d8f9096b686ae6fcfd80c",
+      "bytes": 10824
+    },
+    "hunter/game system data/fruit/item/itemgeneration.fruit": {
+      "sha256": "fb078be7763d01a627f00e0bebde59136f30261f647bd30121758a55ba7d1f05",
+      "bytes": 5723
+    },
+    "hunter/game system data/fruit/attribute/attribute_dictionary.fruit": {
+      "sha256": "fd4ec41a3a80a9f3e30d54c3b75789787a5557f55161c104de2c45461dc3967b",
+      "bytes": 1329
+    }
+  }
+}

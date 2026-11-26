@@ -1,0 +1,791 @@
+/* 装备 Reader 的唯一样式源；直接发布到 TD2Reader.css，不手改 dist。
+   不登记为 Common.css。正文继承 Wiki 主题；标题卡临时品质色集中维护，
+   不作用于原生 Infobox 或其它 Wiki 页面。 */
+.td2-brand {
+  --td2-icon-size: 24px;
+  --td2-content-divider: 1px solid #404040;
+  display: flow-root; min-width: 0; line-height: 1.6; overflow-wrap: anywhere;
+}
+/* The shared information card keeps its frame and quality treatment; only
+   the artwork column adapts to the horizontal weapon silhouette. */
+.td2-brand .td2-brand-infobox-frame.td2-weapon-infobox { grid-template-columns:minmax(0,1fr) 48%; }
+.td2-brand .td2-weapon-infobox > .td2-brand-logo { width:100%; container-type:size; }
+.td2-brand .td2-weapon-infobox .td2-brand-logo img { opacity:1; }
+.td2-brand .td2-weapon-infobox .td2-weapon-art-image img { width:100%; height:auto; }
+.td2-weapon-infobox .td2-brand-quality { flex-wrap:wrap; }
+.td2-brand.td2-weapon-named .td2-brand-infobox .td2-brand-name-zh { color:var(--td2-text-named); }
+#wiki-body .td2-brand .td2-weapon-infobox h3.td2-brand-name-zh { margin:0; padding:0; }
+.td2-brand .td2-weapon-infobox h3.td2-brand-name-zh > .mw-headline { font:inherit; }
+.td2-brand .td2-weapon-unit { min-width:0; padding:0 0 1.5rem; margin:0; scroll-margin-top:4rem; }
+/* Cap the cropped window's width by the artwork cell's height at the same aspect ratio. */
+.td2-weapon-art-window {
+  position:relative; width:min(100%,var(--weapon-art-width)); max-width:calc(100cqh * var(--weapon-art-ratio));
+  aspect-ratio:var(--weapon-art-ratio); overflow:hidden;
+}
+.td2-weapon-art-image { position:absolute; }
+.td2-weapon-art-image a, .td2-weapon-art-image .mw-file-element { display:block; width:100%; }
+.td2-weapon-art-image img { display:block; width:100%; max-width:none; max-height:none; height:auto; }
+.td2-weapon-section { margin:.8rem 0 1.2rem; }
+.td2-weapon-section:empty { display:none; }
+.td2-weapon-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin:0; padding:.35rem .5rem 1rem; }
+.td2-weapon-stat { min-width:0; }
+.td2-weapon-stat dt { font-size:.9rem; font-weight:400; margin:0; }
+.td2-weapon-stat dd { color:var(--td2-text-emphasis); font-size:1.55rem; font-variant-numeric:tabular-nums; margin:.15rem 0 0; line-height:1.35; }
+.td2-weapon-stat small { color:#ccc; font-size:.7rem; margin-left:.35em; white-space:nowrap; }
+.td2-weapon-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.9rem 1rem; margin:0; }
+.td2-weapon-facts dd { font-size:1.05rem; color:inherit; }
+.td2-weapon-attribute { padding:.3rem .5rem; }
+.td2-weapon-attribute + .td2-weapon-attribute { border-block-start:var(--td2-content-divider); }
+.td2-weapon-control { max-width:600px; margin:.65rem 0 1rem; }
+.td2-weapon-bar { position:relative; height:12px; margin-top:.2rem; border:1px solid #777; border-top:0; transform:skewX(-3deg); }
+.td2-weapon-bar > span { position:absolute; left:0; bottom:0; height:5px; background:#eee; }
+.td2-weapon-range { max-width:600px; padding-top:.25rem; }
+.td2-weapon-range-plot { position:relative; height:100px; overflow:visible; }
+.td2-weapon-range-plot::before { content:""; position:absolute; inset:0; border:1px solid #777; border-top:0; pointer-events:none; }
+.td2-weapon-range-line { position:absolute; inset:0; background:#eee; }
+@supports (width:hypot(100cqw,100cqh)) and (transform:rotate(atan2(1px,1px))) {
+  .td2-range-slope { container-type:size; --td2-range-diagonal:transparent; }
+  .td2-range-slope::after {
+    content:""; position:absolute; left:0; top:-2px; height:4px; width:hypot(100cqw,100cqh);
+    background:#eee; transform-origin:left center; transform:rotate(atan2(100cqh,100cqw));
+  }
+}
+.td2-weapon-range-plot > .td2-weapon-range-point {
+  position:absolute; width:6px; height:6px; transform:translate(-50%,-50%);
+  background:rgba(238,238,238,.8); pointer-events:none;
+}
+.td2-weapon-range-axis { position:relative; height:1.8em; margin-top:.2rem; }
+.td2-weapon-range-mark { position:absolute; transform:translateX(-50%); white-space:nowrap; }
+.td2-weapon-range-mark.td2-range-start { transform:none; }
+.td2-weapon-range-mark.td2-range-end { transform:translateX(-100%); }
+.td2-weapon-range-mode { margin-bottom:.35rem; font-weight:600; }
+.td2-weapon-range + .td2-weapon-range { margin-top:1rem; }
+.td2-weapon-control-value { margin-top:.25rem; font-variant-numeric:tabular-nums; }
+.td2-brand .td2-weapon-mod { display:grid; grid-template-columns:minmax(0,1fr) 40px; gap:1rem; align-items:center; padding:.65rem .5rem; }
+.td2-weapon-mod + .td2-weapon-mod { border-block-start:var(--td2-content-divider); }
+.td2-brand .td2-weapon-mod .td2-bonus-line { display:block; padding-inline-start:var(--td2-heading-accent-width); }
+.td2-weapon-mod .td2-bonus-line strong { font-weight:400; margin-right:.5rem; }
+.td2-weapon-mod > .td2-icon, .td2-weapon-mod > .td2-icon img { width:36px; height:36px; max-width:36px; max-height:36px; }
+.td2-brand .td2-weapon-skins { display:grid; grid-template-columns:repeat(auto-fill,min(100%,21rem)); gap:1.25rem; margin:1rem 0; padding:0 var(--td2-heading-accent-width); list-style:none; }
+.td2-brand .td2-weapon-skin-card { display:flex; flex-direction:column; min-width:0; margin:0; }
+.td2-weapon-skin-art { display:flex; align-items:center; justify-content:center; min-width:0; background:linear-gradient(135deg,rgba(127,127,127,.08),transparent); }
+.td2-weapon-skin-art a, .td2-weapon-skin-art .mw-file-description, .td2-weapon-skin-art > span { display:block; width:100%; }
+.td2-weapon-skin-art img { display:block; width:100%; height:auto; }
+.td2-weapon-skin-art a::after { content:""; position:absolute; inset:0; }
+.td2-weapon-skin-name { margin-top:auto; padding:.65rem 1rem; font-size:1.125rem; line-height:1.5; font-weight:600; background:rgba(0,0,0,.24); }
+.td2-weapon-skin-card:has(a):hover, .td2-weapon-skin-card:focus-within { --td2-frame-color:var(--td2-text-emphasis); }
+.td2-weapon-skin-art a:focus-visible { outline:none; }
+.td2-weapon-skin-art a:focus-visible::after { outline:2px solid var(--td2-text-emphasis); outline-offset:3px; }
+.td2-weapons .td2-weapon-section > h3 { margin:1rem .5rem .6rem; }
+.td2-weapon-navbox { --td2-nav-art-width:64px; }
+.td2-weapon-navbox .td2-navbox-icon { width:64px; }
+.td2-weapon-navbox .td2-navbox-icon img { width:64px; height:32px; max-width:64px; max-height:32px; object-fit:contain; }
+@media(max-width:600px) {
+  .td2-weapon-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .td2-weapon-stat dd { font-size:1.35rem; }
+  .td2-weapon-facts { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+/* 共用展示 token 的唯一维护入口。永久组件可独立调用；不依赖页面标题。
+   只在 TD2 组件根定义，不作用于公共 Infobox/其它页面。三个颜色角色互不继承。
+   暂用原审核色；NEEDS GAME COLOR VERIFICATION，不是官方精确 RGB。 */
+.td2-brand, .td2-equipment-heading-card, .td2-brand-mode-controls, .td2-navbox {
+  --td2-quality-high-end-accent: #d6a348;
+  --td2-quality-high-end-start: #95671f;
+  --td2-quality-high-end-end: #242017;
+  --td2-quality-gear-set-accent: #66a87a;
+  --td2-quality-gear-set-start: #2e6445;
+  --td2-quality-gear-set-end: #18231d;
+  --td2-quality-heading-text: #fff;
+  --td2-heading-accent-width: .625rem;
+  --td2-quality-neutral-accent: #777;
+  --td2-quality-neutral-start: #343434;
+  --td2-quality-neutral-end: #242424;
+  --td2-accent: var(--td2-quality-high-end-accent);
+  --td2-accent-surface: rgba(149, 103, 31, .22);
+
+}
+/* 统一装饰参数。角点定位的参照是 padding edge：边框中心在 -线宽/2，
+   再减去节点半宽，节点中心便与横竖线中心相交。内容不用定位补偿。 */
+.td2-brand, .td2-frame, .td2-divider, .td2-divider-soft, .td2-hud-divider, .td2-brand-mode-controls, .td2-navbox {
+  --td2-frame-color: #b8b8b8;
+  --td2-frame-width: 1px;
+  --td2-frame-node-size: 2px;
+  --td2-frame-node-offset: calc((0px - var(--td2-frame-node-size) - var(--td2-frame-width)) / 2);
+}
+.td2-frame { position: relative; border: var(--td2-frame-width) solid var(--td2-frame-color); }
+/* 明确四边，避免 h3 的皮肤标题边线覆盖通用 frame。 */
+.td2-brand .td2-equipment-heading-card.td2-frame { border: var(--td2-frame-width) solid var(--td2-frame-color); }
+.td2-frame-corners { pointer-events: none; }
+.td2-corner-node { position: absolute; width: var(--td2-frame-node-size); height: var(--td2-frame-node-size); background: var(--td2-frame-color); pointer-events: none; }
+.td2-corner-nw { inset-block-start: var(--td2-frame-node-offset); inset-inline-start: var(--td2-frame-node-offset); }
+.td2-corner-ne { inset-block-start: var(--td2-frame-node-offset); inset-inline-end: var(--td2-frame-node-offset); }
+.td2-corner-sw { inset-block-end: var(--td2-frame-node-offset); inset-inline-start: var(--td2-frame-node-offset); }
+.td2-corner-se { inset-block-end: var(--td2-frame-node-offset); inset-inline-end: var(--td2-frame-node-offset); }
+.td2-divider { border-block-start: var(--td2-frame-width) solid var(--td2-frame-color); }
+.td2-divider-soft, .td2-brand-infobox .td2-divider-soft > th, .td2-brand-infobox .td2-divider-soft > td { border-block-start: var(--td2-frame-width) solid var(--td2-frame-color); }
+.td2-surface { background-color: rgba(127, 127, 127, .12); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+/* 仅给 PvP 数据面板淡紫底色；不对图片或图标使用滤镜、重新着色。 */
+:root { --td2-pvp-tint: rgba(132, 104, 180, .055); }
+.td2-mode-pvp { background-color: var(--td2-pvp-tint); }
+.td2-mode-pvp .td2-mode-pvp { background-color: transparent; }
+.td2-control-palette, .td2-navbox, .td2-brand-mode-controls, #td2-page-actions {
+  --td2-navbox-selected: #f47727;
+  --td2-control-border: rgba(184, 184, 184, .55);
+  --td2-control-surface: rgba(8, 7, 11, .55);
+  --td2-control-hover: rgba(160, 160, 160, .22);
+  --td2-control-hover-ink: #f5f5f5;
+  --td2-control-transition: background-color 140ms ease, border-color 140ms ease;
+}
+.td2-navbox { clear: both; margin-block: 1.5rem; padding: .5rem 0; border: 0; border-radius: 0; background: transparent; color: #f5f5f5; }
+.td2-navbox, .td2-navbox * { box-sizing: border-box; }
+.td2-navbox-heading { font-size: 1rem; font-weight: 600; }
+.td2-navbox-heading button { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; padding: .6rem 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.td2-navbox-heading button::after { content: ""; flex: none; width: 8px; height: 8px; margin: 0 14px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(-45deg); transition: transform 140ms ease-out; }
+.td2-navbox-heading button[aria-expanded="false"]::after { transform: rotate(135deg); }
+:is(#wiki-body, .td2-navbox) .td2-navbox-panel[data-section="all"] > .td2-navbox-heading { margin: 0; padding: 0; border: 0; color: inherit; font-family: inherit; font-size: 30px; font-weight: 500; line-height: 1.1; }
+.td2-navbox-heading > .mw-headline { display: block; font: inherit; scroll-margin-top: 4rem; }
+.td2-navbox-panel[data-section="all"] > .td2-navbox-body > .td2-navbox-panel { margin-block-start: 12px; }
+.td2-navbox-panel[data-section="all"] > .td2-navbox-body > .td2-navbox-panel > .td2-navbox-heading { border-block-start: 1px solid rgba(184, 184, 184, .35); }
+.td2-navbox-body[hidden] { display: none; }
+.td2-navbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 6px; }
+.mw-parser-output:has(.td2-brand) .td2-navbox { container:td2-article-nav / inline-size; margin-block-start:2rem; padding-block-start:0; }
+.mw-parser-output:has(.td2-brand) .td2-navbox-grid { grid-template-columns:repeat(auto-fill, min(100%, 214px)); }
+@container td2-article-nav (max-width: 433.99px) {
+  .mw-parser-output:has(.td2-brand) .td2-navbox-grid { grid-template-columns:1fr; }
+}
+.td2-navbox .td2-navbox-slot-group + .td2-navbox-slot-group { margin-block-start: 18px; }
+.td2-navbox .td2-navbox-slot-label { margin: 0 0 6px; padding: 0; color: #b8b8b8; font-size: 13px; font-weight: 400; line-height: 1.4; }
+.td2-navbox-card { position: relative; isolation: isolate; display: grid; grid-template-columns: var(--td2-nav-art-width, 40px) minmax(0, 1fr); align-items: center; gap: 10px; min-width: 0; height: 60px; padding: 6px 10px; border: 1px solid var(--td2-control-border); border-radius: 0; box-shadow: none; background: var(--td2-control-surface); transition: var(--td2-control-transition); }
+.td2-navbox-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; pointer-events: none; }
+.td2-navbox-icon img { max-width: 40px; max-height: 40px; width: auto; height: auto; object-fit: contain; }
+.td2-navbox-name { min-width: 0; line-height: 1.3; font-size: .9rem; overflow-wrap: anywhere; }
+.td2-navbox-panel[data-section="named"] .td2-navbox-card:not(.td2-navbox-current) .td2-navbox-name { color: var(--td2-text-named); }
+.td2-navbox-panel[data-section="exotics"] .td2-navbox-card:not(.td2-navbox-current) .td2-navbox-name { color: var(--td2-quality-exotic-accent); }
+.td2-navbox .td2-navbox-name a, .td2-navbox .td2-navbox-name a:visited { color: inherit; text-decoration: none; }
+.td2-navbox .td2-navbox-name .selflink { font-weight: normal; }
+.td2-navbox-name a::after { content: ""; position: absolute; inset: 0; border-radius: 0; }
+.td2-navbox-card:hover, .td2-navbox-card:focus-within { border-color: #b8b8b8; background: var(--td2-control-hover); }
+.td2-navbox-card.td2-navbox-current { --td2-frame-color: #101010; border-color: var(--td2-navbox-selected); background: var(--td2-navbox-selected); color: #101010; }
+.td2-navbox-current .td2-navbox-icon img { filter: brightness(0); }
+.td2-navbox-panel[data-section="gear_sets"] .td2-navbox-card:not(.td2-navbox-current) .td2-navbox-icon img { filter: sepia(1) saturate(10.95) hue-rotate(59.4deg) brightness(.984); }
+.td2-navbox button:focus-visible, .td2-navbox-name a:focus-visible::after { outline: 2px solid var(--td2-navbox-selected); outline-offset: 2px; }
+.td2-navbox-card > .td2-frame-corners { display: contents; }
+.td2-navbox .td2-navbox-icon, .td2-navbox .td2-navbox-name { z-index: 1; }
+.td2-navbox .td2-navbox-slot-watermark { position: absolute; right: 6px; top: 9px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; opacity: .16; pointer-events: none; z-index: 0; }
+.td2-navbox .td2-navbox-slot-watermark img { display: block; width: auto; height: auto; max-width: 40px; max-height: 40px; object-fit: contain; }
+.td2-navbox .td2-navbox-current .td2-navbox-slot-watermark img { filter: brightness(0); }
+.td2-weapon-navbox .td2-navbox-slot-watermark.td2-navbox-talent { opacity: .85; }
+.td2-weapon-navbox .td2-navbox-card:has(> .td2-navbox-talent) { padding-inline-end: 48px; }
+.mw-parser-output:has(.td2-brand) .td2-navbox-card:has(> .td2-navbox-slot-watermark) { grid-template-columns:var(--td2-nav-art-width, 40px) minmax(0, 1fr) 32px; column-gap:6px; padding-inline-end:6px; }
+.mw-parser-output:has(.td2-brand) .td2-navbox-slot-watermark { position:static; grid-column:3; grid-row:1; width:32px; height:32px; }
+.mw-parser-output:has(.td2-brand) .td2-navbox-slot-watermark img { max-width:100%; max-height:100%; }
+.td2-navbox .td2-navbox-name a, .td2-navbox .td2-name-window { display: block; }
+.td2-navbox .td2-name-window { overflow: hidden; }
+.td2-navbox .td2-name-motion { display: inline-block; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .td2-navbox .td2-name-motion { display: block; white-space: normal; transform: none !important; }
+  .mw-parser-output:has(.td2-brand) .td2-navbox-card { padding-block:0; }
+}
+
+.td2-navbox .td2-navbox-name a:focus-visible { outline: none; }
+@media (prefers-reduced-motion: reduce) { .td2-navbox-card, .td2-navbox-heading button::after { transition: none; } }
+
+.td2-equipment { overflow-wrap: anywhere; min-width: 0; }
+dl.td2-native-rule, .td2-native-rule dl { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr); gap: .2rem .8rem; }
+.td2-native-rule dt, .td2-native-rule dd { margin: 0; }
+.td2-native-rule img, .td2-talent-title img { max-width: var(--td2-icon-size, 24px); max-height: var(--td2-icon-size, 24px); width: auto; height: auto; vertical-align: middle; }
+.td2-brand-panel { padding-block: .5rem; }
+.td2-brand-panel dl { margin-block: .5rem; }
+.td2-brand-panel dt { margin-top: .8rem; }
+.td2-brand-effect { padding-block: .25rem; }
+.td2-brand .td2-brand-top { display: flow-root; min-width: 0; }
+.td2-brand .td2-brand-bonuses { display: flow-root; min-width: 0; margin-block: .5rem .8rem; }
+.td2-brand .td2-bonus-text > strong { color: var(--td2-text-emphasis); }
+.td2-brand .td2-brand-panel { box-sizing: border-box; min-width: 0; padding-block: .35rem; padding-inline: .5rem; }
+.td2-brand .td2-brand-panel dd { margin-inline-start: 0; }
+.td2-brand .td2-brand-effect { padding-block: .15rem; }
+.td2-brand .td2-bonus-line { display: inline-flex; align-items: flex-start; max-width: 100%; line-height: 1.5; vertical-align: top; }
+.td2-brand:not(.td2-gear-set) .td2-brand-bonuses .td2-bonus-line { padding-inline-start: 1.5rem; }
+.td2-brand .td2-bonus-text { display: block; min-width: 0; }
+.td2-brand .td2-brand-effect > p { margin-block: 0; }
+.td2-brand-category, .td2-brand-state { font-size: .875em; margin-inline-start: .4rem; }
+.td2-brand-category img { max-width: var(--td2-icon-size, 24px); max-height: var(--td2-icon-size, 24px); width: auto; height: auto; vertical-align: middle; }
+/* controls 直接挂 body；不受 Reader/TOC 的变换、模糊或高度影响。
+   模式橙色集中在此；为界面审核值，不宣称游戏取样色。 */
+.td2-brand-mode-controls {
+  --td2-mode-active-surface: var(--td2-navbox-selected);
+  --td2-mode-active-ink: #101010;
+  --td2-mode-left: .75rem;
+  --td2-mode-bottom: .75rem;
+  position: fixed;
+  left: max(var(--td2-mode-offset, var(--td2-mode-left)), env(safe-area-inset-left, 0px));
+  bottom: max(var(--td2-mode-bottom), env(safe-area-inset-bottom, 0px));
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: .4rem; width: max-content;
+  max-width: calc(100% - var(--td2-mode-left) - var(--td2-mode-left) - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+  box-sizing: border-box; margin: 0; padding: 0; border: 0;
+  background: transparent; z-index: 100;
+}
+.td2-brand-mode-controls button.td2-frame {
+  font: inherit; padding: .3rem .9rem; min-height: 2.5rem; min-width: 0;
+}
+body:has([data-td2-js-editor]) .td2-brand-mode-controls { display: none; }
+.td2-brand-mode-controls button.td2-frame, #td2-page-actions button, #td2-page-actions a {
+  box-sizing: border-box; color: #f5f5f5; cursor: pointer;
+  border: 1px solid var(--td2-control-border); border-radius: 0; box-shadow: none;
+  background: var(--td2-control-surface);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  transition: var(--td2-control-transition);
+}
+.td2-brand-mode-controls button:hover, #td2-page-actions button:hover, #td2-page-actions a:hover { border-color: #b8b8b8; background: var(--td2-control-hover); color: var(--td2-control-hover-ink); }
+#td2-page-actions button.td2-copy-success,
+body:has([data-td2-js-editor]) #td2-page-actions :is(a#td2-js-edit-entry, #td2-js-edit-entry a) { border-color: var(--td2-navbox-selected); background: var(--td2-navbox-selected); color: #101010; }
+.td2-brand-mode-controls button[aria-pressed="true"] {
+  --td2-frame-color: var(--td2-mode-active-ink);
+  color: var(--td2-mode-active-ink); border-color: var(--td2-mode-active-surface);
+  background-color: var(--td2-mode-active-surface);
+}
+.td2-brand-mode-controls .td2-frame-corners { display: none; }
+.td2-brand-mode-controls button:focus-visible, #td2-page-actions :is(button,a):focus-visible { outline: 2px solid var(--td2-navbox-selected); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .td2-brand-mode-controls button.td2-frame, #td2-page-actions button, #td2-page-actions a { transition: none; }
+}
+.td2-brand-panel[hidden] { display: none !important; }
+/* 逐槽共用基线保留；品牌网格只在Reader父级scope内定义。 */
+.td2-equipment-card { min-width: 0; padding-block: .4rem; }
+.td2-equipment-card h3 { margin-block: .4rem; }
+.td2-brand .td2-equipment-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .9rem 1.25rem; align-items: start; min-width: 0; }
+/* 真实 MediaWiki 在 grid 首尾插入空 p；即使高度为 0，它仍占一个 grid cell。
+   只排除这类直接子节点，不隐藏正文、helper 文本或非空段落。 */
+.td2-brand .td2-equipment-grid > p.mw-empty-elt:empty { display: none; }
+.td2-brand .td2-equipment-card { min-width: 0; padding-block: .55rem; }
+.td2-brand .td2-equipment-card h3 { margin-block: .15rem .55rem; }
+.td2-brand .td2-equipment-row { margin-block: .25rem; line-height: 1.5; gap: .3rem; }
+.td2-equipment-row img { max-width:var(--td2-icon-size, 24px); max-height:var(--td2-icon-size, 24px); width:auto; height:auto; vertical-align:middle; }
+.td2-equipment-flavor { font-style: italic; }
+/* 自动TOC也可能位于Reader内；新留白只作用于正文标题，不选中目录标题/列表。 */
+.td2-brand > h2, .td2-brand > .mw-heading2 > h2, .td2-brand .td2-brand-top > h2, .td2-brand .td2-brand-top > .mw-heading2 > h2 { position: relative; margin-block: 1.25rem .55rem; padding-block-end: .3rem; border: 0; border-block-end: var(--td2-frame-width) solid var(--td2-frame-color); }
+.td2-brand .td2-brand-top > h2, .td2-brand .td2-brand-top > .mw-heading2 { display: flow-root; }
+.td2-brand .td2-brand-panel h3 { margin-block: .85rem .4rem; }
+.td2-brand > h3, .td2-brand > .mw-heading3 > h3 { font-size: 1.17em; font-weight: 700; line-height: inherit; color: inherit; margin-block: .85rem .4rem; padding-inline-start: var(--td2-heading-accent-width); }
+.td2-brand > h3 a, .td2-brand > .mw-heading3 > h3 a { color: inherit; }
+#wiki-body .mw-parser-output .td2-brand .td2-source-heading { font-size:var(--td2-source-size, 20px); font-weight:600; line-height:1.4; color:inherit; margin-block:.85rem .4rem; padding:0 0 0 var(--td2-heading-accent-width); border:0; }
+.td2-brand :is(.td2-named-grid, .td2-weapon-named) { --td2-source-size:16px; }
+#wiki-body .td2-brand .td2-source-heading a { color:inherit; text-decoration:underline; text-underline-offset:.15em; }
+#wiki-body .td2-brand .td2-source-heading a:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+.td2-brand .td2-equipment-card h4, .td2-brand .td2-equipment h4 { margin-block: .65rem .3rem; }
+.td2-brand > p, .td2-brand .td2-brand-top > p, .td2-brand .td2-equipment p, .td2-brand .td2-equipment-card p, .td2-brand .td2-brand-panel p { margin-block: .45rem; }
+.td2-brand > dl, .td2-brand .td2-equipment dl:not(.td2-native-rule), .td2-brand .td2-brand-panel dl { margin-block: .5rem; }
+.td2-brand > dl > dt, .td2-brand .td2-equipment dl:not(.td2-native-rule) > dt, .td2-brand .td2-brand-panel dt { font-weight: 600; margin-block: .45rem .15rem; }
+.td2-brand > dl > dd, .td2-brand .td2-equipment dl:not(.td2-native-rule) > dd { min-width: 0; margin-block: .15rem .5rem; }
+.td2-brand > ul, .td2-brand .td2-equipment-grid ul, .td2-brand .td2-equipment ul, .td2-brand .td2-ordinary-blueprints ul, .td2-brand .td2-acquisition-result ul { margin-block: .4rem .6rem; padding-inline-start: 1.25rem; }
+.td2-brand > ul li, .td2-brand .td2-equipment-grid li, .td2-brand .td2-equipment li, .td2-brand .td2-ordinary-blueprints li, .td2-brand .td2-acquisition-result li { margin-block: .25rem; }
+.td2-brand .td2-base-armor { margin-block: 0; padding-block: .3rem .5rem; }
+
+/* 视觉组合只排版，不在 CSS 中保存素材文件名；缺图容器无固定高度。 */
+.td2-equipment-visual { display:inline-block; position:relative; max-width:160px; vertical-align:middle; }
+.td2-equipment-visual:empty { display:none; }
+.td2-equipment-visual img { max-width:100%; height:auto; object-fit:contain; }
+.td2-slot-image, .td2-logo-image { display:block; }
+.td2-slot-image + .td2-logo-image { position:absolute; width:32%; right:4%; bottom:4%; }
+.td2-base-armor { padding-block:.4rem; font-weight:600; }
+/* option 的基线由文字决定；图标间距只复用 td2-icon 的 margin，避免 flex gap 叠加。 */
+.td2-major-option { display: inline-block; vertical-align: baseline; font: inherit; line-height: inherit; letter-spacing: inherit; }
+.td2-data-error { font-weight:bold; border-inline-start:3px solid; padding-inline-start:.5rem; }
+/* 只约束品牌分支的长名称和图片，不覆盖站点 .infobox 的布局或主题。 */
+.td2-brand .td2-brand-bonus-header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 448px); align-items: end; column-gap: 1.25rem; min-width: 0; }
+.td2-brand .td2-brand-bonus-header > h2, .td2-brand .td2-brand-bonus-header > .mw-heading2 { grid-column: 1 / -1; grid-row: 1; min-width: 0; margin: 0; }
+#wiki-body .td2-brand .td2-brand-bonus-header > h2, #wiki-body .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2 { position: relative; margin: 0; padding-block: 0 15px; padding-inline-end: calc(448px + 1.25rem); border: 0; border-block-end: var(--td2-frame-width) solid var(--td2-frame-color); }
+.td2-brand-infobox-frame { --td2-heading-accent: var(--td2-quality-neutral-accent); --td2-heading-start: var(--td2-quality-neutral-start); --td2-heading-end: var(--td2-quality-neutral-end); }
+.td2-brand .td2-brand-infobox-frame { --td2-brand-card-accent: var(--td2-heading-accent, var(--td2-quality-neutral-accent)); display: grid; grid-template-columns: minmax(0, 1fr) 128px; align-items: center; gap: 16px; box-sizing: border-box; width: 448px; max-width: 100%; height: 146px; padding: 8px 12px 8px 28px; margin: 0; overflow-wrap: anywhere; }
+.td2-brand-infobox-frame.td2-quality-high_end { --td2-brand-label-color: var(--td2-text-quality); }
+.td2-brand-infobox-frame.td2-quality-gear_set { --td2-brand-label-color: #e0ffe5; }
+.td2-brand-infobox-frame.td2-quality-exotic { --td2-brand-label-color: #ff6337; }
+.td2-brand .td2-brand-infobox-frame::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: var(--td2-heading-accent-width); background: var(--td2-brand-card-accent); }
+.td2-brand .td2-brand-bonus-header > .td2-brand-infobox-frame { grid-column: 2; grid-row: 1; justify-self: end; margin-block-end: .9rem; }
+.td2-brand .td2-brand-infobox-frame > .td2-frame-corners { display: contents; }
+.td2-brand .td2-brand-logo { display: flex; grid-column: 2; grid-row: 1; align-items: center; justify-content: center; width: 128px; height: 128px; min-width: 0; }
+.td2-brand .td2-brand-logo > a.image { display: contents; }
+.td2-brand .td2-brand-logo img { display: block; width: auto; height: auto; max-width: none; max-height: none; opacity: .58; }
+.td2-brand .td2-brand-infobox-frame.td2-exotic-infobox { grid-template-columns: minmax(0, 1fr) 40%; }
+.td2-brand .td2-exotic-infobox > .td2-brand-logo { width: 100%; }
+.td2-brand .td2-exotic-infobox .td2-brand-logo :is(a, span) { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.td2-brand .td2-exotic-infobox .td2-brand-logo img { width: 100%; height: 100%; object-fit: contain; opacity: 1; }
+.td2-brand .td2-logo-art { display: flex; flex: none; align-items: center; justify-content: center; width: 128px; height: 128px; line-height: 0; }
+.td2-brand .td2-logo-art > a.image { display: contents; }
+.td2-brand .td2-brand-infobox .td2-brand-original-name { grid-column: 1; grid-row: 1; min-width: 0; text-align: start; }
+.td2-brand .td2-brand-infobox .td2-brand-name-zh { color: #f5f5f5; font-size: 20px; line-height: 1.45; font-weight: 400; overflow-wrap: anywhere; }
+.td2-brand .td2-brand-infobox .td2-brand-name-en { color: #f5f5f5; font-size: 14px; line-height: 1.25; margin-block-start: 2px; overflow-wrap: anywhere; }
+.td2-brand .td2-brand-quality { display: flex; align-items: center; gap: .5rem; margin-block-start: 8px; color: var(--td2-brand-label-color, #fff); font-size: 18px; line-height: 1.5; text-shadow: none; }
+.td2-brand .td2-brand-quality .td2-icon { margin: 0; }
+.td2-brand-original-name, .td2-model-english { font-size:.9em; }
+.td2-attribute-icon { display:inline-flex; align-items:center; vertical-align:middle; margin-inline-end:.25rem; }
+.td2-attribute-icon img { width:auto; height:auto; max-width:var(--td2-icon-size, 24px); max-height:var(--td2-icon-size, 24px); }
+.td2-icon-placeholder { display:inline-block; width:var(--td2-icon-size, 24px); height:var(--td2-icon-size, 24px); box-sizing:border-box; border:1px solid currentColor; opacity:.35; }
+.td2-equipment-models { padding-inline-start:1.4rem; }
+.td2-equipment-models li { margin-block:.3rem; }
+.td2-brand .td2-equipment-models { min-width: 0; overflow-wrap: anywhere; padding-inline-start: 1.25rem; }
+.td2-brand .td2-equipment-models li { margin-block: .25rem; }
+.td2-brand .td2-model-english { line-height: 1.4; overflow-wrap: anywhere; }
+.td2-model-named { list-style-type:circle; font-weight:600; }
+.td2-model-ordinary { list-style-type:circle; }
+.td2-model-english { font-weight:normal; }
+.td2-brand .td2-ordinary-blueprints { padding-inline-start:var(--td2-heading-accent-width); }
+.td2-brand .td2-ordinary-blueprints dt { font-weight:600; }
+.td2-brand .td2-ordinary-blueprints dd { margin-inline-start:0; margin-block: 0 .5rem; }
+.td2-brand [id^="gear-"], .td2-brand [id^="named-"] { scroll-margin-top: 1rem; }
+
+/* 小图标只有一个边界框；图片和占位占同样空间，不靠颜色传递唯一含义。 */
+.td2-icon { display:inline-flex; align-items:center; justify-content:center; width:var(--td2-icon-size, 24px); height:var(--td2-icon-size, 24px); min-width:var(--td2-icon-size, 24px); flex:0 0 var(--td2-icon-size, 24px); vertical-align:middle; margin-inline-end:.25rem; }
+.td2-icon img { width:auto; height:auto; max-width:var(--td2-icon-size, 24px); max-height:var(--td2-icon-size, 24px); object-fit:contain; }
+.td2-status-icon { display: inline-flex; position: relative; align-items: center; vertical-align: middle; color: #fff; background: #30343a; cursor: help; }
+.td2-status-icon > .td2-icon { margin: 0; }
+.td2-status-icon::after { display: none; content: attr(data-tooltip); position: absolute; inset-inline-start: 0; bottom: calc(100% + .35rem); z-index: 10; width: max-content; padding: .25rem .45rem; border: 1px solid #777; background: #171717; color: #fff; font: 400 14px/1.4 sans-serif; white-space: nowrap; pointer-events: none; }
+.td2-status-icon:hover::after, .td2-status-icon:focus::after { display: block; }
+.td2-status-icon:focus-visible { outline: 2px solid var(--td2-quality-high-end-accent, #d6a348); outline-offset: 3px; }
+.td2-equipment-row { display:flex; align-items:flex-start; gap:.25rem; margin-block:.2rem; }
+.td2-row-label { flex:0 0 auto; }
+.td2-row-value { min-width:0; overflow-wrap:anywhere; }
+.td2-brand .td2-equipment-row > .td2-icon { margin-block-start: 0; }
+.td2-brand .td2-row-label { flex: 0 0 4em; white-space: nowrap; }
+.td2-brand .td2-row-value { flex: 1 1 0%; }
+.td2-brand .td2-row-value .td2-icon { vertical-align: top; }
+.td2-brand .td2-major-option { max-width: 100%; }
+.td2-brand .td2-major-random { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; }
+.td2-brand .td2-major-random > .td2-icon { margin: 0; flex-shrink: 0; }
+.td2-brand .td2-major-value > br + .td2-major-option { margin-block-start: .25rem; }
+.td2-talent-heading { display:flex; align-items:flex-start; gap:.4rem; }
+.td2-talent-original-name { font-size:.9em; overflow-wrap:anywhere; }
+.td2-talent-description { margin-block:.4rem; overflow-wrap:anywhere; }
+.td2-brand .td2-equipment { margin-block: 1rem; padding-block: .65rem; min-width: 0; overflow-wrap: anywhere; }
+.td2-weapons > .td2-weapon-unit { margin-block-start: 0; padding-block-start: 0; }
+.td2-brand .td2-equipment > h3 { margin-block: .1rem .35rem; }
+.td2-brand .td2-equipment-flavor { margin-block: .45rem .6rem; }
+.td2-brand .td2-talent-detail { margin-block: .35rem; min-width: 0; }
+.td2-brand .td2-talent-heading > div { min-width: 0; }
+.td2-brand .td2-acquisition-result { min-width: 0; overflow-wrap: anywhere; }
+/* keep-all 保留正常短中文词组；异常长的人工说明可应急换行，不撑破窄屏。 */
+.td2-brand .td2-acquisition-result > ul > li { display: list-item; min-width: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.td2-brand .td2-acquisition-result > p { margin-block: .4rem .6rem; }
+.td2-materials li { margin-block:.3rem; overflow-wrap:anywhere; }
+
+/* accent/icon/text 的布局在内部 span，不依赖 MediaWiki 的 h3/mw-headline 层数。
+   显式色只有 Lua 验证后的 HEX 声明；缺省留给品质 class，再留给中性 token。 */
+.td2-equipment-heading-card { --td2-heading-icon-size: 64px; --td2-heading-accent: var(--td2-quality-neutral-accent); --td2-heading-start: var(--td2-quality-neutral-start); --td2-heading-end: var(--td2-quality-neutral-end); display: block; box-sizing: border-box; min-width: 0; max-width: 100%; padding: 0; line-height: 1.35; color: var(--td2-quality-heading-text); }
+.td2-equipment-heading-card, .td2-brand .td2-material-row, .td2-brand .td2-brand-infobox-frame { background: linear-gradient(to right, var(--td2-heading-start), var(--td2-heading-gradient-end, rgba(34, 34, 34, 0.66))); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.td2-quality-high_end { --td2-heading-accent: var(--td2-quality-high-end-accent); --td2-heading-start: var(--td2-quality-high-end-start); --td2-heading-end: var(--td2-quality-high-end-end); }
+.td2-quality-gear_set { --td2-heading-accent: var(--td2-quality-gear-set-accent); --td2-heading-start: var(--td2-quality-gear-set-start); --td2-heading-end: var(--td2-quality-gear-set-end); }
+.td2-quality-exotic { --td2-heading-accent: #ff6337; --td2-heading-start: color-mix(in srgb, var(--td2-heading-accent) 55%, #000); }
+.td2-equipment-heading-layout { display: grid; grid-template-columns: var(--td2-heading-accent-width) var(--td2-heading-icon-size, 64px) minmax(0, 1fr); align-items: center; gap: .65rem; min-width: 0; }
+.td2-equipment-heading-accent, .td2-brand .td2-material-quality { display: block; align-self: stretch; background-color: var(--td2-heading-accent); }
+.td2-equipment-heading-icon { display: flex; align-items: center; justify-content: center; width: var(--td2-heading-icon-size, 64px); height: var(--td2-heading-icon-size, 64px); min-width: 0; }
+.td2-equipment-heading-text { display: block; min-width: 0; overflow-wrap: anywhere; text-align: start; padding: .55rem .7rem .55rem 0; }
+.td2-equipment-heading-zh { display: block; font-weight: 600; }
+.td2-equipment-heading-en { display: block; font-size: .75em; font-weight: normal; margin-block-start: .15rem; }
+.td2-equipment-heading-icon .td2-icon { width: var(--td2-heading-icon-size, 64px); height: var(--td2-heading-icon-size, 64px); min-width: 0; flex-basis: var(--td2-heading-icon-size, 64px); margin: 0; }
+.td2-equipment-heading-icon img { width: var(--td2-heading-icon-size, 64px); height: var(--td2-heading-icon-size, 64px); max-width: var(--td2-heading-icon-size, 64px); max-height: var(--td2-heading-icon-size, 64px); object-fit: contain; }
+.td2-equipment-heading-icon .td2-icon-placeholder { width: var(--td2-heading-icon-size, 64px); height: var(--td2-heading-icon-size, 64px); }
+.td2-equipment-heading-icon .td2-equipment-visual { max-width: var(--td2-heading-icon-size, 64px); }
+
+.td2-brand .td2-named-grid > .td2-equipment,
+.td2-brand .td2-weapon-named-list > .td2-weapon-unit { margin-block: 0; padding-block: .55rem; }
+
+@media (max-width: 640px) {
+  .td2-brand-mode-controls { gap: .3rem; }
+  .td2-brand-mode-controls button.td2-frame { padding-inline: .65rem; }
+  .td2-brand .td2-equipment-grid { grid-template-columns: 1fr; }
+  dl.td2-native-rule, .td2-native-rule dl { display: block; }
+}
+
+/* 分割线模板、Reader 标题和具名武器条目共用端点。
+   水平线没有左右边框，端点中心直接落在各端；下偏移仍复用线宽公式。 */
+:is(.td2-hud-divider, .td2-weapon-named-divider)::before, :is(.td2-hud-divider, .td2-weapon-named-divider)::after,
+.td2-brand > h2::before, .td2-brand > h2::after, .td2-brand > .mw-heading2 > h2::before, .td2-brand > .mw-heading2 > h2::after, .td2-brand .td2-brand-top > h2::before, .td2-brand .td2-brand-top > h2::after, .td2-brand .td2-brand-top > .mw-heading2 > h2::before, .td2-brand .td2-brand-top > .mw-heading2 > h2::after, .td2-brand .td2-brand-bonus-header > h2::before, .td2-brand .td2-brand-bonus-header > h2::after, .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2::before, .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2::after { content: ""; position: absolute; bottom: var(--td2-frame-node-offset); width: var(--td2-frame-node-size); height: var(--td2-frame-node-size); background: var(--td2-frame-color); pointer-events: none; }
+:is(.td2-hud-divider, .td2-weapon-named-divider)::before,
+.td2-brand > h2::before, .td2-brand > .mw-heading2 > h2::before, .td2-brand .td2-brand-top > h2::before, .td2-brand .td2-brand-top > .mw-heading2 > h2::before, .td2-brand .td2-brand-bonus-header > h2::before, .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2::before { inset-inline-start: calc(0px - var(--td2-frame-node-size) / 2); }
+:is(.td2-hud-divider, .td2-weapon-named-divider)::after,
+.td2-brand > h2::after, .td2-brand > .mw-heading2 > h2::after, .td2-brand .td2-brand-top > h2::after, .td2-brand .td2-brand-top > .mw-heading2 > h2::after, .td2-brand .td2-brand-bonus-header > h2::after, .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2::after { inset-inline-end: calc(0px - var(--td2-frame-node-size) / 2); }
+.td2-hud-divider, .td2-weapon-named-divider { position: relative; border-block-end: var(--td2-frame-width) solid var(--td2-frame-color); }
+
+/* 安全留白同时供定位测量使用；透明 padding 不产生按钮外背景。 */
+.td2-brand-mode-controls { padding-left: max(var(--td2-mode-left), env(safe-area-inset-left, 0px)); }
+
+/* 真实灰机验收：皮肤把 H3 padding 改为 25px/12px，并清除 H2/H3 下边框。
+   仅保护 Reader 组件的这些属性；不改变标题语义、编辑链接或角点几何。 */
+.td2-brand h3.td2-equipment-heading-card.td2-frame {
+  padding: 0 !important;
+  border: var(--td2-frame-width) solid var(--td2-frame-color) !important;
+}
+.td2-brand h3.td2-equipment-heading-card > .mw-headline {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+}
+.td2-brand > h2,
+.td2-brand > .mw-heading2 > h2,
+.td2-brand .td2-brand-top > h2,
+.td2-brand .td2-brand-top > .mw-heading2 > h2,
+.td2-brand .td2-brand-bonus-header > h2,
+.td2-brand .td2-brand-bonus-header > .mw-heading2 > h2 {
+  border-bottom: var(--td2-frame-width) solid var(--td2-frame-color) !important;
+}
+
+/* 2026-10-14 Reader image mapping: original white PNG contrast only in these containers. */
+.td2-brand .td2-slot-image { max-width: 128px; background-color: #30343a; }
+.td2-brand .td2-slot-image img { width: auto; height: auto; max-width: 128px; max-height: 128px; object-fit: contain; }
+/* Approved Reader UI notation and directional hard shadow; original PNG bytes unchanged. */
+.td2-brand .td2-icon-symbol { display: inline-block; width: var(--td2-icon-size, 24px); height: var(--td2-icon-size, 24px); font-size: 14px; line-height: var(--td2-icon-size, 24px); text-align: center; font-weight: normal; }
+.td2-brand .td2-icon[data-icon-key="equipment_row/major_attribute"],
+.td2-brand .td2-icon[data-icon-key="equipment_row/minor_attribute"],
+.td2-brand .td2-icon[data-icon-key="state/random"],
+.td2-brand .td2-icon[data-icon-key="equipment_row/mod_slot"] { background-color: transparent; }
+.td2-brand .td2-icon[data-icon-key="equipment_row/major_attribute"] img,
+.td2-brand .td2-icon[data-icon-key="equipment_row/minor_attribute"] img,
+.td2-brand .td2-icon[data-icon-key="state/random"] img,
+.td2-brand .td2-icon[data-icon-key="state/gear_mod_slot"] img,
+.td2-brand .td2-icon[data-icon-key="state/craft"] img,
+.td2-brand .td2-icon[data-icon-key="equipment_row/mod_slot"] img { filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8)); }
+
+/* Approved material presentation only; Wiki design colors, not exact game RGB. */
+.td2-brand .td2-material-row { --td2-heading-accent: var(--td2-material-accent, var(--td2-quality-neutral-accent)); --td2-heading-start: color-mix(in srgb, color-mix(in srgb, var(--td2-heading-accent) 55%, #000) 50%, transparent); --td2-heading-gradient-end: rgba(34, 34, 34, 0.15); display: grid; grid-template-columns: var(--td2-heading-accent-width) var(--td2-icon-size, 24px) minmax(0, 1fr) max-content; align-items: center; gap: .4em; width: 100%; box-sizing: border-box; padding-block: .2rem; padding-inline-end: 1rem; vertical-align: middle; max-width: 100%; color: var(--td2-quality-heading-text); }
+
+.td2-brand .td2-material-gray { --td2-material-accent: #a6a6a6; }
+.td2-brand .td2-material-green { --td2-material-accent: #78c832; }
+.td2-brand .td2-material-blue { --td2-material-accent: #5080ff; }
+.td2-brand .td2-material-row .td2-icon { background: transparent; margin: 0; flex: 0 0 var(--td2-icon-size, 24px); }
+.td2-brand .td2-material-row .td2-icon img { display: block; }
+.td2-brand .td2-material-row .td2-material-quality { margin-block: -.2rem; }
+.td2-brand .td2-material-row, .td2-brand .td2-material-row * { filter: none; box-shadow: none; text-shadow: none; }
+/* Names may wrap; quantities remain right aligned without reducing body text. */
+.td2-brand .td2-material-name { min-width: 0; overflow-wrap: anywhere; }
+.td2-brand .td2-material-value { display: flex; align-items: baseline; justify-content: flex-end; white-space: nowrap; }
+.td2-brand .td2-blueprint-none { color: #a0a0a0; }
+.td2-brand .td2-blueprint-none .td2-icon img { filter: brightness(.62745); }
+.td2-brand .td2-material-probability { font-size: .75em; font-weight: normal; color: #aaa; }
+.td2-brand .td2-material-quantity { text-align: right; white-space: nowrap; }
+.td2-brand .td2-material-unknown .td2-material-quality { background: transparent; }
+.td2-brand .td2-equipment-grid .td2-materials { margin-inline: 0; padding-inline-start: 0px; list-style: none; }
+.td2-brand .td2-material-high_end { --td2-material-accent: #ffaf10; }
+.td2-brand .td2-material-gear_set { --td2-material-accent: var(--td2-quality-gear-set-accent); }
+#wiki-body .td2-brand .td2-material-name a,
+#wiki-body .td2-brand .td2-material-name a:visited,
+#wiki-body .td2-brand a.td2-material-name,
+#wiki-body .td2-brand a.td2-material-name:visited { color: var(--td2-quality-heading-text); }
+#wiki-body .td2-brand .td2-material-name a:hover,
+#wiki-body .td2-brand .td2-material-name a:focus-visible,
+#wiki-body .td2-brand a.td2-material-name:hover,
+#wiki-body .td2-brand a.td2-material-name:focus-visible { color: var(--td2-quality-heading-text); text-decoration: underline; text-underline-offset: .15em; }
+#wiki-body .td2-brand .td2-material-name a:focus-visible,
+#wiki-body .td2-brand a.td2-material-name:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
+
+.td2-brand .td2-equipment-attributes > .td2-equipment-row:has(.td2-major-value) { margin-block: 0; padding-block: .5rem; }
+.td2-brand .td2-equipment-attributes > .td2-divider-soft:has(+ .td2-equipment-row) { display: none; }
+.td2-brand .td2-equipment-attributes > .td2-divider-soft + .td2-equipment-row { border-block-start: var(--td2-frame-width) solid var(--td2-frame-color); padding-block-start: .5rem; margin-block-start: 0; }
+.td2-brand .td2-equipment-attributes > .td2-equipment-row:has(.td2-major-value):not(:has([data-icon-key="state/none"])) + .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]):not(:has([data-icon-key="state/none"])) { border-block-start: var(--td2-content-divider); padding-block-start: .5rem; margin-block-start: 0; }
+.td2-brand .td2-equipment-grid > .td2-equipment-card > .td2-equipment-heading-card + .td2-materials:has(> li .td2-material-row) { border-block-start: var(--td2-content-divider); margin-block-start: 1rem; padding-block-start: .5rem; }
+#wiki-body .td2-brand .td2-equipment-grid > .td2-equipment-card > .td2-equipment-heading-card + .td2-materials:has(> li .td2-material-row) > li + li { margin-block-start: .5rem; }
+#wiki-body .td2-brand .td2-equipment-grid > .td2-equipment-card > .td2-equipment-heading-card + .td2-materials:has(> li .td2-material-row) > li:first-child { margin-block-start: 0; }
+
+/* M02/M03：复用 Reader 直属 h2 与公共分隔线，不创建卡片外框。 */
+.td2-brand .td2-expertise-card .td2-row-label { flex-basis: 5em; }
+/* state/blue PNG 的不透明主体为 #68a7db；沿用 currentColor 混色适配主题文字对比度。 */
+.td2-brand .td2-expertise-card strong { color: #68a7db; color: color-mix(in srgb, #68a7db 50%, currentColor); }
+.td2-brand.td2-weapons .td2-expertise-card strong { color: #dd2f30; }
+
+.td2-brand .td2-expertise-card .td2-icon img { mix-blend-mode: difference; }
+
+.td2-brand .td2-models { margin-block: .5rem; }
+.td2-brand .td2-models > .mw-collapsible-toggle { float: none; display: inline-block; }
+.td2-brand .td2-models > summary { cursor: pointer; }
+@media (max-width: 640px) {
+  .td2-brand .td2-brand-bonus-header { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .td2-brand .td2-brand-bonus-header > .td2-brand-infobox-frame { grid-column: 1; grid-row: 1; margin: 0; }
+  .td2-brand .td2-brand-bonus-header > h2, .td2-brand .td2-brand-bonus-header > .mw-heading2 { grid-row: 2; }
+  #wiki-body .td2-brand .td2-brand-bonus-header > h2, #wiki-body .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2 { padding-inline-end: 0; }
+  .td2-brand .td2-brand-infobox-frame { gap: 8px; width: 100%; padding: 8px 8px 8px 24px; }
+  .td2-brand .td2-brand-infobox .td2-brand-name-zh { font-size: 18px; line-height: 1.3; }
+  .td2-brand .td2-brand-infobox .td2-brand-name-en { font-size: 13px; }
+  .td2-brand .td2-brand-quality { line-height: 1.3; margin-block-start: 6px; }
+}
+
+.td2-brand, .td2-navbox { --td2-text-named: #FEA900; }
+.td2-navbox { --td2-quality-exotic-accent: #ff6337; }
+.td2-brand { --td2-text-quality: #FFAF10; --td2-text-emphasis: #FF6A13; }
+.td2-brand .td2-named-grid .td2-equipment-heading-zh, .td2-brand .td2-named-grid .td2-equipment-heading-en, .td2-brand .td2-named-grid .td2-talent-title, .td2-brand .td2-text-gold { color: var(--td2-text-named); }
+.td2-brand .td2-text-orange { color: var(--td2-text-emphasis); }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-text-red { color: red; }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-text-white { color: white; }
+.td2-brand .td2-text-blue { color: #000cff; }
+.td2-brand .td2-text-light_blue { color: #9fccf6; }
+.td2-brand .td2-brand-top > .td2-brand-name-en { margin-block: 0 .75rem; overflow-wrap: anywhere; }
+#wiki-body .mw-parser-output .td2-brand .td2-talent-section-title { background: #303030; color: var(--td2-quality-heading-text); font-size: 18px; line-height: 1.1; padding: .3rem var(--td2-heading-accent-width); margin-block: .6rem; font-weight: normal; border:0; }
+.td2-brand .td2-talent-section-title :where(span, a) { color: inherit; }
+#wiki-body .td2-brand :is(.td2-talent-section-title,.td2-source-heading) > .mw-headline { font:inherit; }
+.td2-brand .td2-talent-detail { display: flex; align-items: flex-start; gap: 1rem; }
+.td2-brand .td2-talent-copy { flex: 1; min-width: 0; }
+.td2-brand .td2-talent-copy:has(> .td2-talent-title) { padding-inline-start:1.5rem; }
+.td2-brand .td2-talent-detail .td2-talent-description { padding-inline-start:1.5rem; }
+.td2-brand .td2-random-talent { padding-inline-start:var(--td2-heading-accent-width); }
+.td2-brand .td2-talent-icon { flex: none; --td2-icon-size: 80px; }
+.td2-brand .td2-talent-icon .td2-icon { margin: 0; }
+@media (max-width: 640px) {
+  .td2-brand .td2-talent-icon { --td2-icon-size: 64px; }
+}
+.td2-brand .td2-talent-description p { white-space: pre-wrap; margin-block: .5rem; }
+.td2-exotic-gear .td2-talent-description p { white-space: normal; }
+.td2-brand-panel:not(.td2-gear-effect-group) > [id]:has(> .td2-talent-detail) + [id]:has(> .td2-talent-detail) {
+  border-block-start:var(--td2-content-divider); margin-block-start:.5rem; padding-block-start:.5rem;
+}
+.td2-brand .td2-models > summary { list-style: none; color: #ffb400; }
+.td2-brand .td2-models > summary::-webkit-details-marker { display: none; }
+.td2-brand .td2-models > summary::before { content: '['; }
+.td2-brand .td2-models > summary::after { content: ']'; }
+
+.td2-brand .td2-talent-title a { color: inherit; }
+
+.td2-brand { padding-block-end: 2rem; }
+/* 只沿末篇正文的最后一个内容分支收掉尾距。空脚注和解析器占位不构成章节。 */
+@scope (.mw-parser-output:has(.td2-navbox) > .td2-brand:not(:has(~ .td2-brand)))
+    to (:nth-last-child(n+2 of :not(.td2-navbox, .mw-empty-elt:empty, references:empty, .mw-references-wrap:not(:has(li)), .td2-section-hidden, meta, link, style))) {
+  :scope, :scope :is(.td2-brand.td2-weapon-unit, .td2-weapon-section, .td2-brand-panel, .td2-talent-detail,
+                     .td2-acquisition-result > ul, .mw-references-wrap, ol.references) {
+    margin-block-end:0; padding-block-end:0;
+  }
+  #wiki-body :scope :is(.td2-acquisition-result p, .td2-acquisition-result li, ol.references > li) { margin-block-end:0; }
+}
+.td2-brand .mw-editsection { display: none; }
+
+.td2-brand h3 > a, .td2-brand h4 > a { color: inherit; }
+
+.td2-brand .td2-model-named, .td2-brand .td2-model-named a, .td2-brand .td2-model-named .td2-model-english { color: var(--td2-text-named); }
+.td2-brand .td2-model-craftable { list-style-type: disc; }
+.td2-brand > p,
+.td2-brand .td2-brand-top > p,
+.td2-brand .td2-base-armor, .td2-brand .td2-equipment-flavor, .td2-brand .td2-equipment-attributes > .td2-equipment-row,
+.td2-brand .td2-models, .td2-brand .td2-equipment > :is(p,dl,h4),
+.td2-brand:not(.td2-weapons) .td2-expertise-card,
+.td2-weapons .td2-weapon-section > :is(.td2-weapon-stats, .td2-weapon-attribute, .td2-weapon-control, .td2-weapon-facts, .td2-weapon-range, .td2-weapon-mod, .td2-weapon-skins, .td2-talent-detail, .td2-expertise-card),
+.td2-gear-set .td2-brand-bonuses .td2-gear-effect-group > h3 { padding-inline-start: var(--td2-heading-accent-width); }
+.td2-brand .td2-brand-panel { padding-inline-start: var(--td2-heading-accent-width); }
+:is(.td2-named-grid, .td2-exotic-gear, .td2-weapon-unit) .td2-brand-panel:has(> [id] > .td2-talent-detail) { padding-inline-start:0; }
+
+.td2-brand .td2-acquisition-result > ul, .td2-brand ul.td2-blueprints { list-style: none; margin-inline: 0; padding-inline-start: 0; }
+.td2-brand .td2-acquisition-result > ul { display: block; margin-block: .4rem .6rem; }
+.td2-brand .td2-acquisition-result > ul > li { margin-block: .25rem; }
+.td2-brand .td2-acquisition-result { padding-inline-start: calc(var(--td2-heading-accent-width) + 1.5rem); }
+.td2-brand .td2-acquisition-result:has(> .td2-blueprint-sources) { padding-inline-start: 0; }
+#firstHeading.page-header:has(~ #bodyContent .td2-brand) { margin-block-end: .375rem; }
+
+.td2-brand .td2-ordinary-blueprints > dd { padding-inline-start: 1.5rem; }
+.td2-brand .td2-brand-panel dd { padding-inline-start: var(--td2-heading-accent-width); }
+.td2-brand > h3 + p, .td2-brand > .mw-heading3 + p,
+.td2-brand .td2-equipment > h4 + p, .td2-brand .td2-equipment > dl + p { padding-inline-start: calc(var(--td2-heading-accent-width) + 1.5rem); }
+
+#td2-page-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-block-start: .5rem; }
+#td2-page-actions > span { display: contents; }
+#td2-page-actions button, #td2-page-actions a { display: inline-flex; align-items: center; justify-content: center; padding: .25rem .65rem; font: inherit; line-height: 1.5; text-decoration: none; white-space: nowrap; }
+#td2-page-actions > button { width: calc(4em + 1.3rem + 2px); flex: none; }
+#td2-page-actions #ca-edit::before { content: none; }
+#td2-page-actions [hidden], #ca-edit[hidden] { display: none; }
+.td2-attribute-link a { color: inherit; text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: .15em; }
+.td2-attribute-link a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media (max-width: 640px), (pointer: coarse) {
+  #td2-page-actions button, #td2-page-actions a { min-height: 44px; }
+  #bodyContent > .huiji-ad-slot-pilot:has(+ #mw-content-text .td2-brand-top)
+    > .huiji-ad-slot-pilot__ad--320:has(> .adwork-net:only-child:empty) {
+    min-height: 0;
+    margin-bottom: 0;
+  }
+}
+
+html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) { position:relative; background:#191919; }
+html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) :is(body, #wiki-outer-body, #wiki-body) { background:transparent; }
+html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) body { isolation:isolate; }
+html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) body::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:url("https://ubi-static-website-hosting-prod.ubisoft.com/division2/prod/f5ffcecf62deb64169a20a5f3c2dc35a.png") right top / auto max(100vh,1400px) no-repeat; filter:grayscale(1) invert(1) brightness(.7); mask-image:linear-gradient(to right,transparent 0%,#000 35%); }
+
+.td2-brand .td2-attribute-grid { display: grid; grid-template-columns: var(--td2-heading-accent-width) 24px minmax(4em, 1fr) fit-content(65%); column-gap: 0; row-gap: 0; align-items: start; min-width: 0; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row { display: contents; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row > .td2-icon { grid-column: 2; margin: 0; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row > .td2-row-label { grid-column: 3; padding-inline-start: .3rem; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row > .td2-row-value { grid-column: 4; min-width: 0; padding-inline-start: .3rem; padding-inline-end: var(--td2-heading-accent-width); text-align: left; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(.td2-major-value):not(:has([data-icon-key="state/none"])) + .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]):not(:has([data-icon-key="state/none"]))::before,
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(.td2-major-value) + .td2-equipment-row:has(> [data-icon-key="equipment_row/mod_slot"])::before,
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]) + .td2-equipment-row:has(> [data-icon-key="equipment_row/mod_slot"])::before { content: ""; grid-column: 1 / -1; border-block-start: var(--td2-content-divider); margin-block: 0; padding-block-end: .5rem; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(.td2-major-value) > :is(.td2-icon, .td2-row-label, .td2-row-value) { margin-block: .5rem; }
+.td2-brand .td2-attribute-grid { padding-block-end: .25rem; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row:not(:has(.td2-major-value)) > :is(.td2-icon, .td2-row-label, .td2-row-value) { margin-block-start: .25rem; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(.td2-major-value):not(:has([data-icon-key="state/none"])) + .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]):not(:has([data-icon-key="state/none"])) > :is(.td2-icon, .td2-row-label, .td2-row-value),
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(.td2-major-value) + .td2-equipment-row:has(> [data-icon-key="equipment_row/mod_slot"]) > :is(.td2-icon, .td2-row-label, .td2-row-value),
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]) + .td2-equipment-row:has(> [data-icon-key="equipment_row/mod_slot"]) > :is(.td2-icon, .td2-row-label, .td2-row-value) { margin-block-start: 0; }
+.td2-brand .td2-attribute-grid > .td2-equipment-row:has(> [data-icon-key="equipment_row/minor_attribute"]) + .td2-equipment-row:has(> [data-icon-key="equipment_row/mod_slot"])::before { margin-block-start: .25rem; }
+.td2-gear-set .td2-gear-set-field { margin: .6rem 0; }
+.td2-gear-set .td2-gear-set-field > div,
+.td2-gear-set .td2-gear-set-effect > div,
+.td2-gear-set .td2-gear-set-equipment .td2-brand-panel > div { white-space: pre-wrap; }
+.td2-gear-set .td2-gear-core-list { white-space: normal; }
+.td2-gear-set .td2-gear-core-line + .td2-gear-core-line { margin-block-start: .25rem; }
+.td2-gear-set .td2-gear-core-line > .td2-major-option { white-space: nowrap; }
+.td2-gear-set .td2-gear-set-effect { margin-block: .5rem; }
+.td2-gear-set .td2-gear-set-effect h4 { margin-block: .45rem .3rem; }
+.td2-gear-set .td2-talent:empty { display:none; }
+.td2-gear-set .td2-gear-set-equipment > .td2-talent:not(:empty) { border-block-start:var(--td2-content-divider); margin-block-start:.5rem; padding-block-start:.5rem; }
+.td2-gear-set .td2-gear-set-field { overflow-wrap:anywhere; }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-gear-talent-name { display:inline-flex; align-items:center; }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-row-value > .td2-brand-panel { padding:0; }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-gear-talent-name a { color:inherit; }
+:is(.td2-gear-set, .td2-exotic-gear) .td2-gear-talent-name a:is(:hover,:focus-visible) { text-decoration:underline; }
+.td2-gear-set .td2-gear-notes { margin-block:.4rem; }
+.td2-gear-set .td2-gear-notes > div { white-space:pre-wrap; overflow-wrap:anywhere; }
+.td2-gear-set .td2-gear-notes > summary { cursor:pointer; }
+.td2-gear-set .td2-gear-set-effect > .td2-talent-detail { white-space:normal; }
+.td2-gear-set .td2-talent-description { white-space:pre-wrap; }
+.td2-gear-set .td2-brand-bonuses .td2-gear-effect-group { padding-inline: 0; }
+.td2-gear-set .td2-brand-bonuses .td2-gear-effect-group > h3 { margin-block: .4rem; }
+.td2-gear-set .td2-brand-bonuses .td2-talent-icon { display: flex; align-items: flex-start; }
+.td2-gear-set .td2-brand-bonuses .td2-talent-description:empty { display: none; }
+
+.td2-gear-set .td2-gear-effect-title { font-size: 24px; font-weight: 500; line-height: 1.1; padding-inline-start: var(--td2-heading-accent-width); margin-block: .4rem; }
+.td2-gear-set .td2-gear-small-title { font-size: 14px; font-weight: 500; line-height: 1.1; margin-block: .625rem; }
+.td2-gear-set div.td2-equipment-heading-card { font-size: 24px; font-weight: 500; margin-block: .15rem .55rem; }
+
+
+:is(.td2-gear-set, .td2-exotic-gear) .td2-brand-bonuses .td2-bonus-line { padding-inline-start: 1.5rem; }
+
+@media (max-width: 360px) {
+  .td2-gear-set .td2-brand-infobox-frame:not(:has(> .td2-brand-logo img)) { grid-template-columns: minmax(0, 1fr); }
+  .td2-gear-set .td2-brand-logo:not(:has(img)) { display: none; }
+}
+
+.td2-brand .td2-section-heading { cursor: pointer; }
+.td2-brand .td2-section-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-inline-start: .35rem; padding: 0; border: 0; background: transparent; color: inherit; vertical-align: middle; cursor: pointer; }
+.td2-brand .td2-section-toggle::before { content: ""; flex: none; box-sizing: border-box; width: 8px; height: 8px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: translateY(2px) rotate(-45deg); }
+.td2-brand .td2-section-toggle[aria-expanded="false"]::before { transform: translateY(-2px) rotate(135deg); }
+.td2-brand .td2-section-toggle:hover { background: rgba(128, 128, 128, .15); }
+.td2-brand .td2-section-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media screen {
+  .td2-brand .td2-section-hidden { display: none !important; }
+}
+@media print {
+  .td2-brand .td2-section-toggle { display: none; }
+}
+
+#wiki-body .td2-brand h2.td2-section-heading {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  padding-inline-end: 0;
+  min-block-size: 36px;
+  overflow-wrap: anywhere;
+}
+#wiki-body .td2-brand .td2-section-heading > .mw-headline { min-width: 0; }
+#wiki-body .td2-brand .td2-section-heading > .td2-section-toggle {
+  flex: none;
+  margin-inline-start: auto;
+}
+
+#wiki-body .td2-brand .td2-brand-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 448px); column-gap: 1.25rem; }
+#wiki-body .td2-brand .td2-brand-top > .td2-brand-name-en { grid-column: 1; grid-row: 1; align-self: start; margin-block: 0; }
+#wiki-body .td2-brand .td2-brand-bonus-header { display: contents; }
+#wiki-body .td2-brand .td2-brand-bonus-header > .td2-brand-infobox-frame { grid-column: 2; grid-row: 1; align-self: start; margin-block: 0; }
+#wiki-body .td2-brand .td2-brand-bonus-header > h2,
+#wiki-body .td2-brand .td2-brand-bonus-header > .mw-heading2 { grid-column: 1 / -1; grid-row: 2; margin-block-start: 1.25rem; }
+#wiki-body .td2-brand .td2-brand-bonuses { grid-column: 1 / -1; grid-row: 3; }
+@media (max-width: 640px) {
+  #wiki-body .td2-brand .td2-brand-top { grid-template-columns: minmax(0, 1fr); }
+  #wiki-body .td2-brand .td2-brand-bonus-header > .td2-brand-infobox-frame { grid-column: 1; grid-row: 2; margin-block-start: .75rem; }
+  #wiki-body .td2-brand .td2-brand-bonus-header > h2,
+  #wiki-body .td2-brand .td2-brand-bonus-header > .mw-heading2 { grid-row: 3; }
+  #wiki-body .td2-brand .td2-brand-bonuses { grid-row: 4; }
+}
+
+/* Threat article: only top-level chapter headings receive dividers. */
+#wiki-body #td2-threat-content > h2 { position:relative; border-bottom:1px solid #b8b8b8 !important; margin-bottom:16px; }
+#wiki-body #td2-threat-content > h2::before,
+#wiki-body #td2-threat-content > h2::after { content:""; position:absolute; bottom:-1.5px; width:2px; height:2px; background:#b8b8b8; pointer-events:none; }
+#wiki-body #td2-threat-content > h2::before { left:-1px; }
+#wiki-body #td2-threat-content > h2::after { right:-1px; }
+
+/* Threat article: interactive vision comparison. */
+
+.td2-threat-vision .controls { display:grid; gap:12px; padding-bottom:22px; border-bottom:1px solid #383838; }
+.td2-threat-vision .control-row { display:flex; align-items:flex-start; gap:14px; }
+.td2-threat-vision .control-label { flex:0 0 30px; font-size:13px; color:#b8b8b8; padding-top:10px; }
+.td2-threat-vision .buttons { display:flex; flex-wrap:wrap; gap:5px; }
+.td2-threat-vision button { display:inline-flex; align-items:center; justify-content:center; gap:7px; color:#ddd; background:#242424; border:1px solid #454545; border-radius:0; font:500 14px/1.4 "Microsoft YaHei",Arial,sans-serif; padding:9px 11px; white-space:nowrap; }
+.td2-threat-vision button:hover { border-color:#aaa; }
+.td2-threat-vision button[aria-pressed="true"] { color:#191919; background:#ff6a13; border-color:#ff6a13; }
+:is(.td2-threat-vision, .td2-weapon-charts) button:focus-visible { outline:2px solid #eee; outline-offset:3px; }
+.td2-threat-vision .native-icon { display:inline-block; flex:0 0 auto; width:26px; height:26px; background:currentColor; mask-image:var(--icon); mask-position:center; mask-size:contain; mask-repeat:no-repeat; -webkit-mask-image:var(--icon); -webkit-mask-position:center; -webkit-mask-size:contain; -webkit-mask-repeat:no-repeat; }
+.td2-threat-vision .enemy-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 20px; padding-top:26px; }
+.td2-threat-vision .enemy { min-width:0; }
+.td2-threat-vision .selection-summary { display:flex; align-items:center; gap:9px; color:#ff6a13; font-size:15px; padding-top:20px; }
+.td2-threat-vision .selection-summary .separator { color:#888; padding:0 5px; }
+.td2-threat-vision .diagram { position:relative; width:100%; max-width:320px; margin:8px auto 10px; aspect-ratio:280 / 224; }
+.td2-threat-vision .plot { display:block; width:100%; height:100%; }
+.td2-threat-vision .missing { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#b8b8b8; font-size:14px; }
+.td2-threat-vision .missing[hidden] { display:none; }
+.td2-threat-vision .readouts, .td2-weapon-charts .td2-chart-readouts { display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; max-width:280px; margin:auto; text-align:center; padding:0 5px 5px; }
+.td2-threat-vision .readout-label { color:#b8b8b8; font-size:14px; margin-bottom:6px; }
+.td2-threat-vision .metric { font-family:Arial,sans-serif; line-height:1.25; color:#eee; }
+.td2-threat-vision .readout-main .metric { color:#ff6a13; }
+.td2-threat-vision .metric.angle { font-size:30px; font-weight:600; }
+.td2-threat-vision .metric.radius { font-size:20px; font-weight:600; margin-top:3px; }
+.td2-threat-vision .digits { display:inline-block; position:relative; font-variant-numeric:tabular-nums; }
+.td2-threat-vision .unit { position:absolute; left:100%; font-weight:400; white-space:nowrap; }
+.td2-threat-vision .angle .unit { top:1px; margin-left:2px; font-size:17px; }
+.td2-threat-vision .radius .unit { bottom:1px; margin-left:4px; font-size:13px; }
+.td2-threat-vision { margin:1.35em 0; color:#eee; container-type:inline-size; }
+.td2-threat-vision * { box-sizing:border-box; }
+.td2-threat-vision .enemy-name { display:flex; align-items:center; gap:8px; font-size:23px; font-weight:700; line-height:1.5; margin:0 0 10px; }
+.td2-threat-vision [hidden] { display:none !important; }
+.td2-threat-vision .native-icon img { width:26px; height:26px; object-fit:contain; }
+.td2-threat-vision .native-icon { background:none; }
+.td2-threat-vision .native-icon.masked { background:currentColor; }
+.td2-threat-vision .native-icon.masked img { visibility:hidden; }
+.td2-threat-vision .controls:empty, .td2-threat-vision .diagram:empty { display:none; }
+@container (max-width:440px) { .td2-threat-vision .enemy-grid { grid-template-columns:1fr; gap:32px; } .td2-threat-vision button { min-height:44px; } .td2-threat-vision .control-row { gap:9px; } }
+
+.td2-weapon-charts { max-width:30rem; margin:1.25rem var(--td2-heading-accent-width); container-type:inline-size; }
+.td2-weapon-charts .td2-chart-art,.td2-weapon-charts [hidden] { display:none!important; }
+.td2-chart-panels { display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem; }
+.td2-chart-panels > figure { min-width:0; margin:0; padding:0; }
+.td2-chart-panels > figure + figure { border-block-start:var(--td2-content-divider); padding-block-start:1.1rem; }
+.td2-chart-panels figcaption { margin-block:0 .6rem; font-size:1rem; font-weight:600; }
+.td2-chart-panels .modes {
+  display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr);
+  width:min(100%,27rem); margin:.2rem auto 0;
+}
+.td2-chart-panels .modes button {
+  min-width:0; min-height:2.5rem; padding:.35rem .15rem; border:0; border-bottom:1px solid #4a4a4a; border-radius:0;
+  background:transparent; color:#c0c0c0; font:inherit; font-size:.875rem; white-space:nowrap; cursor:pointer;
+}
+.td2-chart-panels .modes button:hover { color:white; background:#232323; }
+.td2-chart-panels .modes button[aria-pressed="true"] {
+  color:var(--td2-text-emphasis); border-color:currentColor; box-shadow:inset 0 -1px currentColor; font-weight:600;
+}
+@container (max-width:28rem) { .td2-chart-panels .modes button { min-height:2.75rem; font-size:.8125rem; } }
+@container (max-width:17.5rem) { .td2-chart-panels .modes { grid-auto-flow:row; grid-template-columns:repeat(3,minmax(0,1fr)); } }
+.td2-chart-panels .recoil-stage { width:100%; aspect-ratio:1.08; }
+.td2-chart-distance { display:block; margin:.45rem auto 0; text-align:center; color:#b8b8b8; font-size:.75rem; line-height:1.4; }
+.spread-panel .td2-chart-distance { margin-block-end:.7rem; }
+.td2-chart-readouts { box-sizing:border-box; }
+.td2-chart-readouts dt { color:#b8b8b8; }
+.td2-chart-readouts dd { font-size:clamp(1.45rem,5cqi,1.875rem); font-weight:600; line-height:1.15; }
+.td2-chart-readouts .td2-weapon-stat:first-child dd { color:inherit; }
+.td2-chart-readouts .angle-unit { margin-inline-start:1px; font-size:.6em; vertical-align:top; font-weight:400; }
+.td2-chart-panels .recoil-stage>svg { display:block;width:100%;height:100%; }
+.td2-chart-panels .recoil-board { fill:#414141; }
+.td2-chart-panels .recoil-paper { opacity:.6; }
+.td2-chart-panels .recoil-target .recoil-paper { opacity:.72; }
+.td2-chart-panels .recoil-board-edge { stroke:#929292;stroke-width:.7; }
+.td2-chart-panels :is(.grid,.recoil-grid,.axes,.recoil-axes) { fill:none;stroke:rgba(238,238,238,.2);stroke-width:.8; }
+.td2-chart-panels :is(.axes,.recoil-axes) { stroke:rgba(238,238,238,.55); }
+.td2-chart-panels :is(.grid,.recoil-grid)>*,.td2-chart-panels .world circle,.td2-chart-panels .pinpoint { vector-effect:non-scaling-stroke; }
+.td2-chart-panels svg text { font:12px Arial,"Microsoft YaHei",sans-serif;fill:#b8b8b8; }
+.td2-chart-panels .world circle { fill:none;stroke:#eee;stroke-width:2; }
+.td2-chart-panels .world .end-ring { stroke:var(--td2-text-emphasis);stroke-width:2.5; }
+.td2-chart-panels .pinpoint { stroke:#eee;stroke-width:3;stroke-linecap:round; }
+.td2-chart-panels .pinpoint.at-end { stroke:var(--td2-text-emphasis); }
+.td2-chart-panels .recoil-field { overflow:visible; }
+.td2-chart-panels .recoil-line { stroke-width:2; }
+.td2-chart-panels .recoil-dots circle { r:1px; }
+.td2-chart-panels .representative circle { r:1.5px; }

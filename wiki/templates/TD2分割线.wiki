@@ -1,0 +1,1 @@
+<noinclude>带两个方形端点的水平分割线。使用 <nowiki>{{TD2分割线}}</nowiki>。</noinclude><includeonly><div class="td2-hud-divider" aria-hidden="true"></div></includeonly>

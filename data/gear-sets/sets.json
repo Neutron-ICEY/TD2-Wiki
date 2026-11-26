@@ -1,0 +1,3604 @@
+{
+  "schema_version": 1,
+  "sets": [
+    {
+      "id": "set:4cdce5b25bc1f2cc0002efead01ec184",
+      "sources": [
+        "dist/ongoing-directive-local-20261025-001/evidence.json",
+        "dist/gear-effects-pilot-20261024-001/catalog.json",
+        "dist/ongoing-directive-native-20261025-001/RESEARCH.md"
+      ],
+      "logo": {
+        "evidence": [
+          "dist/ongoing-directive-repair-20261025-001/reader-image-59e6831f75162cdb.json",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/gear_set_a.mgearset"
+        ],
+        "identity_basis": "Existing approved typed Name/Image binding; native named Sprite visual match. Numeric Sprite-ID-to-name hash remains unverified.",
+        "asset_ref": "reader-image-59e6831f75162cdb"
+      },
+      "talent_icons": {
+        "gear_effect:od_346395bc5bf2c3160003ad679873311f": {
+          "evidence": [
+            "dist/ongoing-directive-repair-20261025-001/reader-image-59e6831f75162cdb.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/gear_set_a.mgearset"
+          ],
+          "identity_basis": "Existing approved typed Name/Image binding; native named Sprite visual match. Numeric Sprite-ID-to-name hash remains unverified.",
+          "asset_ref": "reader-image-59e6831f75162cdb"
+        },
+        "gear_effect:od_346395bc5ddfd7880003a51684ca6e18": {
+          "evidence": [
+            "dist/ongoing-directive-repair-20261025-001/reader-image-cce6997fcb69a970.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ongoingdirective_chest.mtalent",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ongoingdirective_5piece.mtalent"
+          ],
+          "identity_basis": "Existing approved typed Name/Image bindings for both names; native shared Sprite -222201439 and named atlas visual match; not a numeric ID-to-name proof.",
+          "asset_ref": "reader-image-cce6997fcb69a970"
+        },
+        "gear_effect:od_346395bc5bf2c2a30003ac7a67935f35": {
+          "evidence": [
+            "dist/ongoing-directive-repair-20261025-001/reader-image-cce6997fcb69a970.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ongoingdirective_chest.mtalent",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ongoingdirective_5piece.mtalent"
+          ],
+          "identity_basis": "Existing approved typed Name/Image bindings for both names; native shared Sprite -222201439 and named atlas visual match; not a numeric ID-to-name proof.",
+          "asset_ref": "reader-image-cce6997fcb69a970"
+        }
+      },
+      "material": {
+        "name": "政令进行式材料",
+        "currency_uid": "B00501356A81EAB30015F7FE8ECE1F75",
+        "name_guid": "B00501356A81EA8B0010CC345A1C264E",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1752-1766",
+          "brand_ref": "set:4cdce5b25bc1f2cc0002efead01ec184"
+        }
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "USER_GAMEPLAY_CONFIRMED",
+        "evidence": [
+          "dist/ongoing-directive-repair-20261025-002/quantity-evidence.json"
+        ]
+      }
+    },
+    {
+      "id": "set:e03ce5ea69fb012f000377f07b59b74a",
+      "native_uid": "E03CE5EA69FB012F000377F07B59B74A",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA69FB0EF700037825ACF867C2",
+          "crafted_item_uid": "E03CE5EA69FAFE0E000377BF97D8F4AB",
+          "name": "弧光面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA69FB0473000377FAB340D3B4",
+          "crafted_item_uid": "E03CE5EA69FAFE45000377DD4DA6E536",
+          "name": "纳米容器设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA69FB085C000378115213E234",
+          "crafted_item_uid": "E03CE5EA69FAFE3A000377D7DC3A4844",
+          "name": "科技胸甲设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA69FB089500037816C3CD1275",
+          "crafted_item_uid": "E03CE5EA69FAFE2F000377D1135E809B",
+          "name": "耐高温手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA69FB0E5F0003781B293BBD39",
+          "crafted_item_uid": "E03CE5EA69FAFE24000377CBE8ABA6ED",
+          "name": "热塑枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA69FB0EBF00037820F29630F5",
+          "crafted_item_uid": "E03CE5EA69FAFE19000377C589FCF7B1",
+          "name": "工坊护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_a1_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-e6e8342dfd5270b9",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-e6e8342dfd5270b9"
+      },
+      "talent_icons": {
+        "gear_effect:a1_b00501356a0a83e40003782edebd3a80": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f7d731b6aa350bd6",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f7d731b6aa350bd6"
+        },
+        "gear_effect:a1_b00501356a0a84b70003783ba37112aa": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f7d731b6aa350bd6",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f7d731b6aa350bd6"
+        },
+        "gear_effect:a1_b00501356a0a80a6000378192f2f8d16": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet",
+            "id": 577810368
+          },
+          "shared_with": [
+            "gear_effect:a1_b00501356a0a83e40003782edebd3a80",
+            "gear_effect:a1_b00501356a0a84b70003783ba37112aa"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/0",
+            "publishing/image-publications.json#reader-image-f7d731b6aa350bd6",
+            "publishing/image-publications.json#reader-image-f7d731b6aa350bd6"
+          ],
+          "asset_ref": "reader-image-f7d731b6aa350bd6"
+        }
+      },
+      "material": {
+        "name": "奥提兹：恢复材料",
+        "currency_uid": "E03CE5EA69EB6C940003E4DF4C9A0C46",
+        "name_guid": "E03CE5EA69EB6B590003E4BBCFE3F6EE",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2060",
+          "brand_ref": "set:e03ce5ea69fb012f000377f07b59b74a"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/3",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3332"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA69EB6C940003E4DF4C9A0C46",
+          "required_tag": "GearSet_A1",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:4cdce5b25bc1f3090002efee04740797",
+      "native_uid": "4CDCE5B25BC1F3090002EFEE04740797",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B00501356A81DCAA00037E39A53B47DB",
+          "crafted_item_uid": "4CDCE5B25BC1FA100002F0079597A5AC",
+          "name": "赫夫特等级 A 面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B00501356A81D6930020D692C9BA0CF5",
+          "crafted_item_uid": "4CDCE5B25BC1FBCD0002F03781DDCAD7",
+          "name": "德瑞远足背包设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B00501356A81D98600037E1125B73E55",
+          "crafted_item_uid": "4CDCE5B25BC1FACF0002F01D24A2D76F",
+          "name": "阿普尔顿防弹衣设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B00501356A81D9CC00037E1B234DC0B3",
+          "crafted_item_uid": "4CDCE5B25BC1FC9A0002F04FD88F7E50",
+          "name": "罗斯护手设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B00501356A81DA1000037E25594BEC07",
+          "crafted_item_uid": "4CDCE5B25BC1FD330002F0655890A365",
+          "name": "杨低摩擦力枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B00501356A81DC6D00037E2FAA4C6174",
+          "crafted_item_uid": "4CDCE5B25BC1FDCF0002F07AF52E8F68",
+          "name": "谢李登护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-3ca0462ba0395098",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-3ca0462ba0395098"
+      },
+      "talent_icons": {
+        "gear_effect:b_346395bc5bec2d500003582dace4fc10": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-3ca0462ba0395098",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-3ca0462ba0395098"
+        },
+        "gear_effect:b_346395bc5de522010006f442c993b360": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-789a9a7b4d89dc0a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-789a9a7b4d89dc0a"
+        },
+        "gear_effect:b_346395bc5de659eb0003a8733fc0a43d": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-789a9a7b4d89dc0a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-789a9a7b4d89dc0a"
+        }
+      },
+      "material": {
+        "name": "真实爱国者材料",
+        "currency_uid": "B00501356A81E41000579A1B2BB52E59",
+        "name_guid": "B00501356A81E3C4004DDA063D5C3D0B",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1768",
+          "brand_ref": "set:4cdce5b25bc1f3090002efee04740797"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/16",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2708"
+        ],
+        "material_rule": {
+          "currency_uid": "B00501356A81E41000579A1B2BB52E59",
+          "required_tag": "GearSet_B",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b00501356a6bf5cb0006b7164c28eff7",
+      "native_uid": "B00501356A6BF5CB0006B7164C28EFF7",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B00501356A753BC2001B882FD0DEA56D",
+          "crafted_item_uid": "B00501356A6C181A0010D495FF0DBECB",
+          "name": "自给式呼吸面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B00501356A753A1900174A8E775391E9",
+          "crafted_item_uid": "B00501356A6C18FB001165A2B38FDBE7",
+          "name": "肉盾背心设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B00501356A753A7900184E30680F90B2",
+          "crafted_item_uid": "B00501356A6C1893001122FB6D2FF4AE",
+          "name": "防爆板甲设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B00501356A753B010019A8968DF29F1F",
+          "crafted_item_uid": "B00501356A6C19740011B2F4B7857715",
+          "name": "防火手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B00501356A753B48001A5FA537C616CC",
+          "crafted_item_uid": "B00501356A6C1A3C00123C228232C4F7",
+          "name": "暖手枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B00501356A753B84001AF4E1D94791A0",
+          "crafted_item_uid": "B00501356A6C1A9000126FC32024A54E",
+          "name": "防火护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_b1_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-bcfea193a4996478",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-bcfea193a4996478"
+      },
+      "talent_icons": {
+        "gear_effect:b1_eacd811d6a6078e90003d606f22b0aa5": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_4pc.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-c75ccd6ec84830d3"
+        },
+        "gear_effect:b1_eacd811d6a622c8100037d501d924c0c": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_chest.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-c75ccd6ec84830d3"
+        },
+        "gear_effect:b1_eacd811d6a622cd400037d5421fed41c": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_back.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-c75ccd6ec84830d3"
+        }
+      },
+      "material": {
+        "name": "余烬引擎制作材料",
+        "currency_uid": "B00501356A748A72000E22B0D76ED281",
+        "name_guid": "B00501356A7488A3000D1B3573C7EE95",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2075",
+          "brand_ref": "set:b00501356a6bf5cb0006b7164c28eff7"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/29",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3358"
+        ],
+        "material_rule": {
+          "currency_uid": "B00501356A748A72000E22B0D76ED281",
+          "required_tag": "GearSet_B1",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:4cdce5b25bc1f3230002eff060d0dfb8",
+      "native_uid": "4CDCE5B25BC1F3230002EFF060D0DFB8",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "4CDCE5B25BEAAC6F0003328472CC18FB",
+          "crafted_item_uid": "4CDCE5B25BC1FA430002F00EB67A239F",
+          "name": "“罗德斯伍德”AR 面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_mask.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "4CDCE5B25BEAACE70003328CE6768503",
+          "crafted_item_uid": "4CDCE5B25BC1FC040002F03F519E986C",
+          "name": "“阿伯顿”精力背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_backpack.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "4CDCE5B25BEAACC70003328855DC43C9",
+          "crafted_item_uid": "4CDCE5B25BC1FAFA0002F025603AFCBC",
+          "name": "“蛇形”数组背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_chest.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "4CDCE5B25BEAACFD0003329029E690C3",
+          "crafted_item_uid": "4CDCE5B25BC1FCC30002F0568EA4EBF2",
+          "name": "“莫尔西”静电放电手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_gloves.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "4CDCE5B25BEAAD1900033294BC74FF25",
+          "crafted_item_uid": "4CDCE5B25BC1FD600002F06C06F19799",
+          "name": "“阿尔斯沃特”代理挂包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_holster.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "4CDCE5B25BEAAD36000332989510D145",
+          "crafted_item_uid": "4CDCE5B25BC1FDF90002F0804D2DE367",
+          "name": "“史特恩”固定护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_cqc_gsc_kneepads.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_c_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-3459c6333ec90266",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-3459c6333ec90266"
+      },
+      "talent_icons": {
+        "gear_effect:c_346395bc5bf2c7870003b563745659b6": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-3459c6333ec90266",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-3459c6333ec90266"
+        },
+        "gear_effect:c_346395bc5df28021001fd8b2d7b4e5fa": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-8470a0ce3bac9a3c",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-8470a0ce3bac9a3c"
+        },
+        "gear_effect:c_346395bc5df282950026b59f973ef473": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-8470a0ce3bac9a3c",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-8470a0ce3bac9a3c"
+        }
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": null,
+          "max": null
+        },
+        "quantity_status": "USER_CONFIRMED_NO_SPECIFIC_DISMANTLE_MATERIAL",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json",
+          "dist/gear-set-optional-material-20261026-001/data-evidence.json"
+        ]
+      },
+      "material": null
+    },
+    {
+      "id": "set:4cdce5b25c99f330000328d74d60b03e",
+      "native_uid": "4CDCE5B25C99F330000328D74D60B03E",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "4CDCE5B25C9DE019000328E5180E3C62",
+          "crafted_item_uid": "4CDCE5B25C9A1FF8000328E6173AFE85",
+          "name": "吹捧面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "4CDCE5B25C9DE049000328F16BA65286",
+          "crafted_item_uid": "4CDCE5B25C9A04C4000328D56D671695",
+          "name": "小利背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "4CDCE5B25C9DE075000328FD4EEEFF0B",
+          "crafted_item_uid": "4CDCE5B25C9A12DC000328E3E26ACE73",
+          "name": "高估装甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "4CDCE5B25C9DE0A00003290901F8FF37",
+          "crafted_item_uid": "4CDCE5B25C9A16D7000328E1691879B6",
+          "name": "迎合手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "4CDCE5B25C9DE0C7000329154456C474",
+          "crafted_item_uid": "4CDCE5B25C9A1990000328E7A762B1FF",
+          "name": "柏忌腿挂包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "4CDCE5B25C9DE0ED000329211296EB1A",
+          "crafted_item_uid": "4CDCE5B25C9A1D7F000328E3B3B932FB",
+          "name": "低估护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsd_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_d_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-4c33b7cdaf06d61f",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-4c33b7cdaf06d61f"
+      },
+      "talent_icons": {
+        "gear_effect:d_346395bc5c94d0fd000631cade63b7a1": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-4c33b7cdaf06d61f",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-4c33b7cdaf06d61f"
+        },
+        "gear_effect:d_346395bc5dee1b62000411b23db929a2": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d7a842c793390074",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-d7a842c793390074"
+        },
+        "gear_effect:d_346395bc5dee21710003b7c1172c30dc": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d7a842c793390074",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-d7a842c793390074"
+        }
+      },
+      "material": {
+        "name": "10-E 谈判者契约",
+        "currency_uid": "4CDCE5B25C9DEF170003293C735E75E8",
+        "name_guid": "4CDCE5B25C9DEEC8000329201335B81C",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2106",
+          "brand_ref": "set:4cdce5b25c99f330000328d74d60b03e"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 2,
+          "max": 2
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/54",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2734"
+        ],
+        "material_rule": {
+          "currency_uid": "4CDCE5B25C9DEF170003293C735E75E8",
+          "required_tag": "Economy_GearSet_D",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:4cdce5b25c99f38f000328e2d5b0c732",
+      "native_uid": "4CDCE5B25C99F38F000328E2D5B0C732",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "4CDCE5B25C9DE026000328E9FC3C1DEA",
+          "crafted_item_uid": "4CDCE5B25C9A209F00032629878AD70A",
+          "name": "雷面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "4CDCE5B25C9DE05B000328F5F845DED9",
+          "crafted_item_uid": "4CDCE5B25C9A0590000328DFC0DC1BD4",
+          "name": "布莱德战术背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "4CDCE5B25C9DE084000329011BB4059F",
+          "crafted_item_uid": "4CDCE5B25C9A4C4F0003F9DF859DBD5D",
+          "name": "莱特战斗背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "4CDCE5B25C9DE0AE0003290DC46CB8AF",
+          "crafted_item_uid": "4CDCE5B25C9A172E000328E8B2BBE3FB",
+          "name": "雷耶斯战斗手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "4CDCE5B25C9DE0D30003291906927EA4",
+          "crafted_item_uid": "4CDCE5B25C9A1A25000328EE6710E2D3",
+          "name": "利里枪套系统",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "4CDCE5B25C9DE0F7000329252FA8B789",
+          "crafted_item_uid": "4CDCE5B25C9A1E68000328E4B85D881A",
+          "name": "崔布利护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gse_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_e_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-16e5f8097335112b",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-16e5f8097335112b"
+      },
+      "talent_icons": {
+        "gear_effect:e_346395bc5c94a8d7000355dba2996d0d": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-16e5f8097335112b",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-16e5f8097335112b"
+        },
+        "gear_effect:e_346395bc5dee73720005f2a9afdbba35": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-a7f7e8d5e2c54f5e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-a7f7e8d5e2c54f5e"
+        },
+        "gear_effect:e_346395bc5dee74140005fb8927891a47": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-a7f7e8d5e2c54f5e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-a7f7e8d5e2c54f5e"
+        }
+      },
+      "material": {
+        "name": "10-E 先锋",
+        "currency_uid": "4CDCE5B25C9DEF170003293DA987FCE1",
+        "name_guid": "4CDCE5B25C9DEED000032923BCBBDC1C",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2122",
+          "brand_ref": "set:4cdce5b25c99f38f000328e2d5b0c732"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 2,
+          "max": 2
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/67",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2760"
+        ],
+        "material_rule": {
+          "currency_uid": "4CDCE5B25C9DEF170003293DA987FCE1",
+          "required_tag": "Economy_GearSet_E",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:4cdce5b25c99f3cf000328edcd0052d4",
+      "native_uid": "4CDCE5B25C99F3CF000328EDCD0052D4",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "4CDCE5B25C9DE033000328ED47339EB6",
+          "crafted_item_uid": "4CDCE5B25C9A210400022ADE91CBA859",
+          "name": "柳德米拉狙击手面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "4CDCE5B25C9DE066000328F92BD19E47",
+          "crafted_item_uid": "4CDCE5B25C9A128E000328DB8AEA08E0",
+          "name": "莉巴低调背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "4CDCE5B25C9DE09000032905ADC6A2F0",
+          "crafted_item_uid": "4CDCE5B25C9A4D2C0003F9DBD7E47417",
+          "name": "谭妮雅寂静背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "4CDCE5B25C9DE0BA000329114F379B38",
+          "crafted_item_uid": "4CDCE5B25C9A1800000328EAD4582302",
+          "name": "罗莎稳定手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "4CDCE5B25C9DE0DE0003291DFD296C2D",
+          "crafted_item_uid": "4CDCE5B25C9A1C37000328E976CEE811",
+          "name": "克拉维迪亚随身武器托套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "4CDCE5B25D526F97000423960E8A4FC9",
+          "crafted_item_uid": "4CDCE5B25C9A1ED5000253F6F9539B24",
+          "name": "妮娜俯卧膝垫",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsf_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/item/player_gear_set_f_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-d08d6dd6c450d390",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-d08d6dd6c450d390"
+      },
+      "talent_icons": {
+        "gear_effect:f_346395bc5df25c52001a2d0b22e93ac8": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-574f12faa5614615",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-574f12faa5614615"
+        },
+        "gear_effect:f_346395bc5df25cf7001a33f68a4b870f": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-574f12faa5614615",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-574f12faa5614615"
+        },
+        "gear_effect:f_346395bc5c94cf7d00062c5905b79e64": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_acesandeights_5piece.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-d9bf3b2e9be73b87"
+        }
+      },
+      "material": {
+        "name": "10-E 亡牌 A 花色",
+        "currency_uid": "4CDCE5B25C9DEF170003293E947C7D52",
+        "name_guid": "4CDCE5B25C9DEED700032926FA6557BA",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2138",
+          "brand_ref": "set:4cdce5b25c99f3cf000328edcd0052d4"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 2,
+          "max": 2
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/80",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2786"
+        ],
+        "material_rule": {
+          "currency_uid": "4CDCE5B25C9DEF170003293E947C7D52",
+          "required_tag": "Economy_GearSet_F",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5de1046c00089ed143264b60",
+      "native_uid": "346395BC5DE1046C00089ED143264B60",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "83ED36DA5E26BD110003501DA01B18AF",
+          "crafted_item_uid": "346395BC5DE1057F000AB842BA100169",
+          "name": "攻击矢量面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B00501356822F6C300142F593F17323F",
+          "crafted_item_uid": "346395BC5DE10D95001977F08C1B9E28",
+          "name": "堆栈溢出容器",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_back_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "83ED36DA5E26BB74000350108F4C9D8F",
+          "crafted_item_uid": "346395BC5DE10D38001908E69303A0E3",
+          "name": "复合威胁装甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "83ED36DA5E26B9DB00035003AA3BF84E",
+          "crafted_item_uid": "346395BC5DE10DFD001A155ABC2E010C",
+          "name": "触觉绕行手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "83ED36DA5E26BF1F0003502C66542DC0",
+          "crafted_item_uid": "346395BC5DE10E25001A4F3DAF7AB0EA",
+          "name": "框架注入枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B00501356822F7120014D3C6FD345410",
+          "crafted_item_uid": "346395BC5DE10EA3001B0E35CFB06634",
+          "name": "零日护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsg_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_g_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-815aefa6e4e384ae",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-815aefa6e4e384ae"
+      },
+      "talent_icons": {
+        "gear_effect:g_346395bc5def90f40003a78e581eb7fd": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-815aefa6e4e384ae",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-815aefa6e4e384ae"
+        },
+        "gear_effect:g_346395bc5df363880003a74c17d61304": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-1ed15d1a068b2fca",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-1ed15d1a068b2fca"
+        },
+        "gear_effect:g_346395bc5df3648a0003af36c5f01495": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-1ed15d1a068b2fca",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-1ed15d1a068b2fca"
+        }
+      },
+      "material": {
+        "name": "系统毁损数据核心",
+        "currency_uid": "075801E25E2B128800086AC55BD48054",
+        "name_guid": "075801E25E2B01A800086ABA0C87B041",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1784",
+          "brand_ref": "set:346395bc5de1046c00089ed143264b60"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/93",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2812"
+        ],
+        "material_rule": {
+          "currency_uid": "075801E25E2B128800086AC55BD48054",
+          "required_tag": "GearSet_G",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5de1260c000e373fa51e8047",
+      "native_uid": "346395BC5DE1260C000E373FA51E8047",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "83ED36DA5E5D0A70000355C78820D496",
+          "crafted_item_uid": "346395BC5DE12963000E5363EF1B964D",
+          "name": "高温面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "83ED36DA5E5D0047000355B6F70818F6",
+          "crafted_item_uid": "346395BC5DE12919000E4E5C23A3BF53",
+          "name": "护盾背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "83ED36DA5E5D06B2000355B1F65AB179",
+          "crafted_item_uid": "346395BC5DE12927000E4F5D70B0FAA1",
+          "name": "锻造装甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "83ED36DA5E5D080F000355B73CBFE9F8",
+          "crafted_item_uid": "346395BC5DE12936000E505E1D22A021",
+          "name": "坩埚手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "83ED36DA5E5D097E000355BC6CB62E31",
+          "crafted_item_uid": "346395BC5DE12945000E515FE7CA2568",
+          "name": "铁砧工具腰带",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "83ED36DA5E5D09FC000355C24F559B7A",
+          "crafted_item_uid": "346395BC5DE12954000E5260AB4BC4F3",
+          "name": "铁锤护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsh_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_h_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-adfff76a49be93a0",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-adfff76a49be93a0"
+      },
+      "talent_icons": {
+        "gear_effect:h_346395bc5df0a8730003b13eb87c96b0": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-adfff76a49be93a0",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-adfff76a49be93a0"
+        },
+        "gear_effect:h_346395bc5df0f025000f1dee1459fd7f": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-8d1a1f94801f6f73",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-8d1a1f94801f6f73"
+        },
+        "gear_effect:h_346395bc5df0f0d0000f24d82c92e76f": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-8d1a1f94801f6f73",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-8d1a1f94801f6f73"
+        }
+      },
+      "material": {
+        "name": "钢铁厂堡垒合金",
+        "currency_uid": "83ED36DA5E68B77200035F85C7BDB71D",
+        "name_guid": "83ED36DA5E68B04100035F7D7EBEF6D6",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2266",
+          "brand_ref": "set:346395bc5de1260c000e373fa51e8047"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 2,
+          "max": 2
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/106",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2838"
+        ],
+        "material_rule": {
+          "currency_uid": "83ED36DA5E68B77200035F85C7BDB71D",
+          "required_tag": "Economy_GearSet_H",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5de126a5000e3d30157c635c",
+      "native_uid": "346395BC5DE126A5000E3D30157C635C",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "83ED36DA5E5D0C5C000355E5F25D0BE8",
+          "crafted_item_uid": "346395BC5DE12B89000E6356059FBAC7",
+          "name": "战争迷雾面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "83ED36DA5E5D0C1F000355CC480279E7",
+          "crafted_item_uid": "346395BC5DE12B30000E5D55AAF57804",
+          "name": "2k-RTS 无线电载波",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "83ED36DA5E5D0C2B000355D1DB196E97",
+          "crafted_item_uid": "346395BC5DE12B42000E5E5636009F70",
+          "name": "水龟武装胸挂",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "83ED36DA5E5D0C36000355D6F8F2DE9D",
+          "crafted_item_uid": "346395BC5DE12B54000E5F580C1D3EF1",
+          "name": "APM 控制手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "83ED36DA5E5D0C46000355DBC1B6F822",
+          "crafted_item_uid": "346395BC5DE12B67000E61549B8EE7BB",
+          "name": "猛击战术枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "83ED36DA5E5D0C51000355E0193FAA3B",
+          "crafted_item_uid": "346395BC5DE12B76000E6255A74B28AD",
+          "name": "跃动护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsi_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_i_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-9c9ebd81488b58db",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-9c9ebd81488b58db"
+      },
+      "talent_icons": {
+        "gear_effect:i_346395bc5df1fa12000e3a06bfc5af95": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-9c9ebd81488b58db",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-9c9ebd81488b58db"
+        },
+        "gear_effect:i_346395bc5df21a8a0003a24bc32c952f": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-2450d5ef6988ef68",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-2450d5ef6988ef68"
+        },
+        "gear_effect:i_346395bc5df22ec30003a5442758b7f3": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-2450d5ef6988ef68",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-2450d5ef6988ef68"
+        }
+      },
+      "material": {
+        "name": "钢铁厂未来布料",
+        "currency_uid": "83ED36DA5E68B77200035F869DD9922C",
+        "name_guid": "83ED36DA5E68B3BA00035F825B602BC5",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2282",
+          "brand_ref": "set:346395bc5de126a5000e3d30157c635c"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 2,
+          "max": 2
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/119",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2864"
+        ],
+        "material_rule": {
+          "currency_uid": "83ED36DA5E68B77200035F869DD9922C",
+          "required_tag": "Economy_GearSet_I",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5de1276c000e4372d5e0c1b7",
+      "native_uid": "346395BC5DE1276C000E4372D5E0C1B7",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "83ED36DA5E26BA62000350088F1C247B",
+          "crafted_item_uid": "346395BC5DE12D83000E6F4D4C3AB96A",
+          "name": "突袭者的面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_j_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "83ED36DA5E25B2BB000352C7A48593D1",
+          "crafted_item_uid": "346395BC5DE12CA2000E695CCB4BF920",
+          "name": "突袭者的背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_j_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B00501356822F3D50010A6F52B104676",
+          "crafted_item_uid": "346395BC5DE12D72000E6D5134CD60CB",
+          "name": "突袭者的甲胄",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_j_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "83ED36DA5E26BE3300035025CA0E46F6",
+          "crafted_item_uid": "346395BC5DE12DB7000E725097CE40D3",
+          "name": "突袭者的手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_j_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B00501356822F43C001163029B0412B2",
+          "crafted_item_uid": "346395BC5DE12DA6000E714F3EF68D63",
+          "name": "突袭者的枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_j_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "83ED36DA5E26BC570003501778922F12",
+          "crafted_item_uid": "346395BC5DE12D94000E704E9625500E",
+          "name": "突袭者的护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsj_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-f108bf22e9ed073a",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-f108bf22e9ed073a"
+      },
+      "talent_icons": {
+        "gear_effect:j_346395bc5df0f6ac0003b6a0421e2dd2": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f108bf22e9ed073a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f108bf22e9ed073a"
+        },
+        "gear_effect:j_346395bc5df10d9f000bfcbaa795641e": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-9d9cb8e467039b3c",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-9d9cb8e467039b3c"
+        },
+        "gear_effect:j_346395bc5df10fba000d10f573f447aa": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-9d9cb8e467039b3c",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-9d9cb8e467039b3c"
+        }
+      },
+      "material": {
+        "name": "突袭者战斗装备镀层",
+        "currency_uid": "075801E25E2B128800086AC637DFD027",
+        "name_guid": "075801E25E2B0EEC00086AC258C69435",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1800",
+          "brand_ref": "set:346395bc5de1276c000e4372d5e0c1b7"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/132",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2890"
+        ],
+        "material_rule": {
+          "currency_uid": "075801E25E2B128800086AC637DFD027",
+          "required_tag": "GearSet_J",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5e8195cf000372c11310dcd6",
+      "native_uid": "346395BC5E8195CF000372C11310DCD6",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "83ED36DA5E8DE5580003603FC6DF0BCA",
+          "crafted_item_uid": "346395BC5E8196420003A58B43503C0B",
+          "name": "生物危害面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "83ED36DA5E8DE5870003605447BAA686",
+          "crafted_item_uid": "346395BC5E8197370003AC7D8073F17E",
+          "name": "防撞旅行包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "83ED36DA5E8DE57D00036050E04E829C",
+          "crafted_item_uid": "346395BC5E8196F80003AB7C1B452171",
+          "name": "封闭胸甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "83ED36DA5E8DE5740003604CD399797F",
+          "crafted_item_uid": "346395BC5E81976E0003AF752DD3FECC",
+          "name": "医疗级战术手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "83ED36DA5E8DE56B00036048E8A778A9",
+          "crafted_item_uid": "346395BC5E8197960003B077626A832A",
+          "name": "防护改良腿挂包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "83ED36DA5E8DE561000360442E624571",
+          "crafted_item_uid": "346395BC5E8197C10003B1787A6861D8",
+          "name": "防撕裂护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsk_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_k_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-0911e066449b4a6e",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-0911e066449b4a6e"
+      },
+      "talent_icons": {
+        "gear_effect:k_346395bc5e81a0fe0007437da9594d8e": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-0911e066449b4a6e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-0911e066449b4a6e"
+        },
+        "gear_effect:k_346395bc5e81d820000afba4483dc6c9": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-5606fed78d0d2aa4",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-5606fed78d0d2aa4"
+        },
+        "gear_effect:k_346395bc5e81d88c000afe9d1da2a4d9": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-5606fed78d0d2aa4",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-5606fed78d0d2aa4"
+        }
+      },
+      "material": {
+        "name": "日蚀协定薄膜",
+        "currency_uid": "83ED36DA5E8F322E000361497890DBE8",
+        "name_guid": "075801E25EB2CA67000361406AAD59DA",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1816",
+          "brand_ref": "set:346395bc5e8195cf000372c11310dcd6"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/145",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2916"
+        ],
+        "material_rule": {
+          "currency_uid": "83ED36DA5E8F322E000361497890DBE8",
+          "required_tag": "GearSet_K",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5e980eb10003a4f80543e41d",
+      "native_uid": "346395BC5E980EB10003A4F80543E41D",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "346395BC5F19597C0003B3BAC1813252",
+          "crafted_item_uid": "346395BC5E980F300003A9F69DCB18D5",
+          "name": "猎人面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "346395BC5F19593F0003AEB999A97C43",
+          "crafted_item_uid": "346395BC5E98101E0003AEF0F836EB1F",
+          "name": "猎人背囊",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "346395BC5F19594C0003AFBAFD063D17",
+          "crafted_item_uid": "346395BC5E9810090003ADEF8A58EB3F",
+          "name": "猎人牢笼",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "346395BC5F1959560003B0BACF80E0C4",
+          "crafted_item_uid": "346395BC5E98102C0003AFF165277625",
+          "name": "猎人之爪",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "346395BC5F1959630003B1BA972C4683",
+          "crafted_item_uid": "346395BC5E9810390003B0F261C9818C",
+          "name": "猎人箭袋",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "346395BC5F1959710003B2BA7A236AF8",
+          "crafted_item_uid": "346395BC5E9810470003B1F3B9A81226",
+          "name": "猎人护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsl_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_l_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-96025879dc81fcc9",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-96025879dc81fcc9"
+      },
+      "talent_icons": {
+        "gear_effect:l_346395bc5ee9bdd60003b025550d7ca9": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-96025879dc81fcc9",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-96025879dc81fcc9"
+        },
+        "gear_effect:l_346395bc5ee9d4dd0005c5cb98a4771b": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d786560c4f0dafe9",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-d786560c4f0dafe9"
+        },
+        "gear_effect:l_346395bc5ee9d62d0005c7cfd25b7a0a": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d786560c4f0dafe9",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "approved_typed_GearsetTalent_Name_Image; exact native Chinese or English identity and typed constructor evidence. Shared duplicate filenames are not uploaded; the existing canonical uploaded image is reused.",
+          "asset_ref": "reader-image-d786560c4f0dafe9"
+        }
+      },
+      "material": {
+        "name": "猎人的兽皮",
+        "currency_uid": "83ED36DA5F3CCFF500036C1FC8944D76",
+        "name_guid": "83ED36DA5F3C085B00036C1CE7561361",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1832",
+          "brand_ref": "set:346395bc5e980eb10003a4f80543e41d"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/158",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2942"
+        ],
+        "material_rule": {
+          "currency_uid": "83ED36DA5F3CCFF500036C1FC8944D76",
+          "required_tag": "GearSet_L",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:346395bc5e980ebc0003a5fc9cfc06d3",
+      "native_uid": "346395BC5E980EBC0003A5FC9CFC06D3",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B3CF2E925F5B77600003787131F0D161",
+          "crafted_item_uid": "346395BC5E9814D30003BCD089CC5573",
+          "name": "装配工防尘口罩",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B3CF2E925F5B77250003785834E1466C",
+          "crafted_item_uid": "346395BC5E9814FB0003BED22A7AF9A1",
+          "name": "装配工工具包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B3CF2E925F5B77300003785DC8A35490",
+          "crafted_item_uid": "346395BC5E9814EA0003BDD17D9B77EE",
+          "name": "装配工快速穿戴吊带",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B3CF2E925F5B773C00037862C81B4EF2",
+          "crafted_item_uid": "346395BC5E98150A0003BFD36F117A53",
+          "name": "装配工防滑手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B3CF2E925F5B774900037867759DE3DD",
+          "crafted_item_uid": "346395BC5E9815190003C0D4A6AED35D",
+          "name": "装配工多功能腰包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B3CF2E925F5B77540003786C5231AFB4",
+          "crafted_item_uid": "346395BC5E9815260003C1D5A94ABA76",
+          "name": "装配工防撞护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsm_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_m_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-4d35075985aa536d",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-4d35075985aa536d"
+      },
+      "talent_icons": {
+        "gear_effect:m_346395bc5f6cadd900066556e93d8a3b": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-188fa37337f6433d",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-188fa37337f6433d"
+        },
+        "gear_effect:m_346395bc5f6cad5f000660bff1173d0e": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-188fa37337f6433d",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-188fa37337f6433d"
+        },
+        "gear_effect:m_346395bc5f6a09a8000978d9406df60e": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet",
+            "id": 1605040392
+          },
+          "shared_with": [
+            "gear_effect:m_346395bc5f6cadd900066556e93d8a3b",
+            "gear_effect:m_346395bc5f6cad5f000660bff1173d0e"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/5",
+            "publishing/image-publications.json#reader-image-188fa37337f6433d",
+            "publishing/image-publications.json#reader-image-188fa37337f6433d"
+          ],
+          "asset_ref": "reader-image-188fa37337f6433d"
+        }
+      },
+      "material": {
+        "name": "装配工导体",
+        "currency_uid": "B3CF2E925F5A0BE300037826000F910E",
+        "name_guid": "B3CF2E925F5A0B710003781B86BBF01E",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1848",
+          "brand_ref": "set:346395bc5e980ebc0003a5fc9cfc06d3"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/171",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2968"
+        ],
+        "material_rule": {
+          "currency_uid": "B3CF2E925F5A0BE300037826000F910E",
+          "required_tag": "GearSet_M",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b3cf2e926157016d000363abf08ab1d7",
+      "native_uid": "B3CF2E926157016D000363ABF08AB1D7",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B3CF2E92615D6CE7000363AE257A9CC6",
+          "crafted_item_uid": "B3CF2E9261531030000363830C4F63B2",
+          "name": "屏息面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B3CF2E92615D6CB400036399537C14EC",
+          "crafted_item_uid": "B3CF2E9261530FFF0003636506D66B53",
+          "name": "轻装背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B3CF2E92615D6CBD0003639E691FE795",
+          "crafted_item_uid": "B3CF2E926153100A0003636BA6477968",
+          "name": "无畏背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B3CF2E92615D6CC6000363A270D5F135",
+          "crafted_item_uid": "B3CF2E9261531013000363719F9A8F6B",
+          "name": "轻触手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B3CF2E92615D6CD2000363A6D6116CDF",
+          "crafted_item_uid": "B3CF2E926153101D00036377DD483F8B",
+          "name": "蓄势枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B3CF2E92615D6CDC000363AAABDDD031",
+          "crafted_item_uid": "B3CF2E92615310270003637D587731CE",
+          "name": "侵略护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsn_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_n_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-99b4709bd7ed412e",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-99b4709bd7ed412e"
+      },
+      "talent_icons": {
+        "gear_effect:n_b3cf2e92615703a5000363c2005879b6": {
+          "native_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "evidence": [
+            "dist/gear-card-closeout-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_chest.mtalent",
+            "dist/gear-card-closeout-20261026-001/image-readback.json"
+          ],
+          "identity_basis": "All three stable Talent UIDs reference same Sprite tuple. User named-game screenshots match distinctive broken-heart native region. GearSet Logo has a different sheet and ID. Numeric hash algorithm is not asserted.",
+          "asset_ref": "gear-talent-image-408d050441aac0ba"
+        },
+        "gear_effect:n_b3cf2e9261570367000363bb8370c508": {
+          "native_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "evidence": [
+            "dist/gear-card-closeout-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_backpack.mtalent",
+            "dist/gear-card-closeout-20261026-001/image-readback.json"
+          ],
+          "identity_basis": "All three stable Talent UIDs reference same Sprite tuple. User named-game screenshots match distinctive broken-heart native region. GearSet Logo has a different sheet and ID. Numeric hash algorithm is not asserted.",
+          "asset_ref": "gear-talent-image-408d050441aac0ba"
+        },
+        "gear_effect:n_b3cf2e92615702bc000363b5f99efcae": {
+          "native_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "evidence": [
+            "dist/gear-card-closeout-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_4pc.mtalent",
+            "dist/gear-card-closeout-20261026-001/image-readback.json"
+          ],
+          "identity_basis": "All three stable Talent UIDs reference same Sprite tuple. User named-game screenshots match distinctive broken-heart native region. GearSet Logo has a different sheet and ID. Numeric hash algorithm is not asserted.",
+          "asset_ref": "gear-talent-image-408d050441aac0ba"
+        }
+      },
+      "material": {
+        "name": "芳心终结者金属线",
+        "currency_uid": "B3CF2E92615C4B3D000363A8B299034F",
+        "name_guid": "B3CF2E92615C4B23000363A53A457C01",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1863",
+          "brand_ref": "set:b3cf2e926157016d000363abf08ab1d7"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/184",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:2994"
+        ],
+        "material_rule": {
+          "currency_uid": "B3CF2E92615C4B3D000363A8B299034F",
+          "required_tag": "GearSet_N",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:f58bdd5662d1630100036a5ebf371c3a",
+      "native_uid": "F58BDD5662D1630100036A5EBF371C3A",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "0AF8F42D62E24DB5001042C5933FB2C8",
+          "crafted_item_uid": "F58BDD5662D15AAD00036A101D232762",
+          "name": "“本影”面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "0AF8F42D62E24E12001042D73FAB832A",
+          "crafted_item_uid": "F58BDD5662D15D8300036A290BEA05A7",
+          "name": "“本影”背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "0AF8F42D62E24DE6001042CEE03C85AC",
+          "crafted_item_uid": "F58BDD5662D15C4600036A1ADBDBADE0",
+          "name": "“本影”背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "0AF8F42D62E24E46001042E0C03E6992",
+          "crafted_item_uid": "F58BDD5662D1602500036A3F1C0F2DF1",
+          "name": "“本影”手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "0AF8F42D62E24E6B001042E914B96712",
+          "crafted_item_uid": "F58BDD5662D1613000036A4B3C74B296",
+          "name": "“本影”枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "0AF8F42D62E24E94001042F26B01C6D6",
+          "crafted_item_uid": "F58BDD5662D1621D00036A58015649B0",
+          "name": "“本影”护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gso_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_o_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-5e8c46b2b7ac215b",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-5e8c46b2b7ac215b"
+      },
+      "talent_icons": {
+        "gear_effect:o_6cfec5e662cd8230000b2f8f77e16516": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-5e8c46b2b7ac215b",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-5e8c46b2b7ac215b"
+        },
+        "gear_effect:o_6cfec5e662d52202000913eb3048ed24": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-16956195d525aee9",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-16956195d525aee9"
+        },
+        "gear_effect:o_6cfec5e662d524ba000913f5ed27bd20": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-56b0030a59e35061",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-56b0030a59e35061"
+        }
+      },
+      "material": {
+        "name": "“本影”金属线",
+        "currency_uid": "0AF8F42D62E285F300036C3767ECD579",
+        "name_guid": "0AF8F42D62E285C000036C35D5D8FDB2",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1878",
+          "brand_ref": "set:f58bdd5662d1630100036a5ebf371c3a"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/197",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3020"
+        ],
+        "material_rule": {
+          "currency_uid": "0AF8F42D62E285F300036C3767ECD579",
+          "required_tag": "GearSet_O",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:f58bdd56638db2e1000381f5e2a7136c",
+      "native_uid": "F58BDD56638DB2E1000381F5E2A7136C",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA6399C45D0003660BA2F2A757",
+          "crafted_item_uid": "F58BDD56638DAB9C000381EE3F573EE9",
+          "name": "烈焰大炮面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA6399C6720003660CF584C69F",
+          "crafted_item_uid": "F58BDD56638DBB1E000380E597F6DA4D",
+          "name": "烈焰大炮背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA6399C64000036607A23F977E",
+          "crafted_item_uid": "F58BDD56638DB90A000380D9063584E6",
+          "name": "烈焰大炮背心",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA6399C5A4000365F809357A32",
+          "crafted_item_uid": "F58BDD56638DBC58000380EF85DC0E54",
+          "name": "烈焰大炮手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA6399C5DA000365FD5FBD924A",
+          "crafted_item_uid": "F58BDD56638DBD62000380F94A999CB0",
+          "name": "烈焰大炮枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA6399C60D000366022290E04C",
+          "crafted_item_uid": "F58BDD56638DC045000381039D94BB0F",
+          "name": "烈焰大炮护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsp_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_p_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-f7646359b8a56168",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-f7646359b8a56168"
+      },
+      "talent_icons": {
+        "gear_effect:p_6cfec5e66384dc420029e390ebe4b7e4": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f7646359b8a56168",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f7646359b8a56168"
+        },
+        "gear_effect:p_6cfec5e66384dc330029e38f1843ad8a": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f7646359b8a56168",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f7646359b8a56168"
+        },
+        "gear_effect:p_6cfec5e66374fe9f0003656879110b57": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_hotshot_headache.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-47d3e1b98ddd0402"
+        }
+      },
+      "material": {
+        "name": "烈焰大炮线材",
+        "currency_uid": "E03CE5EA6399F88B000366092952718B",
+        "name_guid": "E03CE5EA6399F7FB000365FE9F8AB73B",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1893",
+          "brand_ref": "set:f58bdd56638db2e1000381f5e2a7136c"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/210",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3046"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA6399F88B000366092952718B",
+          "required_tag": "GearSet_P",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b005013564a6affe0003680d4d5d5266",
+      "native_uid": "B005013564A6AFFE0003680D4D5D5266",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B005013564AD1263002570E9D876CD4E",
+          "crafted_item_uid": "B005013564A6B3F800036832845BEE04",
+          "name": "燃烬面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B005013564AD0FD40018C3CF9ABBA32B",
+          "crafted_item_uid": "B005013564A6B35900036827B47CDCE4",
+          "name": "燃烬背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B005013564AD10B7001C345BF753BA80",
+          "crafted_item_uid": "B005013564A6B75B0003685F6BF3B21C",
+          "name": "燃烬胸甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B005013564AD11E300225063196A8826",
+          "crafted_item_uid": "B005013564A6B6EB0003685438C4E002",
+          "name": "燃烬战术手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B005013564AD11A80020ED6D476628E5",
+          "crafted_item_uid": "B005013564A6B68000036849A819B03C",
+          "name": "燃烬枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B005013564AD1141001EC380F739F382",
+          "crafted_item_uid": "B005013564A6B4FA0003683C81DF032F",
+          "name": "燃烬护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsq_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_q_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-9c67697c509802cc",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-9c67697c509802cc"
+      },
+      "talent_icons": {
+        "gear_effect:q_c487423d64aba5aa00036f077b219bb1": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-9c67697c509802cc",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-9c67697c509802cc"
+        },
+        "gear_effect:q_c487423d64aba5cf00036f0858c32a15": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-9c67697c509802cc",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-9c67697c509802cc"
+        },
+        "gear_effect:q_c487423d64a51f510003b453c930d7ad": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ortizexuro_4pc.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-235aa22cf350f2bd"
+        }
+      },
+      "material": {
+        "name": "燃烬线材",
+        "currency_uid": "E03CE5EA6487372C00038037FF726182",
+        "name_guid": "E03CE5EA6487384800037D5374643A98",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1909",
+          "brand_ref": "set:b005013564a6affe0003680d4d5d5266"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/223",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3072"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA6487372C00038037FF726182",
+          "required_tag": "GearSet_Q",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:f58bdd5664198c8f00036ecccd6fffd2",
+      "native_uid": "F58BDD5664198C8F00036ECCCD6FFFD2",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "F58BDD5664243F4800036DDC7FB6FD9F",
+          "crafted_item_uid": "F58BDD566419BF4800036D90DE4AECF0",
+          "name": "骑士面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "F58BDD5664242C3800036DA944075D70",
+          "crafted_item_uid": "F58BDD566419CC0E00036DB81D2B0526",
+          "name": "骑士背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "F58BDD5664242E2D00036DB414964BF8",
+          "crafted_item_uid": "F58BDD566419C82900036DAD04E13B32",
+          "name": "骑士胸甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "F58BDD5664242F9400036DBD42633868",
+          "crafted_item_uid": "F58BDD566419CDB700036DC351E36DD1",
+          "name": "骑士手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "F58BDD5664243DE800036DCA832DD9F0",
+          "crafted_item_uid": "F58BDD566419D10800036DCF64016458",
+          "name": "骑士枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "F58BDD5664243E9C00036DD320AC12DA",
+          "crafted_item_uid": "F58BDD566419D22400036DDA57989E2B",
+          "name": "骑士护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gsr_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_r_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-1fa8cac88deb6963",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-1fa8cac88deb6963"
+      },
+      "talent_icons": {
+        "gear_effect:r_6cfec5e6641476230017e60b38e47169": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-1fa8cac88deb6963",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-1fa8cac88deb6963"
+        },
+        "gear_effect:r_6cfec5e6641476390017fb77cdd48196": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-1fa8cac88deb6963",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-1fa8cac88deb6963"
+        },
+        "gear_effect:r_6cfec5e66411efd100036664d6f9cd9a": {
+          "evidence": [
+            "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+            "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_paladin_charger.mtalent"
+          ],
+          "identity_basis": "Native Talent UID and exact Sprite tuple + named in-game icon + unique native UV silhouette; cross-confirmed, numeric hash not decoded.",
+          "asset_ref": "gear-talent-image-afb0ad596a99ac34"
+        }
+      },
+      "material": {
+        "name": "骑士线材",
+        "currency_uid": "F58BDD566424246200036EE68738FD58",
+        "name_guid": "F58BDD566424238800036EE2FD5D5BFC",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1924",
+          "brand_ref": "set:f58bdd5664198c8f00036ecccd6fffd2"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/236",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3098"
+        ],
+        "material_rule": {
+          "currency_uid": "F58BDD566424246200036EE68738FD58",
+          "required_tag": "GearSet_R",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b0050135656eb1ba00061b9820450dfd",
+      "native_uid": "B0050135656EB1BA00061B9820450DFD",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA655DE3FA00036993FBFB84CD",
+          "crafted_item_uid": "E03CE5EA655CD74E000369656A2A4834",
+          "name": "庇护面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA655DE424000369A7CC13E5D9",
+          "crafted_item_uid": "E03CE5EA655CD98E00036983BE87E27A",
+          "name": "庇护背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA655DE41C000369A3CE848F7D",
+          "crafted_item_uid": "E03CE5EA655CD9840003697D74F8E543",
+          "name": "庇护胸甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA655DE4140003699F09F694FB",
+          "crafted_item_uid": "E03CE5EA655CD769000369775757FA67",
+          "name": "庇护手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA655DE40B0003699B57FFDAD6",
+          "crafted_item_uid": "E03CE5EA655CD7610003697118670EAC",
+          "name": "庇护枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA655DE40300036997CA0F98C5",
+          "crafted_item_uid": "E03CE5EA655CD7570003696B93DE9151",
+          "name": "庇护护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_gearset_gss_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_s_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-0c30e4c76edcb889",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-0c30e4c76edcb889"
+      },
+      "talent_icons": {
+        "gear_effect:s_c487423d652e76880003aeb0cdecda24": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-39be2ae9da05a96a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-39be2ae9da05a96a"
+        },
+        "gear_effect:s_c487423d652e83dd000596558b318d88": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-39be2ae9da05a96a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "approved_typed_GearsetTalent_Name_Image; exact native Chinese or English identity and typed constructor evidence. Shared duplicate filenames are not uploaded; the existing canonical uploaded image is reused.",
+          "asset_ref": "reader-image-39be2ae9da05a96a"
+        },
+        "gear_effect:s_c487423d652d21000003b99926edeb05": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": -563153001
+          },
+          "shared_with": [
+            "gear_effect:s_c487423d652e76880003aeb0cdecda24",
+            "gear_effect:s_c487423d652e83dd000596558b318d88"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/10",
+            "publishing/image-publications.json#reader-image-39be2ae9da05a96a",
+            "publishing/image-publications.json#reader-image-39be2ae9da05a96a"
+          ],
+          "asset_ref": "reader-image-39be2ae9da05a96a"
+        }
+      },
+      "material": {
+        "name": "庇护线材",
+        "currency_uid": "E03CE5EA65450D47000369BF4A5F6433",
+        "name_guid": "E03CE5EA65451566000386C080B0689B",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1940",
+          "brand_ref": "set:b0050135656eb1ba00061b9820450dfd"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/249",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3124"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA65450D47000369BF4A5F6433",
+          "required_tag": "GearSet_S",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b005013565e090440005250c6c1d2f7e",
+      "native_uid": "B005013565E090440005250C6C1D2F7E",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B1A7497A6617B31F0003732C97AE48C5",
+          "crafted_item_uid": "B005013565E097120005252E246EAD7E",
+          "name": "探路者面具",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_mask_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B1A7497A6617B4E70003735197785FA3",
+          "crafted_item_uid": "B005013565E09C2E000525745E950DAC",
+          "name": "尖兵背包",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_backpack_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B1A7497A6617B4000003733EEFEA42FD",
+          "crafted_item_uid": "B005013565E098210005253AB937B5A0",
+          "name": "前线装甲",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_chest_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B1A7497A6617B5A8000373602E548690",
+          "crafted_item_uid": "B005013565E09C8A0005257E1899B938",
+          "name": "刀尖手套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_gloves_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B1A7497A6617B6480003736F272CFD1B",
+          "crafted_item_uid": "B005013565E09D030005258A0FBAED6C",
+          "name": "死眼枪套",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_holster_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B1A7497A6617B7170003737ED9B2C409",
+          "crafted_item_uid": "B005013565E09DC300052596AE99548D",
+          "name": "冲锋者护膝",
+          "name_source": "crafted_item_ui_name",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_t_kneepads_01.mitem",
+          "target_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_set_t_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-1c91b8eb1d4cce0a",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-1c91b8eb1d4cce0a"
+      },
+      "talent_icons": {
+        "gear_effect:t_c487423d660d46d20006153f01ddbc45": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-e2b966a2f56fd65e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-e2b966a2f56fd65e"
+        },
+        "gear_effect:t_c487423d660d470c0006171762723186": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-e2b966a2f56fd65e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-e2b966a2f56fd65e"
+        },
+        "gear_effect:t_c487423d6602d3100003b14df82420a4": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": 153156338
+          },
+          "shared_with": [
+            "gear_effect:t_c487423d660d46d20006153f01ddbc45",
+            "gear_effect:t_c487423d660d470c0006171762723186"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/11",
+            "publishing/image-publications.json#reader-image-e2b966a2f56fd65e",
+            "publishing/image-publications.json#reader-image-e2b966a2f56fd65e"
+          ],
+          "asset_ref": "reader-image-e2b966a2f56fd65e"
+        }
+      },
+      "material": {
+        "name": "破碎点材料",
+        "currency_uid": "E03CE5EA65C62CC90003804551534092",
+        "name_guid": "E03CE5EA65C62DCE000380383F5C0B34",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1955",
+          "brand_ref": "set:b005013565e090440005250c6c1d2f7e"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/262",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3150"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA65C62CC90003804551534092",
+          "required_tag": "GearSet_T",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b0050135668d2ea700052e9c9cb119d8",
+      "native_uid": "B0050135668D2EA700052E9C9CB119D8",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA66D1D6840006E9F489A3717A",
+          "crafted_item_uid": "B0050135668D34E500052EE99031383B",
+          "name": "延音面具蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA66D1D9EA0006EA235097273C",
+          "crafted_item_uid": "B0050135668D333200052EB143E2271F",
+          "name": "混曲背包蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA66D1D8A60006EA1191CB433D",
+          "crafted_item_uid": "B0050135668D339D00052EBCBE45EBB6",
+          "name": "英勇护卫蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA66D1D7900006E9FF69D68CA6",
+          "crafted_item_uid": "B0050135668D33F300052EC7CB2EE1C9",
+          "name": "警戒手套蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA66D1D9520006EA1A5376A2ED",
+          "crafted_item_uid": "B0050135668D344000052ED2024D7A70",
+          "name": "墓地枪套蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA66D1D8270006EA085799EBD7",
+          "crafted_item_uid": "B0050135668D347C00052EDE0007FCC8",
+          "name": "跳弓护膝蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_u_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-aa6a84a1872abd2c",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-aa6a84a1872abd2c"
+      },
+      "talent_icons": {
+        "gear_effect:u_c487423d669f73480003bd571f99620c": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d79a65ea05ec9e86",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-d79a65ea05ec9e86"
+        },
+        "gear_effect:u_c487423d669f74830003c1f3ab866833": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-d79a65ea05ec9e86",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-d79a65ea05ec9e86"
+        },
+        "gear_effect:u_c487423d6698c9a90003d0cb0f7bb8d6": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": -866313575
+          },
+          "shared_with": [
+            "gear_effect:u_c487423d669f73480003bd571f99620c",
+            "gear_effect:u_c487423d669f74830003c1f3ab866833"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/12",
+            "publishing/image-publications.json#reader-image-d79a65ea05ec9e86",
+            "publishing/image-publications.json#reader-image-d79a65ea05ec9e86"
+          ],
+          "asset_ref": "reader-image-d79a65ea05ec9e86"
+        }
+      },
+      "material": {
+        "name": "大师材料",
+        "currency_uid": "E03CE5EA66B3D92A000381B1CCC1C485",
+        "name_guid": "E03CE5EA66B3D83A0003819C6B080B09",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1970",
+          "brand_ref": "set:b0050135668d2ea700052e9c9cb119d8"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/275",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3176"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA66B3D92A000381B1CCC1C485",
+          "required_tag": "GearSet_U",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b0050135678532bb000383961abc5e01",
+      "native_uid": "B0050135678532BB000383961ABC5E01",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA6785B0A500036DCCA45E3DEF",
+          "crafted_item_uid": "E03CE5EA675C09B000036D38CF71CEEF",
+          "name": "改良面具蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA6785B0D200036DE52E627F42",
+          "crafted_item_uid": "E03CE5EA675C0AFB00036D476176CF3F",
+          "name": "重整背包蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA6785B0CA00036DE06581BA39",
+          "crafted_item_uid": "E03CE5EA675C0B0400036D4DAFD6F73E",
+          "name": "翻新背心蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA6785B0C200036DDB0CC48824",
+          "crafted_item_uid": "E03CE5EA675C0B0D00036D539D250C08",
+          "name": "焕新手套蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA6785B0B900036DD61781C7FC",
+          "crafted_item_uid": "E03CE5EA675C0B1600036D59B04DA347",
+          "name": "改进枪套蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA6785B0B100036DD1B28EA406",
+          "crafted_item_uid": "E03CE5EA675C0B2000036D5F295D11FA",
+          "name": "改制护膝蓝图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_v_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-8ce47cb65e1339a5",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-8ce47cb65e1339a5"
+      },
+      "talent_icons": {
+        "gear_effect:v_9e75f5ef6746e50300063242af0ad8ad": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-07e74504b42a286a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-07e74504b42a286a"
+        },
+        "gear_effect:v_9e75f5ef6746e6690006350ad7a6dd63": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-07e74504b42a286a",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-07e74504b42a286a"
+        },
+        "gear_effect:v_9e75f5ef673dfcb40005bfeac661959a": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": 1851035530
+          },
+          "shared_with": [
+            "gear_effect:v_9e75f5ef6746e50300063242af0ad8ad",
+            "gear_effect:v_9e75f5ef6746e6690006350ad7a6dd63"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/13",
+            "publishing/image-publications.json#reader-image-07e74504b42a286a",
+            "publishing/image-publications.json#reader-image-07e74504b42a286a"
+          ],
+          "asset_ref": "reader-image-07e74504b42a286a"
+        }
+      },
+      "material": {
+        "name": "再铸者材料",
+        "currency_uid": "E03CE5EA674F33A90003850F43EE11D7",
+        "name_guid": "E03CE5EA674F3186000384F2EECB3354",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:1985",
+          "brand_ref": "set:b0050135678532bb000383961abc5e01"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/288",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3202"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA674F33A90003850F43EE11D7",
+          "required_tag": "GearSet_V",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b005013567f529a000152e7818db08e8",
+      "native_uid": "B005013567F529A000152E7818DB08E8",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA67F430DE0003BD981C2013C8",
+          "crafted_item_uid": "E03CE5EA67F42DDD0003BC827C168E9F",
+          "name": "终极面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA67F42FF80003BD7FA47B7F2D",
+          "crafted_item_uid": "E03CE5EA67F42DD30003BC7C2FDCAD92",
+          "name": "精密背包设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA67F4302A0003BD8435DE8860",
+          "crafted_item_uid": "E03CE5EA67F42DCA0003BC76A7A6C04D",
+          "name": "终极装甲设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA67F430590003BD8994036E27",
+          "crafted_item_uid": "E03CE5EA67F42DC00003BC700F6749E9",
+          "name": "精密手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA67F430870003BD8E3BC6DC75",
+          "crafted_item_uid": "E03CE5EA67F42DB60003BC6A3408EE41",
+          "name": "终极枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA67F430B70003BD93A809406C",
+          "crafted_item_uid": "E03CE5EA67F42DAA0003BC6406E2352D",
+          "name": "精密护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_w_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-1f4ee86d8a0baef7",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-1f4ee86d8a0baef7"
+      },
+      "talent_icons": {
+        "gear_effect:w_9e75f5ef67f7cdb700112154dc07c582": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-b93c0f21e84f893e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-b93c0f21e84f893e"
+        },
+        "gear_effect:w_9e75f5ef67f7ce200011215b7fb484ce": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-b93c0f21e84f893e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-b93c0f21e84f893e"
+        },
+        "gear_effect:w_9e75f5ef67ed2d1e0003bfac896b8685": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": -1199801486
+          },
+          "shared_with": [
+            "gear_effect:w_9e75f5ef67f7cdb700112154dc07c582",
+            "gear_effect:w_9e75f5ef67f7ce200011215b7fb484ce"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/14",
+            "publishing/image-publications.json#reader-image-b93c0f21e84f893e",
+            "publishing/image-publications.json#reader-image-b93c0f21e84f893e"
+          ],
+          "asset_ref": "reader-image-b93c0f21e84f893e"
+        }
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "USER_GAMEPLAY_CONFIRMED",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/301",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3228",
+          "dist/gear-set-optional-material-20261026-001/data-evidence.json"
+        ],
+        "material_rule": {
+          "currency_uid": "B005013567F7BF9E0003777B0F3916AD",
+          "required_tag": "GearSet_W",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      },
+      "material": {
+        "name": "精密组件材料",
+        "currency_uid": "B005013567F7BF9E0003777B0F3916AD",
+        "name_guid": "B005013567F7BF64000377780DB14454",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2000-2013",
+          "brand_ref": "set:b005013567f529a000152e7818db08e8"
+        },
+        "name_source": "user_gameplay_confirmation_2026-10-26",
+        "evidence": [
+          "dist/gear-set-optional-material-20261026-001/data-evidence.json",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2000-2013"
+        ]
+      }
+    },
+    {
+      "id": "set:b005013568537cf1000370d898ee304a",
+      "native_uid": "B005013568537CF1000370D898EE304A",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B00501356853804000037156C00E3AE0",
+          "crafted_item_uid": "B005013568537EC800037118AF308F1F",
+          "name": "耐用面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B005013568537F510003712413FE0FC8",
+          "crafted_item_uid": "B005013568537DB0000370E6E041E7F9",
+          "name": "耐力背包设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B005013568537F820003712E4D043DC9",
+          "crafted_item_uid": "B005013568537DF4000370F0133DD936",
+          "name": "防爆板甲设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B005013568537FB20003713845B27996",
+          "crafted_item_uid": "B005013568537E26000370FA7829DFE9",
+          "name": "胶合手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B005013568537FE400037142FF06D23C",
+          "crafted_item_uid": "B005013568537E6200037104A51329C9",
+          "name": "医师枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B0050135685380130003714CB08FD1A6",
+          "crafted_item_uid": "B005013568537E920003710E185091B4",
+          "name": "驱动型护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_x_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-17eb014429550003",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-17eb014429550003"
+      },
+      "talent_icons": {
+        "gear_effect:x_a2264a166863f328000378fdfcc472f2": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f353a086945ce5d4",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f353a086945ce5d4"
+        },
+        "gear_effect:x_a2264a166863f33400037901eba7bad6": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-f353a086945ce5d4",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-f353a086945ce5d4"
+        },
+        "gear_effect:x_a2264a166863edd9000378f630e76f0a": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet",
+            "id": 1532423630
+          },
+          "shared_with": [
+            "gear_effect:x_a2264a166863f328000378fdfcc472f2",
+            "gear_effect:x_a2264a166863f33400037901eba7bad6"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/15",
+            "publishing/image-publications.json#reader-image-f353a086945ce5d4",
+            "publishing/image-publications.json#reader-image-f353a086945ce5d4"
+          ],
+          "asset_ref": "reader-image-f353a086945ce5d4"
+        }
+      },
+      "material": {
+        "name": "倾斜天平材料",
+        "currency_uid": "E03CE5EA6863902D0003868B32FE41BC",
+        "name_guid": "E03CE5EA68638F1200038672CEA49810",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2015",
+          "brand_ref": "set:b005013568537cf1000370d898ee304a"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/314",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3254"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA6863902D0003868B32FE41BC",
+          "required_tag": "GearSet_X",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:e03ce5ea68fa84680003730daa25758c",
+      "native_uid": "E03CE5EA68FA84680003730DAA25758C",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "B005013568FCD4E00003884F848A8E49",
+          "crafted_item_uid": "E03CE5EA68FA850400037319D020D970",
+          "name": "集中面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "B005013568FCD3A70003881D84834D5C",
+          "crafted_item_uid": "E03CE5EA68FA87A90003733DC379015C",
+          "name": "定向背包设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "B005013568FCD3EB000388274068BF30",
+          "crafted_item_uid": "E03CE5EA68FA874300037336BF29EDE4",
+          "name": "固定板甲设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "B005013568FCD43E000388318B475A97",
+          "crafted_item_uid": "E03CE5EA68FA86D70003732FB0545323",
+          "name": "指针手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "B005013568FCD4740003883BF259E3EE",
+          "crafted_item_uid": "E03CE5EA68FA865100037327A23952E9",
+          "name": "瞄准枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "B005013568FCD4A80003884586AD4900",
+          "crafted_item_uid": "E03CE5EA68FA85E400037321B6EBD341",
+          "name": "追踪护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_y_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-bfb87641984c3a69",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-bfb87641984c3a69"
+      },
+      "talent_icons": {
+        "gear_effect:y_b0050135690054100003884fc4132496": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-6d14cf9e0536c78e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-6d14cf9e0536c78e"
+        },
+        "gear_effect:y_b00501356900548c0003885c29208a2c": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-6d14cf9e0536c78e",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-6d14cf9e0536c78e"
+        },
+        "gear_effect:y_b0050135690053950003884221f10d3b": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet",
+            "id": 1957213937
+          },
+          "shared_with": [
+            "gear_effect:y_b0050135690054100003884fc4132496",
+            "gear_effect:y_b00501356900548c0003885c29208a2c"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/16",
+            "publishing/image-publications.json#reader-image-6d14cf9e0536c78e",
+            "publishing/image-publications.json#reader-image-6d14cf9e0536c78e"
+          ],
+          "asset_ref": "reader-image-6d14cf9e0536c78e"
+        }
+      },
+      "material": {
+        "name": "专注连队材料",
+        "currency_uid": "E03CE5EA68D3DE090003879D1434A0F2",
+        "name_guid": "E03CE5EA68D3DDB4000387937AE64B14",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2030",
+          "brand_ref": "set:e03ce5ea68fa84680003730daa25758c"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/327",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3280"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA68D3DE090003879D1434A0F2",
+          "required_tag": "GearSet_Y",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:e03ce5ea699786a400037489952b4b7b",
+      "native_uid": "E03CE5EA699786A400037489952B4B7B",
+      "sources": [
+        "dist/gear-set-bulk-20261025-001/native-evidence.json",
+        "dist/gear-set-bulk-20261025-001/reviewed-content.json"
+      ],
+      "blueprints": [
+        {
+          "slot": "mask",
+          "native_uid": "E03CE5EA699792230003C58C6B03A859",
+          "crafted_item_uid": "E03CE5EA6997884D000374B3478C3AD9",
+          "name": "训练面具设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_mask_01.mitem"
+        },
+        {
+          "slot": "backpack",
+          "native_uid": "E03CE5EA699794C30003C5CF7EC1A5C4",
+          "crafted_item_uid": "E03CE5EA699785FC000374804B6B601D",
+          "name": "健身房背包设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_backpack_01.mitem"
+        },
+        {
+          "slot": "chest",
+          "native_uid": "E03CE5EA6997947C0003C5C424531943",
+          "crafted_item_uid": "E03CE5EA699787D60003749AC45F989B",
+          "name": "负重背心设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_chest_01.mitem"
+        },
+        {
+          "slot": "gloves",
+          "native_uid": "E03CE5EA699794350003C5B98ED01C42",
+          "crafted_item_uid": "E03CE5EA6997882F000374A159E2A419",
+          "name": "暗影拳击手套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_gloves_01.mitem"
+        },
+        {
+          "slot": "holster",
+          "native_uid": "E03CE5EA699793F30003C5AE16356B68",
+          "crafted_item_uid": "E03CE5EA69978838000374A7A85484F3",
+          "name": "马拉松枪套设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_holster_01.mitem"
+        },
+        {
+          "slot": "kneepads",
+          "native_uid": "E03CE5EA699793B20003C5A933CF1A14",
+          "crafted_item_uid": "E03CE5EA69978842000374AD06593542",
+          "name": "练腿日护膝设计图",
+          "source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_player_gear_set_z_kneepads_01.mitem"
+        }
+      ],
+      "logo": {
+        "evidence": [
+          "publishing/image-publications.json#reader-image-0cc6a99e740ef80d",
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ],
+        "identity_basis": "Approved typed GearsetBrand Name/Image binding reconciled to native localization GUID and bilingual identity; frozen filename retained. Application spelling variations are recorded in reviewed-content.json; no numeric Sprite hash reversal is claimed.",
+        "asset_ref": "reader-image-0cc6a99e740ef80d"
+      },
+      "talent_icons": {
+        "gear_effect:z_c487423d69982e170003d05d5425e5cd": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-260399632746ac76",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-260399632746ac76"
+        },
+        "gear_effect:z_c487423d69982fa70003d148ad4c5a12": {
+          "evidence": [
+            "publishing/image-publications.json#reader-image-260399632746ac76",
+            "dist/gear-set-bulk-20261025-001/native-evidence.json"
+          ],
+          "identity_basis": "Native shared Sprite identity with the registered gear-set Logo, or an approved typed GearsetTalent English Name/Image binding. Generic armor talents with the same Chinese name are excluded.",
+          "asset_ref": "reader-image-260399632746ac76"
+        },
+        "gear_effect:z_c487423d6998214200037c60dd862516": {
+          "native_sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet",
+            "id": -823047251
+          },
+          "shared_with": [
+            "gear_effect:z_c487423d69982e170003d05d5425e5cd",
+            "gear_effect:z_c487423d69982fa70003d148ad4c5a12"
+          ],
+          "identity_basis": "Exact native myIconSprite tuple: identical spritesheet path AND signed Sprite ID in both Talent definitions. Existing confirmed Wiki image retained without renaming.",
+          "evidence": [
+            "dist/gear-set-bulk-20261025-001/native-evidence.json",
+            "dist/gear-set-shared-dismantle-icons-20261026-001/icon-investigation.json#/results/17",
+            "publishing/image-publications.json#reader-image-260399632746ac76",
+            "publishing/image-publications.json#reader-image-260399632746ac76"
+          ],
+          "asset_ref": "reader-image-260399632746ac76"
+        }
+      },
+      "material": {
+        "name": "核心力量材料",
+        "currency_uid": "E03CE5EA696F85A70003737BF9E507D0",
+        "name_guid": "E03CE5EA696F7D5500037364AE883486",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/currencies/currencies.rejuice:2045",
+          "brand_ref": "set:e03ce5ea699786a400037489952b4b7b"
+        },
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/native-evidence.json"
+        ]
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "quantity_status": "NATIVE_CONSTANT_FORMULA",
+        "evidence": [
+          "dist/gear-set-bulk-20261025-001/dismantle-review.json#/340",
+          "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice:3306"
+        ],
+        "material_rule": {
+          "currency_uid": "E03CE5EA696F85A70003737BF9E507D0",
+          "required_tag": "GearSet_Z",
+          "native_chance_percent": 100,
+          "activated_with_perk": false,
+          "use_extra_quantity_bonus": false
+        }
+      }
+    },
+    {
+      "id": "set:b00501356a9699cc0007e4333064010a",
+      "native_uid": "B00501356A9699CC0007E4333064010A",
+      "sources": [
+        "resources/game/current/raw_files/hunter/game system data/juice/item/gear_set_c1.mgearset"
+      ],
+      "material": null,
+      "dismantle": {},
+      "logo": {
+        "evidence": [
+          "evidence/asset-import/records/game-update-20261110-001/images.json#apex_protocol"
+        ],
+        "asset_ref": "gear-set-c1-logo"
+      },
+      "talent_icons": {
+        "gear_effect:c1_ca8a359b6a8e8f0a00037e34b42eb64f": {
+          "evidence": [
+            "evidence/asset-import/records/game-update-20261110-001/images.json#apex_engine"
+          ],
+          "asset_ref": "gear-set-c1-talents-icon"
+        },
+        "gear_effect:c1_ca8a359b6a8e8f2600037e354c84bb95": {
+          "evidence": [
+            "evidence/asset-import/records/game-update-20261110-001/images.json#apex_engine"
+          ],
+          "asset_ref": "gear-set-c1-talents-icon"
+        },
+        "gear_effect:c1_ca8a359b6a8e8f8c00037e360b49219d": {
+          "evidence": [
+            "evidence/asset-import/records/game-update-20261110-001/images.json#apex_engine"
+          ],
+          "asset_ref": "gear-set-c1-talents-icon"
+        }
+      }
+    }
+  ]
+}

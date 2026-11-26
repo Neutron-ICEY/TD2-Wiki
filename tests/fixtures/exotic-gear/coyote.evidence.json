@@ -1,0 +1,9 @@
+{
+  "item": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_mask_exotic_01.mitem:11",
+  "config": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/configs/configs_exotics_code1_data23.mitemgenerationconfigs:401",
+  "native_uid": "4CDCE5B25D5518E40003409A83B246B0",
+  "parent": "player_gear_mask_template",
+  "tinkering_excluded": true,
+  "sockets": "Gear only; cosmetic sockets excluded",
+  "source_build": null
+}

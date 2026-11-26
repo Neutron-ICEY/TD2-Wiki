@@ -1,0 +1,53 @@
+{
+  "_说明": "部署契约，不是游戏事实。独立于 registry 保存人工确认的正确灰机 JSON，防止实现与测试共同接受错误字段。",
+  "_来源": "维护者提供的 Sandbox-010 真实站点诊断及 Style/Scripts 正确 definition 示例；人工修正后已确认 ready/ready/grid 和自动 PvE/PvP 控件。",
+  "definitions": {
+    "TD2P16SandboxStyle": {
+      "settings": {
+        "default": true,
+        "hidden": true,
+        "rights": [],
+        "package": false,
+        "skins": [],
+        "actions": [],
+        "category": "",
+        "supportsUrlLoad": false
+      },
+      "module": {
+        "scripts": [],
+        "styles": [
+          "TD2P16Sandbox.css"
+        ],
+        "datas": [],
+        "peers": [],
+        "dependencies": [],
+        "messages": [],
+        "type": "style"
+      }
+    },
+    "TD2P16SandboxScripts": {
+      "settings": {
+        "default": true,
+        "hidden": true,
+        "rights": [],
+        "package": false,
+        "skins": [],
+        "actions": [],
+        "category": "",
+        "supportsUrlLoad": false
+      },
+      "module": {
+        "scripts": [
+          "TD2P16Sandbox-brand-sets.js",
+          "TD2P16Sandbox-named-editor.js"
+        ],
+        "styles": [],
+        "datas": [],
+        "peers": [],
+        "dependencies": [],
+        "messages": [],
+        "type": "general"
+      }
+    }
+  }
+}

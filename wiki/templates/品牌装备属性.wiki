@@ -1,0 +1,15 @@
+<noinclude>
+普通、具名和奇特护具共用的属性区。奇特护具通过「属性行」传入按自身规则渲染的完整槽位列表。
+主属性引用为空时显示自身允许集合；引用不为空时由父品牌服务端投影完整集合，不输出回跳链接。
+</noinclude><includeonly><div class="td2-equipment-attributes">
+<p class="td2-base-armor">基础装甲：{{{基础装甲|待核实}}}</p>
+<div class="td2-divider-soft" aria-hidden="true"></div>
+{{#if:{{{简介|}}}|<p class="td2-equipment-flavor">{{{简介}}}</p><div class="td2-divider-soft" aria-hidden="true"></div>}}
+<div class="td2-attribute-grid">{{{属性行|
+<div class="td2-equipment-row">{{TD2装备行图标|major_attribute}}<span class="td2-row-label">主属性：</span><span class="td2-row-value"><span class="td2-major-value">{{#if:{{{主属性引用|}}}|<span class="td2-major-reference" data-slot="{{{主属性引用}}}">主属性资料待补充</span>|{{#if:{{{主属性内容|}}}|{{{主属性内容}}}|{{TD2主属性列表|{{{主属性|}}}|同时拥有主核心={{{同时拥有主核心|否}}}|部位={{{部位|}}}}}}}}}</span></span></div>
+{{品牌次属性行|数量={{{次属性槽数|}}}|固定次属性={{{固定次属性|}}}}}
+{{TD2装备槽行|数量={{{插件槽数|}}}|标签=插件槽|图标=mod_slot|状态图标=gear_mod_slot|无槽位内容=无插件槽位|内容=装备改装槽位}}
+{{#if:{{{固定天赋引用|}}}||{{TD2装备槽行|数量={{{天赋位数|}}}|标签=天赋位|图标=talent_slot|无槽位内容=无天赋槽位|内容={{#if:{{{固定天赋引用|}}}||{{#switch:{{{天赋状态|}}}|random_backpack={{TD2图标|类别=equipment_slot|键=backpack}}|random_chest={{TD2图标|类别=equipment_slot|键=chest}}|#default={{TD2图标|类别=state|键=random}}}}{{{天赋说明|天赋槽位}}}}}}}}}
+}}}</div>
+{{#if:{{{专精说明|}}}|<p>{{{专精说明}}}</p>}}
+</div></includeonly>

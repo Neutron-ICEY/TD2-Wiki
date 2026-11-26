@@ -1,0 +1,13 @@
+<noinclude>
+品牌身份标签：复用已有品牌名称字段、Logo Resolver 和边框组件。
+
+参数：套装全称（中文名称）、品质；英文原名接口保留。
+图标内容、品质名称、品质图标内容可由其他物品 Reader 提供；附加类仅调整图片比例，章节标题=是时名称使用 h3。
+最简单调用：<nowiki>{{品牌套装信息框|套装全称=测试品牌}}</nowiki>。
+完整调用：<nowiki>{{品牌套装信息框|套装全称=测试品牌|英文原名=Test Brand}}</nowiki>。
+图片由 TD2品牌图片查找；缺图保留等宽区域，不产生破图。
+左侧中文名称及品质、背包图标，右侧已有品牌 Logo；长名称完整换行。
+品质沿现有参数显示，不影响身份或存储；颜色和尺寸由 canonical CSS 维护。
+依赖：TD2品牌图片、TD2Logo显示、TD2图标、TD2边框角节点及 TD2Reader.css。
+</noinclude><includeonly><div class="td2-brand-infobox-frame td2-brand-infobox td2-frame td2-quality-{{#switch:{{{品质|high_end}}}|high_end=high_end|gear_set=gear_set|exotic=exotic|#default=neutral}} {{{附加类|}}}">{{TD2边框角节点}}<span class="td2-brand-logo">{{#if:{{{图标内容|}}}|{{{图标内容}}}|{{#switch:{{{套装全称|}}}|临时制作=<span class="td2-logo-art">[[File:{{TD2资产|equipment-improvised-icon}}|128px|link=|alt=临时制作]]</span>|#default={{TD2品牌图片|品牌={{{图标品牌|{{{套装全称|}}}}}}|名称={{{套装全称|}}}|用途=card}}}}}}</span><div class="td2-brand-original-name">{{#if:{{{套装全称|}}}|{{#switch:{{{章节标题|否}}}|是=<h3 class="td2-brand-name-zh">{{{套装全称}}}</h3>|#default=<div class="td2-brand-name-zh">{{{套装全称}}}</div>}}}}<div class="td2-brand-quality"><span>{{#if:{{{品质名称|}}}|{{{品质名称}}}|{{#switch:{{{品质|high_end}}}|high_end=顶级|gear_set=装备组|exotic=奇特|#default=}}}}</span>{{#if:{{{品质图标内容|}}}|{{{品质图标内容}}}|{{TD2图标|类别=equipment_slot|键={{{品质图标|backpack}}}}}}}</div></div>
+</div></includeonly>

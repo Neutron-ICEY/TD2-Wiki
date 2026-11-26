@@ -1,0 +1,36 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+这是集中配置的派生映射，不是人工维护入口；维护入口见 docs/equipment-maintenance.md。</noinclude><includeonly>{{#switch:{{{1|}}}
+|fixed_minor_ammo_dump_ammo_capacity={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_claws_out_melee_damage={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_claws_out_pistol_damage={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_cloak_reduced_threat={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_contractor_s_gloves_damage_to_armor={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_deathgrips_armor_on_kill={{TD2图标|类别=attribute_category|键=defense}}
+|fixed_minor_eagle_s_grasp_weapon_handling={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_emperor_s_guard_armor_regen={{TD2图标|类别=attribute_category|键=defense}}
+|fixed_minor_forge_shield_health={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_fox_s_prayer_dmg_to_target_out_of_cover={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_grease_status_effects={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_motherly_love_skill_health={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_nightwatcher_scanner_pulse_haste={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_p_caro_s_holster_weapon_damage={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_punch_drunk_headshot_damage={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_salvo_rate_of_fire={{TD2图标|类别=attribute_category|键=utility}}
+|fixed_minor_spot_on_accuracy={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_the_hollow_man_health_damage={{TD2图标|类别=attribute_category|键=offense}}
+|fixed_minor_visionario_optimal_range={{TD2图标|类别=attribute_category|键=offense}}
+|ordinary_minor_weapon_handling={{TD2图标|类别=attribute_category|键=offense}}
+|ordinary_minor_critical_hit_chance={{TD2图标|类别=attribute_category|键=offense}}
+|ordinary_minor_critical_hit_damage={{TD2图标|类别=attribute_category|键=offense}}
+|ordinary_minor_headshot_damage={{TD2图标|类别=attribute_category|键=offense}}
+|ordinary_minor_skill_damage={{TD2图标|类别=attribute_category|键=utility}}
+|ordinary_minor_repair_skills={{TD2图标|类别=attribute_category|键=utility}}
+|ordinary_minor_skill_haste={{TD2图标|类别=attribute_category|键=utility}}
+|ordinary_minor_status_effects={{TD2图标|类别=attribute_category|键=utility}}
+|ordinary_minor_armor_regen_flat={{TD2图标|类别=attribute_category|键=defense}}
+|ordinary_minor_hazard_protection={{TD2图标|类别=attribute_category|键=defense}}
+|ordinary_minor_health={{TD2图标|类别=attribute_category|键=defense}}
+|ordinary_minor_explosive_resistance={{TD2图标|类别=attribute_category|键=defense}}
+|exotic_minor_incoming_repairs={{TD2图标|类别=attribute_category|键=defense}}
+|#default=
+}}</includeonly>

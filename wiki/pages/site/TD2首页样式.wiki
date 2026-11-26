@@ -1,0 +1,362 @@
+<style>
+.td2-home {
+  --home-ink: #f2f2f2;
+  --home-muted: #b8b8b8;
+  --home-orange: #ff6a13;
+  --home-heading-size: 1.125rem;
+  --home-panel-gap: .75rem;
+  --home-inset: clamp(.85rem, 1.6cqi, 1.125rem);
+  container: td2-home / inline-size;
+  max-width: 72rem;
+  margin-inline: auto;
+  color: var(--home-ink);
+  line-height: 1.45;
+}
+.td2-home, .td2-home * { box-sizing: border-box; }
+#wiki-body .td2-home :is(.td2-home-mast, .td2-home-columns) :is(h1, h2) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+#wiki-body .td2-home .td2-home-columns h2 { font-size: var(--home-heading-size); font-weight: 400; line-height: 1.4; }
+#wiki-body .td2-home .mw-headline { font: inherit; }
+.td2-home :is(.td2-home-mast, .td2-home-columns, .td2-home-info, .td2-home-main) {
+  display: grid;
+  gap: var(--home-panel-gap);
+  min-width: 0;
+}
+.td2-home :is(.td2-home-mast, .td2-home-columns) { margin-inline: 2px; }
+.td2-home .td2-home-mast {
+  --home-logo-width: clamp(14rem, 28.5cqi, 20rem);
+  position: relative;
+  isolation: isolate;
+  align-content: end;
+  height: clamp(10.75rem, 21.7cqi, 15.3rem);
+  padding: 0 clamp(1.25rem, 3.2cqi, 2.5rem) clamp(1.15rem, 2.5cqi, 2rem);
+  overflow: hidden;
+  background: #202425;
+}
+.td2-home .td2-home-scene, .td2-home .td2-home-mast::after {
+  position: absolute;
+  inset: 0;
+}
+.td2-home .td2-home-mast::after {
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(72deg, rgb(9 14 17 / 91%) 0%, rgb(13 18 20 / 68%) 23%, rgb(14 19 21 / 13%) 48%, transparent 69%);
+}
+.td2-home .td2-home-identity { position: relative; z-index: 1; }
+/* 原版 Logo 为 640 × 360，上下裁去透明留白。 */
+#wiki-body .td2-home .td2-home-identity h1 {
+  position: relative;
+  display: block;
+  width: var(--home-logo-width);
+  max-width: 100%;
+  aspect-ratio: 640 / 164;
+  line-height: 1;
+  overflow: hidden;
+}
+.td2-home :is(.td2-home-identity, .td2-home-scene, .td2-home-symbol) img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+/* 灰机窄屏皮肤对正文图片设为 height: auto，页首两张图需按各自的裁切框填满。 */
+#wiki-body .td2-home .td2-home-mast :is(.td2-home-identity, .td2-home-scene) img {
+  height: 100%;
+  object-fit: cover;
+}
+.td2-home .td2-home-scene img { object-position: 50% 42%; }
+.td2-home .td2-home-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: "info main main";
+  align-items: start;
+  margin-block-start: var(--home-panel-gap);
+}
+.td2-home .td2-home-info { grid-area: info; }
+.td2-home .td2-home-main { grid-area: main; }
+.td2-home :is(.td2-home-info, .td2-home-main) { grid-template-columns: minmax(0, 1fr); }
+/* 与卡片共用边框和角点定位，缩放时两者也按同一像素取整。 */
+.td2-home .td2-hud-divider { border-inline: var(--td2-frame-width) solid transparent; }
+.td2-home .td2-hud-divider::before { inset-inline-start: var(--td2-frame-node-offset); }
+.td2-home .td2-hud-divider::after { inset-inline-end: var(--td2-frame-node-offset); }
+.td2-home .td2-home-panel {
+  min-width: 0;
+  padding: .7rem var(--home-inset);
+  background: #151515;
+  border-color: #595959;
+  overflow-wrap: anywhere;
+}
+#wiki-body .td2-home .td2-home-panel > :is(p, ul) { margin: .55rem 0 .2rem; }
+.td2-home .td2-home-panel > .td2-frame-corners { display: contents; }
+.td2-home .td2-home-info h2 { text-align: center; }
+.td2-home .td2-home-news { padding: 0; }
+#wiki-body .td2-home .td2-home-news h2 { padding: .38rem var(--home-inset); }
+#wiki-body .td2-home .td2-home-news > .td2-home-empty {
+  margin: 0; padding: .22rem var(--home-inset) .75rem;
+  color: var(--home-muted); text-align: center; font-size: .875rem;
+}
+.td2-home .td2-home-season-off, .td2-home .td2-home-season-card:not(.td2-home-season-off) ~ .td2-home-empty { display: none; }
+.td2-home .td2-home-story.td2-home-event-off,
+.td2-home .td2-home-events > .td2-home-story:not(.td2-home-event-off) ~ .td2-home-empty { display: none; }
+.td2-home .td2-home-season-art { aspect-ratio: 2 / 1; background: #101010; }
+.td2-home .td2-home-season-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.td2-home .td2-home-season-details {
+  container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr);
+  padding: .85rem var(--home-inset); row-gap: 1.25rem; text-align: center; background: #101112;
+}
+.td2-home .td2-home-season-name { font-size: var(--home-heading-size); line-height: 1.4; color: #ff934c; text-wrap: balance; }
+.td2-home .td2-home-season-countdown { margin-top: .25rem; font-size: .9rem; color: #f2f2f2; font-variant-numeric: tabular-nums; }
+.td2-home .td2-home-season-details time { font-size: .78rem; color: var(--home-muted); font-variant-numeric: tabular-nums; }
+.td2-home :is(.td2-home-season-card, .td2-home-story) { --td2-frame-color: #484848; }
+.td2-home .td2-home-story {
+  --caption-height: 25cqi;
+  --caption-surface: #080808;
+  --caption-ink: var(--home-ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  container-type: inline-size;
+  min-width: 0;
+  background: #111;
+}
+@media (hover: hover) {
+  .td2-home .td2-home-story:hover,
+  .td2-home .td2-home-rotating:hover > .td2-home-story {
+    --caption-height: calc(100cqi / 3);
+    --caption-surface: var(--home-orange);
+    --caption-ink: #15110e;
+  }
+}
+.td2-home .td2-home-events :focus { outline: none; }
+/* 日历卡原生尺寸 450 × 750，完整纹理绘入上方 450 × 600。 */
+.td2-home .td2-home-news-art {
+  grid-area: 1 / 1; position: relative; width: 100%; aspect-ratio: 3 / 4;
+  /* 悬停时底栏覆盖海报底部 24% 卡宽，余下部分决定卡片下沿。 */
+  margin-block-end: calc(100cqi / 3 - 24cqi);
+}
+.td2-home .td2-home-news-art img {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover;
+}
+.td2-home .td2-home-calendar-card .td2-home-news-art img { object-fit: fill; }
+.td2-home .td2-home-event-status {
+  position: relative; grid-area: 1 / 1; align-self: start;
+  display: grid; align-content: center; min-height: 20cqi;
+  padding: .55em .75em; background: rgb(12 12 14 / 84%);
+  font-size: clamp(.86rem, 5.4cqi, 1.1rem); line-height: 1.3;
+  color: var(--home-orange); font-variant-numeric: tabular-nums;
+}
+.td2-home .td2-home-event-status time { color: var(--home-ink); }
+.td2-home .td2-home-news-caption {
+  position: relative; grid-area: 2 / 1; display: flex; justify-content: space-between; align-items: center; gap: .4rem;
+  padding: clamp(.5rem, 3.5cqi, .9rem) clamp(.6rem, 4.4cqi, 1rem);
+  background: var(--caption-surface); color: var(--caption-ink); line-height: 1.22;
+}
+.td2-home .td2-home-news-art ~ .td2-home-news-caption {
+  grid-area: 1 / 1; align-self: end; z-index: 1;
+  min-height: var(--caption-height);
+  transition: min-height 150ms cubic-bezier(.2,.72,.26,1);
+}
+.td2-home .td2-home-news-caption > div {
+  min-width: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: space-between;
+}
+.td2-home .td2-home-event-type, .td2-home .td2-home-news-date { display: block; font-size: clamp(.78rem, 4.9cqi, 1rem); }
+.td2-home .td2-home-event-type { margin-bottom: .4em; }
+.td2-home .td2-home-news-title { display: block; font-size: clamp(1.05rem, 7.8cqi, 1.8rem); }
+.td2-home .td2-home-event-icon { flex: 0 0 22%; max-width: 4.8rem; opacity: .42; }
+.td2-home .td2-home-event-icon img { display: block; width: 100%; height: auto; }
+#wiki-body .td2-home .td2-home-news-title a {
+  padding: 0; background: none; color: inherit; text-decoration: none;
+}
+#wiki-body .td2-home .td2-home-news-title a:is(:hover, :focus-visible) { text-decoration: underline; }
+.td2-home .td2-home-news-date { font-variant-numeric: tabular-nums; }
+.td2-home .td2-home-rotating { display: grid; grid-template-columns: minmax(0, 1fr); }
+.td2-home .td2-home-rotating > h2 { grid-area: 1 / 1; }
+.td2-home .td2-home-rotating > .td2-home-story { grid-area: 2 / 1; }
+.td2-home .td2-home-story[aria-hidden="true"] { visibility: hidden; pointer-events: none; }
+.td2-home .td2-home-dissolve {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.td2-home .td2-home-dissolve canvas { display: block; height: 100%; max-width: none; }
+@media (prefers-reduced-motion: reduce) {
+  .td2-home .td2-home-news-art ~ .td2-home-news-caption { transition: none; }
+  .td2-home .td2-home-dissolve { display: none; }
+}
+.td2-home .td2-home-event-controls {
+  grid-area: 3 / 1; display: grid; grid-template-columns: auto minmax(0, max-content) auto;
+  align-items: center; justify-content: center; padding-inline: .25rem; background: #121212;
+}
+.td2-home .td2-home-event-controls button {
+  display: grid; place-items: center; height: 1.75rem;
+  margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent;
+  color: var(--home-orange); font: inherit; cursor: pointer;
+}
+.td2-home .td2-home-event-key { width: 1.5rem; }
+.td2-home .td2-home-event-dots { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 3px; }
+.td2-home .td2-home-event-pick { flex: 0 0 7px; }
+.td2-home .td2-home-event-pick::after { content: ""; width: 7px; height: 7px; background: #ddd; }
+.td2-home .td2-home-event-pick[aria-pressed="true"]::after { background: var(--home-orange); }
+
+.td2-home .td2-home-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  gap: clamp(.4rem, 1cqi, .75rem);
+  margin: 0;
+  padding: 0;
+}
+.td2-home .td2-home-tile {
+  display: grid;
+  grid-template: 28% 50% 1fr / minmax(0, 1fr);
+  place-items: center;
+  gap: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 15 / 16;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border-color: var(--td2-control-border);
+  background: var(--td2-control-surface);
+  color: var(--home-muted);
+  text-align: center;
+  transition: none;
+}
+.td2-home .td2-home-tile > .td2-frame-corners { display: contents; }
+.td2-home .td2-home-tile .td2-navbox-name {
+  grid-row: 1;
+  max-width: 100%;
+  padding-inline: .3rem;
+  font-size: clamp(.9375rem, 1.6cqi, 1.15rem);
+  line-height: 1.35;
+  font-weight: 400;
+}
+.td2-home :is(.td2-home-symbol, .td2-home-cross) {
+  grid-row: 2;
+  position: relative;
+  width: 30%;
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+.td2-home .td2-home-symbol img { object-fit: contain; filter: brightness(0) invert(.7); }
+.td2-home .td2-home-tile.td2-navbox-card { color: var(--home-ink); }
+#wiki-body .td2-home .td2-navbox-name a { color: inherit; text-decoration: none; transition: none; }
+.td2-home .td2-navbox-card .td2-home-symbol img { filter: brightness(0) invert(.96); }
+.td2-home .td2-home-tile.td2-navbox-card:is(:hover, :focus-within) {
+  --td2-frame-color: #171717;
+  border-color: var(--td2-navbox-selected);
+  background: var(--td2-navbox-selected);
+  color: #151515;
+}
+.td2-home .td2-home-tile.td2-navbox-card:is(:hover, :focus-within) img { filter: brightness(0); }
+.td2-home .td2-home-cross::before, .td2-home .td2-home-cross::after {
+  content: ""; position: absolute; inset: 50% 9% auto; height: 2px; background: #686868; transform: translateY(-50%) rotate(45deg);
+}
+.td2-home .td2-home-cross::after { transform: translateY(-50%) rotate(-45deg); }
+/* 第一个落在新行行首的补位及其后续兄弟一律隐藏。 */
+@container td2-home (width > 52rem) {
+  .td2-home .td2-home-spare:nth-child(4n + 1), .td2-home .td2-home-spare:nth-child(4n + 1) ~ .td2-home-spare { display: none; }
+}
+@container td2-home (38rem < width <= 52rem) {
+  .td2-home .td2-home-matrix { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .td2-home .td2-home-spare:nth-child(3n + 1), .td2-home .td2-home-spare:nth-child(3n + 1) ~ .td2-home-spare { display: none; }
+}
+@container td2-home (max-width: 38rem) {
+  .td2-home .td2-home-mast {
+    --home-logo-width: clamp(11rem, 51cqi, 14rem);
+    height: clamp(10rem, 47cqi, 12.25rem);
+    padding: 0 1rem .88rem;
+  }
+  .td2-home .td2-home-scene img { object-position: 16% 44%; }
+  .td2-home .td2-home-mast::after {
+    background: linear-gradient(0deg, rgb(9 14 17 / 94%), rgb(12 17 20 / 54%) 29%, transparent 64%);
+  }
+  .td2-home .td2-home-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "info main"; }
+  .td2-home .td2-home-matrix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .td2-home .td2-home-spare:nth-child(2n + 1), .td2-home .td2-home-spare:nth-child(2n + 1) ~ .td2-home-spare { display: none; }
+}
+
+.td2-home .td2-home-info { --home-stat-diameter: 15rem; }
+.td2-home :is(.td2-home-dial, .td2-home-season-clock) {
+  --home-ring-unit: 1cqi;
+  --home-ring-stroke: clamp(3px, calc(2.2 * var(--home-ring-unit)), 6px);
+  display: grid;
+  place-items: center;
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #0d0d0d;
+  font-variant-numeric: tabular-nums;
+}
+.td2-home .td2-home-dial { container-type: inline-size; width: min(100%, var(--home-stat-diameter)); margin: .75rem auto .6rem; }
+#wiki-body .td2-home .td2-home-statistics h2 { font-size: calc(1.6 * var(--home-heading-size)); }
+.td2-home .td2-home-season-clock {
+  /* Both panels have the same usable width. Use the statistics dial as the stroke reference. */
+  --home-ring-unit: min(1cqi, calc(var(--home-stat-diameter) / 100));
+  width: min(100%, 9rem); justify-self: center; background: rgb(13 13 13 / 35%);
+}
+.td2-home :is(.td2-home-dial, .td2-home-season-clock)::before {
+  content: ""; position: absolute; inset: 6.5%;
+  border: clamp(2px, calc(.85 * var(--home-ring-unit)), 3px) solid #ababab; border-radius: 50%;
+}
+.td2-home .td2-home-season-clock::before { inset: calc(var(--home-ring-stroke) + 2px); border-color: rgb(171 171 171 / 30%); }
+.td2-home .td2-home-season-clock .td2-home-ring {
+  --ring-color: #68b5eb; --ring-track: #353a40; --ring-inset: 0%;
+}
+.td2-home .td2-home-season-badge { display: block; width: 55%; }
+.td2-home .td2-home-season-badge img { display: block; width: 100%; height: auto; }
+.td2-home .td2-home-ring.td2-home-edits { --ring-color: #ff792b; --ring-inset: 3.35%; }
+.td2-home .td2-home-ring.td2-home-pages { --ring-color: #b583e8; --ring-inset: 0%; }
+.td2-home .td2-home-ring {
+  --ring-width: var(--home-ring-stroke);
+  position: absolute; inset: var(--ring-inset); pointer-events: none;
+}
+.td2-home .td2-home-ring::before {
+  content: ""; position: absolute; inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-color) var(--td2-home-arc, 0deg), var(--ring-track, #393939) 0 calc(1turn - var(--ring-seam, 0deg)), #eee 0);
+  mask-image: radial-gradient(farthest-side, transparent calc(100% - var(--ring-width) - .6px), black calc(100% - var(--ring-width)));
+}
+.td2-home .td2-home-ring-filled { --ring-seam: 2deg; }
+.td2-home .td2-home-ring-filled::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(#fff, #fff) center top / var(--ring-width) var(--ring-width) no-repeat;
+  transform: rotate(var(--td2-home-arc));
+}
+#wiki-body .td2-home .td2-home-reading {
+  position: relative; width: 76%; margin: 0; padding: 0;
+  color: var(--home-ink); text-align: center; line-height: 1.15;
+}
+#wiki-body .td2-home .td2-home-reading :is(dt, dd) { margin: 0; padding: 0; font-weight: 400; line-height: 1.12; }
+.td2-home .td2-home-reading .td2-home-edits dt,
+.td2-home .td2-home-reading .td2-home-pages :is(dt, dd) { font-size: var(--home-heading-size); }
+#wiki-body .td2-home .td2-home-reading .td2-home-edits dd {
+  font-size: min(30cqi, calc(138cqi / var(--td2-digits, 4)));
+  font-family: "Borda Medium", "TD2 Latin Sansation", sans-serif; line-height: .98; letter-spacing: -.025em; white-space: nowrap;
+}
+.td2-home .td2-home-reading .td2-home-pages {
+  display: flex; justify-content: center; align-items: baseline; gap: .32em; width: max-content; max-width: 100%;
+  margin: .25em auto 0; padding: .24em .18em 0; border-top: 1px solid #646464;
+  color: #c29aea;
+}
+#wiki-body .td2-home .td2-home-followers {
+  display: flex; align-items: center; justify-content: center; gap: .55em;
+  margin: .75rem 0 .2rem; padding: 0; font-size: var(--home-heading-size); font-variant-numeric: tabular-nums;
+}
+#wiki-body .td2-home .td2-home-followers :is(dt, dd) { margin: 0; font-weight: 400; }
+.td2-home .td2-home-followers dd { display: flex; align-items: center; gap: .42em; }
+.td2-home .td2-home-followers img { display: block; width: 1.15em; height: 1.15em; object-fit: contain; }
+@container td2-home (max-width: 26rem) {
+  .td2-home .td2-home-columns { grid-template-columns: minmax(0, 1fr); grid-template-areas: "info" "main"; }
+  .td2-home .td2-home-info { --home-stat-diameter: 11.5rem; }
+}
+
+.td2-home .td2-home-recent { margin-top: .4rem; }
+.td2-home .td2-home-recent > .td2-hud-divider { margin-block-end: .8rem; }
+</style>

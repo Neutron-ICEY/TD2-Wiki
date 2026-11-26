@@ -1,0 +1,106 @@
+<noinclude>品牌 Reader；身份卡片复用品牌套装信息框，套装加成及装备资料沿现有参数投影。</noinclude><includeonly><div class="td2-brand" data-brand="{{{套装全称|}}}">
+<div class="td2-brand-top">
+{{#if:{{{英文原名|}}}|<div class="td2-brand-name-en" lang="en">{{{英文原名}}}</div>}}
+{{{简介|}}}
+<div class="td2-brand-bonus-header">
+{{品牌套装信息框|图标品牌={{{映射名称|}}}|套装全称={{{套装全称|}}}|英文原名={{{英文原名|}}}}}
+{{#switch:{{{资料类型|brand}}}|unbranded=|#default=
+== 套装加成 ==
+}}
+</div>
+{{#switch:{{{资料类型|brand}}}|unbranded=|#default=<div class="td2-brand-bonuses"><span id="bonus-1"></span><span id="bonus-2"></span><span id="bonus-3"></span>
+{{#invoke:TD2资料记录|render|records={{{效果资料|}}}}}
+</div>
+}}
+</div>
+<span id="品牌主属性"></span><span id=".E5.93.81.E7.89.8C.E4.B8.BB.E5.B1.9E.E6.80.A7"></span>
+== 装备属性 ==
+<div class="td2-equipment-grid">
+<section class="td2-equipment-card" data-slot="mask" id="gear-mask">
+{{装备标题卡|图标键=mask|中文名称=面具|英文名称=mask|品质=high_end}}
+{{TD2普通装备规则|mask|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:mask}}|次属性槽例外=是|次属性槽数={{{mask次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{mask插件槽数|}}}|是|否}}|插件槽数={{{mask插件槽数|}}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{mask使用不同规则|}}}|是={{{mask允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=mask|blueprints={{{mask图纸|}}}|ordinary={{{mask型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+<section class="td2-equipment-card" data-slot="backpack" id="gear-backpack">
+{{装备标题卡|图标键=backpack|中文名称=背包|英文名称=backpack|品质=high_end}}
+{{TD2普通装备规则|backpack|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:backpack}}|次属性槽例外=是|次属性槽数={{{backpack次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{backpack插件槽数|}}}|是|否}}|插件槽数={{{backpack插件槽数|}}}|同时拥有主核心={{#switch:{{{backpack同时拥有主核心|否}}}|是={{#switch:{{{部分部位主属性不同|否}}}|是={{#switch:{{{backpack使用不同规则|否}}}|是=是|#default=invalid}}|#default=invalid}}|#default=否}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{backpack使用不同规则|}}}|是={{{backpack允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=backpack|blueprints={{{backpack图纸|}}}|ordinary={{{backpack型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+<section class="td2-equipment-card" data-slot="chest" id="gear-chest">
+{{装备标题卡|图标键=chest|中文名称=胸甲|英文名称=chest|品质=high_end}}
+{{TD2普通装备规则|chest|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:chest}}|次属性槽例外=是|次属性槽数={{{chest次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{chest插件槽数|}}}|是|否}}|插件槽数={{{chest插件槽数|}}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{chest使用不同规则|}}}|是={{{chest允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=chest|blueprints={{{chest图纸|}}}|ordinary={{{chest型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+<section class="td2-equipment-card" data-slot="gloves" id="gear-gloves">
+{{装备标题卡|图标键=gloves|中文名称=手套|英文名称=gloves|品质=high_end}}
+{{TD2普通装备规则|gloves|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:gloves}}|次属性槽例外=是|次属性槽数={{{gloves次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{gloves插件槽数|}}}|是|否}}|插件槽数={{{gloves插件槽数|}}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{gloves使用不同规则|}}}|是={{{gloves允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=gloves|blueprints={{{gloves图纸|}}}|ordinary={{{gloves型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+<section class="td2-equipment-card" data-slot="holster" id="gear-holster">
+{{装备标题卡|图标键=holster|中文名称=枪套|英文名称=holster|品质=high_end}}
+{{TD2普通装备规则|holster|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:holster}}|次属性槽例外=是|次属性槽数={{{holster次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{holster插件槽数|}}}|是|否}}|插件槽数={{{holster插件槽数|}}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{holster使用不同规则|}}}|是={{{holster允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=holster|blueprints={{{holster图纸|}}}|ordinary={{{holster型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+<section class="td2-equipment-card" data-slot="kneepads" id="gear-kneepads">
+{{装备标题卡|图标键=kneepads|中文名称=护膝|英文名称=kneepads|品质=high_end}}
+{{TD2普通装备规则|kneepads|主属性内容={{#invoke:TD2资料映射|core|资料ID={{{资料ID|}}}|规则=slot:kneepads}}|次属性槽例外=是|次属性槽数={{{kneepads次属性槽数|}}}|talent_mode={{#switch:{{{套装全称|}}}|临时制作=none|#default=}}|插件槽例外={{#if:{{{kneepads插件槽数|}}}|是|否}}|插件槽数={{{kneepads插件槽数|}}}|主属性={{#switch:{{{部分部位主属性不同|}}}|是={{#switch:{{{kneepads使用不同规则|}}}|是={{{kneepads允许主核心|}}}|#default={{{默认允许主核心|}}}}}|#default={{{默认允许主核心|}}}}}}}
+{{#invoke:TD2品牌投影|models|slot=kneepads|blueprints={{{kneepads图纸|}}}|ordinary={{{kneepads型号资料|}}}|named={{{具名装备资料|}}}}}
+</section>
+</div>
+{{#if:{{{具名装备资料|}}}|
+== 具名装备 ==
+<div class="td2-equipment-grid td2-named-grid">
+{{#invoke:TD2品牌投影|namedCards|effects={{{效果资料|}}}|brand={{{映射名称|}}}|cards={{{具名装备资料|}}}}}
+</div>
+}}
+== 制作与获取 ==
+<h3 class="td2-source-heading">[[{{TD2页面地址|crafting-guide}}|装备图纸]]</h3>
+<dl class="td2-ordinary-blueprints">
+<dt>{{TD2图标|类别=equipment_slot|键=mask}}面具图纸</dt><dd>{{#if:{{{mask图纸|}}}|{{品牌图纸列表|列表={{{mask图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=mask}}</dd>
+<dt>{{TD2图标|类别=equipment_slot|键=backpack}}背包图纸</dt><dd>{{#if:{{{backpack图纸|}}}|{{品牌图纸列表|列表={{{backpack图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=backpack}}</dd>
+<dt>{{TD2图标|类别=equipment_slot|键=chest}}胸甲图纸</dt><dd>{{#if:{{{chest图纸|}}}|{{品牌图纸列表|列表={{{chest图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=chest}}</dd>
+<dt>{{TD2图标|类别=equipment_slot|键=gloves}}手套图纸</dt><dd>{{#if:{{{gloves图纸|}}}|{{品牌图纸列表|列表={{{gloves图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=gloves}}</dd>
+<dt>{{TD2图标|类别=equipment_slot|键=holster}}枪套图纸</dt><dd>{{#if:{{{holster图纸|}}}|{{品牌图纸列表|列表={{{holster图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=holster}}</dd>
+<dt>{{TD2图标|类别=equipment_slot|键=kneepads}}护膝图纸</dt><dd>{{#if:{{{kneepads图纸|}}}|{{品牌图纸列表|列表={{{kneepads图纸}}}}}|<span class="td2-blueprint-none">{{TD2图标|类别=state|键=none}}无制作图纸</span>}}{{#invoke:TD2品牌投影|randomCrafting|brand={{{映射名称|}}}|kind={{{资料类型|}}}|slot=kneepads}}</dd>
+</dl>
+<div class="td2-divider-soft" aria-hidden="true"></div>
+<h3 class="td2-source-heading">{{#invoke:TD2品牌投影|blueprintHeading}}</h3>
+<div class="td2-acquisition-result">{{#invoke:TD2品牌投影|ordinaryBlueprintSource|source_subject={{{资料ID|}}}}}</div>
+<div class="td2-divider-soft" aria-hidden="true"></div>
+<h3 class="td2-source-heading">{{#invoke:TD2品牌投影|acquisitionHeading}}</h3>
+{{#invoke:TD2品牌投影|acquisition|source_subject={{{资料ID|}}}}}
+
+== 分解产物 ==
+<div class="td2-equipment-grid">
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=mask|中文名称=面具|英文名称=mask|品质=high_end}}
+{{TD2分解规则|mask|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=backpack|中文名称=背包|英文名称=backpack|品质=high_end}}
+{{TD2分解规则|backpack|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=chest|中文名称=胸甲|英文名称=chest|品质=high_end}}
+{{TD2分解规则|chest|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=gloves|中文名称=手套|英文名称=gloves|品质=high_end}}
+{{TD2分解规则|gloves|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=holster|中文名称=枪套|英文名称=holster|品质=high_end}}
+{{TD2分解规则|holster|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+<section class="td2-equipment-card">
+{{装备标题卡|图标键=kneepads|中文名称=护膝|英文名称=kneepads|品质=high_end}}
+{{TD2分解规则|kneepads|品牌材料={{{品牌分解材料|}}}|品牌={{{映射名称|}}}}}
+</section>
+</div>
+{{TD2普通装备规则|expertise}}
+{{#if:{{{其他机制|}}}|
+== 其他资料 ==
+{{{其他机制|}}}}}
+</div>
+{{TD2装备导航}}
+</includeonly>

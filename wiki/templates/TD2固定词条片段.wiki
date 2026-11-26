@@ -1,0 +1,36 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+这是集中配置的派生映射，不是人工维护入口；维护入口见 docs/equipment-maintenance.md。</noinclude><includeonly>{{#switch:{{{1|}}}
+|fixed_minor_ammo_dump_ammo_capacity=<span class="td2-text-orange">10.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_ammo_capacity}}</span>
+|fixed_minor_claws_out_melee_damage=<span class="td2-text-orange">500.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_melee_damage}}</span>
+|fixed_minor_claws_out_pistol_damage=<span class="td2-text-orange">11.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_pistol_damage}}</span>
+|fixed_minor_cloak_reduced_threat=<span class="td2-text-orange">50.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_reduced_threat}}</span>
+|fixed_minor_contractor_s_gloves_damage_to_armor=<span class="td2-text-orange">8.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_damage_to_armor}}</span>
+|fixed_minor_deathgrips_armor_on_kill=<span class="td2-text-orange">10.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_armor_on_kill}}</span>
+|fixed_minor_eagle_s_grasp_weapon_handling=<span class="td2-text-orange">15.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_weapon_handling}}</span>
+|fixed_minor_emperor_s_guard_armor_regen=<span class="td2-text-orange">1.00%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_armor_regen}}</span>
+|fixed_minor_forge_shield_health=<span class="td2-text-orange">50.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_shield_health}}</span>
+|fixed_minor_fox_s_prayer_dmg_to_target_out_of_cover=<span class="td2-text-orange">8.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_dmg_to_target_out_of_cover}}</span>
+|fixed_minor_grease_status_effects=<span class="td2-text-orange">16.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_status_effects}}</span>
+|fixed_minor_motherly_love_skill_health=<span class="td2-text-orange">25.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_skill_health}}</span>
+|fixed_minor_nightwatcher_scanner_pulse_haste=<span class="td2-text-orange">100.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_scanner_pulse_haste}}</span>
+|fixed_minor_p_caro_s_holster_weapon_damage=<span class="td2-text-orange">10.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_weapon_damage}}</span>
+|fixed_minor_punch_drunk_headshot_damage=<span class="td2-text-orange">20.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_headshot_damage}}</span>
+|fixed_minor_salvo_rate_of_fire=<span class="td2-text-orange">5.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_rate_of_fire}}</span>
+|fixed_minor_spot_on_accuracy=<span class="td2-text-orange">38.00%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_accuracy}}</span>
+|fixed_minor_the_hollow_man_health_damage=<span class="td2-text-orange">14.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_health_damage}}</span>
+|fixed_minor_visionario_optimal_range=<span class="td2-text-orange">50.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_optimal_range}}</span>
+|ordinary_minor_weapon_handling=<span class="td2-text-orange">8%</span> {{TD2次属性名称|minor_attribute_weapon_handling}}
+|ordinary_minor_critical_hit_chance=<span class="td2-text-orange">6%</span> {{TD2次属性名称|minor_attribute_critical_hit_chance}}
+|ordinary_minor_critical_hit_damage=<span class="td2-text-orange">12%</span> {{TD2次属性名称|minor_attribute_critical_hit_damage}}
+|ordinary_minor_headshot_damage=<span class="td2-text-orange">10%</span> {{TD2次属性名称|minor_attribute_headshot_damage}}
+|ordinary_minor_skill_damage=<span class="td2-text-orange">10%</span> {{TD2次属性名称|minor_attribute_skill_damage}}
+|ordinary_minor_repair_skills=<span class="td2-text-orange">20%</span> {{TD2次属性名称|minor_attribute_repair_skills}}
+|ordinary_minor_skill_haste=<span class="td2-text-orange">12%</span> {{TD2次属性名称|minor_attribute_skill_haste}}
+|ordinary_minor_status_effects=<span class="td2-text-orange">10%</span> {{TD2次属性名称|minor_attribute_status_effects}}
+|ordinary_minor_armor_regen_flat=<span class="td2-text-orange">4,925</span> {{TD2次属性名称|minor_attribute_armor_regen_flat}}
+|ordinary_minor_hazard_protection=<span class="td2-text-orange">10%</span> {{TD2次属性名称|minor_attribute_hazard_protection}}
+|ordinary_minor_health=<span class="td2-text-orange">18,935</span> {{TD2次属性名称|minor_attribute_health}}
+|ordinary_minor_explosive_resistance=<span class="td2-text-orange">10%</span> {{TD2次属性名称|minor_attribute_explosive_resistance}}
+|exotic_minor_incoming_repairs=<span class="td2-text-orange">20.0%</span> {{TD2次属性名称|minor_attribute_incoming_repairs}}
+|#default=<strong class="td2-data-error">未知固定词条预设</strong>
+}}</includeonly>

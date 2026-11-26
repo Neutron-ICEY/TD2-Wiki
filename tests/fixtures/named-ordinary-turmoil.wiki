@@ -1,0 +1,89 @@
+{{品牌套装信息
+|套装全称=捷克出产自律组织
+|默认允许主核心=red
+|英文原名=Česká Výroba s.r.o.
+|1件PvE词条=bonus_critical_hit_chance
+|1件PvP词条=bonus_critical_hit_chance
+|1件PvP词条来源=override
+|2件PvE词条=bonus_shotgun_damage
+|2件PvP词条=bonus_shotgun_damage
+|2件PvP词条来源=override
+|3件PvE词条=bonus_hazard_protection
+|3件PvP词条=bonus_hazard_protection
+|3件PvP词条来源=override
+|常规获取=是
+|mask图纸=迅速部署面具
+|chest图纸=
+|holster图纸=侦察用枪套
+|backpack图纸=游击战背包
+|gloves图纸=
+|kneepads图纸=后勤护膝
+|品牌分解材料=捷克出产自律组织强化枕木
+|mask型号资料={{品牌型号面具
+|中文名称=迅速部署面具
+|英文名称=Rapid Deployment Mask
+}}
+|chest型号资料={{品牌型号胸甲
+|中文名称=机械化步兵装甲
+|英文名称=Mechanized Infantry Armor
+}}
+|holster型号资料={{品牌型号枪套
+|中文名称=侦察用枪套
+|英文名称=Reconnaissance Holster
+}}
+|backpack型号资料={{品牌型号背包
+|中文名称=游击战背包
+|英文名称=Guerilla Backpack
+}}
+|gloves型号资料={{品牌型号手套
+|中文名称=NBC 手套
+|英文名称=NBC Gloves
+}}
+|kneepads型号资料={{品牌型号护膝
+|中文名称=后勤护膝
+|英文名称=Logistics Kneepads
+}}
+|具名装备资料={{品牌装备摘要
+|所属品牌=捷克出产自律组织
+|装备名称=魔鬼回报
+|英文原名=Devil's Due
+|简介=彼之寻呼
+切勿拖延
+否则将坠
+直达深渊
+——包裹内的题字
+|具名图纸名称=魔鬼回报
+|stable_id=gear_bfaaa1fc5e207a980006d2aaa8894e66
+|装备部位=backpack
+|talent_mode=fixed
+|acquisition_mode=override
+|具名图纸获取规则=使用默认
+|主核心组合=使用部位设置
+|次属性槽例外=否
+|插件槽例外=否
+|常规获取=否
+|暗区限定获取=是
+|特殊获取=否
+|天赋引用=perfect_clutch
+}}
+{{品牌装备摘要
+|所属品牌=捷克出产自律组织
+|装备名称=动荡
+|英文原名=Turmoil
+|简介=永远不要让他们知道你的下一步行动。
+|stable_id=gear_b005013567b5935200036dd2a7e091d1
+|装备部位=kneepads
+|talent_mode=fixed
+|acquisition_mode=override
+|具名图纸获取规则=无制作图纸
+|主核心组合=使用部位设置
+|次属性槽例外=否
+|插件槽例外=否
+|常规获取=否
+|暗区限定获取=否
+|特殊获取=是
+|特殊获取说明=愚人节期间上线奖励/其他限时活动返厂
+|天赋引用=bewildered
+|固定次属性=ordinary_minor_critical_hit_chance;ordinary_minor_critical_hit_damage
+}}
+}}

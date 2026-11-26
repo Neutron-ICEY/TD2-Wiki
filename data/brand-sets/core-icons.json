@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "_维护说明": [
+    "六个原生核心图标的唯一人工入口：major=主核心，minor=小核心；red=红，blue=蓝，yellow=黄。",
+    "六个入口必须使用不同的 raster 文件；不能因颜色相同复用主／小核心图片。",
+    "人工上传真实 PNG/JPG/WebP/GIF 后，只填不带 File: 的文件名并设置 confirmed_on_wiki=true。没有图片留空和 false。",
+    "更换图标只改这里，再运行 python -m tools.brand_sets generate。生成器不上传、不下载、不会改变图片颜色。"
+  ],
+  "icons": {
+    "major": {
+      "red": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "blue": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "yellow": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      }
+    },
+    "minor": {
+      "red": {
+        "asset_ref": "reader-image-2e50e6bd367e2d51"
+      },
+      "blue": {
+        "asset_ref": "reader-image-de4a76d80ea6698b"
+      },
+      "yellow": {
+        "asset_ref": "reader-image-78d66feec1d62f5d"
+      }
+    }
+  }
+}

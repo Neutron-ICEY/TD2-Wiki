@@ -1,0 +1,1 @@
+<noinclude>奇特装备 Reader，按资料身份读取共享映射。</noinclude><includeonly>{{#invoke:TD2奇特装备|render}}</includeonly>

@@ -1,0 +1,1 @@
+<noinclude>护膝型号薄适配；固定 canonical 部位。</noinclude><includeonly>{{#invoke:TD2品牌投影|record|kind=ordinary|slot=kneepads|name={{{中文名称|}}}|en={{{英文名称|}}}}}</includeonly>

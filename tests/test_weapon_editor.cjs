@@ -1,0 +1,21 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+const database=require('../tools/equipment/database.cjs').load(),catalog=require('../tools/equipment/catalog.cjs').data();
+const local=require('../ui/editor/src/local-session.js'),scope=require('../ui/editor/src/page-scope.js');
+test('weapon manual notes and prose roundtrip while fixed child facts remain read-only',()=>{
+  const entity=Object.values(database.entities).find(e=>e.fields.装备名称==='ACS-12');
+  assert.equal(entity.page_title,'顶级武器-ACS-12');
+  const named=entity.collections.武器型号资料.rows.find(r=>r.data.装备名称==='左边').data;
+  const entrance=fs.readFileSync('wiki/redirects/weapons/'+named.装备UID.toLowerCase()+'.wiki','utf8');
+  assert.equal(entrance.trim(),'#REDIRECT [['+entity.page_title+'#左边]]');
+  assert(!scope.check(entrance,1).ok);
+  const raw=fs.readFileSync(entity.source,'utf8'),session=local.create(raw,[],catalog.options);
+  assert(scope.check(raw,1).ok);
+  const keys=Object.keys(session.rules).filter(k=>k.startsWith('天赋脚注:'));
+  assert.equal(keys.length,4);
+  session.edit(keys[0],'NON-GAME-FACT 武器人工脚注');session.edit('其他机制','NON-GAME-FACT 其他资料');session.editBody('NON-GAME-FACT 补充正文');
+  const result=session.serialize().raw,reopened=local.create(result,[],catalog.options);
+  assert.equal(reopened.state.fields[keys[0]].value,'NON-GAME-FACT 武器人工脚注');
+  assert.equal(reopened.state.body,'NON-GAME-FACT 补充正文');assert.equal(reopened.serialize().raw,result);
+  for(const key of ['基础伤害','基础 DPS','武器型号资料','装备名称'])assert.throws(()=>session.edit(key,'1'),/READ_ONLY/);
+  assert(!scope.check('{{TD2武器导航}}',1).ok);
+});

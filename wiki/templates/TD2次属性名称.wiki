@@ -1,0 +1,33 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+这是集中配置的派生映射，不是人工维护入口；维护入口见 docs/equipment-maintenance.md。</noinclude><includeonly>{{#invoke:TD2资料记录|attributeName|id={{{1|}}}|name={{#switch:{{{1|}}}
+|minor_attribute_armor_on_kill=击杀时回复装甲
+|minor_attribute_hazard_protection=危害防护
+|minor_attribute_skill_damage=技能伤害
+|minor_attribute_repair_skills=技能修复
+|minor_attribute_skill_haste=技能加速
+|minor_attribute_critical_hit_damage=暴击伤害
+|minor_attribute_critical_hit_chance=暴击几率
+|minor_attribute_weapon_handling=武器控制
+|minor_attribute_headshot_damage=爆头伤害
+|minor_attribute_explosive_resistance=爆炸抗性
+|minor_attribute_status_effects=状态效果
+|minor_attribute_health=生命值
+|minor_attribute_rate_of_fire=射速
+|minor_attribute_health_damage=生命值伤害
+|minor_attribute_scanner_pulse_haste=扫描脉冲加速
+|minor_attribute_shield_health=护盾生命值
+|minor_attribute_damage_to_armor=对装甲的伤害
+|minor_attribute_optimal_range=有效射程
+|minor_attribute_dmg_to_target_out_of_cover=对离开掩体目标的伤害
+|minor_attribute_reduced_threat=降低威胁度
+|minor_attribute_accuracy=准确度
+|minor_attribute_ammo_capacity=弹药容量
+|minor_attribute_skill_health=技能生命值
+|minor_attribute_melee_damage=近战伤害
+|minor_attribute_pistol_damage=手枪伤害
+|minor_attribute_armor_regen=装甲回复
+|minor_attribute_weapon_damage=武器伤害
+|minor_attribute_armor_regen_flat=装甲回复
+|minor_attribute_incoming_repairs=受到修复
+|#default=未收录次属性
+}}}}</includeonly>

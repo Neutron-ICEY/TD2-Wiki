@@ -1,0 +1,152 @@
+{
+  "mode": "MANUAL",
+  "publication_authorized": false,
+  "css": {
+    "title": "Gadget:TD2Reader.css",
+    "source": "ui/brand-sets/brand-sets.css",
+    "change_reason": "Current equipment Reader and Editor resources"
+  },
+  "editor_build": "ui/editor/production/build.cjs",
+  "preflight": "All revisions are observed or historical recovery references. Reread latest complete text and existence before any approved write; drift stops publication.",
+  "entry_binding": "UNBOUND; production/build.cjs --bind-entry requires exact live Runtime readback",
+  "resource_naming": {
+    "change_reason": "Current equipment Reader and Editor resources",
+    "runtime_title": "Gadget:TD2EditorRuntime.js",
+    "entry_title": "Gadget:TD2EditorEntry.js",
+    "reader": [
+      {
+        "title": "Gadget:TD2Reader.css",
+        "file": "TD2Reader.css",
+        "source": "ui/brand-sets/brand-sets.css"
+      },
+      {
+        "title": "Gadget:TD2Reader.js",
+        "file": "TD2Reader.js",
+        "source": "ui/brand-sets/brand-sets.js"
+      }
+    ],
+    "gadgets": [
+      {
+        "name": "TD2P16SandboxStyle",
+        "label": "TD2 Reader 样式",
+        "definition": {
+          "settings": {
+            "default": true,
+            "hidden": true,
+            "rights": [],
+            "package": false,
+            "skins": [],
+            "actions": [],
+            "category": "",
+            "supportsUrlLoad": false
+          },
+          "module": {
+            "scripts": [],
+            "styles": [
+              "TD2Reader.css"
+            ],
+            "datas": [],
+            "peers": [],
+            "dependencies": [],
+            "messages": [],
+            "type": "style"
+          }
+        }
+      },
+      {
+        "name": "TD2P16SandboxScripts",
+        "label": "TD2 品牌阅读",
+        "definition": {
+          "settings": {
+            "default": true,
+            "hidden": true,
+            "rights": [],
+            "package": false,
+            "skins": [],
+            "actions": [],
+            "category": "",
+            "supportsUrlLoad": false
+          },
+          "module": {
+            "scripts": [
+              "TD2Reader.js"
+            ],
+            "styles": [],
+            "datas": [],
+            "peers": [],
+            "dependencies": [],
+            "messages": [],
+            "type": "general"
+          }
+        }
+      },
+      {
+        "name": "TD2JSEditorUnifiedEntry",
+        "label": "TD2 Editor 入口",
+        "definition": {
+          "settings": {
+            "default": true,
+            "hidden": false,
+            "rights": [
+              "edit"
+            ],
+            "package": false,
+            "skins": [],
+            "actions": [
+              "view"
+            ],
+            "category": "",
+            "supportsUrlLoad": false
+          },
+          "module": {
+            "scripts": [
+              "TD2EditorEntry.js"
+            ],
+            "styles": [],
+            "datas": [],
+            "peers": [],
+            "dependencies": [
+              "mediawiki.util"
+            ],
+            "messages": [],
+            "type": "general"
+          }
+        }
+      }
+    ]
+  },
+  "content_ids": [
+    "reader-material-page-01",
+    "reader-material-page-02",
+    "reader-material-page-03",
+    "reader-material-page-04",
+    "reader-material-page-05",
+    "reader-material-page-06",
+    "reader-material-page-07",
+    "reader-material-page-08",
+    "reader-material-page-09",
+    "reader-material-page-10",
+    "reader-material-page-11",
+    "reader-material-page-12",
+    "gear-set-info",
+    "gear-set-equipment",
+    "gear-set-projection",
+    "exotic-gear-reader",
+    "exotic-gear-info",
+    "exotic-gear-slot",
+    "equipment-attribute-data",
+    "equipment-records",
+    "equipment-effect-mappings",
+    "equipment-effect",
+    "equipment-richtext",
+    "equipment-editor-data",
+    "equipment-editor-data-values",
+    "equipment-mapping-reader",
+    "equipment-mapping-data",
+    "brand-reader",
+    "brand-reader-content",
+    "brand-equipment-summary",
+    "brand-named-content",
+    "gear-reader-content"
+  ]
+}

@@ -1,0 +1,1606 @@
+{
+  "schema_version": 1,
+  "_维护说明": [
+    "共享天赋保留模式内容；专属天赋的名称、描述与效果由 data/equipment/records.json 的所属实体维护。本目录保留稳定身份、图标和搜索资料。"
+  ],
+  "talents": [
+    {
+      "id": "perfect_protector",
+      "zh_name": "完美守护者",
+      "en_name": "Perfect Protector",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "perfect-protector-icon"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "git:2ede7f0:docs/READER-511-NAMED-DATA-REQUEST.md"
+      ]
+    },
+    {
+      "id": "perfect_shock_and_awe",
+      "zh_name": "完美震慑",
+      "en_name": "Perfect Shock and Awe",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-a34e9adc72a200e9"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "git:2ede7f0:docs/BRAND-DATA-COMPLETENESS.md"
+      ]
+    },
+    {
+      "id": "perfect_obliterate",
+      "zh_name": "完美抹除",
+      "en_name": "Perfect Obliterate",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "perfect-obliterate-icon"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "git:2ede7f0:docs/BRAND-DATA-COMPLETENESS.md"
+      ]
+    },
+    {
+      "id": "perfect_intimidate",
+      "zh_name": "完美威吓",
+      "en_name": "Perfect Intimidate",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-8cc667ed68a81a21"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_wicked",
+      "zh_name": "完美恶人",
+      "en_name": "Perfectly Wicked",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b18cbc18f180ad29"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_unstoppable_force",
+      "zh_name": "完美无人能挡的力量",
+      "en_name": "Perfectly Unstoppable Force",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c8002b3dbaca20a9"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_mad_bomber",
+      "zh_name": "完美疯狂炸弹客",
+      "en_name": "Perfectly Mad Bomber",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-872b222c0904bf7a"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_vanguard",
+      "zh_name": "完美先锋",
+      "en_name": "Perfect Vanguard",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ff7d6096bb8962b2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_tamper_proof",
+      "zh_name": "完美防窜改",
+      "en_name": "Perfectly Tamper Proof",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-80f4c3a437da7e2c"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_explosive_delivery",
+      "zh_name": "完美火爆快递",
+      "en_name": "Perfectly Explosive Delivery",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-37aacadff6188d22"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_tag_team",
+      "zh_name": "完美搭档",
+      "en_name": "Perfect Tag Team",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b587f367256a50fc"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_entrench",
+      "zh_name": "完美巩固",
+      "en_name": "Perfect Entrench",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-6898f8975b6d8083"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_braced",
+      "zh_name": "完美鼓起勇气",
+      "en_name": "Perfect Braced",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-da698e2d66fd9faa"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_versatile",
+      "zh_name": "完美多变",
+      "en_name": "Perfect Versatile",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e9df7126c51765b6"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_energize",
+      "zh_name": "完美激能",
+      "en_name": "Perfect Energize",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c04f4f1d51e346fe"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_leadership",
+      "zh_name": "完美领袖",
+      "en_name": "Perfect Leadership",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-45f90f5b3d5390ab"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_reassigned",
+      "zh_name": "完美重新补给",
+      "en_name": "Perfectly Reassigned",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ce218a3879b7abee"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_vigilance",
+      "zh_name": "完美警戒",
+      "en_name": "Perfect Vigilance",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-17332116c7508fd2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_glass_cannon",
+      "zh_name": "完美玻璃大炮",
+      "en_name": "Perfect Glass Cannon",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-0a79f41984785238"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_protected_reload",
+      "zh_name": "完美装弹保护",
+      "en_name": "Perfect Protected Reload",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-38e68c2a2958f993"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_unbreakable",
+      "zh_name": "完美牢不可破",
+      "en_name": "Perfectly Unbreakable",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-22c25072f451980a"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_gunslinger",
+      "zh_name": "完美枪神",
+      "en_name": "Perfect Gunslinger",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-d4bf7cdb594666c5"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_composure",
+      "zh_name": "从容不迫",
+      "en_name": "Perfect Composure",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b15d7a1bbb1f4b1a"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_overwatch",
+      "zh_name": "完美掩护",
+      "en_name": "Perfect Overwatch",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-71c566b2ab6292b8"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_safeguard",
+      "zh_name": "完美安全护卫",
+      "en_name": "Perfect Safeguard",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-5509104544436191"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_empathic_resolve",
+      "zh_name": "完美感同身受",
+      "en_name": "Perfect Empathic Resolve",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-329f466491a7e46e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_tech_support",
+      "zh_name": "完美技术支援",
+      "en_name": "Perfect Tech Support",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-a9587e03b35c07df"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_clutch",
+      "zh_name": "完美猛抓者",
+      "en_name": "Perfect Clutch",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-91e4aa0fc96924d2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "bewildered",
+      "zh_name": "迷惑",
+      "en_name": "Bewildered",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ad79acae04c118a2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_kinetic_momentum",
+      "zh_name": "完美动能量",
+      "en_name": "Perfect Kinetic Momentum",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-3094f172ddec3066"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_spark",
+      "zh_name": "完美火花",
+      "en_name": "Perfect Spark",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c9e0e66e53ea09eb"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "fireworks_show",
+      "zh_name": "焰火秀",
+      "en_name": "Fireworks Show",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-4ba6e7ad2db396a2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_combined_arms",
+      "zh_name": "完美联合武装",
+      "en_name": "Perfect Combined Arms",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-150105325570c075"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_focus",
+      "zh_name": "完美对焦",
+      "en_name": "Perfect Focus",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ce0797d4e623841e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_adrenaline_rush",
+      "zh_name": "完美肾上腺素爆发",
+      "en_name": "Perfect Adrenaline Rush",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-00f1f92578cb0fb7"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_headhunter",
+      "zh_name": "完美猎头者",
+      "en_name": "Perfect Headhunter",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-4ee063e09325bb68"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_bloodsucker",
+      "zh_name": "完美吸血生物",
+      "en_name": "Perfect Bloodsucker",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-2a62fc1392bb47b5"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_efficient",
+      "zh_name": "完美效率第一",
+      "en_name": "Perfectly Efficient",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-04dd3e082229b4ea"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_calculated",
+      "zh_name": "完美精打细算",
+      "en_name": "Perfectly Calculated",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c012abf1b216efa1"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_skilled",
+      "zh_name": "完美熟练",
+      "en_name": "Perfectly Skilled",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-8b584bda79590690"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfectly_opportunistic",
+      "zh_name": "完美取巧",
+      "en_name": "Perfectly Opportunistic",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-bc623eb06a47a088"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_spotter",
+      "zh_name": "完美探子",
+      "en_name": "Perfect Spotter",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-987ce72a0281ac34"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "unbreakable",
+      "zh_name": "牢不可破",
+      "en_name": "Unbreakable",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-22c25072f451980a"
+      },
+      "modes": {
+        "PvE": {
+          "description": [
+            [
+              "当你的装甲耗尽时会替你回复 ",
+              {
+                "text": "95%",
+                "tone": "orange"
+              },
+              " ",
+              {
+                "text": "装甲",
+                "tone": "orange"
+              },
+              "。"
+            ],
+            [
+              "冷却时间：",
+              {
+                "text": "60 秒",
+                "tone": "orange"
+              }
+            ]
+          ],
+          "verification": "待核实",
+          "sources": []
+        },
+        "PvP": {
+          "description": [
+            [
+              "当你的装甲耗尽时会替你回复 ",
+              {
+                "text": "20%",
+                "tone": "orange"
+              },
+              " ",
+              {
+                "text": "装甲",
+                "tone": "orange"
+              },
+              "。"
+            ],
+            [
+              "冷却时间：",
+              {
+                "text": "30 秒",
+                "tone": "orange"
+              }
+            ]
+          ],
+          "verification": "待核实",
+          "sources": []
+        }
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "unstoppable_force",
+      "zh_name": "无人能挡的力量",
+      "en_name": "Unstoppable Force",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c8002b3dbaca20a9"
+      },
+      "modes": {
+        "PvE": {
+          "description": [
+            [
+              "击杀敌人增加 ",
+              {
+                "text": "5%",
+                "tone": "orange"
+              },
+              " 的总",
+              {
+                "text": "武器伤害",
+                "tone": "orange"
+              },
+              "，持续 ",
+              {
+                "text": "15 秒",
+                "tone": "orange"
+              },
+              "。最多可叠加 ",
+              {
+                "text": "5",
+                "tone": "orange"
+              },
+              " 次。"
+            ]
+          ],
+          "verification": "待核实",
+          "sources": []
+        },
+        "PvP": {
+          "description": [
+            [
+              "击杀敌人增加 ",
+              {
+                "text": "14%",
+                "tone": "orange"
+              },
+              " 的总",
+              {
+                "text": "武器伤害",
+                "tone": "orange"
+              },
+              "，持续 ",
+              {
+                "text": "6 秒",
+                "tone": "orange"
+              },
+              "。最多可叠加 ",
+              {
+                "text": "2",
+                "tone": "orange"
+              },
+              " 次。"
+            ]
+          ],
+          "verification": "待核实",
+          "sources": []
+        }
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_overclock",
+      "zh_name": "究极超频",
+      "en_name": "Perfect Overclock",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-1d68b1e3e1c55bd6"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_creeping_death",
+      "zh_name": "完美死亡蔓延",
+      "en_name": "Perfect Creeping Death",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-37b139106e84a697"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_trauma",
+      "zh_name": "完美创伤",
+      "en_name": "Perfect Trauma",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-700e4e3e75cdd00d"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_galvanize",
+      "zh_name": "完美振奋",
+      "en_name": "Perfect Galvanize",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-5dfea0d84abfa709"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_companion",
+      "zh_name": "完美同伴",
+      "en_name": "Perfect Companion",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-0b6da8bf4d1169a8"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "flurry",
+      "zh_name": "阵雪",
+      "en_name": "Flurry",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-974824dca5afc586"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "perfect_concussion",
+      "zh_name": "完美震荡",
+      "en_name": "Perfect Concussion",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-cc355220f79efa51"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "待核实",
+      "sources": []
+    },
+    {
+      "id": "weapon_talent_3797e3755d9f6a9b00082f6cdf99f051",
+      "zh_name": "适应本能",
+      "en_name": "Adaptive Instincts",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-820f3ed5f1687a13"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_assault_rifle_vector_mk2.mtalent#3797E3755D9F6A9B00082F6CDF99F051 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_346395bc5f460d4f0003ac4aef5ad9c2",
+      "zh_name": "技能电容",
+      "en_name": "Capacitance",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-74cfdc986616824e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_assault_rifle_magpulpdr.mtalent#346395BC5F460D4F0003AC4AEF5AD9C2 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5defd5a3000550d6302ded2e",
+      "zh_name": "王牌猎人",
+      "en_name": "Big Game Hunter",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-d42da0c9ca165305"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_assault_rifle_mk3.mtalent#0B88A6BC5DEFD5A3000550D6302DED2E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e6641c6cdd000ad91900ea2aee",
+      "zh_name": "谢幕",
+      "en_name": "Actum Est",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-1344ddd34b93f6d7"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_the_senate_actum_est.mtalent#6CFEC5E6641C6CDD000AD91900EA2AEE myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d669622f80003c20a9b139c11",
+      "zh_name": "灵感激发",
+      "en_name": "Unnerve",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-0f79093d818fb838"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_strega_unnerve.mtalent#C487423D669622F80003C20A9B139C11 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c541aeeb698b3fe10003c8e1779e48cd",
+      "zh_name": "扰乱",
+      "en_name": "Perturb",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c16bc74ad111db9d"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_assault_rifle_pandoran_harmony.mtalent#C541AEEB698B3FE10003C8E1779E48CD myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_19373b006a01a2c90003ce7d2508985a",
+      "zh_name": "双蛇杖",
+      "en_name": "Caduceus",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b3c504be28fa959e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_assault_rifle_caduceus.mtalent#19373B006A01A2C90003CE7D2508985A myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5defd5ff000550e0111f35e7",
+      "zh_name": "自由呼吸",
+      "en_name": "Breathe Free",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-a42b507ce009d004"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_smg_mk2.mtalent#0B88A6BC5DEFD5FF000550E0111F35E7 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_346395bc5eeb2eca0005db204dd1596d",
+      "zh_name": "实物支付",
+      "en_name": "Payment in Kind",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b5d07ad5b4168fbb"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_smg_mpx.mtalent#346395BC5EEB2ECA0005DB204DD1596D myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_32d246155be9d85e00033230a89c866e",
+      "zh_name": "喋喋不休",
+      "en_name": "Incessant Chatter",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-fb6fe771e7650c87"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_smg_mk1.mtalent#32D246155BE9D85E00033230A89C866E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d64ad5ee100036f37a52f7fd7",
+      "zh_name": "至尊驭众",
+      "en_name": "Rule Them All",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e4a554b9ac8e7559"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_ouroboros.mtalent#C487423D64AD5EE100036F37A52F7FD7 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_9e75f5ef673ca62b0003c830230df376",
+      "zh_name": "共生",
+      "en_name": "Symbiosis",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e113f4a96c4a6a5b"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_shield_healed_by_weapon_damage.mtalent#9E75F5EF673CA62B0003C830230DF376 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b00501356a0a8a9e000378577f34c716",
+      "zh_name": "黑道暗杀",
+      "en_name": "Gangland Hit",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-fad43d15587be5f3"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_smg_gangland_hit.mtalent#B00501356A0A8A9E000378577F34C716 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_346395bc5f4f45010003ad3641c7c0a6",
+      "zh_name": "败血休克",
+      "en_name": "Septic Shock",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e305db2b3da62314"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_shotgun_cryesix12.mtalent#346395BC5F4F45010003AD3641C7C0A6 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d65f815400003b68322795820",
+      "zh_name": "屈从射击",
+      "en_name": "Capitulate",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-7c807916fcdfebeb"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_capitulate.mtalent#C487423D65F815400003B68322795820 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b00501356909f39f0003728f82d71651",
+      "zh_name": "真实",
+      "en_name": "Autentico",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-4b5b10f697a633e0"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_shotgun_autentico.mtalent#B00501356909F39F0003728F82D71651 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c541aeeb6a5e14d80005bed8e6109df5",
+      "zh_name": "龙息",
+      "en_name": "Dragon's Breath",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-df84b76a1af12feb"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_dragons_breath.mtalent#C541AEEB6A5E14D80005BED8E6109DF5 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5de77f280003a5caae694f9e",
+      "zh_name": "基利和库力奇",
+      "en_name": "Geri and Freki",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-287f8ca1bf443fa6"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_rifle_mk4.mtalent#0B88A6BC5DE77F280003A5CAAE694F9E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_3797e3755c4f35c30023a59634c05fa8",
+      "zh_name": "双向扳机",
+      "en_name": "Binary Trigger",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-dafa49884a8c62a2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_rifle_mk1.mtalent#3797E3755C4F35C30023A59634C05FA8 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_3797e3755ce55f660005718344612be1",
+      "zh_name": "痛苦龇咬",
+      "en_name": "Agonizing Bite",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-73b1d3f0367833f7"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_rifle_mk3_a.mtalent#3797E3755CE55F660005718344612BE1 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e662c53db0000862eb0d1b1120",
+      "zh_name": "医生霍姆",
+      "en_name": "Doctor Home",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-1bf45dba04005859"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_doctor_home.mtalent#6CFEC5E662C53DB0000862EB0D1B1120 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d6543a5020003c691ce398459",
+      "zh_name": "奥提兹突击兵界面",
+      "en_name": "Ortiz Assault Interface",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-b82ef5f483e89b30"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_vindicator.mtalent#C487423D6543A5020003C691CE398459 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b0050135690055b30003886c8b23da97",
+      "zh_name": "输血",
+      "en_name": "Transfusion",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-3a4f8ea914fe79b3"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_rifle_transfusion.mtalent#B0050135690055B30003886C8B23DA97 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_32d246155be9d11900033223f3d344ff",
+      "zh_name": "电磁加速器",
+      "en_name": "Electromagnetic Accelerator",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-0e77926e545872f2"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_marksman_mk1.mtalent#32D246155BE9D11900033223F3D344FF myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_3797e3755e99dcb60005857430558ca0",
+      "zh_name": "一目了然",
+      "en_name": "In Plain Sight",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e6e62e11330a4dc0"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_marksman_mk2.mtalent#3797E3755E99DCB60005857430558CA0 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b3cf2e92615aa7180003639a6aa023b2",
+      "zh_name": "句点",
+      "en_name": "Full Stop",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-307701f9095aedb0"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_marksman_svd_01.mtalent#B3CF2E92615AA7180003639A6AA023B2 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e663496e550005657d0bc0d090",
+      "zh_name": "裹足烈焰",
+      "en_name": "The Trap",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-1e7212555ff93998"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_the_trap.mtalent#6CFEC5E663496E550005657D0BC0D090 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_a2264a16685d5dd0000af692ed0cdcb5",
+      "zh_name": "头号威胁",
+      "en_name": "High Priority Target",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-a2068eb7d9d0328d"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_mmr_high_priority_target.mtalent#A2264A16685D5DD0000AF692ED0CDCB5 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_3797e3755c42424b000321d629c3ef3c",
+      "zh_name": "流亡者的瘟疫",
+      "en_name": "Plague of the Outcasts",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-aef5d9ac592ca5a6"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_lmg_mk1_a.mtalent#3797E3755C42424B000321D629C3EF3C myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5defd5b7000550db1dfbdec5",
+      "zh_name": "枪弹地狱",
+      "en_name": "Bullet Hell",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-faa29dd3ea6127fd"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_lmg_mk2.mtalent#0B88A6BC5DEFD5B7000550DB1DFBDEC5 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b3cf2e9261dbfbeb0003643f424c1a62",
+      "zh_name": "干扰子弹",
+      "en_name": "Disruptor Rounds",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-08561c7f3ca622d8"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_lmg_kac_01.mtalent#B3CF2E9261DBFBEB0003643F424C1A62 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d649d45380003d97b6c70d494",
+      "zh_name": "炽热枪膛",
+      "en_name": "Ardent",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-9d37b2e389c6b501"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_ardent.mtalent#C487423D649D45380003D97B6C70D494 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_a2264a1667f4e3900003c125506699cd",
+      "zh_name": "帕坎",
+      "en_name": "Pakhan",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-10729355d18e1526"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_lmg_rpk74_pakhan.mtalent#A2264A1667F4E3900003C125506699CD myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c541aeeb6971d42f0003c6639b620f04",
+      "zh_name": "掩体枪手",
+      "en_name": "Cover Shooter",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-8a33b62a31ea7e45"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_big_alejandro.mtalent#C541AEEB6971D42F0003C6639B620F04 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5defd57d000550d159ecf6af",
+      "zh_name": "弑君",
+      "en_name": "Regicide",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-4d27151d7dec025e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/warlock_talent_exotic_pistol_mk2.mtalent#0B88A6BC5DEFD57D000550D159ECF6AF myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e662c2dd54000713fcc849985e",
+      "zh_name": "勤劳小蜜蜂",
+      "en_name": "Busy Little Bee",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-6e06a6b6b927fc20"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_weapon_busy_little_bee.mtalent#6CFEC5E662C2DD54000713FCC849985E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_32d246155c421aaf00051b2f8109ef43",
+      "zh_name": "不自由，毋宁死",
+      "en_name": "Liberty or Death",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-56fd57b0e0bf882f"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_pistol_mk1_a.mtalent#32D246155C421AAF00051B2F8109EF43 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c487423d653135560008615a02e4f93f",
+      "zh_name": "蚊子之歌",
+      "en_name": "Mosquito Song",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-5da407b678aacbc4"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_pistol_overhere.mtalent#C487423D653135560008615A02E4F93F myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_a2264a166863cb97000d8318df841a6f",
+      "zh_name": "节制",
+      "en_name": "Restrained",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e7ca86fe95892ee8"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_pistol_restrained.mtalent#A2264A166863CB97000D8318DF841A6F myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_a2264a16698b3cce0036027abcadb172",
+      "zh_name": "比装弹快",
+      "en_name": "Faster Than Reloading",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-42edfe5488d85531"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_pistol_faster_than_reloading.mtalent#A2264A16698B3CCE0036027ABCADB172 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_bfaaa1fc5d8cb170000345cb92028f94",
+      "zh_name": "完美爵士手",
+      "en_name": "Perfect Jazz Hands",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-2efea1104f3bee89"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_reload_speed_perfect.mtalent#BFAAA1FC5D8CB170000345CB92028F94 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_346395bc5dd687320003a021fc5e6cd3",
+      "zh_name": "雪中送乱",
+      "en_name": "Hidden Rock",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-1fb2f35fec9b857b"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_headshot_apply_confuse.mtalent#346395BC5DD687320003A021FC5E6CD3 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_b005013568dfd702002eb9b5be32544e",
+      "zh_name": "疾速模式",
+      "en_name": "Sport Mode",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-08b099796185dde5"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_sportmode_ui.mtalent#B005013568DFD702002EB9B5BE32544E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_5e65a21969afe0ac0003d3b0b5110108",
+      "zh_name": "繁花收割",
+      "en_name": "Blossom Harvest",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-61be98861cf00987"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_blossom_harvest.mtalent#5E65A21969AFE0AC0003D3B0B5110108 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_c541aeeb6a352d510003d77bb121299e",
+      "zh_name": "口吐白沫",
+      "en_name": "Foam at the Mouth",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ed87087800fa53ac"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_ensnare_headshot_summerevent_y8s2.mtalent#C541AEEB6A352D510003D77BB121299E myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5e259cd600064dd608feb35d",
+      "zh_name": "完美距离",
+      "en_name": "Perfect Distance",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-3bd39feb2f402261"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_optimal_range_perfect.mtalent#0B88A6BC5E259CD600064DD608FEB35D myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_bfaaa1fc5d88bb2b000344f0b78f2bdd",
+      "zh_name": "完美快板",
+      "en_name": "Perfect Allegro",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-ab624586abfaef3f"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_rate_of_fire_perfect.mtalent#BFAAA1FC5D88BB2B000344F0B78F2BDD myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_bfaaa1fc5d8cb46b000345d0632c30b9",
+      "zh_name": "完美加大",
+      "en_name": "Perfectly Extra",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-82ae4bb2976cf7c9"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_magazine_capacity_perfect.mtalent#BFAAA1FC5D8CB46B000345D0632C30B9 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5e259f3000064ddc95a93af1",
+      "zh_name": "完美百步穿杨",
+      "en_name": "Perfectly Accurate ",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-89640f63b29fed36"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_accuracy_perfect.mtalent#0B88A6BC5E259F3000064DDC95A93AF1 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_0b88a6bc5e25a21300064de0fb00d10d",
+      "zh_name": "完美最佳化",
+      "en_name": "Perfectly Optimized",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-085b321c54da413f"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_basic_increase_handling_perfect.mtalent#0B88A6BC5E25A21300064DE0FB00D10D myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_346395bc5daee3810007e907739023ef",
+      "zh_name": "引火子弹",
+      "en_name": "Primer Rounds",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-c32a671c4b380f53"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_specialization_flamethrower_sidearm.mtalent#346395BC5DAEE3810007E907739023EF myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e66361268500036ab7d52a32bf",
+      "zh_name": "闪耀火光",
+      "en_name": "Twinkling Lights",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-bced6f1a0397fc8e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_event_weapon_oh_carol.mtalent#6CFEC5E66361268500036AB7D52A32BF myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_7d43fdef6660517d000525a56d96aea3",
+      "zh_name": "刷新中",
+      "en_name": "Refreshing",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "reader-image-e443e3be6e38e59e"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_watergun.mtalent#7D43FDEF6660517D000525A56D96AEA3 myUIName/en"
+      ]
+    },
+    {
+      "id": "weapon_talent_6cfec5e662c29a9b000364548a4a662d",
+      "zh_name": "癫狂大锤",
+      "en_name": "Perfect Sledgehammer",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "weapon-talent-icon-6cfec5e662c29a9b000364548a4a662d"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_sledgehammer_perfect.mtalent#6CFEC5E662C29A9B000364548A4A662D myUIName/en and myIconSprite",
+        "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled#perfect_sledgehammer"
+      ]
+    }
+  ],
+  "_本地来源": {
+    "evidence": "dist/brand-data-completeness-20261021-001/native-talents.json",
+    "scope": "原生简体/英文同GUID文本、BonusAttributeRef和独立PVP覆盖；不使用SurvivalDungeon参数，不把快照时间当游戏build。"
+  }
+}

@@ -1,0 +1,30 @@
+<noinclude>
+普通装备、具名装备和分解产物共用的双语标题卡；只展示名称/图片，不保存游戏事实。
+
+{| class="wikitable"
+! 参数 !! 默认/缺省 !! 用途
+|-
+| 中文名称 || 空 || 主标题；调用者提供已维护的中文名
+|-
+| 英文名称 || 空则省略 || 小号英文副标题，与中文放在同一文字块
+|-
+| 图标 / 图标键 || 空 || 前者接收已有 resolver 输出；后者引用集中六部位 ID
+|-
+| 品质 || high_end || high_end / gear_set / exotic；其它值使用中性默认
+|-
+| 强调色 / 渐变起色 / 渐变止色 || 对应品质默认 || 各自独立覆盖；仅接受 #RGB / #RRGGBB，非法值忽略
+|-
+| 章节标题 || 是 || 否时使用正文标题结构，不进入自动目录
+|-
+| 附加类 || 空 || 额外展示 class；不用于保存业务状态
+|}
+
+最简单调用：<nowiki>{{装备标题卡|中文名称=测试装备}}</nowiki>。
+自定义调用（非游戏事实）：<nowiki>{{装备标题卡|中文名称=测试装备|英文名称=Test Equipment|图标键=mask|品质=high_end|强调色=#ABC|渐变起色=#345678|渐变止色=#123}}</nowiki>。
+
+品质默认三色只在 ui/brand-sets/brand-sets.css 维护，显式有效值 > 品质默认 > 中性 fallback。
+当前默认色为审核色：NEEDS GAME COLOR VERIFICATION，不声称是官方精确 RGB。
+依赖：Module:TD2颜色、TD2边框角节点、TD2图标及同一 canonical CSS。
+正式调用使用 canonical 名称；维护 registry/生成器，不手改 dist。
+布局在内部 span 上，避免 MediaWiki 插入 mw-headline 后破坏 accent / icon / text 三列。
+</noinclude><includeonly>{{#switch:{{{章节标题|是}}}|否=<div class="td2-equipment-heading-card td2-frame td2-quality-{{#switch:{{{品质|high_end}}}|high_end=high_end|gear_set=gear_set|exotic=exotic|#default=neutral}} {{{附加类|}}}" style="{{#invoke:TD2颜色|heading|强调色={{{强调色|}}}|渐变起色={{{渐变起色|}}}|渐变止色={{{渐变止色|}}}}}">|#default=<h3 class="td2-equipment-heading-card td2-frame td2-quality-{{#switch:{{{品质|high_end}}}|high_end=high_end|gear_set=gear_set|exotic=exotic|#default=neutral}} {{{附加类|}}}" style="{{#invoke:TD2颜色|heading|强调色={{{强调色|}}}|渐变起色={{{渐变起色|}}}|渐变止色={{{渐变止色|}}}}}">}}{{TD2边框角节点}}<span class="td2-equipment-heading-layout"><span class="td2-equipment-heading-accent" aria-hidden="true"></span><span class="td2-equipment-heading-icon">{{#if:{{{图标|}}}|{{{图标}}}|{{TD2图标|类别=equipment_slot|用途=heading|键={{{图标键|}}}}}}}</span><span class="td2-equipment-heading-text"><span class="td2-equipment-heading-zh">{{{中文名称|}}}</span>{{#if:{{{英文名称|}}}|<span class="td2-equipment-heading-en" lang="en">{{{英文名称}}}</span>}}</span></span>{{#switch:{{{章节标题|是}}}|否=</div>|#default=</h3>}}</includeonly>

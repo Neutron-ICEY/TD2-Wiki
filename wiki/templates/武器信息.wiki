@@ -1,0 +1,1 @@
+<noinclude>武器 Reader，使用共享装备资料与人工注释。</noinclude><includeonly>{{#invoke:TD2武器|render}}</includeonly>

@@ -1,0 +1,33 @@
+'''本页是非游戏事实的离线试验示例，不对应真实 TD2 品牌。所有数值仅用于检查接口，不可作为游戏资料。'''
+
+{{品牌套装信息
+|1件PvP词条来源=override
+|2件PvP词条来源=override
+|3件PvP词条来源=override
+|套装全称=品牌套装界面试验（非游戏事实）
+|英文原名=Offline Interface Example
+|默认允许主核心=blue
+|gloves型号资料={{品牌型号手套|中文名称=普通型号甲（非游戏事实）|英文名称=Example A}}{{品牌型号手套|中文名称=普通型号乙（非游戏事实）|英文名称=Example B}}
+|具名装备资料={{品牌装备摘要|stable_id=sandbox_named_example|装备名称=具名示例（非游戏事实）|英文原名=Named Example|装备部位=gloves|具名图纸名称=具名测试图纸|acquisition_mode=inherit}}
+|holster图纸=普通枪套测试图纸（非游戏事实）
+|品牌分解材料=试验品牌材料（非游戏事实）
+|简介=这个示例检查固定三档加成、独立 PvE/PvP、零值、缺失数据和特殊效果。分类名称来自 Catalog，不表示这些效果属于某个真实品牌。
+|1件PvE词条=bonus_weapon_damage
+|1件PvE使用特殊数值=是
+|1件PvE特殊原因=界面试验特殊数值，非游戏事实
+|1件PvE数值=15
+|1件PvP词条=bonus_protection_from_elites
+|1件PvP使用特殊数值=是
+|1件PvP特殊原因=界面试验特殊数值，非游戏事实
+|1件PvP数值=10
+|2件PvE词条=bonus_protection_from_elites
+|2件PvE使用特殊数值=是
+|2件PvE特殊原因=界面试验特殊数值，非游戏事实
+|2件PvE数值=0
+|2件PvP词条=
+|2件PvP数值=
+|3件PvE词条=special
+|3件PvE数值=
+|3件PvE特殊说明=这是特殊效果的接口示例，没有实际游戏含义。
+|特殊获取说明=未提供真实获取资料。
+}}

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "presets": [
+    {
+      "id": "fixed_minor_deathgrips_armor_on_kill",
+      "minor_attribute_id": "minor_attribute_armor_on_kill",
+      "value": "10.0",
+      "search_aliases": [
+        "死亡之握",
+        "Deathgrips"
+      ],
+      "verification": "2026-10-18 用户批准游戏截图为正式依据；见 docs/READER-511-NAMED-DATA-REQUEST.md",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_salvo_rate_of_fire",
+      "minor_attribute_id": "minor_attribute_rate_of_fire",
+      "value": "5.0",
+      "search_aliases": [
+        "齐射",
+        "Salvo"
+      ],
+      "verification": "原生Orange配置、固定100%与NamedAttributes常数上限闭环；当前游戏版本待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_the_hollow_man_health_damage",
+      "minor_attribute_id": "minor_attribute_health_damage",
+      "value": "14.0",
+      "search_aliases": [
+        "空心人",
+        "The Hollow Man"
+      ],
+      "verification": "2026-10-29 用户当前游戏内观察确认空心人为14%生命伤害，与现有14.0显示一致；原生物品与固定属性UID已闭合，但百分位145.0到最终UI值的等级/power、插值及舍入链尚未完整核实，导出game_build及运行选择未知。旧TU22公告仅保留为历史维护溯源，不用于裁决现行数值。",
+      "sources": [
+        "https://trello.com/c/qppi7bfc"
+      ],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_nightwatcher_scanner_pulse_haste",
+      "minor_attribute_id": "minor_attribute_scanner_pulse_haste",
+      "value": "100.0",
+      "search_aliases": [
+        "守夜者",
+        "Nightwatcher"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_forge_shield_health",
+      "minor_attribute_id": "minor_attribute_shield_health",
+      "value": "50.0",
+      "search_aliases": [
+        "锻炼",
+        "Forge"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_eagle_s_grasp_weapon_handling",
+      "minor_attribute_id": "minor_attribute_weapon_handling",
+      "value": "15.0",
+      "search_aliases": [
+        "雄鹰之握",
+        "Eagle's Grasp"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_contractor_s_gloves_damage_to_armor",
+      "minor_attribute_id": "minor_attribute_damage_to_armor",
+      "value": "8.0",
+      "search_aliases": [
+        "承包商手套",
+        "Contractor's Gloves",
+        "幽灵手套",
+        "Specter's Gloves"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实；2026-11-10 用户确认幽灵手套“对装甲伤害 具体数值和承包商一致”，在普通 Orange 具名口径下复用此 8.0 显示值；原生生成百分位 130.0 / Prototype 183.75 不作为 UI 数值。 2026-11-12 已核对幽灵与承包商的属性 UID、池 UID、两品质固定百分位完全一致；8.0 仍为确认值，不宣称已闭合百分位换算及 UI 取整。 本地核对证据：evidence/equipment/new-equipment-sources-20261112.json。",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_visionario_optimal_range",
+      "minor_attribute_id": "minor_attribute_optimal_range",
+      "value": "50.0",
+      "search_aliases": [
+        "远见",
+        "Visionario"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_grease_status_effects",
+      "minor_attribute_id": "minor_attribute_status_effects",
+      "value": "16.0",
+      "search_aliases": [
+        "紧实握手",
+        "Firm Handshake"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_fox_s_prayer_dmg_to_target_out_of_cover",
+      "minor_attribute_id": "minor_attribute_dmg_to_target_out_of_cover",
+      "value": "8.0",
+      "search_aliases": [
+        "散兵坑祷词",
+        "Fox's Prayer"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_cloak_reduced_threat",
+      "minor_attribute_id": "minor_attribute_reduced_threat",
+      "value": "50.0",
+      "search_aliases": [
+        "斗篷",
+        "Cloak"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_spot_on_accuracy",
+      "minor_attribute_id": "minor_attribute_accuracy",
+      "value": "38.00",
+      "search_aliases": [
+        "精确无误",
+        "Spot-on"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_ammo_dump_ammo_capacity",
+      "minor_attribute_id": "minor_attribute_ammo_capacity",
+      "value": "10.0",
+      "search_aliases": [
+        "弹药堆",
+        "Ammo Dump"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_punch_drunk_headshot_damage",
+      "minor_attribute_id": "minor_attribute_headshot_damage",
+      "value": "20.0",
+      "search_aliases": [
+        "昏头胀脑",
+        "Punch Drunk"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_motherly_love_skill_health",
+      "minor_attribute_id": "minor_attribute_skill_health",
+      "value": "25.0",
+      "search_aliases": [
+        "母性之爱",
+        "Motherly Love"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_claws_out_melee_damage",
+      "minor_attribute_id": "minor_attribute_melee_damage",
+      "value": "500.0",
+      "search_aliases": [
+        "张牙舞爪",
+        "Claws Out"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_claws_out_pistol_damage",
+      "minor_attribute_id": "minor_attribute_pistol_damage",
+      "value": "11.0",
+      "search_aliases": [
+        "张牙舞爪",
+        "Claws Out"
+      ],
+      "verification": "当前原生成员/固定属性UID与独立应用29.0.0显式Value对应；未将生成百分比缩放猜作数值；发行版本适用范围待核实",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_emperor_s_guard_armor_regen",
+      "minor_attribute_id": "minor_attribute_armor_regen",
+      "value": "1.00",
+      "search_aliases": [
+        "御前护卫",
+        "Emperor's Guard"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_p_caro_s_holster_weapon_damage",
+      "minor_attribute_id": "minor_attribute_weapon_damage",
+      "value": "10.0",
+      "search_aliases": [
+        "痞子枪套",
+        "Pícaro's Holster"
+      ],
+      "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
+      "sources": [],
+      "active": true
+    }
+  ]
+}

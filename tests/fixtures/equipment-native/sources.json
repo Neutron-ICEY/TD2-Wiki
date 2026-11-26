@@ -1,0 +1,28 @@
+{
+  "source_root": "resources/game/current/raw_files",
+  "version": null,
+  "files": [
+    "hunter/game system data/juice/talent/warlock_talent_exotic_backpack_mk2.mtalent",
+    "hunter/game system data/juice/item/gear_brand_set_511.mgearset",
+    "hunter/game system data/juice/item/gear_set_a.mgearset",
+    "hunter/game system data/juice/item/player_gear_back_511_01_named.mitem",
+    "rogue/game system data/juice/attribute/dictionary/talent_dictionary.mdict",
+    "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+    "hunter/localization/packages/simplifiedchinese/menus.locpack",
+    "hunter/localization/packages/english/menus.locpack",
+    "hunter/game system data/juice/itemgeneration/configs/configs_exotics_code1_data23.mitemgenerationconfigs",
+    "hunter/game system data/fruit/attribute/attribute_bonus.fruit",
+    "hunter/game system data/fruit/talent/talent.fruit",
+    "hunter/game system data/juice/talent/talent_backpack_status_effects_spread_perfect.mtalent",
+    "hunter/game system data/juice/talent/talent_chest_headshots_blind_target_perfect.mtalent",
+    "hunter/game system data/juice/talent/talent_exotic_chest_firm_intent.mtalent",
+    "hunter/game system data/juice/talent/talent_gearset_negotiatorsdilemma_6piece.mtalent",
+    "hunter/game system data/juice/talent/talent_mask_headshots_blind_target.mtalent",
+    "hunter/game system data/juice/talent/talent_mask_status_effects_spread.mtalent",
+    "hunter/game system data/juice/talent/warlock_talent_armor_kits_overcharge.mtalent",
+    "hunter/game system data/juice/talent/warlock_talent_armor_kits_overcharge_perfect.mtalent",
+    "hunter/game system data/juice/talent/warlock_talent_deployed_skills_boost_allies.mtalent",
+    "hunter/game system data/juice/talent/warlock_talent_deployed_skills_boost_allies_perfected.mtalent"
+  ],
+  "selection": "Complete representative talent definitions and parents; referenced attribute definitions and locale rows; Memento-only config sample; talent override contracts."
+}

@@ -1,0 +1,10 @@
+<noinclude>赛季和活动默认使用游戏日程，可分别用同名参数覆盖。</noinclude><includeonly><div class="td2-home-panel td2-home-news td2-frame">{{TD2边框角节点}}
+<h2>赛季信息</h2>
+{{{赛季|{{#invoke:TD2首页赛季|render|时刻={{#time:U}}}}}}}
+<p class="td2-home-empty">暂无赛季信息</p>
+</div>
+<div class="td2-home-panel td2-home-news td2-home-events td2-frame">{{TD2边框角节点}}
+<h2>活动日程</h2>
+{{{活动|{{#invoke:TD2首页活动|render|时刻={{#time:U}}}}}}}
+<p class="td2-home-empty">暂无活动日程</p>
+</div></includeonly>

@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "core_attributes": [
+    {
+      "id": "core_attribute_weapon_damage",
+      "zh_name": "武器伤害",
+      "en_name": "Weapon Damage",
+      "category": "offense",
+      "unit_type": "percent"
+    },
+    {
+      "id": "core_attribute_armor",
+      "zh_name": "装甲",
+      "en_name": "Armor",
+      "category": "defense",
+      "unit_type": "number"
+    },
+    {
+      "id": "core_attribute_skill_tier",
+      "zh_name": "技能分阶",
+      "en_name": "Skill Tier",
+      "category": "utility",
+      "unit_type": "number"
+    }
+  ],
+  "rules": [
+    {
+      "id": "ordinary_minor_weapon_handling",
+      "attribute_id": "minor_attribute_weapon_handling",
+      "native_uid": "3797E3755BAE97C30002BED1E9D83E8B",
+      "kind": "ordinary",
+      "display_max": "8",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:268"
+      ],
+      "native_range": {
+        "myRangeMax": "= Percent_1_to_5 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_critical_hit_chance",
+      "attribute_id": "minor_attribute_critical_hit_chance",
+      "native_uid": "4F5DDEA253EB6DD100001F28FCDEFA52",
+      "kind": "ordinary",
+      "display_max": "6",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:324"
+      ],
+      "native_range": {
+        "myRangeMax": "= Percent_1_to_5 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_critical_hit_damage",
+      "attribute_id": "minor_attribute_critical_hit_damage",
+      "native_uid": "4F5DDEA253EB6DD100001F292673DC62",
+      "kind": "ordinary",
+      "display_max": "12",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:379"
+      ],
+      "native_range": {
+        "myRangeMin": "= Percent_1_to_5 00000000000000000000000000000000",
+        "myRangeMax": "= Percent_1_to_10 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_headshot_damage",
+      "attribute_id": "minor_attribute_headshot_damage",
+      "native_uid": "10E5BD55558185C100000891ED2BA4F1",
+      "kind": "ordinary",
+      "display_max": "10",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:428"
+      ],
+      "native_range": {
+        "myRangeMax": "= Percent_1_To_8 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_skill_damage",
+      "attribute_id": "minor_attribute_skill_damage",
+      "native_uid": "F34855CA5BC757B600057D6FB9386EA1",
+      "kind": "ordinary",
+      "display_max": "10",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:490"
+      ],
+      "native_range": {
+        "myRangeMax": "= Percent_1_To_8 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_repair_skills",
+      "attribute_id": "minor_attribute_repair_skills",
+      "native_uid": "F34855CA5BC83C550002F18385E855C9",
+      "kind": "ordinary",
+      "display_max": "20",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:545"
+      ],
+      "native_range": {
+        "myRangeMin": "= Percent_1_To_8 00000000000000000000000000000000",
+        "myRangeMax": "= Percent_1_To_20 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_skill_haste",
+      "attribute_id": "minor_attribute_skill_haste",
+      "native_uid": "5D4179F15BF8174500032BB71F9E39D3",
+      "kind": "ordinary",
+      "display_max": "12",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:559"
+      ],
+      "native_range": {
+        "myRangeMin": "= Percent_1_to_5 00000000000000000000000000000000",
+        "myRangeMax": "= Percent_1_to_10 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_status_effects",
+      "attribute_id": "minor_attribute_status_effects",
+      "native_uid": "1C021E955DBC3AA6000545F36FB05AB2",
+      "kind": "ordinary",
+      "display_max": "10",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:608"
+      ],
+      "native_range": {
+        "myRangeMin": "= Percent_1_to_5 00000000000000000000000000000000",
+        "myRangeMax": "= Percent_1_to_10 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_armor_regen_flat",
+      "attribute_id": "minor_attribute_armor_regen_flat",
+      "native_uid": "5D4179F15BF55D4400032C84760C945E",
+      "kind": "ordinary",
+      "display_max": "4925",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "2026-11-01 用户40级游戏截图及当前实测确认显示上限；与原生UID、普通/奇特特殊身份、单位和UI取整规则交叉核对。Power区间端点及生成阶段取整算法尚未独立闭合，不影响截图已确认的显示上限。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:629",
+        "dist/exotic-attribute-caps-20261101-001/evidence/confirmation.json"
+      ],
+      "native_range": {
+        "myRangeMin": "= ArmorRegenMin 00000000000000000000000000000000",
+        "myRangeMax": "= ArmorRegenMax 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_hazard_protection",
+      "attribute_id": "minor_attribute_hazard_protection",
+      "native_uid": "5D312600585001E10000A3345EA4FF51",
+      "kind": "ordinary",
+      "display_max": "10",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:643"
+      ],
+      "native_range": {
+        "myRangeMin": "= Percent_1_to_5 00000000000000000000000000000000",
+        "myRangeMax": "= Percent_1_to_10 00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "ordinary_minor_health",
+      "attribute_id": "minor_attribute_health",
+      "native_uid": "4F5DDEA25294EE530000073CB65EDC3C",
+      "kind": "ordinary",
+      "display_max": "18935",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "2026-11-01 用户40级游戏截图及当前实测确认显示上限；与原生UID、普通/奇特特殊身份、单位和UI取整规则交叉核对。Power区间端点及生成阶段取整算法尚未独立闭合，不影响截图已确认的显示上限。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:657",
+        "dist/exotic-attribute-caps-20261101-001/evidence/confirmation.json"
+      ],
+      "native_range": {}
+    },
+    {
+      "id": "ordinary_minor_explosive_resistance",
+      "attribute_id": "minor_attribute_explosive_resistance",
+      "native_uid": "4F5DDEA25333E552000007BA1FEBF73F",
+      "kind": "ordinary",
+      "display_max": "10",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "原生普通池、品质修正与 UI 小数类型；百分比取 31–40 上界并按一位小数显示。整数属性端点尚未确认，保持空值。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:685"
+      ],
+      "native_range": {}
+    },
+    {
+      "id": "core_armor",
+      "attribute_id": "core_attribute_armor",
+      "native_uid": "5D4179F15AC362CC0001190A8D09DA48",
+      "kind": "core",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "身份与数值曲线保留原生证据；40级显示值复用 equipment-base-rules.json 的 major_display_values，名称复用 equipment-ui.json 的 major_names。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:728",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:734"
+      ],
+      "native_range": {
+        "myRangeMin": "= CoreArmorMin 00000000000000000000000000000000",
+        "myRangeMax": "= CoreArmorMax 00000000000000000000000000000000"
+      },
+      "core_type": "blue"
+    },
+    {
+      "id": "core_skill_tier",
+      "attribute_id": "core_attribute_skill_tier",
+      "native_uid": "5D4179F15BF80F4E00032B980881308F",
+      "kind": "core",
+      "constant": true,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "身份与数值曲线保留原生证据；40级显示值复用 equipment-base-rules.json 的 major_display_values，名称复用 equipment-ui.json 的 major_names。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:728",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:788"
+      ],
+      "native_range": {},
+      "core_type": "yellow"
+    },
+    {
+      "id": "core_weapon_damage",
+      "attribute_id": "core_attribute_weapon_damage",
+      "native_uid": "43A2C97052209A23000004CDD0FB54EC",
+      "kind": "core",
+      "constant": false,
+      "scope": "level_40_Orange_Exotic",
+      "verification": "身份与数值曲线保留原生证据；40级显示值复用 equipment-base-rules.json 的 major_display_values，名称复用 equipment-ui.json 的 major_names。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:728",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:814"
+      ],
+      "native_range": {
+        "myRangeMax": "= Percent_1_to_10 00000000000000000000000000000000"
+      },
+      "core_type": "red"
+    },
+    {
+      "id": "exotic_minor_incoming_repairs",
+      "attribute_id": "minor_attribute_incoming_repairs",
+      "native_uid": "4F5DDEA253F8A5EA00000E15E4C7E82D",
+      "kind": "exotic_special",
+      "display_max": "20.0",
+      "constant": false,
+      "scope": "level_40_Exotic",
+      "verification": "2026-11-01 用户40级游戏截图及当前实测确认显示上限；与原生UID、普通/奇特特殊身份、单位和UI取整规则交叉核对。Power区间端点及生成阶段取整算法尚未独立闭合，不影响截图已确认的显示上限。",
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/configs/configs_exotics_code1_data23.mitemgenerationconfigs:844",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict:1039",
+        "dist/exotic-attribute-caps-20261101-001/evidence/confirmation.json"
+      ]
+    }
+  ],
+  "pools": [
+    {
+      "id": "pool_core",
+      "name": "全部主属性",
+      "kind": "core",
+      "rules": [
+        "core_armor",
+        "core_skill_tier",
+        "core_weapon_damage"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:728"
+      ]
+    },
+    {
+      "id": "pool_maskoffense_investor",
+      "name": "投资者攻击属性",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_weapon_handling",
+        "ordinary_minor_critical_hit_chance",
+        "ordinary_minor_critical_hit_damage"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:2902"
+      ]
+    },
+    {
+      "id": "pool_maskdefensive_investor",
+      "name": "投资者防御属性",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_armor_regen_flat",
+        "ordinary_minor_hazard_protection",
+        "ordinary_minor_explosive_resistance"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:3069"
+      ]
+    },
+    {
+      "id": "pool_maskutility_investor",
+      "name": "投资者技能属性",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_skill_damage",
+        "ordinary_minor_skill_haste",
+        "ordinary_minor_status_effects"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:3146"
+      ]
+    },
+    {
+      "id": "pool_investor_minor",
+      "name": "投资者次属性",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_weapon_handling",
+        "ordinary_minor_critical_hit_chance",
+        "ordinary_minor_critical_hit_damage",
+        "ordinary_minor_armor_regen_flat",
+        "ordinary_minor_hazard_protection",
+        "ordinary_minor_explosive_resistance",
+        "ordinary_minor_skill_damage",
+        "ordinary_minor_skill_haste",
+        "ordinary_minor_status_effects"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:2902",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:3069",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:3146"
+      ]
+    },
+    {
+      "id": "pool_minor",
+      "name": "常规次属性",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_weapon_handling",
+        "ordinary_minor_critical_hit_chance",
+        "ordinary_minor_critical_hit_damage",
+        "ordinary_minor_headshot_damage",
+        "ordinary_minor_skill_damage",
+        "ordinary_minor_repair_skills",
+        "ordinary_minor_skill_haste",
+        "ordinary_minor_status_effects",
+        "ordinary_minor_armor_regen_flat",
+        "ordinary_minor_hazard_protection",
+        "ordinary_minor_health",
+        "ordinary_minor_explosive_resistance"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:268",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:324",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:379",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:428",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:490",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:545",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:559",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:608",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:629",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:643",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:657",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:685"
+      ]
+    },
+    {
+      "id": "pool_minor_offense",
+      "name": "随机攻击次属性（红色）",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_weapon_handling",
+        "ordinary_minor_critical_hit_chance",
+        "ordinary_minor_critical_hit_damage",
+        "ordinary_minor_headshot_damage"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:262",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:268",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:324",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:379",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:428"
+      ]
+    },
+    {
+      "id": "pool_minor_defense",
+      "name": "随机防御次属性（蓝色）",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_armor_regen_flat",
+        "ordinary_minor_hazard_protection",
+        "ordinary_minor_health",
+        "ordinary_minor_explosive_resistance"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:623",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:629",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:643",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:657",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:685"
+      ]
+    },
+    {
+      "id": "pool_minor_utility",
+      "name": "随机技能次属性（黄色）",
+      "kind": "ordinary",
+      "rules": [
+        "ordinary_minor_skill_damage",
+        "ordinary_minor_repair_skills",
+        "ordinary_minor_skill_haste",
+        "ordinary_minor_status_effects"
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:484",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:490",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:545",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:559",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists:608"
+      ]
+    }
+  ],
+  "native_named_slots": [
+    {
+      "config": "player_gear_kneepads_l_01_named_config",
+      "slots": [
+        {
+          "attribute_uid": "4F5DDEA253EB6DD100001F28FCDEFA52",
+          "rule": "ordinary_minor_critical_hit_chance",
+          "preset_percentage": "100.0",
+          "is_named": false,
+          "is_core": false,
+          "recalibration": "unverified_native_flag_only"
+        },
+        {
+          "attribute_uid": "4F5DDEA253EB6DD100001F292673DC62",
+          "rule": "ordinary_minor_critical_hit_damage",
+          "preset_percentage": "100.0",
+          "is_named": false,
+          "is_core": false,
+          "recalibration": "unverified_native_flag_only"
+        },
+        {
+          "attribute_uid": "43A2C97052209A23000004CDD0FB54EC",
+          "rule": "core_weapon_damage",
+          "preset_percentage": "-1",
+          "is_named": false,
+          "is_core": true,
+          "recalibration": "unverified_native_flag_only"
+        }
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/configs/configs_gear_kneepads_code1_data23.mitemgenerationconfigs:5931"
+      ]
+    },
+    {
+      "config": "player_gear_mask_i_named_01_config",
+      "slots": [
+        {
+          "attribute_uid": "43A2C97052209A23000004CDD0FB54EC",
+          "rule": "core_weapon_damage",
+          "preset_percentage": "-1",
+          "is_named": false,
+          "is_core": true,
+          "recalibration": "unverified_native_flag_only"
+        },
+        {
+          "attribute_uid": "10E5BD55558185C100000891ED2BA4F1",
+          "rule": "fixed_minor_punch_drunk_headshot_damage",
+          "preset_percentage": "214.0",
+          "is_named": true,
+          "is_core": false,
+          "recalibration": "unverified_native_flag_only"
+        }
+      ],
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/itemgeneration/configs/configs_gear_mask_code1_data23.mitemgenerationconfigs:2223"
+      ]
+    }
+  ],
+  "identities": {
+    "minor_attribute_armor_on_kill": {
+      "zh_name": "击杀时回复装甲",
+      "en_name": "Armor on Kill",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15BF55A5200032C69B6DF1572",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_hazard_protection": {
+      "zh_name": "危害防护",
+      "en_name": "Hazard Protection",
+      "unit_type": "percent",
+      "native_uid": "5D312600585001E10000A3345EA4FF51",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_skill_damage": {
+      "zh_name": "技能伤害",
+      "en_name": "Skill Damage",
+      "unit_type": "percent",
+      "native_uid": "F34855CA5BC757B600057D6FB9386EA1",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/player_skill_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_repair_skills": {
+      "zh_name": "修复技能",
+      "en_name": "Repair Skills",
+      "unit_type": "percent",
+      "native_uid": "F34855CA5BC83C550002F18385E855C9",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/player_skill_dictionary.mdict",
+      "display_alias": "技能修复",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_skill_haste": {
+      "zh_name": "技能加速",
+      "en_name": "Skill Haste",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15BF8174500032BB71F9E39D3",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_critical_hit_damage": {
+      "zh_name": "暴击伤害",
+      "en_name": "Critical Hit Damage",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA253EB6DD100001F292673DC62",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_critical_hit_chance": {
+      "zh_name": "暴击机率",
+      "en_name": "Critical Hit Chance",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA253EB6DD100001F28FCDEFA52",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "display_alias": "暴击几率",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_weapon_handling": {
+      "zh_name": "武器控制力",
+      "en_name": "Weapon Handling",
+      "unit_type": "percent",
+      "native_uid": "3797E3755BAE97C30002BED1E9D83E8B",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "display_alias": "武器控制",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestHalf"
+      }
+    },
+    "minor_attribute_headshot_damage": {
+      "zh_name": "爆头伤害",
+      "en_name": "Headshot Damage",
+      "unit_type": "percent",
+      "native_uid": "10E5BD55558185C100000891ED2BA4F1",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_explosive_resistance": {
+      "zh_name": "爆炸抗性",
+      "en_name": "Explosive Resistance",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA25333E552000007BA1FEBF73F",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_status_effects": {
+      "zh_name": "状态效果",
+      "en_name": "Status Effects",
+      "unit_type": "percent",
+      "native_uid": "1C021E955DBC3AA6000545F36FB05AB2",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_health": {
+      "zh_name": "生命值",
+      "en_name": "Health",
+      "unit_type": "number",
+      "native_uid": "4F5DDEA25294EE530000073CB65EDC3C",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "FlatValue",
+        "myUnit": "Value",
+        "myUINumDecimals": "0",
+        "myRoundMode": "Ceiling"
+      }
+    },
+    "minor_attribute_rate_of_fire": {
+      "zh_name": "射速",
+      "en_name": "Rate of Fire",
+      "unit_type": "percent",
+      "native_uid": "43A2C97052209A23000004DC3D85D0C7",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_health_damage": {
+      "zh_name": "生命值伤害",
+      "en_name": "Health Damage",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15B07D15900DC9EFAF5347F67",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestHalf"
+      }
+    },
+    "minor_attribute_scanner_pulse_haste": {
+      "zh_name": "扫描脉冲加速",
+      "en_name": "Scanner Pulse Haste",
+      "unit_type": "percent",
+      "native_uid": "5B17B22F5B3F23690003ECBDC6B8ECCC",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/player_skill_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_shield_health": {
+      "zh_name": "护盾生命值",
+      "en_name": "Shield Health",
+      "unit_type": "percent",
+      "native_uid": "F34855CA5BCF0A2F0002FFD59E693E69",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/player_skill_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_damage_to_armor": {
+      "zh_name": "对装甲的伤害",
+      "en_name": "Damage to Armor",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15BF55AD400032C6E0119EB78",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "Ceiling"
+      }
+    },
+    "minor_attribute_optimal_range": {
+      "zh_name": "有效射程",
+      "en_name": "Optimal Range",
+      "unit_type": "percent",
+      "native_uid": "43A2C97052209FAE000004F9BA3A9FAA",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestHalf"
+      }
+    },
+    "minor_attribute_dmg_to_target_out_of_cover": {
+      "zh_name": "对离开掩体目标的伤害",
+      "en_name": "DMG to target out of cover",
+      "unit_type": "percent",
+      "native_uid": "5D31260057343AFB000096DB6D9D0179",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "0",
+        "myRoundMode": "Ceiling"
+      }
+    },
+    "minor_attribute_reduced_threat": {
+      "zh_name": "降低威胁度",
+      "en_name": "Reduced Threat",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA2543FCB9300000DF59A13A4FB",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "0",
+        "myRoundMode": "NearestHalf"
+      }
+    },
+    "minor_attribute_accuracy": {
+      "zh_name": "准确度",
+      "en_name": "Accuracy",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15BF557AA00032C570AF8C977",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_ammo_capacity": {
+      "zh_name": "弹药容量",
+      "en_name": "Ammo Capacity",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA25284F3E00000062692378107",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_skill_health": {
+      "zh_name": "技能生命值",
+      "en_name": "Skill Health",
+      "unit_type": "percent",
+      "native_uid": "F34855CA5BC757B600057D70CAB3DD2C",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/player_skill_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_melee_damage": {
+      "zh_name": "近战伤害",
+      "en_name": "Melee Damage",
+      "unit_type": "percent",
+      "native_uid": "5D4179F15C13BC9000033F9CC5D321EC",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "0",
+        "myRoundMode": "NearestHalf"
+      }
+    },
+    "minor_attribute_pistol_damage": {
+      "zh_name": "手枪伤害",
+      "en_name": "Pistol Damage",
+      "unit_type": "percent",
+      "native_uid": "5D31260057DBA943000093FA19FA4002",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_armor_regen": {
+      "zh_name": "装甲回复",
+      "en_name": "Armor Regen",
+      "unit_type": "percent",
+      "native_uid": "3797E3755C586D5B000327B8721BEF4D",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_weapon_damage": {
+      "zh_name": "武器伤害",
+      "en_name": "Weapon Damage",
+      "unit_type": "percent",
+      "native_uid": "43A2C97052209A23000004CDD0FB54EC",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "minor_attribute_armor_regen_flat": {
+      "zh_name": "装甲回复",
+      "en_name": "Armor Regen",
+      "unit_type": "number",
+      "native_uid": "5D4179F15BF55D4400032C84760C945E",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "FlatValue",
+        "myUnit": "HPPerSecond",
+        "myUINumDecimals": "0",
+        "myRoundMode": "Nearest"
+      }
+    },
+    "minor_attribute_incoming_repairs": {
+      "zh_name": "受到修复",
+      "en_name": "Incoming Repairs",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA253F8A5EA00000E15E4C7E82D",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "core_attribute_weapon_damage": {
+      "zh_name": "武器伤害",
+      "en_name": "Weapon Damage",
+      "unit_type": "percent",
+      "native_uid": "43A2C97052209A23000004CDD0FB54EC",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "core_attribute_armor": {
+      "zh_name": "装甲",
+      "en_name": "Armor",
+      "unit_type": "number",
+      "native_uid": "5D4179F15AC362CC0001190A8D09DA48",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "FlatValue",
+        "myUnit": "Value",
+        "myUINumDecimals": "0",
+        "myRoundMode": "NearestTenth"
+      }
+    },
+    "core_attribute_skill_tier": {
+      "zh_name": "技能分阶",
+      "en_name": "Skill Tier",
+      "unit_type": "number",
+      "native_uid": "5D4179F15BF80F4E00032B980881308F",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "FlatValue",
+        "myUnit": "Value",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestHalf"
+      }
+    }
+  },
+  "native_profile": {
+    "attribute_list": "hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists",
+    "constant_rules": [
+      {
+        "id": "ordinary_minor_weapon_handling",
+        "attribute_id": "minor_attribute_weapon_handling",
+        "pool_uid": "B00501356A587CB800023C3757C5863A",
+        "quality": "Orange",
+        "after_power": 930,
+        "file": "data/equipment/attributes.json",
+        "path": [
+          "rules",
+          {
+            "key": "id",
+            "value": "ordinary_minor_weapon_handling"
+          },
+          "display_max"
+        ]
+      },
+      {
+        "id": "ordinary_minor_critical_hit_chance",
+        "attribute_id": "minor_attribute_critical_hit_chance",
+        "pool_uid": "B00501356A587CB800023C3757C5863A",
+        "quality": "Orange",
+        "after_power": 930,
+        "file": "data/equipment/attributes.json",
+        "path": [
+          "rules",
+          {
+            "key": "id",
+            "value": "ordinary_minor_critical_hit_chance"
+          },
+          "display_max"
+        ]
+      },
+      {
+        "id": "core_skill_tier",
+        "attribute_id": "core_attribute_skill_tier",
+        "pool_uid": "B00501356A587CB800023C3CC306FD02",
+        "quality": "Orange",
+        "file": "data/brand-sets/equipment-base-rules.json",
+        "path": [
+          "major_display_values",
+          "yellow"
+        ]
+      },
+      {
+        "id": "fixed_minor_visionario_optimal_range",
+        "attribute_id": "minor_attribute_optimal_range",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "B0050135668CEF6A00056314FEDB1CF9",
+            "source": "hunter/game system data/juice/item/player_gear_mask_d1_01_named.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_visionario_optimal_range"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_spot_on_accuracy",
+        "attribute_id": "minor_attribute_accuracy",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "B0050135685375DC0003707F8ABE3249",
+            "source": "hunter/game system data/juice/item/player_gear_holster_g1_01_named.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_spot_on_accuracy"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_salvo_rate_of_fire",
+        "attribute_id": "minor_attribute_rate_of_fire",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "E03CE5EA68FA19DC00037267410869CE",
+            "source": "hunter/game system data/juice/item/player_gear_holster_h1_named_01.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_salvo_rate_of_fire"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_emperor_s_guard_armor_regen",
+        "attribute_id": "minor_attribute_armor_regen",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "5D4179F15D7B4F05000674DC363791C3",
+            "source": "hunter/game system data/juice/item/player_gear_kneepads_s_named_01.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_emperor_s_guard_armor_regen"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_nightwatcher_scanner_pulse_haste",
+        "attribute_id": "minor_attribute_scanner_pulse_haste",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "5D4179F15D77A63C0003585CFC11179A",
+            "source": "hunter/game system data/juice/item/player_gear_mask_b_named_01.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_nightwatcher_scanner_pulse_haste"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_p_caro_s_holster_weapon_damage",
+        "attribute_id": "minor_attribute_weapon_damage",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "F58BDD5662CEC0CE0007DE8BFD40B1C2",
+            "source": "hunter/game system data/juice/item/player_gear_holster_x_01_named.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_p_caro_s_holster_weapon_damage"
+          },
+          "value"
+        ]
+      },
+      {
+        "id": "fixed_minor_cloak_reduced_threat",
+        "attribute_id": "minor_attribute_reduced_threat",
+        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "quality": "Orange",
+        "items": [
+          {
+            "uid": "E03CE5EA67F4D3750003701C794AEEDE",
+            "source": "hunter/game system data/juice/item/player_gear_kneepads_f1_01_named.mitem"
+          }
+        ],
+        "file": "data/brand-sets/fixed-minor-presets.json",
+        "path": [
+          "presets",
+          {
+            "key": "id",
+            "value": "fixed_minor_cloak_reduced_threat"
+          },
+          "value"
+        ]
+      }
+    ]
+  }
+}

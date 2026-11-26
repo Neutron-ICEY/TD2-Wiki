@@ -1,0 +1,147 @@
+{
+  "review_date": "2026-11-12",
+  "base_commit": "0a88f9e",
+  "scope": "Display presets only; equipment/blueprint eligibility and source evidence remain separate.",
+  "manhunt": {
+    "mission_uid": "0B9940F36A2015BD00080226FCA2E036",
+    "mission_source": "hunter/game system data/juice/mission/jnv04_airport.mmission",
+    "title_guid": "0B9940F36A2015BD000802241A50ABB6",
+    "title": "华盛顿国际机场：鲍比·古兹曼",
+    "localization": "hunter/localization/packages/simplifiedchinese/menus.locpack",
+    "item_uid": "B00501356A8FE11300037E60A33CDC61",
+    "confirmed_condition": "首次通关大师难度必定获得",
+    "condition_basis": [
+      "evidence/equipment/bear-master-confirmation-20261112.json",
+      "用户明确：大师难度奖励属于任务结算，不作为普通首领掉落。",
+      "用户后续明确限定：首次通关大师难度必定获得；不推断重复通关奖励。"
+    ],
+    "native_evidence": "evidence/equipment/new-equipment-sources-20261112.json",
+    "unresolved": "两条原生 Legendary 持久标志条件仍未闭合；不增加通用难度映射或其他任务确认。"
+  },
+  "retaliation": {
+    "source_file": "hunter/game system data/juice/crafting/crafting_definitions.juice",
+    "localization": "hunter/localization/packages/simplifiedchinese/menus.locpack",
+    "sources": [
+      {
+        "source_id": "blueprint_source_fb6e28d26894821c00037101fb779863",
+        "line": 16384,
+        "text_guid": "FB6E28D26894821C00037101FB779863",
+        "text": "击杀鬣狗报复行动中的杀戮小队后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_Hyenas"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 3
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d268948259000371024699420b",
+        "line": 16393,
+        "text_guid": "FB6E28D268948259000371024699420B",
+        "text": "击杀真实之子报复行动中的杀戮小队后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_TrueSons"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 2
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825900037103d95abd66",
+        "line": 16402,
+        "text_guid": "FB6E28D26894825900037103D95ABD66",
+        "text": "击杀流亡者报复行动中的杀戮小队后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_Outcasts"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 4
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825a00037104f51340c0",
+        "line": 16411,
+        "text_guid": "FB6E28D26894825A00037104F51340C0",
+        "text": "击杀净化者报复行动中的杀戮小队后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_Cleaners"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 3
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825b00037105b2e06a81",
+        "line": 16420,
+        "text_guid": "FB6E28D26894825B00037105B2E06A81",
+        "text": "击杀报复行动中的杀戮小队后，有几率从赖克斯帮掉落。",
+        "tags": [
+          "Crafting_Exotic_Rikers"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 3
+      },
+      {
+        "source_id": "blueprint_source_f46c7df269a7029a00037515486fd60a",
+        "line": 16429,
+        "text_guid": "F46C7DF269A7029A00037515486FD60A",
+        "text": "击杀黯牙报复行动中的杀戮小队后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_BlackTusk_DIAMOND"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 4
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825b000371063ee5efcc",
+        "line": 16438,
+        "text_guid": "FB6E28D26894825B000371063EE5EFCC",
+        "text": "在报复行动中抗击鬣狗并成功保卫领土后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_Hyenas_Success"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 1
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825c000371073258d4fb",
+        "line": 16447,
+        "text_guid": "FB6E28D26894825C000371073258D4FB",
+        "text": "在报复行动中抗击真实之子并成功保卫领土后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_TrueSons_Success"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 4
+      },
+      {
+        "source_id": "blueprint_source_fb6e28d26894825d000371085d228730",
+        "line": 16456,
+        "text_guid": "FB6E28D26894825D000371085D228730",
+        "text": "在报复行动中抗击流亡者并成功保卫领土后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_Outcasts_Success"
+        ],
+        "verified": "current_confirmed",
+        "affected_blueprints": 5
+      },
+      {
+        "source_id": "blueprint_source_f46c7df269a702d700037516363c8546",
+        "line": 16483,
+        "text_guid": "F46C7DF269A702D700037516363C8546",
+        "text": "在报复行动中抗击黯牙并成功保卫领土后有几率掉落。",
+        "tags": [
+          "Crafting_Exotic_BlackTusk_Success"
+        ],
+        "verified": null,
+        "affected_blueprints": 0
+      }
+    ],
+    "scope_note": "9 条已确认来源对应 29 张图纸。黯牙保卫领土提示尚无已登记图纸目标、未确认，未接入显示预设。",
+    "terminology_note": "保留简体原文的成功保卫领土；赖克斯帮使用简体文本及 Crafting_Exotic_Rikers 标签，不照搬英文 SourceInfo 中的 Hyena。"
+  },
+  "reference_tool": {
+    "local_version": "29.0.0",
+    "latest_version": "29.2.0",
+    "release": "https://github.com/Division2BuildTool/division2buildtool.github.io/releases/tag/29.2.0",
+    "apk_sha256": "3757b6c80e61f7c2cfe5b7bed84d362f977c14c53ce1c87cf917b615e229274c",
+    "comparison": "30 条既有相关参考文本未变化；新版本另有一条武器来源文字，不属本轮装备范围。",
+    "role": "仅为术语与范围参考；不据其简写、笼统来源或大师难度词条增加获取事实。"
+  }
+}

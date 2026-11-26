@@ -1,0 +1,222 @@
+{
+  "_说明": "NON-GAME-FACT / TEST FIXTURE：以下所有名称、描述、数值仅证明契约，不对应真实 TD2 装备。",
+  "catalog": {
+    "schema_version": 2,
+    "attributes": [
+      {
+        "id": "bonus_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      }
+    ]
+  },
+  "rules": {
+    "schema_version": 2,
+    "rules": [
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 1,
+        "value": "0",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 2,
+        "value": "20",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 3,
+        "value": "30",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 1,
+        "value": "0",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 2,
+        "value": "14",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 3,
+        "value": "21",
+        "verification": "待核实",
+        "sources": []
+      }
+    ]
+  },
+  "talents": {
+    "schema_version": 1,
+    "talents": [
+      {
+        "id": "test_talent",
+        "zh_name": "测试天赋（非游戏事实）",
+        "en_name": "Test Talent",
+        "page_title": "试验天赋页面",
+        "icon": {
+          "wiki_file": "",
+          "confirmed_on_wiki": false
+        },
+        "modes": {
+          "PvE": {
+            "description": "测试 PvE 天赋描述，较长中文与英文 MixedText 用于布局检验。",
+            "verification": "待核实",
+            "sources": []
+          },
+          "PvP": {
+            "description": "独立的测试 PvP 天赋描述。",
+            "verification": "待核实",
+            "sources": []
+          }
+        },
+        "search_aliases": [
+          "ceshitianfu",
+          "cstf",
+          "测试别名"
+        ],
+        "active": true,
+        "verification": "待核实",
+        "sources": []
+      }
+    ]
+  },
+  "brand": {
+    "套装全称": "试验品牌（非游戏事实）",
+    "英文原名": "Test Brand / 中文、English·混合名称",
+    "简介": "集中规则与天赋引用的最小关系试验，所有数值均非游戏事实。",
+    "成员装备": "试验普通胸甲",
+    "具名装备": "试验具名背包",
+    "默认允许主核心": "blue",
+    "默认允许小核心": "red;blue;yellow",
+    "默认主核心槽数": "1",
+    "默认小属性槽数": "2",
+    "默认插件槽数": "1",
+    "mask使用不同规则": "是",
+    "mask允许主核心": "yellow",
+    "mask允许小核心": "red;blue",
+    "mask主核心槽数": "1",
+    "mask小属性槽数": "2",
+    "mask插件槽数": "0",
+    "来源说明": "仅用于测试，不是游戏资料",
+    "1件PvE词条": "bonus_weapon_damage",
+    "1件PvP词条": "bonus_weapon_damage",
+    "2件PvE词条": "bonus_weapon_damage",
+    "2件PvP词条": "bonus_weapon_damage",
+    "3件PvE词条": "bonus_weapon_damage",
+    "3件PvP词条": "bonus_weapon_damage",
+    "1件PvP词条来源": "override",
+    "2件PvP词条来源": "override",
+    "3件PvP词条来源": "override"
+  },
+  "equipment": [
+    {
+      "id": "test_named",
+      "zh_name": "试验具名背包（非游戏事实）",
+      "en_name": "Test Named Equipment",
+      "named": true,
+      "brand_title": "试验品牌（非游戏事实）",
+      "slot": "backpack",
+      "talent_id": "test_talent",
+      "search_aliases": [
+        "shiyanjuming",
+        "syjm"
+      ],
+      "native_override": {
+        "enabled": true,
+        "rule": {
+          "allowed_major_cores": [
+            "red",
+            "blue"
+          ],
+          "allowed_minor_cores": [
+            "red",
+            "blue",
+            "yellow"
+          ],
+          "major_core_slots": 1,
+          "minor_attribute_slots": 3,
+          "mod_slot_count": 2
+        }
+      }
+    }
+  ],
+  "minor_catalog": {
+    "schema_version": 2,
+    "_说明": "NON-GAME-FACT TEST FIXTURE；非游戏事实，仅测试次属性领域",
+    "attributes": [
+      {
+        "id": "minor_attribute_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      }
+    ]
+  }
+}

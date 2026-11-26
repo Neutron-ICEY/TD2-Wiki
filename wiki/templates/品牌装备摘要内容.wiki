@@ -1,0 +1,11 @@
+<noinclude>具名 Reader 内容，由资料映射传入固定参数和页面获取设置。</noinclude><includeonly><div class="td2-equipment" id="named-{{{stable_id|}}}" data-brand="{{{所属品牌|}}}" data-slot="{{{装备部位|}}}">
+{{#invoke:TD2品牌投影|record|kind=named|talent_mode={{{talent_mode|none}}}|talent_ref={{{天赋引用|}}}|slot={{{装备部位|}}}|name={{{装备名称|}}}|en={{{英文原名|}}}|stable_id={{{stable_id|}}}}}
+{{装备标题卡|中文名称={{{装备名称|}}}|英文名称={{{英文原名|}}}|图标键={{{装备部位|}}}|品质=high_end}}
+{{TD2普通装备规则|{{{装备部位|}}}|简介={{{简介|}}}|talent_mode={{{talent_mode|none}}}|固定天赋引用={{#switch:{{{talent_mode|none}}}|fixed={{{天赋引用|}}}|#default=}}|固定次属性={{{固定次属性|}}}|所属品牌=|主属性引用={{{装备部位|}}}|次属性槽数={{{次属性槽数|}}}|插件槽数={{{插件槽数|}}}|次属性槽例外={{{次属性槽例外|}}}|插件槽例外={{{插件槽例外|}}}}}
+<span class="td2-named-effects"></span>
+<div class="td2-divider-soft" aria-hidden="true"></div>
+<div class="td2-source-heading" role="heading" aria-level="4">{{#invoke:TD2品牌投影|blueprintHeading}}</div>
+<div class="td2-acquisition-result">{{#invoke:TD2品牌投影|blueprintSource|source_subject={{{stable_id|}}}}}</div>
+<div class="td2-source-heading" role="heading" aria-level="4"><span class="td2-named-acquisition-heading"></span></div>
+<span class="td2-named-acquisition"></span>
+<span class="td2-named-end"></span></div></includeonly>

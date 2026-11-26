@@ -1,0 +1,13 @@
+{
+  "test_only": true,
+  "blueprints": [
+    {"id":"blueprint:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","target_id":"exotic:4cdce5b25d5518e40003409a83b246b0","purpose":"craft","name":"NON-GAME-FACT 图纸甲; 原文","source_refs":["blueprint_source_11111111111111111111111111111111","blueprint_source_33333333333333333333333333333333"],"evidence":["synthetic:identity-a"]},
+    {"id":"blueprint:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","target_id":"exotic:4cdce5b25d5518e40003409a83b246b0","purpose":"craft","name":"NON-GAME-FACT 图纸乙","source_refs":["blueprint_source_22222222222222222222222222222222"],"evidence":["synthetic:identity-b"]},
+    {"id":"blueprint:cccccccccccccccccccccccccccccccc","target_id":"exotic:4cdce5b25d5518e40003409a83b246b0","purpose":"reconfigure","name":"NON-GAME-FACT 重新配置","source_refs":[],"evidence":["synthetic:identity-c"]}
+  ],
+  "blueprint_sources": [
+    {"id":"blueprint_source_11111111111111111111111111111111","text":"TEST ONLY 来源甲; 保留 & 符号","verification":"current_confirmed","evidence":["synthetic:source-a"],"current_evidence":["synthetic:confirmation-a"]},
+    {"id":"blueprint_source_22222222222222222222222222222222","text":"TEST ONLY 来源乙","verification":"current_confirmed","evidence":["synthetic:source-b"],"current_evidence":["synthetic:confirmation-b"]},
+    {"id":"blueprint_source_33333333333333333333333333333333","text":"TEST ONLY 原生提示不显示","verification":"native_only","evidence":["synthetic:source-c"]}
+  ]
+}

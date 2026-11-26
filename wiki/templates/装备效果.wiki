@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:TD2资料记录|effect}}</includeonly>

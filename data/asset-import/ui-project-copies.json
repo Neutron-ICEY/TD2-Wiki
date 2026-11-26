@@ -1,0 +1,1932 @@
+{
+  "schema_version": 1,
+  "scope": "Approved local project-use derivatives only; no original game files or publication receipt.",
+  "derived_images": [
+    {
+      "asset_id": "project-ui:middle",
+      "target_id": "middle",
+      "zh": "机械同心圆",
+      "wiki_filename": "TD2-UI-机械同心圆-Icon.png",
+      "derived_file": "assets/TD2-UI-机械同心圆-Icon.png",
+      "derived_sha256": "c20b8576b5db2c0a69c8cb44ec24b354f2ff57f233aba8ef5e145f6e5be0cf6b",
+      "pixel_hash": "58ebcf93700a5f4a6d74af6d12c647a299b4f8e09de293090e3b2a0734e1fe3e",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "human_confirmed_visual_match_local_copy",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+        "sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9",
+        "size": [
+          1024,
+          1024
+        ],
+        "bytes": 134907,
+        "color_mode": "L",
+        "alpha": false,
+        "source_container": "hunter/sdf/pc/data/sdf.sdftoc",
+        "source_container_sha256": "139f3cf5f4f97125c8eba1c4b3b9439b029cd41521613b3a23d853ca7f900aff",
+        "resource_name": "hunter/baked/ui/spritesheets/ui_loot_spritesheet",
+        "resource_id": null
+      },
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/3",
+        "batch_id": "ui-batch-20261017",
+        "asset_id": "hunter:a61b9966d68ec567b62b"
+      },
+      "rect": [
+        768,
+        512,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "human_confirmed_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "L; equivalent to R after RGB conversion",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit grayscale crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8,
+        "encoding": "Reuse exact verified existing PNG bytes; no new encoding"
+      },
+      "reused_derivative": {
+        "path": "dist/ui-library-recovery-20261017-001/previews/middle-mask-diagnostic.png",
+        "sha256": "c20b8576b5db2c0a69c8cb44ec24b354f2ff57f233aba8ef5e145f6e5be0cf6b"
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "机械同心圆",
+        "purpose": "Icon",
+        "label_scope": "Descriptive local project label selected under the requested naming rule; not an official game entity name"
+      },
+      "approval": {
+        "date": "2026-10-17",
+        "source": "direct user message",
+        "request": "确认这两个图标匹配，中间图标使用 ui_loot_spritesheet 中的版本。请按现有命名规范生成两个透明 PNG 项目使用副本，登记原图哈希、裁剪坐标及转换参数，并提供预览和验证结果。原始资源保持不变，不上传、不部署、不提交或推送 Git。",
+        "visual_match_confirmed": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "LOCAL_PROJECT_COPY_ONLY",
+      "evidence": "dist/ui-library-recovery-20261017-001/target-findings.json"
+    },
+    {
+      "asset_id": "project-ui:backpack-gear",
+      "target_id": "backpack-gear",
+      "zh": "背包齿轮",
+      "wiki_filename": "TD2-UI-背包齿轮-Icon.png",
+      "derived_file": "assets/TD2-UI-背包齿轮-Icon.png",
+      "derived_sha256": "1f41ddb7aa7d659988d1a1f60a43fb6ad5c21102f1613493f62303f949dfe0e2",
+      "pixel_hash": "40b2b30050297f29115c951e0a2285c9f9bb578a242e5cdc66a2384d9c047f9c",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "human_confirmed_visual_match_local_copy",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+        "sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9",
+        "size": [
+          1024,
+          1024
+        ],
+        "bytes": 134907,
+        "color_mode": "L",
+        "alpha": false,
+        "source_container": "hunter/sdf/pc/data/sdf.sdftoc",
+        "source_container_sha256": "139f3cf5f4f97125c8eba1c4b3b9439b029cd41521613b3a23d853ca7f900aff",
+        "resource_name": "hunter/baked/ui/spritesheets/ui_loot_spritesheet",
+        "resource_id": null
+      },
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/3",
+        "batch_id": "ui-batch-20261017",
+        "asset_id": "hunter:a61b9966d68ec567b62b"
+      },
+      "rect": [
+        768,
+        0,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "human_confirmed_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "L; equivalent to R after RGB conversion",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit grayscale crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8,
+        "encoding": "Reuse exact verified existing PNG bytes; no new encoding"
+      },
+      "reused_derivative": {
+        "path": "dist/ui-library-recovery-20261017-001/previews/backpack-gear-mask-diagnostic.png",
+        "sha256": "1f41ddb7aa7d659988d1a1f60a43fb6ad5c21102f1613493f62303f949dfe0e2"
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "背包齿轮",
+        "purpose": "Icon",
+        "label_scope": "Descriptive local project label selected under the requested naming rule; not an official game entity name"
+      },
+      "approval": {
+        "date": "2026-10-17",
+        "source": "direct user message",
+        "request": "确认这两个图标匹配，中间图标使用 ui_loot_spritesheet 中的版本。请按现有命名规范生成两个透明 PNG 项目使用副本，登记原图哈希、裁剪坐标及转换参数，并提供预览和验证结果。原始资源保持不变，不上传、不部署、不提交或推送 Git。",
+        "visual_match_confirmed": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "UPLOADED_ORIGINAL_BYTES_VERIFIED",
+      "evidence": "dist/ui-library-recovery-20261017-001/target-findings.json",
+      "publication_record": "dist/ab-browser-publication-20261017-002",
+      "asset_ref": "project-ui-backpack-gear"
+    },
+    {
+      "asset_id": "project-ui:major-attribute",
+      "target_id": "major-attribute",
+      "zh": "主属性",
+      "wiki_filename": "TD2-UI-主属性-Icon.png",
+      "derived_file": "assets/TD2-UI-主属性-Icon.png",
+      "derived_sha256": "fb78d06a228611aa9838b41fa21e00547c73c8d8f9db7eaa8600d7687d507673",
+      "source_sha256": "fb78d06a228611aa9838b41fa21e00547c73c8d8f9db7eaa8600d7687d507673",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "category": "ui_symbol",
+      "mapping_status": "human_approved_visual_reuse_byte_copy",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "source_observation": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:5fd4a27102cff61fcb84"
+      },
+      "reused_derivative": {
+        "path": "dist/reader-image-mapping-20261014-001/candidates/talent-slotted.png",
+        "sha256": "fb78d06a228611aa9838b41fa21e00547c73c8d8f9db7eaa8600d7687d507673"
+      },
+      "conversion": {
+        "operation": "byte_identical_copy_only",
+        "encoding": "unchanged",
+        "resize": null,
+        "crop": null,
+        "alpha": "unchanged"
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "主属性",
+        "purpose": "Icon"
+      },
+      "approval": {
+        "date": "2026-10-17",
+        "source": "direct user message",
+        "local_project_copy_authorized": true,
+        "request": "原字节复制为独立主属性UI资源；不上传；不合并奇特天赋文件身份。"
+      },
+      "intended_reader_role": "equipment_row/major_attribute",
+      "identity_scope": "User-approved UI reuse of an exotic talent image; not an independently native major-attribute game icon",
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "UPLOADED_ORIGINAL_BYTES_VERIFIED",
+      "evidence": "dist/reader-image-mapping-20261014-001/asset-mapping-proposals.json#candidate_id=talent-slotted",
+      "publication_record": "dist/ab-browser-publication-20261017-002",
+      "asset_ref": "project-ui-major-attribute"
+    },
+    {
+      "asset_id": "project-ui:proficient",
+      "zh": "精通",
+      "wiki_filename": "TD2-UI-精通-Icon.png",
+      "derived_file": "assets/TD2-UI-精通-Icon.png",
+      "derived_sha256": "c8f6516c0f85256eec57b03506f6aa7b3d0619989d3ac9d36eec90d3114205e7",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "category": "ui_symbol",
+      "mapping_status": "LOCAL_CANDIDATE_READER_REVIEW_AUTHORIZED",
+      "sprite": "proficient",
+      "sprite_definition": {
+        "path": "dist/expertise-definition-extraction-20261017-001/session-002/raw-jobs/a6105e5eddd24d618733f5c15df59761/raw/raw_files/hunter/ui/spritesheets/ui_expertise_spritesheet.spritesheet",
+        "sha256": "8cbde20d1b0760a34385482492d74656b7f935b38719d1abe3b8c02db352382e",
+        "bytes": 4113
+      },
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/0",
+        "asset_id": "hunter:e943b86ce55b74ed4b82"
+      },
+      "source_sha256": "88070efef9a35ff6c2be5887d04077a23ccedb60e02c14329f897a2ac61ded78",
+      "provenance": {
+        "status": "LOCAL CANDIDATE / 待视觉审核",
+        "recommended": "proficient-r-alpha-candidate.png",
+        "atlas": {
+          "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_expertise_spritesheet.png",
+          "sha256": "88070efef9a35ff6c2be5887d04077a23ccedb60e02c14329f897a2ac61ded78",
+          "bytes": 32496,
+          "relative_path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_expertise_spritesheet.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              255,
+              255
+            ]
+          ],
+          "png_ihdr": [
+            1024,
+            1024,
+            8,
+            6,
+            0,
+            0,
+            0
+          ]
+        },
+        "source_batch": "ui-batch-20261017",
+        "original_atlas_record": "ui-batch-20261017#/assets/0",
+        "texture": "hunter/baked/ui/spritesheets/ui_expertise_spritesheet.dds",
+        "sprite_name": "proficient",
+        "definition": {
+          "path": "dist/expertise-definition-extraction-20261017-001/session-002/raw-jobs/a6105e5eddd24d618733f5c15df59761/raw/raw_files/hunter/ui/spritesheets/ui_expertise_spritesheet.spritesheet",
+          "sha256": "8cbde20d1b0760a34385482492d74656b7f935b38719d1abe3b8c02db352382e",
+          "bytes": 4113
+        },
+        "decompiled": {
+          "path": "dist/expertise-definition-extraction-20261017-001/session-002/raw-jobs/a6105e5eddd24d618733f5c15df59761/raw/raw_files/hunter/ui/spritesheets/ui_expertise_spritesheet.spritesheet.decompiled",
+          "sha256": "8c637017fa6828c79a2617747233f98b533a8e8e908e8ecdc8b48098e00cc9a4",
+          "bytes": 7354
+        },
+        "sprite_field_lines": [
+          33,
+          37
+        ],
+        "texture_line": 453,
+        "uv": {
+          "x": 0.5,
+          "y": 0.0,
+          "w": 0.125,
+          "h": 0.125
+        },
+        "rect_xywh": [
+          512,
+          0,
+          128,
+          128
+        ],
+        "coordinates": {
+          "local_image": "Decoded PNG; top-left (0,0); x right, y down; half-open crop (512,0,640,128); no flip/rotation",
+          "verification": "UV*1024 yields the saved region; its upright shield/star matches the reference construction. A bottom-left interpretation would select y=896, whose R channel is entirely zero.",
+          "bottom_origin_test": {
+            "rect_xywh": [
+              512,
+              896,
+              128,
+              128
+            ],
+            "R_extrema": [
+              0,
+              0
+            ]
+          },
+          "engine_uv_origin_explicitly_declared": null
+        },
+        "region_channels": {
+          "extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              255,
+              255
+            ]
+          ],
+          "R_distinct_values": 72,
+          "R_zero": 9394,
+          "R_255": 5378,
+          "R_partial": 1612,
+          "R_bbox_half_open": [
+            16,
+            6,
+            112,
+            122
+          ]
+        },
+        "candidates": [
+          {
+            "name": "B",
+            "file": "proficient-r-alpha-candidate.png",
+            "status": "LOCAL CANDIDATE / 待视觉审核",
+            "recommended": true,
+            "operation": "RGB=(255,255,255); A=source R; 8-bit straight alpha; no scale/trim/threshold/gamma/flip/rotation/contour edit",
+            "reuse": {
+              "path": "dist/expertise-definition-extraction-20261017-001/preview/candidate-diagnostic.png",
+              "sha256": "c8f6516c0f85256eec57b03506f6aa7b3d0619989d3ac9d36eec90d3114205e7",
+              "mode": "verified byte-for-byte reuse of existing diagnostic derivative; no re-encoding"
+            },
+            "metadata": {
+              "sha256": "c8f6516c0f85256eec57b03506f6aa7b3d0619989d3ac9d36eec90d3114205e7",
+              "bytes": 2637,
+              "width": 128,
+              "height": 128,
+              "color_mode": "RGBA",
+              "alpha": true,
+              "transparency": true,
+              "frame_count": 1,
+              "source_format": "PNG",
+              "pixel_hash": "ce9b167f73743f9d5f0f3ca2c3c8954be8272e2662aa559a2842aaef25342c2a",
+              "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform"
+            }
+          }
+        ],
+        "not_applicable": [
+          {
+            "name": "A",
+            "reason": "Original A is constant 255: direct RGBA crop is opaque red/black. Kept only as sprite-region-original.png, not a transparent candidate."
+          },
+          {
+            "name": "C",
+            "reason": "No additional target-specific channel evidence; no other variants generated."
+          }
+        ],
+        "reference": {
+          "path": "dist/expertise-definition-extraction-20261017-001/preview/reference.png",
+          "snapshot": "reference-game.png",
+          "sha256": "4ee9977d740913b174c9bf05577dbcab83473e2776f641fb9bfdbb21d638e4ec",
+          "size": [
+            87,
+            87
+          ],
+          "scope": "Existing user-supplied icon crop only; title and text are outside this image.",
+          "white_bbox_threshold220_diagnostic": [
+            29,
+            21,
+            68,
+            64
+          ]
+        },
+        "outputs": {
+          "sprite-region-original.png": {
+            "sha256": "eafb25f3de15cbf8a1d31016def037c985eb32ca0fde9602396d97628e16e53b",
+            "bytes": 2394,
+            "width": 128,
+            "height": 128,
+            "color_mode": "RGBA",
+            "alpha": true,
+            "transparency": false,
+            "frame_count": 1,
+            "source_format": "PNG",
+            "pixel_hash": "f5f4f474d0e6d97ee2b88058d4470c5a8a924125fe935e3e92c283fb4f005e94",
+            "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform"
+          },
+          "proficient-r-alpha-candidate.png": {
+            "sha256": "c8f6516c0f85256eec57b03506f6aa7b3d0619989d3ac9d36eec90d3114205e7",
+            "bytes": 2637,
+            "width": 128,
+            "height": 128,
+            "color_mode": "RGBA",
+            "alpha": true,
+            "transparency": true,
+            "frame_count": 1,
+            "source_format": "PNG",
+            "pixel_hash": "ce9b167f73743f9d5f0f3ca2c3c8954be8272e2662aa559a2842aaef25342c2a",
+            "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform"
+          },
+          "reference-game.png": {
+            "sha256": "4ee9977d740913b174c9bf05577dbcab83473e2776f641fb9bfdbb21d638e4ec",
+            "bytes": 10197,
+            "width": 87,
+            "height": 87,
+            "color_mode": "RGBA",
+            "alpha": true,
+            "transparency": false,
+            "frame_count": 1,
+            "source_format": "PNG",
+            "pixel_hash": "64835d6546b88a67a161bf82596bc624e6e83171c2ea2971e8145e9c509c2ead",
+            "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform"
+          }
+        },
+        "unknown": {
+          "numeric_SpriteId": null,
+          "exact_UI_consumer_binding": null,
+          "runtime_shader_R_to_Alpha": null,
+          "game_build": null,
+          "native_resource_uid": null
+        },
+        "formal_registration": false,
+        "reader_integration": false,
+        "published": false
+      },
+      "reused_derivative": {
+        "path": "dist/proficient-candidate-20261017-001/proficient-r-alpha-candidate.png",
+        "sha256": "c8f6516c0f85256eec57b03506f6aa7b3d0619989d3ac9d36eec90d3114205e7"
+      },
+      "conversion": {
+        "operation": "byte_identical_copy_of_verified_candidate",
+        "candidate_conversion": "RGB white; alpha=source Sprite R channel; no resize/crop beyond native sprite/no threshold/gamma/flip",
+        "official_shader_equivalence": null
+      },
+      "intended_reader_role": "state/proficient, expertise chapter heading",
+      "identity_scope": "Native Sprite proficient; user-authorized Wiki chapter marker; SpriteId consumer and shader binding unconfirmed",
+      "approval": {
+        "date": "2026-10-17",
+        "local_reader_review_authorized": true,
+        "final_human_page_acceptance": false,
+        "sandbox_upload_authorized": true
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "精通",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_VERIFIED",
+      "publication_status": "SANDBOX_READER_PUBLISHED",
+      "publication_record": "dist/m01-m03-sandbox-20261017",
+      "asset_ref": "project-ui-proficient"
+    },
+    {
+      "asset_id": "project-ui:status-drop",
+      "target_id": "status-drop",
+      "zh": "可掉落",
+      "wiki_filename": "TD2-UI-可掉落-Icon.png",
+      "derived_file": "assets/TD2-UI-可掉落-Icon.png",
+      "derived_sha256": "7a99db5cc7a5448f6f6146512721ed078bc94442b1418cc36149455824132d34",
+      "pixel_hash": "43c9a2ee0ea6996d6148fa6477f795de8e8a511cb3b7a6a451f2e5c2b840524e",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "human_approved_local_ui_role",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/c97c7f8d19584a40a2b1996ece935378/hunter/raw/images/hunter/baked/ui/spritesheets/ui_frontend_spritesheet.png",
+        "sha256": "f834b88aca24431c762c2cea583d375c842ea48d446771f89feb889dd589b652",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 28125,
+        "color_mode": "L",
+        "alpha": false,
+        "source_container": "hunter/sdf/pc/data/sdf.sdftoc"
+      },
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/27",
+        "batch_id": "ui-batch-20261017",
+        "asset_id": "hunter:8d7ce86f706a64973296"
+      },
+      "rect": [
+        256,
+        128,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "human_approved_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "L",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit grayscale crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "可掉落",
+        "purpose": "Icon",
+        "label_scope": "Approved Wiki UI role; not an official game entity mapping"
+      },
+      "approval": {
+        "date": "2026-10-18",
+        "source": "direct user message",
+        "request": "E 的三个候选经过审核，允许使用，并且需要想出一个注释的方法，如何让读者知道这个图标是什么意思",
+        "local_ui_role_approved": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "LOCAL_PROJECT_COPY_ONLY",
+      "evidence": "dist/reader-abcd-local-20261018-001/icon-candidates.json",
+      "asset_ref": "project-ui-status-drop"
+    },
+    {
+      "asset_id": "project-ui:status-craft",
+      "target_id": "status-craft",
+      "zh": "可制作",
+      "wiki_filename": "TD2-UI-可制作-Icon.png",
+      "derived_file": "assets/TD2-UI-可制作-Icon.png",
+      "derived_sha256": "f1b4ab6a65cd6d972e3840ec7ec23b72283ede02641fa30c3514f47da415d1a2",
+      "pixel_hash": "df892562b4a93ec1d86f5af7a5ff22d991cc824684efbb5eabfd5ff91d2ec07f",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "human_approved_local_ui_role",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+        "sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9",
+        "size": [
+          1024,
+          1024
+        ],
+        "bytes": 134907,
+        "color_mode": "L",
+        "alpha": false,
+        "source_container": "hunter/sdf/pc/data/sdf.sdftoc"
+      },
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/3",
+        "batch_id": "ui-batch-20261017",
+        "asset_id": "hunter:a61b9966d68ec567b62b"
+      },
+      "rect": [
+        640,
+        640,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "human_approved_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "L",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit grayscale crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "可制作",
+        "purpose": "Icon",
+        "label_scope": "Approved Wiki UI role; not an official game entity mapping"
+      },
+      "approval": {
+        "date": "2026-10-18",
+        "source": "direct user message",
+        "request": "E 的三个候选经过审核，允许使用，并且需要想出一个注释的方法，如何让读者知道这个图标是什么意思",
+        "local_ui_role_approved": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "LOCAL_PROJECT_COPY_ONLY",
+      "evidence": "dist/reader-abcd-local-20261018-001/icon-candidates.json",
+      "asset_ref": "project-ui-status-craft"
+    },
+    {
+      "asset_id": "project-ui:status-named",
+      "target_id": "status-named",
+      "zh": "具名装备",
+      "wiki_filename": "TD2-UI-具名装备-Icon.png",
+      "derived_file": "assets/TD2-UI-具名装备-Icon.png",
+      "derived_sha256": "c36c0890f805680c01501ee097f5804b634777ae9564ac1e1f88e2d37638896d",
+      "pixel_hash": "56576b5ea466c3313cf0bcb9ad0b5cade5a1d9ab9f9f12e1ea97d2483006453e",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "human_approved_local_ui_role",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-library-recovery-20261017-001/export-session-001/jobs/9b0a4f58b8b641aa9a83d860ed91e25c/hunter/raw/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+        "sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9",
+        "size": [
+          1024,
+          1024
+        ],
+        "bytes": 134907,
+        "color_mode": "L",
+        "alpha": false,
+        "source_container": "hunter/sdf/pc/data/sdf.sdftoc"
+      },
+      "source_observation": {
+        "record_key": "ui-batch-20261017#/assets/3",
+        "batch_id": "ui-batch-20261017",
+        "asset_id": "hunter:a61b9966d68ec567b62b"
+      },
+      "rect": [
+        896,
+        512,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "human_approved_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "L",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit grayscale crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "具名装备",
+        "purpose": "Icon",
+        "label_scope": "Approved Wiki UI role; not an official game entity mapping"
+      },
+      "approval": {
+        "date": "2026-10-18",
+        "source": "direct user message",
+        "request": "E 的三个候选经过审核，允许使用，并且需要想出一个注释的方法，如何让读者知道这个图标是什么意思",
+        "local_ui_role_approved": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "LOCAL_PROJECT_COPY_ONLY",
+      "evidence": "dist/reader-abcd-local-20261018-001/icon-candidates.json",
+      "asset_ref": "project-ui-status-named"
+    },
+    {
+      "asset_id": "project-ui:state-none",
+      "target_id": "state-none",
+      "zh": "无",
+      "wiki_filename": "TD2-UI-无-Icon.png",
+      "derived_file": "assets/TD2-UI-无-Icon.png",
+      "derived_sha256": "45816e7dee9ac3c8c066c0d4a98728ea5443934e2a8e613d922a2e85f1b417b0",
+      "pixel_hash": "a5cadb70c97189e967d36bd4e1bc2938b0c24d21fc5bf58509a282f6d8be25ba",
+      "size": [
+        128,
+        128
+      ],
+      "source_format": "PNG",
+      "alpha": true,
+      "transparency": true,
+      "primary_class": "ui_symbol",
+      "category": "ui_symbol",
+      "technical_category": "transparent_ui_icon",
+      "mapping_status": "user_reference_visual_match_local_ui_role",
+      "entity_key": null,
+      "game_build": null,
+      "sprite": null,
+      "sprite_definition": null,
+      "original_atlas": {
+        "path": "dist/ui-target-extraction-20261016-001/session/jobs/ff15a461249d4110bd6975fdbc4cc87d/hunter/raw/images/hunter/baked/ui/spritesheets/ui_generic_menu_spritesheet_2.png",
+        "sha256": "d4f4bba3bbff31ea1b18a63416e55bdc13c59dd17710519cf0eb7f766924be8b",
+        "size": [
+          1024,
+          1024
+        ],
+        "bytes": 227815,
+        "color_mode": "RGBA",
+        "alpha": true
+      },
+      "source_observation": {
+        "batch_id": "ui-menu12-20261016"
+      },
+      "rect": [
+        256,
+        640,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "rect_kind": "reference_matched_manual_ROI_not_official_Sprite_definition",
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit R channel crop, unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "UI",
+        "frozen_label": "无",
+        "purpose": "Icon",
+        "label_scope": "Approved Wiki UI role; not an official game entity mapping"
+      },
+      "approval": {
+        "date": "2026-10-18",
+        "source": "direct user message",
+        "request": "替换所有减号前置，包括无天赋槽位",
+        "local_ui_role_approved": true,
+        "local_project_copy_authorized": true
+      },
+      "upload_status": "NOT_UPLOADED",
+      "publication_status": "LOCAL_PROJECT_COPY_ONLY",
+      "evidence": "user supplied barred-circle reference 2026-10-18",
+      "asset_ref": "project-ui-state-none"
+    },
+    {
+      "asset_id": "project-talent:perfect_obliterate",
+      "entity_key": "perfect_obliterate",
+      "zh": "完美抹除",
+      "wiki_filename": "TD2-天赋-完美抹除-Icon.png",
+      "derived_file": "assets/TD2-天赋-完美抹除-Icon.png",
+      "derived_sha256": "4370fa97650e95ba8b8bf3e566957a1c8a75d1395fa94f05c7833ca93ad2b2b3",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "0646e1b697a3c32a2f46f2b64bed33233791ed591f2daa23af48ce1216f82ac0",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-data-completeness-20261021-001/hunter-session-002/jobs/2a2d60abadef481cb76f52e7b49b38a6/hunter/raw/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png",
+        "sha256": "312dc5d2ff84a1e5520195e2bff6b08c20b31ae7fb3422425f7407d9e424e306",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "obliterate_perfect_talent",
+      "rect": [
+        896,
+        0,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "unique_named_region_in_native_talent_referenced_sheet",
+      "native_sprite_id": -1466259269,
+      "numeric_sprite_id_to_name_verified": false,
+      "shader_equivalence_verified": false,
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "完美抹除",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_R1430_USER_CONFIRMED_ICON",
+      "publication_record": "dist/brand-data-completeness-live-20261021-001/receipts.json",
+      "sprite_definition": {
+        "path": "dist/brand-data-completeness-20261021-001/hunter-session-002/jobs/d61195c8dc5d4382bca35d49954feeab/hunter/raw/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled",
+        "sha256": "c7fc2fed76075c063e2f22168de2f12bdcd4f55cc50df76a3898bc77459705c7",
+        "uv": {
+          "x": 0.875,
+          "y": 0.0,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "origin": "top-left",
+      "asset_ref": "perfect-obliterate-icon"
+    },
+    {
+      "asset_id": "project-talent:spontaneous_combustion",
+      "entity_key": "gear_effect:b1_eacd811d6a6078e90003d606f22b0aa5",
+      "zh": "自燃、闪点、炽热",
+      "wiki_filename": "TD2-天赋-自燃、闪点、炽热-Icon.png",
+      "derived_file": "assets/TD2-天赋-自燃、闪点、炽热-Icon.png",
+      "derived_sha256": "a9117cf9de061e19d4f0812b346294bc25d67f5268967fdb097224126db8fe23",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "903ccf880575f4e0f8c93012334426a4986bf990f9969329b751859bf0f1ec74",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "spontaneous_combustion",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+        "uv": {
+          "x": 0.75,
+          "y": 0.375,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        768,
+        384,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "native_sprite_id": 2077261151,
+      "native_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "region_association_cross_confirmed": true,
+      "shader_equivalence_verified": false,
+      "native_references": [
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_4pc.mtalent",
+          "sha256": "6e1d0f3099a7031d430f23597be8492d22945206915156fa5ccbcd697478a419",
+          "header": "Talent talent_gearset_spontaneous_combustion_4pc < uid=EACD811D6A6078E90003D606F22B0AA5 >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+            "id": 2077261151
+          }
+        },
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_chest.mtalent",
+          "sha256": "eea038499d1038137712bcdddab16dcd7f34d3c2b8efd128b8f5f488a798a031",
+          "header": "Talent talent_gearset_spontaneous_combustion_chest < uid=EACD811D6A622C8100037D501D924C0C >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+            "id": 2077261151
+          }
+        },
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_spontaneous_combustion_back.mtalent",
+          "sha256": "34916751c07d507d56fa904420cae534249b0ecaeb91086cad8547d8b6c07f57",
+          "header": "Talent talent_gearset_spontaneous_combustion_back < uid=EACD811D6A622CD400037D5421FED41C >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+            "id": 2077261151
+          }
+        }
+      ],
+      "game_ui_evidence": [
+        {
+          "number": 1,
+          "label": "Spontaneous Combustion",
+          "original_sha256": "89750b25d691e7351e925d093b580c1c3c1bf74ca1ff0fbb5e9d960f10e095a6",
+          "original_size": [
+            817,
+            718
+          ],
+          "comparison_rect_ltrb": [
+            620,
+            100,
+            755,
+            220
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-1.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        },
+        {
+          "number": 2,
+          "label": "Flashpoint",
+          "original_sha256": "9c4629bc35f97d5a90a0b1387759b72d472e77ea859d972aa147c9a33f065879",
+          "original_size": [
+            822,
+            600
+          ],
+          "comparison_rect_ltrb": [
+            650,
+            110,
+            790,
+            230
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-2.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        },
+        {
+          "number": 3,
+          "label": "White Hot",
+          "original_sha256": "c08fb6fbb6056981182381461bb73b170792010309d0dfd80afb6f7fad22624e",
+          "original_size": [
+            792,
+            649
+          ],
+          "comparison_rect_ltrb": [
+            630,
+            170,
+            765,
+            285
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-3.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        }
+      ],
+      "identity_basis": [
+        "Stable effect UID matches the native Talent header and its exact numeric Sprite ID and sheet path.",
+        "User game screenshot explicitly displays this talent name together with its actual icon.",
+        "The named UV region in that exact native sheet matches the distinctive game silhouette; adjacent variants and supplied controls differ.",
+        "Cross-confirmed association; no claim that a numeric hash decoder or native ID-to-name table was recovered."
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "自燃、闪点、炽热",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_UI_CONFIRMED",
+      "evidence_record": "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+      "wiki_page_id": 711,
+      "wiki_revision": 1751,
+      "uploaded_at": "2026-10-26T06:42:44Z",
+      "publication_receipt": "publishing/history/gear-set-toc-live-20261026-001.json",
+      "asset_ref": "gear-talent-image-c75ccd6ec84830d3"
+    },
+    {
+      "asset_id": "project-talent:gearset_aces_hearts_aces_and_eights",
+      "entity_key": "gear_effect:f_346395bc5c94cf7d00062c5905b79e64",
+      "zh": "亡者手牌",
+      "wiki_filename": "TD2-天赋-亡者手牌-Icon.png",
+      "derived_file": "assets/TD2-天赋-亡者手牌-Icon.png",
+      "derived_sha256": "d99eff0fbb39da02690ace74484b2f3c6439cedc481331ff253e10956b536804",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "e132eb3b172a92065fec94c43a7cbc670ec81dac728030a56a02cd5308aa56c8",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_gear_brands_spritesheet.png",
+        "sha256": "157a1ec545aebc6c60ae46faa2b52418ef319ad23887d90c71ff72ca2cee12f0",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "gearset_aces_hearts_aces_and_eights",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_gear_brands_spritesheet.spritesheet.decompiled",
+        "sha256": "5edafba4cd1892acd9f067c06109ade174ce995286a260f0ffc011ea6d3bf2c6",
+        "uv": {
+          "x": 0.75,
+          "y": 0.625,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        768,
+        640,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "native_sprite_id": -1183317913,
+      "native_sheet": "hunter/ui/spritesheets/ui_gear_brands_spritesheet.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "region_association_cross_confirmed": true,
+      "shader_equivalence_verified": false,
+      "native_references": [
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_acesandeights_5piece.mtalent",
+          "sha256": "5280163196d5c5d485bb3144105d833137ec5ceddbbeb27a2e6bbe79cc645453",
+          "header": "Talent talent_gearset_acesandeights_5piece < uid=346395BC5C94CF7D00062C5905B79E64 >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_gear_brands_spritesheet.spritesheet",
+            "id": -1183317913
+          }
+        }
+      ],
+      "game_ui_evidence": [
+        {
+          "number": 5,
+          "label": "Dead Mans Hand",
+          "original_sha256": "ff510a2ce53d0c4d25274b8e9b3bfe41ee0447508ecee8acc109ddfe7bfa0170",
+          "original_size": [
+            849,
+            1183
+          ],
+          "comparison_rect_ltrb": [
+            625,
+            160,
+            775,
+            295
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-5.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        }
+      ],
+      "identity_basis": [
+        "Stable effect UID matches the native Talent header and its exact numeric Sprite ID and sheet path.",
+        "User game screenshot explicitly displays this talent name together with its actual icon.",
+        "The named UV region in that exact native sheet matches the distinctive game silhouette; adjacent variants and supplied controls differ.",
+        "Cross-confirmed association; no claim that a numeric hash decoder or native ID-to-name table was recovered."
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "亡者手牌",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_UI_CONFIRMED",
+      "evidence_record": "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+      "wiki_page_id": 712,
+      "wiki_revision": 1752,
+      "uploaded_at": "2026-10-26T06:43:28Z",
+      "publication_receipt": "publishing/history/gear-set-toc-live-20261026-001.json",
+      "asset_ref": "gear-talent-image-d9bf3b2e9be73b87"
+    },
+    {
+      "asset_id": "project-talent:headache_talent_hotshot",
+      "entity_key": "gear_effect:p_6cfec5e66374fe9f0003656879110b57",
+      "zh": "头痛欲裂",
+      "wiki_filename": "TD2-天赋-头痛欲裂-Icon.png",
+      "derived_file": "assets/TD2-天赋-头痛欲裂-Icon.png",
+      "derived_sha256": "ca754d0003db915991c098e5395ed1a4508611ba3d79bbaa2952b8f74f612fb0",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "c36ff9889967fecf678717ab7c1e9f7add18d4e25c99bcacacd295be7a98a8e0",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "headache_talent_hotshot",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+        "uv": {
+          "x": 0.625,
+          "y": 0.125,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        640,
+        128,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "native_sprite_id": -1687748203,
+      "native_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "region_association_cross_confirmed": true,
+      "shader_equivalence_verified": false,
+      "native_references": [
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_hotshot_headache.mtalent",
+          "sha256": "482427c286a4bfc4d8a006968261ac9daea9c733e5e3961d87332ad94da8ffdb",
+          "header": "Talent talent_gearset_hotshot_headache < uid=6CFEC5E66374FE9F0003656879110B57 >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+            "id": -1687748203
+          }
+        }
+      ],
+      "game_ui_evidence": [
+        {
+          "number": 7,
+          "label": "Headache",
+          "original_sha256": "912ab29a44e4a541d828c4640d41be9327f5e419b97a6ce161d1bc56b6655a75",
+          "original_size": [
+            882,
+            1053
+          ],
+          "comparison_rect_ltrb": [
+            640,
+            175,
+            785,
+            300
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-7.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        }
+      ],
+      "identity_basis": [
+        "Stable effect UID matches the native Talent header and its exact numeric Sprite ID and sheet path.",
+        "User game screenshot explicitly displays this talent name together with its actual icon.",
+        "The named UV region in that exact native sheet matches the distinctive game silhouette; adjacent variants and supplied controls differ.",
+        "Cross-confirmed association; no claim that a numeric hash decoder or native ID-to-name table was recovered."
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "头痛欲裂",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_UI_CONFIRMED",
+      "evidence_record": "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+      "wiki_page_id": 713,
+      "wiki_revision": 1753,
+      "uploaded_at": "2026-10-26T06:43:44Z",
+      "publication_receipt": "publishing/history/gear-set-toc-live-20261026-001.json",
+      "asset_ref": "gear-talent-image-47d3e1b98ddd0402"
+    },
+    {
+      "asset_id": "project-talent:ortiz_incinerator_turret_talent",
+      "entity_key": "gear_effect:q_c487423d64a51f510003b453c930d7ad",
+      "zh": "奥提兹焚烧机枪塔原型",
+      "wiki_filename": "TD2-天赋-奥提兹焚烧机枪塔原型-Icon.png",
+      "derived_file": "assets/TD2-天赋-奥提兹焚烧机枪塔原型-Icon.png",
+      "derived_sha256": "fca1a246c6f61cd26d56da17403dacb55d85484f22afa9968b385b53de1ca3b0",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "ef72d4d2ca9ce971d7ecd46fc59e7c5c045b0f9b0b591d64cbdc8148d6954d94",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_6.png",
+        "sha256": "2c59bca33f835ee4b72d8eb4145ff1dba024110b9b59ecbd65b2f7e2f495ca0e",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "ortiz_incinerator_turret_talent",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet.decompiled",
+        "sha256": "8f20325f618e9e064a28ed6483d762bf885a4662b0be3df9a9ddaed8162359d9",
+        "uv": {
+          "x": 0.0,
+          "y": 0.125,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        0,
+        128,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "native_sprite_id": 2055380548,
+      "native_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "region_association_cross_confirmed": true,
+      "shader_equivalence_verified": false,
+      "native_references": [
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_ortizexuro_4pc.mtalent",
+          "sha256": "4c7298f6a7cad9ab3b2346d982f2400cea5e41d00fd291d6885f3d2b53221d12",
+          "header": "Talent talent_gearset_ortizexuro_4pc < uid=C487423D64A51F510003B453C930D7AD >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet",
+            "id": 2055380548
+          }
+        }
+      ],
+      "game_ui_evidence": [
+        {
+          "number": 4,
+          "label": "Ortiz Incinerator",
+          "original_sha256": "5d8cb91353023d044779c31224bd279d594ae0a401064d098040909bb87fee5e",
+          "original_size": [
+            780,
+            1353
+          ],
+          "comparison_rect_ltrb": [
+            630,
+            95,
+            770,
+            235
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-4.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        }
+      ],
+      "identity_basis": [
+        "Stable effect UID matches the native Talent header and its exact numeric Sprite ID and sheet path.",
+        "User game screenshot explicitly displays this talent name together with its actual icon.",
+        "The named UV region in that exact native sheet matches the distinctive game silhouette; adjacent variants and supplied controls differ.",
+        "Cross-confirmed association; no claim that a numeric hash decoder or native ID-to-name table was recovered."
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "奥提兹焚烧机枪塔原型",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_UI_CONFIRMED",
+      "evidence_record": "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+      "wiki_page_id": 714,
+      "wiki_revision": 1754,
+      "uploaded_at": "2026-10-26T06:43:47Z",
+      "publication_receipt": "publishing/history/gear-set-toc-live-20261026-001.json",
+      "asset_ref": "gear-talent-image-235aa22cf350f2bd"
+    },
+    {
+      "asset_id": "project-talent:charging",
+      "entity_key": "gear_effect:r_6cfec5e66411efd100036664d6f9cd9a",
+      "zh": "充能-骑士",
+      "wiki_filename": "TD2-天赋-充能-骑士-Icon.png",
+      "derived_file": "assets/TD2-天赋-充能-骑士-Icon.png",
+      "derived_sha256": "7f548fbe9ecc3358b9d6befc4c8426d1a8026e227d6e8f19667269ca5b13e0e9",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "dfc769258fb89b722c9aa8684bfdd098e0f8a79cd48b95c3accd1c93fea9a198",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "charging",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+        "uv": {
+          "x": 0.375,
+          "y": 0.25,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        384,
+        256,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "native_sprite_id": -973499733,
+      "native_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "region_association_cross_confirmed": true,
+      "shader_equivalence_verified": false,
+      "native_references": [
+        {
+          "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_paladin_charger.mtalent",
+          "sha256": "e16aecf6475651b6b6bcb874e2c0988dcdb60041779ff88eb625b7e33bd62e86",
+          "header": "Talent talent_gearset_paladin_charger < uid=6CFEC5E66411EFD100036664D6F9CD9A >",
+          "sprite": {
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet",
+            "id": -973499733
+          }
+        }
+      ],
+      "game_ui_evidence": [
+        {
+          "number": 8,
+          "label": "Charging",
+          "original_sha256": "07b26d3fccf784f67da5eb43b7f80319c92deb420864cb5d595cb7f9f5361dad",
+          "original_size": [
+            841,
+            886
+          ],
+          "comparison_rect_ltrb": [
+            635,
+            250,
+            780,
+            380
+          ],
+          "comparison_file": "dist/gear-set-final-icons-20261026-001/comparison/screenshot-8.png",
+          "usage": "VISUAL_COMPARISON_ONLY_NOT_UPLOAD_SOURCE"
+        }
+      ],
+      "identity_basis": [
+        "Stable effect UID matches the native Talent header and its exact numeric Sprite ID and sheet path.",
+        "User game screenshot explicitly displays this talent name together with its actual icon.",
+        "The named UV region in that exact native sheet matches the distinctive game silhouette; adjacent variants and supplied controls differ.",
+        "Cross-confirmed association; no claim that a numeric hash decoder or native ID-to-name table was recovered."
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "充能-骑士",
+        "purpose": "Icon"
+      },
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_UI_CONFIRMED",
+      "evidence_record": "dist/gear-set-final-icons-20261026-001/icon-evidence.json",
+      "wiki_page_id": 715,
+      "wiki_revision": 1755,
+      "uploaded_at": "2026-10-26T06:43:51Z",
+      "publication_receipt": "publishing/history/gear-set-toc-live-20261026-001.json",
+      "asset_ref": "gear-talent-image-afb0ad596a99ac34"
+    },
+    {
+      "asset_id": "project-talent:talent_set_heartstopper",
+      "entity_key": "gear_effect:n_b3cf2e92615702bc000363b5f99efcae",
+      "zh": "惊心动魄、寒冷、极限心率",
+      "wiki_filename": "TD2-天赋-惊心动魄、寒冷、极限心率-Icon.png",
+      "derived_file": "assets/TD2-天赋-惊心动魄、寒冷、极限心率-Icon.png",
+      "derived_sha256": "ae0820f6460c7256cef8176ed469b236e30cf33bcb7865ab46263e7ffd31b992",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "e8713f1b6d55b444a12c9dc385533e7597f6767e82a824511cd52952f2fc4f32",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_4.png",
+        "sha256": "9d4f97beb05227223805ca550f65a6856d949cec972de59e5deec1355748786a",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "sprite": "talent_set_heartstopper",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet.decompiled",
+        "sha256": "f5d12c49224921a5be11c9654ee02e522e0263eea727a0429df853a152e175ea",
+        "uv": {
+          "x": 0.625,
+          "y": 0.125,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "rect": [
+        640,
+        128,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "size": [
+        128,
+        128
+      ],
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "native_sprite_id": 1039668676,
+      "native_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet",
+      "numeric_sprite_id_to_name_verified": false,
+      "numeric_hash_algorithm_verified": false,
+      "mapping_status": "CROSS_CONFIRMED_NATIVE_REFERENCE_AND_NAMED_GAME_UI",
+      "region_association_cross_confirmed": true,
+      "game_ui_evidence": [
+        "screenshots/7.png",
+        "screenshots/8.png"
+      ],
+      "identity_basis": "All three stable Talent UIDs reference same Sprite tuple. User named-game screenshots match distinctive broken-heart native region. GearSet Logo has a different sheet and ID. Numeric hash algorithm is not asserted.",
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "PUBLISHED_AND_READER_VERIFIED",
+      "evidence_record": "dist/gear-card-closeout-20261026-001/icon-evidence.json",
+      "native_references": [
+        {
+          "title": "芳心终结者",
+          "effect_id": "gear_effect:n_b3cf2e92615703a5000363c2005879b6",
+          "talent_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_chest.mtalent",
+          "talent_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "gearset_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/gear_set_n.mgearset",
+          "gearset_sprite": {
+            "id": -1481492830,
+            "sheet": "hunter/ui/spritesheets/ui_gear_brands_spritesheet_2.spritesheet"
+          },
+          "same_native_reference": false
+        },
+        {
+          "title": "芳心终结者",
+          "effect_id": "gear_effect:n_b3cf2e9261570367000363bb8370c508",
+          "talent_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_backpack.mtalent",
+          "talent_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "gearset_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/gear_set_n.mgearset",
+          "gearset_sprite": {
+            "id": -1481492830,
+            "sheet": "hunter/ui/spritesheets/ui_gear_brands_spritesheet_2.spritesheet"
+          },
+          "same_native_reference": false
+        },
+        {
+          "title": "芳心终结者",
+          "effect_id": "gear_effect:n_b3cf2e92615702bc000363b5f99efcae",
+          "talent_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_gearset_Season08_4pc.mtalent",
+          "talent_sprite": {
+            "id": 1039668676,
+            "sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet"
+          },
+          "gearset_source": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/gear_set_n.mgearset",
+          "gearset_sprite": {
+            "id": -1481492830,
+            "sheet": "hunter/ui/spritesheets/ui_gear_brands_spritesheet_2.spritesheet"
+          },
+          "same_native_reference": false
+        }
+      ],
+      "naming": {
+        "standard": "docs/IMAGE-NAMING-STANDARD.md",
+        "category": "天赋",
+        "frozen_label": "惊心动魄、寒冷、极限心率",
+        "purpose": "Icon"
+      },
+      "file_page_revision": 1782,
+      "asset_ref": "gear-talent-image-408d050441aac0ba"
+    },
+    {
+      "asset_id": "project-talent:exotic_talent_0b88a6bc5ddd2159002e9a26ab520070",
+      "entity_key": "exotic_talent_0b88a6bc5ddd2159002e9a26ab520070",
+      "zh": "……两个在包",
+      "wiki_filename": "TD2-天赋-……两个在包-Icon.png",
+      "derived_file": "assets/TD2-天赋-……两个在包-Icon.png",
+      "derived_sha256": "a6ecdb2e9680957ab212471ba1ebfb74257255d774bc1676b4e71ad176b52ecc",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "37e826a3a07de015526f311262e3d5a978be1a635fb01a07988ee7d4d4c732b5",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_4.png",
+        "sha256": "9d4f97beb05227223805ca550f65a6856d949cec972de59e5deec1355748786a"
+      },
+      "sprite": "exotic_acostas_gobag",
+      "sprite_definition": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet.decompiled",
+        "sha256": "f5d12c49224921a5be11c9654ee02e522e0263eea727a0429df853a152e175ea",
+        "uv": {
+          "x": 0.25,
+          "y": 0.25,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        256,
+        256,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "user_game_screenshot_and_native_referenced_sheet_region",
+      "native_sprite_id": 989092364,
+      "numeric_sprite_id_to_name_verified": false,
+      "shader_equivalence_verified": false,
+      "current_evidence": [
+        "dist/exotic-layout-acquisition-20261030-001/acosta-game-reference.png"
+      ],
+      "upload_status": "UPLOADED_UI_CONFIRMED",
+      "publication_status": "LOCAL_CANDIDATE_ONLY",
+      "upload_receipt": "publishing/history/exotic-release-live-20261030-003.json",
+      "asset_ref": "exotic-acosta-second-talent-icon"
+    },
+    {
+      "asset_id": "project-talent:exotic_talent_04b83df56a9028560003da7d55b857e6",
+      "entity_key": "exotic_talent_04b83df56a9028560003da7d55b857e6",
+      "zh": "诱饵之王",
+      "wiki_filename": "TD2-天赋-诱饵之王-Icon.png",
+      "derived_file": "assets/TD2-天赋-诱饵之王-Icon.png",
+      "derived_sha256": "8c45f84c9287a5740a3022e7864ff6b8f809ac017c664a570a180688e5c654b8",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "pixel_hash": "8dac2eaca39829df8b35513beb314f778f07d80ca734a7242c61a67db391cfa8",
+      "pixel_hash_representation": "TD2-RGBA8-v1; little-endian dimensions/frame count; each full RGBA8 frame + duration; no EXIF transform",
+      "original_atlas": {
+        "path": "dist/brand-bulk-20261022-001/manual-export-inbox/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217"
+      },
+      "sprite": "decoy_king",
+      "sprite_definition": {
+        "path": "dist\\brand-bulk-20261022-001\\manual-export-inbox\\raw_files\\hunter\\ui\\spritesheets\\ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+        "uv": {
+          "x": 0.625,
+          "y": 0.5,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "size": [
+        128,
+        128
+      ],
+      "rect": [
+        640,
+        512,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "game_build": null,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "mapping_status": "native_referenced_sheet_and_unique_exact_english_sprite_name",
+      "native_sprite_id": 1918342368,
+      "numeric_sprite_id_to_name_verified": false,
+      "shader_equivalence_verified": false,
+      "current_evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_backpack_redmoon.mtalent:4"
+      ],
+      "upload_status": "UPLOADED_VERIFIED",
+      "upload_receipt": "publishing/history/exotic-talent-icons-live-20261101-001.json",
+      "asset_ref": "exotic-decoy-king-icon"
+    },
+    {
+      "asset_id": "project-talent:weapon_talent_6cfec5e662c29a9b000364548a4a662d",
+      "entity_key": "weapon_talent_6cfec5e662c29a9b000364548a4a662d",
+      "zh": "<color name=\"legendary_orange\">癫狂大锤</color>",
+      "asset_ref": "weapon-talent-icon-6cfec5e662c29a9b000364548a4a662d",
+      "derived_file": "assets/TD2-Talent-Weapon-PerfectSledgehammer-Icon.png",
+      "derived_sha256": "193e4adfcae8652b5aba76d88e621065e614482f861437924174c1b1a34b0acf",
+      "width": 128,
+      "height": 128,
+      "color_mode": "RGBA",
+      "alpha": true,
+      "transparency": true,
+      "frame_count": 1,
+      "source_format": "PNG",
+      "original_atlas": {
+        "path": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217"
+      },
+      "sprite": "perfect_sledgehammer",
+      "sprite_definition": {
+        "path": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+        "uv": {
+          "x": 0.5,
+          "y": 0.0,
+          "w": 0.125,
+          "h": 0.125
+        }
+      },
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "rect_convention": "xywh",
+      "origin": "top-left",
+      "native_sprite_id": -203094782,
+      "native_reference": {
+        "path": "resources/game/current/raw_files/hunter/game system data/juice/talent/talent_weapon_sledgehammer_perfect.mtalent",
+        "uid": "6CFEC5E662C29A9B000364548A4A662D",
+        "myIconSprite": "\"mySpriteId = -203094782, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\""
+      },
+      "mapping_status": "native_referenced_sheet_and_unique_exact_english_sprite_name",
+      "numeric_sprite_id_to_name_verified": false,
+      "conversion": {
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original R unchanged",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null
+      },
+      "publication_status": "LOCAL_CANDIDATE_ONLY"
+    }
+  ]
+}

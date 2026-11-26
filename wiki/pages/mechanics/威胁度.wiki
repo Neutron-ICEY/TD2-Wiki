@@ -1,0 +1,733 @@
+<!-- 正文基准：docs/research/threat/wiki-draft.md；编辑参考留在研究目录。 -->
+<div class="td2-threat" style="max-width:54em;line-height:1.85;color-scheme:dark;">
+<div id="td2-threat-content">
+
+<p style="margin:0 0 1.15em;line-height:1.85;">'''威胁度'''是《全境封锁 2》中敌人选择攻击目标的一项依据。射击、受伤、距离、掩体状态、任务目标以及某些技能和天赋，都会影响威胁。敌人可以同时记住多个目标，玩家部署的技能也能成为独立目标。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">威胁较高的目标通常更容易被敌人瞄准，但敌人采取什么行动，还取决于视线、所处位置、任务和行为规则。本文介绍 PvE 中的常见数值与特殊机制。</p>
+
+<span id="threat-basics"></span>
+== 基本机制 ==
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人通过视野和声音发现目标，更新其最后已知位置，再结合威胁、视线和当前任务决定选择、追击或攻击哪个目标。特定事件也能直接指定目标。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人瞄准玩家后，射击、狙击、投掷手雷等行动的执行时机还会受到<span style="color:#FEA900;">行动名额</span>等条件的限制。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">NPC 的威胁设置主要分为以下几类。不同敌人可以使用不同的配置，也可以只调整其中几个数值：</p>
+
+<div role="region" aria-label="威胁类别对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 类别
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 主要内容
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 默认上限
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 基础威胁
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 距离、视野、掩体、倒地、侧翼和目标类别等
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 3000
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 行为威胁
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 受伤、友军受伤、友军死亡等战斗事件，以及相应的衰减
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2000
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 任务威胁
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 进入任务区域、攻击任务目标等
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1500
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">默认设置还为当前目标设置了 <span style="color:#FF6A13;">×1.15</span> 的威胁倍率，使 NPC 倾向于保持当前目标。猛击兵、投掷兵等敌人采用的倍率有所不同。</p>
+
+<span id="threat-perception"></span>
+== 感知：声音与视野 ==
+
+=== 检测值 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">NPC 通过视野和声音发现目标，并用检测值判断警戒状态。默认设置中，将玩家加入威胁列表的检测门槛为 <span style="color:#FF6A13;">50</span>，进入准备和战斗状态的门槛均为 <span style="color:#FF6A13;">100</span>。检测值衰减前会停顿 <span style="color:#FF6A13;">2 秒</span>。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">视觉刺激速率默认为 20，狙击手为 15，传奇敌人为 40。“可疑”声音与“威胁性”声音的检测刺激值分别为 1000 和 100000。</p>
+
+=== 声音范围与消音器 ===
+
+<div role="region" aria-label="声音类型对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 声音类型
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 传播半径（米）
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 行走
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 翻越、攀越动作
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 15
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 低声技能使用
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 15
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 高声技能使用
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 30
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 小型爆炸
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 30
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 大型爆炸
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 40
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 弹丸撞击
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 20
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 常规枪声
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 40
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 消音枪声
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 15
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">常规枪声使用“威胁性”声音类型，消音枪声使用“可疑”类型。消音器可以切换声音类型，改变敌人能听见枪声的范围及声音带来的检测刺激。</p>
+
+=== 不同敌人的视野 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人在待机、战斗等状态下有不同的视野；同一状态又区分调查和警戒用途。视野受遮挡影响，即使角度接近 360°，也需要满足视线条件。以下示例可切换配置、视野用途和状态，每组分为主要视野和周边视野，距离表示半径：</p>
+
+<div class="td2-threat-vision" id="threat-vision" role="group" aria-label="敌人视野">
+<span class="vision-scale-source" style="display:none;">[[File:TD2-UI-MapDiameter-Icon.png|frameless|16px|link=|alt=直径]]</span>
+<div class="controls"></div>
+<div class="selection-summary" role="status"><span class="native-icon" data-profile-icon="default">[[File:TD2-UI-DifficultyStory-Icon.png|frameless|26px|link=|alt=]]</span><span class="native-icon" data-profile-icon="legendary" style="display:none;">[[File:TD2-UI-DifficultyLegendary-Icon.png|frameless|26px|link=|alt=]]</span><span data-selection-label>调查 · 待机</span></div>
+<div class="enemy-grid">
+<div class="enemy" role="group" aria-label="突击兵视野" data-vision="{&quot;default&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,30,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[115,100,360,3],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[60,100,360,3],&quot;alert&quot;:[30,15,360,3]}},&quot;legendary&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,30,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[225,100,360,6],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[90,100,360,6],&quot;alert&quot;:[30,15,360,3]}}}">
+<div class="enemy-name"><span class="native-icon">[[File:TD2-UI-EnemyAssault-Icon.png|frameless|26px|link=|alt=]]</span><span>突击兵</span></div>
+<div class="diagram"></div>
+<div class="readouts">
+<div class="readout-main">
+<div class="readout-label">主要</div>
+<div class="metric angle"><span class="digits"><span data-number="0">60</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="1">30</span><span class="unit">米</span></span></div>
+</div>
+<div class="readout-peripheral">
+<div class="readout-label">周边</div>
+<div class="metric angle"><span class="digits"><span data-number="2">210</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="3">15</span><span class="unit">米</span></span></div>
+</div>
+</div>
+</div>
+<div class="enemy" role="group" aria-label="狙击手视野" data-vision="{&quot;default&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,50,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[115,100,360,3],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[45,100,360,3],&quot;alert&quot;:[30,15,360,3]}},&quot;legendary&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,50,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[115,100,360,3],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[45,100,360,3],&quot;alert&quot;:[30,15,360,3]}}}">
+<div class="enemy-name"><span class="native-icon">[[File:TD2-UI-EnemySniper-Icon.png|frameless|26px|link=|alt=]]</span><span>狙击手</span></div>
+<div class="diagram"></div>
+<div class="readouts">
+<div class="readout-main">
+<div class="readout-label">主要</div>
+<div class="metric angle"><span class="digits"><span data-number="0">60</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="1">50</span><span class="unit">米</span></span></div>
+</div>
+<div class="readout-peripheral">
+<div class="readout-label">周边</div>
+<div class="metric angle"><span class="digits"><span data-number="2">210</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="3">15</span><span class="unit">米</span></span></div>
+</div>
+</div>
+</div>
+<div class="enemy" role="group" aria-label="猛击兵视野" data-vision="{&quot;default&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,30,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[225,100,360,3],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[225,100,360,3],&quot;alert&quot;:[30,15,360,3]}},&quot;legendary&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[60,30,210,15],&quot;alert&quot;:[30,15,360,3]},&quot;combat&quot;:{&quot;investigation&quot;:[225,100,360,6],&quot;alert&quot;:[30,15,360,3]},&quot;aim&quot;:{&quot;investigation&quot;:[90,100,360,6],&quot;alert&quot;:[30,15,360,3]}}}">
+<div class="enemy-name"><span class="native-icon">[[File:TD2-UI-EnemyRusher-Icon.png|frameless|26px|link=|alt=]]</span><span>猛击兵</span></div>
+<div class="diagram"></div>
+<div class="readouts">
+<div class="readout-main">
+<div class="readout-label">主要</div>
+<div class="metric angle"><span class="digits"><span data-number="0">60</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="1">30</span><span class="unit">米</span></span></div>
+</div>
+<div class="readout-peripheral">
+<div class="readout-label">周边</div>
+<div class="metric angle"><span class="digits"><span data-number="2">210</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="3">15</span><span class="unit">米</span></span></div>
+</div>
+</div>
+</div>
+<div class="enemy" role="group" aria-label="猎人视野" data-vision="{&quot;default&quot;:{&quot;idle&quot;:{&quot;investigation&quot;:[360,100,0,0],&quot;alert&quot;:[360,100,0,0]},&quot;combat&quot;:{&quot;alert&quot;:[225,100,360,6]},&quot;aim&quot;:{&quot;alert&quot;:[180,100,360,5.9]}}}">
+<div class="enemy-name"><span class="native-icon">[[File:TD2-UI-EnemyHunter-Icon.png|frameless|26px|link=|alt=]]</span><span>猎人</span></div>
+<div class="diagram"></div>
+<div class="readouts">
+<div class="readout-main">
+<div class="readout-label">主要</div>
+<div class="metric angle"><span class="digits"><span data-number="0">360</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="1">100</span><span class="unit">米</span></span></div>
+</div>
+<div class="readout-peripheral">
+<div class="readout-label">周边</div>
+<div class="metric angle"><span class="digits"><span data-number="2">0</span><span class="unit">°</span></span></div>
+<div class="metric radius"><span class="digits"><span data-number="3">0</span><span class="unit">米</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<span id="threat-distance"></span>
+== 距离与战斗处境 ==
+
+=== 距离参数 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">默认基础威胁配置包含五档距离参数，近距离对应的威胁值明显高于远距离：</p>
+
+<div class="td2-threat-distance-figure" style="max-width:40em;margin:1.35em 0;">
+<div role="img" aria-label="默认距离参数标尺" style="display:flex;justify-content:center;max-width:100%;margin-bottom:1.5em;">
+<div class="td2-threat-distance-plot" style="width:480px;max-width:100%;min-width:0;"></div>
+</div>
+<div role="region" aria-label="距离威胁对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 档位
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 距离参数（米）
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 基础威胁参数
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 近战距离
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 3
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5000
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 近距离
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 8
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1000
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 中距离
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 25
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 200
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 远距离
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 50
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 25
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 极远距离
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 80
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0
+|}
+</div>
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">近战档的原值高于基础威胁的 3000 上限。</p>
+
+=== 位置、掩体与目标状态 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">下表以敌人为视角，“友军”指敌人一方。对友军已经选中的目标降低威胁，有助于敌人分散选择目标。</p>
+
+<div role="region" aria-label="位置、掩体与目标状态对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 条件或项目
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 默认参数
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标处于视野范围内
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +300
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 当前目标倍率
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | ×1.15
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标处于掩体外时的威胁加值
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标持续处于掩体外的威胁累积速率
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +250/秒
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 掩体外威胁开始累积前的延迟
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2 秒
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 掩体外累积威胁的上限
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1000
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标在掩体中暴露
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +100
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 侧翼相关项：侧击／被侧击
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +500／+500
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标倒地
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −5000
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 目标已被另一名友军选中
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −100
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 可疑目标的威胁
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +100
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 对近战攻击者而言，目标位于梯子或绳索上
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −4000
+|}
+</div>
+
+=== 任务相关威胁 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">任务对象和所在区域也会影响敌人的选择。一些任务还会直接指定敌人的攻击对象。</p>
+
+<div role="region" aria-label="任务相关威胁对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 项目
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 默认参数
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 位于任务目标区域
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +500
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 位于任务目标内部区域
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +1000
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 攻击任务目标
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1200
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 攻击需要防守的任务目标时的倍率
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | ×1.5
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 任务威胁上限
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1500
+|}
+</div>
+
+=== 伤害、友军死亡与爆炸 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">默认行为威胁以生命百分比为尺度设置受伤系数：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">自身受伤：生命百分比相关系数为 <span style="color:#FF6A13;">25</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">友军受伤：对应系数为 <span style="color:#FF6A13;">0.35</span>。</li>
+</ul>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人的友军被击杀时，行为威胁参数为 <span style="color:#FF6A13;">+300</span>；威胁共享另设 <span style="color:#FF6A13;">1.5 秒</span>延迟。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">爆炸另有独立的威胁设置：威胁量 100、半径 15 米、高度 3 米。</p>
+
+<span id="threat-weapons"></span>
+== 武器威胁与属性公式 ==
+
+=== 武器基础值 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">各武器的<span style="color:#FEA900;">子弹威胁基础值</span>是计算子弹威胁属性的起点，装备、天赋等提供的修正会与它一起代入下文公式。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">这项参数对应子弹命中专门检测区域的情况，与实际扣血判定分开。</p>
+
+<div role="region" aria-label="武器类别（默认设置）对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 武器类别（默认设置）
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 子弹威胁基础值
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">突击步枪</span>、<span style="display:inline-block;">轻机枪</span>、<span style="display:inline-block;">冲锋枪</span>、<span style="display:inline-block;">步枪</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 手枪
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 霰弹枪
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 射手步枪
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 20
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">具体型号可以使用自己的数值。以下是一些单独设置的例子：</p>
+
+<div role="region" aria-label="武器或专用武器配置对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 武器或专用武器配置
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 基础值
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | SCAR 系列射手步枪<span style="display:block;font-size:.875em;color:#aaa;margin-top:.125em;">（例：特战 Mk20 SSR）</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 90
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | SCAR 系列步枪<span style="display:block;font-size:.875em;color:#aaa;margin-top:.125em;">（军规 MK17、警用 Mk17）</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 90
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | SCAR 系列突击步枪<span style="display:block;font-size:.875em;color:#aaa;margin-top:.125em;">（例：Mk16）</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 机枪塔技能与 NPC 机枪塔的专用枪械
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 80
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 十字弓、M32A1 连发榴弹枪、M3CG 无后座力炮、TAC-50 C 步枪
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 20
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 迷你炮机枪、K8 急流火焰喷射器
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+|}
+</div>
+
+=== 子弹威胁属性 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">子弹威胁属性按以下公式计算：</p>
+
+<div class="td2-threat-formula" role="math" aria-label="B = max(0, (W + F) × max(0, 1 + P + 2 D_p − N − 2 D_n))" style="margin:1em 0;padding:.5em .85em;border-left:3px solid #ff6912;font-family:Cambria,Times New Roman,serif;font-size:1.12em;line-height:1.9;"><var>B</var> = max(0, (<var>W</var> + <var>F</var>) × max(0, 1 + <var>P</var> + 2 <var>D</var><sub>p</sub> − <var>N</var> − 2 <var>D</var><sub>n</sub>))</div>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;"><var>B</var>：子弹威胁属性的计算结果；<var>W</var>：上表中的武器基础值。</li>
+<li style="margin:.55em 0;line-height:1.85;"><var>F</var>：直接加到基础值上的子弹威胁；<var>P</var>、<var>N</var>：子弹威胁的正、负修正。</li>
+<li style="margin:.55em 0;line-height:1.85;"><var>D</var><sub>p</sub>、<var>D</var><sub>n</sub>：子弹伤害威胁的正、负修正，在子弹威胁公式中按 2 倍计入。各修正项在没有加成时均为 0。</li>
+</ul>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">百分比修正以小数代入，例如 +100% 对应 <var>P</var> = 1，−50% 对应 <var>N</var> = 0.5（公式中减去 <var>N</var>）。同类修正先相加，再代入公式；max(a, b) 表示取 a、b 中较大的数。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">计算示例（其余修正取 0）：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;"><var>W</var> = 20、<var>N</var> = 0.5 时，<var>B</var> = 10。</li>
+<li style="margin:.55em 0;line-height:1.85;"><var>W</var> = 2、<var>P</var> = 1、<var>N</var> = 0.5 时，<var>B</var> = 3：正、负修正先合并，再作用于基础值。</li>
+<li style="margin:.55em 0;line-height:1.85;"><var>W</var> = 2、<var>F</var> = 3、<var>P</var> = 0.5、<var>N</var> = 0.2、<var>D</var><sub>p</sub> = 0.1 时，<var>B</var> = (2 + 3) × (1 + 0.5 + 2 × 0.1 − 0.2) = 7.5。</li>
+</ul>
+
+=== 子弹伤害威胁修正 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">与子弹威胁属性并列的伤害威胁修正为：</p>
+
+<div class="td2-threat-formula" role="math" aria-label="D = max(0, 1 + D_p − D_n)" style="margin:1em 0;padding:.5em .85em;border-left:3px solid #ff6912;font-family:Cambria,Times New Roman,serif;font-size:1.12em;line-height:1.9;"><var>D</var> = max(0, 1 + <var>D</var><sub>p</sub> − <var>D</var><sub>n</sub>)</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">没有加成时，<var>D</var> = 1；只有 <var>D</var><sub>p</sub> = 0.1 时，<var>D</var> = 1.1。<var>B</var> 和 <var>D</var> 使用同一组 <var>D</var><sub>p</sub>、<var>D</var><sub>n</sub>。</p>
+
+=== 总生成威胁修正 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">总生成威胁修正使用另一组正、负修正：</p>
+
+<div class="td2-threat-formula" role="math" aria-label="G = max(0.5, 1 + G_p − G_n)" style="margin:1em 0;padding:.5em .85em;border-left:3px solid #ff6912;font-family:Cambria,Times New Roman,serif;font-size:1.12em;line-height:1.9;"><var>G</var> = max(0.5, 1 + <var>G</var><sub>p</sub> − <var>G</var><sub>n</sub>)</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;"><var>G</var><sub>p</sub>、<var>G</var><sub>n</sub> 分别是总生成威胁的正、负修正。无修正时 <var>G</var> = 1，计算结果最低为 <span style="color:#FF6A13;">0.5</span>。界面百分比按 (<var>G</var> − 1) × 100% 显示；例如 <var>G</var> = 1.5 对应 +50%。</p>
+
+<span id="threat-decay"></span>
+== 衰减与目标移除 ==
+
+=== 行为威胁衰减 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">行为威胁有上限，也会在一定延迟后衰减。敌人看不见目标时，另有一组衰减设置，猛击兵的衰减开始得更晚、速率也更低。默认设置与猛击兵共用配置的差异如下：</p>
+
+<div role="region" aria-label="行为威胁衰减对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 项目
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 默认设置
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 猛击兵共用配置
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 行为威胁上限
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2000
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1000
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 常规衰减延迟
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2 秒
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2 秒
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 常规衰减速率参数
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 500
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 500
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 看不见目标时的衰减延迟
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1 秒
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4 秒
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 看不见目标时的衰减速率参数
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 500
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 50
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 友军被击杀时的行为威胁
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 300
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0
+|}
+</div>
+
+=== 有效目标范围与记录清理 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">NPC 的全局有效目标范围为 <span style="color:#FF6A13;">150 米</span>。清理目标记录时会同时参考目标的隐藏时间和距离；敌人暂时看不见目标时，仍可保留记录：</p>
+
+<div role="region" aria-label="目标记录对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 目标记录
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 隐藏时间参数
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 距离参数
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 当前敌对目标
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 180 秒
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 50 米
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 其他目标记录
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 60 秒
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 50 米
+|}
+</div>
+
+<span id="threat-enemies"></span>
+== 不同敌人的威胁特点 ==
+
+<p style="margin:0 0 1.15em;line-height:1.85;">不同敌人对距离、掩体和目标状态的重视程度不同。基础威胁配置可以沿用已有配置，<span style="color:#FEA900;">修改的项目直接替换原值</span>。下图展示配置的沿用关系，数值表示敌人以部署技能为目标时的一项基础威胁：</p>
+
+<div role="group" aria-label="基础威胁配置的沿用关系" style="max-width:36em;margin:1.5em 0;">
+<div style="display:flex;justify-content:space-between;gap:1em;padding-bottom:.5em;border-bottom:1px solid #3b3b3b;color:#aaa;font-size:.8125em;"><span>基础威胁配置</span><span>技能目标的基础威胁</span></div>
+<ol style="list-style:none;margin:0;padding:0;">
+<li style="margin:0;padding:0;">
+<div style="position:relative;display:flex;align-items:center;justify-content:space-between;min-height:2.9375em;gap:.5em;">
+<span>默认基础配置</span><span style="font-size:1.125em;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:inherit;">0</span></div>
+<ol style="list-style:none;margin:0 0 0 .75em;padding:0;">
+<li style="margin:0;padding:0;">
+<div style="position:relative;display:flex;align-items:center;justify-content:space-between;min-height:2.9375em;gap:.5em;"><span aria-hidden="true" style="position:absolute;left:-.75em;top:-.8125em;width:.5em;height:2.3125em;border-left:1px solid #666;border-bottom:1px solid #666;"></span><span>近战配置</span><span style="font-size:1.125em;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:#FF6A13;">+6000</span></div>
+<ol style="list-style:none;margin:0 0 0 .75em;padding:0;">
+<li style="margin:0;padding:0;">
+<div style="position:relative;display:flex;align-items:center;justify-content:space-between;min-height:2.9375em;gap:.5em;"><span aria-hidden="true" style="position:absolute;left:-.75em;top:-.8125em;width:.5em;height:2.3125em;border-left:1px solid #666;border-bottom:1px solid #666;"></span><span>猛击兵共用配置</span><span style="font-size:1.125em;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:#FF6A13;">−4000</span></div>
+<ol style="list-style:none;margin:0 0 0 .75em;padding:0;">
+<li style="margin:0;padding:0;">
+<div style="position:relative;display:flex;align-items:center;justify-content:space-between;min-height:2.9375em;gap:.5em;"><span aria-hidden="true" style="position:absolute;left:-.75em;top:-.8125em;width:.5em;height:2.3125em;border-left:1px solid #666;border-bottom:1px solid #666;"></span><span>自杀式无人机配置</span><span style="font-size:1.125em;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:inherit;">0</span></div>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</div>
+
+=== 猛击兵及共用配置 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">猛击兵采用的这组基础与行为威胁设置，也被轰炸无人机、遥控刀等单位共用。其基础设置的主要差异为：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">距离与当前目标：近距离参数为 15 米、中距离为 30 米，当前目标倍率为 <span style="color:#FF6A13;">×2</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">目标位置：目标位于无法正常寻路的位置时，对应参数为 <span style="color:#FF6A13;">−4000</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">其他调整：掩体外威胁累积速率、两个侧翼项和目标已被友军选中项均为 0，攻击任务目标项为 250。</li>
+</ul>
+
+=== 其他敌人 ===
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">狙击手：近距离参数为 10 米、中距离为 30 米；掩体外威胁累积速率为 <span style="color:#FF6A13;">+500/秒</span>，上限 1000；目标在掩体中暴露时为 <span style="color:#FF6A13;">+500</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">投掷兵：当前目标倍率为 <span style="color:#FF6A13;">×1.1</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">喷火兵专用设置：开启“选择目标时忽略可破坏物”的选项。</li>
+<li style="margin:.55em 0;line-height:1.85;">传奇敌人：基础、投掷兵、猛击兵、自杀式无人机和狙击手设置中的倒地项均改为 <span style="color:#FF6A13;">0</span>，替代各自普通设置中的 <span style="color:#FF6A13;">−5000</span>。</li>
+</ul>
+
+=== 首领与炮台 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">部分首领使用独立的威胁设置。例如，大块头和马丁尼兹使用的配置有以下差异：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">基础与行为威胁：上限分别提高至 <span style="color:#FF6A13;">6000</span> 和 <span style="color:#FF6A13;">7000</span>；当前目标倍率为 <span style="color:#FF6A13;">×1.2</span>，倒地项为 <span style="color:#FF6A13;">−8000</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">行为威胁衰减：延迟为 5 秒、速率参数为 200；看不见目标时的衰减速率为 <span style="color:#FF6A13;">0</span>。</li>
+</ul>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">专用炮台也可能采用完全不同的距离偏好。一组车载机枪设置的五档距离分值依次为 <span style="color:#FF6A13;">100、300、1000、2500、3000</span>，与默认设置中“越近威胁越高”的方向相反。</p>
+
+<span id="threat-skills"></span>
+== 技能、装备与天赋 ==
+
+=== 部署技能的基础威胁 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">机枪塔、前锋无人机等部署技能可以独立成为敌人的目标。除了敌人的“技能目标”设置，这些技能自身也有额外基础威胁：</p>
+
+<div role="region" aria-label="部署技能对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 部署技能
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 额外基础威胁
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">机枪塔</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −1000
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">前锋无人机</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −800
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">全息干扰设备诱饵</span><span style="display:block;color:#aaa;font-size:.9em;">（还会主动调整敌人对自身和部署者的威胁）</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">复苏蜂窝</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −10000
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="display:inline-block;">修护追踪地雷</span>
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −9000
+|}
+</div>
+
+=== 突击机枪塔如何选择敌人 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">突击机枪塔也有自己的威胁设置，用来选择攻击哪个敌人：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">距离与当前目标：近距离参数为 15 米、中距离为 30 米，远距离分值为 50；当前目标倍率为 <span style="color:#FF6A13;">×1.5</span>。</li>
+<li style="margin:.55em 0;line-height:1.85;">掩体与视线：目标处于掩体外时的威胁加值为 100，持续累积速率为 0；看不见目标时，行为威胁的衰减速率参数为 750。</li>
+</ul>
+
+=== 全息干扰设备诱饵 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">全息干扰设备诱饵在半径为 <span style="color:#FF6A13;">70 米</span>的范围内寻找目标，并记住已经处理过的目标。它先根据部署者对该技能的威胁加成计算基数 <var>T</var>，再用 <var>T</var> 调整敌人、技能自身和部署者之间的威胁：</p>
+
+<div class="td2-threat-formula" role="math" aria-label="T = 1200 × (1 + M)" style="margin:1em 0;padding:.5em .85em;border-left:3px solid #ff6912;font-family:Cambria,Times New Roman,serif;font-size:1.12em;line-height:1.9;"><var>T</var> = 1200 × (1 + <var>M</var>)</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;"><var>M</var> 为该技能的威胁加成，按小数代入，例如 +15% 对应 <var>M</var> = 0.15。下表只按技能分阶的加成计算 <var>T</var>：</p>
+
+<div role="region" aria-label="技能分阶对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 技能分阶
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 威胁加成 <var>M</var>
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 威胁调整基数 <var>T</var>
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 0
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1200
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 1
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +15%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1380
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 2
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +30%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1560
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 3
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +45%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1740
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 4
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +60%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1920
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 5
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +75%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2100
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 6
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +90%
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2280
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">该技能会调整以下目标之间的威胁：</p>
+
+<div role="region" aria-label="谁对谁的威胁对照表" tabindex="0" style="overflow-x:auto;max-width:32em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 谁对谁的威胁
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;width:6em;vertical-align:bottom;white-space:nowrap;" | 威胁调整量
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 敌方 NPC 对全息干扰设备诱饵
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +<var>T</var>
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 具有所属者的机械单位对全息干扰设备诱饵
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +1.5<var>T</var>
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 全息干扰设备诱饵对搜索到的敌人
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | +<var>T</var>
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 敌方 NPC 对全息干扰设备诱饵的部署者
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | −0.25<var>T</var>
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">以技能分阶 6 为例，<var>T</var> = 2280：具有所属者的机械单位对全息干扰设备诱饵的威胁调整量为 1.5 × 2280 = 3420，敌方 NPC 对部署者的威胁调整量为 −0.25 × 2280 = −570。</p>
+
+=== 蚊子之歌 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">奇特手枪<span style="color:#FEA900;">蚊子</span>通过命中叠层，达到 <span style="color:#FF6A13;">5 层</span>时触发“<span style="color:#FEA900;">蚊子之歌</span>”的嘲讽。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">目标<span style="color:#FF6A13;">强制瞄准最后施加层数的玩家</span>，持续 <span style="color:#FF6A13;">5 秒</span>，期间使用 <span style="color:#FF6A13;">9999</span> 的威胁调整量维持效果。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">层数由玩家共享，每隔 <span style="color:#FF6A13;">5 秒</span>减少一层；对一名敌人触发嘲讽时，会<span style="color:#FF6A13;">清除其他敌人的叠层</span>。</p>
+
+=== 品牌与具名护膝 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">这些配置修改子弹威胁公式中的正、负修正。以下以 <var>W</var> = 2、无其他修正为例：</p>
+
+<div role="region" aria-label="品牌与具名护膝对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 来源
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 子弹威胁修正
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 结果 <var>B</var>
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[品牌套装-5.11 Tactical|5.11 Tactical]]</span> · 两件套
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +100%（<var>P</var> 增加 1）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[品牌套装-贝尔斯通军火|贝尔斯通军火]]</span> · 两件套
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +100%（<var>P</var> 增加 1）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[品牌套装-戈兰装备有限公司|戈兰装备有限公司]]</span> · 三件套
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +150%（<var>P</var> 增加 1.5）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 具名护膝“<span style="text-decoration:underline;text-underline-offset:.15em;">[[品牌套装-灾祸装备#named-gear_e03ce5ea67f4d3750003701c794aeede|斗篷]]</span>”
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | −50%（<var>N</var> 增加 0.5）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1
+|}
+</div>
+
+=== 扰乱 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">奇特突击步枪<span style="color:#FEA900;"><span style="text-decoration:underline;text-underline-offset:.15em;">[[奇特武器-煽动者|煽动者]]</span></span>的“<span style="color:#FEA900;">扰乱</span>”天赋根据武器是否收起，提供不同的子弹威胁修正：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">收起武器：提供 <span style="color:#FF6A13;">−50% 子弹威胁修正</span>，对应 <var>N</var> 增加 0.5。</li>
+<li style="margin:.55em 0;line-height:1.85;">拔出武器：武器收起 <span style="color:#FF6A13;">10 秒</span>后进入预备状态；预备后切换至该武器，会获得 <span style="color:#FF6A13;">+100% 子弹威胁</span>加成，对应 <var>P</var> 增加 1。获得加成后，若在持续时间结束前切换至其他武器，加成会被移除。</li>
+</ul>
+
+=== 烟幕掩护 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">奇特手套<span style="color:#FEA900;"><span style="text-decoration:underline;text-underline-offset:.15em;">[[奇特装备-异境手套|异境手套]]</span></span>的“<span style="color:#FEA900;"><span style="text-decoration:underline;text-underline-offset:.15em;">[[奇特装备-异境手套#td2-exotic-exotic_talent_9e75f5ef6751740c0003b91b22abdb0d-pve|烟幕掩护]]</span></span>”在 PvE 中于护甲耗尽时触发烟幕，使玩家从敌人眼前匿踪 <span style="color:#FF6A13;">3 秒</span>，冷却时间为 <span style="color:#FF6A13;">40 秒</span>。</p>
+
+=== 同伴特性 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">同伴特性“引人瞩目”和“低调处事”分别提供 <span style="color:#FF6A13;">+50%</span> 和 <span style="color:#FF6A13;">−50%</span> 的总生成威胁修正（正、负项分别添加 0.5）。单独生效时，<var>G</var> 分别为 1.5 和 0.5。</p>
+
+<span id="threat-targets"></span>
+== 目标选择与多人行动 ==
+
+=== 保持目标、转火与调查 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人根据威胁值选择目标，当前目标倍率有助于保持原目标。选择行动时，还会考虑能否看见目标、任务区域、目标最后出现的位置，以及是谁触发了当前事件。</p>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">以下列出几种特定行为中的目标选择条件：</p>
+
+<ul style="margin:.6em 0 1.3em;padding-left:1.4em;">
+<li style="margin:.55em 0;line-height:1.85;">移动、侧翼与任务行为：同时检查当前目标的威胁值低于 <span style="color:#FF6A13;">1500</span>、视线和任务区域等条件。</li>
+<li style="margin:.55em 0;line-height:1.85;">特定事件反应：以当前目标的威胁值低于 <span style="color:#FF6A13;">2000</span> 为条件之一；满足相关条件后，对触发事件的目标增加 <span style="color:#FF6A13;">3000</span> 威胁，并将其选为敌对目标。</li>
+</ul>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">目标离开视线后，敌人可以一边保持战斗状态，一边搜索目标最后出现的位置。在无掩体反应等特定行为中，敌人也会从威胁列表中选择最近的有效敌对目标，决定接下来做什么。</p>
+
+=== 多人攻击的行动名额 ===
+
+<p style="margin:0 0 1.15em;line-height:1.85;">敌人执行射击、投掷手雷等行动时，会申请相应的行动名额。普通射击的常规名额随玩家人数增加，依次为 <span style="color:#FF6A13;">2／4／6／8</span>；部分射击行为可以强制申请名额或跳过限制。各类常规名额如下：</p>
+
+<div role="region" aria-label="行动类型对照表" tabindex="0" style="overflow-x:auto;max-width:100%;margin:1.35em 0;">
+{| class="td2-threat-data" style="width:100%;min-width:38em;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
+|- style="border-bottom:1px solid #484848;"
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 行动类型
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 1 名玩家
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 2 名玩家
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 3 名玩家
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 4 名玩家
+! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:right;vertical-align:bottom;white-space:nowrap;" | 名额释放后的冷却
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 普通射击
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 6
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 8
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2 秒
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 狙击射击
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 3
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0 秒
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 特殊行动
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 3
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 0 秒
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | 手雷
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 1
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 2
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 3
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 6 秒
+|}
+</div>
+
+<p style="margin:0 0 1.15em;line-height:1.85;">狙击行为除了申请狙击射击名额，也会申请普通射击名额，因此两类名额不能直接相加。</p>
+
+</div>
+</div>

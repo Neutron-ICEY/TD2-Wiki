@@ -1,0 +1,735 @@
+{
+  "schema_version": 2,
+  "_维护说明": [
+    "2026-10-17：state/proficient 为原生proficient Sprite的R→Alpha本地候选，用作专精章节视觉标记；待人工页面审核/上传，不宣称完整SpriteId消费者或官方Shader已确认。",
+    "2026-10-17：主属性行首和装备改装槽位内容使用独立本地准备资源；confirmed_on_wiki=false，不代表已发布。次属性和共享random保持原图。",
+    "本文件是装备小图标、品牌组合视觉与普通天赋池导航的集中入口。图标由人工上传；空映射合法，统一24px布局框，不破图。",
+    "icons 只表示左侧行类型：major_attribute主属性、minor_attribute次属性、talent_slot天赋位、mod_slot插件槽。state_icons 表示右侧 red/blue/yellow/random/none 及专用 gear_mod_slot，不能与行首图标混用。",
+    "material_icons 用稳定材料ID；不从中文材料名猜文件名。brand_material 是通用品牌材料入口，unverified 是未知材料占位。以后已核实的 fixed_materials 条目可显式给 id，再添加同键映射；改中文名不改 id。",
+    "已确认线上图片使用 confirmed_on_wiki=true；主属性行首和 gear_mod_slot 可携带已核验 local_asset 并保持 false，表示仅本地准备。其他缺图留空/false。修改后运行 generate/check，不改品牌或具名资料。",
+    "天赋图标仍由 talents.json 的稳定天赋ID拥有；分类图标来自 category-icons.json。模板统一通过 TD2图标 的 类别/键 调用，不重复拼File，不将中文名当图标键。",
+    "core-icons.json 的六图保留旧原生核心 helper 兼容；新版品牌主属性和装备右侧颜色使用本文件的 state_icons。",
+    "talent_pools 的 label 是普通随机池说明；target 可空或填已核对的 Wiki页面#章节。已配置目标直接生成链接，空目标仅显示可读文字；页面及章节锚点在维护和发布验证时核对。",
+    "品牌Logo地址统一读取 brands.json 的冻结 wiki_filename；slot_visuals仍为六张全站通用位图。不要按品牌×部位建立六图。具名可选专属图，不存在回到组合。",
+    "本文件不保存具体天赋列表/天赋描述或业务数值，也不修改图片颜色、不下载/生成素材。"
+  ],
+  "major_names": {
+    "red": "武器伤害",
+    "blue": "装甲",
+    "yellow": "技能分阶"
+  },
+  "icons": {
+    "major_attribute": {
+      "asset_ref": "project-ui-major-attribute"
+    },
+    "minor_attribute": {
+      "asset_ref": "reader-image-621650561e9cda80"
+    },
+    "talent_slot": {
+      "asset_ref": "reader-image-44f5d9a6ae3ea1c5"
+    },
+    "mod_slot": {
+      "asset_ref": "project-ui-backpack-gear"
+    }
+  },
+  "slot_visuals": {
+    "mask": {
+      "asset_ref": "reader-image-1bb59cc9dd7f707f"
+    },
+    "chest": {
+      "asset_ref": "reader-image-f9ed4cb10546d970"
+    },
+    "holster": {
+      "asset_ref": "reader-image-bf3822f106c2fb4b"
+    },
+    "backpack": {
+      "asset_ref": "reader-image-0b62e86e27fc3fc1"
+    },
+    "gloves": {
+      "asset_ref": "reader-image-f695f74286766d3c"
+    },
+    "kneepads": {
+      "asset_ref": "reader-image-136d9ef6f272a7c4"
+    }
+  },
+  "state_icons": {
+    "red": {
+      "asset_ref": "td2-state-red"
+    },
+    "blue": {
+      "asset_ref": "td2-state-blue"
+    },
+    "yellow": {
+      "asset_ref": "td2-state-yellow"
+    },
+    "random": {
+      "asset_ref": "reader-image-621650561e9cda80"
+    },
+    "none": {
+      "asset_ref": "project-ui-state-none"
+    },
+    "gear_mod_slot": {
+      "asset_ref": "reader-image-8228c4a11a410e44"
+    },
+    "proficient": {
+      "asset_ref": "project-ui-proficient"
+    },
+    "drop": {
+      "asset_ref": "project-ui-status-drop"
+    },
+    "craft": {
+      "asset_ref": "project-ui-status-craft"
+    },
+    "named": {
+      "asset_ref": "project-ui-status-named"
+    }
+  },
+  "material_icons": {
+    "brand_material": {
+      "wiki_file": "",
+      "confirmed_on_wiki": false
+    },
+    "unverified": {
+      "wiki_file": "",
+      "confirmed_on_wiki": false
+    },
+    "protective_fabric": {
+      "asset_ref": "material-image-ed131bf2541f1d25"
+    },
+    "polycarbonate": {
+      "asset_ref": "material-image-5af0929638fa1155"
+    },
+    "electronics": {
+      "asset_ref": "material-image-dd005be6ca955acf"
+    },
+    "carbon_fiber": {
+      "asset_ref": "material-image-47763a3708388f75"
+    },
+    "ceramics": {
+      "asset_ref": "material-image-38f52279b0830f0b"
+    },
+    "weave_mask": {
+      "asset_ref": "material-image-0a9d03ec83e91f4c"
+    },
+    "weave_chest": {
+      "asset_ref": "material-image-c03ecff1a63805b9"
+    },
+    "weave_holster": {
+      "asset_ref": "material-image-d31061f0c58f12ea"
+    },
+    "weave_backpack": {
+      "asset_ref": "material-image-c982b979a84cc02c"
+    },
+    "weave_gloves": {
+      "asset_ref": "material-image-0980c4284a49af92"
+    },
+    "weave_kneepads": {
+      "asset_ref": "material-image-9ed33d919d8ba2fa"
+    },
+    "titanium": {
+      "asset_ref": "material-titanium-icon"
+    }
+  },
+  "talent_pools": {
+    "chest": {
+      "label": "随机胸甲天赋",
+      "target": ""
+    },
+    "backpack": {
+      "label": "随机背包天赋",
+      "target": ""
+    }
+  },
+  "material_display": {
+    "protective_fabric": {
+      "name": "防御性布料",
+      "icon_key": "protective_fabric",
+      "quality": "gray",
+      "quality_evidence": "Earlier user screenshot and 2026-10-16 approval: gray; not the later naming-only screenshots; entity myQuality absent",
+      "page_ref": "reader-material-page-01",
+      "aliases": [
+        "防御性布料"
+      ]
+    },
+    "polycarbonate": {
+      "name": "聚碳酸酯",
+      "icon_key": "polycarbonate",
+      "quality": "green",
+      "quality_evidence": "Game entity myQuality=Green",
+      "page_ref": "reader-material-page-02"
+    },
+    "electronics": {
+      "name": "电子元件",
+      "icon_key": "electronics",
+      "quality": "blue",
+      "quality_evidence": "Game entity myQuality=Blue",
+      "page_ref": "reader-material-page-03"
+    },
+    "carbon_fiber": {
+      "name": "碳纤维",
+      "icon_key": "carbon_fiber",
+      "quality": "blue",
+      "quality_evidence": "Game entity myQuality=Blue",
+      "page_ref": "reader-material-page-04"
+    },
+    "ceramics": {
+      "name": "陶瓷碎片",
+      "icon_key": "ceramics",
+      "quality": "green",
+      "quality_evidence": "Game entity myQuality=Green",
+      "page_ref": "reader-material-page-05"
+    },
+    "currency:4cdce5b25c80f9600002e3817d73b469": {
+      "name": "5.11 Tactical 材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "User screenshot a1d944a4-524a-48ea-8f90-8f9fa61a8821, name and orange quality strip; Wiki design color only",
+      "native": {
+        "currency_uid": "4CDCE5B25C80F9600002E3817D73B469",
+        "name_guid": "4CDCE5B25C80F8E10002E37E3B66D588",
+        "gearbrand_uid": "4CDCE5B25C4057F200032204474DAA22"
+      },
+      "brand_ref": "set:4cdce5b25c405137000321f5482f6f7b",
+      "page_ref": "reader-material-page-12"
+    },
+    "weave_mask": {
+      "name": "面具织物",
+      "icon_key": "weave_mask",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-06"
+    },
+    "weave_chest": {
+      "name": "胸甲织物",
+      "icon_key": "weave_chest",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-08"
+    },
+    "weave_holster": {
+      "name": "枪套织物",
+      "icon_key": "weave_holster",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-10"
+    },
+    "weave_backpack": {
+      "name": "背包织物",
+      "icon_key": "weave_backpack",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-07"
+    },
+    "weave_gloves": {
+      "name": "手套织物",
+      "icon_key": "weave_gloves",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-09"
+    },
+    "weave_kneepads": {
+      "name": "护膝织物",
+      "icon_key": "weave_kneepads",
+      "quality": "high_end",
+      "quality_evidence": "User game screenshot 071c9e85-584e-4e50-bf48-cf0a5474d3bb: six corresponding optimization icons with orange quality strips; Wiki design color, not exact game RGB",
+      "page_ref": "reader-material-page-11"
+    },
+    "currency:e03ce5ea68d3de090003879c81d0404f": {
+      "name": "战队合金材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "CurrencyDefinition.myCurrencyQuality=Orange; docs/BRAND-DATA-COMPLETENESS.md",
+      "native": {
+        "currency_uid": "E03CE5EA68D3DE090003879C81D0404F",
+        "name_guid": "E03CE5EA68D3ED600003B13BC43579F2",
+        "gearbrand_uid": "E03CE5EA68FA04A9000371EC1806502F"
+      },
+      "brand_ref": "set:e03ce5ea68fa0501000371eebd094bf3"
+    },
+    "currency:4cdce5b25b4762e8000193a435a709d0": {
+      "name": "中国光能工业公司 FZP 织物",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "CurrencyDefinition.myCurrencyQuality=Orange; docs/BRAND-DATA-COMPLETENESS.md",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A435A709D0",
+        "name_guid": "4CDCE5B25B4762DF000193981D2BDD3C",
+        "gearbrand_uid": "5D4179F159C399D4000037A587D705FC"
+      },
+      "brand_ref": "set:4cdce5b25aabbc1600068ab00551e451"
+    },
+    "currency:4cdce5b25babadf50002b1fd25da7904": {
+      "name": "耶尔装甲合成“羽毛”",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-yaahl-20261021-001/currency-definition.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25BABADF50002B1FD25DA7904",
+        "name_guid": "4CDCE5B25BABADCB0002B1FACEABCB9F",
+        "gearbrand_uid": "4CDCE5B25BAA31240002AF08E83A3F55"
+      },
+      "brand_ref": "set:4cdce5b25baa312f0002af0aa09598f4"
+    },
+    "currency:4cdce5b25b47623c000192eb39b46be8": {
+      "name": "戈兰装备有限公司陶瓷系统",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_A.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B47623C000192EB39B46BE8",
+        "name_guid": "4CDCE5B25B4761D3000192E70AC7110A",
+        "gearbrand_uid": "5D4179F159C39902000037469FB15338"
+      },
+      "brand_ref": "set:4cdce5b25aabbccb00068ab8525b92b5"
+    },
+    "currency:e03ce5ea6487372c00038038e30a978e": {
+      "name": "冷漠材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_A1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA6487372C00038038E30A978E",
+        "name_guid": "E03CE5EA6487395A00037D65D0C64478",
+        "gearbrand_uid": "B005013564917300000384F1ED6FD625"
+      },
+      "brand_ref": "set:b0050135649191c7000384fca9eb85a1"
+    },
+    "currency:4cdce5b25b4762e8000193a1bf5660db": {
+      "name": "毒蜥守卫队生存专家装甲",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_B.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A1BF5660DB",
+        "name_guid": "4CDCE5B25B4762B7000193239BCA9EB5",
+        "gearbrand_uid": "5D4179F159C3996000003766A8D2AC27"
+      },
+      "brand_ref": "set:4cdce5b25aab9f7900068a9e05c08900"
+    },
+    "currency:e03ce5ea65450d47000369c024ed09b8": {
+      "name": "栅状钢铁材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_B1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA65450D47000369C024ED09B8",
+        "name_guid": "E03CE5EA6545100D00037846CCE645D0",
+        "gearbrand_uid": "E03CE5EA6544F1DB0003695002241309"
+      },
+      "brand_ref": "set:b0050135655387960007d89a8aeda2a1"
+    },
+    "currency:4cdce5b25b4762e8000193a249029e60": {
+      "name": "李希特与凯萨有限公司护盾",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_C.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A249029E60",
+        "name_guid": "4CDCE5B25B4762E10001939E227A9B1A",
+        "gearbrand_uid": "5D4179F159C399880000377BD1058771"
+      },
+      "brand_ref": "set:4cdce5b25aab9d3c00068a918eec827e"
+    },
+    "currency:e03ce5ea65c62cc900038044024fe6c6": {
+      "name": "侦察兵 Sp. z o.o. 材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_C1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA65C62CC900038044024FE6C6",
+        "name_guid": "E03CE5EA65C62DC200030381E442010E",
+        "gearbrand_uid": "B005013565D5F82D000371BE49B173EA"
+      },
+      "brand_ref": "set:b005013565d5f400000371a8084283ca"
+    },
+    "currency:4cdce5b25b4762e8000193a3e28a0ed9": {
+      "name": "彼得罗夫防御集团战术支架",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_D.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A3E28A0ED9",
+        "name_guid": "4CDCE5B25B4762E00001939BF8DC911F",
+        "gearbrand_uid": "5D4179F159C399B400003790529752CA"
+      },
+      "brand_ref": "set:4cdce5b25aab9e3a00068a9a71c7e1d2"
+    },
+    "currency:e03ce5ea66b3d92a000381b0f6c620c8": {
+      "name": "军团特攻材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_D1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA66B3D92A000381B0F6C620C8",
+        "name_guid": "E03CE5EA66B3D74400038190688C3FC8",
+        "gearbrand_uid": "B0050135668CE4F80005606246BA3B0B"
+      },
+      "brand_ref": "set:b0050135668ce45400056038ba898718"
+    },
+    "currency:e03ce5ea674f33a90003850e08c4c34a": {
+      "name": "闪亮猴子装备材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_E1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA674F33A90003850E08C4C34A",
+        "name_guid": "E03CE5EA674F3256000384FE188F50A8",
+        "gearbrand_uid": "B005013567853165000383852B690E94"
+      },
+      "brand_ref": "set:b00501356785311b000383752fe59c4e"
+    },
+    "currency:4cdce5b25b4762e8000193a539fbe707": {
+      "name": "霸主军备公司防护材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_F.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A539FBE707",
+        "name_guid": "4CDCE5B25B4762DF000193953229BD5A",
+        "gearbrand_uid": "5D4179F159C399F5000037BAC1FDC79E"
+      },
+      "brand_ref": "set:4cdce5b25aab9af00003e59cb6fc5cc7"
+    },
+    "currency:b005013567f7b5960006b62c0f5c5657": {
+      "name": "灾祸装备材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_F1.identity-fields.fragment",
+      "native": {
+        "currency_uid": "B005013567F7B5960006B62C0F5C5657",
+        "name_guid": "B005013567F7B52A00063505E06AB14F",
+        "gearbrand_uid": "E03CE5EA67F3F6A60003BBC14B8FDFDF"
+      },
+      "brand_ref": "set:e03ce5ea67f4d4ad000370239ab06c0d"
+    },
+    "currency:4cdce5b25b4762e8000193a664578fc6": {
+      "name": "天命防御公司第 3 级纤维",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_G.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A664578FC6",
+        "name_guid": "4CDCE5B25B4762DE0001939278536AB9",
+        "gearbrand_uid": "5D4179F159C39A15000037CF55C4A5A9"
+      },
+      "brand_ref": "set:4cdce5b25aaa433f0004b8cee95d08ec"
+    },
+    "currency:e03ce5ea6863902d0003868ad22aac93": {
+      "name": "市区前哨材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_G1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA6863902D0003868AD22AAC93",
+        "name_guid": "E03CE5EA68638FAF0003867E418C9805",
+        "gearbrand_uid": "B00501356852C85B00068AD778D3205A"
+      },
+      "brand_ref": "set:b00501356852c8a100068ada8ebcd22c"
+    },
+    "currency:4cdce5b25b4762e8000193a7d619b953": {
+      "name": "贝哲陶夫织物皮毛",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_H.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A7D619B953",
+        "name_guid": "4CDCE5B25B4762DD0001938F948465C2",
+        "gearbrand_uid": "5D4179F159C39A34000037E4EC4871E4"
+      },
+      "brand_ref": "set:4cdce5b25aabe83c00006a15a8cb6745"
+    },
+    "currency:4cdce5b25b4762e8000193a8dbfdc3c9": {
+      "name": "道格拉斯与哈定企业水马纱",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_I.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A8DBFDC3C9",
+        "name_guid": "4CDCE5B25B4762DD0001938C4DAE54C6",
+        "gearbrand_uid": "5D4179F159C39A51000037F93B6623DC"
+      },
+      "brand_ref": "set:4cdce5b25aabe77600006a0d6991ecd2"
+    },
+    "currency:e03ce5ea696f85a70003737a33d838f5": {
+      "name": "皇家工艺材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_I1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA696F85A70003737A33D838F5",
+        "name_guid": "E03CE5EA696F804600037370098580CA",
+        "gearbrand_uid": "E03CE5EA69979DCB0003C658BB930B85"
+      },
+      "brand_ref": "set:e03ce5ea69979daa0003c64c8b8505eb"
+    },
+    "currency:4cdce5b25b4762e8000193a93dd8c46e": {
+      "name": "芬里斯集团公司布料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_J.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193A93DD8C46E",
+        "name_guid": "4CDCE5B25B4762DC00019389B6FBC434",
+        "gearbrand_uid": "5D4179F159C39A6D0000380EA4BABCCF"
+      },
+      "brand_ref": "set:4cdce5b25aabe8b400006a1d9ed0db7a"
+    },
+    "currency:e03ce5ea69eb6c940003e4de10b7555b": {
+      "name": "雪绒花 GPz 材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_J1.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA69EB6C940003E4DE10B7555B",
+        "name_guid": "E03CE5EA69EB6C080003E4C7F8E2FB91",
+        "gearbrand_uid": "B005013569F05CB30003776800397812"
+      },
+      "brand_ref": "set:b005013569f05ca00003775c83f69860"
+    },
+    "currency:4cdce5b25b4762e8000193aae52955ac": {
+      "name": "阿尔卑斯山峰军事耐久涂层",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_K.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193AAE52955AC",
+        "name_guid": "4CDCE5B25B4762DB00019386421FA82F",
+        "gearbrand_uid": "5D4179F159C39A8C000038236D0F7E9C"
+      },
+      "brand_ref": "set:4cdce5b25aabe69600006a057fc8f3ad"
+    },
+    "currency:4cdce5b25b4762e8000193abfee1bb7b": {
+      "name": "捷克出产自律组织强化枕木",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_L.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193ABFEE1BB7B",
+        "name_guid": "4CDCE5B25B4762D80001937DB8A67AB3",
+        "gearbrand_uid": "5D4179F159C39AAB000038383D3486D8"
+      },
+      "brand_ref": "set:4cdce5b25aabe95f00006a2573bf4974"
+    },
+    "currency:4cdce5b25b4762e8000193accb37cce5": {
+      "name": "飞龙纺织特制织物",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_M.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193ACCB37CCE5",
+        "name_guid": "4CDCE5B25B4762D70001937ADCF7930C",
+        "gearbrand_uid": "5D4179F159C39ACE0000384D75CA5B7E"
+      },
+      "brand_ref": "set:4cdce5b25aabebbd00006a514df570bd"
+    },
+    "currency:4cdce5b25b4762e8000193ad30379a59": {
+      "name": "影子军团股份有限公司面罩",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_N.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193AD30379A59",
+        "name_guid": "4CDCE5B25B4762D6000193773B45107A",
+        "gearbrand_uid": "5D4179F159C39AEE000038625157F8A3"
+      },
+      "brand_ref": "set:4cdce5b25aabeb2300006a49ceb05462"
+    },
+    "currency:4cdce5b25b4762e8000193ae9f1c2dc6": {
+      "name": "索寇罗夫企业微观结构",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_P.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193AE9F1C2DC6",
+        "name_guid": "4CDCE5B25B4762D6000193745D80979A",
+        "gearbrand_uid": "5D4179F159C39B310000388C1E53B2E7"
+      },
+      "brand_ref": "set:4cdce5b25aabea8100006a3eb5d10674"
+    },
+    "currency:4cdce5b25b4762e8000193af6cd5673d": {
+      "name": "哈瑙公司传感器",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_Q.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193AF6CD5673D",
+        "name_guid": "4CDCE5B25B4762D5000193712B9D5DEC",
+        "gearbrand_uid": "5D4179F159C39B4C000038A1DB6A6AD6"
+      },
+      "brand_ref": "set:4cdce5b25aabec8a00006a6a9626da64"
+    },
+    "currency:4cdce5b25b4762e8000193b019f0dea6": {
+      "name": "阿尔拉蒂企业阿尔克墨涅树脂",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_R.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193B019F0DEA6",
+        "name_guid": "4CDCE5B25B4762D40001936E1E169FE8",
+        "gearbrand_uid": "5D4179F159C39B67000038B687F2BD54"
+      },
+      "brand_ref": "set:4cdce5b25aabea0d00006a36972c42af"
+    },
+    "currency:4cdce5b25b4762e8000193b195996a93": {
+      "name": "村上小札",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_S.fragment",
+      "native": {
+        "currency_uid": "4CDCE5B25B4762E8000193B195996A93",
+        "name_guid": "4CDCE5B25B4762D30001936A78F7C8B2",
+        "gearbrand_uid": "5D4179F159C39B86000038CB7D66B6FF"
+      },
+      "brand_ref": "set:4cdce5b25aabec6600006a5f78727d2b"
+    },
+    "currency:83ed36da5e8f07f0000360504e28813f": {
+      "name": "沃克与哈里斯企业“RNGR”聚合物",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_T.fragment",
+      "native": {
+        "currency_uid": "83ED36DA5E8F07F0000360504E28813F",
+        "name_guid": "83ED36DA5E8F01410003604F69BCDABC",
+        "gearbrand_uid": "346395BC5E9EA5970006A0480808723A"
+      },
+      "brand_ref": "set:346395bc5e9ea6ff00070c570e9c8996"
+    },
+    "currency:346395bc5f17e0d0000e970e4a5cd44c": {
+      "name": "贝尔斯通军火聚酰胺",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_U.fragment",
+      "native": {
+        "currency_uid": "346395BC5F17E0D0000E970E4A5CD44C",
+        "name_guid": "346395BC5F16D579000E935ED2786EAD",
+        "gearbrand_uid": "346395BC5F168A4C0003AC0824928B6A"
+      },
+      "brand_ref": "set:346395bc5f16893600033057664d551b"
+    },
+    "currency:b3cf2e925f5a0be3000378255ed28f6f": {
+      "name": "女皇国际导电纤维",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_V.fragment",
+      "native": {
+        "currency_uid": "B3CF2E925F5A0BE3000378255ED28F6F",
+        "name_guid": "B3CF2E925F5A0D140003793F5E878B58",
+        "gearbrand_uid": "346395BC5F44FF18000A87416F1B2682"
+      },
+      "brand_ref": "set:346395bc5f44fbdc000a79615efce9f0"
+    },
+    "currency:b3cf2e92615c4b3d000363a770281b32": {
+      "name": "先驱工业纤维",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_W.fragment",
+      "native": {
+        "currency_uid": "B3CF2E92615C4B3D000363A770281B32",
+        "name_guid": "B3CF2E92615C4B110003639D22A89526",
+        "gearbrand_uid": "B3CF2E9261530AA40003635DFE5736C0"
+      },
+      "brand_ref": "set:b3cf2e926156aec500036397475531db"
+    },
+    "currency:0af8f42d62e285f300036c36daab36cd": {
+      "name": "火绳枪材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_X.fragment",
+      "native": {
+        "currency_uid": "0AF8F42D62E285F300036C36DAAB36CD",
+        "name_guid": "0AF8F42D62E2849900036C285EB9E7FB",
+        "gearbrand_uid": "F58BDD5662CE728C000380897BE6FF0F"
+      },
+      "brand_ref": "set:f58bdd5662ce733300038099bb2c0c40"
+    },
+    "currency:e03ce5ea6399f88b00036608620f3a30": {
+      "name": "哈布斯堡禁卫材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_Y.fragment",
+      "native": {
+        "currency_uid": "E03CE5EA6399F88B00036608620F3A30",
+        "name_guid": "E03CE5EA6399FB86000381A87CF019EE",
+        "gearbrand_uid": "F58BDD56638F12E200052B3585524B9B"
+      },
+      "brand_ref": "set:f58bdd56638f121700052b2483c94339"
+    },
+    "currency:f58bdd56642453880005f2c5e9bf3ee8": {
+      "name": "电力材料",
+      "icon_key": "brand_material",
+      "quality": "high_end",
+      "quality_evidence": "Current CurrencyDefinition.myCurrencyQuality=Orange; dist/brand-bulk-20261022-001/catalog-evidence/current-currency-001/Crafting_Brand_Material_Z.fragment",
+      "native": {
+        "currency_uid": "F58BDD56642453880005F2C5E9BF3EE8",
+        "name_guid": "F58BDD56642452A90005F2BD7173BA32",
+        "gearbrand_uid": "F58BDD56641C52AC00036E92BD2C2B57"
+      },
+      "brand_ref": "set:f58bdd56641c516b00036e80869c79b3"
+    },
+    "titanium": {
+      "name": "钛合金",
+      "icon_key": "titanium",
+      "quality": "blue",
+      "quality_evidence": "Native CurrencyDefinition Crafting_T3_Titanium 4CDCE5B25A9EC14A000066733B15C6A3 myCurrencyQuality Blue; dist/ongoing-directive-repair-20261025-002/quantity-evidence.json"
+    }
+  },
+  "weapon_icons": {
+    "core_attribute": {
+      "asset_ref": "weapon-ui-core-attribute"
+    },
+    "attribute": {
+      "asset_ref": "weapon-ui-attribute"
+    },
+    "muzzle": {
+      "asset_ref": "weapon-ui-muzzle"
+    },
+    "optics": {
+      "asset_ref": "weapon-ui-optics"
+    },
+    "underbarrel": {
+      "asset_ref": "weapon-ui-underbarrel"
+    },
+    "magazine": {
+      "asset_ref": "weapon-ui-magazine"
+    },
+    "ammo_ar": {
+      "asset_ref": "weapon-ui-ammo-ar"
+    },
+    "ammo_lmg": {
+      "asset_ref": "weapon-ui-ammo-lmg"
+    },
+    "ammo_marksman": {
+      "asset_ref": "weapon-ui-ammo-marksman"
+    },
+    "ammo_shotgun": {
+      "asset_ref": "weapon-ui-ammo-shotgun"
+    },
+    "ammo_smg": {
+      "asset_ref": "weapon-ui-ammo-smg"
+    },
+    "ammo_pistol": {
+      "asset_ref": "weapon-ui-ammo-pistol"
+    },
+    "ammo_rifle": {
+      "asset_ref": "weapon-ui-ammo-rifle"
+    },
+    "ammo_signature_crossbow": {
+      "asset_ref": "weapon-ui-ammo-signature-crossbow"
+    },
+    "ammo_signature_gl": {
+      "asset_ref": "weapon-ui-ammo-signature-gl"
+    },
+    "ammo_signature_marksman": {
+      "asset_ref": "weapon-ui-ammo-signature-marksman"
+    },
+    "ammo_signature_gunner": {
+      "asset_ref": "weapon-ui-ammo-signature-gunner"
+    },
+    "ammo_signature_technician": {
+      "asset_ref": "weapon-ui-ammo-signature-technician"
+    },
+    "ammo_signature_flamethrower": {
+      "asset_ref": "weapon-ui-ammo-signature-flamethrower"
+    }
+  }
+}

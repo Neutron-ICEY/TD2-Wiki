@@ -1,0 +1,6 @@
+<noinclude>
+TD2 frame 的唯一装饰节点片段；配合 class="td2-frame"，不包含正文或事实。
+无参数；默认输出四个装饰节点，不输出文字。最简单调用：<nowiki><div class="td2-frame">正文{{TD2边框角节点}}</div></nowiki>。
+四个节点统一由 ui/brand-sets/brand-sets.css 排版；aria-hidden、无点击行为，不占正文空间。
+依赖：TD2Reader.css。
+</noinclude><includeonly><span class="td2-frame-corners" aria-hidden="true"><span class="td2-corner-node td2-corner-nw"></span><span class="td2-corner-node td2-corner-ne"></span><span class="td2-corner-node td2-corner-sw"></span><span class="td2-corner-node td2-corner-se"></span></span></includeonly>

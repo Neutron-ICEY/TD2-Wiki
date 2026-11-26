@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "talents": [
+    {
+      "id": "exotic_talent_19373b006995d6580003daf13f9f6702",
+      "native_uid": "19373B006995D6580003DAF13F9F6702",
+      "icon": {
+        "asset_ref": "reader-image-b1a07703eddc4c25"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_mask_invested.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 38794588, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon_evidence": [
+        "publishing/image-publications.json#reader-image-b1a07703eddc4c25"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5ddd2159002e9a26ab520070",
+      "native_uid": "0B88A6BC5DDD2159002E9A26AB520070",
+      "icon": {
+        "asset_ref": "exotic-acosta-second-talent-icon"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_backpack_mk1a.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = 989092364, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-layout-acquisition-20261030-001/acosta-icon-evidence.json"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5ddd22960033efc284ccb7f7",
+      "native_uid": "0B88A6BC5DDD22960033EFC284CCB7F7",
+      "icon": {
+        "asset_ref": "reader-image-24069e86166c2dc7"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_backpack_mk1b.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = -461697622, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_2.spritesheet\\\"\"",
+      "icon_evidence": [
+        "publishing/image-publications.json#reader-image-24069e86166c2dc7",
+        "dist/exotic-layout-acquisition-20261030-001/acosta-game-reference.png",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_2.spritesheet.decompiled:314"
+      ]
+    },
+    {
+      "id": "exotic_talent_346395bc5eff32b00003ab84932b6fb5",
+      "native_uid": "346395BC5EFF32B00003AB84932B6FB5",
+      "icon": {
+        "asset_ref": "reader-image-1bc5af748a1f2118"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_backpack_mk2.mtalent:6"
+      ],
+      "native_icon": "\"mySpriteId = -2112215161, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_3.spritesheet\\\"\"",
+      "icon_evidence": [
+        "publishing/image-publications.json#reader-image-1bc5af748a1f2118"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5de782990003a5d488d5ec75",
+      "native_uid": "0B88A6BC5DE782990003A5D488D5EC75",
+      "icon": {
+        "asset_ref": "reader-image-7ac09745bb818371"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_mask_mk1.mtalent:7"
+      ],
+      "native_icon": "\"mySpriteId = 173520473, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "publishing/image-publications.json#reader-image-7ac09745bb818371"
+      ]
+    },
+    {
+      "id": "exotic_talent_f58bdd56639c3a58000c8ca3d6e181fd",
+      "native_uid": "F58BDD56639C3A58000C8CA3D6E181FD",
+      "icon": {
+        "asset_ref": "reader-image-0ccfa0109aa6f442"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/ninja_backpack_talent_exotic.mtalent:3"
+      ],
+      "native_icon": "\"mySpriteId = -1813988454, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_f58bdd56639c3a58000c8ca3d6e181fd",
+        "publishing/image-publications.json#reader-image-0ccfa0109aa6f442"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d649d33d2000384bcacf0fca0",
+      "native_uid": "C487423D649D33D2000384BCACF0FCA0",
+      "icon": {
+        "asset_ref": "reader-image-c07adfbd3315f0aa"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_back_hoarder_grenade_enhancements.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 916004844, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d649d33d2000384bcacf0fca0",
+        "publishing/image-publications.json#reader-image-c07adfbd3315f0aa"
+      ]
+    },
+    {
+      "id": "exotic_talent_b005013567f8e1220003701d06c0fed4",
+      "native_uid": "B005013567F8E1220003701D06C0FED4",
+      "icon": {
+        "asset_ref": "reader-image-73a91273da01023d"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_abridged.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1592570366, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_b005013567f8e1220003701d06c0fed4",
+        "publishing/image-publications.json#reader-image-73a91273da01023d"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d696f74060003db4a02b760f1",
+      "native_uid": "C487423D696F74060003DB4A02B760F1",
+      "icon": {
+        "asset_ref": "reader-image-24e5b8a3a77d402b"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_backpack_adaptation.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 2131922080, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d696f74060003db4a02b760f1",
+        "publishing/image-publications.json#reader-image-24e5b8a3a77d402b"
+      ]
+    },
+    {
+      "id": "exotic_talent_9e75f5ef674d67fb00036ce8a287de16",
+      "native_uid": "9E75F5EF674D67FB00036CE8A287DE16",
+      "icon": {
+        "asset_ref": "reader-image-8569454a8c2073a8"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_backpack_quick_fix_combat_medic.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 2143717257, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_9e75f5ef674d67fb00036ce8a287de16",
+        "publishing/image-publications.json#reader-image-8569454a8c2073a8"
+      ]
+    },
+    {
+      "id": "exotic_talent_04b83df56a9028560003da7d55b857e6",
+      "native_uid": "04B83DF56A9028560003DA7D55B857E6",
+      "icon": {
+        "asset_ref": "exotic-decoy-king-icon"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_backpack_redmoon.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1918342368, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_04b83df56a9028560003da7d55b857e6"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d67ed02ed0003d122b1e51493",
+      "native_uid": "C487423D67ED02ED0003D122B1E51493",
+      "icon": {
+        "asset_ref": "reader-image-27200e4aae56c91f"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_bob_and_weave.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1606531527, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d67ed02ed0003d122b1e51493",
+        "publishing/image-publications.json#reader-image-27200e4aae56c91f"
+      ]
+    },
+    {
+      "id": "exotic_talent_b0050135690056da00038878357409e6",
+      "native_uid": "B0050135690056DA00038878357409E6",
+      "icon": {
+        "asset_ref": "reader-image-7f6a36877428ef6f"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_chest_bond.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 791992149, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_b0050135690056da00038878357409e6",
+        "publishing/image-publications.json#reader-image-7f6a36877428ef6f"
+      ]
+    },
+    {
+      "id": "exotic_talent_19373b006a5f73b200037c841656c534",
+      "native_uid": "19373B006A5F73B200037C841656C534",
+      "icon": {
+        "asset_ref": "reader-image-e32dce722c936033"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_chest_firm_intent.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 261835384, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_19373b006a5f73b200037c841656c534",
+        "publishing/image-publications.json#reader-image-e32dce722c936033"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d668fd52c000c7da558572b9e",
+      "native_uid": "C487423D668FD52C000C7DA558572B9E",
+      "icon": {
+        "asset_ref": "reader-image-c3640b19ecce8ba9"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_chest_provocator_challenger.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 495171995, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d668fd52c000c7da558572b9e",
+        "publishing/image-publications.json#reader-image-c3640b19ecce8ba9"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d660a9b8f000533725f1e1594",
+      "native_uid": "C487423D660A9B8F000533725F1E1594",
+      "icon": {
+        "asset_ref": "reader-image-80d8e255994bfad2"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_escape_plan.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1095931800, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d660a9b8f000533725f1e1594",
+        "publishing/image-publications.json#reader-image-80d8e255994bfad2"
+      ]
+    },
+    {
+      "id": "exotic_talent_6cfec5e6653fb4da000a61749fa20dfc",
+      "native_uid": "6CFEC5E6653FB4DA000A61749FA20DFC",
+      "icon": {
+        "asset_ref": "reader-image-59adbfcbb5f4f793"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_gloves_decrease_recoil_while_not_aiming.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = -637232118, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_6cfec5e6653fb4da000a61749fa20dfc",
+        "publishing/image-publications.json#reader-image-59adbfcbb5f4f793"
+      ]
+    },
+    {
+      "id": "exotic_talent_9e75f5ef6751740c0003b91b22abdb0d",
+      "native_uid": "9E75F5EF6751740C0003B91B22ABDB0D",
+      "icon": {
+        "asset_ref": "reader-image-cd137c70f20dbb14"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_gloves_exodus_gloves_smoke_screen.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1442930406, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_9e75f5ef6751740c0003b91b22abdb0d",
+        "publishing/image-publications.json#reader-image-cd137c70f20dbb14"
+      ]
+    },
+    {
+      "id": "exotic_talent_3797e3755cf58568000446686cd74524",
+      "native_uid": "3797E3755CF58568000446686CD74524",
+      "icon": {
+        "asset_ref": "reader-image-c8d8a5de73b3c332"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_gloves_mk1_a.mtalent:9"
+      ],
+      "native_icon": "\"mySpriteId = 112840399, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_3797e3755cf58568000446686cd74524",
+        "publishing/image-publications.json#reader-image-c8d8a5de73b3c332"
+      ]
+    },
+    {
+      "id": "exotic_talent_6cfec5e662bb0f9b0003adf34ea615da",
+      "native_uid": "6CFEC5E662BB0F9B0003ADF34EA615DA",
+      "icon": {
+        "asset_ref": "reader-image-6a449a8038a43c61"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_gloves_over_the_top.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = 1276286275, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_6cfec5e662bb0f9b0003adf34ea615da",
+        "publishing/image-publications.json#reader-image-6a449a8038a43c61"
+      ]
+    },
+    {
+      "id": "exotic_talent_346395bc5f6353aa000bcae9a26cc4cd",
+      "native_uid": "346395BC5F6353AA000BCAE9A26CC4CD",
+      "icon": {
+        "asset_ref": "reader-image-a58472d9f4f233d6"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_holster_ac.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = -183956886, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_3.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_346395bc5f6353aa000bcae9a26cc4cd",
+        "publishing/image-publications.json#reader-image-a58472d9f4f233d6"
+      ]
+    },
+    {
+      "id": "exotic_talent_c487423d667c0ed8000747c2a2bd2390",
+      "native_uid": "C487423D667C0ED8000747C2A2BD2390",
+      "icon": {
+        "asset_ref": "reader-image-c2e55e41cf961fbb"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_holster_equalizer_counterpoise.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = -1208115321, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_c487423d667c0ed8000747c2a2bd2390",
+        "publishing/image-publications.json#reader-image-c2e55e41cf961fbb"
+      ]
+    },
+    {
+      "id": "exotic_talent_3797e3755cbf595900041283daed5671",
+      "native_uid": "3797E3755CBF595900041283DAED5671",
+      "icon": {
+        "asset_ref": "reader-image-e262ab07e1b94010"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_holster_mk1_a.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = 256328754, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_3797e3755cbf595900041283daed5671",
+        "publishing/image-publications.json#reader-image-e262ab07e1b94010"
+      ]
+    },
+    {
+      "id": "exotic_talent_6cfec5e6641b0a730005505300ec33de",
+      "native_uid": "6CFEC5E6641B0A730005505300EC33DE",
+      "icon": {
+        "asset_ref": "reader-image-4c188ab7799c00e6"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_holster_shocker_punch_defibrillator.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1912105386, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_6cfec5e6641b0a730005505300ec33de",
+        "publishing/image-publications.json#reader-image-4c188ab7799c00e6"
+      ]
+    },
+    {
+      "id": "exotic_talent_b00501356a0a87410003784819d70a9e",
+      "native_uid": "B00501356A0A87410003784819D70A9E",
+      "icon": {
+        "asset_ref": "reader-image-c2b6090ccef9a63e"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_kneepads_impervious.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 1501962835, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_b00501356a0a87410003784819d70a9e",
+        "publishing/image-publications.json#reader-image-c2b6090ccef9a63e"
+      ]
+    },
+    {
+      "id": "exotic_talent_32d246155c900e15000327f5f9f7e77e",
+      "native_uid": "32D246155C900E15000327F5F9F7E77E",
+      "icon": {
+        "asset_ref": "reader-image-b6076107dea7883a"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_kneepads_mk1_a.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = -654341334, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_32d246155c900e15000327f5f9f7e77e",
+        "publishing/image-publications.json#reader-image-b6076107dea7883a"
+      ]
+    },
+    {
+      "id": "exotic_talent_a2264a166852b2020003c1328e549c87",
+      "native_uid": "A2264A166852B2020003C1328E549C87",
+      "icon": {
+        "asset_ref": "reader-image-ba8345cbf2d60665"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_mask_weakest_link.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = -791579635, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_a2264a166852b2020003c1328e549c87",
+        "publishing/image-publications.json#reader-image-ba8345cbf2d60665"
+      ]
+    },
+    {
+      "id": "exotic_talent_a2264a1668ee337d0003bfce09d46322",
+      "native_uid": "A2264A1668EE337D0003BFCE09D46322",
+      "icon": {
+        "asset_ref": "reader-image-a1e2f3dcf5109df1"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/talent_exotic_ostracize.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = -178246349, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_a2264a1668ee337d0003bfce09d46322",
+        "publishing/image-publications.json#reader-image-a1e2f3dcf5109df1"
+      ]
+    },
+    {
+      "id": "exotic_talent_6cfec5e667d949000003c466157e40d6",
+      "native_uid": "6CFEC5E667D949000003C466157E40D6",
+      "icon": {
+        "asset_ref": "reader-image-825d221817538e0e"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/virginia_talent_exotic_mask_catalyst_chemical_agent.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 76699152, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_6.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_6cfec5e667d949000003c466157e40d6",
+        "publishing/image-publications.json#reader-image-825d221817538e0e"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5ddfc57700035d421edcad9a",
+      "native_uid": "0B88A6BC5DDFC57700035D421EDCAD9A",
+      "icon": {
+        "asset_ref": "reader-image-c28a7150a8758b5e"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_chest_mk1.mtalent:6"
+      ],
+      "native_icon": "\"mySpriteId = 2100398904, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_0b88a6bc5ddfc57700035d421edcad9a",
+        "publishing/image-publications.json#reader-image-c28a7150a8758b5e"
+      ]
+    },
+    {
+      "id": "exotic_talent_346395bc5f1a96ab0003b9b00bb0c71c",
+      "native_uid": "346395BC5F1A96AB0003B9B00BB0C71C",
+      "icon": {
+        "asset_ref": "reader-image-c28a7150a8758b5e"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_chest_mk2.mtalent:4"
+      ],
+      "native_icon": "\"mySpriteId = 2100398904, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_346395bc5f1a96ab0003b9b00bb0c71c",
+        "publishing/image-publications.json#reader-image-c28a7150a8758b5e"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5de782750003a5cfad8ad522",
+      "native_uid": "0B88A6BC5DE782750003A5CFAD8AD522",
+      "icon": {
+        "asset_ref": "reader-image-8a5dc664e8caf652"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_holster_mk2.mtalent:7"
+      ],
+      "native_icon": "\"mySpriteId = -208086848, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_0b88a6bc5de782750003a5cfad8ad522",
+        "publishing/image-publications.json#reader-image-8a5dc664e8caf652"
+      ]
+    },
+    {
+      "id": "exotic_talent_0b88a6bc5ddbd7d7007bf4d8aa9f6b9a",
+      "native_uid": "0B88A6BC5DDBD7D7007BF4D8AA9F6B9A",
+      "icon": {
+        "asset_ref": "reader-image-9c82cf97cdf0a61b"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_kneepads_mk2.mtalent:5"
+      ],
+      "native_icon": "\"mySpriteId = 1694819652, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_0b88a6bc5ddbd7d7007bf4d8aa9f6b9a",
+        "publishing/image-publications.json#reader-image-9c82cf97cdf0a61b"
+      ]
+    },
+    {
+      "id": "exotic_talent_3797e3755e8c9abf00051b8cb27e6304",
+      "native_uid": "3797E3755E8C9ABF00051B8CB27E6304",
+      "icon": {
+        "asset_ref": "reader-image-6de91a33ef8c303e"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_mask_mk2.mtalent:8"
+      ],
+      "native_icon": "\"mySpriteId = 384128784, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_3797e3755e8c9abf00051b8cb27e6304",
+        "publishing/image-publications.json#reader-image-6de91a33ef8c303e"
+      ]
+    },
+    {
+      "id": "exotic_talent_b3cf2e92615ab42a000363a1dd6f10b9",
+      "native_uid": "B3CF2E92615AB42A000363A1DD6F10B9",
+      "icon": {
+        "asset_ref": "reader-image-f372942a0b454b28"
+      },
+      "evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/talent/warlock_talent_exotic_mask_mk3.mtalent:6"
+      ],
+      "native_icon": "\"mySpriteId = -1757511727, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_4.spritesheet\\\"\"",
+      "icon_evidence": [
+        "dist/exotic-talent-icons-20261101-001/mapping-audit.json#exotic_talent_b3cf2e92615ab42a000363a1dd6f10b9",
+        "publishing/image-publications.json#reader-image-f372942a0b454b28"
+      ]
+    },
+    {
+      "id": "exotic_talent_19373b006a7acfb10003947ebee22443",
+      "native_uid": "19373B006A7ACFB10003947EBEE22443",
+      "evidence": [
+        "resources/game/current/raw_files/hunter/game system data/juice/talent/talent_exotic_gear_loaded_for_bear.mtalent"
+      ],
+      "native_icon": "\"mySpriteId = -2094319484, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet\\\"\"",
+      "icon": {
+        "asset_ref": "exotic-afterburn-icon"
+      },
+      "icon_evidence": [
+        "evidence/asset-import/records/game-update-20261110-001/images.json#afterburn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,641 @@
+{
+  "schema_version": 2,
+  "_维护说明": [
+    "品牌加成属性目录。id 保持稳定；具体加成内容位于 data/equipment/records.json 的 effects，数值按原生字段更新。"
+  ],
+  "attributes": [
+    {
+      "id": "bonus_weapon_damage",
+      "zh_name": "武器伤害",
+      "en_name": "Weapon Damage",
+      "category": "offense",
+      "active": true,
+      "verification": "英文名称已查证；中文译名待游戏内核实",
+      "sources": [
+        "https://www.ubisoft.com/en-us/game/the-division/the-division-2/news-updates/4mrYiFPIyKpzpoqshDQk80/the-division-2-red-horizon"
+      ],
+      "search_aliases": [],
+      "unit_type": "percent"
+    },
+    {
+      "id": "bonus_protection_from_elites",
+      "zh_name": "对精英的防御",
+      "en_name": "Protection from Elites",
+      "category": "defense",
+      "active": true,
+      "verification": "官方说明此词条用于品牌加成；中文译名待游戏内核实",
+      "sources": [
+        "https://www.ubisoft.com/en-us/game/the-division/the-division-2/news-updates/4mrYiFPIyKpzpoqshDQk80/the-division-2-red-horizon"
+      ],
+      "search_aliases": [],
+      "unit_type": "percent"
+    },
+    {
+      "id": "bonus_skill_efficiency",
+      "zh_name": "技能效率",
+      "en_name": "Skill Efficiency",
+      "category": "utility",
+      "active": true,
+      "verification": "英文名称已查证；不声明具体品牌使用此词条，中文译名待游戏内核实",
+      "sources": [
+        "https://www.ubisoft.com/en-us/game/the-division/the-division-2/news-updates/4mrYiFPIyKpzpoqshDQk80/the-division-2-red-horizon"
+      ],
+      "search_aliases": [],
+      "unit_type": "percent"
+    },
+    {
+      "id": "bonus_increased_threat",
+      "zh_name": "提升威胁度",
+      "en_name": "Increased Threat",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": [
+        "增加威胁"
+      ]
+    },
+    {
+      "id": "bonus_hazard_protection",
+      "zh_name": "危害防护",
+      "en_name": "Hazard Protection",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_explosives_damage",
+      "zh_name": "爆裂物伤害",
+      "en_name": "Explosives Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_status_effects",
+      "zh_name": "状态效果",
+      "en_name": "Status Effects",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_skill_haste",
+      "zh_name": "技能加速",
+      "en_name": "Skill Haste",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_rate_of_fire",
+      "zh_name": "射速",
+      "en_name": "Rate of Fire",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_assault_rifle_damage",
+      "zh_name": "突击步枪伤害",
+      "en_name": "Assault Rifle Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_magazine_size",
+      "zh_name": "弹匣容量",
+      "en_name": "Magazine Size",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地原生属性定义与同GUID双语文本已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_pulse_resistance",
+      "zh_name": "脉冲抗性",
+      "en_name": "Pulse Resistance",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "原生属性UID与同GUID中英文本已核实；防御为Wiki显示分类；来源见dist/brand-yaahl-20261021-001/inputs.json，发行版本未知",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_explosive_resistance",
+      "zh_name": "爆炸抗性",
+      "en_name": "Explosive Resistance",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_armor_regen",
+      "zh_name": "装甲回复",
+      "en_name": "Armor Regen",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_reload_speed",
+      "zh_name": "装弹速度",
+      "en_name": "Reload Speed",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_lmg_damage",
+      "zh_name": "轻机枪伤害",
+      "en_name": "LMG Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_weapon_handling",
+      "zh_name": "武器控制力",
+      "en_name": "Weapon Handling",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_total_armor",
+      "zh_name": "总装甲值",
+      "en_name": "Total Armor",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_armor_on_kill",
+      "zh_name": "击杀时回复装甲",
+      "en_name": "Armor on Kill",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_skill_tier",
+      "zh_name": "技能分阶",
+      "en_name": "Skill Tier",
+      "category": "utility",
+      "unit_type": "number",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_repair_skills",
+      "zh_name": "修复技能",
+      "en_name": "Repair Skills",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_rifle_damage",
+      "zh_name": "步枪伤害",
+      "en_name": "Rifle Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_ammo_capacity",
+      "zh_name": "弹药容量",
+      "en_name": "Ammo Capacity",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_smg_damage",
+      "zh_name": "冲锋枪伤害",
+      "en_name": "SMG Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_optimal_range",
+      "zh_name": "有效射程",
+      "en_name": "Optimal Range",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_skill_duration",
+      "zh_name": "技能持续时间",
+      "en_name": "Skill Duration",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_accuracy",
+      "zh_name": "准确度",
+      "en_name": "Accuracy",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_pistol_damage",
+      "zh_name": "手枪伤害",
+      "en_name": "Pistol Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_skill_health",
+      "zh_name": "技能生命值",
+      "en_name": "Skill Health",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_headshot_damage",
+      "zh_name": "爆头伤害",
+      "en_name": "Headshot Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_critical_hit_chance",
+      "zh_name": "暴击机率",
+      "en_name": "Critical Hit Chance",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_critical_hit_damage",
+      "zh_name": "暴击伤害",
+      "en_name": "Critical Hit Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_marksman_rifle_damage",
+      "zh_name": "射手步枪伤害",
+      "en_name": "Marksman Rifle Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_shotgun_damage",
+      "zh_name": "霰弹枪伤害",
+      "en_name": "Shotgun Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_stability",
+      "zh_name": "稳定度",
+      "en_name": "Stability",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_skill_damage",
+      "zh_name": "技能伤害",
+      "en_name": "Skill Damage",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_damage_to_armor",
+      "zh_name": "对装甲的伤害",
+      "en_name": "Damage to Armor",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "bonus_damage_to_health",
+      "zh_name": "对生命值的伤害",
+      "en_name": "Damage To Health",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前用户提供原生属性UID与当前同GUID简英文本已对应；发行build与active选择未确定",
+      "sources": [],
+      "search_aliases": []
+    }
+  ],
+  "_本地来源": {
+    "gear_set": "dist/asset-import/brand-highres-hunter-20261013-001/hunter/raw/raw_files/hunter/game system data/juice/item/gear_brand_set_511.mgearset",
+    "attribute_dictionary": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+    "evidence": "dist/sandbox030-review-20261017-001/native-511-evidence.json",
+    "note": "原件及文本编码不变；chinesegav 名称不改写既有品牌身份。",
+    "词条依据": {
+      "bonus_increased_threat": {
+        "_分类依据": "2026-10-17 用户明确确认“增加威胁”本身为黄色；对应原生 WeaponThreatPerBulletPositiveModBonus UID 4F5DDEA254886BEB00003ADA117FFB91。没有与黄色具名“降低威胁度”合并，也不据品牌主核心推断。",
+        "_名称依据": "2026-10-17 用户游戏截图明确显示“提升威胁度”。原生正向属性UID 4F5DDEA254886BEB00003ADA117FFB91 的 myUIName GUID 4F5DDEA254886B9600003AD9CFF9ABE1；English包为 Increased Threat，chinesegav包为“增加威胁”。chinesegav语种/地区未核实，不以模拟器简写替换游戏原文；原生包原件不改，旧包文字保留为别名。"
+      },
+      "bonus_hazard_protection": {
+        "_分类依据": "既有 attribute-import/attribute-data.json 的 AppData::HazardProtection 位于 GearAttribute23BlueList；双语名称与原生 AllStatusResistancePercentageFlatBonus 对应，沿用 defense，不据品牌主核心推断。"
+      },
+      "bonus_explosives_damage": {
+        "attribute_uid": "1C021E955DBC3AA6000545F266703932",
+        "name": {
+          "guid": "5D4179F15BF7C636000348D3228A117C",
+          "zh": "爆裂物伤害",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 20819,
+              "line_start": 22131,
+              "line_end": 22131,
+              "column": 2
+            },
+            "observation_id": "f88cd84d043f0bb9ce780de7c7c279a990cb87901a0841f99303485cd910b1d9"
+          },
+          "en": "Explosives Damage",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 20842,
+              "line_start": 22143,
+              "line_end": 22143,
+              "column": 2
+            },
+            "observation_id": "e6f1591d540f0e8dc8105c23405860cd2ad82637d5302cf64808bad24a3887a9"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      },
+      "bonus_status_effects": {
+        "attribute_uid": "1C021E955DBC3AA6000545F36FB05AB2",
+        "name": {
+          "guid": "1C021E955DBC3A3A000545ECD11D3013",
+          "zh": "状态效果",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 35164,
+              "line_start": 37943,
+              "line_end": 37943,
+              "column": 2
+            },
+            "observation_id": "a6f7e44d2714328c5788b4503f6d34012cecdaad1ea1a4fe0028c87e67dc6b59"
+          },
+          "en": "Status Effects",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 35199,
+              "line_start": 37971,
+              "line_end": 37971,
+              "column": 2
+            },
+            "observation_id": "21ce8a8bba514b304d4c13e5731fce5f146c620d0adcb6036b10df0df3cd78b1"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      },
+      "bonus_skill_haste": {
+        "attribute_uid": "5D4179F15BF8174500032BB71F9E39D3",
+        "name": {
+          "guid": "4F5DDEA253EC9B7600001A1FB0DE33FD",
+          "zh": "技能加速",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 4282,
+              "line_start": 4402,
+              "line_end": 4402,
+              "column": 2
+            },
+            "observation_id": "02482825b7eb7872e014749822d927eaed9d00ed87c22a88caa43463bd2f7c45"
+          },
+          "en": "Skill Haste",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 4288,
+              "line_start": 4408,
+              "line_end": 4408,
+              "column": 2
+            },
+            "observation_id": "03c2e21a2978ff070d2a0703d8ece6d76dfa2d1181ac8b202aafb51591d311f4"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      },
+      "bonus_rate_of_fire": {
+        "attribute_uid": "43A2C97052209A23000004DC3D85D0C7",
+        "name": {
+          "guid": "43A2C97052209A20000004CB44FAC990",
+          "zh": "射速",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 4217,
+              "line_start": 4337,
+              "line_end": 4337,
+              "column": 2
+            },
+            "observation_id": "69afbd07b712d8ce2b56fea900ffe2f3e516b54faa63a3caa75c716fdc317022"
+          },
+          "en": "Rate of Fire",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 4223,
+              "line_start": 4343,
+              "line_end": 4343,
+              "column": 2
+            },
+            "observation_id": "13229df7314f14755624b447c4c128a7778dad25ff6d2ecef720c712c16fbe6f"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      },
+      "bonus_assault_rifle_damage": {
+        "attribute_uid": "5D31260057DBA943000093F79A124DE9",
+        "name": {
+          "guid": "5D31260057DBA909000093F10250CB6A",
+          "zh": "突击步枪伤害",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 4417,
+              "line_start": 4537,
+              "line_end": 4537,
+              "column": 2
+            },
+            "observation_id": "c603170ba8474b0558c68ef8a194c739feaf3b10e9c96ba2e4f2d1f7fe65130d"
+          },
+          "en": "Assault Rifle Damage",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 4423,
+              "line_start": 4543,
+              "line_end": 4543,
+              "column": 2
+            },
+            "observation_id": "828763a53c252bdf2c9205e4c1a0375cac0ac98c6b40eccd9b6698f66816be2f"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      },
+      "bonus_magazine_size": {
+        "attribute_uid": "43A2C97052209A23000004DA32591EE2",
+        "name": {
+          "guid": "43A2C97052209A20000004C954279E59",
+          "zh": "弹匣容量",
+          "zh_evidence": {
+            "source_id": "game-simplifiedchinese-menus",
+            "location": {
+              "file": "dist/text-locale-audit-20261018-001/hunter-session-001/jobs/f223729d68f54914a65b70a4409b2ed8/hunter/raw/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+              "record": 4215,
+              "line_start": 4335,
+              "line_end": 4335,
+              "column": 2
+            },
+            "observation_id": "614a7bcab418f4756b4e2f4127e483c257a50cecaf4bb216614a0eef1e35d3f6"
+          },
+          "en": "Magazine Size",
+          "en_evidence": {
+            "source_id": "game-english-menus",
+            "location": {
+              "file": "dist/asset-import/brand-highres-hunter-20261013-001/inputs/cached-game-english-menus.locpack",
+              "record": 4221,
+              "line_start": 4341,
+              "line_end": 4341,
+              "column": 2
+            },
+            "observation_id": "e0352253fc5c1995ef81e8c39b620c8cd9354b2ce4d4fe5787944ce1fb51ce50"
+          }
+        },
+        "attribute_file": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+        "category_basis": "沿用内部攻击/技能与功能语义分类；不声明游戏UI颜色"
+      }
+    }
+  }
+}

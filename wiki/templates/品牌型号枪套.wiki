@@ -1,0 +1,1 @@
+<noinclude>枪套型号薄适配；固定 canonical 部位。</noinclude><includeonly>{{#invoke:TD2品牌投影|record|kind=ordinary|slot=holster|name={{{中文名称|}}}|en={{{英文名称|}}}}}</includeonly>

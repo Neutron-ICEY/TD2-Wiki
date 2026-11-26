@@ -1,0 +1,497 @@
+{
+  "_说明": "验收修订 fixture：非游戏事实；具名记录只保存在 equipment.params，不另存名称或索引。",
+  "catalog": {
+    "schema_version": 2,
+    "attributes": [
+      {
+        "id": "bonus_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      }
+    ]
+  },
+  "rules": {
+    "schema_version": 2,
+    "rules": [
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 1,
+        "value": "0",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 2,
+        "value": "20",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvE",
+        "activation_count": 3,
+        "value": "30",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 1,
+        "value": "0",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 2,
+        "value": "14",
+        "verification": "待核实",
+        "sources": []
+      },
+      {
+        "attribute_id": "bonus_weapon_damage",
+        "mode": "PvP",
+        "activation_count": 3,
+        "value": "21",
+        "verification": "待核实",
+        "sources": []
+      }
+    ]
+  },
+  "talents": {
+    "schema_version": 1,
+    "talents": [
+      {
+        "id": "test_talent",
+        "zh_name": "测试天赋（非游戏事实）",
+        "en_name": "Test Talent",
+        "page_title": "试验天赋页面",
+        "icon": {
+          "wiki_file": "",
+          "confirmed_on_wiki": false
+        },
+        "modes": {
+          "PvE": {
+            "description": "测试 PvE 天赋描述，较长中文与英文 MixedText 用于布局检验。",
+            "verification": "待核实",
+            "sources": []
+          },
+          "PvP": {
+            "description": "独立的测试 PvP 天赋描述。",
+            "verification": "待核实",
+            "sources": []
+          }
+        },
+        "search_aliases": [
+          "ceshitianfu",
+          "cstf",
+          "测试别名"
+        ],
+        "active": true,
+        "verification": "待核实",
+        "sources": []
+      }
+    ]
+  },
+  "brand": {
+    "套装全称": "试验品牌（非游戏事实）",
+    "英文原名": "Test Brand / 中文、English·混合名称",
+    "简介": "集中规则与天赋引用的最小关系试验，所有数值均非游戏事实。",
+    "默认允许主核心": "red;blue;yellow",
+    "mask使用不同规则": "是",
+    "mask允许主核心": "yellow",
+    "1件PvE词条": "bonus_weapon_damage",
+    "1件PvP词条": "bonus_weapon_damage",
+    "2件PvE词条": "bonus_weapon_damage",
+    "2件PvP词条": "bonus_weapon_damage",
+    "3件PvE词条": "bonus_weapon_damage",
+    "3件PvP词条": "bonus_weapon_damage",
+    "部分部位主属性不同": "是",
+    "holster图纸": "  普通枪套测试图纸 ; ; 具名枪套测试图纸  ",
+    "mask图纸": "; ;",
+    "chest图纸": "一张测试图纸;",
+    "品牌分解材料": "用于布局检验的很长品牌专用材料名称（非游戏事实）",
+    "1件PvP词条来源": "override",
+    "2件PvP词条来源": "override",
+    "3件PvP词条来源": "override"
+  },
+  "equipment": [
+    {
+      "params": {
+        "stable_id": "test_fixed_only",
+        "装备名称": "固定词条测试具名（非游戏事实）",
+        "英文原名": "Fixed Attribute Example",
+        "装备部位": "holster",
+        "简介": "仅有固定词条，没有天赋；0 是有效值。",
+        "固定次属性": "fixed_minor_test_zero",
+        "talent_mode": "none"
+      }
+    },
+    {
+      "params": {
+        "stable_id": "test_talent_only",
+        "装备名称": "完美天赋测试具名（非游戏事实）",
+        "英文原名": "Talent Only Example",
+        "装备部位": "chest",
+        "简介": "此记录只有天赋，无固定词条。",
+        "天赋引用": "test_talent",
+        "talent_mode": "fixed",
+        "固定次属性": ""
+      }
+    },
+    {
+      "params": {
+        "stable_id": "test_both",
+        "装备名称": "复合特性测试具名（非游戏事实）",
+        "英文原名": "Both Features / A Long English Name for Responsive Testing",
+        "装备部位": "backpack",
+        "简介": "天赋与固定特殊次属性可以同时存在。很长的装备故事，仅为布局测试。很长的装备故事，仅为布局测试。很长的装备故事，仅为布局测试。很长的装备故事，仅为布局测试。很长的装备故事，仅为布局测试。很长的装备故事，仅为布局测试。",
+        "天赋引用": "test_talent",
+        "固定次属性": "fixed_minor_test_offense",
+        "次属性槽例外": "是",
+        "次属性槽数": "3",
+        "插件槽例外": "是",
+        "插件槽数": "2",
+        "talent_mode": "fixed"
+      }
+    }
+  ],
+  "global_rules": {
+    "schema_version": 2,
+    "_维护说明": [
+      "本文件是普通品牌金装共同规则的唯一人工入口。直接找到下面的canonical 部位 ID即可维护，无需读 Python。",
+      "修改所有普通胸甲的基础装甲：只改 部位 → chest → base_armor。修改所有普通背包插件槽：只改 backpack mod_slot_count。",
+      "null 表示未知；0 表示确认没有。不要照截图或模型记忆填数值。当前具体数值均 NEEDS GAME-DATA VERIFICATION。",
+      "主属性类别属于品牌，不写这里；普通次属性按产品规则随机任意适用加成，不维护品牌颜色限制。",
+      "分解 brand_material_amount 引用品牌表单的材料名称；fixed_materials 为独立固定材料列表。未知列表为 null，确认没有为 []。",
+      "材料数量 min/max 相同代表固定数量，范围需完整；未知两项均为 null。",
+      "修改后运行 python -m tools.brand_sets generate；生成的 TD2普通装备规则和TD2分解规则禁止手改。"
+    ],
+    "_字段说明": {
+      "base_armor": "基础装甲",
+      "major_core_slots": "主属性槽数量",
+      "minor_attribute_slots": "次属性槽数量",
+      "talent_slot_count": "天赋位数量",
+      "talent_description": "普通天赋位内容；未知 null",
+      "mod_slot_count": "插件槽数量",
+      "specialization_note": "已确认的共同专精规则；无可靠资料留 null",
+      "dismantle": "分解规则",
+      "verification": "内部资料状态，不出现在品牌审核表单",
+      "sources": "HTTPS 来源列表"
+    },
+    "部位": {
+      "mask": {
+        "base_armor": 12345,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 0,
+        "mod_slot_count": 0,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      },
+      "chest": {
+        "base_armor": 12346,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 1,
+        "mod_slot_count": 1,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      },
+      "holster": {
+        "base_armor": 12347,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 0,
+        "mod_slot_count": 1,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      },
+      "backpack": {
+        "base_armor": 12348,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 1,
+        "mod_slot_count": 1,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      },
+      "gloves": {
+        "base_armor": 12349,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 0,
+        "mod_slot_count": 1,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      },
+      "kneepads": {
+        "base_armor": 12350,
+        "major_core_slots": 1,
+        "minor_attribute_slots": 2,
+        "talent_slot_count": 0,
+        "mod_slot_count": 1,
+        "talent_description": "随机天赋（非游戏事实）",
+        "specialization_note": null,
+        "dismantle": {
+          "brand_material_amount": {
+            "min": 0,
+            "max": 2
+          },
+          "fixed_materials": [
+            {
+              "name": "测试固定材料",
+              "amount": {
+                "min": 21,
+                "max": 24
+              }
+            }
+          ]
+        },
+        "verification": "NEEDS GAME-DATA VERIFICATION",
+        "sources": []
+      }
+    }
+  },
+  "equipment_ui": {
+    "schema_version": 2,
+    "_维护说明": [
+      "本文件维护装备行图标和品牌图片命名。图标由人工上传，空图合法，不产生破图。",
+      "major_attribute 是主属性通用行图标；各颜色主属性继续复用 core-icons.json 的 major 三图。原 major/minor 六图完全保留且不互用。",
+      "random_attribute 为次属性随机，talent_slot 为天赋位，mod_slot 为插件槽。只填写已上传的 raster 文件名。",
+      "品牌图尝试 中文全称 + suffix + .extension。suffix 默认空，extension 默认 png；改约定只改这里。",
+      "修改后 generate。缺文件通过 #ifexist 降级，站点能力及实际文件存在性仍待沙箱验证。"
+    ],
+    "major_names": {
+      "red": "武器伤害",
+      "blue": "装甲",
+      "yellow": "技能分阶"
+    },
+    "icons": {
+      "major_attribute": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "random_attribute": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "talent_slot": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "mod_slot": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      }
+    },
+    "brand_image": {
+      "suffix": "",
+      "extension": "png"
+    },
+    "slot_visuals": {
+      "mask": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "chest": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "holster": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "backpack": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "gloves": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      },
+      "kneepads": {
+        "wiki_file": "",
+        "confirmed_on_wiki": false
+      }
+    }
+  },
+  "minor_catalog": {
+    "schema_version": 2,
+    "_说明": "NON-GAME-FACT TEST FIXTURE；非游戏事实，仅测试次属性领域",
+    "attributes": [
+      {
+        "id": "minor_attribute_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      }
+    ]
+  },
+  "fixed_minor_presets": {
+    "schema_version": 1,
+    "presets": [
+      {
+        "id": "fixed_minor_test_zero",
+        "minor_attribute_id": "minor_attribute_weapon_damage",
+        "value": "0",
+        "search_aliases": [
+          "ceshi zero"
+        ],
+        "verification": "NON-GAME-FACT TEST",
+        "sources": [],
+        "active": true
+      },
+      {
+        "id": "fixed_minor_test_offense",
+        "minor_attribute_id": "minor_attribute_weapon_damage",
+        "value": "5",
+        "search_aliases": [
+          "ceshi offense"
+        ],
+        "verification": "NON-GAME-FACT TEST",
+        "sources": [],
+        "active": true
+      }
+    ]
+  }
+}

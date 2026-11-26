@@ -1,0 +1,325 @@
+{
+  "icons": [
+    {
+      "asset_ref": "weapon-ui-core-attribute",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet_3.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet_3.spritesheet.decompiled",
+      "sprite": "core_attribute_weapon",
+      "bounds": [
+        384,
+        0,
+        512,
+        128
+      ],
+      "alpha_channel": "R",
+      "source_sha256": "1404078ec8786a12b846f077e83b110c0e20d5c322b42ff0b968870da343ed27"
+    },
+    {
+      "asset_ref": "weapon-ui-attribute",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet_3.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet_3.spritesheet.decompiled",
+      "sprite": "attribute_weapon",
+      "bounds": [
+        512,
+        0,
+        640,
+        128
+      ],
+      "alpha_channel": "R",
+      "source_sha256": "1404078ec8786a12b846f077e83b110c0e20d5c322b42ff0b968870da343ed27"
+    },
+    {
+      "asset_ref": "weapon-ui-muzzle",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "mod_muzzle",
+      "bounds": [
+        0,
+        256,
+        128,
+        384
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-optics",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "mod_optics",
+      "bounds": [
+        128,
+        256,
+        256,
+        384
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-underbarrel",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "mod_underbarrel",
+      "bounds": [
+        256,
+        256,
+        384,
+        384
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-magazine",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "mod_magazine",
+      "bounds": [
+        384,
+        256,
+        512,
+        384
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-ar",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "ar_ammo",
+      "bounds": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-lmg",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "lmg_ammo",
+      "bounds": [
+        128,
+        0,
+        256,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-marksman",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "marksman_ammo",
+      "bounds": [
+        256,
+        0,
+        384,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-shotgun",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "shotgun_ammo",
+      "bounds": [
+        384,
+        0,
+        512,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-smg",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "smg_ammo",
+      "bounds": [
+        512,
+        0,
+        640,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-pistol",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet.spritesheet.decompiled",
+      "sprite": "pistol_ammo",
+      "bounds": [
+        640,
+        0,
+        768,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "e1dc43e1c68c69addc64205a2cb5e5127ff9855561cee5d3f94f4d2749598cb9"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-rifle",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet_2.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet_2.spritesheet.decompiled",
+      "sprite": "rifle_ammo",
+      "bounds": [
+        640,
+        0,
+        768,
+        128
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "8e263df87a815848b289ab11e327cc84335b948540338f9606ac47f894108a25"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-crossbow",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_crossbow",
+      "bounds": [
+        0,
+        448,
+        32,
+        480
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-gl",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_gl",
+      "bounds": [
+        32,
+        448,
+        64,
+        480
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-marksman",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_marksman",
+      "bounds": [
+        64,
+        448,
+        96,
+        480
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-gunner",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_gunner",
+      "bounds": [
+        96,
+        448,
+        128,
+        480
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-technician",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_technician",
+      "bounds": [
+        96,
+        416,
+        128,
+        448
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    },
+    {
+      "asset_ref": "weapon-ui-ammo-signature-flamethrower",
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_hud_elements_spritesheet.png",
+      "definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_hud_elements_spritesheet.spritesheet.decompiled",
+      "sprite": "hud_ammo_sig_flamethrower",
+      "bounds": [
+        32,
+        480,
+        64,
+        512
+      ],
+      "alpha_channel": "L",
+      "source_sha256": "483da3ed99a1c508d7943f95d98571940473e7d1def3f391db6a017bb0be7eec"
+    }
+  ],
+  "visual_reference": "User game screenshots 190b21d2-7375-4941-b1b3-8700ff34906a and e97740b8-cc17-4f95-be7e-1a223cdd05c6; white masks visually matched to each role.",
+  "weapon_category_ui": {
+    "selection_source": "resources/game/current/raw_files/hunter/ui/compounds/item_getweaponammoicon.mcompoundnode.decompiled",
+    "ordinary_source": "resources/game/current/raw_files/hunter/nodes/compounds/item_getweapongroupicon.mcompoundnode.decompiled",
+    "signature_source": "resources/game/current/raw_files/hunter/game system data/juice/currencies/currencies.rejuice",
+    "selection": "Ordinary: WeaponGroup. Signature: WeaponAmmoType -> CurrencyDefinition icon. Sprite masks selected by their native names and cross-checked against user screenshots; numeric sprite hash algorithm is not asserted.",
+    "visual_reference": [
+      "codex-clipboard-5f115962-ac40-43cf-a33d-1028b95f06cf.png",
+      "codex-clipboard-9f07ed96-d66e-4695-b85d-158e909b20b5.png"
+    ],
+    "signature_bindings": [
+      {
+        "item_uid": "5D4179F15A01A5AF0001DE8980D6ADD7",
+        "specialization_uid": "5D4179F15AB8BE5E000525BA4972A14E",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_gl_m32.mweapon",
+        "currency_uid": "5D4179F15A02F9310002DDF721494C3C",
+        "currency_name": "Signature_Ammo_Grenadelauncher"
+      },
+      {
+        "item_uid": "544DB9085D8B779E00034ACA31D68B6F",
+        "specialization_uid": "544DB9085D8B8C81000459B0CDBF54B1",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_flamethrower.mweapon",
+        "currency_uid": "544DB9085D8B7EFA00034AE1B9054E95",
+        "currency_name": "Signature_Ammo_Flamethrower"
+      },
+      {
+        "item_uid": "028DB20A5CA4B93C000352E84077D974",
+        "specialization_uid": "346395BC5CC2B99600036014FF5641E9",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_minigun.mweapon",
+        "currency_uid": "346395BC5CC2C629000367A2805C41B4",
+        "currency_name": "Signature_Ammo_Gunner"
+      },
+      {
+        "item_uid": "5D4179F15AD5F40900006E66C5E6EC16",
+        "specialization_uid": "5D4179F15AFD2E67005F48A5D47C660F",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_sniper_mcmillan_t1.mweapon",
+        "currency_uid": "075801E25ABB452D000068F41DC181EA",
+        "currency_name": "Signature_Ammo_Sniper"
+      },
+      {
+        "item_uid": "5D4179F15A141F2B00001CADF3643AF3",
+        "specialization_uid": "5D4179F15ABB46D3000066CD81115529",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_crossbow_v2.mweapon",
+        "currency_uid": "075801E25ABB452D000068F3CE5EA5AC",
+        "currency_name": "Signature_Ammo_Crossbow"
+      },
+      {
+        "item_uid": "48B41A535D1B250E0013B51CD3EA47E8",
+        "specialization_uid": "346395BC5D0A379900038CEFACEF046A",
+        "weapon_source": "rogue/game system data/juice/weapon/player_weapon_sig_sm_mamm.mweapon",
+        "currency_uid": "346395BC5D15D35C00045D5A1214A26C",
+        "currency_name": "Signature_Ammo_Technician"
+      }
+    ]
+  }
+}

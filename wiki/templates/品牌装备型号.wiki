@@ -1,0 +1,1 @@
+<noinclude>普通型号保存名称和部位，共用装备规则由品牌与 Catalog 提供。</noinclude><includeonly>{{#invoke:TD2品牌投影|record|kind=ordinary|slot={{{部位|}}}|name={{{中文名称|}}}|en={{{英文名称|}}}}}</includeonly>

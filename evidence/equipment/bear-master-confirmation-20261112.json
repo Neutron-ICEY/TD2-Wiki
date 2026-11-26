@@ -1,0 +1,25 @@
+{
+  "review_date": "2026-11-12",
+  "evidence_type": "user_confirmation",
+  "item_uid": "B00501356A8FE11300037E60A33CDC61",
+  "item_name": "全副武装",
+  "mission_uid": "0B9940F36A2015BD00080226FCA2E036",
+  "mission_name": "华盛顿国际机场的鲍比·古兹曼猎捕任务",
+  "user_confirmed_rules": [
+    "大师难度只存在于部分特定猎捕任务中，不是每个猎捕目标都有大师难度。",
+    "用户补充首次限定：华盛顿国际机场：鲍比·古兹曼，首次通关大师难度必定获得全副武装。"
+  ],
+  "scope": {
+    "difficulty_label": "大师难度",
+    "guaranteed_drop": true,
+    "applies_to": "仅上述任务首次通关大师难度",
+    "generic_native_difficulty_mapping": false,
+    "first_or_repeat_completion_rule": "用户确认首次通关大师难度必定获得；重复通关奖励仍未确认，不推断"
+  },
+  "native_evidence": {
+    "reference": "evidence/equipment/new-equipment-sources-20261112.json",
+    "confirmed": "任务、高潮任务与活动条目 UID 经 RewardGroup、实际 RewardLoot、Y8S3_Exotic_03 标签关联到装备 UID。",
+    "unresolved": "两条原生 Legendary 分支含 LootConditionIsPlayerPersistentFlagValue 条件，仍保持未闭合；本次用户确认不改变原生条件求值或分支资格。",
+    "persistent_flag_uid": "373FA64D6ABF8713001C3141274B5D26"
+  }
+}

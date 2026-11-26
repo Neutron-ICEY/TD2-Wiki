@@ -1,0 +1,56 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.wiki text eol=lf
+*.wikitext text eol=lf
+*.lua text eol=lf
+.env.example text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+assets/**/*.svg -text
+*.ogg binary
+*.mp3 binary
+*.mp4 binary
+*.pdf binary
+*.zip binary
+*.js text eol=lf
+*.cjs text eol=lf
+*.css text eol=lf
+
+# The Editor build ID hashes source bytes. Keep the existing endings of these inputs in every checkout.
+/ui/editor/src/contract.js text eol=crlf
+/ui/editor/src/state.js text eol=crlf
+/ui/editor/src/local-session.js text eol=crlf
+/ui/editor/src/editor-view.js text eol=crlf
+/ui/editor/src/page-scope.js text eol=crlf
+/ui/editor/src/site-expanded-bootstrap.js text eol=crlf
+
+incoming/huijiwiki/*.wiki -text
+evidence/asset-import/records/** -text
+evidence/asset-import/inputs/** -text
+evidence/asset-import/native/** -text
+publishing/history/** -text
+tests/fixtures/equipment-native/hunter/** -text -whitespace
+tests/fixtures/equipment-native/rogue/** -text -whitespace
+
+# These files differ by checkout (machine paths, private evidence, or Git policy).
+/.gitignore td2-manual
+/.gitattributes td2-manual
+/.env.example td2-manual
+/README.md td2-manual
+/AGENTS.md td2-manual
+/.agents/skills/td2-wiki/SKILL.md td2-manual
+/data/asset-import/batches.json td2-manual
+/data/asset-import/ui-project-copies.json td2-manual
+/docs/deployment.md td2-manual
+/docs/equipment-maintenance.md td2-manual
+/docs/game-resources.md td2-manual
+/docs/homepage.md td2-manual
+/docs/hunter-cli.md td2-manual
+/docs/publishing-contract.md td2-manual
+/tools/asset_import/README.md td2-manual
+/tests/fixtures/README.md td2-manual

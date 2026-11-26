@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "dismantle_profile": {
+    "item_level": 40,
+    "quality": "GearSet",
+    "perk_level": 2,
+    "event_multiplier": 1,
+    "display": "40级装备；满级分解专长；无活动倍率。"
+  },
+  "common": {
+    "fixed_materials": [
+      {
+        "name": "防御性布料",
+        "amount": {
+          "min": 23,
+          "max": 23
+        },
+        "currency_uid": "4CDCE5B25A9EBF6200007DC7B6A7FD24",
+        "id": "protective_fabric"
+      },
+      {
+        "name": "碳纤维",
+        "amount": {
+          "min": 4,
+          "max": 4
+        },
+        "currency_uid": "4CDCE5B25A9EC14A00006671F9C06EB9",
+        "id": "carbon_fiber"
+      },
+      {
+        "name": "电子元件",
+        "amount": {
+          "min": 4,
+          "max": 4
+        },
+        "currency_uid": "4CDCE5B25A9EC14A000066726C6579B8",
+        "id": "electronics"
+      },
+      {
+        "name": "钛合金",
+        "amount": {
+          "min": 4,
+          "max": 4
+        },
+        "currency_uid": "4CDCE5B25A9EC14A000066733B15C6A3",
+        "id": "titanium"
+      }
+    ],
+    "chance_materials": [
+      {
+        "name": "陶瓷碎片",
+        "amount": {
+          "min": 10,
+          "max": 10
+        },
+        "chance_percent": 20,
+        "currency_uid": "4CDCE5B25A9EC03E000066549581AEC0",
+        "id": "ceramics",
+        "requires_perk_level": 2,
+        "probability_source": "native_definition_not_gameplay_frequency"
+      },
+      {
+        "name": "聚碳酸酯",
+        "amount": {
+          "min": 10,
+          "max": 10
+        },
+        "chance_percent": 10,
+        "currency_uid": "4CDCE5B25A9EC14A000066765D5BBCA1",
+        "id": "polycarbonate",
+        "requires_perk_level": 2,
+        "probability_source": "native_definition_not_gameplay_frequency"
+      }
+    ]
+  },
+  "slots": {
+    "mask": [
+      {
+        "name": "面具织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA3100037834DB56BA80",
+        "id": "weave_mask"
+      }
+    ],
+    "backpack": [
+      {
+        "name": "背包织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA310003782F32672D19",
+        "id": "weave_backpack"
+      }
+    ],
+    "chest": [
+      {
+        "name": "胸甲织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA3100037830B69910F4",
+        "id": "weave_chest"
+      }
+    ],
+    "gloves": [
+      {
+        "name": "手套织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA3100037831A45FF73F",
+        "id": "weave_gloves"
+      }
+    ],
+    "holster": [
+      {
+        "name": "枪套织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA3100037832AE32FF58",
+        "id": "weave_holster"
+      }
+    ],
+    "kneepads": [
+      {
+        "name": "护膝织物",
+        "amount": {
+          "min": 1,
+          "max": 1
+        },
+        "currency_uid": "B3CF2E925F72FA3100037833A5360062",
+        "id": "weave_kneepads"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "kind": "user_confirmation",
+      "date": "2026-10-26",
+      "scope": "All green Gear Sets share common output under this profile. Fabric23, chance output10, carbon/electronics/titanium4 and slot weave1. Specific set material identity and quantity remain independent."
+    },
+    {
+      "kind": "user_gameplay_observation",
+      "reference": "dist/ongoing-directive-repair-20261025-002/quantity-evidence.json",
+      "scope": "Ongoing Directive quantities under level40, maximum deconstruction perk, no event multiplier; probabilities not measured."
+    },
+    {
+      "kind": "native_definition",
+      "reference": "dist/gear-set-bulk-20261025-001/dismantle-review.json",
+      "scope": "Matching Economy_Gear, Economy_GearSet and six slot tags; ceramics20%, polycarbonate10%, perk gates and formula brackets."
+    }
+  ],
+  "native_conditions": {
+    "chance_materials": {
+      "activated_with_perk": true,
+      "requires_perk_level": 2,
+      "applied_under_profile": true
+    },
+    "protective_fabric": {
+      "use_extra_quantity_bonus": true,
+      "output_basis": "User-confirmed green profile shows23; do not import Orange23/46 or25% outcomes."
+    }
+  }
+}

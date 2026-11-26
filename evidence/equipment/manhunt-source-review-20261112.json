@@ -1,0 +1,437 @@
+{
+  "evidence_type": "native_chain_review",
+  "base_commit": "e7444f8",
+  "review_date": "2026-11-12",
+  "scope": "Four explicitly inspected manhunt reward chains; no generic Legendary translation or persistent-flag evaluator; not user gameplay observations.",
+  "defaults": {
+    "loot_group_chance": 100,
+    "loot_item_weight": 100,
+    "loot_item_count": 1,
+    "new_character_flag": false,
+    "reward_flag_value": true
+  },
+  "schema_sources": [
+    "hunter/game system data/fruit/loot/loottables.fruit",
+    "hunter/game system data/fruit/persistentflag/persistentflag.fruit",
+    "hunter/game system data/fruit/rewards/rewards.fruit"
+  ],
+  "localization_source": "hunter/localization/packages/simplifiedchinese/menus.locpack",
+  "master_localization": {
+    "FD240905674DD7F200036CF3C11A86B9": "大师难度",
+    "FD240905674DD7F200036CF4845FB142": "高潮任务也可在大师难度下进行，使用“变更难易度”选项便可进行更改。"
+  },
+  "sources": [
+    {
+      "item_name": "煽动者",
+      "item_uid": "B0050135668E79E60005319DC2F2754C",
+      "mission_title": "航天局总部：狄奥·帕内尔",
+      "title_guid": "515E28DB66D80CC4001CD10901D6FEB4",
+      "mission_uid": "A0FB99F459799AE6000036472C477173",
+      "mission_source": "rogue/game system data/juice/mission/mm10_nasahq.mmission",
+      "climax_source": "hunter/game system data/juice/mission/prime target climax data/ptclimax_y6s2_mm10_nasahq.mmissionprimetargetclimaxdata",
+      "climax_uid": "515E28DB66D80CC4001CD10BA1E23CFF",
+      "playlist_source": "hunter/game system data/juice/primetargetcampaign/y6s2_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+      "activity_uid": "F46FC1EF66D6F7C700036C1338534971",
+      "reward_source": "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y6s2_mm10_nasahq.mreward",
+      "reward_uid": "F46FC1EF67163CF300036C6BF02BB6CD",
+      "reward_leaf_uid": "F46FC1EF67163CF300036C6CE419083E",
+      "reward_leaf_line": 14,
+      "table_source": "hunter/game system data/juice/loot/loottables/ltdrp_y6s2_rewards_mission_difficulty.mloottable",
+      "table_uid": "F46FC1EF6717AF7700036C9C68862E74",
+      "first_group_line": 11,
+      "first_group": {
+        "type": "LootGroup",
+        "properties": [
+          "myQualityChart < uid=F46FC1EF6717AF7700036C9D95050236 > = orange B78C018F5391E4D500000D22D4D90584",
+          "myUseQualityUnluckyStreaks FALSE",
+          "myIncludeInPreview TRUE"
+        ],
+        "children": [
+          {
+            "type": "myConditions",
+            "properties": [],
+            "children": [
+              {
+                "type": "myConditionList",
+                "properties": [],
+                "children": [
+                  {
+                    "type": "LootConditionIsMissionDifficulty",
+                    "properties": [
+                      "myMissionDifficulty Legendary"
+                    ],
+                    "children": []
+                  },
+                  {
+                    "type": "LootConditionIsPlayerPersistentFlagValue",
+                    "properties": [
+                      "myPersistentFlag < uid=F46FC1EF672A1E7500036CCD1E9AC673 > = Y6S2_PersistentFlag_Master_Climax_Mission_First_Time_Completion F46FC1EF672E12C400036CCB5CF933B0",
+                      "myValue FALSE"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "myLootItemList",
+            "properties": [],
+            "children": [
+              {
+                "type": "LootItem",
+                "properties": [
+                  "myQualityChart < uid=F46FC1EF6717AF7700036C9EE638608D > = loot_quality_chart_exotic 4CDCE5B25BE6DB97000330865A3EA4FE",
+                  "mySourceLevelChart < uid=F46FC1EF6728A74300036CCC4821B9DC > = LootSourceLevelChart_Default_Tier5 075801E25BF7FAE400034ACBD0BBD6C8"
+                ],
+                "children": [
+                  {
+                    "type": "myConditions",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeTags",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeLootTags",
+                    "properties": [
+                      "ItemTag \"New ItemTag (0)\" Y6S2_Exotic_03"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flag_source": "hunter/game system data/juice/persistentflag/y6s2_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+      "flag_uid": "F46FC1EF672E12C400036CCB5CF933B0",
+      "flag_setter_line": 25,
+      "item_source": "hunter/game system data/juice/item/player_gear_chest_exotic_04.mitem",
+      "item_tag": "Y6S2_Exotic_03",
+      "description": "[航天局总部：狄奥·帕内尔] - 首次通关大师难度必定获得"
+    },
+    {
+      "item_name": "小鸟应急包",
+      "item_uid": "B0050135678535F3000383BD7B7AC839",
+      "mission_title": "罗斯福岛：亚兰妮·凯尔索",
+      "title_guid": "515E28DB679B903B0020FAA5B0B971DB",
+      "mission_uid": "A0FB99F459799B200000366775EFD4D4",
+      "mission_source": "rogue/game system data/juice/mission/mm14_roosevelt.mmission",
+      "climax_source": "hunter/game system data/juice/mission/prime target climax data/ptclimax_y6s3_mm14_roosevelt_island.mmissionprimetargetclimaxdata",
+      "climax_uid": "515E28DB67840E40001C9915DA82B6A9",
+      "playlist_source": "hunter/game system data/juice/primetargetcampaign/y6s3_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+      "activity_uid": "515E28DB6783F2C0001C50EE74906323",
+      "reward_source": "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y6s3_mm14_roosevelt_island.mreward",
+      "reward_uid": "F46FC1EF679B82EE00036D8C677A091F",
+      "reward_leaf_uid": "F46FC1EF679B82EE00036D8D025161E6",
+      "reward_leaf_line": 14,
+      "table_source": "hunter/game system data/juice/loot/loottables/ltdrp_y6s3_rewards_mission_difficulty.mloottable",
+      "table_uid": "F46FC1EF679B879B00036D98CDC58AA2",
+      "first_group_line": 12,
+      "first_group": {
+        "type": "LootGroup",
+        "properties": [
+          "myQualityChart < uid=F46FC1EF679B879B00036D9A65A7FEC0 > = orange B78C018F5391E4D500000D22D4D90584",
+          "myUseQualityUnluckyStreaks FALSE",
+          "myIncludeInPreview TRUE"
+        ],
+        "children": [
+          {
+            "type": "myConditions",
+            "properties": [],
+            "children": [
+              {
+                "type": "myConditionList",
+                "properties": [],
+                "children": [
+                  {
+                    "type": "LootConditionIsMissionDifficulty",
+                    "properties": [
+                      "myMissionDifficulty Legendary"
+                    ],
+                    "children": []
+                  },
+                  {
+                    "type": "LootConditionIsPlayerPersistentFlagValue",
+                    "properties": [
+                      "myPersistentFlag < uid=F46FC1EF679B879B00036D99CD6C1362 > = Y6S3_PersistentFlag_Master_Climax_Mission_First_Time_Completion F46FC1EF679B8BE200036DB150022782",
+                      "myValue FALSE"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "myLootItemList",
+            "properties": [],
+            "children": [
+              {
+                "type": "LootItem",
+                "properties": [
+                  "myQualityChart < uid=F46FC1EF679B879B00036D9B3D7D1446 > = loot_quality_chart_exotic 4CDCE5B25BE6DB97000330865A3EA4FE",
+                  "mySourceLevelChart < uid=F46FC1EF679B879B00036D9CDC0C19D1 > = LootSourceLevelChart_Default_Tier5 075801E25BF7FAE400034ACBD0BBD6C8"
+                ],
+                "children": [
+                  {
+                    "type": "myConditions",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeTags",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeLootTags",
+                    "properties": [
+                      "ItemTag \"New ItemTag (0)\" Y6S3_Exotic_03"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flag_source": "hunter/game system data/juice/persistentflag/y6s3_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+      "flag_uid": "F46FC1EF679B8BE200036DB150022782",
+      "flag_setter_line": 40,
+      "item_source": "hunter/game system data/juice/item/player_gear_back_exotic_04.mitem",
+      "item_tag": "Y6S3_Exotic_03",
+      "description": "[罗斯福岛：亚兰妮·凯尔索] - 首次通关大师难度必定获得"
+    },
+    {
+      "item_name": "工匠",
+      "item_uid": "B005013567F671C000036FF025B589BD",
+      "mission_title": "波托马克活动中心：经理",
+      "title_guid": "A719E9146810A804000635E980AB5D7A",
+      "mission_uid": "A0FB99F459799B130000365FDA8A269D",
+      "mission_source": "rogue/game system data/juice/mission/mm13_jfkcenter.mmission",
+      "climax_source": "hunter/game system data/juice/mission/prime target climax data/ptclimax_y7s1_mm13_jfk_center.mmissionprimetargetclimaxdata",
+      "climax_uid": "A719E91467DD6148001B884D2C05E24D",
+      "playlist_source": "hunter/game system data/juice/primetargetcampaign/y7s1_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+      "activity_uid": "A719E91467DD86B800090C0D5EDCFE1F",
+      "reward_source": "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y7s1_mm13_jfk_center.mreward",
+      "reward_uid": "4F7DD4CF6876165500037084843C83A9",
+      "reward_leaf_uid": "4F7DD4CF6876165500037085B09CDF52",
+      "reward_leaf_line": 19,
+      "table_source": "hunter/game system data/juice/loot/loottables/ltdrp_y7s1_rewards_mission_difficulty.mloottable",
+      "table_uid": "4F7DD4CF687625060003709C5E9011F3",
+      "first_group_line": 13,
+      "first_group": {
+        "type": "LootGroup",
+        "properties": [
+          "myQualityChart < uid=4F7DD4CF687625060003709E6C2CA651 > = orange B78C018F5391E4D500000D22D4D90584",
+          "myUseQualityUnluckyStreaks FALSE",
+          "myIncludeInPreview TRUE"
+        ],
+        "children": [
+          {
+            "type": "myConditions",
+            "properties": [],
+            "children": [
+              {
+                "type": "myConditionList",
+                "properties": [],
+                "children": [
+                  {
+                    "type": "LootConditionIsMissionDifficulty",
+                    "properties": [
+                      "myMissionDifficulty Legendary"
+                    ],
+                    "children": []
+                  },
+                  {
+                    "type": "LootConditionIsPlayerPersistentFlagValue",
+                    "properties": [
+                      "myPersistentFlag < uid=4F7DD4CF687625060003709D514A1F90 > = Y7S1_PersistentFlag_Master_Climax_Mission_First_Time_Completion 4F7DD4CF687624C80003709AE21BE800",
+                      "myValue FALSE"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "myLootItemList",
+            "properties": [],
+            "children": [
+              {
+                "type": "LootItem",
+                "properties": [
+                  "myQualityChart < uid=4F7DD4CF687625060003709FD1B7946A > = loot_quality_chart_exotic 4CDCE5B25BE6DB97000330865A3EA4FE",
+                  "mySourceLevelChart < uid=4F7DD4CF68762506000370A00F761826 > = LootSourceLevelChart_Default_Tier5 075801E25BF7FAE400034ACBD0BBD6C8"
+                ],
+                "children": [
+                  {
+                    "type": "myConditions",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeTags",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeLootTags",
+                    "properties": [
+                      "ItemTag \"New ItemTag (0)\" Y7S1_Exotic_03"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flag_source": "hunter/game system data/juice/persistentflag/y7s1_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+      "flag_uid": "4F7DD4CF687624C80003709AE21BE800",
+      "flag_setter_line": 25,
+      "item_source": "hunter/game system data/juice/item/player_gear_mask_exotic_05.mitem",
+      "item_tag": "Y7S1_Exotic_03",
+      "description": "[波托马克活动中心：经理] - 首次通关大师难度必定获得"
+    },
+    {
+      "item_name": "黑名单成员",
+      "item_uid": "B005013568EE1608002429906813A622",
+      "mission_title": "潮汐之潭猎捕：峰会",
+      "title_guid": "516B38CF684026880055510BF1E5E003",
+      "mission_uid": "596859F65A61DD000004D005DE982D3D",
+      "mission_source": "rogue/game system data/juice/mission/mm16_tidalbasin.mmission",
+      "climax_source": "hunter/game system data/juice/mission/prime target climax data/ptclimax_y7s2_mm16_tidal_basin.mmissionprimetargetclimaxdata",
+      "climax_uid": "516B38CF684026B30055510D22458749",
+      "playlist_source": "hunter/game system data/juice/primetargetcampaign/y7s2_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+      "activity_uid": "516B38CF6840264F00554F17E41696D4",
+      "reward_source": "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y7s2_mm16_tidal_basin.mreward",
+      "reward_uid": "FD24090568F73DAD000371DE9F0CD8D4",
+      "reward_leaf_uid": "FD24090568F76DE400037200771303FF",
+      "reward_leaf_line": 22,
+      "table_source": "hunter/game system data/juice/loot/loottables/ltdrp_y7s2_rewards_mission_difficulty_kneepads.mloottable",
+      "table_uid": "FD24090568F74D81000371EBEF3A3203",
+      "first_group_line": 12,
+      "first_group": {
+        "type": "LootGroup",
+        "properties": [
+          "myQualityChart < uid=FD24090568F74D81000371ED44C82EE0 > = orange B78C018F5391E4D500000D22D4D90584"
+        ],
+        "children": [
+          {
+            "type": "myConditions",
+            "properties": [],
+            "children": [
+              {
+                "type": "myConditionList",
+                "properties": [],
+                "children": [
+                  {
+                    "type": "LootConditionIsMissionDifficulty",
+                    "properties": [
+                      "myMissionDifficulty Legendary"
+                    ],
+                    "children": []
+                  },
+                  {
+                    "type": "LootConditionIsPlayerPersistentFlagValue",
+                    "properties": [
+                      "myPersistentFlag < uid=FD24090568F74D81000371ECB9201F56 > = Y7S2_PersistentFlag_Master_Climax_Mission_First_Time_Completion FD24090568F647B1000371C76C7242C7",
+                      "myValue FALSE"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "myLootItemList",
+            "properties": [],
+            "children": [
+              {
+                "type": "LootItem",
+                "properties": [
+                  "myQualityChart < uid=FD24090568F74D81000371EE3BA5ADAF > = loot_quality_chart_exotic 4CDCE5B25BE6DB97000330865A3EA4FE",
+                  "mySourceLevelChart < uid=FD24090568F74D81000371EF05312AF2 > = LootSourceLevelChart_Default_Tier5 075801E25BF7FAE400034ACBD0BBD6C8"
+                ],
+                "children": [
+                  {
+                    "type": "myConditions",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeTags",
+                    "properties": [],
+                    "children": []
+                  },
+                  {
+                    "type": "myIncludeLootTags",
+                    "properties": [
+                      "ItemTag \"New ItemTag (0)\" Y7S2_Exotic_04"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flag_source": "hunter/game system data/juice/persistentflag/y7s2_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+      "flag_uid": "FD24090568F647B1000371C76C7242C7",
+      "flag_setter_line": 28,
+      "item_source": "hunter/game system data/juice/item/player_gear_kneepads_exotic_04.mitem",
+      "item_tag": "Y7S2_Exotic_04",
+      "description": "[潮汐之潭猎捕：峰会] - 首次通关大师难度必定获得"
+    }
+  ],
+  "files_read": [
+    "hunter/game system data/fruit/loot/loottables.fruit",
+    "hunter/game system data/fruit/persistentflag/persistentflag.fruit",
+    "hunter/game system data/fruit/rewards/rewards.fruit",
+    "hunter/game system data/juice/item/player_gear_back_exotic_04.mitem",
+    "hunter/game system data/juice/item/player_gear_chest_exotic_04.mitem",
+    "hunter/game system data/juice/item/player_gear_kneepads_exotic_04.mitem",
+    "hunter/game system data/juice/item/player_gear_mask_exotic_05.mitem",
+    "hunter/game system data/juice/loot/loottables/ltdrp_y6s2_rewards_mission_difficulty.mloottable",
+    "hunter/game system data/juice/loot/loottables/ltdrp_y6s3_rewards_mission_difficulty.mloottable",
+    "hunter/game system data/juice/loot/loottables/ltdrp_y7s1_rewards_mission_difficulty.mloottable",
+    "hunter/game system data/juice/loot/loottables/ltdrp_y7s2_rewards_mission_difficulty_kneepads.mloottable",
+    "hunter/game system data/juice/mission/prime target climax data/ptclimax_y6s2_mm10_nasahq.mmissionprimetargetclimaxdata",
+    "hunter/game system data/juice/mission/prime target climax data/ptclimax_y6s3_mm14_roosevelt_island.mmissionprimetargetclimaxdata",
+    "hunter/game system data/juice/mission/prime target climax data/ptclimax_y7s1_mm13_jfk_center.mmissionprimetargetclimaxdata",
+    "hunter/game system data/juice/mission/prime target climax data/ptclimax_y7s2_mm16_tidal_basin.mmissionprimetargetclimaxdata",
+    "hunter/game system data/juice/persistentflag/y6s2_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+    "hunter/game system data/juice/persistentflag/y6s3_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+    "hunter/game system data/juice/persistentflag/y7s1_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+    "hunter/game system data/juice/persistentflag/y7s2_persistentflag_master_climax_mission_first_time_completion.mpersistentflag",
+    "hunter/game system data/juice/primetargetcampaign/y6s2_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+    "hunter/game system data/juice/primetargetcampaign/y6s3_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+    "hunter/game system data/juice/primetargetcampaign/y7s1_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+    "hunter/game system data/juice/primetargetcampaign/y7s2_prime_target_ptplaylist.mprimetargetcampaignplaylist",
+    "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y6s2_mm10_nasahq.mreward",
+    "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y6s3_mm14_roosevelt_island.mreward",
+    "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y7s1_mm13_jfk_center.mreward",
+    "hunter/game system data/juice/rewards/rwg_prime_target_ptclimax_y7s2_mm16_tidal_basin.mreward",
+    "hunter/localization/packages/simplifiedchinese/menus.locpack",
+    "rogue/game system data/juice/mission/mm10_nasahq.mmission",
+    "rogue/game system data/juice/mission/mm13_jfkcenter.mmission",
+    "rogue/game system data/juice/mission/mm14_roosevelt.mmission",
+    "rogue/game system data/juice/mission/mm16_tidalbasin.mmission"
+  ],
+  "limits": [
+    "No claim about current event availability, party/phase ownership, flag reset or replay probability.",
+    "Automatic registered-entry parser still lacks these Rogue mission entries and persistent-flag evaluation; existing unresolved routes remain unchanged."
+  ]
+}

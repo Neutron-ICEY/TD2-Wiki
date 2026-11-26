@@ -1,0 +1,1 @@
+for(const name of ['test_mapped_editor','test_editor_production','test_editor_actions','test_editor_catalog_changes','test_equipment_import','test_equipment_database','test_generation_preflight','test_gear_final_remediation'])require('../../../tests/'+name+'.cjs');

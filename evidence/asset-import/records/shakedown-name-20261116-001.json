@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "asset_ref": "reader-image-271e67121d5f2a89",
+  "status": "VERIFIED_LOCAL_NATIVE_NAME_AND_ICON",
+  "verified_at": "2026-11-16T08:27:07.176808+00:00",
+  "english_name": "Shakedown",
+  "current_native_simplified_chinese": "扫荡",
+  "historical_app_label": "确认&执行",
+  "native_talent": {
+    "source": "resources/game/current/raw_files/hunter/game system data/juice/talent/talent_exotic_weapon_confirm_execute.mtalent",
+    "internal_name": "talent_exotic_weapon_confirm_execute",
+    "uid": "04B83DF56A3D15EB0009EC7E260E8DC9",
+    "name_guid": "40EFA9D56A3E433F000378DCFFB6ADC2",
+    "icon_sheet": "hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet",
+    "recorded_sprite_id": -285668625
+  },
+  "localization": {
+    "english": {
+      "source": "resources/game/current/raw_files/hunter/localization/packages/english/menus.locpack",
+      "csv_record": 70046,
+      "guid": "40EFA9D56A3E433F000378DCFFB6ADC2",
+      "line_version": "5",
+      "text": "Shakedown"
+    },
+    "simplifiedchinese": {
+      "source": "resources/game/current/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+      "csv_record": 68832,
+      "guid": "40EFA9D56A3E433F000378DCFFB6ADC2",
+      "line_version": "5",
+      "text": "扫荡"
+    }
+  },
+  "native_inputs": [
+    {
+      "source": "resources/game/current/raw_files/hunter/game system data/juice/talent/talent_exotic_weapon_confirm_execute.mtalent",
+      "bytes": 3692,
+      "path": "raw_files/hunter/game system data/juice/talent/talent_exotic_weapon_confirm_execute.mtalent",
+      "sha256": "d9b754fc98b75ae3e696799adf7b2c1d46fb69e2945ab1a315e905a3ba5693f2",
+      "source_id": "hunter-export-all-steam-26413016-20261110-001"
+    },
+    {
+      "source": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled",
+      "bytes": 18114,
+      "path": "raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled",
+      "sha256": "726f08bdbaa0b75f36bc16c2060cff208aa92d0cb595980b0ae170ee65481687",
+      "source_id": "hunter-export-all-steam-26413016-20261110-001"
+    },
+    {
+      "source": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png",
+      "bytes": 179410,
+      "path": "images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png",
+      "sha256": "62809f61f553c63c11c54d237468f69104a7096a5e62a83e0ac8cdef9b4983e2",
+      "source_id": "hunter-export-all-steam-26413016-20261110-001"
+    },
+    {
+      "source": "resources/game/current/raw_files/hunter/localization/packages/english/menus.locpack",
+      "bytes": 6024231,
+      "path": "raw_files/hunter/localization/packages/english/menus.locpack",
+      "sha256": "75c5cc2b444ec5c84fb57d9417d97be64ae6ce9afff20e645a51e8ca17f2d2ba",
+      "source_id": "hunter-export-all-steam-26413016-20261110-001"
+    },
+    {
+      "source": "resources/game/current/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+      "bytes": 5725507,
+      "path": "raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+      "sha256": "73e1cc444765403f8ce5c9ee525f9bd8a13a94b08e51e40075e8baac14dbdbac",
+      "source_id": "hunter-export-all-steam-26413016-20261110-001"
+    }
+  ],
+  "icon_bridge": {
+    "sprite_definition": "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled",
+    "atlas": "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png",
+    "regions_checked": 64,
+    "exact_alpha_to_native_red_matches": [
+      "talent_confirm_execute"
+    ],
+    "regions": [
+      {
+        "name": "talent_confirm_execute",
+        "rect": [
+          384,
+          640,
+          128,
+          128
+        ],
+        "native_red_mask_sha256": "03fd36283ec77197d0c8159c7040818511e2adcfade885e05f538ac2aed903a2",
+        "asset_alpha_sha256": "03fd36283ec77197d0c8159c7040818511e2adcfade885e05f538ac2aed903a2",
+        "different_pixels": 0
+      }
+    ],
+    "no_resampling": true,
+    "comparison_scope": "PNG alpha equals native atlas red mask; encoded PNG bytes and RGBA channel layouts are not claimed equal",
+    "sprite_id_hash_reversal_performed": false
+  },
+  "application_provenance": {
+    "source": "publishing/image-publications.json",
+    "registry_id": "reader-image-271e67121d5f2a89",
+    "selected_asset_id": "windows:6d625108f102f77a0c31",
+    "source_entry": "exoticweapontalent37.scale-100.png",
+    "bindings": [
+      {
+        "application_type": "ExoticTalent",
+        "category": "talent",
+        "chinese_name": "确认&执行",
+        "confidence": "exact",
+        "english_name": null,
+        "evidence": [
+          {
+            "argument_offsets": [
+              52826,
+              52831,
+              52836,
+              52841,
+              52850,
+              52855,
+              52860
+            ],
+            "constructor_contract": {
+              "category": "talent",
+              "constructor_token": "0x060016de",
+              "constructor_type": "Division2BuildTool.Model.ExoticTalent",
+              "image_argument": 2,
+              "name_argument": 1,
+              "verified": true
+            },
+            "constructor_token": "0x060016de",
+            "il_offset": 52860,
+            "localization_key": "确认&执行",
+            "method": "Division2BuildTool.Model.AppData::.cctor",
+            "method_token": "0x06001645",
+            "source_field": null,
+            "type": "literal_constructor_binding"
+          }
+        ],
+        "full_chinese_name": null,
+        "full_english_name": null,
+        "internal_id": null,
+        "internal_key": "确认&执行",
+        "localization_key": "确认&执行",
+        "source_filename": "exoticweapontalent37.png",
+        "source_platform": "apk"
+      },
+      {
+        "application_type": "ExoticTalent",
+        "category": "talent",
+        "chinese_name": "确认&执行",
+        "confidence": "exact",
+        "english_name": null,
+        "evidence": [
+          {
+            "argument_offsets": [
+              52826,
+              52831,
+              52836,
+              52841,
+              52850,
+              52855,
+              52860
+            ],
+            "constructor_contract": {
+              "category": "talent",
+              "constructor_token": "0x060017cf",
+              "constructor_type": "Division2BuildTool.Model.ExoticTalent",
+              "image_argument": 2,
+              "name_argument": 1,
+              "verified": true
+            },
+            "constructor_token": "0x060017cf",
+            "il_offset": 52860,
+            "localization_key": "确认&执行",
+            "method": "Division2BuildTool.Model.AppData::.cctor",
+            "method_token": "0x06001736",
+            "source_field": null,
+            "type": "literal_constructor_binding"
+          }
+        ],
+        "full_chinese_name": null,
+        "full_english_name": null,
+        "internal_id": null,
+        "internal_key": "确认&执行",
+        "localization_key": "确认&执行",
+        "source_filename": "exoticweapontalent37.png",
+        "source_platform": "windows"
+      }
+    ],
+    "historical_online_address_preserved": "TD2-天赋-确认&执行-Icon.png"
+  },
+  "content_sha256": "5ca4bf148339358a681b93299bc35f53362a6888ed2312010afd26de5f41d66d",
+  "dimensions": [
+    128,
+    128
+  ],
+  "final_filename": "TD2-Talent-ExoticWeapon-Shakedown-Icon.png",
+  "identity_scope": "Existing Wiki Asset ID retained; native semantic evidence enriches this asset only. No entity created or merged; no Chinese game text changed."
+}

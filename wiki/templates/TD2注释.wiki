@@ -1,0 +1,1 @@
+<includeonly>{{#tag:ref|{{{1|}}}|name={{{名称|}}}}}</includeonly>

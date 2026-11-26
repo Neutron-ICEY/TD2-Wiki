@@ -1,0 +1,395 @@
+{
+  "schema_version": 2,
+  "_维护说明": [
+    "装备次属性分类、图标与审核说明的维护入口；名称、单位由 data/equipment/attributes.json.identities 派生。",
+    "id 和图标键保持稳定；名称、单位与中文显示别名只修改统一身份目录。",
+    "单位与校验属于Minor领域，不继承Bonus的PvE/PvP或件数规则。修改后运行python -m tools.brand_sets generate。"
+  ],
+  "attributes": [
+    {
+      "id": "minor_attribute_armor_on_kill",
+      "zh_name": "击杀时回复装甲",
+      "en_name": "Armor on Kill",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "2026-10-18 用户批准；来源见 docs/READER-511-NAMED-DATA-REQUEST.md",
+      "sources": []
+    },
+    {
+      "id": "minor_attribute_hazard_protection",
+      "zh_name": "危害防护",
+      "en_name": "Hazard Protection",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "HazardProtect",
+        "Hazard Protection"
+      ]
+    },
+    {
+      "id": "minor_attribute_skill_damage",
+      "zh_name": "技能伤害",
+      "en_name": "Skill Damage",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；COMMUNITY_CORROBORATED；分类依据固定commit社区快照；未直接恢复应用Yellow列表",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "Skill DMG",
+        "Skill Damage"
+      ]
+    },
+    {
+      "id": "minor_attribute_repair_skills",
+      "zh_name": "技能修复",
+      "en_name": "Repair Skills",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；COMMUNITY_CORROBORATED；分类依据固定commit社区快照；未直接恢复应用Yellow列表",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "RepairSkills",
+        "Repair Skills"
+      ]
+    },
+    {
+      "id": "minor_attribute_skill_haste",
+      "zh_name": "技能加速",
+      "en_name": "Skill Haste",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；COMMUNITY_CORROBORATED；分类依据固定commit社区快照；未直接恢复应用Yellow列表",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "SkillHaste",
+        "Skill Haste"
+      ]
+    },
+    {
+      "id": "minor_attribute_critical_hit_damage",
+      "zh_name": "暴击伤害",
+      "en_name": "Critical Hit Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "CH DMG",
+        "Critical Hit Damage"
+      ]
+    },
+    {
+      "id": "minor_attribute_critical_hit_chance",
+      "zh_name": "暴击几率",
+      "en_name": "Critical Hit Chance",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "CH Chance",
+        "Critical Hit Chance"
+      ]
+    },
+    {
+      "id": "minor_attribute_weapon_handling",
+      "zh_name": "武器控制",
+      "en_name": "Weapon Handling",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "Handling",
+        "Weapon Handling"
+      ]
+    },
+    {
+      "id": "minor_attribute_headshot_damage",
+      "zh_name": "爆头伤害",
+      "en_name": "Headshot Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "HS DMG",
+        "Headshot Damage"
+      ]
+    },
+    {
+      "id": "minor_attribute_explosive_resistance",
+      "zh_name": "爆炸抗性",
+      "en_name": "Explosive Resistance",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "ExploResist",
+        "Explosive Resistance"
+      ]
+    },
+    {
+      "id": "minor_attribute_status_effects",
+      "zh_name": "状态效果",
+      "en_name": "Status Effects",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；COMMUNITY_CORROBORATED；分类依据固定commit社区快照；未直接恢复应用Yellow列表",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "StatusEffects",
+        "Status Effects"
+      ]
+    },
+    {
+      "id": "minor_attribute_health",
+      "zh_name": "生命值",
+      "en_name": "Health",
+      "category": "defense",
+      "unit_type": "number",
+      "active": true,
+      "verification": "应用29.0.0文字与社区commit 60b7f02839eeb1c24099bf010c1e92219cf6ad2b快照；当前游戏版本未验证；范围与数值留在review候选，非正式数值规则；APP29_SNAPSHOT；应用分类与固定commit社区单位语义分别获批；不是当前客户端证明",
+      "sources": [
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/attributes.csv",
+        "https://github.com/div2hub/game-data/blob/60b7f02839eeb1c24099bf010c1e92219cf6ad2b/stats.csv"
+      ],
+      "search_aliases": [
+        "Health"
+      ]
+    },
+    {
+      "id": "minor_attribute_rate_of_fire",
+      "zh_name": "射速",
+      "en_name": "Rate of Fire",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "本地同GUID双语名称与原生具名固定属性已对应；游戏版本适用范围待核实",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_health_damage",
+      "zh_name": "生命值伤害",
+      "en_name": "Health Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "原生属性UID及同GUID简体/英文menus；见dist/brand-yaahl-20261021-001/catalog-additions.json；攻击为Wiki显示分类",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_scanner_pulse_haste",
+      "zh_name": "扫描脉冲加速",
+      "en_name": "Scanner Pulse Haste",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_shield_health",
+      "zh_name": "护盾生命值",
+      "en_name": "Shield Health",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_damage_to_armor",
+      "zh_name": "对装甲的伤害",
+      "en_name": "Damage to Armor",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_optimal_range",
+      "zh_name": "有效射程",
+      "en_name": "Optimal Range",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_dmg_to_target_out_of_cover",
+      "zh_name": "对离开掩体目标的伤害",
+      "en_name": "DMG to target out of cover",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_reduced_threat",
+      "zh_name": "降低威胁度",
+      "en_name": "Reduced Threat",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_accuracy",
+      "zh_name": "准确度",
+      "en_name": "Accuracy",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_ammo_capacity",
+      "zh_name": "弹药容量",
+      "en_name": "Ammo Capacity",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_skill_health",
+      "zh_name": "技能生命值",
+      "en_name": "Skill Health",
+      "category": "utility",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_melee_damage",
+      "zh_name": "近战伤害",
+      "en_name": "Melee Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_pistol_damage",
+      "zh_name": "手枪伤害",
+      "en_name": "Pistol Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_armor_regen",
+      "zh_name": "装甲回复",
+      "en_name": "Armor Regen",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_weapon_damage",
+      "zh_name": "武器伤害",
+      "en_name": "Weapon Damage",
+      "category": "offense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "当前原生属性UID与同GUID简英文本、单位已对应；分类为Wiki显示语义，不宣称游戏槽位颜色",
+      "sources": [],
+      "search_aliases": []
+    },
+    {
+      "id": "minor_attribute_armor_regen_flat",
+      "zh_name": "装甲回复",
+      "en_name": "Armor Regen",
+      "category": "defense",
+      "unit_type": "number",
+      "active": true,
+      "verification": "当前原生 ArmorRegenFlatBonus UID 5D4179F15BF55D4400032C84760C945E，FlatValue / HPPerSecond；与既有百分比装甲回复分开。",
+      "sources": []
+    },
+    {
+      "id": "minor_attribute_incoming_repairs",
+      "zh_name": "受到修复",
+      "en_name": "Incoming Repairs",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "原生 UID 4F5DDEA253F8A5EA00000E15E4C7E82D、Percentage 及简体名称；净化固定属性。数值上限尚未独立核实，不填数值。",
+      "sources": []
+    }
+  ],
+  "_本地来源": {
+    "evidence": "dist/brand-page-pilot-20261021-002/catalog-additions.json",
+    "scope": "射速作为独立Minor Attribute；不与Bonus ID混用。NamedAttributes的Utility列表引用已核实。"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "_说明": "全部是非游戏事实的契约测试，不是真实品牌数据。数值只用于验证独立存储、零值、不同词条和缺失数据。禁止作为真实品牌发布。",
+  "catalog": {
+    "schema_version": 2,
+    "attributes": [
+      {
+        "id": "bonus_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "bonus_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "非游戏事实测试词条",
+        "sources": [],
+        "unit_type": "number"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "说明": "非游戏事实：同值独立、不同值、不同词条；单位由各词条的 percent/number 决定。",
+      "params": {
+        "套装全称": "试验品牌（非游戏事实）· Test & Co.",
+        "英文原名": "Test & Co. / 非游戏资料",
+        "套装简称": "试验品牌",
+        "简介": "这是供人工检查界面和契约的测试页，不代表任何真实品牌。长中文说明应自然换行，不迫使手机页面横向滚动；名称中可以包含中文、英文以及自然标点。",
+        "核心属性": "武器伤害",
+        "装备部位": "mask;chest;backpack",
+        "成员装备": "试验面具（非游戏事实）;Test Chest / 试验胸甲;试验背包",
+        "具名装备": "试验具名装备·Named",
+        "可制作": "未知",
+        "获取说明": "尚未填写真实获取资料。此处仅用于预览长文本与人工维护的获取说明。",
+        "资料状态": "待核实",
+        "来源说明": "非游戏事实 fixture，不可标记为已核实游戏数据。",
+        "1件PvE词条": "bonus_weapon_damage",
+        "1件PvE数值": "0",
+        "1件PvE状态": "待核实",
+        "1件PvP词条": "bonus_weapon_damage",
+        "1件PvP数值": "0",
+        "1件PvP状态": "待核实",
+        "2件PvE词条": "bonus_protection_from_elites",
+        "2件PvE数值": "15",
+        "2件PvE状态": "待核实",
+        "2件PvP词条": "bonus_protection_from_elites",
+        "2件PvP数值": "10",
+        "2件PvP状态": "待核实",
+        "3件PvE词条": "bonus_skill_efficiency",
+        "3件PvE数值": "30",
+        "3件PvE状态": "待核实",
+        "3件PvP词条": "bonus_weapon_damage",
+        "3件PvP数值": "20",
+        "3件PvP状态": "待核实",
+        "1件PvE使用特殊数值": "是",
+        "1件PvE特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "1件PvP使用特殊数值": "是",
+        "1件PvP特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "2件PvE使用特殊数值": "是",
+        "2件PvE特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "2件PvP使用特殊数值": "是",
+        "2件PvP特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "3件PvE使用特殊数值": "是",
+        "3件PvE特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "3件PvP使用特殊数值": "是",
+        "3件PvP特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "1件PvP词条来源": "override",
+        "2件PvP词条来源": "override",
+        "3件PvP词条来源": "override"
+      }
+    },
+    {
+      "说明": "PvE 已填写、PvP 显式空白；所有 optional 字段可以缺失。",
+      "params": {
+        "套装全称": "PvP 空白测试（非游戏事实）",
+        "1件PvE词条": "bonus_weapon_damage",
+        "1件PvE数值": "15",
+        "1件PvE状态": "待核实",
+        "1件PvP词条": "",
+        "1件PvP数值": "",
+        "1件PvP状态": "",
+        "1件PvE使用特殊数值": "是",
+        "1件PvE特殊原因": "Phase 1 回归测试特殊数值，非游戏事实",
+        "1件PvP词条来源": "override"
+      }
+    },
+    {
+      "说明": "其他／特殊效果仍是独立模式记录，不允许复制或填入第二套普通数值。",
+      "params": {
+        "套装全称": "特殊效果测试（非游戏事实）",
+        "1件PvE词条": "special",
+        "1件PvE特殊说明": "测试特殊条件；这不是实际 TD2 效果。",
+        "1件PvE状态": "待核实",
+        "1件PvP状态": "未知",
+        "2件PvP状态": "不适用",
+        "3件PvP状态": "待核实",
+        "可制作": "否",
+        "1件PvP词条来源": "override"
+      }
+    }
+  ],
+  "minor_catalog": {
+    "schema_version": 2,
+    "_说明": "NON-GAME-FACT TEST FIXTURE；非游戏事实，仅测试次属性领域",
+    "attributes": [
+      {
+        "id": "minor_attribute_weapon_damage",
+        "zh_name": "测试攻击词条",
+        "en_name": "Test Offense",
+        "category": "offense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_protection_from_elites",
+        "zh_name": "测试防御词条",
+        "en_name": "Test Defense",
+        "category": "defense",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "percent"
+      },
+      {
+        "id": "minor_attribute_skill_efficiency",
+        "zh_name": "测试技能词条",
+        "en_name": "Test Utility",
+        "category": "utility",
+        "active": true,
+        "verification": "NON-GAME-FACT TEST FIXTURE",
+        "sources": [],
+        "unit_type": "number"
+      }
+    ]
+  }
+}

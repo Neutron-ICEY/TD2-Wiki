@@ -1,0 +1,505 @@
+{
+  "schema_version": 2,
+  "expertise": {
+    "armor_bonus_per_level_percent": 1,
+    "max_level": 30
+  },
+  "_专精来源说明": "2026-10-17 用户批准的40级六部位装备公共强化规则；作用于单件装备，不代表品牌共享强化等级。",
+  "_维护说明": [
+    "共用装备部位规则。未知数值为 null；分解离散产出使用 amount_values，不用原生基础参数冒充最终产出。"
+  ],
+  "_字段说明": {
+    "base_armor": "40级装备本身的基础装甲；PvE/PvP共用，不含蓝色核心、专精、SHD或其他增益；不适用于其他等级",
+    "major_core_slots": "主属性槽数量",
+    "minor_attribute_slots": "次属性槽数量",
+    "talent_slot_count": "天赋位数量",
+    "talent_description": "普通天赋位内容；未知 null",
+    "mod_slot_count": "插件槽数量",
+    "specialization_note": "已确认的共同专精规则；无可靠资料留 null",
+    "dismantle": "分解规则",
+    "verification": "内部资料状态，不出现在品牌审核表单",
+    "sources": "HTTPS 来源列表",
+    "talent_pool": "普通随机天赋池：chest/backpack；没有为 null。只描述普通随机 Roll，不限制具名固定 Talent。"
+  },
+  "部位": {
+    "mask": {
+      "base_armor": 80297,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 0,
+      "mod_slot_count": 1,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "面具织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_mask"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": null
+    },
+    "chest": {
+      "base_armor": 157961,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 1,
+      "mod_slot_count": 1,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "胸甲织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_chest"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": "chest"
+    },
+    "holster": {
+      "base_armor": 111889,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 0,
+      "mod_slot_count": 0,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "枪套织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_holster"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": null
+    },
+    "backpack": {
+      "base_armor": 130844,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 1,
+      "mod_slot_count": 1,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "背包织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_backpack"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": "backpack"
+    },
+    "gloves": {
+      "base_armor": 80297,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 0,
+      "mod_slot_count": 0,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "手套织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_gloves"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": null
+    },
+    "kneepads": {
+      "base_armor": 98726,
+      "major_core_slots": null,
+      "minor_attribute_slots": 2,
+      "talent_slot_count": 0,
+      "mod_slot_count": 0,
+      "talent_description": null,
+      "specialization_note": null,
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        },
+        "fixed_materials": [
+          {
+            "id": "protective_fabric",
+            "name": "防御性布料",
+            "amount": {
+              "min": 23,
+              "max": 46
+            },
+            "base_amount": 23,
+            "use_extra_quantity_bonus": true,
+            "amount_values": [
+              23,
+              46
+            ]
+          },
+          {
+            "name": "护膝织物",
+            "amount": {
+              "min": 1,
+              "max": 1
+            },
+            "id": "weave_kneepads"
+          }
+        ],
+        "chance_materials": [
+          {
+            "id": "ceramics",
+            "name": "陶瓷碎片",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 20,
+            "requires_perk_level": 2
+          },
+          {
+            "id": "polycarbonate",
+            "name": "聚碳酸酯",
+            "amount": {
+              "min": 8,
+              "max": 8
+            },
+            "chance_percent": 10,
+            "requires_perk_level": 2
+          }
+        ]
+      },
+      "verification": "NEEDS GAME-DATA VERIFICATION",
+      "sources": [],
+      "talent_pool": null
+    }
+  },
+  "_结构确认说明": "维护者在 Sandbox-005 本轮需求中明确确认普通金装天赋/插件结构。此确认只覆盖 talent_slot_count、talent_pool、mod_slot_count；装甲/主次属性槽/分解数量的原核实状态不变。",
+  "_分解来源说明": {
+    "source": "native_game_export",
+    "snapshot_sha256": "139f3cf5f4f97125c8eba1c4b3b9439b029cd41521613b3a23d853ca7f900aff",
+    "game_build": null,
+    "definition": {
+      "file": "dist/brand-data-completeness-20261021-001/hunter-session-002/jobs/5540346bffd1498da178b36f4275a3df/hunter/raw/raw_files/hunter/game system data/juice/crafting/deconstruction_definitions.juice",
+      "armor_orange_line": 683,
+      "brand_lines": {
+        "5.11 Tactical": 2020,
+        "中国光能工业公司": 1084,
+        "战队合金": 2242,
+        "耶尔": 1037
+      },
+      "optimization_lines": {
+        "backpack": 3606,
+        "chest": 3651,
+        "gloves": 3696,
+        "holster": 3741,
+        "kneepads": 3786,
+        "mask": 3831
+      }
+    },
+    "types": {
+      "deconstruction": "dist/dismantle-investigation-20261022-001/hunter-session-001/jobs/3d373c6b98034736b40e437f6403399f/hunter/raw/raw_files/hunter/game system data/fruit/crafting/deconstructiondefinitions.fruit",
+      "formula": "dist/dismantle-investigation-20261022-001/hunter-session-001/jobs/45150ad53be147f98b2ef542e560a235/hunter/raw/raw_files/hunter/game system data/fruit/crafting/craftingdefinitions.fruit"
+    },
+    "perks": {
+      "level_1": {
+        "talent_uid": "5B00D6445BB373310002BF0E2BEB44E5",
+        "attribute_uid": "5B00D6445BB372740002BF08810CA066",
+        "bonus": 0.25
+      },
+      "level_2": {
+        "talent_uid": "5B00D6445BB3736B0002BF120AA30117",
+        "attribute_uid": "5B00D6445BB370AD0002BEF641037DD5",
+        "bonus": 1
+      },
+      "final_attributes": "dist/text-library-20261017-002/inputs/lab/hunter-exports/raw_files/rogue/game system data/juice/attribute/dictionary/talent_dictionary.mdict",
+      "extra_quantity_modifier": 1
+    },
+    "currency_uids": {
+      "protective_fabric": "4CDCE5B25A9EBF6200007DC7B6A7FD24",
+      "ceramics": "4CDCE5B25A9EC03E000066549581AEC0",
+      "polycarbonate": "4CDCE5B25A9EC14A000066765D5BBCA1",
+      "weave_backpack": "B3CF2E925F72FA310003782F32672D19",
+      "weave_chest": "B3CF2E925F72FA3100037830B69910F4",
+      "weave_gloves": "B3CF2E925F72FA3100037831A45FF73F",
+      "weave_holster": "B3CF2E925F72FA3100037832AE32FF58",
+      "weave_kneepads": "B3CF2E925F72FA3100037833A5360062",
+      "weave_mask": "B3CF2E925F72FA3100037834DB56BA80"
+    },
+    "verification": "原生 A*Power^2+B*Power+C：31+金装布料A=B=0、C=23；陶瓷/聚碳酸酯A=B=0、C=8，不启用额外数量；40级织物C=1。默认chance=100、专长门禁=false、额外数量=false。",
+    "unresolved": [
+      "布料23或46已由用户实测报告确认，25%为原生快照配置；尚无实测频率统计及引擎计算实现。",
+      "未核实服务器倍率、资源上限和各具名经济标签例外；当前表仅用于常态普通品牌金装。"
+    ],
+    "superseded_reference": "dist/dismantle-rules-20261022-001/before/data/brand-sets/equipment-base-rules.json#_分解来源说明",
+    "perk_rewards": {
+      "receipt": "dist/dismantle-rules-20261022-001/hunter-session-002/jobs/60398e24451941d6b6809b19ec6e9265/result.json",
+      "level_1_reward_uid": "5D3E35F45BBE1D860002E34BF9ADD124",
+      "level_2_reward_uid": "5D3E35F45BBE1DA30002E34D3E49ECCC"
+    },
+    "runtime_gap_evidence": "已保存的结果窗口没有额外数量算术实现；本轮以用户游戏内实测23或46补充离散结果，未把Modifier=1单独作为翻倍证明。",
+    "fabric_observation": {
+      "source": "user_gameplay_report",
+      "reported_on": "2026-10-22",
+      "amount_values": [
+        23,
+        46
+      ],
+      "sample_count": null,
+      "observed_probabilities": null,
+      "game_build": null,
+      "native_base_amount": 23,
+      "native_extra_quantity_chance_percent": 25,
+      "native_modifier": 1,
+      "status": "OUTCOMES_USER_OBSERVED_PROBABILITY_NATIVE_CONFIG_NOT_EMPIRICAL",
+      "supersedes": "dist/dismantle-rules-20261022-003/fabric-native-recheck.json"
+    }
+  },
+  "_次属性来源说明": "2026-10-16 用户最终审核：仅普通品牌金装默认2槽，合法例外优先；不是历史fixture或独立游戏源码验证。0/null/固定引用语义保持。",
+  "major_display_values": {
+    "red": "15%",
+    "blue": "170,000",
+    "yellow": "1.0"
+  },
+  "dismantle_profile": {
+    "item_level": 40,
+    "quality": "Orange",
+    "perk_level": 2,
+    "event_multiplier": 1,
+    "extra_quantity_chance_percent": 25,
+    "display": "满级拆解专长；无活动倍率"
+  }
+}

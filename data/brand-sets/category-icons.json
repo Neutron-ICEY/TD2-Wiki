@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "_维护说明": [
+    "这是分类图标的唯一映射入口。不需要为每个词条重复填写图片。",
+    "人工上传真实 PNG/JPG/WebP/GIF 图片到 Wiki 后，在 wiki_file 填不带 File: 或 文件: 前缀的文件名。",
+    "只有确认 Wiki 文件存在后才填写；留空合法，显示分类文字，不产生空白图片或表情符号。",
+    "更换图片只改本文件，然后运行 python -m tools.brand_sets generate。建议透明 PNG；显示边界 16×16 像素，保持比例。",
+    "本阶段未提供素材，也不会搜索、下载或生成图标。外部已上传图片须人工核验，站点沙箱检查清单见维护文档。"
+  ],
+  "icons": {
+    "offense": {
+      "asset_ref": "reader-image-2e50e6bd367e2d51"
+    },
+    "defense": {
+      "asset_ref": "reader-image-de4a76d80ea6698b"
+    },
+    "utility": {
+      "asset_ref": "reader-image-78d66feec1d62f5d"
+    }
+  }
+}

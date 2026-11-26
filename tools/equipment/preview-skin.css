@@ -1,0 +1,57 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+a { background-color: transparent; }
+b, strong { font-weight: bold; }
+img { border: 0px; }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0px; }
+input { line-height: normal; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0px; }
+* { box-sizing: border-box; }
+input, button, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
+a { color: rgb(255, 105, 18); text-decoration: none; }
+img { vertical-align: middle; }
+[role="button"] { cursor: pointer; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
+h1, .h1, h2, .h2, h3, .h3 { margin-top: 20px; margin-bottom: 10px; }
+h4, .h4, h5, .h5, h6, .h6 { margin-top: 10px; margin-bottom: 10px; }
+h2, .h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
+h4, .h4 { font-size: 18px; }
+#content h1 { font-size: 3em; display: inline; }
+p { margin: 0px 0px 10px; }
+ul, ol { margin-top: 0px; margin-bottom: 10px; }
+ul ul, ol ul, ul ol, ol ol { margin-bottom: 0px; }
+dl { margin-top: 0px; margin-bottom: 20px; }
+dt, dd { line-height: 1.42857; }
+dt { font-weight: bold; }
+dd { margin-left: 0px; }
+label { font-weight: bold; }
+input[type="radio"], input[type="checkbox"] { margin: 4px 0px 0px; line-height: normal; }
+h2 .mw-headline { font-size: 32px; font-weight: bold; }
+h3 .mw-headline { font-size: 22px; font-weight: bold; }
+h4 .mw-headline { font-size: 20px; }
+.mw-content-ltr ul, .mw-content-ltr ol { margin-bottom: 9px; }
+.ns-subject:not(.ns-2) #wiki-body h2 { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; padding-bottom: 0.5em; padding-top: 50px; margin: 0px; }
+.ns-subject:not(.ns-2) #wiki-body h3 { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; padding-bottom: 0.5em; padding-top: 25px; margin: 0px; }
+#wiki-body li { margin-top: 5px; margin-bottom: 5px; line-height: 1.8; }
+#wiki-body h2 { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
+#content p { line-height: 1.8; margin: 7.5px 0px; }
+a { color: rgb(66, 139, 202); transition: 0.9s; }
+input, textarea, select, option { color: rgb(51, 51, 51); }
+span, div, ul, li, a, table, legend, header { border-color: rgb(64, 64, 64); }
+a { color: rgb(254, 169, 0); }
+.sitedir-ltr textarea, .sitedir-ltr input { direction: ltr; }
+dt, dd { margin-top: 7.5px; margin-bottom: 7.5px; line-height: 1.8; }
+.mw-content-ltr ul, .mw-content-rtl .mw-content-ltr ul { margin: 0.3em 0px 0px 1.6em; padding: 0px; }
+.mw-content-ltr dd, .mw-content-rtl .mw-content-ltr dd { margin-left: 1.6em; margin-right: 0px; }
+
+main > nav button, main > nav select { background: #222; color: #eee; border: 1px solid #555; padding: .4em .8em; }
+
+/* 灰机站点动态和评论组件的离线皮肤。 */
+.activityembed-wrapper, .commentsembed-wrapper { display: flex; flex-direction: column; gap: 12px; padding: 24px 0; }
+.activityembed-wrapper .media + .media { margin-top: 15px; }
+.activityembed-wrapper .media-left, .activityembed-wrapper .media-body { display: table-cell; vertical-align: top; }
+.activityembed-wrapper .media-left { padding-right: 10px; }
+.activityembed-wrapper .media-body { width: 10000px; }
+.activityembed-avatar { display: block; width: 50px; height: 50px; border-radius: 50%; }
+.activityembed-wrapper .media-heading { display: flex; justify-content: space-between; gap: 6px; margin: 0 0 5px; font-size: 12px; }
+.activityembed-wrapper .media-heading-sub { white-space: nowrap; }

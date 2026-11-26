@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "scope": "Explicit existing text files only. Hashes pin local inputs, not game versions or entity identities. Batch references point to existing evidence; no new batch registry.",
+  "sources": [
+    {
+      "id": "game-simplifiedchinese-menus",
+      "format": "menus_csv",
+      "file": "resources/game/current/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
+      "sha256": "73e1cc444765403f8ce5c9ee525f9bd8a13a94b08e51e40075e8baac14dbdbac",
+      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "locale": {
+        "namespace": "hunter/localization/packages/simplifiedchinese/menus.locpack",
+        "culture": "simplifiedchinese",
+        "language": "zh-CN",
+        "language_evidence": "Current manual export native package path: hunter/localization/packages/simplifiedchinese/menus.locpack"
+      },
+      "manual_provenance": {
+        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
+        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
+        "game_build": "Steam build 26413016"
+      },
+      "evidence": {
+        "provenance": {
+          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+        }
+      }
+    },
+    {
+      "id": "game-english-menus",
+      "format": "menus_csv",
+      "file": "resources/game/current/raw_files/hunter/localization/packages/english/menus.locpack",
+      "sha256": "75c5cc2b444ec5c84fb57d9417d97be64ae6ce9afff20e645a51e8ca17f2d2ba",
+      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "locale": {
+        "namespace": "hunter/localization/packages/english/menus.locpack",
+        "culture": "english",
+        "language": "en",
+        "language_evidence": "Current manual export native package path: hunter/localization/packages/english/menus.locpack"
+      },
+      "manual_provenance": {
+        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
+        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
+        "game_build": "Steam build 26413016"
+      },
+      "evidence": {
+        "provenance": {
+          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+        }
+      }
+    },
+    {
+      "id": "business-brands",
+      "format": "business_brands",
+      "file": "data/brand-sets/brands.json",
+      "sha256": "a10835c8c728efe3ab8ea9b620f4aade803427783c26b69136f49be373499123",
+      "batch_ref": null
+    },
+    {
+      "id": "business-bonuses",
+      "format": "business_bonuses",
+      "file": "data/brand-sets/bonuses.json",
+      "sha256": "33c8639e7fea23976b9dda114482dc63236f915b9f7a25e33ac72bd3e62a7034",
+      "batch_ref": null
+    },
+    {
+      "id": "game-chinesegav-menus",
+      "format": "menus_csv",
+      "file": "resources/game/current/raw_files/hunter/localization/packages/chinesegav/menus.locpack",
+      "sha256": "1149f6a5906dbab92053739fe18b683a661cdd60aac9bf972cc2b7021c6def9b",
+      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "locale": {
+        "namespace": "hunter/localization/packages/chinesegav/menus.locpack",
+        "culture": "chinesegav",
+        "language": null,
+        "language_evidence": "Recorded native package identifier chinesegav; normalized language/region not independently verified"
+      },
+      "evidence": {
+        "provenance": {
+          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+        }
+      },
+      "manual_provenance": {
+        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
+        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
+        "game_build": "Steam build 26413016"
+      }
+    }
+  ],
+  "native_definitions": {
+    "file": "evidence/asset-import/native/game-update-current-20261110-002/native-definitions.json",
+    "sha256": "8b739e024e13210665451f4c2f238d733ae9ff8823cab2f79506232add2c300d"
+  },
+  "native_references": {
+    "file": "evidence/asset-import/native/game-update-current-20261110-002/native-references.json",
+    "sha256": "cab3d0291ceb85190480a8fdd2a75b780b94535d448ead1908c70683701ff881",
+    "target_sources": [
+      "game-english-menus",
+      "game-simplifiedchinese-menus"
+    ]
+  }
+}

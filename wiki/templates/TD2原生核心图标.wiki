@@ -1,0 +1,10 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+这是集中配置的派生映射，不是人工维护入口；维护入口见 docs/equipment-maintenance.md。</noinclude><includeonly>{{#switch:{{{类型|}}}/{{{颜色|}}}
+|major/red={{TD2图标|类别=core_major|键=red}}红
+|major/blue={{TD2图标|类别=core_major|键=blue}}蓝
+|major/yellow={{TD2图标|类别=core_major|键=yellow}}黄
+|minor/red={{TD2图标|类别=core_minor|键=red}}红
+|minor/blue={{TD2图标|类别=core_minor|键=blue}}蓝
+|minor/yellow={{TD2图标|类别=core_minor|键=yellow}}黄
+|#default=待核实
+}}</includeonly>

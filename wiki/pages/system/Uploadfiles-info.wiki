@@ -1,0 +1,16 @@
+<p class='gray'>您可以自由上传：</p><ul class='gray'><li>您自己的作品</li><li>著作权处于共有领域的作品</li><li>获得著作权所有人许可上传的作品</li><li>点击图片进行描述，点击名字进行修改</li></ul><p class='gray'>请不要上传他人创作的、著作权未知的图像。</p><p class='gray'>您还可以使用[[Special:Upload|旧版]]进行上传。</p>
+
+==== 图片命名要求 ====
+
+为方便管理和避免文件重名，上传《全境封锁 2》相关图片时，请使用统一格式：
+
+'''TD2-Category[-Subtype][-Owner]-Name-Usage.ext'''
+
+例如：<code>TD2-Brand-GolanGearLtd-Logo.png</code>
+
+* '''类别'''：Brand、GearSet、Talent、Attribute、Weapon、Gear、Skill、Material、UI 等。
+* '''用途'''：Logo（标志）、Icon（图标）、Background（背景）。
+* 使用已核实的游戏英文名称；天赋可细分 Gear、GearSet、ExoticGear、Weapon、ExoticWeapon。上传前核对资产 ID、已有引用及完整文件名。
+* 不确定如何命名时，请先联系管理员，不要随意编号或覆盖已有文件。
+
+'''注意：''' 文件命名规范不代表取得著作权或上传许可。请遵守本站著作权要求，并填写必要的图片来源与授权信息。

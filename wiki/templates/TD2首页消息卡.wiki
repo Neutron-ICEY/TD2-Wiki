@@ -1,0 +1,5 @@
+<noinclude>名称必填。按需填写类型、图标、图片、日期或来源。日程模块另传活动时刻与剩余时间。</noinclude><includeonly>{{#if:{{{名称|}}}|<div class="td2-home-story td2-divider-soft {{#if:{{{未开始|}}}|td2-home-event-off}} {{#if:{{{日历图|}}}|td2-home-calendar-card}}" role="group" aria-label="{{{名称}}}" {{#if:{{{来源|}}}||tabindex="0"}} {{#if:{{{开始时刻|}}}|data-start="{{{开始时刻}}}" data-end="{{{结束时刻}}}"}}>
+{{#if:{{{图片|}}}|<div class="td2-home-news-art">[[File:{{{图片}}}|640px|link=|alt=]]</div>}}
+{{#if:{{{剩余|}}}|<div class="td2-home-event-status"><span>进行中</span><time datetime="{{{结束日期}}}" title="{{{日期|}}}">剩下 <span class="td2-home-event-time">{{{剩余}}}</span></time></div>}}
+<div class="td2-home-news-caption"><div>{{#if:{{{类型|}}}|<span class="td2-home-event-type">{{{类型}}}</span>}}<span class="td2-home-news-title">{{#if:{{{来源|}}}|[{{{来源}}} {{{名称}}}]|{{{名称}}}}}</span>{{#if:{{{剩余|}}}||{{#if:{{{日期|}}}|<span class="td2-home-news-date">{{{日期}}}</span>}}}}</div>{{#if:{{{图标|}}}|<span class="td2-home-event-icon" aria-hidden="true">[[File:{{{图标}}}|96px|link=|alt=]]</span>}}</div>
+</div>}}</includeonly>

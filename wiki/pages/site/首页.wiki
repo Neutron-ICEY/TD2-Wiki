@@ -1,0 +1,33 @@
+__NOTITLE____NOTOC____NOEDITSECTION____NOCOMMENT____NOREC__
+<div class="td2-home">{{#html:TD2首页样式|{} }}
+<div class="td2-home-mast">
+<div class="td2-home-identity">
+<h1>[[File:TD2-UI-TheDivision2-Logo.png|640px|link=|alt=全境封锁2]]</h1>
+</div>
+<div class="td2-home-scene" aria-hidden="true">[[File:TD2-UI-TheDivision2LibraryHero-Background.jpg|1920px|link=|alt=]]</div>
+</div>
+<div class="td2-home-columns">
+<div class="td2-home-info" role="complementary" aria-label="站点动态">
+{{TD2分割线}}
+{{TD2首页消息栏}}
+<div class="td2-home-panel td2-home-statistics td2-frame">{{TD2边框角节点}}
+<h2>站点统计</h2>
+{{#invoke:TD2首页统计|render|页面数={{NUMBEROFARTICLES:R}}|编辑数={{NUMBEROFEDITS:R}}|关注数={{NUMBEROFFOLLOWERS}}}}
+</div>
+</div>
+<div class="td2-home-main">
+{{TD2分割线}}
+{{TD2首页导航}}
+<div class="td2-home-recent">
+{{TD2分割线}}
+<h2>最近更改</h2>
+<siteactivity style="log" limit="6" />
+</div>
+<div class="td2-home-recent">
+{{TD2分割线}}
+<h2>最新评论</h2>
+<commentsoftheday />
+</div>
+</div>
+</div>
+</div>

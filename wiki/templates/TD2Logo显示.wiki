@@ -1,0 +1,2 @@
+<!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+<noinclude>信息卡 Logo 按原始像素尺寸显示，保留原图透明留白和文件地址。参数：文件、名称。</noinclude><includeonly>{{#if:{{{文件|}}}|<span class="td2-logo-art">[[File:{{{文件}}}|link=|alt={{{名称|}}}]]</span>}}</includeonly>

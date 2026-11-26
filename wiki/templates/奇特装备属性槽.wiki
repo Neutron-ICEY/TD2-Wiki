@@ -1,0 +1,1 @@
+<noinclude>奇特装备有序属性槽记录，由所属页面消费。</noinclude><includeonly>{{#invoke:TD2奇特装备|slot}}</includeonly>

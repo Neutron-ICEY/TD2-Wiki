@@ -1,0 +1,70 @@
+{
+  "overrides": [
+    {
+      "binding_sha256": "af7074f2be4d8fc5ba8df89d081e217944c033323594154e0e7cc2023b7ba63a",
+      "corrected_logical_filename": "gearsettalent27.png",
+      "internal_key": "炽热",
+      "mapping_verified": false,
+      "native_runtime_consumption_proven": false,
+      "original_filename": "gearsettalent27.png.png",
+      "override_id": "source-reference:af7074f2be4d8fc5ba8d",
+      "reason": "AppData::.cctor contains duplicated extension in the ldstr literal; verified constructor forwards its Image argument.",
+      "source_platform": "apk",
+      "target_asset_ids": [
+        "apk:53d6459ec1f1b5a85035"
+      ],
+      "target_source_entry": "res/drawable/gearsettalent27.png",
+      "target_source_sha256": "93883984e55809364430d47db3ab2a142638e41b93013cdbf8ad52df45d38303"
+    },
+    {
+      "binding_sha256": "55a62c999503dd6ecdf1ad087931850a48ba55dcd7a08e92bfb42c05ee4025ab",
+      "corrected_logical_filename": "gearsettalent27.png",
+      "internal_key": "闪点",
+      "mapping_verified": false,
+      "native_runtime_consumption_proven": false,
+      "original_filename": "gearsettalent27.png.png",
+      "override_id": "source-reference:55a62c999503dd6ecdf1",
+      "reason": "AppData::.cctor contains duplicated extension in the ldstr literal; verified constructor forwards its Image argument.",
+      "source_platform": "apk",
+      "target_asset_ids": [
+        "apk:53d6459ec1f1b5a85035"
+      ],
+      "target_source_entry": "res/drawable/gearsettalent27.png",
+      "target_source_sha256": "93883984e55809364430d47db3ab2a142638e41b93013cdbf8ad52df45d38303"
+    },
+    {
+      "binding_sha256": "cf9b0246ad29beee67f7f2ddfc4b3498b75e6feb8a5f76cee460e6e29142c636",
+      "corrected_logical_filename": "gearsettalent27.png",
+      "internal_key": "炽热",
+      "mapping_verified": false,
+      "native_runtime_consumption_proven": false,
+      "original_filename": "gearsettalent27.png.png",
+      "override_id": "source-reference:cf9b0246ad29beee67f7",
+      "reason": "AppData::.cctor contains duplicated extension in the ldstr literal; verified constructor forwards its Image argument.",
+      "source_platform": "windows",
+      "target_asset_ids": [
+        "windows:f699bca0b65d8f298457"
+      ],
+      "target_source_entry": "gearsettalent27.scale-100.png",
+      "target_source_sha256": "659d57050eff416fa2863d48338aa34a929647f5766767d04f20dca8e716c53d"
+    },
+    {
+      "binding_sha256": "10a6591921abe81fa53e8788a1cad808fe0cd6a6e7219d6d965cfae3a01cbeb8",
+      "corrected_logical_filename": "gearsettalent27.png",
+      "internal_key": "闪点",
+      "mapping_verified": false,
+      "native_runtime_consumption_proven": false,
+      "original_filename": "gearsettalent27.png.png",
+      "override_id": "source-reference:10a6591921abe81fa53e",
+      "reason": "AppData::.cctor contains duplicated extension in the ldstr literal; verified constructor forwards its Image argument.",
+      "source_platform": "windows",
+      "target_asset_ids": [
+        "windows:f699bca0b65d8f298457"
+      ],
+      "target_source_entry": "gearsettalent27.scale-100.png",
+      "target_source_sha256": "659d57050eff416fa2863d48338aa34a929647f5766767d04f20dca8e716c53d"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "exact frozen constructor references only; never promote entity mapping"
+}

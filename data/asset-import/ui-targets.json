@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "scope": "Targeted read-only review metadata. Selectors reference existing records; labels do not grant extraction, entity identity, conversion, copying or publishing.",
+  "screenshot": {
+    "filename": "codex-clipboard-d3bcae97-4c04-4997-9083-05171eb1d454.png",
+    "sha256": "25ca1c9caf0efd36636973ce1656a01367af6d9466c60f90096f9fde1069ac4e",
+    "width": 1618,
+    "height": 1236,
+    "game_build": null
+  },
+  "screening_receipt": "dist/asset-library-20261016-001/ui-screening.json",
+  "application_labels": [
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:568267a35755a800ce1d"
+      },
+      "name": "烈焰之墙",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16200,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    },
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:bc14a451c010fc02430b"
+      },
+      "name": "技师",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16257,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    },
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:1ece9f7d804cccedbb88"
+      },
+      "name": "重机枪手",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16314,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    },
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:1282dc94a194d60ed16a"
+      },
+      "name": "生存专家",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16371,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    },
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:66a077876b6693793fa8"
+      },
+      "name": "爆破专家",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16428,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    },
+    {
+      "selector": {
+        "batch_id": "app-v29-main",
+        "asset_id": "windows:f507d5a7e6f64ee1f1de"
+      },
+      "name": "精准射手",
+      "identity_scope": "cached application constructor binding; not official game localization or game resource ID",
+      "evidence": {
+        "file": "dist/asset-import/windows-managed-metadata.json",
+        "method": "Division2BuildTool.Model.AppData::.cctor",
+        "method_token": "0x06001736",
+        "literal_offset": 16485,
+        "constructor_token": "0x060017b8",
+        "name_argument": 2,
+        "image_argument": 3
+      },
+      "availability": "retired"
+    }
+  ],
+  "targets": [
+    {
+      "id": "chest",
+      "label": "胸甲轮廓",
+      "status": "existing_transparent_png_reusable",
+      "candidates": [
+        {
+          "selector": {
+            "batch_id": "app-v29-main",
+            "asset_id": "windows:e87b9ca7b8cff5759e76"
+          },
+          "match_status": "existing_project_use; visual_match; game_source_identity_not_proven",
+          "project_asset_ref": "reader-image-f9ed4cb10546d970"
+        },
+        {
+          "selector": {
+            "batch_id": "brand-sprites-20261013",
+            "sprite_name": "category_no_brand"
+          },
+          "match_status": "game_atlas_candidate; not_pixel_equal_to_application_png"
+        }
+      ],
+      "findings": [
+        "Existing PNG is 128x128 with transparency. Screenshot has perspective/scale and a dark-red panel; these are not part of the PNG.",
+        "Application alpha bbox [14,4,113,120]; game candidate grayscale bbox within its cell [32,24,99,102]. Full 128x128 channel comparison differs at 6036 pixels.",
+        "Existing colored icongear2 variants are 146x146; they are separate files and are not needed for the white target."
+      ],
+      "next_action": "Reuse existing approved project copy if needed; no new extraction proposed."
+    },
+    {
+      "id": "middle",
+      "label": "中间箱体或机械符号",
+      "status": "human_confirmed_project_copy_available",
+      "candidates": [
+        {
+          "selector": {
+            "batch_id": "material-sprites-20261016",
+            "sprite_name": "menu_prototype_cache"
+          },
+          "match_status": "outline_only; center_chip_differs_from_screenshot_circle"
+        },
+        {
+          "selector": {
+            "batch_id": "ui-batch-20261017",
+            "asset_id": "hunter:a61b9966d68ec567b62b"
+          },
+          "match_status": "human_confirmed_visual_match; project_copy_created; official_sprite_binding_unknown",
+          "inspection_rect": [
+            768,
+            512,
+            128,
+            128
+          ],
+          "rect_convention": "xywh",
+          "rect_kind": "manual_diagnostic_ROI_not_Sprite_definition",
+          "evidence": "dist/ui-library-recovery-20261017-001/target-findings.json",
+          "previous_match_status": "complete_visual_match_pending_human_review; official_sprite_binding_unknown",
+          "project_copy": "assets/TD2-UI-机械同心圆-Icon.png"
+        },
+        {
+          "selector": {
+            "batch_id": "ui-batch-20261017",
+            "asset_id": "hunter:8227e0b0d606b02e07d3"
+          },
+          "match_status": "complete_visual_match_pending_human_review; official_sprite_binding_unknown",
+          "inspection_rect": [
+            768,
+            896,
+            128,
+            128
+          ],
+          "rect_convention": "xywh",
+          "rect_kind": "manual_diagnostic_ROI_not_Sprite_definition",
+          "evidence": "dist/ui-library-recovery-20261017-001/target-findings.json"
+        }
+      ],
+      "excluded": [
+        "menu_prototype_cache is not a confirmed exact match. Different central artwork is visible; no version or variant relationship is proven.",
+        "New generic menu sheet 3 diagnostic region [0,256,128,128] has a snowflake, not the screenshot concentric-circle center. This is not a verified Sprite region."
+      ],
+      "suggested_next_target": "Inspect the source inventory/menu placeholder for the middle panel: rectangular side rails and concentric circular center. General UI/menu spritesheets and their sprite definitions are search targets, not verified resource filenames.",
+      "next_action": "Local project copy ready. No upload or deployment authorized.",
+      "latest_review": {
+        "report": "dist/ui-project-copies-20261017-001/REPORT.md",
+        "batch_ids": [
+          "ui-project-copies-20261017"
+        ],
+        "selected_source_batch": "ui-batch-20261017",
+        "source_entry": "hunter/baked/ui/spritesheets/ui_loot_spritesheet",
+        "human_confirmed": true,
+        "project_copy": "assets/TD2-UI-机械同心圆-Icon.png",
+        "official_sprite_binding": "unknown",
+        "game_build": null
+      },
+      "review_history": [
+        {
+          "report": "dist/ui-target-extraction-20261016-001/REPORT.md",
+          "batch_ids": [
+            "ui-inventory-20261016",
+            "ui-menu12-20261016",
+            "ui-menu34-20261016",
+            "ui-loadout-20261016"
+          ],
+          "new_atlases_checked": 7,
+          "new_sprite_definitions": 0,
+          "complete_match": false,
+          "dynamic_composition": "unverified",
+          "game_build": null
+        },
+        {
+          "report": "dist/ui-library-recovery-20261017-001/REPORT.md",
+          "batch_ids": [
+            "ui-batch-20261017"
+          ],
+          "new_atlases_checked": 31,
+          "new_sprite_definitions": 0,
+          "complete_visual_match": true,
+          "official_sprite_binding": "unknown",
+          "complete_artwork_in_one_region": true,
+          "dynamic_composition": "not_required_for_available_artwork; consumer_definition_unknown",
+          "game_build": null
+        }
+      ],
+      "findings": [
+        "2026-10-17: complete target artwork is present in ui_loot_spritesheet; compare new target-findings.json."
+      ],
+      "project_copy": "assets/TD2-UI-机械同心圆-Icon.png",
+      "project_copy_provenance": "data/asset-import/ui-project-copies.json#/derived_images/0",
+      "approval": {
+        "date": "2026-10-17",
+        "source": "direct user message",
+        "request": "确认这两个图标匹配，中间图标使用 ui_loot_spritesheet 中的版本。请按现有命名规范生成两个透明 PNG 项目使用副本，登记原图哈希、裁剪坐标及转换参数，并提供预览和验证结果。原始资源保持不变，不上传、不部署、不提交或推送 Git。",
+        "visual_match_confirmed": true,
+        "local_project_copy_authorized": true
+      },
+      "selected_candidate": {
+        "selector": {
+          "batch_id": "ui-batch-20261017",
+          "asset_id": "hunter:a61b9966d68ec567b62b"
+        },
+        "inspection_rect": [
+          768,
+          512,
+          128,
+          128
+        ],
+        "rect_convention": "xywh",
+        "official_sprite_binding": "unknown"
+      }
+    },
+    {
+      "id": "backpack-gear",
+      "label": "背包与齿轮组合",
+      "status": "human_confirmed_project_copy_available",
+      "candidates": [
+        {
+          "selector": {
+            "batch_id": "app-v29-main",
+            "asset_id": "windows:bc0298583d4101e46868"
+          },
+          "match_status": "backpack_component_only; no_combination_proof"
+        },
+        {
+          "selector": {
+            "batch_id": "app-v29-main",
+            "asset_id": "windows:fc30b199fe9ee0842520"
+          },
+          "match_status": "generic_gear_component_only; no_combination_proof"
+        },
+        {
+          "selector": {
+            "batch_id": "material-sprites-20261016",
+            "sprite_name": "optimize_backpack"
+          },
+          "match_status": "excluded_as_exact; circular_arrow_at_lower_right_differs_from_left_gear"
+        },
+        {
+          "selector": {
+            "batch_id": "ui-batch-20261017",
+            "asset_id": "hunter:a61b9966d68ec567b62b"
+          },
+          "match_status": "human_confirmed_visual_match; project_copy_created; official_sprite_binding_unknown",
+          "inspection_rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "rect_convention": "xywh",
+          "rect_kind": "manual_diagnostic_ROI_not_Sprite_definition",
+          "evidence": "dist/ui-library-recovery-20261017-001/target-findings.json",
+          "previous_match_status": "complete_visual_match_pending_human_review; official_sprite_binding_unknown",
+          "project_asset_ref": "project-ui-backpack-gear"
+        }
+      ],
+      "findings": [
+        "No complete matching combination was located in the bounded existing-image/sprite search.",
+        "No trustworthy UI composition/consumer definition was found in the inspected export records; dynamic overlay remains unverified.",
+        "New generic menu sheet 2 diagnostic region [128,384,128,128] has a gear and rotor but no backpack; it is excluded as a complete match. No composition evidence was exported.",
+        "2026-10-17: complete target artwork is present in ui_loot_spritesheet; compare new target-findings.json. Earlier negative findings describe the earlier bounded pool."
+      ],
+      "suggested_next_target": "Inspect the complete backpack-with-left-gear symbol in inventory/equipment-management/crafting UI sprite definitions. If no complete sprite is found, inspect its actual UI consumer before considering components.",
+      "next_action": "Local project copy ready. No upload or deployment authorized.",
+      "latest_review": {
+        "report": "dist/ui-project-copies-20261017-001/REPORT.md",
+        "batch_ids": [
+          "ui-project-copies-20261017"
+        ],
+        "selected_source_batch": "ui-batch-20261017",
+        "source_entry": "hunter/baked/ui/spritesheets/ui_loot_spritesheet",
+        "human_confirmed": true,
+        "official_sprite_binding": "unknown",
+        "game_build": null,
+        "project_asset_ref": "project-ui-backpack-gear"
+      },
+      "review_history": [
+        {
+          "report": "dist/ui-target-extraction-20261016-001/REPORT.md",
+          "batch_ids": [
+            "ui-inventory-20261016",
+            "ui-menu12-20261016",
+            "ui-menu34-20261016",
+            "ui-loadout-20261016"
+          ],
+          "new_atlases_checked": 7,
+          "new_sprite_definitions": 0,
+          "complete_match": false,
+          "dynamic_composition": "unverified",
+          "game_build": null
+        },
+        {
+          "report": "dist/ui-library-recovery-20261017-001/REPORT.md",
+          "batch_ids": [
+            "ui-batch-20261017"
+          ],
+          "new_atlases_checked": 31,
+          "new_sprite_definitions": 0,
+          "complete_visual_match": true,
+          "official_sprite_binding": "unknown",
+          "complete_artwork_in_one_region": true,
+          "dynamic_composition": "not_required_for_available_artwork; consumer_definition_unknown",
+          "game_build": null
+        }
+      ],
+      "project_copy_provenance": "data/asset-import/ui-project-copies.json#/derived_images/1",
+      "approval": {
+        "date": "2026-10-17",
+        "source": "direct user message",
+        "request": "确认这两个图标匹配，中间图标使用 ui_loot_spritesheet 中的版本。请按现有命名规范生成两个透明 PNG 项目使用副本，登记原图哈希、裁剪坐标及转换参数，并提供预览和验证结果。原始资源保持不变，不上传、不部署、不提交或推送 Git。",
+        "visual_match_confirmed": true,
+        "local_project_copy_authorized": true
+      },
+      "selected_candidate": {
+        "selector": {
+          "batch_id": "ui-batch-20261017",
+          "asset_id": "hunter:a61b9966d68ec567b62b"
+        },
+        "inspection_rect": [
+          768,
+          0,
+          128,
+          128
+        ],
+        "rect_convention": "xywh",
+        "official_sprite_binding": "unknown"
+      },
+      "project_asset_ref": "project-ui-backpack-gear"
+    }
+  ],
+  "limits": [
+    "Search covers explicitly registered batches, not the full game resource tree.",
+    "No absence claim for unregistered or unexported resources.",
+    "No new extraction, PNG conversion, project-use copy or Wiki change in this task.",
+    "Later authorized targeted export review: 7 new atlases, no exact target match; see latest_screening_receipt. Earlier checked_scope and no-extraction statement describe the initial read-only audit only.",
+    "2026-10-17 authorized export: 31 new atlases; complete visual matches for both missing targets, pending human review. Original PNGs remain opaque masks; diagnostic alpha is not original."
+  ],
+  "checked_scope": {
+    "application_source_records": 2466,
+    "application_unique_pixel_groups": 1216,
+    "transparent_groups_screened": 1188,
+    "opaque_groups_screened": 28,
+    "existing_game_ui_png_screened": 81,
+    "atlas_count": 8,
+    "sprite_regions_checked": 417,
+    "nonempty_sprite_regions": 215,
+    "scope_limit": "Registered exported files and their definitions only; no full game index, runtime or new extraction.",
+    "composition_evidence": "No trustworthy consumer/layering definition for the backpack-with-gear target found in inspected records; dynamic composition not established."
+  },
+  "latest_screening_receipt": "dist/ui-library-recovery-20261017-001/target-findings.json"
+}

@@ -1,0 +1,15 @@
+<noinclude>每行一个栏目。可调整顺序、图标及总览页目标。末尾三个无参数调用供不同列数自动补位。</noinclude><includeonly><div class="td2-home-matrix td2-control-palette" role="navigation" aria-label="资料分类">
+{{TD2首页入口|名称=装备|图标=TD2-Gear-Chest-Icon.png|目标=装备索引}}
+{{TD2首页入口|名称=武器|图标=TD2-UI-MainWeapon-Icon.png|目标=武器索引}}
+{{TD2首页入口|名称=天赋|图标=TD2-UI-TalentSlot-Icon.png}}
+{{TD2首页入口|名称=技能|图标=TD2-UI-ModUtility-Icon.png}}
+{{TD2首页入口|名称=获取与制作|图标=TD2-UI-Craft-Icon.png}}
+{{TD2首页入口|名称=专精|图标=TD2-UI-Research-Icon.png}}
+{{TD2首页入口|名称=玩法与活动|图标=TD2-UI-MissionMain-Icon.png}}
+{{TD2首页入口|名称=世界资料|图标=TD2-UI-WorldBracket-Icon.png}}
+{{TD2首页入口|名称=实用工具|图标=TD2-Talent-Gear-PerfectTechSupport-Icon.png}}
+{{TD2首页入口|名称=感谢名单|图标=TD2-Talent-Gear-PerfectVanguard-Icon.png}}
+{{TD2首页入口}}
+{{TD2首页入口}}
+{{TD2首页入口}}
+</div></includeonly>

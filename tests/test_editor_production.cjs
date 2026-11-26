@@ -1,0 +1,20 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),vm=require('vm');
+const root=path.resolve(__dirname,'..'),src=path.resolve(root,'ui/editor/src');
+const scope=require(path.join(src,'page-scope')),transport=require(path.join(src,'mediawiki-adapter'));
+const catalog={attributes:[]},options=require('../tools/equipment/catalog.cjs').data().options;
+const formal=fs.readFileSync(path.join(root,'wiki/pages/brands/品牌套装-5.11 Tactical.wiki'),'utf8'),raw=formal;
+test('aggregate and unsupported templates are excluded',()=>{for(const text of ['{{品牌套装|名称=5.11 Tactical}}','{{套装|名称=5.11 Tactical}}',raw+formal,'{{Wrapper|'+formal+'}}'])assert.equal(scope.check(text,999).ok,false);assert.equal(scope.check(formal.replace('{{品牌套装信息','{{UnsupportedPage'),999).ok,false);assert.equal(scope.check(formal,999).ok,true);});
+test('entry stays existing-page/admin scoped; no formal creation or history takeover',()=>{const context={module:{exports:{}},require:()=>scope};vm.runInNewContext(fs.readFileSync(path.join(src,'site-entry-policy.js'),'utf8').replace(/ENTRY_CUTOVER/g,'enabled'),context);const p=context.module.exports,c={origin:transport.ORIGIN,title:'5.11 Tactical',pageid:999,namespace:0,action:'view',user:{id:1,name:'Admin',groups:['sysop']}};assert.ok(p.select(c).contractPage);for(const change of [{pageid:0},{historical:true},{namespace:10},{action:'edit'}])assert.equal(p.select({...c,...change}),null);const match=p.select(c),response={query:{userinfo:{...c.user,rights:['edit']},pages:[{title:c.title,pageid:999,ns:0,actions:{edit:true}}]}};assert.equal(p.verify(c,match,response),true);response.query.userinfo.groups=[];assert.equal(p.verify(c,match,response),false);});
+test('formal transport detects remote revision drift before any write',async()=>{let revision=10,posts=0;const user={id:1,name:'Admin',groups:['sysop'],rights:['edit']};const api={get:async p=>p.meta==='userinfo'&&!p.rvprop?{query:{userinfo:user,pages:[{title:'5.11 Tactical',ns:0,pageid:999,actions:{edit:true}}]}}:{curtimestamp:'2026-10-18T12:00:00Z',query:{userinfo:user,pages:[{title:'5.11 Tactical',ns:0,pageid:999,actions:{edit:true},revisions:[{revid:revision,parentid:revision-1,timestamp:'2026-10-18T11:00:00Z',sha1:'test-only',slots:{main:{contentmodel:'wikitext',contentformat:'text/x-wiki',content:formal}}}]}]}},post:async()=>{posts++;throw Error('unexpected write');}};const a=transport.create(api,{origin:transport.ORIGIN,target:'5.11 Tactical',pageid:999,contractPages:true,enableWrites:true}),baseline=await a.load();revision++;await assert.rejects(a.save(baseline,formal+'\n'),/editconflict/);assert.equal(posts,0);});
+test('contentDirty distinguishes summary-only edits and resets after restore or verified save',async()=>{
+ const adapter={load:async()=>({raw:formal,title:'5.11 Tactical',pageid:999,revid:1}),save:async(base,text)=>({revision:{...base,raw:text,revid:base.revid+1}})};
+ const session=require(path.join(src,'site-session')).create(adapter,catalog.attributes.map(x=>x.id),options);
+ await session.load();assert.equal(session.contentDirty,false);assert.equal(session.dirty,false);
+ session.setSummary('LOCAL TEST ONLY');assert.equal(session.dirty,true);assert.equal(session.contentDirty,false);
+ const intro=session.state.body;
+ session.editor.editBody('LOCAL TEST ONLY');assert.equal(session.contentDirty,true);
+ session.editor.editBody(intro);assert.equal(session.contentDirty,false);assert.equal(session.dirty,true);
+ session.noteInput(true);assert.equal(session.contentDirty,true);session.noteInput(false);assert.equal(session.contentDirty,false);
+ session.editor.editBody('LOCAL TEST ONLY');await session.save();
+ assert.equal(session.contentDirty,false);assert.equal(session.dirty,false);assert.equal(session.status,'VERIFIED');
+});

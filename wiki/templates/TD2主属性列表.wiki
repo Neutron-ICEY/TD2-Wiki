@@ -1,0 +1,1 @@
+<noinclude>普通/具名共用主核心显示。随机单核心显示候选图标与随机加成；固定与同时拥有核心保留完整属性行。</noinclude><includeonly>{{#invoke:TD2品牌投影|major|values={{{1|}}}|triple={{{同时拥有主核心|否}}}|slot={{{部位|}}}}}</includeonly>

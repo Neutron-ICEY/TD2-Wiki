@@ -1,0 +1,2 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+</noinclude><includeonly>{{#if:{{{名称|}}}|<div class="td2-talent-detail"><div class="td2-talent-copy"><span class="td2-talent-title">{{{名称|}}}</span>{{#if:{{{描述|}}}|<div class="td2-talent-description">{{{描述}}}</div>}}</div>{{#if:{{{图标内容|}}}|<div class="td2-talent-icon">{{{图标内容}}}</div>}}</div>}}</includeonly>

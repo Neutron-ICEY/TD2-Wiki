@@ -1,0 +1,9 @@
+<noinclude>
+逐槽行：0=无，空=未配置，正整数=N 行。数据模型不限制业务上限。
+使用 MediaWiki padleft 与 ParserFunctions #expr、Page Forms #arraymap；均需站点验证。
+padleft 有 500 字符平台上限，因此超过 250 槽明确显示数量及维护提示，不静默截断。
+</noinclude><includeonly>{{#switch:{{{数量|}}}
+|=<div class="td2-equipment-row">{{TD2装备行图标|{{{图标|}}}}}<span class="td2-row-label">{{{标签|}}}：</span><span class="td2-row-value">{{#if:{{{未知内容|}}}|{{{内容|}}} {{{未知内容}}}|{{TD2图标|类别=state|键={{#switch:{{{图标|}}}|minor_attribute=random|#default=unknown}}}}未配置／待核实}}</span></div>
+|0=<div class="td2-equipment-row">{{TD2装备行图标|{{{图标|}}}}}<span class="td2-row-label">{{{标签|}}}：</span><span class="td2-row-value">{{TD2图标|类别=state|键=none}}{{{无槽位内容|无槽位}}}</span></div>
+|#default={{#ifexpr:{{{数量}}}>250|<div class="td2-equipment-row">{{TD2装备行图标|{{{图标|}}}}}<span class="td2-row-label">{{{标签}}}：</span><span class="td2-row-value">{{TD2图标|类别=state|键=unknown}}{{{数量}}} 个（逐槽展示超出平台长度限制）</span></div>|{{#arraymap:{{padleft:|{{#expr:2*{{{数量}}}}}|x;}}|;|@@row@@|<div class="td2-equipment-row">{{TD2装备行图标|{{{图标|}}}}}<span class="td2-row-label">{{{标签|}}}：</span><span class="td2-row-value">{{#if:{{{状态图标|}}}|{{TD2图标|类别=state|键={{{状态图标}}}}}}}{{{内容|待核实}}}</span></div>|}}}}
+}}</includeonly>

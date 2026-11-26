@@ -1,0 +1,1 @@
+<includeonly><span class="td2-text-{{{色|plain}}}">{{{文|}}}</span></includeonly>

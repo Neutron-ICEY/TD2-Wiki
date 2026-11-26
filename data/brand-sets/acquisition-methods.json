@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "maintenance_notes": "按发放入口和目标 UID 核对常规获取。限定和待核实记录保留在资料中。",
+  "recipe_grants_verified_through": "2026-11-23",
+  "native_route_rules": {
+    "retaliation_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "special",
+      "preset": "retaliation",
+      "availability": "permanent",
+      "evidence": "FactionRetaliationData map zones and completion or kill-team reward, RewardLoot and positive difficulty branch for the recipe UID."
+    },
+    "craft": {
+      "entry_uid": null,
+      "evidence": "CraftingBlueprintItem target UID, blueprint identity and complete supported conditions; owning the blueprint is required.",
+      "purpose": "equipment",
+      "category": "craft",
+      "text": "制作台制作",
+      "availability": "permanent"
+    },
+    "lullaby_pack": {
+      "entry_uid": "25B6B8D45BEAA43A000332567C72F3E4",
+      "evidence": "LullabyWeaponPack and item_pack_capitol_defender both grant the conversion blueprint for the endgame weapon.",
+      "purpose": "blueprint",
+      "category": "entitlement",
+      "text": "持有国会守护者组合包",
+      "availability": "entitlement"
+    },
+    "summit_weapon": {
+      "entry_uid": "5348798C5F8D66BF000362E3FC56B240",
+      "evidence": "Summit challenge settings, rank 5 normal reward, referenced RewardLoot and positive exotic weapon loot branch.",
+      "purpose": "equipment",
+      "category": "special",
+      "text": "高峰大厦完成 5 项挑战",
+      "availability": "permanent"
+    },
+    "summit_blueprint": {
+      "entry_uid": "5348798C5F8D66BF000362E3FC56B240",
+      "evidence": "The Summit rank 5 normal reward group directly grants the reconfiguration blueprint as a separate RewardItem.",
+      "purpose": "blueprint",
+      "category": "reward",
+      "text": "高峰大厦完成 5 项挑战",
+      "availability": "permanent"
+    },
+    "ruthless_pack": {
+      "entry_uid": "2762CD105BED76180003334650E7BDD4",
+      "evidence": "RuthlessWeaponPack and its first-party ItemPack both grant the same conversion blueprint.",
+      "purpose": "blueprint",
+      "category": "entitlement",
+      "text": "持有豪华组合包",
+      "availability": "entitlement"
+    },
+    "named_cache": {
+      "entry_uid": "83ED36DA5E17269E00034F54FFF55361",
+      "evidence": "BundleItem -> exact LootTable 83ED36DA5E1DBC2B0003518BE2DE366A; positive weights, Named_Item/Named_Item_DZ and obtainable identity.",
+      "purpose": "equipment",
+      "category": "cache",
+      "text": "具名贮藏箱",
+      "availability": "cache_supply"
+    },
+    "exotic_cache": {
+      "entry_uid": "83ED36DA5E172BF1000353E05A97DA11",
+      "evidence": "BundleItem -> exact LootTable 83ED36DA5E172C4B000353E3FB01798A -> exotic pool; complete item/blueprint prerequisites.",
+      "purpose": "equipment",
+      "category": "cache",
+      "text": "奇特贮藏箱",
+      "reviewed_evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:229-246",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/sealed_cache_season_exotic_item.mitem:13-39",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/loottables/ltdrp_sealed_cache_exotic_item.mloottable:10-23",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:229-247",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_chest_exotic_02.mitem",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/fruit/loot/lootconditionbase.fruit:4-7",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_gear_exotic_cqg_chest.mitem",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack#83ED36DA5E172BF1000353DFE3E02BD0",
+        "2026-11-02 用户批准以完整本地原生引用链确认成品来源；本条已核对入口、战利品表、装备身份及路线条件，不是截图或实测记录。",
+        "dist/exotic-equipment-sources-candidate-20261102-001/verified-four-routes.json",
+        "dist/exotic-equipment-sources-candidate-20261102-001/APPROVAL.md",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:257-274",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:257-275",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_holster_exotic_01.mitem",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/blueprint_weapon_exotic_cqe_holster.mitem",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:569-586",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/rejuice/itemlist_exotics_all.rejuice:569-587",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_kneepads_exotic_03.mitem"
+      ],
+      "availability": "cache_supply"
+    },
+    "reconstructed_cache": {
+      "entry_uid": "FB6E28D2643FDC6B00072029B465BA9F",
+      "evidence": "BundleItem -> exact LootTable FB6E28D2643FE7A5000720187D9D4F14 -> blueprint UID -> crafted target UID.",
+      "purpose": "blueprint",
+      "category": "cache",
+      "text": "重建贮藏箱",
+      "availability": "cache_supply"
+    },
+    "vendor": {
+      "entry_uid": "4CDCE5B25CA5BC5B001B873CAD9AE47A",
+      "evidence": "Inaya VendorConfig -> exact LootTable 4CDCE5B25CA5BC7A001B873E3E1F9AE2; individual blueprint conditions and obtainable flag. This is not a real-time stock claim.",
+      "purpose": "blueprint",
+      "category": "vendor",
+      "text": "依娜亚出售",
+      "availability": "permanent"
+    },
+    "common_gear_pool": {
+      "entry_uid": "075801E25AA6442700006594DA50847A",
+      "purpose": "equipment",
+      "category": "drop",
+      "text": "战利品掉落",
+      "evidence": "NPC normal -> heroic table -> positive equipment drop -> ItemList_Main; runtime context, obtainable UID, include/exclude tags.",
+      "availability": "permanent"
+    },
+    "incursion_boss": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "mission",
+      "use_route_text": true,
+      "evidence": "副本首领、正权重掉落分支与成品 UID。单物品、单分支的固定概率来自原生掉落组。",
+      "availability": "permanent",
+      "reviewed_evidence": [
+        "2026-11-18 用户确认破雨。ai/npc/rik_boss_ninc02_rusher.mnpc 与 rik_boss_ninc02_leader_female.mnpc → loot/loottables/ltdrp_y8_ninc02_boss_03.mloottable、ltdrp_y8_ninc02_boss_04.mloottable 的专属分支均发放 y8s2_Exotic_04。"
+      ]
+    },
+    "incursion_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "use_route_text": true,
+      "evidence": "副本首领引用的掉落表和图纸 UID。共享池只记录图纸获取途径。",
+      "availability": "permanent"
+    },
+    "progression_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "use_route_text": true,
+      "evidence": "Staff recruitment or issued crafting project and its direct recipe grant.",
+      "availability": "permanent"
+    },
+    "journey_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "text": "赛季旅程奖励",
+      "evidence": "Scheduled journey project and prerequisite objective reward grant the recipe.",
+      "availability": "limited"
+    },
+    "classified_boss": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "mission",
+      "use_route_text": true,
+      "evidence": "Classified assignment boss, NPC loot table, normal difficulty branch and matching weapon drop.",
+      "availability": "permanent"
+    },
+    "season_weapon_cache": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "cache",
+      "evidence": "Season and event cache opening, referenced loot tables and an enabled item branch matching the equipment or weapon UID.",
+      "availability": "cache_supply",
+      "use_route_text": true
+    },
+    "raid_cache": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "cache",
+      "use_route_text": true,
+      "evidence": "副本奖励箱的实际放置、交互、钥匙与数量、任务条件、掉落表及成品 UID。独立单物品掉落分支可登记个体概率。",
+      "availability": "permanent",
+      "reviewed_evidence": [
+        "hunter/interaction/settings/interact_loot_table_ninc02_dam_normal.minteractionsetup → 已完成任务及 1 把 Y8_NIN02_Normal_Key → ltdrp_y8_ninc02_container_final.mloottable 的 Steel & Sons ACR 分支。"
+      ]
+    },
+    "mission_item": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "mission",
+      "use_route_text": true,
+      "evidence": "Mission completion reward, one-time RewardLoot and enabled branch granting the exact item.",
+      "availability": "permanent"
+    },
+    "boss_drop": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "mission",
+      "use_route_text": true,
+      "evidence": "Named NPC, exact loot table, positive direct branch and a supported difficulty.",
+      "availability": "origin"
+    },
+    "dark_zone_npc": {
+      "entry_uid": "6B33C8FE5508485C0C16C0102244620F",
+      "purpose": "equipment",
+      "category": "drop",
+      "evidence": "Hostile NPC loot table, eligible Dark Zone role and zone type, exact subtable and positive equipment branch.",
+      "availability": "permanent",
+      "text": "暗区战利品掉落"
+    },
+    "equipment_vendor": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "vendor",
+      "use_route_text": true,
+      "evidence": "Equipment vendor or Prometheus Terminal configuration, restock schedule and positive stock branch matching the finished item.",
+      "availability": "permanent"
+    },
+    "targeted_weapon": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "drop",
+      "text": "战利品掉落",
+      "evidence": "Weapon rotation entry, referenced item list, positive weights, obtainable item UID and verified open-world or Dark Zone context.",
+      "availability": "permanent"
+    },
+    "specialization_sidearm": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "specialization",
+      "use_route_text": true,
+      "evidence": "Active specialization grid element and its exact pistol item UID.",
+      "availability": "permanent"
+    },
+    "specialization_signature": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "specialization",
+      "use_route_text": true,
+      "evidence": "Registered signature weapon and its specialization grid element, linked item source and localized specialization name.",
+      "availability": "permanent"
+    },
+    "blueprint_reward_pool": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "use_route_text": true,
+      "evidence": "Control point defence settings or scheduled project, completion reward group, RewardLoot and matching obtainable blueprint UID.",
+      "availability": "permanent"
+    },
+    "season_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "text": "赛季普通奖励",
+      "evidence": "Dated season schedule → season wrapper → normal reward track and level → direct RewardItem granting this blueprint UID.",
+      "availability": "limited"
+    },
+    "settlement_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "project",
+      "use_route_text": true,
+      "evidence": "Settlement project completion reward group, referenced RewardItem and granted blueprint file.",
+      "availability": "permanent"
+    },
+    "field_research_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "specialization",
+      "use_route_text": true,
+      "evidence": "Specialization adventure, normal stage reward group and granted blueprint UID.",
+      "availability": "permanent"
+    },
+    "targeted_slot": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "drop",
+      "text": "战利品掉落",
+      "evidence": "Targeted rotation -> exact slot table -> inherited group -> named runtime condition -> referenced item list; satisfiable open-world or DZ context and obtainable UID.",
+      "reviewed_evidence": [
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/loottables/ltdrp_target_gear_kneepads.mloottable:159-171",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/targetedlootrotationpools.juice:165-171",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/loottables/ltdrp_target_gear_kneepads.mloottable:195",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/loottables/targetedloottable_generic.juice",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/loot/loottables/conditionlists/conditionlist_targetedloot_common.juice",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/juice/item/player_gear_kneepads_exotic_03.mitem",
+        "dist/brand-bulk-20261022-001/manual-export-inbox/raw_files/hunter/game system data/fruit/loot/lootconditionbase.fruit:4-7",
+        "2026-11-02 用户批准以完整本地原生引用链确认成品来源；本条已核对入口、战利品表、装备身份及路线条件，不是截图或实测记录。",
+        "dist/exotic-equipment-sources-candidate-20261102-001/verified-four-routes.json",
+        "dist/exotic-equipment-sources-candidate-20261102-001/APPROVAL.md"
+      ],
+      "availability": "permanent"
+    },
+    "hunter_cache": {
+      "entry_uid": "075801E25DDBE50F000353E702AD6847",
+      "purpose": "equipment",
+      "category": "special",
+      "text": "避风港猎人箱",
+      "evidence": "Haven InteractionSettings -> exact loot table -> gear tags; hunter-key requirement and once-only interaction retained in native context.",
+      "availability": "permanent"
+    },
+    "hunter_vendor": {
+      "entry_uid": "BFADE5F95BBC98590003071AC4EF34F3",
+      "purpose": "equipment",
+      "category": "vendor",
+      "text": "猎人箱解锁后可在卡西购买",
+      "evidence": "Roaming VendorConfig -> exact table -> prerequisite dye awarded by hunter box -> independently matched equipment UID.",
+      "availability": "permanent"
+    },
+    "guardian_drop": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "special",
+      "text": "击败守护者获得对应部位装备",
+      "evidence": "Registered entry UID -> actual loot/reward UID -> positive matching equipment branch; difficulty witnesses required. RewardItem teasers and unknown conditions are not acquisition routes.",
+      "reviewed_evidence": [
+        "evidence/equipment/new-equipment-sources-20261112.json"
+      ],
+      "availability": "permanent"
+    },
+    "pearl_reward": {
+      "entry_uid": "A719E9146903596F0007F1299C677566",
+      "purpose": "equipment",
+      "category": "mission",
+      "text": "完成中央公园任务",
+      "evidence": "Registered entry UID -> actual loot/reward UID -> positive matching equipment branch; difficulty witnesses required. RewardItem teasers and unknown conditions are not acquisition routes.",
+      "reviewed_evidence": [
+        "evidence/equipment/new-equipment-sources-20261112.json"
+      ],
+      "availability": "permanent"
+    },
+    "airport_climax_reward": {
+      "entry_uid": "0B9940F36A2015BD00080226FCA2E036",
+      "purpose": "equipment",
+      "category": "mission",
+      "preset": "manhunt",
+      "mission": "华盛顿国际机场：鲍比·古兹曼",
+      "condition": "任务结算奖励",
+      "evidence": "Registered entry UID -> actual loot/reward UID -> positive matching equipment branch; difficulty witnesses required. RewardItem teasers and unknown conditions are not acquisition routes.",
+      "reviewed_evidence": [
+        "evidence/equipment/new-equipment-sources-20261112.json"
+      ],
+      "availability": "legacy_manhunt",
+      "climax_uid": "0B9940F36A2016760008024D6A0F5909"
+    },
+    "targeted_brand": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "drop",
+      "text": "战利品掉落",
+      "availability": "permanent",
+      "evidence": "TargetedLootPool category and table UID, eligible group, referenced list and matching target UID."
+    },
+    "targeted_gearset": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "drop",
+      "text": "战利品掉落",
+      "availability": "permanent",
+      "evidence": "TargetedLootPool category and table UID, eligible group, referenced list and matching target UID."
+    },
+    "world_activity": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "drop",
+      "availability": "origin_pool",
+      "evidence": "Settlement unlock flag, simulation activity, faction completion reward, RewardLoot, active pool and obtainable item UID.",
+      "text": "战利品掉落"
+    },
+    "conversion": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "craft",
+      "use_route_text": true,
+      "availability": "permanent",
+      "evidence": "Conversion recipe, exact ingredient and output item UIDs, obtainable blueprint source."
+    },
+    "mission_cache_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "cache",
+      "availability": "permanent",
+      "use_route_text": true,
+      "evidence": "Placed faction container in the registered mission, interaction cost and capped components, exact recipe and negative controls."
+    },
+    "mission_boss_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "use_route_text": true,
+      "availability": "permanent",
+      "evidence": "Mission boss roster, placed NPC UID, positive loot branch, material cap and exact missing recipe."
+    },
+    "regular_cache": {
+      "entry_uid": null,
+      "purpose": "equipment",
+      "category": "cache",
+      "use_route_text": true,
+      "availability": "cache_supply",
+      "evidence": "Standing shop or progression reward for the same BundleItem, then a positive equipment roll, supported quality and exact target tags."
+    },
+    "summit_challenge_blueprint": {
+      "entry_uid": null,
+      "purpose": "blueprint",
+      "category": "reward",
+      "use_route_text": true,
+      "availability": "permanent",
+      "evidence": "高峰大厦常规挑战阶梯的实际奖励组引用 RewardLoot，核对启用条件、掉落池和每张图纸的 UID。"
+    }
+  },
+  "blueprint_source_rules": {
+    "blueprint_source_4cdce5b25d78bd59000348b34b29e925": {
+      "category": "special",
+      "availability": "permanent",
+      "requires_route": "progression_blueprint"
+    },
+    "blueprint_source_075801e25f3faf13000518450947c397": {
+      "category": "special",
+      "requires_route": "progression_blueprint",
+      "availability": "permanent"
+    },
+    "blueprint_source_075801e25e68b83f00035e2f5f51c26b": {
+      "category": "vendor",
+      "requires_route": "vendor",
+      "text": "持有对应奇特装备后，向依娜亚购买",
+      "availability": "permanent"
+    },
+    "blueprint_source_075801e25e5e50d2000c2127bd4ff882": {
+      "category": "vendor",
+      "requires_route": "vendor",
+      "text": "持有对应奇特装备后，向依娜亚购买",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894821c00037101fb779863": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "鬣狗",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d268948259000371024699420b": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "真实之子",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825900037103d95abd66": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "流亡者",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825a00037104f51340c0": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "净化者",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825b00037105b2e06a81": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "赖克斯帮",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_f46c7df269a7029a00037515486fd60a": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "黯牙",
+      "action": "kill_squad",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825b000371063ee5efcc": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "鬣狗",
+      "action": "defend_territory",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825c000371073258d4fb": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "真实之子",
+      "action": "defend_territory",
+      "availability": "permanent"
+    },
+    "blueprint_source_fb6e28d26894825d000371085d228730": {
+      "category": "special",
+      "preset": "retaliation",
+      "faction": "流亡者",
+      "action": "defend_territory",
+      "availability": "permanent"
+    }
+  },
+  "unavailable_blueprints": {
+    "B00501356A8FF14A00037E648DA851BD": {
+      "target": "B00501356A8EC67F00037E9889015DCE",
+      "evidence": "2026-11-18 用户确认目眩没有图纸。原生重新配置配方仅保留在解包目录中。"
+    },
+    "B3CF2E925F5B7BA50003787FA01F3D8F": {
+      "target": "346395BC5E4E62B10003B4FEA27087D4",
+      "evidence": "2026-11-18 用户确认战术 .308 没有图纸。"
+    },
+    "B0050135674DB38F00067A1D18D36610": {
+      "target": "B005013566FBEFE6000531DB88C1AEAD",
+      "evidence": "2026-11-18 用户确认莱克星顿没有图纸。"
+    }
+  },
+  "confirmed_blueprint_sources": {
+    "4CDCE5B25D8346FA0003491FFA372A61": {
+      "category": "reward",
+      "text": "好友引介奖励",
+      "evidence": [
+        "item/blueprint_weapon_named_lmg_01_friendreferral.mitem：图纸标签 Friend_Referral_Blueprint 和图纸来源提示；用户确认填写该来源，领取条件留空。",
+        "图纸原生说明为可重复使用，myCraftedItem 指向毒刺 4CDCE5B25D8336590003491E048D8530；配方可制作且无额外使用条件。"
+      ],
+      "availability": "unresolved",
+      "usable_if_owned": true
+    },
+    "E03CE5EA63A073EC000366E60BFE1C77": {
+      "category": "reward",
+      "entry_uid": "F46FC1EF63358B0A000380CDB7E44C6D",
+      "text": "第 11 赛季普通奖励：当季达到 37 级获得",
+      "evidence": [
+        "seasonwrapper/seasonwrapper_y4_s11.mseasonwrapper → rewards/tieredrewardset_y4s11_seasonlevel.mtieredrewardset：37 级普通轨道引用 TR_Seasons_Y4_S11_Weapon_01_G28_Rifle_Blueprint。",
+        "rewards/rwg_season_11_g28_blueprint.mreward 的 RewardItem 发放 item/blueprint_weapon_season_11_g28_rifle_blueprint.mitem，制作目标 346395BC5D9DA4E60004F56BC11F4820。",
+        "原生 CraftingBlueprintItem 为可重复使用的制作图纸；已领图纸的玩家可制作对应 G28。"
+      ],
+      "availability": "limited",
+      "usable_if_owned": true
+    }
+  },
+  "confirmed_equipment_sources": {
+    "4CDCE5B25BE710B70003A997813B7F22": {
+      "category": "special",
+      "text": "在潮汐之潭的气垫船上开启武器箱。需使用常规角色，且未持有阿德蕾斯提雅、复仇女神或「射手步枪：瞄准镜－测量杖」。",
+      "verification": "current_confirmed",
+      "evidence": [
+        "hunter/baked_maps/672729d158ff58240000831f17e6ca15/t[-560,0,-1200]_b[0]_[596859f65a578793000cb906ddb0a46a].mbucket.decompiled 的箱子引用 interact_loot_table_equipment_weapon_adrestia_set；同格 MM16_Hovercraft_ControlRoom。",
+        "hunter/interaction/settings/interact_loot_table_equipment_weapon_adrestia.minteractionsetup 要求 NonImmersion，绑定 4CDCE5B25BE954410003317FC250C675。loot/loottables/ltdrp_container_exoticcrafting_cqd_namedmmr.mloottable 的 Drop 1 - Adrestia 同时检查两把枪均未持有及部件 B 数量占比不大于零，再发放 MMR_Crafting_CQD_Component_A。"
+      ],
+      "availability": "permanent"
+    },
+    "B00501356673E9A10005E712D15FBD67": {
+      "category": "drop",
+      "text": "万圣节活动中，击败小型战争猎犬有几率获得",
+      "verification": "current_confirmed",
+      "evidence": [
+        "ai/fireteam/fireteamconfig.juice → ai/npc/end_bigdog_small_{a,b,c,d,e}.mnpc → end_bigdog_small.mnpc 的 myLootTable → loot/loottables/ltdrp_end_bigdog_small.mloottable。Old Event Item 掉落池含 Y6S1_Summer_Weapon。",
+        "projects/projects.juice 的 Summer_24_07 引用 rewards/rwg_y6s1_summerproject_07.mreward；Water Gun 是 myIsRewardUsedAsTeaser TRUE，实际 RewardItem 为眼镜和皮肤。"
+      ],
+      "availability": "limited"
+    },
+    "B00501356A8EC67F00037E9889015DCE": {
+      "category": "drop",
+      "text": "击败活动猎人「死灵法师」有几率获得",
+      "verification": "current_confirmed",
+      "evidence": [
+        "ai/npc/hun_hunter_y8s3_n1.mnpc → loot/loottables/ltdrp_hun_hunter_y8s3_n1.mloottable 的 Y8S3.1_Event_Exotic_01 实际掉落分支；猎人名称本地化 GUID 843210E16ABCBBAC00037F19A738DCBF。"
+      ],
+      "availability": "limited"
+    },
+    "B00501356A58C862000391683F87671F": {
+      "category": "special",
+      "text": "中央公园残响 DLC：常规角色首次在普通至传奇难度完成首领连战时必定获得，之后完成仍有几率获得",
+      "verification": "current_confirmed",
+      "evidence": [
+        "2026-11-18 用户确认中央公园 DLC。pearl/pearl_dru.mpearlarea 的 myCompletionRewardBossRush → rewards/rwg_centralpark.mreward → loot/loottables/ltref_cp_bossrush.mloottable。",
+        "普通至传奇的 Guaranteed 分支检查 central_park_contrainment_guaranteeddrop 为 FALSE 并以 100% 发放 Y8S3.1_DLC_Exotic_01；同一结算设置首次持久标志，之后各难度走概率分支。"
+      ],
+      "availability": "permanent"
+    },
+    "B00501356AC76779000383006F7CEF03": {
+      "category": "special",
+      "text": "中央公园残响 DLC：完成中央公园的隐藏谜题后获得，需未持有齿轮发条",
+      "verification": "current_confirmed",
+      "evidence": [
+        "2026-11-18 用户确认中央公园 DLC。hunter/baked_maps/6eb4a61968c1283200038760f2dd818e/ts[-2680,0,480]_b[0].mbucket.decompiled 的 scr_dru_central_park_secrets_end 在谜题完成后触发 SpawnLootNode（1904），输入 4 接掉落表常量 1907。",
+        "loot/loottables/ltdrp_dlc3_park_event_reward.mloottable（40E4B1026AC77CE000086E923E569862）要求未持有 player_weapon_submachinegun_mp5_t1_v1_named，发放 Y8S3.3_DLC_Named_Weapon。"
+      ],
+      "availability": "permanent"
+    },
+    "40EFA9D56A99750D00037E65B07802EC": {
+      "category": "special",
+      "text": "机密任务「失踪的特工 - 乔治城死区」：击败扭曲人",
+      "verification": "current_confirmed",
+      "evidence": [
+        "hunter/baked_maps/6eb4a6196788fa4100203f892660fa35/ts[3360,-40,1600]_b[0]_[fbd81ea76a039cf10003e99fcfff7448].mbucket.decompiled 的 scr_y8_CA06_HalloweenHorror 在首领掉落组 20307 内由 20286、20300 直接生成掉落，输入 4 均指向 40EFA9D569F370030003C8C52F1EFB44。",
+        "loot/loottables/ltdrp_cul_boss_ca06_tank.mloottable 的难度分支 → ltdrp_cul_boss_ca06_tank_normal/hard/challenge/heroic 的具名武器标签 Y8S3_ClassifiedAssigment_Named_Weapon_06。任务与首领本地化 GUID 为 7412EE1A69F2134C0004E20FC58BB081、40EFA9D569F36F760003BA2EDDB2483F。"
+      ],
+      "availability": "permanent"
+    },
+    "346395BC5E3BD18100039AE80B15444E": {
+      "category": "special",
+      "text": "预购武器包奖励",
+      "verification": "current_confirmed",
+      "evidence": [
+        "firstpartystore/itempacks.juice 的 item_pack_weapon_shotgun_m4_named_preorder（966590C65E3AD51100036C2FF8E768B2）直接包含该武器 UID。"
+      ],
+      "availability": "limited"
+    },
+    "B00501356A96AE0E0009BCFE54AFCA07": {
+      "category": "special",
+      "text": "中央公园残响 DLC：击败彩蛋猎人取得钥匙，开启猎人箱获得",
+      "verification": "current_confirmed",
+      "evidence": [
+        "2026-11-12 用户实测：中央公园残响 DLC 彩蛋猎人，击杀后获取钥匙，开猎人箱子获取幽灵手套。",
+        "evidence/equipment/new-equipment-sources-20261112.json"
+      ],
+      "native_status": "猎人箱交互与同名掉落表 UID 不一致；本条仅记录实测，不绕过原生引用校验。",
+      "availability": "permanent"
+    },
+    "B00501356A8FE11300037E60A33CDC61": {
+      "category": "mission",
+      "entry_uid": "0B9940F36A2015BD00080226FCA2E036",
+      "preset": "manhunt",
+      "mission": "华盛顿国际机场：鲍比·古兹曼",
+      "condition": "首次通关大师难度必定获得",
+      "verification": "current_confirmed",
+      "evidence": [
+        "2026-11-12 用户确认并补充首次限定：大师难度仅存在于部分特定猎捕任务；华盛顿国际机场：鲍比·古兹曼首次通关大师难度必定获得全副武装。",
+        "evidence/equipment/bear-master-confirmation-20261112.json",
+        "2026-11-23 玩家确认大师任务可随时挑战，首次通关奖励持续有效。"
+      ],
+      "native_status": "原生 Legendary 分支的持久标志条件仍未闭合；首次通关大师难度必定获得仅依据用户对该任务的确认，不建立通用难度映射或推断重复通关奖励。",
+      "availability": "permanent",
+      "climax_uid": "0B9940F36A2016760008024D6A0F5909"
+    },
+    "B0050135668E79E60005319DC2F2754C": {
+      "category": "mission",
+      "entry_uid": "A0FB99F459799AE6000036472C477173",
+      "preset": "manhunt",
+      "mission": "航天局总部：狄奥·帕内尔",
+      "condition": "首次通关大师难度必定获得",
+      "verification": "current_confirmed",
+      "evidence_type": "native_chain_review",
+      "evidence": [
+        "evidence/equipment/manhunt-source-review-20261112.json",
+        "2026-11-12 定向原生核对：任务/高潮活动 UID → 实际 RewardLoot → 首次完成标志 FALSE 分支；LootGroup 默认概率 100%，唯一装备标签匹配目标 UID；同一任务结算在该难度将同一标志设为 TRUE。",
+        "2026-11-23 玩家确认大师任务可随时挑战，首次通关奖励持续有效。"
+      ],
+      "native_status": "已定向核对原生首次结算链，不是用户实测；自动入口解析尚未登记此 Rogue 任务和持久标志求值。未修改原有未闭合关系，不推断重复通关奖励或活动当前开放状态。",
+      "availability": "permanent",
+      "climax_uid": "515E28DB66D80CC4001CD10BA1E23CFF"
+    },
+    "B0050135678535F3000383BD7B7AC839": {
+      "category": "mission",
+      "entry_uid": "A0FB99F459799B200000366775EFD4D4",
+      "preset": "manhunt",
+      "mission": "罗斯福岛：亚兰妮·凯尔索",
+      "condition": "首次通关大师难度必定获得",
+      "verification": "current_confirmed",
+      "evidence_type": "native_chain_review",
+      "evidence": [
+        "evidence/equipment/manhunt-source-review-20261112.json",
+        "2026-11-12 定向原生核对：任务/高潮活动 UID → 实际 RewardLoot → 首次完成标志 FALSE 分支；LootGroup 默认概率 100%，唯一装备标签匹配目标 UID；同一任务结算在该难度将同一标志设为 TRUE。",
+        "2026-11-23 玩家确认大师任务可随时挑战，首次通关奖励持续有效。"
+      ],
+      "native_status": "已定向核对原生首次结算链，不是用户实测；自动入口解析尚未登记此 Rogue 任务和持久标志求值。未修改原有未闭合关系，不推断重复通关奖励或活动当前开放状态。",
+      "availability": "permanent",
+      "climax_uid": "515E28DB67840E40001C9915DA82B6A9"
+    },
+    "B005013567F671C000036FF025B589BD": {
+      "category": "mission",
+      "entry_uid": "A0FB99F459799B130000365FDA8A269D",
+      "preset": "manhunt",
+      "mission": "波托马克活动中心：经理",
+      "condition": "首次通关大师难度必定获得",
+      "verification": "current_confirmed",
+      "evidence_type": "native_chain_review",
+      "evidence": [
+        "evidence/equipment/manhunt-source-review-20261112.json",
+        "2026-11-12 定向原生核对：任务/高潮活动 UID → 实际 RewardLoot → 首次完成标志 FALSE 分支；LootGroup 默认概率 100%，唯一装备标签匹配目标 UID；同一任务结算在该难度将同一标志设为 TRUE。",
+        "2026-11-23 玩家确认大师任务可随时挑战，首次通关奖励持续有效。"
+      ],
+      "native_status": "已定向核对原生首次结算链，不是用户实测；自动入口解析尚未登记此 Rogue 任务和持久标志求值。未修改原有未闭合关系，不推断重复通关奖励或活动当前开放状态。",
+      "availability": "permanent",
+      "climax_uid": "A719E91467DD6148001B884D2C05E24D"
+    },
+    "B005013568EE1608002429906813A622": {
+      "category": "mission",
+      "entry_uid": "596859F65A61DD000004D005DE982D3D",
+      "preset": "manhunt",
+      "mission": "潮汐之潭猎捕：峰会",
+      "condition": "首次通关大师难度必定获得",
+      "verification": "current_confirmed",
+      "evidence_type": "native_chain_review",
+      "evidence": [
+        "evidence/equipment/manhunt-source-review-20261112.json",
+        "2026-11-12 定向原生核对：任务/高潮活动 UID → 实际 RewardLoot → 首次完成标志 FALSE 分支；LootGroup 默认概率 100%，唯一装备标签匹配目标 UID；同一任务结算在该难度将同一标志设为 TRUE。",
+        "2026-11-23 玩家确认大师任务可随时挑战，首次通关奖励持续有效。"
+      ],
+      "native_status": "已定向核对原生首次结算链，不是用户实测；自动入口解析尚未登记此 Rogue 任务和持久标志求值。未修改原有未闭合关系，不推断重复通关奖励或活动当前开放状态。",
+      "availability": "permanent",
+      "climax_uid": "516B38CF684026B30055510D22458749"
+    },
+    "B005013567B5935200036DD2A7E091D1": {
+      "category": "event",
+      "text": "活动获取",
+      "verification": "current_confirmed",
+      "evidence": [
+        "2026-11-23 玩家确认动荡最初来自愚人节，后续在常规活动中重复发放。",
+        "目标 UID 对应的冬季、樱花、沙暴、红月活动箱分别引用有正权重的专属具名装备池；原始入口和表保留在 crafting.json.routes.season_weapon_cache。"
+      ],
+      "availability": "recurring"
+    },
+    "B00501356AC76687000382F9030622D0": {
+      "category": "event",
+      "entry_uid": "843210E16AC77A1400039924B9EB920D",
+      "text": "完成第六个“牧羊人”任务",
+      "availability": "limited",
+      "active_time": "2026-11-17 08:00:00 to 2026-11-26 07:59:59",
+      "verification": "current_confirmed",
+      "evidence": [
+        "用户提供的 The Division Dispatch 2026-11-20 活动说明、DJTICKLE 实机视频画面及视频说明确认：玛伦牧羊犬是带完美游骑兵的具名 Mk16，为本次牧羊人活动第六个计划／6级的成品奖励。见 evidence/equipment/malinois-shepherd-2026-11/dispatch.png、gameplay.png。",
+        "scheduling/projects_y8s3_event_schedule_05.mgameschedule 仅在 2026-11-17 至 11-26 的窗口启用，OrderedFromStart 顺序读取 projects_y8s3_shepherdchain_pool_01；第六项 Project 843210E16AC77A1400039924B9EB920D 的简体名为“牧羊人”任务，目标为获得“牧羊人”阶级。",
+        "第六项引用 rewards/rwg_y8s3_shepherdproject_final.mreward；其中的 RewardLoot 843210E16AC7795A00039911326AF79F 为预览项，myIsRewardUsedAsTeaser TRUE。其目标表 ltref_y8s3_shepherdevent_nameditem 指向该枪的 Y8S3_ShepherdEvent_Item 标签。实际奖励以活动报道及实机视频说明为据。",
+        "冲突战商人的 ltref_vendor_trader_conflict.mloottable 在具名突击步枪与原型分支中明确排除此标签。"
+      ]
+    }
+  }
+}

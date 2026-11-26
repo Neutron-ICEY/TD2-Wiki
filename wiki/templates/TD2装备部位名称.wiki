@@ -1,0 +1,10 @@
+<noinclude><!-- AUTO-GENERATED — DO NOT EDIT DIRECTLY。自动生成，禁止手改。维护 data/brand-sets/ 中的配置后运行 python -m tools.brand_sets generate。 -->
+这是集中配置的派生映射，不是人工维护入口；维护入口见 docs/equipment-maintenance.md。</noinclude><includeonly>{{#switch:{{{1|}}}
+|mask=面具
+|backpack=背包
+|chest=胸甲
+|gloves=手套
+|holster=枪套
+|kneepads=护膝
+|#default=部位未填写
+}}</includeonly>

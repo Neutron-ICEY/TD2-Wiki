@@ -1,0 +1,3 @@
+{{武器信息
+|资料ID=weapon:4f5ddea253fd95cb00000deac5847387
+}}

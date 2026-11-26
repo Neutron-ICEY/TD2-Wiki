@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "game_build": "Steam build 26413016",
+  "images": [
+    {
+      "name": "apex_protocol",
+      "sheet": "ui_gear_brands_spritesheet_4",
+      "referenced_numeric_sprite_id": -1403483458,
+      "status": "USER_CONFIRMED_LOCAL_MAPPING",
+      "definition": "incoming\\game-update\\steam-26413016-20261110-001\\raw_files\\hunter\\ui\\spritesheets\\ui_gear_brands_spritesheet_4.spritesheet.decompiled",
+      "definition_sha256": "6b69f2f1d28858812e4de67231a2183ea1bbc4a6c4e521607a360712845d83aa",
+      "source": "incoming\\game-update\\steam-26413016-20261110-001\\images\\hunter\\baked\\ui\\spritesheets\\ui_gear_brands_spritesheet_4.png",
+      "source_sha256": "d686d194c814a9ab7b0cb1af6951ad5466bf7f7c93f84588aba1499f6db96af1",
+      "rectangle": [
+        896,
+        256,
+        128,
+        128
+      ],
+      "file": "dist\\game-update-20261110-001\\image-candidates\\apex_protocol.png",
+      "sha256": "7cfbb952798adbd7f83179ce3b67b985bf572b914f15f7ae3b95f7b3edd568e9",
+      "asset_id": "gear-set-c1-logo",
+      "wiki_filename": "TD2-装备组-巅峰协议-Logo.png",
+      "derived_file": "assets/TD2-装备组-巅峰协议-Logo.png",
+      "derived_sha256": "313a80ba6c4aa2c07b354efdae2e8b0c37e89e705510d12583c2e1307bd02fab",
+      "size": [
+        128,
+        128
+      ],
+      "publication_status": "NOT_UPLOADED",
+      "numeric_mapping": "User confirmed purpose and image correspondence; no numeric Sprite hash reversal is claimed.",
+      "approval": {
+        "date": "2026-11-10",
+        "source": "direct user reply",
+        "answer": "确认三张对应，加入本地页面"
+      },
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit R mask unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "sprite": "apex_protocol",
+      "rect": [
+        896,
+        256,
+        128,
+        128
+      ],
+      "original_atlas": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/images/hunter/baked/ui/spritesheets/ui_gear_brands_spritesheet_4.png",
+        "sha256": "d686d194c814a9ab7b0cb1af6951ad5466bf7f7c93f84588aba1499f6db96af1"
+      },
+      "sprite_definition": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/raw_files/hunter/ui/spritesheets/ui_gear_brands_spritesheet_4.spritesheet.decompiled",
+        "sha256": "6b69f2f1d28858812e4de67231a2183ea1bbc4a6c4e521607a360712845d83aa"
+      },
+      "category": "gear_set",
+      "chinese_names": [
+        "巅峰协议"
+      ],
+      "english_names": [
+        "Apex Protocol"
+      ],
+      "asset_ref": "gear-set-c1-logo"
+    },
+    {
+      "name": "apex_engine",
+      "sheet": "ui_talents_spritesheet_7",
+      "referenced_numeric_sprite_id": -1219142202,
+      "status": "USER_CONFIRMED_LOCAL_MAPPING",
+      "definition": "incoming\\game-update\\steam-26413016-20261110-001\\raw_files\\hunter\\ui\\spritesheets\\ui_talents_spritesheet_7.spritesheet.decompiled",
+      "definition_sha256": "726f08bdbaa0b75f36bc16c2060cff208aa92d0cb595980b0ae170ee65481687",
+      "source": "incoming\\game-update\\steam-26413016-20261110-001\\images\\hunter\\baked\\ui\\spritesheets\\ui_talents_spritesheet_7.png",
+      "source_sha256": "62809f61f553c63c11c54d237468f69104a7096a5e62a83e0ac8cdef9b4983e2",
+      "rectangle": [
+        768,
+        640,
+        128,
+        128
+      ],
+      "file": "dist\\game-update-20261110-001\\image-candidates\\apex_engine.png",
+      "sha256": "16e67fdd8314df201dab6ced1ab3a928469737704687410ded9e3012a76ff53e",
+      "asset_id": "gear-set-c1-talents-icon",
+      "wiki_filename": "TD2-天赋-维尔保障、维尔超控、顶尖引擎-Icon.png",
+      "derived_file": "assets/TD2-天赋-维尔保障、维尔超控、顶尖引擎-Icon.png",
+      "derived_sha256": "61e3a77212e0f8708602bbed2e283ee456a518f21a9fe6b92afdb668b6dbdb63",
+      "size": [
+        128,
+        128
+      ],
+      "publication_status": "NOT_UPLOADED",
+      "numeric_mapping": "User confirmed purpose and image correspondence; no numeric Sprite hash reversal is claimed.",
+      "approval": {
+        "date": "2026-11-10",
+        "source": "direct user reply",
+        "answer": "确认三张对应，加入本地页面"
+      },
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit R mask unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "sprite": "apex_engine",
+      "rect": [
+        768,
+        640,
+        128,
+        128
+      ],
+      "original_atlas": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png",
+        "sha256": "62809f61f553c63c11c54d237468f69104a7096a5e62a83e0ac8cdef9b4983e2"
+      },
+      "sprite_definition": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled",
+        "sha256": "726f08bdbaa0b75f36bc16c2060cff208aa92d0cb595980b0ae170ee65481687"
+      },
+      "category": "talent",
+      "chinese_names": [
+        "维尔保障",
+        "维尔超控",
+        "顶尖引擎"
+      ],
+      "english_names": [
+        "Veer Failsafe",
+        "Veer Override",
+        "Apex Engine"
+      ],
+      "asset_ref": "gear-set-c1-talents-icon"
+    },
+    {
+      "name": "afterburn",
+      "sheet": "ui_talents_spritesheet_5",
+      "referenced_numeric_sprite_id": -2094319484,
+      "status": "USER_CONFIRMED_LOCAL_MAPPING",
+      "definition": "incoming\\game-update\\steam-26413016-20261110-001\\raw_files\\hunter\\ui\\spritesheets\\ui_talents_spritesheet_5.spritesheet.decompiled",
+      "definition_sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e",
+      "source": "incoming\\game-update\\steam-26413016-20261110-001\\images\\hunter\\baked\\ui\\spritesheets\\ui_talents_spritesheet_5.png",
+      "source_sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217",
+      "rectangle": [
+        384,
+        512,
+        128,
+        128
+      ],
+      "file": "dist\\game-update-20261110-001\\image-candidates\\afterburn.png",
+      "sha256": "394d87be72d80c07ddb9a183a22d6d391118a2ee2dac54914ae029e520096df7",
+      "asset_id": "exotic-afterburn-icon",
+      "wiki_filename": "TD2-天赋-后燃-Icon.png",
+      "derived_file": "assets/TD2-天赋-后燃-Icon.png",
+      "derived_sha256": "a59b9d00275717a451588c1cbdfef948da954ba32161c2bdd1797c070e4a4c79",
+      "size": [
+        128,
+        128
+      ],
+      "publication_status": "NOT_UPLOADED",
+      "numeric_mapping": "User confirmed purpose and image correspondence; no numeric Sprite hash reversal is claimed.",
+      "approval": {
+        "date": "2026-11-10",
+        "source": "direct user reply",
+        "answer": "确认三张对应，加入本地页面"
+      },
+      "conversion": {
+        "version": "gray-to-straight-alpha-v1",
+        "source_channel": "R",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alpha": "original 8-bit R mask unchanged",
+        "alpha_mode": "straight",
+        "resize": null,
+        "trim": false,
+        "padding": 0,
+        "threshold": null,
+        "invert_alpha": false,
+        "premultiply": false,
+        "gamma_transform": null,
+        "output_mode": "RGBA",
+        "output_bit_depth_per_channel": 8
+      },
+      "sprite": "afterburn",
+      "rect": [
+        384,
+        512,
+        128,
+        128
+      ],
+      "original_atlas": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_5.png",
+        "sha256": "3bf797773c017f8a157bfb540c61334702a7675b1ac00a63396bd65e26d52217"
+      },
+      "sprite_definition": {
+        "path": "incoming/game-update/steam-26413016-20261110-001/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled",
+        "sha256": "8ae16d47c3e783353dee0dfa82b1feddd85cb08b5c213a0120fe27ac7231ac4e"
+      },
+      "category": "talent",
+      "chinese_names": [
+        "后燃"
+      ],
+      "english_names": [
+        "Afterburn"
+      ],
+      "asset_ref": "exotic-afterburn-icon"
+    }
+  ]
+}

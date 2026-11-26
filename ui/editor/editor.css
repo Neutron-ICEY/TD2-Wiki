@@ -1,0 +1,65 @@
+[data-td2-js-editor] { color-scheme:dark; box-sizing:border-box; width:100%; margin:24px 0; padding:28px; background:#222; color:#eee; font:15px/1.6 system-ui,sans-serif; }
+[data-td2-js-editor] *, [data-td2-js-editor] *::before, [data-td2-js-editor] *::after { box-sizing:border-box; }
+[data-td2-js-editor] [hidden] { display:none !important; }
+[data-td2-js-editor] h1 { margin:0; font-size:28px; }
+[data-td2-js-editor] h2, #wiki-body #mw-content-text [data-td2-js-editor] h2 { font-weight:700; line-height:1.6; font-size:21px; margin:0 0 18px; border:0; padding:0; }
+[data-td2-js-editor] .eyebrow { color:#ff9e44; letter-spacing:.1em; font-size:12px; }
+[data-td2-js-editor] .source, [data-td2-js-editor] .muted { color:#c2c2c2; }
+[data-td2-js-editor] section { margin-top:30px; min-width:0; }
+[data-td2-js-editor] label { display:block; font-weight:600; margin-bottom:5px; }
+[data-td2-js-editor] .field { margin-bottom:16px; min-width:0; }
+[data-td2-js-editor] input, [data-td2-js-editor] textarea { width:100%; max-width:540px; padding:8px 10px; border:1px solid #bbb; border-radius:2px; background:white; color:#202020; font:inherit; }
+[data-td2-js-editor] textarea { resize:vertical; }
+[data-td2-js-editor] input[readonly], [data-td2-js-editor] textarea[readonly] { background:#363636; color:#ddd; border-color:#666; }
+[data-td2-js-editor] .help, [data-td2-js-editor] .warning { padding:8px 12px; margin:8px 0; font-size:14px; }
+[data-td2-js-editor] .help { background:#2b2b2b; }
+[data-td2-js-editor] .warning { color:inherit; background:#383024; border-left:3px solid #dba349; }
+[data-td2-js-editor] .error { color:#ffc3b9; margin:8px 0; border-left:3px solid #e69080; padding-left:10px; }
+[data-td2-js-editor] .summary { background:#191919; padding:12px 16px; overflow-wrap:anywhere; }
+[data-td2-js-editor] ul { padding-left:24px; }
+[data-td2-js-editor] footer { border-top:1px solid #555; padding-top:20px; margin-top:32px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+[data-td2-js-editor] footer p { flex-basis:100%; color:#bbb; margin:0; }
+[data-td2-js-editor] button, [data-td2-js-editor] a[data-download], [data-td2-js-editor] .td2-editor-actions > a { padding:10px 14px; border:1px solid #999; border-radius:3px; background:#343434; color:#fff; font:inherit; white-space:normal; cursor:pointer; text-decoration:none; max-width:100%; }
+[data-td2-js-editor] button:disabled { opacity:.5; cursor:default; }
+[data-td2-js-editor] :focus-visible { outline:3px solid #ffbb71; outline-offset:3px; }
+[data-td2-js-editor] [data-status] { margin:18px 0; overflow-wrap:anywhere; }
+[data-td2-js-editor] .local-file { margin-top:24px; overflow-wrap:anywhere; }
+[data-td2-js-editor] .local-file input { max-width:100%; }
+@media(max-width:480px) {
+  [data-td2-js-editor] { margin:0; padding:18px 12px; }
+  [data-td2-js-editor] h1 { font-size:24px; }
+  [data-td2-js-editor] footer { align-items:stretch; }
+  [data-td2-js-editor] .td2-editor-actions > * { flex:1 1 100%; }
+}
+
+[data-td2-js-editor] .help, [data-td2-js-editor] .warning, [data-td2-js-editor] .error { overflow-wrap:anywhere; }
+[data-td2-js-editor] .visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+[data-td2-js-editor] select { font:inherit; padding:8px; max-width:100%; color:#eee; background:#333; border:1px solid #888; }
+
+
+[data-td2-js-editor] input[type=checkbox]{width:auto;max-width:none;}
+
+[data-td2-js-editor] .td2-editor-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; width:100%; margin-bottom:16px; }
+[data-td2-js-editor] .td2-editor-actions > [aria-disabled=true] { opacity:.5; cursor:default; }
+
+[data-td2-js-editor] .td2-editor-actions > :is(a,button) { display:inline-flex; align-items:center; justify-content:center; text-align:center; }
+
+[data-td2-js-editor] summary { display:list-item; cursor:pointer; }
+[data-td2-js-editor] .summary h4 { margin:0 0 8px; }
+[data-td2-js-editor] select { min-height:42px; }
+
+[data-td2-js-editor] .td2-editor-fields { min-width:0; border:0; padding:0; margin:0; }
+
+
+[data-td2-js-editor] h3, #wiki-body #mw-content-text [data-td2-js-editor] h3 { font-size:18px; font-weight:700; line-height:1.6; margin:16px 0 8px; border:0; padding:0; }
+
+[data-td2-js-editor] .reference-field { max-width:540px; }
+[data-td2-js-editor] .reference-field > select { width:100%; margin-bottom:8px; }
+[data-td2-js-editor] .reference-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:8px; }
+[data-td2-js-editor] .reference-row > span { flex:1 1 180px; min-width:0; overflow-wrap:anywhere; }
+[data-td2-js-editor] .reference-row > button { padding:6px 10px; }
+[data-td2-js-editor] dialog { background:#222; color:#eee; border:1px solid #888; border-radius:3px; padding:20px; max-width:calc(100% - 32px); }
+[data-td2-js-editor] dialog::backdrop { background:#0009; }
+[data-td2-js-editor] dialog button { margin-right:12px; }
+[data-td2-js-editor] details { margin-block:12px; }
+[data-td2-js-editor] details[open] > summary { margin-bottom:12px; }
