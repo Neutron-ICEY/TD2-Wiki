@@ -37,6 +37,6 @@ Hunter 定向导出使用 [现有 GUI 桥接](../../docs/hunter-cli.md)；本目
 
 `investigate` / `pipeline` 保留应用包静态提取能力，必须显式传入 `--apk <新包路径>`、`--windows <新包路径>` 和 `--pwsh <PowerShell路径>`，输出使用全新目录；没有旧包默认路径，不运行安装包。所有输入先验证存在且位于输出目录之外，再生成产物；前后 SHA 检查保持不变。`pipeline.stage_plan` / `stage_images` 通过稳定实体 ID 与 asset_ref 解析 Registry 当前地址，分别检查本地解析兼容性、来源和发布状态。应用包中文或英文名称只产生审核候选，不能自动批准实体关联；品牌来源键通过 entity_ref 连接游戏实体，历史来源记录不承担当前地址。
 
-`continuation` / `reconciliation` / `brand_publication` 仅保留对调用者提供的角色、名称、图片引用及文件观察作判定的纯函数，没有历史批次重放或业务资料写入入口。旧 `asset_import.verify` 及一次性驱动保留在 Git 和工程重组前完整快照中；当前完整验证入口为 `tools.verify`。
+`continuation`、`reconciliation` 和 `brand_publication` 对传入的角色、名称、图片引用及文件观察做判定。
 
 当前回归位于 `tests/test_asset_*.py`、`test_text_*.py`、`test_native_index.py`；固定样本及摘要在 `tests/fixtures/`。完整离线检查用 `tools.verify`，正式本地资源库接入检查加 `--resources`。

@@ -5,11 +5,9 @@
 `test_weapons.py` 中校验导航配图与全库源文件存在性的两个用例需要完整维护环境中的登记图片。只有源码时可运行 `tools.equipment.weapons check`、`node --test tests/test_weapon_import.cjs` 和无图预览。
 
 - `resource-corpus.zip`、`equipment-native/hunter/`、`equipment-native/rogue/`、`core-configs.json`、`named-structures.json` 含有实际原生内容。
-- `regression-inputs.json` 登记的 gzip 输入包含固定的历史对照和原生样本。排序、解析、Catalog 生成等普通专项可按实际依赖独立运行。[源码检查示例](../../README.md)
 
 `resource-corpus.zip` 保存文本、原生解析、资源查询和旧回执回归实际读取的固定输入。`resource-corpus.json` 登记原路径、字节数和 SHA-256；测试验证压缩包及每份内容后解到自己的临时目录，结束时清理。历史观察 ID、原始偏移、计数及哈希断言保留，包内 `dist/` 是原记录路径，不读取工作区的历史构建目录。
 
-`regression-inputs.json` 登记几个 Node 回归的 gzip 输入，`fixture-data.cjs` 校验解压字节。`salvaged-native` 只包含既有型号筛选断言需要的 58 份原生定义。
 
 这些固定样本不随游戏更新自动覆盖，也不是当前游戏资料源。默认 `tools.verify` 无需完整私人解包库；已安装当前资源库时，再用 `tools.verify --resources` 检查真实注册输入与资源 manifest。完整原始文件哈希复核使用 `tools.game_resources verify`。
 

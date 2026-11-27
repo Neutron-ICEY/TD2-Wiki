@@ -24,19 +24,21 @@
 
 首页调用 `{{TD2首页消息栏}}`。赛季和活动跟随原生日程，缺少条目时各自保留标题和一行空状态。[消息栏模板](../wiki/templates/TD2首页消息栏.wiki)
 
-赛季沿用游戏日程的 UTC 时间。生成器按 Registry 中的赛季 UID 找到 wrapper，从中读取赛季编号、简体中文名称，并核对宣传图和徽章。更新原生导出及对应的两张图片登记后，运行 `python -m tools.homepage_season --write` 更新日程，省略 `--write` 可检查一致性。原生日程（本地 `resources/game/current/raw_files/hunter/game system data/juice/scheduling/season_wrapper_schedule.mgameschedule`） · 当前赛季定义（本地 `resources/game/current/raw_files/hunter/game system data/juice/seasonwrapper/seasonwrapper_y8s3.mseasonwrapper`） · [生成的首页日程](../wiki/modules/TD2赛季日程.lua)
+完整工程可用 [资源查询](../tools/asset_import/README.md) 追溯下文的原生定义。生成器保存赛季、公告和计划池的输入路径。
+
+赛季沿用游戏日程的 UTC 时间。生成器按 Registry 中的赛季 UID 找到 wrapper，从中读取赛季编号、简体中文名称，并核对宣传图和徽章。更新原生导出及对应的两张图片登记后，运行 `python -m tools.homepage_season --write` 更新日程，省略 `--write` 可检查一致性。[生成的首页日程](../wiki/modules/TD2赛季日程.lua)
 
 封面下方居中显示赛季编号与名称，以及周、日、时倒计时。蓝环中央使用赛季定义 `mySeasonPassIcon` 指定的徽章，环下的结束时间随读者设备时区换算，时区未知或无脚本时显示北京时间。蓝环按「已过时间 ÷ 赛季总时长」从十二点方向顺时针填充，白色方块标出弧尾。首次渲染和浏览器更新均使用同一组赛季起止时刻，结束时切入下一条已登记赛季或空状态。[赛季模块](../wiki/modules/TD2首页赛季.lua)
 
 活动覆盖已登记赛季的赛季活动、全域事件、日历公告及启用的限时计划。中文名称按活动 UID 读取，起止时刻来自赛季内的偏移与持续天数，或计划池的绝对时间。一条限时计划链在轮播中占一张卡。更新解包与配图登记后，运行 `python -m tools.homepage_events --write` 生成活动日程，省略 `--write` 可检查一致性。[活动生成器](../tools/homepage_events.py) · [活动日程](../wiki/modules/TD2活动日程.lua)
 
-日历使用各条目的海报或公告背景。中央公园活动的公告直接指定 `dlc3_event_timeline.dds`。限时计划优先取自身的背景覆盖，否则按活动槽查所属计划来源。“牧羊人”活动的六步计划都使用行动基地来源的 `projects_ui_nz_boo.dds`。中央公园公告（本地 `resources/game/current/raw_files/hunter/game system data/juice/seasonwrapper/seasonwrapperannouncements.juice`） · 牧羊人计划（本地 `resources/game/current/raw_files/hunter/game system data/juice/projects/projects.juice`） · 计划来源与底图（本地 `resources/game/current/raw_files/hunter/game system data/juice/projects/projectsources.juice`）
+日历使用各条目的海报或公告背景。中央公园活动的公告直接指定 `dlc3_event_timeline.dds`。限时计划优先取自身的背景覆盖，否则按活动槽查所属计划来源。“牧羊人”活动的六步计划都使用行动基地来源的 `projects_ui_nz_boo.dds`。
 
-活动日程的海报按游戏的 450 × 600 画框显示。顶部黑条持续显示「进行中」与剩余时间。深色底栏显示类型、名称和图标，鼠标悬停时变为橙色并沿海报向上展开，停在中心徽记外圈下方。鼠标移开即收起。活动类型取原生中文本地化，图标按定义中的图集与 Sprite ID 关联已登记的图片。游戏用完整纹理坐标填充图片区，因此解包中以方形保存的日历图在网页上也按 3∶4 显示。手动填写的普通图片保持自身比例并裁入同一画框。游戏日历面板绘制（本地 `resources/game/current/raw_files/hunter/nodes/compounds/seasons_event_panel.mcompoundnode.decompiled`） · 游戏网格单位（本地 `resources/game/current/raw_files/hunter/global variables/aa40fd0e595106850000420b4c230577.mvar`）
+活动日程的海报按游戏的 450 × 600 画框显示。顶部黑条持续显示「进行中」与剩余时间。深色底栏显示类型、名称和图标，鼠标悬停时变为橙色并沿海报向上展开，停在中心徽记外圈下方。鼠标移开即收起。活动类型取原生中文本地化，图标按定义中的图集与 Sprite ID 关联已登记的图片。游戏用完整纹理坐标填充图片区，因此解包中以方形保存的日历图在网页上也按 3∶4 显示。手动填写的普通图片保持自身比例并裁入同一画框。
 
 到开始时刻显示，到结束时刻撤下。剩余时间在首次渲染和浏览期间都按结束时刻计算。悬停剩余时间可查看完整起止时间，浏览器按读者时区显示，无法识别时区及无脚本时使用北京时间。打开的页面会在活动边界更新。多项每 12 秒轮换，鼠标悬停或键盘焦点在轮播内时暂停，Q/E 和方点可手动翻页。减少动态效果时手动翻页，无脚本时顺序显示渲染时正在进行的活动。编辑者仍可用消息栏的「活动」参数覆盖默认日程。[活动模块](../wiki/modules/TD2首页活动.lua) · [消息卡](../wiki/templates/TD2首页消息卡.wiki)
 
-翻页时海报直接切换，底栏的活动类型、名称和右侧图标在 0.2 秒内从离散色块恢复。溶解时长取自游戏「最新消息」组件。启用减少动态效果时，翻页与底栏展开均即时完成。原生消息组件（本地 `resources/game/current/raw_files/hunter/ui/retained graphs/mainmenu_widgetinfonews.mretuigraph.decompiled`） · 原生溶解动画（本地 `resources/game/current/raw_files/hunter/ui/compounds/anim_triggereddissolve.mcompoundnode.decompiled`）
+翻页时海报直接切换，底栏的活动类型、名称和右侧图标在 0.2 秒内从离散色块恢复。溶解时长取自游戏「最新消息」组件。启用减少动态效果时，翻页与底栏展开均即时完成。
 
 Steam 公告的接口、截图中的两条记录和灰机自动读取实测独立保存。Steam 公告接口验证（完整维护环境的查询记录）
 
@@ -44,24 +46,13 @@ Steam 公告的接口、截图中的两条记录和灰机自动读取实测独�
 
 页首使用通栏华盛顿全景，官方英文 Logo 置于左下方，读屏名称为「全境封锁2」。正文宽度不超过 38rem 时调整取景，将纪念碑留在字标右侧。[官方 Logo](https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2221490/logo.png) · [全景原图](https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2221490/library_hero.jpg)
 
-装备用胸甲图标，武器用制作台的 `main_weapon`。实用工具借用笔记本剪影，感谢名单借用三人盾徽。
-
-「世界资料」使用匹配界面「开放世界探索」的经纬网地球 `world_bracket`。「玩法与活动」使用主线任务的双六边形 `mission_main`。两者均从地图图集的红色通道提取透明剪影。对应图块在 1024 × 1024 图集中的左上角分别为 (64, 256) 和 (192, 64)，大小均为 64 × 64。原生匹配菜单（本地 `resources/game/current/raw_files/hunter/ui/graphs/megamap_automatchmakemenu.muigraph.decompiled`） · 图块定义（本地 `resources/game/current/raw_files/hunter/ui/spritesheets/ui_map_spritesheet.spritesheet.decompiled`） · 地图图集（本地 `resources/game/current/images/hunter/baked/ui/spritesheets/ui_map_spritesheet.png`）
-
-「专精」使用维修站的折线放大镜 `Research_icon`。统计区关注数使用配装图标选择器中的凤凰 `loadout_11`。制作台图集（本地 `resources/game/current/raw_files/hunter/ui/spritesheets/ui_crafting_spritesheet3.spritesheet.decompiled`） · 配装图集（本地 `resources/game/current/raw_files/hunter/ui/spritesheets/ui_loadout_icons_spritesheet.spritesheet.decompiled`）
+栏目图标的文件名见[首页导航](../wiki/templates/TD2首页导航.wiki)，原生图集、区域与来源可查[图片登记](../publishing/registry.json)。需要核实游戏原件时，在完整工程使用[资源查询](../tools/asset_import/README.md)。
 
 首页按需调用「Html:TD2首页样式」。单元使用 Reader 的 `td2-frame` 和「TD2边框角节点」。赛季栏、资料矩阵、「最近更改」和「最新评论」各自在顶部调用「TD2分割线」，两个方形端点与各自栏边对齐。单列时分割线随栏目排列。[分割线模板](../wiki/templates/TD2分割线.wiki) · [角点模板](../wiki/templates/TD2边框角节点.wiki)
 
 有目标的单元复用 `td2-navbox-card` 和 `td2-navbox-name` 的整块链接与焦点框，悬停或聚焦即时切为橙底深色。矩阵通过 `td2-control-palette` 共享 Navbox 的控制颜色。`td2-navbox` 根类用于需要 Reader 移至词条页尾的导航箱。[Reader 样式](../ui/brand-sets/brand-sets.css)
 
-功能方块的宽高比为 15∶16。图标框占单格内宽的 30%，图标和补位 X 的中心都位于格高的 53% 处。列数按首页正文可用宽度切换，在根字号 16px 时取下表数值。
-
-| 正文宽度 | 外层信息 / 资料 | 资料矩阵 |
-| --- | --- | --- |
-| 大于 832px | 三等分，左占一份、右占两份 | 四列三行，末行补两个空位。 |
-| 大于 608px，至 832px | 同上 | 三列四行，末行补两个空位。 |
-| 大于 416px，至 608px | 左右两列等宽 | 两列五行。 |
-| 至 416px | 单列，先完整信息栏、再显示资料区 | 两列五行。双环和两项读数居中。 |
+首页布局、断点、间距及数字比例由[首页样式](../wiki/pages/site/TD2首页样式.wiki)维护。
 
 ## 真实数据与快照
 

@@ -70,7 +70,7 @@ node tools/equipment/import.cjs dist/update-input.json dist/update-review
 
 核心配置作为关联组比较，次属性槽数和插件槽数独立比较。`rules.py` 沿 ArmorItem 的配置 UID、当前 code1/data23 定义及继承读取规则；型号之间不一致的字段保留原值并报告。已有属性槽与随机池关系继续独立更新。PvP 明确没有覆盖时复用基础定义；覆盖存在但无法解析时保留现有 PvP 内容。
 
-新映射必须以原生身份和引用核对，不仅靠同名。品牌型号排除原生内部名含 `milestone` 和 `level数字boost` 的奖励或直升预设；制作变体保留真实制作目标和图纸关联，不能仅按显示名合并。
+新映射必须以原生身份和引用核对，不仅靠同名。品牌型号排除原生内部名含 `milestone` 和 `level数字boost` 的奖励或直升预设；制作变体保留真实制作目标和图纸关联，不能仅按显示名合并。完整工程用 `evidence/equipment/excluded-salvaged-models.json` 保存已确认的 29 个回收型号 UID。
 
 `crafting.py` 扫描当前 Hunter / Rogue 的装备和图纸定义，沿继承、`myCraftedItem`、`myPossibleCraftedItems`、`myGearBrand` 与 `GearSet.myItems` 解析已登记装备的关系。制作变体可以通过唯一品牌 UID 归属补齐；新页面和归属冲突仍需登记或核对。模板、空标签图纸不会被当成有效制作记录；`myIsObtainable`、制作条件、品质覆盖和等级上限独立保留。图纸定义存在不等于现在可以获得。
 

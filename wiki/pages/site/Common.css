@@ -1,20 +1,3 @@
-/* 这里放置的CSS将应用于所有皮肤 */
-.td2-server-status {
-
-    border: 5px solid red;
-
-    background: yellow;
-
-    padding:20px;
-
-}
-
-
-.td2-server-title {
-
-    font-size:30px;
-
-}
 @font-face {
   font-family: "TD2 Latin Sansation";
   src: url("https://fs.huijiwiki.com/www/resources/font/Sansation_Regular.ttf") format("truetype");

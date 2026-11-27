@@ -1,6 +1,6 @@
 # Reader / Editor 数据与构建关系
 
-Root 为 `WEB-TD2-Wiki`，所有维护源共用 Root Git。操作方法见 [装备维护](../../../../docs/equipment-maintenance.md)，构建命令见 [Editor 构建](../../../../ui/editor/production/README.md)。
+以下路径均相对于当前仓库根目录。操作方法见 [装备维护](../../../../docs/equipment-maintenance.md)，构建命令见 [Editor 构建](../../../../ui/editor/production/README.md)。
 
 | 内容 | 维护源与消费方 |
 | --- | --- |
