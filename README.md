@@ -58,7 +58,7 @@ node ui/editor/production/build.cjs dist/editor-review --local-preview
 
 同时使用完整维护工程时，在本仓库一次性配置 `git config --local td2sync.full ../WEB-TD2-Wiki`，按同步说明建立共同检查点。日常用 `& $py -B -m tools.github_sync status` 查看变更，`export` 带入完整工程的修改，`import` 回收协作分支的修改。新增文件按相对路径显式选取，两边都改过的文件逐段合并。[命令和文件范围](docs/github-sync.md)
 
-`.gitignore` 列出可提交的源码范围。新增原创图片时先确认素材来源，再放行具体文件。原生图像、裁切图、游戏导出、抓取快照、凭据和构建目录保留在本机。Git 合并和推送均不会触发灰机 Wiki 发布。
+`.gitignore` 列出可提交的源码范围。新增原创图片时先确认素材来源，再放行具体文件。原生图像、裁切图、游戏导出、抓取快照、凭据和构建目录保留在本机。维护源优先用 Git 保存。导出和发布包在验收后清理，实际回执、固定样本及难以重取的人工资料按[工程约定](AGENTS.md)保留。Git 合并和推送均不会触发灰机 Wiki 发布。
 
 ## 权利与署名
 

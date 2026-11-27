@@ -16,7 +16,7 @@ description: 为 TD2 Wiki 工程任务定位维护源、发现已有工具、梳
 | 稳定身份、页面与图片地址 | `publishing/registry.json`；`tools.identity` / `tools/identity.cjs`；[装备维护](../../../docs/equipment-maintenance.md)、[图片命名](../../../docs/IMAGE-NAMING-STANDARD.md)；当前地址从稳定 ID 解析 |
 | Wiki 首页与资料索引 | [首页维护](../../../docs/homepage.md)；`wiki/pages/site/首页.wiki`、`wiki/templates/TD2首页导航.wiki`；本地预览 `tools.homepage_preview` |
 | 装备导航 | `tools/brand_sets/navbox.py`、`navbox-records.cjs`；`ui/brand-sets/equipment-navbox.json` 负责排序和展开 |
-| 武器页面与导航 | [装备维护的武器资料](../../../docs/equipment-maintenance.md#武器资料)；`tools/equipment/weapon_projection.py`、`weapons.py`、`weapons_preview.py`；`TD2武器.lua` 消费共享装备记录。武器地址按顶级、具名、奇特、特有加前缀，具名入口重定向至原版页锚点，详见装备维护的「稳定身份与地址」。当前控制力图表可由已整理的模型与回放轨迹（`tools.equipment.weapon_chart_study`）重建 |
+| 武器页面与导航 | [装备维护的武器资料](../../../docs/equipment-maintenance.md#武器资料)；`tools/equipment/weapon_projection.py`、`weapons.py`、`weapons_preview.py`；`TD2武器.lua` 消费共享装备记录。武器地址按顶级、具名、奇特、特有加前缀，具名入口重定向至原版页锚点，详见装备维护的「稳定身份与地址」。控制力图表重建方法见装备维护的「武器资料」 |
 | 图片、Sprite 和图集查询 | [资源工具](../../../tools/asset_import/README.md)；`tools.asset_import.library` 及 `data/asset-import/batches.json` |
 | 文本、UID/GUID、原生定义 | 同一资源工具文档；`tools.asset_import.text_library`、`text_evidence.py`、`data/asset-import/text-sources.json`。简体来源为 `game-simplifiedchinese-menus`，英文为 `game-english-menus` |
 | 原始资源更新 | [资源更新](../../../docs/game-resources.md)；日常 `plan --profile wiki` → `apply` → `status`，入口 `tools.game_resources`；失败按原计划重试或 `recover`。可选 `--report-duplicates`；定向未筛选导入用 `--unfiltered`。成功前保留计划与导出；当前库 `resources/game/current/` |

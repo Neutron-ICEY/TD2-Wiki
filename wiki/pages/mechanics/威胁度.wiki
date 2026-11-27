@@ -1,4 +1,3 @@
-<!-- 正文基准：docs/research/threat/wiki-draft.md；编辑参考留在研究目录。 -->
 <div class="td2-threat" style="max-width:54em;line-height:1.85;color-scheme:dark;">
 <div id="td2-threat-content">
 

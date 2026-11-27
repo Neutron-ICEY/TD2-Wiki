@@ -46,7 +46,6 @@
 !/tools/asset_import/ManagedInspector.cs
 !/tools/asset_import/inspect-managed.ps1
 !/tools/title-casefold.json
-!/tools/brand_sets/excluded-salvaged-models.json
 !/tests/*.py
 !/tests/*.cjs
 !/tests/*.js
@@ -60,13 +59,7 @@
 !/tests/fixtures/exotic-percentiles.json
 !/tests/fixtures/huiji-gadget-site-contract.json
 !/tests/fixtures/infobox-native-reference.json
-!/tests/fixtures/milestone-native-members.json
-!/tests/fixtures/phase15-cases.json
-!/tests/fixtures/phase16-acceptance.json
-!/tests/fixtures/phase16-cases.json
 !/tests/fixtures/phase16-pf55-final.json
-!/tests/fixtures/phase16-reader-long.json
-!/tests/fixtures/regression-inputs.json
 !/tests/fixtures/resource-corpus.json
 !/tests/fixtures/equipment-native/sources.json
 !/tests/fixtures/exotic-gear/*.evidence.json

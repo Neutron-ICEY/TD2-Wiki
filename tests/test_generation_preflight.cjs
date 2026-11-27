@@ -8,7 +8,7 @@ test('a dangling generated-target symlink is rejected even when existsSync is fa
  assert.throws(()=>entry.exports.targetPath(root,'wiki/templates/dangling.wiki'),/Symlink/);
 });
 test('late generated path, ownership and duplicate failures leave prior source untouched',()=>{
- const temp=fs.mkdtempSync(path.join(root,'dist/td2-generation-'));
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'td2-generation-'));
  try{
   const first='wiki/templates/first.wiki',second='wiki/templates/second.wiki',sources={[first]:'updated',[second]:'new'};
   fs.mkdirSync(path.dirname(path.join(temp,first)),{recursive:true});fs.writeFileSync(path.join(temp,first),'original');
@@ -22,7 +22,7 @@ test('late generated path, ownership and duplicate failures leave prior source u
   assert.equal(fs.readFileSync(path.join(temp,first),'utf8'),'original');assert(!fs.existsSync(path.join(temp,second)));
   fs.mkdirSync(path.join(temp,second));assert.throws(()=>generated.plan(temp,sources,registry,'test'),/target/);
   assert.equal(fs.readFileSync(path.join(temp,first),'utf8'),'original');
- }finally{assert(path.dirname(temp)===path.join(root,'dist'));fs.rmSync(temp,{recursive:true,force:true});}
+ }finally{assert(path.dirname(temp)===path.resolve(os.tmpdir()));fs.rmSync(temp,{recursive:true,force:true});}
 });
 for(const index of [1,2])for(const mutation of ['manual','missing','duplicate','wrong-generator'])test('exotic generation rejects late '+index+' '+mutation+' before all writes',()=>{
  const file=path.join(root,'tools/exotic_gear/generate.cjs'),real=createRequire(file),entry={exports:{}},writes=[];

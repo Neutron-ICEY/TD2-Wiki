@@ -23,7 +23,6 @@
 自定义调用（非游戏事实）：<nowiki>{{装备标题卡|中文名称=测试装备|英文名称=Test Equipment|图标键=mask|品质=high_end|强调色=#ABC|渐变起色=#345678|渐变止色=#123}}</nowiki>。
 
 品质默认三色只在 ui/brand-sets/brand-sets.css 维护，显式有效值 > 品质默认 > 中性 fallback。
-当前默认色为审核色：NEEDS GAME COLOR VERIFICATION，不声称是官方精确 RGB。
 依赖：Module:TD2颜色、TD2边框角节点、TD2图标及同一 canonical CSS。
 正式调用使用 canonical 名称；维护 registry/生成器，不手改 dist。
 布局在内部 span 上，避免 MediaWiki 插入 mw-headline 后破坏 accent / icon / text 三列。

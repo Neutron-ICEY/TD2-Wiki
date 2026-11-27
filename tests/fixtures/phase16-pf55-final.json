@@ -1,5 +1,5 @@
 {
-  "_说明": "NON-GAME-FACT TEST FIXTURE：Reader 主预览用短占位；名称、图纸、途径、数值、规则、天赋均非游戏事实。长文本回归单独使用 phase16-reader-long.json。",
+  "_说明": "NON-GAME-FACT TEST FIXTURE：Reader 主预览用短占位；名称、图纸、途径、数值、规则、天赋均非游戏事实。",
   "catalog": {
     "schema_version": 2,
     "attributes": [

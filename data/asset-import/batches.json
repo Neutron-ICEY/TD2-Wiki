@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "historical_roots": [],
-  "scope": "Active observations backed by the current game library or byte-identical approved Wiki assets. Frozen source records keep their original IDs and pointers; retired repeat/acceptance batches are available in the project backup.",
+  "scope": "Active observations backed by the current game library or byte-identical approved Wiki assets. Frozen source records keep their original IDs and pointers.",
   "batches": [
     {
       "id": "app-v29-main",
