@@ -6,20 +6,20 @@
   <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="90" height="30" alt="访问 Wiki"></a>
   <br>
   <a href="RIGHTS.md"><img src="docs/readme-assets/buttons/btn-license.png" width="235" height="28" alt="License: MIT · CC BY-SA 3.0 · CC BY 4.0"></a>
-  <a href="#从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="199" height="28" alt="Runtime: Python 3.12+ · Node.js"></a>
+  <a href="#-从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="199" height="28" alt="Runtime: Python 3.12+ · Node.js"></a>
   <a href="AGENTS.md"><img src="docs/readme-assets/buttons/btn-guide.png" width="112" height="28" alt="工程约定"></a>
   <a href="docs/github-sync.md"><img src="docs/readme-assets/buttons/btn-sync.png" width="108" height="28" alt="双仓同步"></a>
 </p>
 
 ## <img src="docs/readme-assets/icons/toc.png" width="20" height="20" align="absmiddle" alt=""> 目录
 
-- [核心构成](#核心构成)
-- [系统架构](#系统架构)
-- [工程地图](#工程地图)
-- [从源码运行](#从源码运行)
-- [公开仓库与完整维护环境](#公开仓库与完整维护环境)
-- [协作与双仓同步](#协作与双仓同步)
-- [权利与署名](#权利与署名)
+- [核心构成](#-核心构成)
+- [系统架构](#-系统架构)
+- [工程地图](#-工程地图)
+- [从源码运行](#-从源码运行)
+- [公开仓库与完整维护环境](#-公开仓库与完整维护环境)
+- [协作与双仓同步](#-协作与双仓同步)
+- [权利与署名](#-权利与署名)
 
 ## <img src="docs/readme-assets/icons/modules.png" width="20" height="20" align="absmiddle" alt=""> 核心构成
 
