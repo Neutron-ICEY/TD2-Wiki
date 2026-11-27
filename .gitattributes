@@ -54,3 +54,4 @@ tests/fixtures/equipment-native/rogue/** -text -whitespace
 /docs/publishing-contract.md td2-manual
 /tools/asset_import/README.md td2-manual
 /tests/fixtures/README.md td2-manual
+/docs/readme-assets/** td2-manual
