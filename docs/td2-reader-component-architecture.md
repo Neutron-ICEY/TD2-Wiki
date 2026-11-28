@@ -7,7 +7,7 @@
 | 原生投影与比较 | `tools/equipment/native.py`、`merge.cjs`、`import.cjs` | 解析已登记原生关系，比较语义字段，保留未变化或不可确认的内容 |
 | 固定资料 | `data/equipment/records.json`、`tools/equipment/database.cjs` | 按实体身份维护各系列固定事实、型号与属性配置，导入与生成共用 |
 | 文本结构 | `ui/editor/src/parser.js`、`source-patches.js`；`tools/equipment/page.cjs` | 解析嵌套模板、定位字段和稳定记录、局部写回与重开检查 |
-| 页面效果 | `page-effects.js`；`TD2资料记录.lua` | 统一效果合同、关联与 Reader 展示 |
+| 页面效果 | `page-effects.js`；`TD2资料记录.lua` | 统一效果传输合同、关联与 Reader 展示 |
 | 装备领域 | `mapped-domain.js`、`page-fields.js`、`mapped-ui.js` | 共用身份、人工字段与表单 |
 | Reader | `TD2资料映射.lua`、`TD2品牌投影.lua`、`TD2装备组投影.lua`、`TD2奇特装备.lua`、`TD2武器.lua` | 组合共享模板与各系列结构，独立于 Editor 运行 |
 | 公共展示 | `TD2装备槽行`、`TD2主属性列表`、`TD2天赋资料`、`品牌图纸列表`、`TD2材料行`、`TD2图标` | 属性、天赋、图纸、材料与图标格式 |
@@ -21,11 +21,13 @@
 
 武器共用一个 Reader 骨架。原版和具名子记录位于同一实体并上下排布，奇特武器与特有武器独立成页；使用共享品质标题卡、章节折叠、天赋与图标、属性行、图纸、获取、人工脚注和页面操作。天赋紧接属性之后、位于武器控制力之前，使用共享灰底标题和天赋正文模板；随机槽以中性正文显示「随机武器天赋」。固定天赋沿用装备组的两级缩进，描述的换行与段落共用基线。具名装备的固定天赋名称可用具名金，其他名称随正文或原文色标着色。各模式保留各自的正文、图标与脚注。完整武器图按原始透明边界排版，保留全部非透明像素，原图文件不裁剪、不重绘；内联宽度受原图有效像素限制，点击使用共享图片查看器。`weapons.py` 复用装备 Navbox 的 markup；武器当前项同时比较页面与自然名称锚点。
 
-装备导航从当前页面和固定资料数据库解析名称与关联，配置只负责排序与展开。`TD2图标` 保留冻结资源映射，图片可用性由对应场景判断。站点 Infobox 是外部基础组件，项目维护自己的参数和样式。
+装备导航使用 `navbox-records.cjs` 只读解析当前页面与 `records.json` 获取名称和关联，不依赖 Editor Runtime；`ui/brand-sets/equipment-navbox.json` 只负责排序与展开。`TD2图标` 保留冻结资源映射，图片可用性由对应场景判断。站点 Infobox 是外部基础组件，项目维护自己的参数和样式。
 
 同一型号和模式下，相邻固定天赋共用正文细分隔线。装备组的件数奖励和部位增强沿用各自的分组标题。资料词条的导航使用 214 px 列和 60 px 卡片，容器窄于两列时使用单列。最后一个正文区块与导航标题的间距由导航上方的 2 rem 控制。
 
-Node 使用 `equipment-inputs.cjs` 直接读取本地目录；浏览器只加载 `catalog.cjs` 生成的实体身份摘要。完整固定事实由 `projection.cjs` 生成 Reader 数据模块。Runtime 只包含程序、人工字段合同、样式与工具链，普通数据更新不改变 Runtime 版本。
+Reader 视觉与排版以桌面端灰机 Wiki 为基准。普通窄屏下的换行、间距、图标占位和局部遮挡不单独优化；任务明确要求或出现实际影响操作的布局与交互缺陷时，仍按对应视口做视觉核查。
+
+Node 使用 `equipment-inputs.cjs` 直接读取本地目录；浏览器只加载 `catalog.cjs` 生成的实体身份摘要。完整固定事实由 `projection.cjs` 生成 Reader 数据模块。Runtime 只包含程序、人工字段合同、样式与工具链，普通数据更新不改变 Runtime 版本。正式构建由 `ui/editor/production/build.cjs` 执行（`--verify-inputs` 校验完整输入集与产物，不重新编译），`tools.brand_sets.production` 按 `publishing/reader-editor-production.json` 组装前端资源，Entry 须按实际 Runtime 回读绑定；详见 [Editor 构建](../ui/editor/production/README.md)。Editor 集中回归入口为 `ui/editor/production/formal.test.cjs`，全套离线检查入口为 `tools.verify`。
 
 ## 属性机制链接
 

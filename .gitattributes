@@ -5,7 +5,6 @@
 *.wiki text eol=lf
 *.wikitext text eol=lf
 *.lua text eol=lf
-.env.example text eol=lf
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -40,18 +39,14 @@ tests/fixtures/equipment-native/rogue/** -text -whitespace
 # These files differ by checkout (machine paths, private evidence, or Git policy).
 /.gitignore td2-manual
 /.gitattributes td2-manual
-/.env.example td2-manual
 /README.md td2-manual
 /AGENTS.md td2-manual
 /.agents/skills/td2-wiki/SKILL.md td2-manual
 /data/asset-import/batches.json td2-manual
 /data/asset-import/ui-project-copies.json td2-manual
-/docs/deployment.md td2-manual
 /docs/equipment-maintenance.md td2-manual
 /docs/game-resources.md td2-manual
-/docs/homepage.md td2-manual
 /docs/hunter-cli.md td2-manual
 /docs/publishing-contract.md td2-manual
-/tools/asset_import/README.md td2-manual
 /tests/fixtures/README.md td2-manual
 /docs/readme-assets/** td2-manual

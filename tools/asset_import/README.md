@@ -2,14 +2,13 @@
 
 原始游戏资源的唯一维护入口是 `resources/game/current/`，导入、差异、完整性和恢复见 [资源更新流程](../../docs/game-resources.md)。本目录查询已有证据、解析原生定义并生成审核候选；不会自动修改人工资料、上传图片或发布 Wiki。
 
-`data/asset-import/batches.json` 和 `text-sources.json` 登记查询来源。活跃图片观察只引用当前原始库或正式 `assets/`；历史批次的 `observations` 白名单保留原数组指针与观察身份，未列入的旧导出不参与查询。`locations.json` 精确重定位来源路径，SHA 不变；项目资产目标用 asset_ref 解析 Registry 当前路径，原生库目标仍用 path。两者只能选一，不按同名或前缀替代。项目派生记录保留历史 derived_file 与独立 asset_ref；发布观察保留原 wiki_filename，通过 registry_id 读取当前文件，并分别输出原资源 asset_id 与 wiki_asset_id。GAV 旧文本及 42 个必要解析片段在 `evidence/asset-import/inputs/`，保持原来源身份；当前原生索引、来源账本及必要人工证据在 `records/`。查询不读取备份目录或旧 Lab。
+`data/asset-import/batches.json` 和 `text-sources.json` 登记查询来源。活跃图片观察只引用当前原始库或正式 `assets/`；历史批次的 `observations` 白名单保留原数组指针与观察身份，未列入的旧导出不参与查询。`locations.json` 精确重定位来源路径，SHA 不变；项目资产目标用 asset_ref 解析 Registry 当前路径，原生库目标仍用 path。两者只能选一，不按同名或前缀替代。项目派生记录保留历史 derived_file 与独立 asset_ref；发布观察保留原 wiki_filename，通过 registry_id 读取当前文件，并分别输出原资源 asset_id 与 wiki_asset_id。GAV 旧文本及 42 个必要解析片段在完整维护环境的 `evidence/asset-import/inputs/`，保持原来源身份；当前原生索引、来源账本及必要人工证据在 `records/`。公开协作副本仅随仓提供已纳入的证据记录，不附带原始游戏库及 `inputs/` 派生片段，因此仅可查询随仓提供的批次与记录。查询不读取备份目录或旧 Lab。
 
 ## 跨批次只读资源检索
 
-在项目根目录执行，解释器按 [AGENTS](../../AGENTS.md) 选择：
+在项目根目录执行，`$py` 按 [README](../../README.md) 或 [AGENTS](../../AGENTS.md#python-与验证) 指向项目 Python 3.12+ 解释器：
 
 ```powershell
-$py = '.\.venv\Scripts\python.exe'
 & $py -B -m tools.asset_import.library batches
 & $py -B -m tools.asset_import.library search ui_inventory_spritesheet --field path --verify
 & $py -B -m tools.asset_import.library duplicates --kind bytes --limit 20

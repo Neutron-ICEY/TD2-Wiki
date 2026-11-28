@@ -8,7 +8,7 @@
 
 - Windows 11、可用的 Python 3.11+ 与 Pillow；复用现有 `tools.asset_import.hunter.exported_record` 登记文件和像素哈希。
 - 固定 Hunter 2.2.9 二进制 SHA-256：`7f7279795df8573ef8211f03ed39b373bdb9c88339df5158291b067d8eccc014`。其它版本直接拒绝。
-- 使用普通交互式桌面运行。Codex 的受限沙箱中曾实测剪贴板粘贴失效；自动化需要获准在沙箱外运行，并不要求管理员权限。
+- 使用普通交互式桌面运行。受限沙箱环境可能导致剪贴板粘贴失效；自动化需要在可访问桌面与剪贴板的环境中运行，不要求管理员权限。
 - 原配置 `%APPDATA%/DTZxPorter/GameTools/config/hunter.dat` 必须存在。会话持有独占只读句柄，使 Hunter 使用内存默认配置，也阻止改写原配置。期间不要打开另一个 Hunter。
 - CLI 会占用前台、鼠标和剪贴板；执行期间不要同时操作桌面。它不会保留原剪贴板内容。锁屏、焦点争夺、窗口尺寸变化会导致失败。
 
@@ -100,7 +100,7 @@ $session = 'dist/hunter-raw-session-001' # 必须是新目录
 
 保留索引来源、资源完整路径、输出文件及角色，`resource_id` 保持 UNKNOWN。原生文本 UID 应由后续定义解析取得，不能把路径或显示名当作 UID。已有 `tools.asset_import.text_evidence` 可读取支持的定义文本；导出本身不会自动接入文本库或确认 Wiki 实体映射。
 
-本轮真实验证：自动启用 Raw Files 后，hunter/ 的 ceramics `.mitem` 和 rogue/ 的品牌 `.mtalent` 查询均成功；一个明确 `.mtalent` 导出成功。批量原生文件的部分失败、双文件登记及取消通过合成测试，尚未进行真实多项原生批量验收。验收记录在 `dist/hunter-raw-cli-20261017-001/acceptance.json`。测试时因其他窗口遮挡曾临时置顶专用测试窗口；CLI 未增加自动置顶，仍会拒绝被遮挡的目标。
+CLI 不自动置顶目标窗口，若目标窗口被其他窗口遮挡将直接拒绝操作。
 
 输出根目录由 `--session` 指定。每次导出创建新 UUID 子目录，不接受已有目录作为一次新会话，不清理或复用旧成果：
 

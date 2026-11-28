@@ -12,11 +12,45 @@ const json=value=>JSON.stringify(value,null,2)+'\n';
 function reviewedJson(value,before){
   return before!==null&&require('node:util').isDeepStrictEqual(value,JSON.parse(before))?before:json(value);
 }
-function install(root,request){
-  const runtime=path.join(require('node:os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe');
-  const venv=process.env.VIRTUAL_ENV&&path.join(process.env.VIRTUAL_ENV,process.platform==='win32'?'Scripts/python.exe':'bin/python');
-  const python=[venv,runtime].find(p=>p&&fs.existsSync(p))||(process.platform==='win32'?'py':'python3');
-  const result=require('node:child_process').spawnSync(python,['-B','-X','utf8',path.join(__dirname,'import_transaction.py')],{cwd:root,encoding:'utf8',input:JSON.stringify(request)});
+const pythonProbe='import hashlib,json,sys;sys.exit(1) if not (sys.version_info>=(3,11) and hasattr(hashlib,"file_digest")) else print(json.dumps({"td2_python":sys.executable}))';
+function probePython(command,args=[],env=process.env){
+  const check=require('node:child_process').spawnSync(command,[...args,'-B','-c',pythonProbe],{encoding:'utf8',env,stdio:['ignore','pipe','ignore']});
+  if(check.error||check.status!==0)return null;
+  const line=(check.stdout||'').trim().split(/\r?\n/).pop();
+  if(!line)return null;
+  try{
+    const parsed=JSON.parse(line);
+    const resolved=typeof parsed?.td2_python==='string'?parsed.td2_python.trim():'';
+    return resolved&&path.isAbsolute(resolved)&&fs.existsSync(resolved)?resolved:null;
+  }catch{return null;}
+}
+function resolvePython(root=projectRoot,env=process.env,probe=probePython){
+  const rel=process.platform==='win32'?'Scripts/python.exe':'bin/python';
+  const explicit=env.TD2_PYTHON&&env.TD2_PYTHON.trim();
+  if(explicit){
+    const command=/[\\/]/.test(explicit)?path.resolve(explicit):explicit;
+    const hit=probe(command,[],env);
+    if(hit===true)return {command,args:[]};
+    if(typeof hit==='string'&&path.isAbsolute(hit))return {command:hit,args:[]};
+    throw new Error('TD2_PYTHON is not a usable Python 3.11+ interpreter: '+explicit);
+  }
+  const candidates=[];
+  if(env.VIRTUAL_ENV)candidates.push({command:path.resolve(env.VIRTUAL_ENV,rel),args:[],checkFile:true});
+  for(const dir of [...new Set([path.resolve(root),projectRoot])]){
+    candidates.push({command:path.join(dir,'.venv',rel),args:[],checkFile:true});
+  }
+  if(process.platform==='win32')candidates.push({command:'py',args:['-3']},{command:'py',args:[]},{command:'python3',args:[]},{command:'python',args:[]});
+  else candidates.push({command:'python3',args:[]},{command:'python',args:[]});
+  for(const candidate of candidates){
+    if(candidate.checkFile&&!fs.existsSync(candidate.command))continue;
+    const hit=probe(candidate.command,candidate.args,env);
+    if(hit===true)return {command:candidate.command,args:candidate.args};
+    if(typeof hit==='string'&&path.isAbsolute(hit))return {command:hit,args:[]};
+  }
+  throw new Error('Python 3.11+ interpreter not found for equipment import transaction. Activate .venv or set TD2_PYTHON.');
+}
+function install(root,request,python=resolvePython(root,process.env)){
+  const result=require('node:child_process').spawnSync(python.command,[...python.args,'-B','-X','utf8',path.join(__dirname,'import_transaction.py')],{cwd:root,encoding:'utf8',input:JSON.stringify(request)});
   if(result.error)throw result.error;
   if(result.status!==0)throw new Error(result.stderr.trim()||'Import interrupted ('+(result.signal||result.status)+')');
   return JSON.parse(result.stdout);
@@ -115,8 +149,10 @@ function main(args,root=projectRoot){
   const request={identity:hash(JSON.stringify([hash(projection),baselineSource,args.includes('--initialize')])),baseline:baselineSource,
     targets:[...filenames.keys(),database.file,...catalogs.files,baselineSource]};
   assert.equal(new Set(request.targets.map(s=>s.toLowerCase())).size,request.targets.length,'Duplicate import target');
-  if(args.includes('--write')&&fs.existsSync(path.join(root,'.cache/equipment-import/pending.json'))){
-    const resumed=install(root,request);
+  const writeMode=args.includes('--write');
+  const python=writeMode?resolvePython(root,process.env):null;
+  if(writeMode&&fs.existsSync(path.join(root,'.cache/equipment-import/pending.json'))){
+    const resumed=install(root,request,python);
     if(resumed){console.log('Completed pending import: dist/'+resumed);return;}
   }
   assert(!fs.existsSync(outputPath),'Use a fresh dist directory');
@@ -147,14 +183,14 @@ function main(args,root=projectRoot){
   const catalogPayloads=new Map();
   for(const file of new Set(result.catalogChanges.map(c=>c.file))){const dest=path.join(outputPath,file);fs.mkdirSync(path.dirname(dest),{recursive:true});catalogPayloads.set(file,json(result.catalogs[file]));fs.writeFileSync(dest,catalogPayloads.get(file));}
   fs.writeFileSync(path.join(outputPath,'result.json'),JSON.stringify({pages:result.pages.map(({before,raw,...r})=>r),catalogs:result.catalogChanges,unavailable:result.unavailable},null,2)+'\n');
-  if(args.includes('--write')){
+  if(writeMode){
     const entry=(target,before,after,artifact)=>({target,before:hash(before),after:hash(after),artifact});
     const entries=result.pages.map(row=>entry(row.source,row.before,row.raw,filenames.get(row.source)));
     entries.push(entry(database.file,beforeDatabase,recordsText,'records.json'));
     for(const [file,before] of Object.entries(beforeCatalogs))entries.push(entry(file,before,catalogPayloads.get(file)??before,file));
     entries.push(entry(baselineSource,beforeBaseline,baselineText,'native-baseline.json'));
-    install(root,{...request,review:path.relative(path.join(root,'dist'),outputPath),entries});
+    install(root,{...request,review:path.relative(path.join(root,'dist'),outputPath),entries},python);
   }
   console.log(result.pages.length+' pages; '+outputs.length+' changed; '+result.catalogChanges.length+' catalog fields changed; '+result.unavailable.length+' unavailable inputs');
 }
-module.exports={plan,reviewNames,validatePage,main};if(require.main===module)main(process.argv.slice(2));
+module.exports={plan,reviewNames,validatePage,resolvePython,main};if(require.main===module)main(process.argv.slice(2));

@@ -47,8 +47,9 @@ Reader 按实际途径逐行显示。普通、定向和开放世界活动奖励�
 
 原始资源更新见 [game-resources.md](game-resources.md)。`tools.equipment.native` 读取当前导出的定义、本地化文本、参数和模式覆盖，按 `data/equipment/native-map.json` 的已确认映射生成投影。
 
+从仓库根目录运行，`$py` 按 [README](../README.md) 或 [AGENTS](../AGENTS.md#python-与验证) 指向项目 Python 3.12+ 解释器（单独执行 `import.cjs --write` 且未激活 `.venv` 时，先设置 `$env:TD2_PYTHON = $py`）：
+
 ```powershell
-$py = '.\.venv\Scripts\python.exe'
 & $py -B -X utf8 -m tools.equipment.native --output dist/update-input.json
 node tools/equipment/import.cjs dist/update-input.json dist/update-review
 ```
@@ -141,9 +142,7 @@ node tools/equipment/catalog.cjs
 
 各生成器先计算并校验整批目标，只写 registry 指定归属的源。模板和目录生成不会重写装备页面。
 
-## 验证与预览
-
-### 武器资料
+## 武器资料
 
 武器沿用 `records.json`、`native-map.json`、`native-baseline.json` 与 `import.cjs`。`武器型号资料` 集合保存原版及其具名子记录；固定数值、原生描述、属性 ID、后坐力配置和配件引用由 `weapon_projection.py` 投影。天赋仍使用共享 `效果资料`，人工天赋脚注、其他资料和正文仍保留在页面。武器页面只调用 `武器信息`；`TD2武器.lua` 共享天赋、获取、图纸、脚注和导航能力。
 
@@ -207,7 +206,7 @@ node tools/equipment/catalog.cjs
 
 每次使用全新 dist 目录；先审核投影和 importer 的差异，再使用 `--write`。完整 `tools.equipment.native` 更新也包含已登记武器。Navbox 使用装备导航的 markup、样式和交互，包含普通、具名、奇特和特有武器；具名卡片链接到原版页内的型号锚点，左侧显示已登记的武器外观，右侧优先显示该型号的固定天赋图标，随机天赋使用半透明枪种图标。奇特武器沿用同一布局，左侧显示枪图，右侧显示天赋图标。武器天赋正文、图标模板与导航按效果 UID 共享已登记图片。补充的稳定资产引用维护在 `data/equipment/weapon-navbox-talents.json`。核实新图时按原生天赋的实际继承关系读取 `myIconSprite`，在指定图集中按 `mySpriteId` 匹配唯一图块；登记前核对图块边界、透明通道和现有图片。无法核实者保留空图标字段。词条导航的桌面卡为 214 × 60 px，单列窄容器按可用宽度排版。当前项同时比较页面和锚点。规划与样式迭代只抽查各类别的代表页，不生成或检查全体页面。静态预览运行实际 Lua，默认生成 ACS-12（含具名）、ACR、圣诞颂歌的原版页、三把奇特及其已关联原版、两把特有武器，以及奇特装备对照；保留完整导航与窄屏入口。未生成的导航目标保留 Wiki 地址。页面操作按匿名读者呈现。运行产物内 `start-preview.ps1` 后打开其打印的本地地址，审核后关闭该服务。编辑表单的往返仍使用下述装备预览及共享 Editor。
 
-### 共享检查
+## 验证与预览
 
 普通资料修改只检查受影响页面的读取、修改、写回与生成结果。共享代码调整运行对应测试；完整检查使用 `tools.verify`，发布准备见 [deployment.md](deployment.md)。
 

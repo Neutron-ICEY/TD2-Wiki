@@ -44,7 +44,7 @@
 | --- | --- | --- |
 | `data/` | 装备与武器记录、制作关系、原生基准与武器图表 | [装备维护](docs/equipment-maintenance.md) |
 | `wiki/` | 首页、各类词条、重定向、模板、Lua 与站点样式 | [首页维护](docs/homepage.md)<br>[组件关系](docs/td2-reader-component-architecture.md) |
-| `ui/` | Reader 样式脚本，JS Editor 源码与构建锁文件 | [组件关系](docs/td2-reader-component-architecture.md) |
+| `ui/` | Reader 样式脚本，JS Editor 源码与构建锁文件 | [组件关系](docs/td2-reader-component-architecture.md)<br>[Editor 构建](ui/editor/production/README.md) |
 | `publishing/` | 稳定 ID、Wiki 标题、本地路径与发布基准 | [发布契约](docs/publishing-contract.md)<br>[图片命名](docs/IMAGE-NAMING-STANDARD.md) |
 | `tools/` | 原生导入、生成器、本地预览、发布准备与同步 | [资源查询](tools/asset_import/README.md)<br>[部署流程](docs/deployment.md) |
 | `tests/`、`evidence/` | 自动化测试、共享夹具、核验依据与图表输入 | [测试夹具](tests/fixtures/README.md) |
@@ -108,11 +108,11 @@ Wiki 业务图片由灰机文件系统及维护者本地资源库管理，本仓
 ```powershell
 git config --local td2sync.full ../../Workspace/WEB-TD2-Wiki
 & $py -B -m tools.github_sync status
-& $py -B -m tools.github_sync export   # 带入完整工程改动
-& $py -B -m tools.github_sync import   # 回收协作仓库改动
+& $py -B -m tools.github_sync export   # 带入完整工程改动（可附加精确相对路径仅同步指定文件）
+& $py -B -m tools.github_sync import   # 回收协作仓库改动（可附加精确相对路径仅同步指定文件）
 ```
 
-`td2-manual` 标记的文件在两个环境中按职责分别维护，详见[同步说明](docs/github-sync.md)。Git 合并与推送不会自动触发灰机 Wiki 发布。
+`td2-manual` 标记的文件在两个环境中按职责分别维护，详见[同步说明](docs/github-sync.md)。本地同步、分支提交、Git 推送 / PR 与灰机 Wiki 线上发布均需各自独立授权；Git 合并与推送不会自动触发灰机 Wiki 发布。
 
 ## <img src="docs/readme-assets/icons/rights.png" width="20" height="20" align="absmiddle" alt=""> 权利与署名
 
