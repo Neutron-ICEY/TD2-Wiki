@@ -11,7 +11,7 @@ description: 为 TD2 Wiki 工程任务定位维护源、发现已有工具、梳
 | --- | --- |
 | 装备资料、导入、线上改动回收 | [装备维护](../../../docs/equipment-maintenance.md)；`tools/equipment/native.py`、`import.cjs`、`sync.cjs`；`data/equipment/records.json`、`native-map.json`、`native-baseline.json` |
 | Reader、模板与 Lua | [组件关系](../../../docs/td2-reader-component-architecture.md)；`wiki/templates/`、`wiki/modules/`；装备组 Reader 源为 `tools/gear_sets/reader.lua` |
-| Reader 样式与交互 | `ui/brand-sets/brand-sets.css`、`brand-sets.js`；站点公共深色样式和字体为 `wiki/pages/site/Common.css`；桌面端设计基线见 [组件关系](../../../docs/td2-reader-component-architecture.md) |
+| Reader 样式与交互 | `ui/brand-sets/brand-sets.css`、`brand-sets.js`；主命名空间阅读页的深色背景由 Reader CSS 维护，站点公共字体为 `wiki/pages/site/Common.css`；桌面端设计基线见 [组件关系](../../../docs/td2-reader-component-architecture.md) |
 | JS Editor、共享数据与构建 | [组件关系](../../../docs/td2-reader-component-architecture.md)、[Editor 构建](../../../ui/editor/production/README.md)；`ui/editor/src/`、`ui/editor/production/build.cjs`；`tools/equipment/catalog.cjs` |
 | 稳定身份、页面与图片地址 | `publishing/registry.json`；`tools.identity` / `tools/identity.cjs`；[装备维护](../../../docs/equipment-maintenance.md)、[图片命名](../../../docs/IMAGE-NAMING-STANDARD.md)；当前地址从稳定 ID 解析 |
 | Wiki 首页与资料索引 | [首页维护](../../../docs/homepage.md)；`wiki/pages/site/首页.wiki`、`wiki/templates/TD2首页导航.wiki`；本地预览 `tools.homepage_preview` |

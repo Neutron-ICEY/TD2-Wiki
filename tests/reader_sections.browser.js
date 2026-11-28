@@ -7,6 +7,17 @@
   function tick() { return new Promise(function (resolve) { setTimeout(resolve, 40); }); }
   function button(id) { return document.getElementById(id).closest('h2').querySelector('.td2-section-toggle'); }
   function visible(selector) { return !!document.querySelector(selector).getClientRects().length; }
+  function modeNotesFixture(modes) {
+    // TD2资料记录 emits one panel per group. Cite replaces each references tag inside that panel.
+    return '<div class="mw-parser-output"><div class="td2-brand td2-gear-set">' + modes.map(function (mode) {
+      return '<div class="td2-brand-panel td2-brand-' + mode.toLowerCase() + '"><sup class="reference" id="cite_ref-' + mode +
+        '"><a href="#cite_note-' + mode + '">[1]</a></sup></div>';
+    }).join('') + '</div><div class="td2-brand td2-gear-footer"><h2 id="expertise">专精</h2><div>Expertise</div>' +
+      modes.map(function (mode) {
+        return '<div class="td2-brand-panel td2-brand-' + mode.toLowerCase() + '"><div class="mw-references-wrap"><ol class="references">' +
+          '<li id="cite_note-' + mode + '"><a href="#cite_ref-' + mode + '">↑</a>Note ' + mode + '</li></ol></div></div>';
+      }).join('<p class="mw-empty-elt"></p>') + '<references></references></div></div>';
+  }
   try {
     content.innerHTML = fixture;
     var original = content.textContent;
@@ -73,6 +84,41 @@
     content.innerHTML = '<div data-td2-js-editor><div class="td2-brand"><h2>Editor control</h2><p>Body</p></div></div>';
     await tick();
     assert('editor controls excluded', !content.querySelector('.td2-section-toggle'));
+
+    for (var modes of [['PvE'], ['PvE', 'PvP']]) {
+      content.innerHTML = modeNotesFixture(modes);
+      await tick();
+      var modeButtons = document.querySelectorAll('.td2-brand-mode-controls button');
+      modeButtons[0].click();
+      var heading = content.querySelector('.td2-gear-footer > h2[data-td2-notes-heading]');
+      var toc = document.querySelector('#toc [data-td2-notes-link] a');
+      assert('one section and TOC link for ' + modes.join('/'), heading && toc &&
+        content.querySelectorAll('[data-td2-notes-heading]').length === 1 &&
+        document.querySelectorAll('#toc [data-td2-notes-link]').length === 1);
+      assert('grouped notes use the shared divider and controls', parseFloat(getComputedStyle(heading).borderBottomWidth) > 0 &&
+        button('注释').getAttribute('aria-controls').split(' ').length === modes.length);
+      button('注释').click();
+      modeButtons[1].click();
+      var dual = modes.length === 2;
+      assert('mode switch preserves fold and hides empty section', button('注释').getAttribute('aria-expanded') === 'false' &&
+        visible('[data-td2-notes-heading]') === dual && visible('#toc [data-td2-notes-link]') === dual);
+      if (!dual) modeButtons[0].click();
+      toc.click();
+      await tick();
+      assert('TOC reopens the group and stays in the selected mode', decodeURIComponent(location.hash) === '#注释' &&
+        visible(dual ? '#cite_note-PvP' : '#cite_note-PvE') &&
+        modeButtons[dual ? 1 : 0].getAttribute('aria-pressed') === 'true');
+      if (dual) assert('inactive PvE notes stay hidden', !visible('#cite_note-PvE'));
+      button('注释').click();
+      for (var run = 0; run < 5; run++) document._td2BrandSetsRuntime.init(document);
+      assert('reinitializing grouped notes keeps one toggle and TOC link', heading === content.querySelector('[data-td2-notes-heading]') &&
+        heading.querySelectorAll('.td2-section-toggle').length === 1 && document.querySelectorAll('#toc [data-td2-notes-link]').length === 1 &&
+        button('注释').getAttribute('aria-expanded') === 'false');
+      modeButtons[0].click();
+      document.querySelector('#cite_ref-PvE a').click();
+      await tick();
+      assert('citation reopens only the active references', visible('#cite_note-PvE') && (!dual || !visible('#cite_note-PvP')));
+    }
   } catch (error) { results.push({error: error.stack}); }
   document.getElementById('results').textContent = JSON.stringify(results, null, 2);
 })();

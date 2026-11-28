@@ -51,7 +51,10 @@
       if(baseline.blockers.length)throw new Error('SAVE_BLOCKED');const errors=validate();if(errors.length)throw new Error(errors[0].message);
       const patches=source.create(document);
       for(const key of Object.keys(rules))if(!state.cellEqual(current.fields[key],baseline.state.fields[key]))patches.set(key,current.fields[key].value||'');
-      if(current.body!==baseline.state.body)patches.replace(range.start,range.end,current.body);
+      if(current.body!==baseline.state.body){
+        const {start,end,text}=body.replacement(document,range,current.body);
+        patches.replace(start,end,text);
+      }
       output=patches.finish(current,read,state.semanticEqual);return {raw:output,state:state.clone(current)};
     }
     return {isMapped:true,isGearSet:document.main.name==='装备组信息',isExoticGear:document.main.name==='奇特装备信息',identity,summary:entity,rules,

@@ -116,3 +116,65 @@ test('zoom eases the projected scale, can reverse mid-flight and honors reduced 
   assert.equal(dataProgress, 1);
   assert.equal(pending.size, 0);
 });
+
+test('chart mounting keeps accuracy controls and recoil data with or without target art', () => {
+  const model = Object.values(catalog.models).find(model => model.angles?.stand && model.angles?.move);
+  const trace = Object.values(catalog.traces)[0];
+  const charts = reader.slice(reader.indexOf('function drawTarget'), reader.indexOf('if (!document._td2BrandSetsRuntime.initWeaponCharts)'));
+  for (const artUrl of ['', '/images/target.png']) {
+    const {document} = require('./editor-dom.cjs').create();
+    const create = document.createElement;
+    const root = create('article');
+    root.dataset = {
+      name: 'Chart sample', angles: JSON.stringify(model.angles),
+      recoil: JSON.stringify(trace), target: JSON.stringify(catalog.target)
+    };
+    const art = artUrl && {currentSrc: artUrl, src: '/images/original.png'};
+    root.querySelector = selector => selector === '.td2-chart-art img' ? art || null : null;
+
+    const body = create('div'), accuracy = create('figure'), recoil = create('figure');
+    const modes = create('div'), board = create('g'), recoilTarget = create('g');
+    accuracy.className = 'spread-panel';
+    recoil.className = 'recoil-component';
+    modes.className = 'modes';
+    board.className = 'board';
+    recoilTarget.className = 'recoil-target';
+    Object.defineProperty(modes, 'firstElementChild', {get: () => modes.children[0]});
+    accuracy.append(board, modes);
+    recoil.append(recoilTarget);
+    body.append(accuracy, recoil);
+    document.createElement = tag => tag === 'div' ? body : create(tag);
+
+    const chosen = [];
+    let mountedTrace;
+    const mount = vm.runInNewContext(charts + '\ninitCharts', {
+      document, panelMarkup: '', stances: {stand: '站立瞄准', move: '移动瞄准'},
+      makeSVG(tag, attrs) {
+        const element = create(tag);
+        for (const [key, value] of Object.entries(attrs)) element.setAttribute(key, value);
+        return element;
+      },
+      mountAccuracy(section, input) {
+        assert.equal(section, accuracy);
+        assert.equal(JSON.stringify(input.angles), root.dataset.angles);
+        return button => chosen.push(button.dataset.mode);
+      },
+      mountRecoil(section, input) {
+        assert.equal(section, recoil);
+        mountedTrace = JSON.stringify(input);
+      }
+    });
+    mount({querySelectorAll: selector => selector.startsWith('.td2-weapon-charts') ? [root] : []});
+    assert.equal(root.dataset.mounted, 'true');
+    assert.deepEqual(chosen, ['stand']);
+    modes.children[1].events.click[0]();
+    assert.deepEqual(chosen, ['stand', 'move']);
+    assert.equal(modes.children[1].getAttribute('aria-pressed'), 'true');
+    assert.equal(mountedTrace, root.dataset.recoil);
+    for (const group of [board, recoilTarget]) {
+      assert.deepEqual(group.children.map(node => node.getAttribute('class')),
+        artUrl ? ['recoil-board', 'recoil-paper', 'recoil-board-edge'] : ['recoil-board', 'recoil-board-edge']);
+      if (artUrl) assert.equal(group.children[1].getAttribute('href'), artUrl);
+    }
+  }
+});

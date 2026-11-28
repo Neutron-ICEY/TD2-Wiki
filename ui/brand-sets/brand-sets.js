@@ -1,6 +1,5 @@
-/* 装备模式渐进增强：不读取、不复制、不存储游戏数值。失败或未加载时两种模式仍可访问。
-   正式 Reader Gadget 默认加载。
-   页面只有一个模式状态，同步套装加成与天赋。 */
+/* TD2 Reader Gadget 负责装备章节、模式切换、导航、页面操作、首页交互和资料图表。
+   源码直接交给灰机 ResourceLoader，须使用其压缩器支持的 ES5 语法。运行时使用现代浏览器 API。 */
 (function () {
   "use strict";
   // ResourceLoader 晚加载、记忆型 content hook 和重复加载共用一个入口。
@@ -39,22 +38,8 @@
     refreshSectionLayout();
   }
 
-  function mountSections(scope) {
-    var content = scope.querySelector('#mw-content-text');
-    scope.querySelectorAll('[data-td2-notes-heading]').forEach(function (heading) {
-      var refs = heading.nextElementSibling;
-      if (!refs || !refs.querySelector('ol.references > li')) heading.remove();
-    });
-    scope.querySelectorAll('[data-td2-notes-link]').forEach(function (item) {
-      if (!scope.getElementById(item.getAttribute('data-td2-notes-link'))) item.remove();
-    });
-    sections.forEach(function (section, heading) {
-      if (heading.isConnected) return;
-      section.nodes.forEach(function (node) { node.classList.remove('td2-section-hidden'); });
-      sections.delete(heading);
-    });
-    if (!content || !content.querySelector('.td2-brand') || content.closest('[data-td2-js-editor], #editform, .ve-init-target')) return;
-    if (typeof mw !== 'undefined' && mw.config && (mw.config.get('wgNamespaceNumber') !== 0 || mw.config.get('wgAction') !== 'view')) return;
+  function unwrapSkinSections(content) {
+    // 拆掉灰机皮肤的折叠壳，让 Reader 接管同一标题和内容的折叠状态。
     content.querySelectorAll('.td2-brand h2[data-toggle="collapse"]').forEach(function (heading) {
       if (heading.closest('[data-td2-js-editor], #editform, .ve-init-target, table, .td2-navbox')) return;
       var boundary = heading.parentElement.matches('.mw-heading2') ? heading.parentElement : heading;
@@ -68,46 +53,107 @@
       heading.classList.remove('secondary', 'collapsed');
       if (/^collapseHead_\d+$/.test(heading.id)) heading.removeAttribute('id');
     });
+  }
+
+  function collectNotes(scope, content) {
+    var groups = new Map();
+    var lastBlock = null, heading = null;
     content.querySelectorAll('.td2-brand .mw-references-wrap').forEach(function (refs) {
       if (refs.closest('[data-td2-js-editor], #editform, .ve-init-target, table, .td2-navbox')) return;
       if (!refs.querySelector('ol.references > li')) return;
-      var previous = refs.previousElementSibling;
-      if (previous && (previous.matches('h2, .mw-heading2'))) return;
-      var heading = scope.createElement('h2');
-      heading.setAttribute('data-td2-notes-heading', '');
-      var title = scope.createElement('span');
-      title.className = 'mw-headline';
-      title.id = '注释';
-      while (scope.getElementById(title.id)) title.id = 'td2-notes-' + (++sectionId);
-      title.textContent = '注释';
-      heading.appendChild(title);
-      refs.before(heading);
-      var list = scope.querySelector('#toc.toc-sidebar > .toc-ul-wrap > ul, #toc > ul');
-      if (list) {
-        var item = scope.createElement('li');
-        item.className = 'toclevel-1';
-        item.setAttribute('data-td2-notes-link', title.id);
-        var link = scope.createElement('a');
-        link.href = '#' + title.id;
-        link.textContent = '注释';
-        item.appendChild(link);
-        var navTitle = content.querySelector('.td2-navbox-heading > .mw-headline[id]');
-        var nextLink = navTitle && list.querySelector('a[href="#' + CSS.escape(navTitle.id) + '"]');
-        if (!nextLink) nextLink = list.querySelector('a[href="#top"], a[href="#firstHeading"]');
-        var nextItem = nextLink && nextLink.closest('li');
-        list.insertBefore(item, nextItem && nextItem.parentElement === list ? nextItem : null);
+      // Lua 为各模式各输出一个面板，标题必须由这些相邻面板共用。
+      var block = refs.parentElement.matches('.td2-brand-panel') ? refs.parentElement : refs;
+      if (block === lastBlock || !block.parentElement.matches('.td2-brand')) return;
+      var previous = block.previousElementSibling;
+      while (previous && previous.matches('p.mw-empty-elt:empty, references:empty')) previous = previous.previousElementSibling;
+      if (!lastBlock || previous !== lastBlock) {
+        heading = null;
+        if (previous && previous.hasAttribute('data-td2-notes-heading')) {
+          heading = previous;
+        } else if (!previous || !previous.matches('h2, .mw-heading2')) {
+          heading = scope.createElement('h2');
+          heading.setAttribute('data-td2-notes-heading', '');
+          var title = scope.createElement('span');
+          title.className = 'mw-headline';
+          title.id = '注释';
+          while (scope.getElementById(title.id)) title.id = 'td2-notes-' + (++sectionId);
+          title.textContent = '注释';
+          heading.appendChild(title);
+          block.before(heading);
+        }
+        if (heading) groups.set(heading, []);
       }
+      if (heading) groups.get(heading).push(block);
+      lastBlock = block;
     });
+    return groups;
+  }
+
+  function addNotesLink(scope, content, title) {
+    var list = scope.querySelector('#toc.toc-sidebar > .toc-ul-wrap > ul, #toc > ul');
+    if (!list) return null;
+    var item = scope.createElement('li');
+    item.className = 'toclevel-1';
+    item.setAttribute('data-td2-notes-link', title.id);
+    var link = scope.createElement('a');
+    link.href = '#' + title.id;
+    link.textContent = title.textContent;
+    item.appendChild(link);
+    var navTitle = content.querySelector('.td2-navbox-heading > .mw-headline[id]');
+    var nextLink = navTitle && list.querySelector('a[href="#' + CSS.escape(navTitle.id) + '"]');
+    if (!nextLink) nextLink = list.querySelector('a[href="#top"], a[href="#firstHeading"]');
+    var nextItem = nextLink && nextLink.closest('li');
+    list.insertBefore(item, nextItem && nextItem.parentElement === list ? nextItem : null);
+    return item;
+  }
+
+  function updateNotesVisibility() {
+    sections.forEach(function (section, heading) {
+      if (!heading.hasAttribute('data-td2-notes-heading')) return;
+      var hidden = section.nodes.every(function (node) { return node.hidden; });
+      if (heading.hidden !== hidden) {
+        heading.hidden = hidden;
+        refreshSectionLayout();
+      }
+      if (section.notesLink) section.notesLink.hidden = hidden;
+    });
+  }
+
+  function mountSections(scope) {
+    var content = scope.querySelector('#mw-content-text');
+    var excluded = '[data-td2-js-editor], #editform, .ve-init-target';
+    if (content && (!content.querySelector('.td2-brand') || content.closest(excluded) ||
+        (typeof mw !== 'undefined' && mw.config && (mw.config.get('wgNamespaceNumber') !== 0 || mw.config.get('wgAction') !== 'view')))) content = null;
+    if (content) unwrapSkinSections(content);
+    var notes = content ? collectNotes(scope, content) : new Map();
+    scope.querySelectorAll('[data-td2-notes-heading]').forEach(function (heading) {
+      if (!notes.has(heading)) heading.remove();
+    });
+    var notesLinks = new Map();
+    scope.querySelectorAll('[data-td2-notes-link]').forEach(function (item) {
+      var title = scope.getElementById(item.getAttribute('data-td2-notes-link'));
+      var heading = title && title.parentElement;
+      if (notes.has(heading)) notesLinks.set(heading, item);
+      else item.remove();
+    });
+    sections.forEach(function (section, heading) {
+      if (heading.isConnected) return;
+      section.nodes.forEach(function (node) { node.classList.remove('td2-section-hidden'); });
+      sections.delete(heading);
+    });
+    if (!content) return;
     content.querySelectorAll('.td2-brand h2').forEach(function (heading) {
       if (heading.closest('[data-td2-js-editor], #editform, .ve-init-target, table, .td2-navbox')) return;
       var boundary = heading.parentElement.matches('.mw-heading2') ? heading.parentElement : heading;
       var parent = boundary.parentElement;
       if (!parent.matches('.td2-brand, .td2-brand-bonus-header, .td2-brand-top')) return;
-      var nodes = [];
-      if (parent.matches('.td2-brand-bonus-header')) {
+      // 注释折叠只接管对应的脚注块，保留后续正文及解析器占位。
+      var noteBlocks = notes.get(heading);
+      var nodes = noteBlocks || [];
+      if (!noteBlocks && parent.matches('.td2-brand-bonus-header')) {
         var bonuses = parent.nextElementSibling;
         if (bonuses && bonuses.matches('.td2-brand-bonuses')) nodes.push(bonuses);
-      } else {
+      } else if (!noteBlocks) {
         var node = boundary.nextSibling;
         while (node && !(node.nodeType === 1 && node.matches('h1, h2, .mw-heading1, .mw-heading2, .td2-navbox'))) {
           var next = node.nextSibling;
@@ -135,6 +181,7 @@
       }
       section.nodes.filter(function (node) { return nodes.indexOf(node) < 0; }).forEach(function (node) { node.classList.remove('td2-section-hidden'); });
       section.nodes = nodes;
+      if (noteBlocks) section.notesLink = notesLinks.get(heading) || addNotesLink(scope, content, heading.querySelector('.mw-headline'));
       section.button.setAttribute('aria-controls', nodes.map(function (node) {
         if (!node.id) {
           var id;
@@ -145,6 +192,7 @@
       }).join(' '));
       setSectionOpen(section, section.open);
     });
+    updateNotesVisibility();
     if (sectionRoot !== content.querySelector('.td2-brand')) {
       sectionRoot = content.querySelector('.td2-brand');
       revealSectionHash(true);
@@ -249,7 +297,11 @@
         if (!open) {
           animations.forEach(function (animation) {
             var target = animation.effect.target;
-            if (target !== body) { animation.commitStyles(); frozen.push(target); }
+            // 子面板先结算可见性，外层只能冻结仍有布局框的交错目标。
+            if (target !== body && target.getClientRects().length) {
+              animation.commitStyles();
+              frozen.push(target);
+            }
           });
         }
         var opacity = animate && !open && !body.hidden ? parseFloat(getComputedStyle(body).opacity) : 1;
@@ -550,7 +602,7 @@
   function homeDateFormat(useServerTimeFor) {
     try {
       var zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      // Use the same Beijing reading as the server if the local zone cannot be identified.
+      // 活动在上海时区沿用「北京时间」标记。无法识别本地时区时也使用这一读数。
       if (!zone || zone === useServerTimeFor) return null;
       var format = new Intl.DateTimeFormat('zh-CN', {timeZone: zone, month: 'numeric', day: 'numeric',
         hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'shortOffset'});
@@ -796,6 +848,7 @@
     mountEquipmentNavigation(scope);
     if (document._td2NavboxMotion) document._td2NavboxMotion();
     mountPageActions(scope);
+    if (document._td2BrandSetsRuntime.initThreatVision) document._td2BrandSetsRuntime.initThreatVision(scope);
     if (document._td2BrandSetsRuntime.initWeaponCharts) document._td2BrandSetsRuntime.initWeaponCharts(scope);
     var anchor = scope.querySelector(".td2-brand");
     var panels = Array.from(scope.querySelectorAll(".td2-brand-panel"));
@@ -815,6 +868,7 @@
           panel.classList.toggle("td2-mode-pvp", active && mode === "PvP" && !panel.classList.contains('td2-gear-effect-group') && !panel.classList.contains('td2-gear-talent-links'));
         });
         buttons.forEach(function (button) { button.setAttribute("aria-pressed", String(button.textContent === mode)); });
+        updateNotesVisibility();
       }
       function addButtons(group) {
         var localButtons = [];
@@ -824,7 +878,6 @@
         button.className = "td2-frame";
 
         button.textContent = mode;
-        // 和模板:TD2边框角节点使用同一 class/四角合同；CSS 几何只有一份。
         var corners = document.createElement("span");
         corners.className = "td2-frame-corners";
         corners.setAttribute("aria-hidden", "true");
@@ -891,8 +944,8 @@
       return n.nodeType===1 && n.querySelector && (
         n.matches("#firstHeading, #td2-js-edit-entry, #ca-edit") || n.querySelector("#firstHeading, #td2-js-edit-entry, #ca-edit") ||
         n.matches(".td2-navbox") || n.querySelector(".td2-navbox") ||
-        n.matches(".td2-brand, .td2-brand-panel, .mw-references-wrap, h2") ||
-        n.querySelector(".td2-brand") || n.querySelector(".td2-brand-panel"));
+        n.matches(".td2-brand, .td2-brand-panel, .mw-references-wrap, .td2-threat-vision, h2") ||
+        n.querySelector(".td2-brand, .td2-brand-panel, .td2-threat-vision"));
     });})) initBrandSets(document);
   }).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['data-toggle']});
   // MediaWiki 动态加载页面片段时复用同一个增强入口；普通浏览器不需要 mw。
@@ -990,8 +1043,15 @@
   }
 
   /* Vision comparison: values and native icons belong to the article markup. */
-  function initVision() {
-    document.querySelectorAll('.td2-threat-distance-figure').forEach(function (figure) {
+  var visionMounts = new Map();
+  function initVision(scope) {
+    visionMounts.forEach(function (destroy, root) {
+      if (!root.isConnected) {
+        destroy();
+        visionMounts.delete(root);
+      }
+    });
+    scope.querySelectorAll('.td2-threat-distance-figure').forEach(function (figure) {
       var plot = figure.querySelector('.td2-threat-distance-plot');
       if (!plot || plot.querySelector('svg')) return;
       // The adjacent table owns the distance values; the ruler only projects them.
@@ -1007,13 +1067,16 @@
       });
       plot.innerHTML = svg + '</g></svg>';
     });
-    document.querySelectorAll('.td2-threat-vision').forEach(function (root) {
-      if (root.dataset.visionMounted) return;
+    scope.querySelectorAll('.td2-threat-vision').forEach(function (root) {
+      if (visionMounts.has(root)) return;
       var scaleIcon = root.querySelector('.vision-scale-source img');
+      var scaleUrl = scaleIcon && scaleIcon.getAttribute('src');
       var panels = Array.from(root.querySelectorAll('.enemy')).map(function (element) {
         var diagram = element.querySelector('.diagram');
         diagram.innerHTML = '<svg class="plot" viewBox="0 0 280 224" role="img"><circle class="vision-reference" cx="140" cy="112" r="94" fill="#eee" fill-opacity=".08" stroke="#eee" stroke-opacity=".45" stroke-width=".85"/><path class="vision-main" fill="#ff6a13" fill-opacity=".28" stroke="none"/><path class="vision-peripheral" fill="#eee" fill-opacity=".14" stroke="none"/><path d="M132.48 18L140 10.48L147.52 18Z" fill="#ddd" fill-opacity=".85"/><circle class="vision-center" cx="140" cy="112" r="2.162" fill="#eee" fill-opacity=".9"/><g aria-label="直径 200 米"><image class="vision-scale-icon" x="118" y="212" width="10" height="10" opacity=".72"/><text x="132" y="221" fill="#b8b8b8" font-family="Arial, Microsoft YaHei, sans-serif" font-size="10">200 米</text></g></svg><span class="missing" hidden>未明确配置</span>';
-        diagram.querySelector('.vision-scale-icon').setAttribute('href', scaleIcon.getAttribute('src'));
+        var icon = diagram.querySelector('.vision-scale-icon');
+        if (scaleUrl) icon.setAttribute('href', scaleUrl);
+        else icon.remove();
         return {
           element: element, data: JSON.parse(element.getAttribute('data-vision')),
           svg: diagram.querySelector('.plot'), main: diagram.querySelector('.vision-main'),
@@ -1027,7 +1090,9 @@
       var selection = {profile: 'default', purpose: 'investigation', state: 'idle'};
       var labels = {profile: {default: '默认', legendary: '传奇'}, purpose: {investigation: '调查', alert: '警戒'}, state: {idle: '待机', combat: '战斗', aim: '瞄准'}};
       var controls = root.querySelector('.controls');
-      [['profile','配置'],['purpose','视野'],['state','状态']].forEach(function (axis) {
+      var events = new AbortController();
+      var options = {signal: events.signal};
+      var rows = [['profile','配置'],['purpose','视野'],['state','状态']].map(function (axis) {
         var row = document.createElement('div'); row.className = 'control-row';
         var label = document.createElement('span'); label.className = 'control-label'; label.textContent = axis[1];
         var buttons = document.createElement('div'); buttons.className = 'buttons'; buttons.setAttribute('role','group'); buttons.setAttribute('aria-label',axis[1]);
@@ -1037,10 +1102,11 @@
           button.addEventListener('click',function () {
             if (selection[axis[0]] === key) return;
             selection[axis[0]] = key; render(true);
-          });
+          }, options);
           buttons.appendChild(button);
         });
         row.append(label,buttons); controls.appendChild(row);
+        return row;
       });
       root.querySelectorAll('.native-icon').forEach(function (icon) {
         var image = icon.querySelector('img');
@@ -1051,18 +1117,18 @@
           // CDN masks require CORS; keep the original image until that request succeeds.
           var maskImage = new Image();
           maskImage.crossOrigin = 'anonymous';
-          maskImage.onload = function () {
+          maskImage.addEventListener('load', function () {
             icon.style.setProperty('--icon','url("'+maskImage.src+'")');
             icon.classList.add('masked');
-          };
+          }, {once: true, signal: events.signal});
           maskImage.src = image.currentSrc || image.src;
         }
-        image.addEventListener('load',mask); mask();
+        image.addEventListener('load',mask,options); mask();
       });
       function sector(angle, radius) {
         if (!angle || !radius) return '';
         var r = 94 * radius / 100;
-        // A full circle has no radial edge. Reuse this path for intermediate sectors.
+        // Two arcs close the full circle without drawing an edge to the centre.
         if (angle === 360) return 'M140 '+(112-r)+'A'+r+' '+r+' 0 1 1 140 '+(112+r)+'A'+r+' '+r+' 0 1 1 140 '+(112-r)+'Z';
         var a = angle * Math.PI / 360, x = r * Math.sin(a), y = r * Math.cos(a);
         return 'M140 112L'+(140-x).toFixed(3)+' '+(112-y).toFixed(3)+'A'+r+' '+r+' 0 '+(angle>180?1:0)+' 1 '+(140+x).toFixed(3)+' '+(112-y).toFixed(3)+'Z';
@@ -1125,17 +1191,19 @@
         }
         frame = requestAnimationFrame(tick);
       }
-      root.dataset.visionMounted = 'true';
       render(false);
-      reduced.addEventListener('change',function () { if (reduced.matches) render(false); });
+      reduced.addEventListener('change',function () { if (reduced.matches) render(false); }, options);
+      visionMounts.set(root, function () {
+        events.abort();
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        rows.forEach(function (row) { row.remove(); });
+      });
     });
   }
-  if (document._td2ThreatVisionRuntime) {
-    document._td2ThreatVisionRuntime();
-  } else {
-    document._td2ThreatVisionRuntime = initVision;
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',initVision,{once:true}); else initVision();
-    if (typeof mw !== 'undefined' && mw.hook) mw.hook('wikipage.content').add(initVision);
+  if (!document._td2BrandSetsRuntime.initThreatVision) {
+    document._td2BrandSetsRuntime.initThreatVision = initVision;
+    if (document.readyState !== 'loading') initVision(document);
   }
 
 // Weapon control charts. Each article owns its stance and native model data.
@@ -1461,9 +1529,9 @@ function drawTarget(node, target, url, onBaseline) {
   }
   var board = target.board;
   if (onBaseline) node.setAttribute("transform", "translate(0 " + -(board[1] + board[3]) + ")");
-  node.append(makeSVG("rect", rect(board, {class:"recoil-board"})),
-    makeSVG("image", rect(target.paper, {href:url, class:"recoil-paper", preserveAspectRatio:"xMidYMid meet"})),
-    makeSVG("rect", rect(board, {class:"recoil-board-edge", fill:"none", "vector-effect":"non-scaling-stroke"})));
+  node.append(makeSVG("rect", rect(board, {class:"recoil-board"})));
+  if (url) node.append(makeSVG("image", rect(target.paper, {href:url, class:"recoil-paper", preserveAspectRatio:"xMidYMid meet"})));
+  node.append(makeSVG("rect", rect(board, {class:"recoil-board-edge", fill:"none", "vector-effect":"non-scaling-stroke"})));
 }
 
 function mountRangeAxis(axis) {
@@ -1506,7 +1574,7 @@ function initCharts(scope) {
   scope.querySelectorAll(".td2-weapon-range-axis:not([data-mounted])").forEach(mountRangeAxis);
   scope.querySelectorAll(".td2-weapon-charts:not([data-mounted])").forEach(function (root) {
     var img = root.querySelector(".td2-chart-art img");
-    if (!img) return;
+    var artUrl = img ? img.currentSrc || img.src : "";
     root.dataset.mounted = "true";
     var target = JSON.parse(root.dataset.target);
     var body = document.createElement("div");
@@ -1517,7 +1585,7 @@ function initCharts(scope) {
     var angles = root.dataset.angles && JSON.parse(root.dataset.angles);
     var availableStances = Object.keys(stances).filter(function (key) { return angles && angles[key]; });
     if (availableStances.length) {
-      drawTarget(accuracy.querySelector(".board"), target, img.currentSrc || img.src, false);
+      drawTarget(accuracy.querySelector(".board"), target, artUrl, false);
       var modes = accuracy.querySelector(".modes");
       var show = mountAccuracy(accuracy, {name:root.dataset.name, angles:angles});
       var select = function (button) {
@@ -1537,7 +1605,7 @@ function initCharts(scope) {
     } else accuracy.remove();
     var recoil = body.querySelector(".recoil-component");
     if (root.dataset.recoil) {
-      drawTarget(recoil.querySelector(".recoil-target"), target, img.currentSrc || img.src, true);
+      drawTarget(recoil.querySelector(".recoil-target"), target, artUrl, true);
       mountRecoil(recoil, JSON.parse(root.dataset.recoil));
     } else recoil.remove();
   });

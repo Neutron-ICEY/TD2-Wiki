@@ -27,6 +27,46 @@ test('untouched existing prose survives field save and changed prose is validate
   }
 });
 
+test('supplemental headings and lists start on their own lines',()=>{
+  const template=raw('烈焰大炮').trimEnd();
+  for(const [suffix,body,expected] of [
+    ['', '== 补充 ==\n* 项目', '\n== 补充 ==\n* 项目'],
+    ['\n\n', '* 项目', '\n\n* 项目'],
+    ['\n[[Category:本地测试]]', '== 补充 ==', '\n== 补充 ==\n[[Category:本地测试]]'],
+    ['<!-- 本地测试 -->\n{{本地测试}}', '* 项目', '\n* 项目\n<!-- 本地测试 -->\n{{本地测试}}'],
+    ['\n旧正文  \r\n<nowiki>受保护</nowiki>\r\n', '* 项目', '\n* 项目  \r\n<nowiki>受保护</nowiki>\r\n'],
+    ['旧正文[[Category:本地测试]]', '== 补充 ==', '\n== 补充 ==\n[[Category:本地测试]]'],
+  ]){
+    const session=open(template+suffix);
+    session.editBody(body);
+    const output=session.serialize().raw;
+    assert.equal(output,template+expected);
+    assert.equal(open(output).state.body,body);
+  }
+});
+
+test('clearing supplemental body drops its terminal separators and preserves protected text',()=>{
+  const template=raw('烈焰大炮').trimEnd(), protectedText='<!-- 边界 -->\n[[分类:测试]]\r\n';
+  for(const [suffix,expected] of [
+    ['\n旧正文',''],
+    ['\r\n  旧正文 \r\n',''],
+    ['\n旧正文'+protectedText,'\n'+protectedText],
+    ['旧正文'+protectedText,'\n'+protectedText],
+    ['\r\n旧正文\r\n'+protectedText,'\r\n\r\n'+protectedText],
+  ]){
+    const session=open(template+suffix);
+    session.editBody('');
+    const output=session.serialize().raw;
+    assert.equal(output,template+expected);
+    assert.equal(open(output).state.body,'');
+  }
+  const withPrefix=open('<!-- 额外前缀 -->\n'+template+'\n原文');
+  assert.throws(()=>withPrefix.editBody('改动'),/BODY_READ_ONLY/);
+  const category=open(template+'\n'+protectedText);
+  category.editBody('[[Category:改动]]');
+  assert.throws(()=>category.serialize(),/分类区域保持只读/);
+});
+
 test('unknown identity, duplicated parameters, retired fields and unsafe text block saving',()=>{
   const text=raw('追悼');for(const bad of [text.replace(/exotic:[a-f0-9]+/,'exotic:unknown'),text.replace('|资料ID=','|常规获取=是\n|资料ID='),text.replace('|资料ID=','|资料ID=duplicate\n|资料ID=')])assert.throws(()=>open(bad).serialize(),/SAVE_BLOCKED/);
   const s=open(text);s.edit('其他机制','<script>alert(1)</script>');assert.throws(()=>s.serialize(),/不支持/);
