@@ -3,13 +3,13 @@
 本仓库维护《全境封锁2》中文灰机 Wiki 的开源站点内容、结构化资料、Lua Reader、浏览器端表单编辑器，以及离线预览与发布工具链。
 
 <p>
-  <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="118" height="38" alt="访问 Wiki"></a>
+  <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="104" height="32" alt="访问 Wiki"></a>
   <br>
-  <a href="RIGHTS.md"><img src="docs/readme-assets/buttons/btn-license.png" width="337" height="38" alt="License: MIT · CC BY-SA 3.0 · CC BY 4.0"></a>
-  <a href="#-从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="298" height="38" alt="Runtime: Python 3.12+ · Node.js"></a>
+  <a href="RIGHTS.md"><img src="docs/readme-assets/buttons/btn-license.png" width="297" height="32" alt="License: MIT · CC BY-SA 3.0 · CC BY 4.0"></a>
+  <a href="#-从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="263" height="32" alt="Runtime: Python 3.12+ · Node.js"></a>
   <br>
-  <a href="AGENTS.md"><img src="docs/readme-assets/buttons/btn-guide.png" width="179" height="38" alt="工程约定"></a>
-  <a href="docs/github-sync.md"><img src="docs/readme-assets/buttons/btn-sync.png" width="172" height="38" alt="双仓同步"></a>
+  <a href="AGENTS.md"><img src="docs/readme-assets/buttons/btn-guide.png" width="157" height="32" alt="工程约定"></a>
+  <a href="docs/github-sync.md"><img src="docs/readme-assets/buttons/btn-sync.png" width="151" height="32" alt="双仓同步"></a>
 </p>
 
 ## <img src="docs/readme-assets/icons/toc.png" width="20" height="20" align="absmiddle" alt=""> 目录
