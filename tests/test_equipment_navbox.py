@@ -1,6 +1,8 @@
 from tools import identity as identity_catalog
 import json
 import re
+import shutil
+import tempfile
 from pathlib import Path
 import unittest
 
@@ -23,10 +25,8 @@ class EquipmentNavboxTests(unittest.TestCase):
         self.assertEqual(len(pages), 37)
         self.assertEqual(len(self.data['named']), 70)
         self.assertEqual([row['target'] for row in self.data['gear_sets']], [row['page_title'] for row in identity_catalog.read_json(ROOT / 'data/gear-sets/sets.json')['sets']])
-        baseline = json.loads((ROOT / 'publishing/baseline.json').read_text(encoding='utf8'))
-        published = {r['title'] for r in baseline['entries'] if r['namespace'] == 0 and r['revision_id'] > 0}
         exotics = {r['title']: r for r in registry['entries']
-                   if r['namespace'] == 0 and (r.get('related_entity') or '').startswith('exotic:') and next((m['from_title'] for m in json.loads((ROOT/'publishing/pending-moves.json').read_text('utf8'))['entries'] if m['id']==r['id']),r['title']) in published}
+                   if r['kind'] == 'pages' and r['namespace'] == 0 and (r.get('related_entity') or '').startswith('exotic:')}
         self.assertEqual({r['target'] for r in self.data['exotics']}, set(exotics))
         self.assertEqual(len(self.data['exotics']), len(exotics))
         equipment = identity_catalog.read_json(ROOT / 'data/equipment/records.json')['entities']
@@ -62,6 +62,28 @@ class EquipmentNavboxTests(unittest.TestCase):
         entity = identity_catalog.read_json(ROOT / 'data/equipment/records.json')['entities'][extra['entity_id']]
         self.assertEqual(entity['fields']['资料类型'], 'unbranded')
         self.assertNotIn('#ifexist:', markup(self.data))
+
+    def test_registered_gear_and_named_anchors_before_first_publication(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for relative in ('publishing/registry.json', 'publishing/pending-moves.json',
+                             'ui/editor/src/parser.js', CONFIG, 'data/equipment/records.json',
+                             'data/brand-sets/brands.json', 'data/brand-sets/equipment-ui.json',
+                             'data/brand-sets/talents.json', 'data/gear-sets/sets.json',
+                             'data/exotic-gear/talents.json'):
+                destination = root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / relative, destination)
+            shutil.copytree(ROOT / 'wiki/pages', root / 'wiki/pages')
+            (root / 'publishing/baseline.json').write_text('{"entries":[]}', encoding='utf8')
+            navigation = project(root)
+        brand = '品牌套装-5.11 Tactical'
+        self.assertIn(brand, {row['target'] for row in navigation['brands']})
+        named = {row['name']: row['target'] for row in navigation['named']}
+        self.assertEqual(named['看守人'], brand + '#named-gear_511_keeper')
+        self.assertEqual(named['死亡之握'], brand + '#named-gear_511_deathgrips')
+        self.assertIn('奇特装备-“土狼”的面具', {row['target'] for row in navigation['exotics']})
+        self.assertEqual(navigation, self.data)
 
     def test_default_open_and_future_section_override(self):
         text = markup(self.data, config=json.loads((ROOT / CONFIG).read_text(encoding='utf8')))

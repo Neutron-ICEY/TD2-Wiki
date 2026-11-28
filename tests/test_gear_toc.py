@@ -53,7 +53,7 @@ class GearTocTests(unittest.TestCase):
                 self.assertEqual(text.count('<references/>'), 1)
                 self.assertLess(footer.index('td2-expertise-card'), footer.index('<references/>'))
                 self.assertRegex(footer, r'<references/></div>\s*<div class="td2-navbox"')
-                self.assertLess(text.rfind('<h2'), text.index('<references/>'))
+                self.assertLess(text.rfind('<h2', 0, text.index('<div class="td2-navbox"')), text.index('<references/>'))
 
     def test_heading_card_default_is_unchanged_and_gear_opt_out_is_structural(self):
         args = {'中文名称': '面具', '英文名称': 'mask', '图标键': 'mask'}
