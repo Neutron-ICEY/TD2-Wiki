@@ -3,7 +3,6 @@
 !*/
 !/.gitignore
 !/.gitattributes
-!/.env.example
 !/README.md
 !/AGENTS.md
 !/LICENSE
@@ -13,7 +12,7 @@
 !/LICENSES/Unicode-3.0.txt
 !/RIGHTS.md
 !/THIRD_PARTY.md
-!/.agents/skills/**/*.md
+!/.agents/skills/td2-wiki/**/*.md
 !/docs/*.md
 !/docs/readme-assets/header-phoenix.png
 !/docs/readme-assets/architecture-dark.png
@@ -125,7 +124,6 @@ __pycache__/
 # Credentials may also be stored as otherwise allowed JSON, scripts or Markdown.
 .env
 .env.*
-!/.env.example
 .npmrc
 .netrc
 _netrc

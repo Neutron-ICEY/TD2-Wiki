@@ -40,7 +40,7 @@
 
 翻页时海报直接切换，底栏的活动类型、名称和右侧图标在 0.2 秒内从离散色块恢复。溶解时长取自游戏「最新消息」组件。启用减少动态效果时，翻页与底栏展开均即时完成。
 
-Steam 公告的接口、截图中的两条记录和灰机自动读取实测独立保存。Steam 公告接口验证（完整维护环境的查询记录）
+Steam 公告的接口、截图中的两条记录和灰机自动读取实测独立保存（完整维护环境的 `docs/steam-news.md`）。
 
 ## 页首、框体和布局
 
@@ -58,22 +58,24 @@ Steam 公告的接口、截图中的两条记录和灰机自动读取实测独�
 
 「模块:TD2首页统计」把编辑数 `NUMBEROFEDITS:R` 放在圆心，对应内侧橙环。下方的页面数使用 `NUMBEROFARTICLES:R`，与「特殊:统计」的内容页面数一致，对应外侧紫环。读数及悬停时的目标均直接显示整数。每圈从十二点顺时针绘制，白色方块跟随弧末端。下一里程碑取严格大于当前计数的最小 2 的幂，弧长占比为「计数 ÷ 下一里程碑」。零和未知都显示空轨道，读数分别显示 0 和破折号。[灰机魔术字](https://www.huijiwiki.com/wiki/帮助:魔术字)
 
-游戏道具栏引用 `styleguide_progressrings`。网页复用其轨道、弧宽、间距和等宽白色端点的关系。中心大数字参照启用等宽数字的 `Number 04`，按圆径缩放，长数字自动缩小。站点优先使用已安装的 Borda Medium，其次使用现有的 Sansation。本地预览从原生导出加载 Borda 数字。统计标题字号为「活动日程」的 1.6 倍，编辑数标签、页面数标签和页面读数均与「活动日程」同字号。环下方用「关注数:」和凤凰图标引出灰机 `NUMBEROFFOLLOWERS` 的实际读数。原生圆心文字（本地 `resources/game/current/raw_files/hunter/ui/compounds/styleguide_circlecentertext_new.mcompoundnode.decompiled`） · 字号预设（本地 `resources/game/current/raw_files/hunter/game system data/juice/ui/presetfonts.juice`） · 原生进度环（本地 `resources/game/current/raw_files/hunter/ui/compounds/styleguide_progressrings.mcompoundnode.decompiled`） · [首页统计模块](../wiki/modules/TD2首页统计.lua)
+游戏道具栏引用 `styleguide_progressrings`。网页复用其轨道、弧宽、间距和等宽白色端点的关系。中心大数字参照启用等宽数字的 `Number 04`，按圆径缩放，长数字自动缩小。站点优先使用已安装的 Borda Medium，其次使用现有的 Sansation。本地预览从原生导出加载 Borda 数字。统计标题字号为「活动日程」的 1.6 倍，编辑数标签、页面数标签和页面读数均与「活动日程」同字号。环下方用「关注数:」和凤凰图标引出灰机 `NUMBEROFFOLLOWERS` 的实际读数。原生依据位于完整维护环境的 `resources/game/current/raw_files/hunter/ui/compounds/styleguide_circlecentertext_new.mcompoundnode.decompiled`、`resources/game/current/raw_files/hunter/game system data/juice/ui/presetfonts.juice` 与 `styleguide_progressrings.mcompoundnode.decompiled` · [首页统计模块](../wiki/modules/TD2首页统计.lua)
 
 「最近更改」使用灰机原生 `<siteactivity style="log" limit="6" />` 显示最近 6 条动态。头像、包含作者和页面链接的动作描述，以及右侧的相对时间均由灰机组件排版。[灰机 Siteactivity](https://www.huijiwiki.com/wiki/帮助:解析器扩展标签#Siteactivity)
 
 「最新评论」紧接「最近更改」，使用灰机原生 `<commentsoftheday />`。评论、回复及空状态均由灰机显示。[灰机 CommentsOfTheDay](https://www.huijiwiki.com/wiki/帮助:解析器扩展标签#CommentsOfTheDay)
 
-本地生成器使用相同的页面、模板、Lua、Reader 样式和脚本。线上服务独有的计数与动态取自注明时间的公开站点快照（本地 `tools/homepage-preview-snapshot.json`），相对时间以采集时刻为准。目录中同时生成可点击的装备和武器索引。
+本地生成器使用相同的页面、模板、Lua、Reader 样式和脚本。线上服务独有的计数与动态取自注明时间的公开站点快照（完整维护环境的 `tools/homepage-preview-snapshot.json`），相对时间以采集时刻为准。目录中同时生成可点击的装备和武器索引。`$py` 按 [README](../README.md) 或 [AGENTS](../AGENTS.md#python-与验证) 指向项目 Python 3.12+ 解释器：
 
 ```powershell
+# 源码副本离线预览（省略本地登记图片与站点快照）
+& $py -B -m tools.homepage_preview dist/home-review --without-assets
+
+# 完整维护环境（含本地登记图片、站点快照与原生字体；若 Lua 依赖在 .cache/python 则先设置 TD2_LUA_TEST_PATH）
 $env:TD2_LUA_TEST_PATH = (Resolve-Path '.cache/python').Path
-& '.\.venv\Scripts\python.exe' -B -m tools.homepage_preview dist/home-review
+& $py -B -m tools.homepage_preview dist/home-review
 ```
 
 `index.html` 可加载本地游戏数字字体，`release.html` 使用站点的字体设置，两者均渲染登记的首页原文。`empty.html` 展示赛季与活动的空状态。站点计数、最近更改和最新评论使用快照，赛季和活动默认跟随实际时钟。传入 `--as-of 2026-11-24T07:59:59Z` 可从指定时刻回放，省略时区时按北京时间解释。附加 `--skin-snapshot` 并指定保存有 `manifest.json` 和 `media/` 的站点备份目录可复现皮肤底图和字体。
-
-源码副本使用 `--without-assets` 预览，省略本地图片和活动快照。
 
 ## 部署与回退
 

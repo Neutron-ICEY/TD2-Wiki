@@ -55,7 +55,7 @@ Registry `id`、`related_entity`、`title`、`source` 分别表示登记身份�
 
 顶层 `file_write_policy` 固定摘要和新文件简介为空，原有文件简介保留，已有文件改名只能原生移动，运行时地址只从 Registry 解析。图片不额外填写原因、说明或摘要；站点若强制要求则停止。禁止复制上传替代移动、旧文件别名、重定向或旧地址回退。迁移项只列在地址迁移清单和冲突清单，不进入普通 CREATE/UPDATE/UPLOAD/UNCHANGED 指令列表。
 
-无 File 重定向的切换不是原子操作。执行前冻结完整消费者候选、备份远端内容和文件历史，按共享消费者形成的依赖组安排短维护窗口。每组文件移动并核实后立即切换该组消费者，所有依赖就绪后才切换全局地址 Helper 与 Reader/Editor。任一占用、版本漂移、身份/历史不匹配或选项不可用即停止扩大范围；按实际成功回执恢复该组。File 回退先核实原地址空闲，再原生逆向 MOVE（仍 `noredirect: true`、原因留空），随后恢复对应消费者备份；不得假设旧地址存在。正文反向移动需单独核实旧标题重定向的历史和目标，不删除占用页来强行回退。
+无 File 重定向的切换不是原子操作，过程可能出现短暂引用失效；执行前备份、按依赖组短维护窗口切换、异常止损以及 File / 正文逆向回退步骤统一见 [部署说明的地址迁移](deployment.md#地址迁移)。
 
 baseline 和图片回执继续保存最后确认的线上旧地址，不能用本地新名替换。只有另行授权、成功移动并核实后才按成功项更新 baseline、回执和临时迁移事务。旧名称仅存在于历史证据或未完成事务中，不作为第二套当前地址。
 
@@ -94,7 +94,7 @@ Editor 新候选按当前源码核对输入集合、工具链、版本与产物�
 }
 ```
 
-缺少 `published_at`、空字符串或不合法时间仍拒绝。回执必须为本 Root 内无链接跳转的受控 JSON、schema 1、相同 target、顶层 `PUBLISHED_VERIFIED`，并且在 `entries` / `completed` 中对该规范目标仅有一个严格匹配的成功记录；标题、namespace、revision、content_hash、observed_at 及资产 file_revision 必须对应。重复 JSON 键、修改的回执和旧字段与 confirmation 冲突均拒绝。现有 `reviewed_by` 要求不变。`observed_at` 只表示回读证据时间，不替代发布时间或新的实时远端观察。
+缺少 `published_at`、空字符串或不合法时间仍拒绝。回执必须为本仓库内无链接跳转的受控 JSON、schema 1、相同 target、顶层 `PUBLISHED_VERIFIED`，并且在 `entries` / `completed` 中对该规范目标仅有一个严格匹配的成功记录；标题、namespace、revision、content_hash、observed_at 及资产 file_revision 必须对应。重复 JSON 键、修改的回执和旧字段与 confirmation 冲突均拒绝。现有 `reviewed_by` 要求不变。`observed_at` 只表示回读证据时间，不替代发布时间或新的实时远端观察。
 
 `reviewed_by` 必须是非空文本。历史回执欠缺审核人时，核对成功回执、留存正文或文件版本后，可署本次复核人的标识，并明确复核日期和依据。原修订、摘要、发布时刻及回执保留原值。
 
@@ -107,7 +107,7 @@ Editor 新候选按当前源码核对输入集合、工具链、版本与产物�
 可选快照放入忽略的 `.publish-local/remote-snapshot.json`，顶层结构也是 schema_version、target、entries。存在的条目包含 title、namespace、`exists: true`、content_hash、revision_id、observed_at，资产另需 file_revision；不存在的条目只需 title、namespace、`exists: false`、observed_at。未列出的对象视为未核实，绝不推断不存在。
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -B -m tools.publish build --snapshot .publish-local/remote-snapshot.json --output dist/<new-review>
+& $py -B -m tools.publish build --snapshot .publish-local/remote-snapshot.json --output dist/<new-review>
 ```
 
 快照只包含公开内容状态，不包含账户会话。采集时用准确页面源文本或原始资产字节计算 hash，不能对浏览器渲染后的 HTML 或复制后被改换行的文本计算。baseline 只能记录审核者实际验证的线上状态，不可把整个 manifest 直接改名充当 baseline。

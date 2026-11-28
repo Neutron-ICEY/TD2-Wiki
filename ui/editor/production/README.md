@@ -1,6 +1,6 @@
 # Editor 构建
 
-从 Root 执行：
+从仓库根目录执行：
 
 ```powershell
 node ui/editor/production/build.cjs dist/editor-review
@@ -15,4 +15,4 @@ node ui/editor/production/build.cjs --verify-inputs dist/editor-review/editor --
 
 Reader / Editor 资源统一由 `tools.brand_sets.production --output <build-directory>` 组装。Runtime 获准发布并取得实际回读后，使用 `--bind-entry <resources-directory> <runtime-receipt.json> <new-bound-directory>` 绑定 Entry。此操作检查实际正文、标题和修订，不能用本地候选代替远端回读。
 
-相关 Editor 回归入口为 `node --test ui/editor/production/formal.test.cjs`。发布操作与真实状态分别以当前任务授权、Root baseline / 回执为准。
+相关 Editor 回归入口为 `node --test ui/editor/production/formal.test.cjs`。发布操作与真实状态分别以当前任务授权、发布基准（`publishing/baseline.json`）及回执为准。
