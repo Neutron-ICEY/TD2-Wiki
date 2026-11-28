@@ -16,6 +16,8 @@
 !/.agents/skills/**/*.md
 !/docs/*.md
 !/docs/readme-assets/header-phoenix.png
+!/docs/readme-assets/architecture-dark.png
+!/docs/readme-assets/architecture-light.png
 !/docs/readme-assets/buttons/btn-wiki.png
 !/docs/readme-assets/buttons/btn-license.png
 !/docs/readme-assets/buttons/btn-runtime.png

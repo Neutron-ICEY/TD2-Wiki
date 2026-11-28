@@ -1,14 +1,15 @@
 ![TD2 Wiki — 《全境封锁2》中文社区 Wiki](docs/readme-assets/header-phoenix.png)
 
-本仓库维护 [灰机 Wiki](https://td2.huijiwiki.com/) 的开源站点内容、结构化资料、Lua Reader、浏览器端表单编辑器，以及离线预览与发布工具链。
+本仓库维护《全境封锁2》中文灰机 Wiki 的开源站点内容、结构化资料、Lua Reader、浏览器端表单编辑器，以及离线预览与发布工具链。
 
 <p>
-  <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="90" height="30" alt="访问 Wiki"></a>
+  <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="118" height="38" alt="访问 Wiki"></a>
   <br>
-  <a href="RIGHTS.md"><img src="docs/readme-assets/buttons/btn-license.png" width="235" height="28" alt="License: MIT · CC BY-SA 3.0 · CC BY 4.0"></a>
-  <a href="#-从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="199" height="28" alt="Runtime: Python 3.12+ · Node.js"></a>
-  <a href="AGENTS.md"><img src="docs/readme-assets/buttons/btn-guide.png" width="112" height="28" alt="工程约定"></a>
-  <a href="docs/github-sync.md"><img src="docs/readme-assets/buttons/btn-sync.png" width="108" height="28" alt="双仓同步"></a>
+  <a href="RIGHTS.md"><img src="docs/readme-assets/buttons/btn-license.png" width="337" height="38" alt="License: MIT · CC BY-SA 3.0 · CC BY 4.0"></a>
+  <a href="#-从源码运行"><img src="docs/readme-assets/buttons/btn-runtime.png" width="298" height="38" alt="Runtime: Python 3.12+ · Node.js"></a>
+  <br>
+  <a href="AGENTS.md"><img src="docs/readme-assets/buttons/btn-guide.png" width="179" height="38" alt="工程约定"></a>
+  <a href="docs/github-sync.md"><img src="docs/readme-assets/buttons/btn-sync.png" width="172" height="38" alt="双仓同步"></a>
 </p>
 
 ## <img src="docs/readme-assets/icons/toc.png" width="20" height="20" align="absmiddle" alt=""> 目录
@@ -31,35 +32,11 @@
 
 ## <img src="docs/readme-assets/icons/arch.png" width="20" height="20" align="absmiddle" alt=""> 系统架构
 
-```mermaid
-flowchart LR
-  subgraph SRC["公开协作源"]
-    DATA["data/\n结构化记录 · 图纸 · 武器图表"]
-    WIKI["wiki/ & ui/\n首页 · 词条正文 · Lua · 前端"]
-  end
-
-  subgraph CORE["身份绑定与工具链"]
-    REG["publishing/registry.json\n稳定 ID · 页面标题 · 资产映射"]
-    TOOLS["tools/\n差异导入 · 生成器 · 离线校验"]
-  end
-
-  subgraph OUT["运行与审核产物"]
-    PREV["本地离线预览\n首页 / 装备 / 武器静态页"]
-    SITE["灰机 Wiki\n首页 · Reader · JS Editor"]
-  end
-
-  LOCAL["完整维护环境（本机）\n游戏解包 · 登记图片 · 发布回执"]
-
-  DATA --> TOOLS
-  WIKI --> TOOLS
-  REG --> TOOLS
-  TOOLS --> PREV
-  TOOLS -- 人工发布 --> SITE
-  LOCAL -. 原生更新与完整配图 .-> TOOLS
-
-  style REG stroke:#ff6a13,stroke-width:2px
-  style LOCAL stroke-dasharray: 4 3
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/readme-assets/architecture-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/readme-assets/architecture-light.png">
+  <img src="docs/readme-assets/architecture-dark.png" width="830" height="342" alt="TD2 Wiki 系统架构：公开协作源与本机完整维护环境经 registry.json 与 tools 工具链输出至本地离线预览及灰机 Wiki">
+</picture>
 
 ## <img src="docs/readme-assets/icons/map.png" width="20" height="20" align="absmiddle" alt=""> 工程地图
 
