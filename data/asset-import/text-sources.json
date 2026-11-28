@@ -6,8 +6,8 @@
       "id": "game-simplifiedchinese-menus",
       "format": "menus_csv",
       "file": "resources/game/current/raw_files/hunter/localization/packages/simplifiedchinese/menus.locpack",
-      "sha256": "73e1cc444765403f8ce5c9ee525f9bd8a13a94b08e51e40075e8baac14dbdbac",
-      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "sha256": "aeb18f1ec3fb35fa3972ce6ceb7bb70b262625c1168e97fbc00a9db093d7402c",
+      "batch_ref": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
       "locale": {
         "namespace": "hunter/localization/packages/simplifiedchinese/menus.locpack",
         "culture": "simplifiedchinese",
@@ -15,14 +15,14 @@
         "language_evidence": "Current manual export native package path: hunter/localization/packages/simplifiedchinese/menus.locpack"
       },
       "manual_provenance": {
-        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
-        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
-        "game_build": "Steam build 26413016"
+        "origin": "HUNTER_GUI_EXPORT_ALL",
+        "current_manual_dataset_id": "hunter-export-all-steam-26862566-20261126-001",
+        "game_build": "Steam build 26862566"
       },
       "evidence": {
         "provenance": {
-          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
-          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+          "file": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
+          "sha256": "e70453fcf0a9e3d72d8a279c7bc5b9616733fb4cafd3ec9f7d5e9887b450d30e"
         }
       }
     },
@@ -30,8 +30,8 @@
       "id": "game-english-menus",
       "format": "menus_csv",
       "file": "resources/game/current/raw_files/hunter/localization/packages/english/menus.locpack",
-      "sha256": "75c5cc2b444ec5c84fb57d9417d97be64ae6ce9afff20e645a51e8ca17f2d2ba",
-      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "sha256": "284215da052e7207bb6b37d330df9af40a36b3424cd5f76d5a472e93293ade8f",
+      "batch_ref": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
       "locale": {
         "namespace": "hunter/localization/packages/english/menus.locpack",
         "culture": "english",
@@ -39,14 +39,14 @@
         "language_evidence": "Current manual export native package path: hunter/localization/packages/english/menus.locpack"
       },
       "manual_provenance": {
-        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
-        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
-        "game_build": "Steam build 26413016"
+        "origin": "HUNTER_GUI_EXPORT_ALL",
+        "current_manual_dataset_id": "hunter-export-all-steam-26862566-20261126-001",
+        "game_build": "Steam build 26862566"
       },
       "evidence": {
         "provenance": {
-          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
-          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+          "file": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
+          "sha256": "e70453fcf0a9e3d72d8a279c7bc5b9616733fb4cafd3ec9f7d5e9887b450d30e"
         }
       }
     },
@@ -54,7 +54,7 @@
       "id": "business-brands",
       "format": "business_brands",
       "file": "data/brand-sets/brands.json",
-      "sha256": "a10835c8c728efe3ab8ea9b620f4aade803427783c26b69136f49be373499123",
+      "sha256": "93757d5f343289a7b47df3afe00859d1c33fdfae1f7b8e7d1babe8865ab78646",
       "batch_ref": null
     },
     {
@@ -68,8 +68,8 @@
       "id": "game-chinesegav-menus",
       "format": "menus_csv",
       "file": "resources/game/current/raw_files/hunter/localization/packages/chinesegav/menus.locpack",
-      "sha256": "1149f6a5906dbab92053739fe18b683a661cdd60aac9bf972cc2b7021c6def9b",
-      "batch_ref": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
+      "sha256": "85acabec6a310491fc5859038d6e6503424657ba1743f3f32e201b7eaac97d80",
+      "batch_ref": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
       "locale": {
         "namespace": "hunter/localization/packages/chinesegav/menus.locpack",
         "culture": "chinesegav",
@@ -78,24 +78,24 @@
       },
       "evidence": {
         "provenance": {
-          "file": "evidence/asset-import/native/game-update-current-20261110-002/provenance.json",
-          "sha256": "63313bad528ad853642730dd98744448095d52a4f836eae791a7c1d99fe465de"
+          "file": "evidence/asset-import/native/game-update-current-26862566-20261126-001/provenance.json",
+          "sha256": "e70453fcf0a9e3d72d8a279c7bc5b9616733fb4cafd3ec9f7d5e9887b450d30e"
         }
       },
       "manual_provenance": {
-        "origin": "HUNTER_GUI_EXPORT_ALL_WIKI_SELECTION",
-        "current_manual_dataset_id": "hunter-export-all-steam-26413016-wiki-20261110-001",
-        "game_build": "Steam build 26413016"
+        "origin": "HUNTER_GUI_EXPORT_ALL",
+        "current_manual_dataset_id": "hunter-export-all-steam-26862566-20261126-001",
+        "game_build": "Steam build 26862566"
       }
     }
   ],
   "native_definitions": {
-    "file": "evidence/asset-import/native/game-update-current-20261110-002/native-definitions.json",
-    "sha256": "8b739e024e13210665451f4c2f238d733ae9ff8823cab2f79506232add2c300d"
+    "file": "evidence/asset-import/native/game-update-current-26862566-20261126-001/native-definitions.json",
+    "sha256": "7ddeb41a5bb1c144761a6368e4a470a5c957c756a9399f6d64dfd2467c168957"
   },
   "native_references": {
-    "file": "evidence/asset-import/native/game-update-current-20261110-002/native-references.json",
-    "sha256": "cab3d0291ceb85190480a8fdd2a75b780b94535d448ead1908c70683701ff881",
+    "file": "evidence/asset-import/native/game-update-current-26862566-20261126-001/native-references.json",
+    "sha256": "33f58438616e2e533d5bc488ed757f80c19dacc79354a20dbb4fce187c55d8e0",
     "target_sources": [
       "game-english-menus",
       "game-simplifiedchinese-menus"

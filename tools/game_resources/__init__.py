@@ -2,6 +2,7 @@ import argparse
 from collections import Counter
 from contextlib import contextmanager
 from datetime import datetime, timezone
+from dataclasses import dataclass
 import hashlib
 import json
 import os
@@ -150,7 +151,7 @@ def locked(store):
                 fcntl.flock(stream, fcntl.LOCK_UN)
 
 
-def files_in(base, prefix='', excluded=(), skipped=None):
+def files_in(base, prefix='', excluded=(), skipped=None, discovery=None):
     with os.scandir(base) as entries:
         items = sorted(entries, key=lambda entry: (entry.name + ('/' if entry.is_dir(follow_symlinks=False) else '')).casefold())
     seen = set()
@@ -161,14 +162,17 @@ def files_in(base, prefix='', excluded=(), skipped=None):
         info = entry.stat(follow_symlinks=False)
         require(not linked(info), 'LINK_NOT_ALLOWED: ' + name)
         if stat.S_ISDIR(info.st_mode):
-            if name.casefold() in excluded:
+            key = name.casefold()
+            whole = discovery is None or key in discovery.directories
+            if key in excluded or not whole and key not in discovery.parents:
                 if skipped is not None:
                     skipped.add(name)
                 continue
-            yield from files_in(entry.path, name + '/', excluded, skipped)
+            yield from files_in(entry.path, name + '/', excluded, skipped, None if whole else discovery)
         else:
             require(stat.S_ISREG(info.st_mode), 'NOT_A_REGULAR_FILE: ' + name)
-            yield name, Path(entry.path), info
+            if discovery is None or name.casefold() in discovery.paths:
+                yield name, Path(entry.path), info
 
 
 def fingerprint(path, before):
@@ -185,7 +189,7 @@ def fingerprint(path, before):
     return result
 
 
-def inventory(base, output, source_id, excluded=(), timing=None, report_duplicates=False):
+def inventory(base, output, source_id, excluded=(), timing=None, report_duplicates=False, discovery=None):
     timing = timing or Timings()
     excluded = frozenset(p.casefold() for p in excluded)
     skipped = set()
@@ -203,7 +207,7 @@ def inventory(base, output, source_id, excluded=(), timing=None, report_duplicat
     count = total = 0
     try:
         with Path(output).open('xb') as stream:
-            for name, path, info in timed_files(files_in(base, excluded=excluded, skipped=skipped), timing):
+            for name, path, info in timed_files(files_in(base, excluded=excluded, skipped=skipped, discovery=discovery), timing):
                 with timing.stage('resource_hash', files=1, bytes=info.st_size):
                     sha = fingerprint(path, info)
                 with timing.stage('manifest_write', files=1):
@@ -432,7 +436,13 @@ def merge(before, imported, scopes, output, operations):
     return {'changes': dict(counts), 'wiki_review': dict(impacts)}
 
 
-def make_plan(root, source, source_metadata, output, complete_scopes=(), profile=None, report_duplicates=False):
+@dataclass
+class PlanValidation:
+    """Only populated by this process after parsing and freezing a successful plan."""
+    plan_sha256: str | None = None
+
+
+def make_plan(root, source, source_metadata, output, complete_scopes=(), profile=None, report_duplicates=False, *, validation=None, coverage_check=None):
     """Compare an isolated export with the registered library; only explicit complete scopes imply deletions."""
     root = Path(root).resolve()
     store = store_at(root)
@@ -449,13 +459,21 @@ def make_plan(root, source, source_metadata, output, complete_scopes=(), profile
     for scope in scopes:
         require(child(source, scope).is_dir(), 'COMPLETE_SCOPE_DIRECTORY_MISSING: ' + scope)
     with Timings('plan') as timing, locked(store):
-        selection = dependency_snapshot = layer_evidence = None
+        selection = dependency_snapshot = layer_evidence = discovery = None
         if profile:
             from .selection import load_selection, dependencies, check_unchanged
             from .layers import inspect_layers
             selection = load_selection(root, profile)
             layer_evidence = timing.call('layer_validation', inspect_layers, source, selection)
-            dependency_snapshot = timing.call('dependency_check', dependencies, root, selection)
+            if profile == 'daily':
+                from .selection import DiscoveryPaths
+                required = set()
+                dependency_snapshot = timing.call('dependency_check', dependencies, root, selection, required_output=required)
+                if coverage_check is not None:
+                    coverage_check(selection, required)
+                discovery = DiscoveryPaths(selection['discovery_directories'], required)
+            else:
+                dependency_snapshot = timing.call('dependency_check', dependencies, root, selection)
             import_scope = {'mode': 'partial', 'selection': selection}
             require(source_metadata.get('import_scope', import_scope) == import_scope, 'SOURCE_IMPORT_SCOPE_CONFLICT')
             source_metadata = {**source_metadata, 'import_scope': import_scope}
@@ -467,7 +485,7 @@ def make_plan(root, source, source_metadata, output, complete_scopes=(), profile
         output.mkdir(parents=True)
         stats = timing.call('inventory', inventory, source, output / 'incoming.jsonl', source_id,
                             excluded=selection['excluded_directories'] if selection else (), timing=timing,
-                            report_duplicates=report_duplicates)
+                            report_duplicates=report_duplicates, discovery=discovery)
         require(stats['files'] or scopes, 'EMPTY_PARTIAL_IMPORT')
         summary = timing.call('manifest_merge', merge, store / 'manifest.jsonl', output / 'incoming.jsonl', scopes,
                         output / 'next.jsonl', output / 'operations.jsonl')
@@ -484,7 +502,10 @@ def make_plan(root, source, source_metadata, output, complete_scopes=(), profile
             if selection.get('layer_types'):
                 plan['layer_evidence'] = layer_evidence
         write_json(output / 'plan.json', plan)
-        (output / 'plan.sha256').write_text(digest(output / 'plan.json') + '\n', encoding='ascii')
+        plan_hash = digest(output / 'plan.json')
+        (output / 'plan.sha256').write_text(plan_hash + '\n', encoding='ascii')
+        if validation is not None:
+            validation.plan_sha256 = plan_hash
     return {'status': 'planned', 'plan': str(output), **plan['summary'], 'timings': timing.result()}
 
 
@@ -588,22 +609,23 @@ def finish_receipt(store):
             os.replace(pending, target)
 
 
-def apply_plan(root, directory, allow_deletions=False):
+def apply_plan(root, directory, allow_deletions=False, *, validation=None):
     """Install a frozen change set. Failures remain pending for forward retry."""
     store = store_at(root)
     with Timings('apply') as timing, locked(store):
-        receipt = apply_locked(root, store, directory, allow_deletions, timing)
+        receipt = apply_locked(root, store, directory, allow_deletions, timing, validation)
     return {'status': 'applied', 'content_checked': True, 'content_scope': 'changed_files',
             **receipt, 'timings': timing.result()}
 
 
-def apply_locked(root, store, directory, allow_deletions, timing):
+def apply_locked(root, store, directory, allow_deletions, timing, validation=None):
     directory = no_links(Path(directory).absolute())
     transaction = no_links(store / '.transaction')
     with timing.stage('prepare_update'):
         pending = update_state(store) if transaction.exists() else None
         plan = timing.call('plan_validation', check_plan, store, directory)
         plan_sha = digest(directory / 'plan.json')
+        reuse = validation is not None and validation.plan_sha256 == plan_sha
         if pending:
             require(pending['plan'] == str(directory) and pending['plan_sha256'] == plan_sha, 'PENDING_UPDATE_PLAN_MISMATCH')
             allow_deletions = allow_deletions or pending['allow_deletions']
@@ -613,9 +635,11 @@ def apply_locked(root, store, directory, allow_deletions, timing):
                     digest(store / 'source.json') == plan['base_metadata_sha256'], 'STALE_RESOURCE_PLAN')
         require(not plan['summary']['changes']['deleted'] or allow_deletions, 'DELETIONS_REQUIRE_ALLOW_DELETIONS')
         proposed = read_json(directory / 'sources.json')
-        inspected = timing.call('manifest_next', manifest_info, directory / 'next.jsonl', proposed['sources'])
-        for key in ('files', 'bytes', 'source_counts', 'manifest_sha256'):
-            require(inspected[key] == proposed[key], 'PLAN_METADATA_MISMATCH')
+        # The frozen plan and its artifact hashes identify the bytes already parsed in make_plan.
+        if not reuse:
+            inspected = timing.call('manifest_next', manifest_info, directory / 'next.jsonl', proposed['sources'])
+            for key in ('files', 'bytes', 'source_counts', 'manifest_sha256'):
+                require(inspected[key] == proposed[key], 'PLAN_METADATA_MISMATCH')
         for source_id, value in proposed['sources'].items():
             require(metadata(value)['source_id'] == source_id, 'PLAN_SOURCE_ID_MISMATCH')
         if not pending:
@@ -634,8 +658,9 @@ def apply_locked(root, store, directory, allow_deletions, timing):
             from .selection import dependencies, check_unchanged
             require(not scopes and not plan['summary']['changes']['deleted'], 'FILTERED_COMPLETE_SCOPE_NOT_ALLOWED')
             timing.call('dependency_recheck', check_unchanged, root, selection, plan['dependencies'], source, plan.get('layer_evidence'))
-            require(timing.call('dependency_check', dependencies, root, selection) == plan['dependencies'],
-                    'RESOURCE_DEPENDENCIES_CHANGED')
+            if not reuse:
+                require(timing.call('dependency_check', dependencies, root, selection) == plan['dependencies'],
+                        'RESOURCE_DEPENDENCIES_CHANGED')
         check_complete_scopes(source, scopes)
         with timing.stage('apply_files'):
             inputs = ResourcePaths(source)
@@ -730,7 +755,7 @@ def main(argv=None):
     plan_parser.add_argument('--complete-scope', action='append', default=[])
     plan_parser.add_argument('--report-duplicates', action='store_true', help='Opt in to the temporary duplicate-content report.')
     selection = plan_parser.add_mutually_exclusive_group()
-    selection.add_argument('--profile', choices=['wiki'], default='wiki',
+    selection.add_argument('--profile', choices=['wiki','daily'], default='wiki',
                            help='Resource selection profile (default: wiki for routine Wiki updates).')
     selection.add_argument('--unfiltered', dest='profile', action='store_const', const=None,
                            help='Scan the entire supplied source for investigation or targeted exports.')

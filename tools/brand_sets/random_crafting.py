@@ -11,12 +11,19 @@ def load(root=None):
     native = json.loads((root / 'data/equipment/crafting.json').read_text('utf-8'))
     records = json.loads((root / 'data/equipment/records.json').read_text('utf-8'))['entities']
     data = {'schema_version':1,'brands':{},'recipes':[]}
+    pages = {}
+    for row in identity.registry(root):
+        if row['kind'] == 'pages' and row.get('related_entity'):
+            pages.setdefault(row['related_entity'], []).append(row['title'])
     for uid,blueprint in native['blueprints'].items():
         if not blueprint['random']:continue
         targets=[];slots=set()
         for target in blueprint['targets']:
             item=native['items'][target];entity=records[item['entity_id']];brand=item['brand_uid'];slots.add(item['slot'])
-            data['brands'][brand]={'entity_id':item['entity_id'],'name':entity['fields']['套装全称'],'page':identity.page(item['entity_id'],root)['title']}
+            titles = pages.get(item['entity_id'], [])
+            if len(titles) != 1:
+                raise ValueError('PAGE_IDENTITY_NOT_UNIQUE: ' + item['entity_id'])
+            data['brands'][brand]={'entity_id':item['entity_id'],'name':entity['fields']['套装全称'],'page':titles[0]}
             targets.append({'item_uid':target,'brand_uid':brand})
         if len(slots)!=1:raise ValueError('Random recipe crosses equipment slots')
         data['recipes'].append({'uid':uid,'slot':next(iter(slots)),'name':blueprint['name'],'targets':targets})

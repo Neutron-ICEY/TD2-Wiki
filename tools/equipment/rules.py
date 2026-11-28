@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from tools.brand_sets.native_structure import StructureReader, contexts, minor_count, mod_count
+from .native_tree import item_generation_version
 
 COLORS={'43A2C97052209A23000004CDD0FB54EC':'red','5D4179F15AC362CC0001190A8D09DA48':'blue','5D4179F15BF80F4E00032B980881308F':'yellow'}
 SLOTS={'Face':'mask','Back':'backpack','Chest':'chest','Hands':'gloves','Thighs':'holster','Knees':'kneepads'}
@@ -12,11 +13,12 @@ class EquipmentRules:
 
     def index(self):
         if self.configs:return
-        for path in sorted(self.native.root.glob('hunter/game system data/juice/itemgeneration/configs/*code1_data23.mitemgenerationconfigs')):
+        version = item_generation_version(self.native)
+        for path in sorted(self.native.root.glob(f'hunter/game system data/juice/itemgeneration/configs/*{version}.mitemgenerationconfigs')):
             document=self.reader.read(path)
             for link in document['links']:
                 if link['field']=='myItemGenerationConfigLink':self.configs.setdefault(link['target_uid'],[]).append((path,document['resources'][link['source_index']]['internal_name']))
-        for path in sorted(self.native.root.glob('hunter/game system data/juice/itemgeneration/attributelists/*code1_data23.mitemgenerationattributelists')):
+        for path in sorted(self.native.root.glob(f'hunter/game system data/juice/itemgeneration/attributelists/*{version}.mitemgenerationattributelists')):
             for row in self.reader.read(path)['resources']:
                 if row['resource_type']=='AttributeListContainer':self.pools[row['resource_uid']]=(path,row['internal_name'])
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "maintenance_notes": "按发放入口和目标 UID 核对常规获取。限定和待核实记录保留在资料中。",
-  "recipe_grants_verified_through": "2026-11-23",
+  "recipe_grants_verified_through": "2026-11-27",
   "native_route_rules": {
     "retaliation_blueprint": {
       "entry_uid": null,

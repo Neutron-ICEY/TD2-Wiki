@@ -1,8 +1,65 @@
 """Local template expansion boundary; Lua modules execute through LuaBoundary."""
 
 import re
+from functools import lru_cache
 from datetime import date, datetime, timezone
 from html import escape
+
+
+@lru_cache(maxsize=4096)
+def named_argument(part):
+    # 只有参数顶层的=才分隔name/value。嵌套#switch/#if的=不把
+    # TD2主属性列表的第1个位置参数错误变成具名参数。
+    stack, pos = [], 0
+    while pos < len(part):
+        if part.startswith('{{', pos):
+            width = 3 if part.startswith('{{{', pos) else 2
+            stack.append(width); pos += width
+        elif stack and part.startswith('}' * stack[-1], pos):
+            pos += stack.pop()
+        elif part.startswith('[[', pos):
+            end = part.find(']]', pos)
+            if end < 0: raise AssertionError('未闭合链接')
+            pos = end + 2
+        elif part[pos] == '=' and not stack:
+            return part[:pos], part[pos+1:]
+        else: pos += 1
+    return None
+
+
+@lru_cache(maxsize=1024)
+def segments(source):
+    """Cache syntax only. Arguments, Lua, references and selected branches are evaluated each time."""
+    def node(pos, width):
+        parts, begin = [], pos
+        while pos < len(source):
+            if source.startswith("}" * width, pos):
+                parts.append(source[begin:pos])
+                return parts, pos + width
+            if source.startswith("{{", pos):
+                _, pos = node(pos + (3 if source.startswith("{{{", pos) else 2), 3 if source.startswith("{{{", pos) else 2)
+            elif source.startswith("[[", pos):
+                end = source.find("]]", pos)
+                if end < 0: raise AssertionError("未闭合链接")
+                pos = end + 2
+            elif source[pos] == "|":
+                parts.append(source[begin:pos]); pos += 1; begin = pos
+            else: pos += 1
+        raise AssertionError("未闭合调用")
+
+    chunks = []
+    position = 0
+    while position < len(source):
+        opening = source.find('{{', position)
+        if opening < 0:
+            chunks.append(source[position:])
+            break
+        if opening > position:
+            chunks.append(source[position:opening])
+        width = 3 if source.startswith('{{{', opening) else 2
+        parts, position = node(opening + width, width)
+        chunks.append((tuple(parts), width))
+    return tuple(chunks)
 
 
 class WikiSubset:
@@ -10,6 +67,7 @@ class WikiSubset:
         self.root = root
         self.existing_files = set(existing_files)
         self.sources = sources or {}
+        self._disk_templates = {}
         self.acquisition = acquisition or {"methods": []}
         self.projection_modules = projection_modules
         self.infobox_calls = []
@@ -27,7 +85,9 @@ class WikiSubset:
         relative = "wiki/templates/" + name + ".wiki"
         source = self.sources.get(relative)
         if source is None:
-            source = (self.root / relative).read_text(encoding="utf-8")
+            if relative not in self._disk_templates:
+                self._disk_templates[relative] = (self.root / relative).read_text(encoding="utf-8")
+            source = self._disk_templates[relative]
         source = re.sub(r"<noinclude>.*?</noinclude>", "", source, flags=re.S)
         source = re.sub(r"<!--.*?-->", "", source, flags=re.S)
         source = source.replace("<includeonly>", "").replace("</includeonly>", "")
@@ -38,42 +98,8 @@ class WikiSubset:
             self.template_frames.pop()
 
     def expand(self, source, params):
-        def named_argument(part):
-            # 只有参数顶层的=才分隔name/value。嵌套#switch/#if的=不把
-            # TD2主属性列表的第1个位置参数错误变成具名参数。
-            stack, pos = [], 0
-            while pos < len(part):
-                if part.startswith('{{', pos):
-                    width = 3 if part.startswith('{{{', pos) else 2
-                    stack.append(width); pos += width
-                elif stack and part.startswith('}' * stack[-1], pos):
-                    pos += stack.pop()
-                elif part.startswith('[[', pos):
-                    end = part.find(']]', pos)
-                    if end < 0: raise AssertionError('未闭合链接')
-                    pos = end + 2
-                elif part[pos] == '=' and not stack:
-                    return part[:pos], part[pos+1:]
-                else: pos += 1
-            return None
-
-        # 先分出原始分支，按选中的分支展开；#arraymap 必须先替换局部变量。
-        def node(pos, width):
-            parts, begin = [], pos
-            while pos < len(source):
-                if source.startswith("}" * width, pos):
-                    parts.append(source[begin:pos])
-                    return parts, pos + width
-                if source.startswith("{{", pos):
-                    _, pos = node(pos + (3 if source.startswith("{{{", pos) else 2), 3 if source.startswith("{{{", pos) else 2)
-                elif source.startswith("[[", pos):
-                    end = source.find("]]", pos)
-                    if end < 0: raise AssertionError("未闭合链接")
-                    pos = end + 2
-                elif source[pos] == "|":
-                    parts.append(source[begin:pos]); pos += 1; begin = pos
-                else: pos += 1
-            raise AssertionError("未闭合调用")
+        if '{{' not in source:
+            return source
 
         def evaluate(parts, width):
             expand = lambda x: self.expand(x, params)
@@ -156,12 +182,4 @@ class WikiSubset:
                     nested[str(ordinal)] = expand(part).strip(); ordinal += 1
             return self.template(head, nested)
 
-        result, position = "", 0
-        while position < len(source):
-            if source.startswith("{{", position):
-                width = 3 if source.startswith("{{{", position) else 2
-                parts, position = node(position + width, width)
-                result += evaluate(parts, width)
-            else:
-                result += source[position]; position += 1
-        return result
+        return ''.join(item if isinstance(item, str) else evaluate(*item) for item in segments(source))

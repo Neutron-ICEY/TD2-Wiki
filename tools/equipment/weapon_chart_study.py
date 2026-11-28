@@ -9,7 +9,7 @@ import zipfile
 from .weapon_spread import NEMESIS, cone_angles
 
 ROOT = Path(__file__).resolve().parents[2]
-STUDY = Path('evidence/research/weapon-charts-26413016')
+STUDY = Path('evidence/research/weapon-charts-26862566')
 CATALOG = Path('data/equipment/weapon-charts.json')
 SIGNATURE_RECOIL_UID = "028db20a5ca4b93c000352e84077d974"  # 迷你炮机枪
 SIGNATURE_CHART_UIDS = frozenset({

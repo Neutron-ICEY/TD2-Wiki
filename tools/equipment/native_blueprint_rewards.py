@@ -217,11 +217,19 @@ def grant(kind,entry,entry_uid,target,text,**edges):
 
 
 def direct_recipes(crafting,group,files):
-    if ' : ' in group['header'] or any(p.split(' ',1)[0] not in ('myRewardOnce','myIncludedInPreview') for p,_ in group['properties']):return
+    def properties_supported(node,allowed):
+        for prop,_ in node['properties']:
+            name,_,value=prop.partition(' ')
+            if name=='myRewardHighlightType':
+                if value not in ('Default','Special','VIP'):return False
+            elif name not in allowed:return False
+            elif name=='mySendToMailboxIfInventoryIsFull' and value not in ('TRUE','FALSE'):return False
+        return True
+    if ' : ' in group['header'] or not properties_supported(group,('myRewardOnce','myIncludedInPreview')):return
     if any(c['header'] not in ('myRewards','myRewardReferences') for c in group['children']):return
     for item in (tree.child(group,'myRewards') or {}).get('children',[]):
         if not item['header'].startswith('RewardItem ') or item['children']:continue
-        if any(p.split(' ',1)[0] not in ('myItemTypeFile','myIsRewardUsedAsTeaser','myIncludedInPreview') for p,_ in item['properties']):continue
+        if not properties_supported(item,('myItemTypeFile','myIsRewardUsedAsTeaser','myIncludedInPreview','mySendToMailboxIfInventoryIsFull')):continue
         for target in blueprint_target(crafting,files,item):yield target,uid(item)
 
 

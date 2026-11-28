@@ -23,7 +23,10 @@ class EquipmentNavboxTests(unittest.TestCase):
         pages = {r['title']: r['source'] for r in registry['entries'] if r['source'].startswith('wiki/pages/brands/')}
         self.assertEqual({r['target'] for r in self.data['brands'][:-1]}, set(pages))
         self.assertEqual(len(pages), 37)
-        self.assertEqual(len(self.data['named']), 70)
+        records = identity_catalog.read_json(ROOT / 'data/equipment/records.json')['entities']
+        named_count = sum(len(entity.get('collections', {}).get('具名装备资料', {}).get('rows', []))
+                          for entity in records.values() if entity['template'] == '品牌套装信息')
+        self.assertEqual(len(self.data['named']), named_count)
         self.assertEqual([row['target'] for row in self.data['gear_sets']], [row['page_title'] for row in identity_catalog.read_json(ROOT / 'data/gear-sets/sets.json')['sets']])
         exotics = {r['title']: r for r in registry['entries']
                    if r['kind'] == 'pages' and r['namespace'] == 0 and (r.get('related_entity') or '').startswith('exotic:')}
@@ -97,7 +100,7 @@ class EquipmentNavboxTests(unittest.TestCase):
         order = ['mask', 'backpack', 'chest', 'gloves', 'holster', 'kneepads']
         slots = [r['slot'] for r in self.data['named']]
         self.assertEqual(slots, sorted(slots, key=order.index))
-        self.assertEqual([slots.count(slot) for slot in order], [5, 23, 24, 6, 6, 6])
+        self.assertEqual([slots.count(slot) for slot in order], [5, 23, 25, 7, 8, 7])
         self.assertEqual([r['name'] for r in self.data['named'][:5]], ['放轻松', '昏头胀脑', '空心人', '守夜者', '远见'])
         text = markup(self.data)
         panel = next(n for n in nodes(text, 'td2-navbox-panel') if n.attrs['data-section'] == 'named')

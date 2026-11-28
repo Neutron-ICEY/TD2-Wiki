@@ -34,7 +34,7 @@ class WeaponResourceTests(unittest.TestCase):
 
     def test_fixed_mods_precision_and_native_recoil(self):
         r=self.row('圣艾尔莫引擎');s=r['stats']
-        self.assertEqual(s['magazine'],40);self.assertEqual(s['magazine_with_mods'],70)
+        self.assertEqual(s['magazine'],30);self.assertEqual(s['magazine_with_mods'],70)
         self.assertAlmostEqual(s['reload_with_mods'],1940/1.1)
         self.assertAlmostEqual(s['headshot'],55)
         self.assertAlmostEqual(s['dps'],664671.3899739584)
@@ -51,7 +51,7 @@ class WeaponResourceTests(unittest.TestCase):
         self.assertAlmostEqual(self.row('左边')['stats']['headshot'],45)
 
     def test_panel_rpm_and_dps_share_fixed_bonuses_once(self):
-        for name, raw, panel in [('隐形之手',680,782),('衔尾蛇',1275,1402.5),('自由',200,230)]:
+        for name, raw, panel in [('隐形之手',680,782),('衔尾蛇',1200,1404),('自由',200,230)]:
             with self.subTest(weapon=name):
                 stats = self.row(name)['stats']
                 self.assertEqual((stats['rpm'],stats['rpm_with_mods']),(raw,panel))
@@ -76,7 +76,7 @@ class WeaponResourceTests(unittest.TestCase):
         self.assertEqual(self.row('迅步')['stats']['fixed_secondary']['movement_factor'],[1,1.2])
         king=self.row('枪弹王者')['stats']
         self.assertTrue(king['reload_unnecessary'])
-        self.assertEqual((king['reload'],king['reload_empty'],king['dps']),(4460,4760,682555.517578125))
+        self.assertEqual((king['reload'],king['reload_empty'],king['dps']),(4460,4760,750811.0693359375))
 
     def test_item_generation_preserves_variant_damage_and_attributes(self):
         for name,damage in [('艺术家工具',125865.2421875),('头牌明星',417692.21875),('潜隐',349806.90625),
@@ -156,7 +156,8 @@ class WeaponResourceTests(unittest.TestCase):
         conversion='4CDCE5B25C125A4700032042322ABAD4'
         reconfigure='4CDCE5B25C45DBA60003F7E302F96B71'
         binding=self.bindings['冷酷无情']
-        for uid,purpose in [(conversion,'craft'),(reconfigure,'reconfigure')]:
+        self.assertEqual(catalog['blueprints'][conversion]['input_uid'],'5D4179F15BD72590000304C3804B3D33')
+        for uid,purpose in [(conversion,'conversion'),(reconfigure,'reconfigure')]:
             blueprint=catalog['blueprints'][uid]
             native=self.native.record(blueprint['source'],uid)
             target,=links(self.native,native,'myCraftedItem')

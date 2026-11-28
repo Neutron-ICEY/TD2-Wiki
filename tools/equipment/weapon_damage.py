@@ -6,8 +6,7 @@ from ctypes import c_float
 from . import native_tree as tree
 
 SETTINGS = 'hunter/game system data/rejuice/itemgenerationsettings.rejuice'
-CURVES = 'hunter/game system data/juice/itemgeneration/attributecurves/attributecurves_code1_data23.mitemgenerationattributecurves'
-VERSIONS = 'hunter/game system data/rejuice/itemgenerationversions.rejuice'
+CURVES = 'hunter/game system data/juice/itemgeneration/attributecurves/attributecurves_{}.mitemgenerationattributecurves'
 PRIMARY = '4F5DDEA253F6F6E700000DE8E92DD09D'
 GRENADE_EXPLOSION = '5D4179F15A030C4A00022C5D8ED16481'
 BLAST_SCRIPTS = {GRENADE_EXPLOSION, '544DB9085D4D33410013BC7057F8BCFB', 'F34855CA58D8C97000009BC57FD0D39F'}
@@ -45,13 +44,10 @@ def level_power(definitions, level):
 def damage_scales(native, level=40):
     def read(path):
         return tree.parse(native.file(path).read_text('utf-8-sig'))
-    versions = required(read(VERSIONS), 'ItemGenerationVersions Versions')
-    registered = required(versions, 'myNumberOfDataVersionsPerCodeVersionList')['properties']
-    if [text for text, _ in registered] != ['int "Code Version 1" 23']:
-        raise ValueError('Unreviewed native item generation version')
+    version = tree.item_generation_version(native)
     defs, = [v for v in tree.walk(read(SETTINGS)) if v['header'] == 'myPowerDefinitions']
     power = level_power(defs, level)
-    curve = required(read(CURVES), 'AttributeCurve WeaponDamage')
+    curve = required(read(CURVES.format(version)), 'AttributeCurve WeaponDamage')
     if tree.prop(curve, 'myAttribute') != PRIMARY or required(curve, 'myGenTypeModifiers')['children']:
         raise ValueError('Unreviewed WeaponDamage attribute or generation-type modifier')
     brackets = required(curve, 'myBracketedCurve')['children']

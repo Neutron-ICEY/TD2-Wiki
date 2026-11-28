@@ -117,7 +117,7 @@ Editor 新候选按当前源码核对输入集合、工具链、版本与产物�
 `manifest.json` 顶层包含版本、模式、目标、UTC 构建时间、hash_algorithm、comparison、entries、address_moves、file_write_policy、delete_candidates。每个 entry 保留 registry 映射，并增加：
 
 - `file`：包内相对路径，按 kind 分目录，以稳定 id 命名。
-- `operation`：create / update / unchanged，表示相对 baseline 的内容差异；只有不在地址迁移中的 assets create/update 对应报告 UPLOAD。
+- `operation` 表示相对 baseline 的 create / update / unchanged。灰机保存 Wiki 文本时可能省略文件末尾的一个 LF。若本地文本以单个 LF 结尾，且仅去掉这个 LF 后恰好命中已确认的存储摘要，记作 unchanged。包内原文、产物摘要、资产字节和远端漂移检查仍按各自的精确字节核对。只有未参与地址迁移的 assets create/update 对应报告 UPLOAD。
 - `content_hash`：产物原始字节 SHA-256。
 - `asset_relationships`：本次源文件、地址提供模板和显式补充共同得到的资产 ID。每项前置文件在 `entries` 中排在消费者之前。
 - `declared_asset_relationships`：仅在 Registry 有显式补充时保留，用于离线复算完整关系，并发现漏项或多项。

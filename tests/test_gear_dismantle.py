@@ -23,7 +23,7 @@ class GearDismantleTests(unittest.TestCase):
 
     def test_all_sets_share_confirmed_common_outputs_and_native_probabilities(self):
         expected = {'防御性布料': 23, '陶瓷碎片': 10, '聚碳酸酯': 10, '碳纤维': 4, '电子元件': 4, '钛合金': 4}
-        self.assertEqual(len(self.catalog), 29)
+        self.assertEqual(len(self.catalog), 30)
         for item in self.catalog:
             self.assertNotIn('common', item['dismantle'])
             self.assertNotIn('slots', item['dismantle'])

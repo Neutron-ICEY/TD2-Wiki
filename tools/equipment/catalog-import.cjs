@@ -25,7 +25,9 @@ function plan(units,baseline,current){
     assert(unit.value!==undefined&&unit.semantic!==undefined,'Incomplete catalog unit');
     const id=key({file:unit.file,path:unit.path});assert(!seen.has(id),'Duplicate catalog target');seen.add(id);
     const document=catalogs[unit.file]??={schema_version:1},before=cell(document,unit.path),value=before?.obj[before.key],digest=fingerprint(unit.semantic);
-    if((value===undefined||hashes[id]!==undefined)&&hashes[id]!==digest&&fingerprint(value??null)!==fingerprint(unit.value)){
+    const samePresetValue=unit.file==='data/brand-sets/fixed-minor-presets.json'&&unit.path[0]==='presets'&&unit.path.at(-1)==='value'&&
+      [value,unit.value].every(v=>typeof v==='string'&&/^-?\d+(?:\.\d+)?$/.test(v))&&Number(value)===Number(unit.value);
+    if((value===undefined||hashes[id]!==undefined)&&hashes[id]!==digest&&!samePresetValue&&fingerprint(value??null)!==fingerprint(unit.value)){
       const target=cell(document,unit.path,true);target.obj[target.key]=structuredClone(unit.value);changes.push({file:unit.file,path:unit.path});
     }
     hashes[id]=digest;

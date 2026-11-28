@@ -1,6 +1,6 @@
 # 本地构建与发布
 
-Wiki 页面、模板、Lua、图片以 `publishing/registry.json` 登记；前端资源与 Gadget 登记以 `publishing/reader-editor-production.json` 为准。所有工具采用 MANUAL 模式，构建和 prepare 只生成本地审核资料。发布通过获准的浏览器操作完成。
+Wiki 页面、模板、Lua、图片以 `publishing/registry.json` 登记；前端资源与 Gadget 登记以 `publishing/reader-editor-production.json` 为准。所有工具采用 MANUAL 模式，构建和 prepare 只生成本地审核资料。灰机 Wiki 线上写入通过获准的浏览器操作完成。
 
 ## 内容与前端
 

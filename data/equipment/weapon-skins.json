@@ -2816,6 +2816,56 @@
       ],
       "image_sha256": "85c97e7b80fa961d9baecaa94ae679e69e806901d4f16c78f60f5e5ed4f02b95",
       "source_sha256": "1cc8b399b18fb5ea46e0e67747ae4cbce80758ee1973d01f9f7f36615e91eec0"
+    },
+    {
+      "uid": "A7101D1D6AE38A0100039C817A3D3077",
+      "name": "聚合",
+      "english_name": "Convergent",
+      "asset_ref": "weapon-skin-a7101d1d6ae38a0100039c817a3d3077",
+      "source": "hunter/game system data/juice/item/skin_exotic_mtx_player_weapon_assaultrifle_g36_t1_exotic.mitem",
+      "native_icon": "hunter/baked/ui/loose_images/generated icons/vanityexoticskins/skin_exotic_mtx_player_weapon_assaultrifle_g36_t1_exotic_w_ar_g36_exotic_t2_icon.dds",
+      "image_source": "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/vanityexoticskins/skin_exotic_mtx_player_weapon_assaultrifle_g36_t1_exotic_w_ar_g36_exotic_t2_icon.png",
+      "image_sha256": "2d271e1dadeb128174139d3be4933aa6c1b5a7646f559c203d0a3f0c14168821"
+    },
+    {
+      "uid": "A7101D1D6AE494B500039C34188BE58C",
+      "name": "新兵",
+      "english_name": "Greenhorn",
+      "asset_ref": "weapon-skin-a7101d1d6ae494b500039c34188be58c",
+      "source": "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_bronze.mitem",
+      "native_icon": "hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_bronze_icon.dds",
+      "image_source": "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_bronze_icon.png",
+      "image_sha256": "00fb8048b4930a69c457845ed0ede51b9bfd726516fd50b108ce70d8f54136ad"
+    },
+    {
+      "uid": "A7101D1D6AE4987E00039C351135E0F3",
+      "name": "指挥官",
+      "english_name": "Commander",
+      "asset_ref": "weapon-skin-a7101d1d6ae4987e00039c351135e0f3",
+      "source": "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_silver.mitem",
+      "native_icon": "hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_silver_icon.dds",
+      "image_source": "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_silver_icon.png",
+      "image_sha256": "0401b1218d6cd276fe860cc5198d64bd46a1bf630b6cf4cfe39e5a8647cee90d"
+    },
+    {
+      "uid": "A7101D1D6AE49A4400039C392203C364",
+      "name": "老将",
+      "english_name": "Old-timer",
+      "asset_ref": "weapon-skin-a7101d1d6ae49a4400039c392203c364",
+      "source": "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_gold.mitem",
+      "native_icon": "hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_gold_icon.dds",
+      "image_source": "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_gold_icon.png",
+      "image_sha256": "55e77ee8de003ec7211d45459e9c1428609c098aee63c9c7d325d0963ed21773"
+    },
+    {
+      "uid": "A7101D1D6AEB325C00039CABD1E1D254",
+      "name": "长者",
+      "english_name": "Elder",
+      "asset_ref": "weapon-skin-a7101d1d6aeb325c00039cabd1e1d254",
+      "source": "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_china.mitem",
+      "native_icon": "hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_china_icon.dds",
+      "image_source": "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_china_icon.png",
+      "image_sha256": "f930cb11bede97f6232949e850788a6fe66d723d8e0dbc8822716b3a9189ad5b"
     }
   ]
 }

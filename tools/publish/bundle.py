@@ -204,6 +204,18 @@ def assess_remote(baseline, remote):
     return None
 
 
+def baseline_operation(previous, kind, data, content_hash):
+    if previous is None:
+        return "create"
+    stored_hash = previous["content_hash"]
+    if content_hash == stored_hash:
+        return "unchanged"
+    # The site can omit the source file's single final LF when saving Wiki text.
+    if kind != "assets" and data.endswith(b"\n") and not data.endswith(b"\n\n") and digest(data[:-1]) == stored_hash:
+        return "unchanged"
+    return "update"
+
+
 def md(value):
     return str(value).replace("\n", " ").replace("\r", " ").replace("|", "\\|").replace("`", "'")
 
@@ -365,7 +377,7 @@ def build(root, registry_path, baseline_path, output, snapshot_path=None):
         if kind == "assets":
             validate_asset_digest(source, content_hash)
         previous = baseline.get(key)
-        operation = "create" if previous is None else "unchanged" if previous["content_hash"] == content_hash else "update"
+        operation = baseline_operation(previous, kind, data, content_hash)
         conflict = assess_remote(previous, remote.get(key))
         relative = f"{kind}/{entry_id}{path.suffix.lower()}"
         row = {field: source.get(field) for field in ("id", "source", "title", "namespace", "related_entity", "ownership", "generator", "change_reason", "asset_relationships")}

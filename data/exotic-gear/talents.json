@@ -535,6 +535,17 @@
       "icon_evidence": [
         "evidence/asset-import/records/game-update-20261110-001/images.json#afterburn"
       ]
+    },
+    {
+      "id": "exotic_talent_205305c86ace17830003e47cbc3e21a2",
+      "native_uid": "205305C86ACE17830003E47CBC3E21A2",
+      "evidence": [
+        "resources/game/current/raw_files/hunter/game system data/juice/talent/talent_exotic_mask_aiming_pulses_and_increases_damage.mtalent"
+      ],
+      "native_icon": "\"mySpriteId = -498558540, mySpritesheet = F\\\"hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet\\\"\"",
+      "icon": {
+        "asset_ref": "exotic-talent-icon-205305c86ace17830003e47cbc3e21a2"
+      }
     }
   ]
 }

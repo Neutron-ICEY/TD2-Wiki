@@ -11,10 +11,11 @@ GROUPS = {'AssaultRifle':'突击步枪','Rifle':'步枪','SniperRifle':'射手�
           'SubMachinegun':'冲锋枪','LightMachinegun':'轻机枪','Shotgun':'霰弹枪','Pistol':'手枪',
           'SignatureWeapon':'特有武器'}
 ROOT = Path(__file__).resolve().parents[2]
-# These two menu references use their embedded label in both reviewed languages.
+# These reviewed menu references have a usable embedded name when a locale is missing.
 EMBEDDED_NAMES = {
     '346395BC5D5BAB8400037EECCE058F36': 'KSG Shotgun',
     '46B416455594E7630003DF9618542A5F': '586 Magnum',
+    '843210E16AFEC3D9001980D9B64FA9FA': 'Blizzard',
 }
 
 DISABLED_DESCRIPTION = '- THIS STRING IS NOT LOCALIZED YET, PLEASE EDIT AND SAVE THIS FILE!'
@@ -35,6 +36,8 @@ class WeaponNative(Native):
                       and len(f['context']) == 1 and f['guid'] == guid)
             refs = native_references(self.file(owner['_source']).read_bytes())['references']
             ref, = (r for r in refs if r['location']['byte_start'] == field['location']['byte_start'])
+            if guid == '843210E16AFEC428001AD4EE75C33024' and ref['enabled'] and ref['embedded_text_literal']:
+                return richtext(self.localization('en').get(guid) or metadata_literal_value(ref['embedded_text_literal']))
             if (ref['enabled'] is False and ref['line_version'] == 0 and ref['embedded_text_literal']
                     and metadata_literal_value(ref['embedded_text_literal']).strip() == DISABLED_DESCRIPTION
                     and guid not in self.localization('en')):

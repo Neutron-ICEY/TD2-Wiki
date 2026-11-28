@@ -193,7 +193,7 @@ class ExoticLuaTests(unittest.TestCase):
         assets={r['id']:r for r in entries if r['kind']=='assets'}
         entities=identity_catalog.read_json(ROOT/'data/equipment/records.json')['entities']
         rows=[r for r in entries if r['kind']=='pages' and (r.get('related_entity') or '').startswith('exotic:')]
-        self.assertEqual(len(rows),35)
+        self.assertEqual(len(rows),36)
         for row in rows:
             with self.subTest(title=row['title']):
                 html=reader.expand((ROOT/row['source']).read_text(encoding='utf8'),{})

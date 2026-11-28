@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "daily",
+  "discovery_directories": [
+    "raw_files/hunter/game system data",
+    "raw_files/rogue/game system data",
+    "raw_files/hunter/graph objects",
+    "raw_files/rogue/graph objects",
+    "raw_files/hunter/skillscript",
+    "raw_files/rogue/skillscript",
+    "raw_files/hunter/ui",
+    "raw_files/rogue/ui",
+    "raw_files/hunter/localization/packages/english",
+    "raw_files/hunter/localization/packages/simplifiedchinese",
+    "images/hunter/baked/ui",
+    "images/rogue/baked/ui",
+    "images/snowdrop/baked/ui"
+  ],
+  "excluded_directories": [
+    "images/hunter/baked_maps",
+    "materials/hunter/baked_maps"
+  ],
+  "export_terms": [
+    "game system data",
+    "graph objects",
+    "skillscript",
+    "/ui/",
+    "localization",
+    "faceman",
+    "logo",
+    "signs_brands",
+    "/weapons/",
+    "interact_loot_table",
+    "brands_nuclear_powerplant",
+    "signs_brands_warlock",
+    "fal_veteran_reward",
+    "g36",
+    "w_camo_",
+    "mbucket"
+  ]
+}

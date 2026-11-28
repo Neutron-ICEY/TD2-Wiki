@@ -424,6 +424,22 @@ class PublishingTests(unittest.TestCase):
         self.assertEqual(entry["operation"], "unchanged")
         self.assertEqual(entry["conflicts"], ["REMOTE_DRIFT"])
 
+    def test_stored_text_without_single_final_lf_does_not_queue_a_resave(self):
+        page = self.add()
+        blank = self.add("blank", title="Blank paragraph", text="Example data\n\n")
+        edit = self.add("edit", title="Edited page", text="Revised data\n")
+        asset = self.add("asset", "assets", "File:Asset.png", 6, b"Example data\n", suffix=".png")
+        self.baseline["entries"] = [self.state(row, b"Example data") for row in (page, blank, edit, asset)]
+        observed = dict(self.baseline["entries"][0], exists=True, observed_at="2026-10-03T12:01:00Z",
+                        revision_id=102)
+        rows = {row["id"]: row for row in self.run_build([observed])["entries"]}
+        self.assertEqual(rows["item"]["operation"], "unchanged")
+        self.assertEqual(rows["item"]["conflicts"], ["REMOTE_DRIFT"])
+        self.assertEqual(rows["item"]["content_hash"], digest(b"Example data\n"))
+        self.assertEqual((self.output / rows["item"]["file"]).read_bytes(), b"Example data\n")
+        for name in ("blank", "edit", "asset"):
+            self.assertEqual(rows[name]["operation"], "update")
+
     def test_remote_hash_change_is_drift_even_if_revision_equal(self):
         row = self.add()
         previous = self.state(row)

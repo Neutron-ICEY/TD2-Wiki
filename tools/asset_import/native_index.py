@@ -74,7 +74,8 @@ def _build(root, output, index):
     require(source.get('schema_version') == 1 and isinstance(source.get('sources'), dict)
             and isinstance(source.get('manifest_sha256'), str)
             and re.fullmatch('[0-9a-f]{64}', source['manifest_sha256']), 'INVALID_GAME_SOURCE')
-    registered = json_document(read(index))
+    registered_blob = read(index)
+    registered = json_document(registered_blob)
     require(registered.get('schema_version') == 1, 'UNSUPPORTED_TEXT_INDEX')
     old_defs_spec, old_refs_spec = registered['native_definitions'], registered['native_references']
     old_defs = json_document(read(old_defs_spec['file'], old_defs_spec['sha256']))
@@ -235,6 +236,7 @@ def _build(root, output, index):
         except (OSError, ValueError) as error:
             issue(error, file)
     report = dict(schema_version=1, status='BLOCKED' if issues else 'REVIEW_CANDIDATE',
+                  registration_sha256=sha256(registered_blob), candidate_sha256=sha256(json_bytes(candidate)) if not issues else None,
                   source_manifest_sha256=manifest_sha, selected_definition_files=len(old_defs['files']),
                   parsed_definition_files=len(definitions), changes=changed, issues=issues,
                   unselected_current_raw_file_count=unselected_count, unselected_current_raw_files=unselected_examples,

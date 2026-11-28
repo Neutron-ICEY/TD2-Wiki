@@ -7,6 +7,7 @@ from .crafting import CATALOG, item_tags, scalar
 from .native_sources import LOOT, reference_nodes
 from .native_drop_sources import direct_drops, drop_branches, permits, dungeon_drops, dungeon_label
 from .native_source_rules import uid
+from tools.asset_import.text_evidence import metadata_literal_value, native_references
 
 JUICE='hunter/game system data/juice/'
 GUARDIANS={
@@ -236,7 +237,18 @@ def season_caches(crafting,items,supports_prototype):
         cache,=[n for n in crafting.document(entry)['children'] if n['header'].startswith('BundleItem ')]
         season=re.search(r'_y(\d+)s(\d+)',file.stem)
         label=event_names.get(file.stem,'Y'+season[1]+'S'+season[2])
-        cache_name=crafting.text(tree.prop(cache,'myUIName'))+'（'+label+'）'
+        name_ref=tree.prop(cache,'myUIName')
+        try:
+            name=crafting.text(name_ref)
+        except KeyError:
+            try:
+                name=crafting.text(name_ref,'en')
+            except KeyError as missing:
+                matching=[r for r in native_references(file.read_bytes())['references']
+                          if r['field']=='myUIName' and r['guid']==missing.args[0] and r['enabled'] and r['embedded_text_literal']]
+                if len(matching)!=1:raise
+                name=metadata_literal_value(matching[0]['embedded_text_literal'])
+        cache_name=name+'（'+label+'）'
         tables=tree.child(cache,'myLootTables')
         if not tables:raise ValueError('Cache loot tables unavailable: '+entry)
         for slot in tables['children']:

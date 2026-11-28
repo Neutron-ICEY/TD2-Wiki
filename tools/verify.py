@@ -11,6 +11,8 @@ import sys
 import time
 import uuid
 
+from tools.process_metrics import snapshot
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,14 +38,16 @@ def run_step(root, output, env, name, command):
     log = output / (name + '.log')
     print(name + ' ...', flush=True)
     with log.open('w', encoding='utf8', newline='\n') as stream:
-        result = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+        with subprocess.Popen(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT) as result:
+            result.wait()
+            metrics = snapshot(result._handle) if os.name == 'nt' else {}
     text = log.read_text('utf8', errors='replace')
     skipped = max([int(value) for value in re.findall(r'\bskipped=(\d+)', text)] +
                   [int(value) for value in re.findall(r'^# skipped (\d+)$', text, re.MULTILINE)] + [0])
     counts = re.findall(r'^Ran (\d+) tests? in ', text, re.MULTILINE) or re.findall(r'^# tests (\d+)$', text, re.MULTILINE)
     row = dict(name=name, command=command, exit_code=result.returncode, skipped=skipped,
                tests=int(counts[-1]) if counts else None, log=log.name,
-               seconds=round(time.monotonic() - started, 3))
+               seconds=round(time.monotonic() - started, 3), process=metrics)
     print(name + ': ' + ('passed' if result.returncode == 0 and not skipped else 'incomplete' if result.returncode == 0 else 'failed'), flush=True)
     return row
 
@@ -78,10 +82,11 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', help='Fresh directory inside dist')
     parser.add_argument('--resources', action='store_true', help='Also test the installed game export, its manifest and registered resource inputs')
+    parser.add_argument('--preflight', action='store_true', help='Check generated inputs and assemble the offline release, skipping the remaining test suites')
     parser.add_argument('--public', action='store_true', help='Run the checks supported by the public checkout')
     args = parser.parse_args(argv)
-    if args.public and args.resources:
-        parser.error('--public cannot be combined with --resources')
+    if args.public and (args.resources or args.preflight):
+        parser.error('--public cannot be combined with --resources or --preflight')
     output = output_directory(ROOT, args.output)
     temporary = output / 'tmp'
     temporary.mkdir()
@@ -100,32 +105,43 @@ def main(argv=None):
         checks, details = run(ROOT, output, python, node, dependency_check,
                               lambda name, command: run_step(ROOT, output, env, name, command))
         return record_result(output, node, checks, **details)
-    checks = [run_step(ROOT, output, env, 'dependencies', python + ['-c', dependency_check])]
-    if checks[0]['exit_code'] == 0:
-        steps = [
-            ('identity', python + ['-m', 'tools.identity']),
-            ('python-tests', python + ['-m', 'unittest', 'discover', '-s', 'tests', '-v']),
-            ('node-tests', [node, '--test', '--test-reporter=tap', '--test-concurrency=1', *[str(path.relative_to(ROOT)) for path in sorted((ROOT / 'tests').glob('test_*.cjs'))]]),
-            ('brand-generation', python + ['-m', 'tools.brand_sets', 'check']),
-            ('exotic-generation', [node, 'tools/exotic_gear/generate.cjs', 'check']),
-            ('gear-generation', [node, 'tools/gear_sets/generate.cjs', 'check']),
-            ('weapon-generation', python + ['-m', 'tools.equipment.weapons', 'check']),
-            ('editor-data', [node, 'tools/equipment/catalog.cjs', 'check']),
-            ('editor-build', [node, 'ui/editor/production/build.cjs', str(output / 'frontend')]),
+    integration = ("from tools.asset_import.text_library import TextLibrary; from tools.asset_import.library import Library; "
+                   "t=TextLibrary().query(limit=1); a=Library(); assert not t['issues'],t['issues']; "
+                   "assert not a.issues,a.issues; print('Registered sources',len(t['sources']),len(a.records))")
+    steps = [
+        ('dependencies', python + ['-c', dependency_check]),
+        ('identity', python + ['-m', 'tools.identity']),
+        ('version-smoke', python + ['-m', 'tools.verify_tests', 'smoke']),
+        ('brand-generation', python + ['-m', 'tools.brand_sets', 'check']),
+        ('gear-generation', [node, 'tools/gear_sets/generate.cjs', 'check']),
+        ('editor-data', [node, 'tools/equipment/catalog.cjs', 'check']),
+        ('exotic-generation', [node, 'tools/exotic_gear/generate.cjs', 'check']),
+        ('weapon-generation', python + ['-m', 'tools.equipment.weapons', 'check']),
+    ]
+    if args.resources:
+        steps += [
+            ('weapon-resources', python + ['-m', 'unittest', 'discover', '-s', 'tests', '-p', 'resource_*.py', '-v']),
+            ('resource-manifest', python + ['-m', 'tools.game_resources', 'status']),
+            ('registered-resources', python + ['-c', integration]),
         ]
-        for name, command in steps:
-            checks.append(run_step(ROOT, output, env, name, command))
-        if checks[-1]['exit_code'] == 0:
-            checks.append(run_step(ROOT, output, env, 'reader-assembly', python + ['-m', 'tools.brand_sets.production', '--output', str(output / 'frontend')]))
-        checks.append(run_step(ROOT, output, env, 'publish-build', python + ['-m', 'tools.publish', 'build', '--output', (output / 'publish').relative_to(ROOT).as_posix()]))
-        if checks[-1]['exit_code'] == 0:
-            checks.append(run_step(ROOT, output, env, 'publish-prepare', python + ['-m', 'tools.publish', 'prepare', '--bundle', str(output / 'publish')]))
-        if args.resources:
-            checks.append(run_step(ROOT, output, env, 'weapon-resources', python + ['-m', 'unittest', 'discover', '-s', 'tests', '-p', 'resource_*.py', '-v']))
-            checks.append(run_step(ROOT, output, env, 'resource-manifest', python + ['-m', 'tools.game_resources', 'status']))
-            integration = "from tools.asset_import.text_library import TextLibrary; from tools.asset_import.library import Library; t=TextLibrary().query(limit=1); a=Library(); assert not t['issues'],t['issues']; assert not a.issues,a.issues; print('Registered text sources:',len(t['sources']),'asset observations:',len(a.records)); print('Raw payloads are not rehashed by this integration check')"
-            checks.append(run_step(ROOT, output, env, 'registered-resources', python + ['-c', integration]))
-    return record_result(output, node, checks)
+    steps += [
+        ('editor-build', [node, 'ui/editor/production/build.cjs', str(output/'frontend')]),
+        ('reader-assembly', python + ['-m', 'tools.brand_sets.production', '--output', str(output/'frontend')]),
+        ('publish-build', python + ['-m', 'tools.publish', 'build', '--output', (output/'publish').relative_to(ROOT).as_posix()]),
+        ('publish-prepare', python + ['-m', 'tools.publish', 'prepare', '--bundle', str(output/'publish')]),
+    ]
+    if not args.preflight:
+        node_tests = [str(p.relative_to(ROOT)) for p in sorted((ROOT/'tests').glob('test_*.cjs'))]
+        steps += [('node-tests', [node, '--test', '--test-reporter=tap', '--test-concurrency=1', *node_tests]),
+                  ('python-tests', python + ['-m', 'tools.verify_tests', 'remaining'])]
+    checks = []
+    for name, command in steps:
+        row = run_step(ROOT, output, env, name, command)
+        checks.append(row)
+        if row['exit_code'] or row['skipped']:
+            break
+    return record_result(output, node, checks, mode='preflight' if args.preflight else 'full',
+                         not_run=[name for name, _ in steps[len(checks):]])
 
 
 if __name__ == '__main__':

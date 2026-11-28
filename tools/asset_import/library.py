@@ -81,6 +81,14 @@ class Library:
                         raise ValueError('INVALID_OBSERVATION_SELECTION')
                     selected = set(selected)
                     records = [row for row in records if row['record_key'].split('#', 1)[1] in selected]
+                if 'historical_observations' in batch:
+                    pointers = batch['historical_observations']
+                    by_pointer = {row['record_key'].split('#', 1)[1]: row for row in records}
+                    if (not isinstance(pointers, list) or any(not isinstance(p, str) for p in pointers)
+                            or len(set(pointers)) != len(pointers) or not set(pointers) <= by_pointer.keys()):
+                        raise ValueError('INVALID_HISTORICAL_OBSERVATION')
+                    for pointer in pointers:
+                        by_pointer[pointer]['historical_observation'] = True
                 self.records.extend(records)
             except (OSError, ValueError, KeyError, TypeError) as error:
                 self.issues.append(dict(batch_id=batch['id'], state='unavailable', error=str(error)))

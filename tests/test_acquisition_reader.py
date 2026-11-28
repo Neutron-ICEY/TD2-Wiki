@@ -24,7 +24,7 @@ class AcquisitionReaderTests(unittest.TestCase):
                     sections=[('page',rendered,labels)]
                     if id=='brand-511-tactical':
                         cards=nodes(rendered,'td2-equipment')
-                        self.assertEqual(len(cards),2)
+                        self.assertEqual(len(cards),3)
                         sections.extend(('named',card.text,{'图纸获取','装备获取'}) for card in cards)
                     for kind,content,expected in sections:
                         links=re.findall(r'\[\[([^\[\]|]+)\|(装备图纸|图纸获取|装备获取)\]\]',content)

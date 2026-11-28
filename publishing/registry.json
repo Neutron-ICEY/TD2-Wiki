@@ -1239,7 +1239,9 @@
         "ui-dark-zone",
         "ui-main-icon-halloween",
         "ui-eventpass",
-        "ui-shepherd-status"
+        "ui-shepherd-status",
+        "ui-home-event-stay-tuned",
+        "ui-home-event-question-mark"
       ]
     },
     {
@@ -1353,7 +1355,9 @@
       "change_reason": "按原生日程与简体本地化生成有对应宣传图的赛季。",
       "asset_relationships": [
         "ui-home-red-horizon",
-        "ui-home-red-horizon-icon"
+        "ui-home-red-horizon-icon",
+        "ui-home-spearfall",
+        "ui-home-spearfall-icon"
       ]
     },
     {
@@ -6879,7 +6883,7 @@
         ],
         "status": "ready"
       },
-      "content_sha256": "cc14a0b658a47a101642fe98c86d0cb73524e1877d61e73a777efd71c4340c46"
+      "content_sha256": "f9a23ff472119fc6bce409d55977a1533db96d86d81676452d5b7692c2061dde"
     },
     {
       "id": "reader-image-d7a842c793390074",
@@ -11311,7 +11315,7 @@
         ],
         "status": "ready"
       },
-      "content_sha256": "61e3a77212e0f8708602bbed2e283ee456a518f21a9fe6b92afdb668b6dbdb63"
+      "content_sha256": "0e61e47cdc42f0bdab92324a4774154ca7450259b0c16b53a6621793afd0b45c"
     },
     {
       "id": "exotic-afterburn-icon",
@@ -15196,7 +15200,9 @@
       "related_entity": "weapon:66db060453b26aae0000046aad66bc48",
       "ownership": "generated",
       "generator": "tools/equipment/import.cjs@v1",
-      "asset_relationships": [],
+      "asset_relationships": [
+        "weapon-art-66db060453b26aae0000046aad66bc48"
+      ],
       "change_reason": "登记武器资料页，由原生导入器按稳定实体 ID 维护页面。"
     },
     {
@@ -15664,7 +15670,9 @@
       "related_entity": "weapon:66db060453393b12000002a9fc1dd50f",
       "ownership": "generated",
       "generator": "tools/equipment/import.cjs@v1",
-      "asset_relationships": [],
+      "asset_relationships": [
+        "weapon-art-66db060453393b12000002a9fc1dd50f"
+      ],
       "change_reason": "登记武器资料页，由原生导入器按稳定实体 ID 维护页面。"
     },
     {
@@ -15736,7 +15744,9 @@
       "related_entity": "weapon:5d4179f15698e1580007d236e36faac2",
       "ownership": "generated",
       "generator": "tools/equipment/import.cjs@v1",
-      "asset_relationships": [],
+      "asset_relationships": [
+        "weapon-art-b00501356aeddb7200498280c69d6da7"
+      ],
       "change_reason": "登记武器资料页，由原生导入器按稳定实体 ID 维护页面。"
     },
     {
@@ -16084,7 +16094,9 @@
       "related_entity": "weapon:5d4179f15b72db350001bd552521e246",
       "ownership": "generated",
       "generator": "tools/equipment/import.cjs@v1",
-      "asset_relationships": [],
+      "asset_relationships": [
+        "weapon-art-b00501356aeddd00004cd4d940d2be0a"
+      ],
       "change_reason": "登记武器资料页，由原生导入器按稳定实体 ID 维护页面。"
     },
     {
@@ -28271,6 +28283,603 @@
       },
       "content_sha256": "85c97e7b80fa961d9baecaa94ae679e69e806901d4f16c78f60f5e5ed4f02b95",
       "change_reason": "按原生纹理和配色生成「“艾米琳的护卫”专用草原皮肤」的铺满色样。"
+    },
+    {
+      "id": "gear-set-d1",
+      "kind": "pages",
+      "source": "wiki/pages/gear-sets/装备组-战地将军.wiki",
+      "title": "装备组-战地将军",
+      "namespace": 0,
+      "related_entity": "set:b00501356ae853db00038664b0d01099",
+      "ownership": "generated",
+      "generator": "tools/equipment/import.cjs@v1",
+      "asset_relationships": [
+        "gear-set-d1-logo",
+        "gear-set-d1-talents-icon"
+      ],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "gear-set-d1-logo",
+      "kind": "assets",
+      "source": "assets/TD2-GearSet-FieldGeneral-Logo.png",
+      "title": "File:TD2-GearSet-FieldGeneral-Logo.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "GearSet",
+        "subtype": null,
+        "english_label": "Field General",
+        "evidence": [
+          "hunter/game system data/juice/item/gear_set_d1.mgearset#B00501356AE853DB00038664B0D01099",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_gear_brands_spritesheet_4.spritesheet.decompiled#field_general",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_gear_brands_spritesheet_4.png#field_general"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "25829a2626cd91729fd7d3d45e56041c453fc93837993f2c0ac90671f503848e",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "gear-set-d1-talents-icon",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-GearSet-FieldGeneral-HelpingHand-Icon.png",
+      "title": "File:TD2-Talent-GearSet-FieldGeneral-HelpingHand-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "GearSet",
+        "english_label": "Helping Hand",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_gearset_field_general_4pc.mtalent#C541AEEB6ACCE0A000038D387CE4163C",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#helping_hand",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#helping_hand"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "9745a869321767253c73325ac835f5f9a61fef5f76437471bfc711f0e784af49",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "exotic-page-b00501356ae8925f00038e3fa871dcd7",
+      "kind": "pages",
+      "source": "wiki/pages/exotic-gear/奇特装备-前线观察员.wiki",
+      "title": "奇特装备-前线观察员",
+      "namespace": 0,
+      "related_entity": "exotic:b00501356ae8925f00038e3fa871dcd7",
+      "ownership": "generated",
+      "generator": "tools/equipment/import.cjs@v1",
+      "asset_relationships": [
+        "exotic-gear-art-b00501356ae8925f00038e3fa871dcd7",
+        "exotic-talent-icon-205305c86ace17830003e47cbc3e21a2"
+      ],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "exotic-gear-art-b00501356ae8925f00038e3fa871dcd7",
+      "kind": "assets",
+      "source": "assets/exotic-gear/TD2-Gear-Exotic-ForwardObserver-Icon.png",
+      "title": "File:TD2-Gear-Exotic-ForwardObserver-Icon.png",
+      "namespace": 6,
+      "related_entity": "exotic:b00501356ae8925f00038e3fa871dcd7",
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Gear",
+        "subtype": "Exotic",
+        "english_label": "Forward Observer",
+        "evidence": [
+          "hunter/game system data/juice/item/player_gear_mask_exotic_07.mitem#B00501356AE8925F00038E3FA871DCD7",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/mask/player_gear_mask_exotic_07_icon.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "010f858b19a96b4eb5bb79f12b62c8e9357a240516afa93472160f7d41021934",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "exotic-talent-icon-205305c86ace17830003e47cbc3e21a2",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-ExoticGear-StrikeOrder-Icon.png",
+      "title": "File:TD2-Talent-ExoticGear-StrikeOrder-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "ExoticGear",
+        "english_label": "Strike Order",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_exotic_mask_aiming_pulses_and_increases_damage.mtalent#205305C86ACE17830003E47CBC3E21A2",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#forward_observer",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#forward_observer"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "f984015bc9752df3e55f319c31660f24c710dfb1b7659b80610d3434a5771872",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-page-40efa9d56ad5d682000385e68e6263a0",
+      "kind": "pages",
+      "source": "wiki/pages/weapons/40efa9d56ad5d682000385e68e6263a0.wiki",
+      "title": "奇特武器-天命之眼",
+      "namespace": 0,
+      "related_entity": "weapon:40efa9d56ad5d682000385e68e6263a0",
+      "ownership": "generated",
+      "generator": "tools/equipment/import.cjs@v1",
+      "asset_relationships": [
+        "weapon-art-5d4179f156977894000103e777803821"
+      ],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-named-843210e16afec3d9001980dac089a816",
+      "kind": "redirects",
+      "source": "wiki/redirects/weapons/843210e16afec3d9001980dac089a816.wiki",
+      "title": "具名武器-Blizzard",
+      "namespace": 0,
+      "related_entity": "weapon:66db060453393b12000002a9fc1dd50f",
+      "ownership": "generated",
+      "generator": "tools/equipment/weapons.py@v1",
+      "asset_relationships": [],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-art-b00501356ae87c95001d2fb67e23b83d",
+      "kind": "assets",
+      "source": "assets/weapons/TD2-Weapon-August-Icon.png",
+      "title": "File:TD2-Weapon-August-Icon.png",
+      "namespace": 6,
+      "related_entity": "weapon:b00501356ae87c95001d2fb67e23b83d",
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": null,
+        "english_label": "August",
+        "evidence": [
+          "hunter/game system data/juice/item/player_weapon_assaultrifle_g36c_t3_v1_exotic.mitem#B00501356AE87C95001D2FB67E23B83D",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/mainweapon/player_weapon_assaultrifle_g36c_t3_v1_exotic_icon.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "ef5deed710b0b8e6b9b458fde4676f9b440d11d6116e725702f8dda547897d5f",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-page-b00501356ae87c95001d2fb67e23b83d",
+      "kind": "pages",
+      "source": "wiki/pages/weapons/b00501356ae87c95001d2fb67e23b83d.wiki",
+      "title": "奇特武器-奥古斯特",
+      "namespace": 0,
+      "related_entity": "weapon:b00501356ae87c95001d2fb67e23b83d",
+      "ownership": "generated",
+      "generator": "tools/equipment/import.cjs@v1",
+      "asset_relationships": [
+        "weapon-art-b00501356ae87c95001d2fb67e23b83d"
+      ],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-art-b00501356aeddb7200498280c69d6da7",
+      "kind": "assets",
+      "source": "assets/weapons/TD2-Weapon-Blackout-Icon.png",
+      "title": "File:TD2-Weapon-Blackout-Icon.png",
+      "namespace": 6,
+      "related_entity": "weapon:b00501356aeddb7200498280c69d6da7",
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": null,
+        "english_label": "Blackout",
+        "evidence": [
+          "hunter/game system data/juice/item/player_weapon_pistol_fnx45_t1_v1_named.mitem#B00501356AEDDB7200498280C69D6DA7",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/secondaryweapon/player_weapon_pistol_fnx45_t1_v1_named_icon.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "25f43e41d3d89259eef681f5972649f569093bd7d85805b8fa46ec469e11b785",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-named-b00501356aeddb7200498280c69d6da7",
+      "kind": "redirects",
+      "source": "wiki/redirects/weapons/b00501356aeddb7200498280c69d6da7.wiki",
+      "title": "具名武器-黑幕",
+      "namespace": 0,
+      "related_entity": "weapon:5d4179f15698e1580007d236e36faac2",
+      "ownership": "generated",
+      "generator": "tools/equipment/weapons.py@v1",
+      "asset_relationships": [],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-art-b00501356aeddd00004cd4d940d2be0a",
+      "kind": "assets",
+      "source": "assets/weapons/TD2-Weapon-PowerSpike-Icon.png",
+      "title": "File:TD2-Weapon-PowerSpike-Icon.png",
+      "namespace": 6,
+      "related_entity": "weapon:b00501356aeddd00004cd4d940d2be0a",
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": null,
+        "english_label": "Power Spike",
+        "evidence": [
+          "hunter/game system data/juice/item/player_weapon_rifle_winchester_t1_v1_named.mitem#B00501356AEDDD00004CD4D940D2BE0A",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/mainweapon/player_weapon_rifle_winchester_t1_v1_named_icon.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "63e81f067aa342ad1f58c7bd26898abe01e65954dc40c2446a87f3bd5f015ab4",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-named-b00501356aeddd00004cd4d940d2be0a",
+      "kind": "redirects",
+      "source": "wiki/redirects/weapons/b00501356aeddd00004cd4d940d2be0a.wiki",
+      "title": "具名武器-电流尖峰",
+      "namespace": 0,
+      "related_entity": "weapon:5d4179f15b72db350001bd552521e246",
+      "ownership": "generated",
+      "generator": "tools/equipment/weapons.py@v1",
+      "asset_relationships": [],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-named-b00501356af1a4690016b330d33d57c5",
+      "kind": "redirects",
+      "source": "wiki/redirects/weapons/b00501356af1a4690016b330d33d57c5.wiki",
+      "title": "具名武器-军需官",
+      "namespace": 0,
+      "related_entity": "weapon:66db060453b26aae0000046aad66bc48",
+      "ownership": "generated",
+      "generator": "tools/equipment/weapons.py@v1",
+      "asset_relationships": [],
+      "change_reason": "登记锋矛覆灭赛季新增装备及武器页面。"
+    },
+    {
+      "id": "weapon-talent-icon-04b83df56acdf1ce001c96dc9cb8eda3",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-ExoticWeapon-Convergent-Icon.png",
+      "title": "File:TD2-Talent-ExoticWeapon-Convergent-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "ExoticWeapon",
+        "english_label": "Convergent",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_exotic_g36_enhanced_assault_rifle.mtalent#04B83DF56ACDF1CE001C96DC9CB8EDA3",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#convergent",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#convergent"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "f2c5fcb00d6a3c9ec186ebc1f22c5fa410ab52b6c4b27de298ed6ebafb928006",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-talent-icon-205305c86ad8c296000eb24b4b287a68",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-Weapon-Technophobia-Icon.png",
+      "title": "File:TD2-Talent-Weapon-Technophobia-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "Weapon",
+        "english_label": "Technophobia",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_weapon_technophobia.mtalent#205305C86AD8C296000EB24B4B287A68",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#technophobia",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#technophobia"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "68e5eddaf54ba72ec7fef860974c24ba15fa31a63b1525e322422fe4f4a779a4",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-talent-icon-205305c86ad8d0420003ec475bc30482",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-Weapon-PerfectTechnophobia-Icon.png",
+      "title": "File:TD2-Talent-Weapon-PerfectTechnophobia-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "Weapon",
+        "english_label": "Perfect Technophobia",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_weapon_technophobia_perfected.mtalent#205305C86AD8D0420003EC475BC30482",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#perfect_technophobia",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#perfect_technophobia"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "968d896111a19b1b145e6604fd64e6767737eb56cb169a1c3375db5cbbc344a4",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-talent-icon-40efa9d56ad88e96000385ee26d3d998",
+      "kind": "assets",
+      "source": "assets/TD2-Talent-ExoticWeapon-ToolBreaker-Icon.png",
+      "title": "File:TD2-Talent-ExoticWeapon-ToolBreaker-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Talent",
+        "subtype": "ExoticWeapon",
+        "english_label": "Tool Breaker",
+        "evidence": [
+          "hunter/game system data/juice/talent/talent_exotic_smg_tool_breaker.mtalent#40EFA9D56AD88E96000385EE26D3D998",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_7.spritesheet.decompiled#tool_breaker",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_talents_spritesheet_7.png#tool_breaker"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "b688e33d363d857a6dfbbe5c7822ab40e400a9e76604c5dafeb827917c5522a8",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "ui-home-spearfall",
+      "kind": "assets",
+      "source": "assets/site/TD2-UI-Spearfall-Background.jpg",
+      "title": "File:TD2-UI-Spearfall-Background.jpg",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "UI",
+        "subtype": null,
+        "english_label": "Spearfall",
+        "evidence": [
+          "hunter/game system data/juice/seasonwrapper/seasonwrapper_y8s4.mseasonwrapper",
+          "resources/game/current/images/hunter/baked/ui/loose_images/seasonsrewards/hun_ui_menustore_y8s4pass_popup_texture_final.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "7bdb19d34630a303b61b426f2c2cf1994eb1932afc929e0afe3336fa7c20fe9f",
+      "native_season": {
+        "wrapper_uid": "6F51AEE26AB4D887000398D8E209231F",
+        "texture": "hunter/baked/ui/loose_images/seasonsrewards/hun_ui_menustore_y8s4pass_popup_texture_final.dds"
+      },
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "ui-home-spearfall-icon",
+      "kind": "assets",
+      "source": "assets/site/TD2-UI-Spearfall-Icon.png",
+      "title": "File:TD2-UI-Spearfall-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "UI",
+        "subtype": null,
+        "english_label": "Spearfall",
+        "evidence": [
+          "hunter/game system data/juice/seasonwrapper/seasonwrapper_y8s4.mseasonwrapper",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_seasons_spritesheet.spritesheet.decompiled#y8s4_seasonicon",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_seasons_spritesheet.png#y8s4_seasonicon"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "c617fe679fa0b1fe03399d4dbdba3e21ff2dca9c03d66ab9660070201b9ce9f9",
+      "native_sprite": {
+        "sheet": "ui_seasons_spritesheet",
+        "id": 964252690,
+        "name": "y8s4_seasonicon"
+      },
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "ui-home-event-stay-tuned",
+      "kind": "assets",
+      "source": "assets/site/TD2-UI-StayTuned-Background.jpg",
+      "title": "File:TD2-UI-StayTuned-Background.jpg",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "UI",
+        "subtype": null,
+        "english_label": "Stay tuned!",
+        "evidence": [
+          "hunter/game system data/juice/seasonwrapper/seasonwrappergenericevents.juice#E03CE5EA6908C3870006EFC209FA86C9",
+          "resources/game/current/images/hunter/baked/ui/loose_images/seasonswrapper/global_events/season_event_coming_soon.png"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "d0f4514c1102517a8c00f447c48f1f085838d112610179d3ec24a8a7485ae81f",
+      "native_event": {
+        "texture": "hunter/baked/ui/loose_images/seasonswrapper/global_events/season_event_coming_soon.dds"
+      },
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "ui-home-event-question-mark",
+      "kind": "assets",
+      "source": "assets/site/TD2-UI-QuestionMark-Icon.png",
+      "title": "File:TD2-UI-QuestionMark-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "UI",
+        "subtype": null,
+        "english_label": "Question Mark",
+        "evidence": [
+          "hunter/game system data/juice/seasonwrapper/seasonwrappergenericevents.juice#E03CE5EA6908C3870006EFC209FA86C9",
+          "resources/game/current/raw_files/hunter/ui/spritesheets/ui_loot_spritesheet_2.spritesheet.decompiled#question_mark",
+          "resources/game/current/images/hunter/baked/ui/spritesheets/ui_loot_spritesheet_2.png#question_mark"
+        ],
+        "status": "ready"
+      },
+      "content_sha256": "39afc58c74f6802b54b750b297689f258d430f7787945bbd6cc7fe98a9b44b93",
+      "native_sprite": {
+        "sheet": "ui_loot_spritesheet_2",
+        "id": -568211101,
+        "name": "question_mark"
+      },
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-skin-a7101d1d6ae38a0100039c817a3d3077",
+      "kind": "assets",
+      "source": "assets/TD2-Weapon-Skin-August-Convergent-Icon.png",
+      "title": "File:TD2-Weapon-Skin-August-Convergent-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": "Skin",
+        "english_label": "Convergent",
+        "evidence": [
+          "hunter/game system data/juice/item/skin_exotic_mtx_player_weapon_assaultrifle_g36_t1_exotic.mitem#A7101D1D6AE38A0100039C817A3D3077 myUIName/en and myIcon",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/vanityexoticskins/skin_exotic_mtx_player_weapon_assaultrifle_g36_t1_exotic_w_ar_g36_exotic_t2_icon.png"
+        ],
+        "status": "ready",
+        "owner_english_label": "August"
+      },
+      "content_sha256": "2d271e1dadeb128174139d3be4933aa6c1b5a7646f559c203d0a3f0c14168821",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-skin-a7101d1d6ae494b500039c34188be58c",
+      "kind": "assets",
+      "source": "assets/TD2-Weapon-Skin-TheQuartermaster-Greenhorn-Icon.png",
+      "title": "File:TD2-Weapon-Skin-TheQuartermaster-Greenhorn-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": "Skin",
+        "english_label": "Greenhorn",
+        "evidence": [
+          "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_bronze.mitem#A7101D1D6AE494B500039C34188BE58C myUIName/en and myIcon",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_bronze_icon.png"
+        ],
+        "status": "ready",
+        "owner_english_label": "The Quartermaster"
+      },
+      "content_sha256": "00fb8048b4930a69c457845ed0ede51b9bfd726516fd50b108ce70d8f54136ad",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-skin-a7101d1d6ae4987e00039c351135e0f3",
+      "kind": "assets",
+      "source": "assets/TD2-Weapon-Skin-TheQuartermaster-Commander-Icon.png",
+      "title": "File:TD2-Weapon-Skin-TheQuartermaster-Commander-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": "Skin",
+        "english_label": "Commander",
+        "evidence": [
+          "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_silver.mitem#A7101D1D6AE4987E00039C351135E0F3 myUIName/en and myIcon",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_silver_icon.png"
+        ],
+        "status": "ready",
+        "owner_english_label": "The Quartermaster"
+      },
+      "content_sha256": "0401b1218d6cd276fe860cc5198d64bd46a1bf630b6cf4cfe39e5a8647cee90d",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-skin-a7101d1d6ae49a4400039c392203c364",
+      "kind": "assets",
+      "source": "assets/TD2-Weapon-Skin-TheQuartermaster-OldTimer-Icon.png",
+      "title": "File:TD2-Weapon-Skin-TheQuartermaster-OldTimer-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": "Skin",
+        "english_label": "Old-timer",
+        "evidence": [
+          "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_gold.mitem#A7101D1D6AE49A4400039C392203C364 myUIName/en and myIcon",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_gold_icon.png"
+        ],
+        "status": "ready",
+        "owner_english_label": "The Quartermaster"
+      },
+      "content_sha256": "55e77ee8de003ec7211d45459e9c1428609c098aee63c9c7d325d0963ed21773",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
+    },
+    {
+      "id": "weapon-skin-a7101d1d6aeb325c00039cabd1e1d254",
+      "kind": "assets",
+      "source": "assets/TD2-Weapon-Skin-TheQuartermaster-Elder-Icon.png",
+      "title": "File:TD2-Weapon-Skin-TheQuartermaster-Elder-Icon.png",
+      "namespace": 6,
+      "related_entity": null,
+      "ownership": "manual",
+      "asset_relationships": [],
+      "naming": {
+        "scheme": "td2-en-v1",
+        "category": "Weapon",
+        "subtype": "Skin",
+        "english_label": "Elder",
+        "evidence": [
+          "hunter/game system data/juice/item/skin_uniq_y8s4_veteran_reward_china.mitem#A7101D1D6AEB325C00039CABD1E1D254 myUIName/en and myIcon",
+          "resources/game/current/images/hunter/baked/ui/loose_images/generated icons/custom_weapon_skins/skin_uniq_y8s4_veteran_reward_china_icon.png"
+        ],
+        "status": "ready",
+        "owner_english_label": "The Quartermaster"
+      },
+      "content_sha256": "f930cb11bede97f6232949e850788a6fe66d723d8e0dbc8822716b3a9189ad5b",
+      "change_reason": "登记锋矛覆灭赛季新增图片。"
     }
   ]
 }

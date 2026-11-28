@@ -17,7 +17,7 @@ class PublicAttributeRulesTests(unittest.TestCase):
 
     def test_public_identities_aliases_and_limited_value_scope(self):
         data=identity_catalog.read_json(ROOT/'data/equipment/attributes.json')
-        identities=data['identities'];self.assertEqual(len(identities),32);self.assertEqual(len({v['native_uid'] for v in identities.values()}),31)
+        identities=data['identities'];self.assertEqual(len(identities),33);self.assertEqual(len({v['native_uid'] for v in identities.values()}),32)
         self.assertEqual(sorted(v['display_alias'] for v in identities.values() if 'display_alias' in v),sorted(['技能修复','暴击几率','武器控制']))
         self.assertEqual(len(data['native_profile']['constant_rules']),10)
         self.assertNotIn('fixed_minor_claws_out_melee_damage',[r['id'] for r in data['native_profile']['constant_rules']])
