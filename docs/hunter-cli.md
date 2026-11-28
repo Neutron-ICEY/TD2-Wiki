@@ -1,25 +1,37 @@
-# Hunter CLI 实验原型
+# Hunter 导出
 
-本工具复用项目内 Hunter 2.2.9 的资源加载、PNG 和原生文件导出。它是 **需要交互式 Windows 桌面的 GUI 桥接原型**，不是 Hunter 原生 CLI，也不是无界面解包器。解析和转换仍全部由原版 Hunter 完成。
+从工程根目录运行。批量入口驱动项目固定的 Hunter 2.2.9，复用原程序选择类型、加载索引、筛选和 Export All。三类输出为 PNG 图片、Materials 和 Raw Files（含 Hunter 产生的伴随文件）。需要可绘制窗口的 Windows 桌面、Pillow（支持按 HWND 抓取）、Windows OCR 和系统 .NET Framework 编译器。无需手动操作窗口。每次只运行一个 Hunter。
 
-代码在 `tools/hunter_cli/`；不修改 `tools/hunter.exe`、依赖或游戏文件。不用于 Wiki 上传，不会按图片外观建立游戏实体对应关系。
-
-## 运行条件
-
-- Windows 11、可用的 Python 3.11+ 与 Pillow；复用现有 `tools.asset_import.hunter.exported_record` 登记文件和像素哈希。
-- 固定 Hunter 2.2.9 二进制 SHA-256：`7f7279795df8573ef8211f03ed39b373bdb9c88339df5158291b067d8eccc014`。其它版本直接拒绝。
-- 使用普通交互式桌面运行。受限沙箱环境可能导致剪贴板粘贴失效；自动化需要在可访问桌面与剪贴板的环境中运行，不要求管理员权限。
-- 原配置 `%APPDATA%/DTZxPorter/GameTools/config/hunter.dat` 必须存在。会话持有独占只读句柄，使 Hunter 使用内存默认配置，也阻止改写原配置。期间不要打开另一个 Hunter。
-- CLI 会占用前台、鼠标和剪贴板；执行期间不要同时操作桌面。它不会保留原剪贴板内容。锁屏、焦点争夺、窗口尺寸变化会导致失败。
-
-## 最短使用流程
-
-从项目根目录运行，`$py` 指向已配置的项目解释器，`$index` 指向自己的游戏安装目录。
+从仓库根目录运行，`$py` 按 [README](../README.md) 或 [AGENTS](../AGENTS.md#python-与验证) 指向项目 Python 3.12+ 解释器，`$index` 指向本机游戏安装目录中的 `sdf.sdftoc`：
 
 ```powershell
-$py = '.\.venv\Scripts\python.exe'
-$session = 'dist/hunter-session-001' # 必须是尚不存在的新目录；也可指定绝对路径
 $index = Read-Host '当前游戏安装目录中 sdf.sdftoc 的完整路径'
+# 全量，三个类型共享一次加载
+& $py -B -m tools.hunter_cli bulk --index $index --session incoming/game-update/full-001
+# 日常版本发现与登记输入
+& $py -B -m tools.hunter_cli bulk --index $index --session incoming/game-update/wiki-001 --profile daily
+# 专项范围、逻辑处理器上限、每种资源的完成检查点
+& $py -B -m tools.hunter_cli bulk --index $index --session incoming/game-update/art-001 --types images materials --query faceman --separate-types --cpu-limit 4
+```
+
+`--profile daily` 默认给 Hunter 分配最多 8 个逻辑处理器，运行中每秒采样。全量模式默认使用进程可用的处理器，每 3 秒采样。可用 `--cpu-limit` 和 `--poll` 覆盖。检测到输出、匹配数与导出按钮恢复后，CLI 以短间隔确认状态稳定。stderr 和各尝试的 `progress.jsonl` 报告索引条数、可读的百分比和进程 I/O。`export.json` 记录实际筛选、加载、回读、导出、完成确认和合并统计，`invocations.jsonl` 记录整次命令墙钟。`source.json` 和 `export/` 可直接交给[版本更新入口](game-resources.md)。Hunter 没有逐资源错误清单，输出文件数量包括伴随文件。
+
+Ctrl+C 或在会话目录创建空文件 `cancel` 可中断，再用原命令加 `--resume`。已完成的范围保留，未完成的范围从其起点重试。`--retries` 控制每次运行中可恢复错误的额外尝试数。`--separate-types` 为长批次提供更多恢复点，默认将三类一起导出。恢复时复核索引 SHA-256、Hunter SHA-256、容器目录元数据、已知 Steam build/depot 和选项。旧 daily 会话按冻结的类型和筛选范围复核，能够覆盖当前发现目录和登记项就可继续使用。已结束会话另核对输出目录身份，内容完整性由资源计划验证。
+
+bulk 锁住用户 Hunter 配置，在独立会话副本运行程序。首次使用时以独占临时句柄保护缺省配置位置。窗口消息发往本次进程，设置、筛选结果和按钮状态由窗口回读。点击时鼠标会短暂移动，请在窗口保持正常可绘制时执行。成功后 CLI 请求关闭本次 Hunter 主窗口并等待退出。各 host 的 `child-process.json` 记录关闭方式和退出码。关闭超时会终止专用进程并报告失败。
+
+Hunter 的 Export All 会把多个原生条目写入同一个 PNG。文件可以正常解码，也可能含有来自多个条目的字节。对已按行核实的冲突，CLI 按索引 SHA 查询 `data/asset-import/hunter-image-collisions.json`。实际导出的冲突路径和对应行数写入命令结果、`export.json` 与 `source.json` 的 `known_image_collisions`。需要辨认来源时，在同版 Hunter 中把候选行分别导出到独立空目录，核对解码像素和引用。
+
+daily 在同一份已加载的索引上处理发现目录、已登记图片和其他原生输入。地图分块共用 `mbucket`，图片按登记名称选范围。多条筛选已覆盖相同输入时省去多余的一条。新增登记超出窄词时可重新启用配置中的宽词，再超出配置则导出所选类型的全部资源。实际生效的筛选在每次成功尝试的 `applied_query`，同路径重复输出仍核对大小和内容摘要。后续资源计划只取发现目录和登记输入。专项 `--query` 只代表实际匹配到的范围。
+
+以下 `start/search/batch-export` 使用前台与剪贴板，要求已有 hunter.dat。它们的会话和 bulk 会话分别管理。
+
+## 按完整资源名补导
+
+从项目根目录运行，复用上文 `$py`（需安装 Pillow）与 `$index`：
+
+```powershell
+$session = 'dist/hunter-session-001' # 必须是尚不存在的新目录；也可指定绝对路径
 
 & $py -B tools/hunter_cli doctor
 & $py -B tools/hunter_cli start --session $session --index $index --experimental-gui
@@ -47,7 +59,7 @@ $index = Read-Host '当前游戏安装目录中 sdf.sdftoc 的完整路径'
 & $py -B tools/hunter_cli cancel --session $session
 ```
 
-每批明确指定 1–20 个完整资源名；不提供全量导出。每项默认等待输出最多 30 秒，可用 `--timeout` 设置为不超过 300 秒。不存在的目标记为失败并继续；焦点/选择/输出状态不确定时停止后续项，保留已成功文件。
+定向 batch-export 每批接受 1–20 个完整资源名。每项默认等待输出最多 30 秒，可用 `--timeout` 设置为不超过 300 秒。不存在的目标记为失败并继续；焦点/选择/输出状态不确定时停止后续项，保留已成功文件。
 
 ## 命令和结果
 
@@ -65,7 +77,7 @@ $index = Read-Host '当前游戏安装目录中 sdf.sdftoc 的完整路径'
 
 返回 `native_id: null`，不能取得的原生 ID、游戏版本和原始编码资源哈希保持未知。`filtered_as: image` 的依据是 Hunter 宽度过滤条件，不是从扩展名或图像外观推断。查询没有读取 GUI 表格的其它元数据，宽高、透明度等在成功导出后由实际文件解码取得。
 
-`end_observed` 仅表示按 Down 后复制值不再变化；重复名称可能提前终止枚举。因此始终标记 `complete_catalog: false`，不能把 `list` 当作完整索引转储。同名资源无法区分原生身份；完整名称查询过宽或最终回读不一致时拒绝导出。
+`list` 的 `end_observed` 表示按 Down 后复制值重复，重复名称可提前结束浏览。按名称执行 `export` 和 `batch-export` 时，CLI 额外用 Windows OCR 回读匹配行数，在 20 行以内逐行复制并核对名称。同一完整名称出现多次时，该项返回 `AMBIGUOUS_RESOURCE_NAME`，其余明确目标可继续处理。行数回读失败或最终选中行不符会停止该批。
 
 标准输出为 JSON，启动阶段状态提示在标准错误；命令帮助使用 argparse 文本。退出码：
 
@@ -119,18 +131,6 @@ CLI 不自动置顶目标窗口，若目标窗口被其他窗口遮挡将直接�
 
 关闭后记录原 EXE、配置、索引 SHA-256 是否一致，以及索引同目录文件大小/修改时间是否一致。后者不是所有大型游戏资源的逐字节校验。崩溃可能留下 `RUNNING` 收据；不要把它当成功。Windows Job Object 用于守护进程退出时关闭其专用 Hunter，正常 `stop` 的最终校验仍是首选。
 
-## 已知限制与维护边界
+## 定向接口的边界
 
-标准文件对话框使用窗口消息；查询、选择和导出主要使用键盘及剪贴板。但 Hunter 主界面没有可用的标准控件树，目前仍有少量**固定布局点击**：设置入口、目录浏览、加载入口、首行选择。窗口逻辑客户区必须为 980×625，按实际 DPI 换算；布局或版本不符即拒绝。不同 DPI、显示器布局和锁屏/远程桌面变化未获得广泛验证。
-
-因此这是能实际处理明确图片和原生文件清单的原型，不能称为稳定的长期资源 API。运行会主动取得前台，适合专用桌面或一段无人操作的时间；后台无人值守、并行会话、所有格式、所有资源类型、原生 ID 和全量资源目录均未实现。
-
-批量流程减少了人工查找、截图识别、逐个点击和重复加载索引的步骤，但内部仍逐项查询并选择。没有声称比熟练用户的 GUI 多选更快；实际效率优势是脚本一次提交清单、自动登记输出、复用加载结果。
-
-离线测试：
-
-```powershell
-& $py -B -m unittest discover -s tests -p test_hunter_cli.py -v
-```
-
-该测试使用人工合成 PNG，覆盖精确选择、防路径歧义、取消、部分成功和错误停止；真实游戏验收记录另存于 `dist/`，不进入测试夹具。
+按名称补导要求 Win32 前台与剪贴板可用，并回读所选资源名。批次数量、支持类型和回执结构见上表。批量版本更新使用本页开头的 bulk 入口。Hunter 二进制或窗口布局升级后，先在独立会话重新核对类型选择、名称过滤、导出按钮以及恢复，再更新固定版本。

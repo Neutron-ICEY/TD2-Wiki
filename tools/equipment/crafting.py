@@ -173,8 +173,13 @@ class Crafting:
         for identity,entity in db['entities'].items():
             rows=[]
             if entity['template']=='武器信息':
-                for wrapper in entity.get('collections',{}).get('武器型号资料',{}).get('rows',[]):
-                    weapon=wrapper['data']
+                saved=entity.get('collections',{}).get('武器型号资料',{}).get('rows',[])
+                weapons={r['data']['装备UID']:r['data'] for r in saved}
+                for unit in entities.get(identity,{}).get('units',[]):
+                    if unit['target']['field']=='data':
+                        model=unit['semantic'];uid=model['装备UID']
+                        weapons[uid]={**weapons.get(uid,{}),**model}
+                for weapon in weapons.values():
                     for binding in [{'uid':weapon['装备UID']},*weapon.get('variants',[])]:
                         uid=binding['uid'];native=records.get(uid)
                         if native is None:self.missing('item:'+uid,'Weapon item unavailable');continue
@@ -279,6 +284,27 @@ class Crafting:
                 result[uid]=data
             except (ValueError,KeyError,OSError) as error:self.missing('blueprint:'+uid,error)
         return result
+
+    def material_conversions(self,rows):
+        conversions={}
+        for blueprint in rows:
+            tags=item_tags(self.native,blueprint)
+            if not any(tag.startswith('Crafting_Optimization_Material_Conversion_') for tag in tags):continue
+            uid=blueprint['resource_uid']
+            try:
+                target,=links(self.native,blueprint,'myCraftedItem')
+                paths=[p for p in self.native.includes(blueprint['_source']) if Path(p).stem.casefold()==target['target_name'].casefold()]
+                path,=paths
+                item=self.native.record(path,target['target_uid'])
+                if item['resource_type']!='ResourceItem':raise ValueError('Unexpected currency conversion result')
+                currency,=links(self.native,item,'myCurrencyResource')
+                value={'name':self.native.text(item,'myUIName'),'source':blueprint['_source'],'target_uid':target['target_uid'],
+                       'result_source':path,'currency_uid':currency['target_uid'],'amount':int(scalar(self.native,item,'myResourceValue')),
+                       'quality':scalar(self.native,item,'myQuality'),'tags':tags}
+                conversions[uid]=value
+                for field,data in value.items():self.unit(['material_conversions',uid,field],data)
+            except (ValueError,KeyError,TypeError,OSError) as error:self.missing('material_conversion:'+uid,error)
+        return conversions
 
     def economics(self,blueprints,known):
         used=set(t for b in blueprints.values() for t in b['tags'])|set(t for i in known.values() for t in i['tags'])
@@ -385,7 +411,10 @@ class Crafting:
     def project(self,db,projection):
         records,rows,owners=self.scan();infos=self.source_infos();known=self.identities(db,records,owners,projection)
         self.blueprint_targets(rows,known,records,owners,db)
-        blueprints=self.blueprints(rows,known,infos);currencies,deconstruction=self.economics(blueprints,known)
+        blueprints=self.blueprints(rows,known,infos)
+        conversions=self.material_conversions(rows)
+        currencies,deconstruction=self.economics({**blueprints,**conversions},known)
+        currencies.update(r['currency_uid'] for r in conversions.values())
         self.materials(currencies,deconstruction,known,db)
         from .native_sources import project as sources
         sources(self,known,blueprints,rows)

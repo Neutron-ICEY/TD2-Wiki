@@ -22,4 +22,10 @@ return {
     { start = 1794902400, finish = 1795680000, name = "“牧羊人”活动", kind = "计划", image = "TD2-UI-Shepherd-Background.jpg", icon = "TD2-UI-ShepherdStatus-Icon.png" },
     { start = 1794902400, finish = 1795680000, name = "突击", kind = "全域事件", image = "TD2-UI-Assault-Background.jpg", icon = "TD2-UI-GlobalEvent-Icon.png" },
     { start = 1794902400, finish = 1795680000, name = "肯利学院远征", kind = "赛季活动", image = "TD2-UI-KenlyCollegeExpedition-Background.jpg", icon = "TD2-UI-KenlyCollege-Icon.png" },
+    { start = 1795680000, finish = 1796112000, name = "精通等阶经验值活动", kind = "赛季活动", image = "TD2-UI-ProficiencyXPEvent-Background.jpg", icon = "TD2-UI-Proficient-Icon.png" },
+    { start = 1796112000, finish = 1796716800, name = "红线过载", kind = "赛季活动", image = "TD2-UI-RedlineOverdrive-Background.jpg", icon = "TD2-UI-GETypeOverdrive-Icon.png" },
+    { start = 1796112000, finish = 1796716800, name = "腐蚀躯壳", kind = "全域事件", image = "TD2-UI-CorrosiveShell-Background.jpg", icon = "TD2-UI-CorrosionGlobalEvent-Icon.png" },
+    { start = 1796716800, finish = 1797321600, name = "倒计时涌动", kind = "赛季活动", image = "TD2-UI-CountdownSurge-Background.jpg", icon = "TD2-UI-GETypeSurge-Icon.png" },
+    { start = 1797321600, finish = 1797926400, name = "优化涌动", kind = "赛季活动", image = "TD2-UI-OptimizationSurge-Background.jpg", icon = "TD2-UI-GETypeSurge-Icon.png" },
+    { start = 1798012800, finish = 1805184000, name = "敬请关注！", kind = "赛季活动", image = "TD2-UI-StayTuned-Background.jpg", icon = "TD2-UI-QuestionMark-Icon.png" },
 }

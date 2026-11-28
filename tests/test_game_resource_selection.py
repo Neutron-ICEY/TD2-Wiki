@@ -56,11 +56,61 @@ class ResourceSelectionTests(unittest.TestCase):
         self.native_files = {'files': [{'path': 'hunter/game/item', 'includes': ['hunter/game/schema']}]}
         self.native_index()
 
+    def test_daily_includes_map_reward_and_skin_provenance_without_visiting_adjacent_tiles(self):
+        self.json('data/asset-import/resource-daily.json', dict(schema_version=1,id='daily',
+                  discovery_directories=list(selection.DISCOVERY_ROOTS),excluded_directories=[],
+                  export_terms=['game system data','/weapons/']))
+        tile='hunter/baked_maps/'+'a'*32+'/ts[-40,0,-80]_b[0].mbucket.decompiled'
+        skin='images/hunter/baked/art/weapons/camo.png'
+        self.json('data/equipment/crafting.json',{'routes':{'placement':tile}})
+        self.json('data/equipment/weapon-skins.json',{'skins':[{'image_source':'resources/game/current/'+skin}]})
+        self.put(self.source,'raw_files/'+tile,b'target')
+        self.put(self.source,'raw_files/'+tile.replace('-80','-90'),b'research')
+        self.put(self.source,skin,b'icon')
+        token=resources.PlanValidation()
+        result=resources.make_plan(self.root,self.source,self.new,self.plan,profile='daily',validation=token)
+        files=[row['path'] for row in resources.rows(self.plan/'incoming.jsonl')]
+        self.assertIn('raw_files/'+tile,files)
+        self.assertIn(skin,files)
+        self.assertNotIn('raw_files/'+tile.replace('-80','-90'),files)
+        self.json('data/equipment/weapon-skins.json',{'skins':[]})
+        with self.assertRaises(resources.ResourceError):
+            resources.apply_plan(self.root,self.plan,validation=token)
+        self.assertFalse((self.current/skin).exists())
+
     def put(self, base, name, content):
         path = base / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(content)
         return path
+
+    def test_image_evidence_registers_physical_outputs_and_keeps_historical_observations_queryable(self):
+        self.json('data/equipment/crafting.json', {})
+        self.json('data/equipment/weapon-skins.json', {'skins': []})
+        historical = 'images/hunter/art/old.png'
+        self.put(self.current, historical, b'old')
+        self.json('evidence/observations.json', {'assets': [dict(asset_id='old', source_sha256=resources.digest(self.current/historical),
+            raw_path='resources/game/current/' + historical), dict(asset_id='atlas', source_sha256='0'*64,
+            raw_path='hunter/raw/images/hunter/baked/ui/current.png',
+            original_atlas={'resource_name': 'hunter/baked/ui/loot'},
+            provenance={'texture': 'hunter/baked/ui/expertise.DDS'},
+            definition='raw_files/hunter/ui/expertise.spritesheet')]})
+        batch = dict(id='images', role='source', format='manifest', file='evidence/observations.json',
+                     historical_observations=['/assets/0'])
+        self.json('data/asset-import/batches.json', dict(schema_version=1, batches=[batch]))
+        lib = selection.Library(self.root)
+        self.assertTrue(lib.verify([lib.records[0]])[0]['verification']['passed'])
+        required = set()
+        profile = dict(profile='daily', excluded_directories=[])
+        selection.dependencies(self.root, profile, required_output=required)
+        self.assertEqual({p for p in required if p.startswith('images/')},
+                         {'images/hunter/baked/ui/' + p + '.png' for p in ('current','loot','expertise')})
+        self.assertNotIn('raw_files/hunter/baked/ui/loot', required)
+        self.assertNotIn('raw_files/hunter/baked/ui/expertise.DDS', required)
+        self.assertIn('raw_files/hunter/ui/expertise.spritesheet', required)
+        self.json('data/equipment/weapon-skins.json', {'skins': [{'image_source': 'resources/game/current/' + historical}]})
+        selection.dependencies(self.root, profile, required_output=required)
+        self.assertIn(historical, required)
 
     def json(self, name, value):
         return self.put(self.root, name, resources.encoded(value))

@@ -58,6 +58,12 @@ def main_window(pid):
         raise RuntimeError('HUNTER_WINDOW_NOT_UNIQUE')
     return matches[0]['hwnd']
 
+def request_close(pid):
+    hwnd = main_window(pid)
+    post = declare(u, 'PostMessageW', w.BOOL, [w.HWND, w.UINT, w.WPARAM, w.LPARAM])
+    if not post(hwnd, 0x0010, 0, 0):  # WM_CLOSE
+        raise c.WinError(c.get_last_error())
+
 def send(hwnd, message, wp=0, lp=0):
     result = c.c_size_t()
     c.set_last_error(0)

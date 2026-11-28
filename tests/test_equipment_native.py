@@ -4,6 +4,7 @@ import copy
 import json
 import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 import unittest
 from tools.equipment.native import Native, bindings
@@ -14,6 +15,20 @@ TALENT='hunter/game system data/juice/talent/warlock_talent_exotic_backpack_mk2.
 UID='346395BC5EFF32B00003AB84932B6FB5'
 
 class NativeImportTests(unittest.TestCase):
+    def test_generation_version_is_read_from_native_table(self):
+        from tools.equipment.native_tree import GENERATION_VERSIONS, item_generation_version
+        self.assertEqual(item_generation_version(Native(FIXTURE)), 'code1_data23')
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            file=root/GENERATION_VERSIONS
+            file.parent.mkdir(parents=True)
+            original=(FIXTURE/GENERATION_VERSIONS).read_text('utf8')
+            file.write_text(original.replace('23','24'),encoding='utf8')
+            self.assertEqual(item_generation_version(Native(root)), 'code1_data24')
+            file.write_text(original.replace('23','29'),encoding='utf8')
+            with self.assertRaisesRegex(ValueError,'Unreviewed'):
+                item_generation_version(Native(root))
+
     def talent_record(self,name):
         n=Native(FIXTURE)
         return n,n.document('hunter/game system data/juice/talent/'+name+'.mtalent')['resources'][0]

@@ -1,6 +1,6 @@
 ![TD2 Wiki — 《全境封锁2》中文社区 Wiki](docs/readme-assets/header-phoenix.png)
 
-本仓库维护《全境封锁2》中文灰机 Wiki 的开源站点内容、结构化资料、Lua Reader、浏览器端表单编辑器，以及离线预览与发布工具链。
+本仓库维护《全境封锁2》中文灰机 Wiki 的开源站点内容、结构化资料、Lua Reader、浏览器端表单编辑器，以及离线预览与发布工具链。当前资料对应 Steam build `26862566`，装备记录包含 292 个实体。
 
 <p>
   <a href="https://td2.huijiwiki.com/"><img src="docs/readme-assets/buttons/btn-wiki.png" width="104" height="32" alt="访问 Wiki"></a>
@@ -97,7 +97,7 @@ Wiki 业务图片由灰机文件系统及维护者本地资源库管理，本仓
 | 首页、词条、Catalog、武器图表与前端开发 | 是（`tools.equipment.weapon_chart_study` 默认重算并核对控制力图表数据，`--output` 可导出候选） | — |
 | 无图静态预览与源码级单元测试 | 是 | — |
 | 完整配图预览、登记图片校验 | — | 按 `registry.json` 的 `source` 放置登记图片，首页预览另需本地活动快照和头像 |
-| 游戏版本解包更新与含私有夹具的全量回归 | — | `resources/game/current/`、Hunter 与本地来源索引（[资源更新](docs/game-resources.md)） |
+| 游戏版本解包更新与含私有夹具的全量回归 | — | 游戏原件、Hunter 与本地来源索引。日常导出使用 `tools.hunter_cli bulk --profile daily`，更新入口为 `tools.version_update run`（[资源更新](docs/game-resources.md)） |
 | 线上发布包准备与回退 | — | 登记图片、发布回执与远端修订核对（[部署流程](docs/deployment.md)） |
 
 ## <img src="docs/readme-assets/icons/sync.png" width="20" height="20" align="absmiddle" alt=""> 协作与双仓同步

@@ -1,9 +1,11 @@
 """离线验证目标约束、选择校验和逐项结果；不启动 Hunter，不读取游戏文件。"""
 from pathlib import Path
+import os
+import subprocess
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, call, patch
 
 from tools.hunter_cli.core import Bridge, image_query, raw_query, read_json, resource_path, validate_targets
 
@@ -92,6 +94,42 @@ class HunterCliTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'EXACT_SELECTION_READBACK_FAILED'):
             bridge.select_exact('hunter/a')
 
+    def test_exact_selection_counts_identical_rows_instead_of_stopping_on_repeat(self):
+        bridge = Bridge.__new__(Bridge)
+        bridge.layout = Mock()
+        bridge.w = Mock()
+        bridge.hwnd = 1
+        name = 'hunter/baked/art/_test/mikael'
+        bridge.filtered_count = Mock(return_value=5)
+        bridge.copied_selection = Mock(side_effect=[image_query(name)] + [name] * 5)
+        with patch('tools.hunter_cli.core.time.sleep'), self.assertRaisesRegex(RuntimeError, 'AMBIGUOUS_RESOURCE_NAME'):
+            bridge.select_exact(name)
+        self.assertEqual(bridge.copied_selection.call_count, 6)
+        self.assertEqual(bridge.w.key.call_args_list.count(call(1, 40)), 4)
+
+    @unittest.skipUnless(os.name == 'nt', 'Hunter window shutdown')
+    def test_success_waits_for_window_exit_and_timeout_is_recorded_as_failure(self):
+        from tools.hunter_cli.__main__ import ProtectedHunter
+        with patch('tools.hunter_cli.windows.request_close') as request:
+            for timeout in (False, True):
+                with self.subTest(timeout=timeout):
+                    guard = ProtectedHunter('hunter.exe', '.')
+                    child = guard.child = Mock(pid=15, returncode=0)
+                    child.poll.side_effect = [None, None if timeout else 0]
+                    guard.k, guard.job, guard.lock = Mock(), 1, 2
+                    if timeout:
+                        child.wait.side_effect = [subprocess.TimeoutExpired('Hunter', 10), 1]
+                        with self.assertRaises(subprocess.TimeoutExpired):
+                            guard.close(graceful=True)
+                        child.terminate.assert_called_once()
+                        self.assertEqual(guard.shutdown, 'forced_after_close_failure')
+                    else:
+                        guard.close(graceful=True)
+                        child.terminate.assert_not_called()
+                        self.assertEqual(guard.shutdown, 'window_close')
+                    request.assert_called_with(15)
+                    self.assertEqual(guard.k.CloseHandle.call_count, 2)
+
     def run_batch(self, first_error=None, cancel=False, cancel_during_selection=False):
         from PIL import Image
         scratch = Path(__file__).resolve().parents[1] / 'dist'
@@ -136,6 +174,11 @@ class HunterCliTests(unittest.TestCase):
         self.assertEqual(manifest['exported_file_count'], 1)
         self.assertEqual(result['exports'][0]['resource_name'], 'hunter/valid')
         self.assertEqual(result['exports'][0]['resource_id'], 'UNKNOWN')
+
+    def test_ambiguous_name_fails_only_that_target(self):
+        result, _, _, calls = self.run_batch('AMBIGUOUS_RESOURCE_NAME')
+        self.assertEqual((result['items'][0]['error'], result['success_count'], calls),
+                         ('AMBIGUOUS_RESOURCE_NAME', 1, 1))
 
     def test_unknown_ui_failure_stops_further_exports(self):
         result, _, _, calls = self.run_batch('FOCUS_LOST')

@@ -71,6 +71,28 @@ class Bridge:
         self.pid=pid
         self.session=Path(session)
         self.hwnd=self.w.main_window(pid)
+        self.reader = None
+
+    def close(self):
+        if self.reader is not None:
+            self.reader.close()
+            self.reader = None
+
+    def filtered_count(self):
+        from .bulk import visible_count
+        from .display import Window, compile_reader
+        if self.reader is None:
+            self.reader = Window(self.hwnd, self.session, compile_reader(self.session))
+        deadline = time.monotonic() + 5
+        previous = None
+        while time.monotonic() < deadline:
+            text = self.reader.text()
+            counts = visible_count(text) if 'showing' in text.casefold() else None
+            if counts is not None and counts == previous:
+                return counts[0]
+            previous = counts
+            time.sleep(.15)
+        raise RuntimeError('TARGET_COUNT_READBACK_FAILED')
 
     def layout(self):
         # 固定布局原型必须拒绝窗口大小变化；DPI 按 Win32 实际比例换算。
@@ -88,7 +110,7 @@ class Bridge:
         value=self.w.clipboard()
         return None if value in (None,marker,'') else value
 
-    def search(self,query,limit=20,kind='image',namespace='hunter'):
+    def search(self,query,limit=20,kind='image',namespace='hunter',*,count_rows=False):
         if not 1<=limit<=100: raise ValueError('LIMIT_MUST_BE_1_TO_100')
         self.layout()
         w,h=self.w,self.hwnd
@@ -99,20 +121,29 @@ class Bridge:
         w.key(h,ord('A'),(17,))
         if self.copied_selection()!=compiled: raise RuntimeError('QUERY_READBACK_FAILED')
         w.key(h,13);time.sleep(.6)
+        count = self.filtered_count() if count_rows else None
+        if count is not None and count > limit:
+            raise RuntimeError('TARGET_SEARCH_TOO_BROAD')
+        if count == 0:
+            return dict(query=compiled,resources=[],end_observed=True,complete_catalog=False)
         w.click_client(h,150,140)
         name=self.copied_selection()
         if name is None:
+            if count is not None:
+                raise RuntimeError('RESOURCE_NAME_READBACK_FAILED')
             return dict(query=compiled,resources=[],end_observed=True,complete_catalog=False)
         if not name.startswith(prefix) or '\n' in name:
             raise RuntimeError('RESOURCE_NAME_READBACK_FAILED')
         names=[];end=False
         for _ in range(limit):
-            if name in names:
+            if count is None and name in names:
                 end=True;break
             names.append(name)
+            if count is not None and len(names) == count:
+                end=True;break
             w.key(h,40)
             next_name=self.copied_selection()
-            if next_name==name:
+            if count is None and next_name==name:
                 end=True;break
             if not next_name or not next_name.startswith(prefix) or '\n' in next_name:
                 raise RuntimeError('RESOURCE_ENUMERATION_INTERRUPTED')
@@ -123,9 +154,10 @@ class Bridge:
                     end_observed=end,complete_catalog=False,limit=limit)
 
     def select_exact(self,name,kind='image'):
-        result=self.search(name,20,kind,name.split('/')[0]) if kind=='raw' else self.search(name,20)
+        result=self.search(name,20,kind,name.split('/')[0],count_rows=True)
         names=[r['name'] for r in result['resources']]
-        if names.count(name)!=1: raise RuntimeError('TARGET_NOT_FOUND')
+        if name not in names: raise RuntimeError('TARGET_NOT_FOUND')
+        if names.count(name)>1: raise RuntimeError('AMBIGUOUS_RESOURCE_NAME')
         if not result['end_observed']: raise RuntimeError('TARGET_SEARCH_TOO_BROAD')
         # 枚举已停在末项，用方向键返回目标；最终再次逐字回读。
         for _ in range(len(names)-1-names.index(name)):
@@ -249,8 +281,8 @@ class Bridge:
                 item.update(status='RAW_FILE_STABLE' if kind=='raw' else 'EXPORTED_FILE_VALIDATED',exported_path=str(path),sha256=record['exported_file_sha256'])
             except Exception as error:
                 item.update(status='FAILED',error=str(error))
-                # 未找到资源不影响其它目标；未知 UI/导出状态必须停止，避免对忙碌窗口继续发命令。
-                fatal=str(error)!='TARGET_NOT_FOUND'
+                # 明确无法按名称选择时仍可处理下一项。未知窗口状态应停止发命令。
+                fatal=str(error) not in ('TARGET_NOT_FOUND', 'AMBIGUOUS_RESOURCE_NAME')
             receipt.update(success_count=len(receipt['exports']),
                            failed_count=sum(x['status']=='FAILED' for x in receipt['items']))
             receipt['not_attempted_count']=len(names)-receipt['success_count']-receipt['failed_count']

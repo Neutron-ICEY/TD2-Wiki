@@ -31,7 +31,7 @@ git config --local td2sync.full ../../Workspace/WEB-TD2-Wiki
 
 ## 文件范围
 
-同步工具跳过协作仓库忽略的文件，以及 `.gitattributes` 标为 `td2-manual` 的文件；显式指定这些路径时命令会报错。`.gitattributes` 中的 `td2-manual` 覆盖按环境分别维护的文件，包括 Git 策略、环境入口（`README.md`、`AGENTS.md`）、协作仓展示配图（`docs/readme-assets/`）、因两仓工具或数据版本差异分开维护的文档，以及含本机来源字段的图片映射。可用 `git check-attr td2-manual -- <路径>` 查询标记。完整工程保留原件、证据、凭据、回执和备份；提交者仍需核对新代码、数据和图片的实际来源。
+同步工具跳过协作仓库忽略的文件，以及 `.gitattributes` 标为 `td2-manual` 的文件；显式指定这些路径时命令会报错。`.gitattributes` 中的 `td2-manual` 覆盖按环境分别维护的文件，包括 Git 策略、环境入口（`README.md`、`AGENTS.md`）、协作仓展示配图（`docs/readme-assets/`）、含完整工程专属参考链接的装备维护文档、协作仓配图署名（`THIRD_PARTY.md`）和资产目录占位（`assets/.gitkeep`），以及含本机来源字段的图片映射。可用 `git check-attr td2-manual -- <路径>` 查询标记。完整工程保留原件、证据、凭据、回执和备份；提交者仍需核对新代码、数据和图片的实际来源。
 
 资源批次的历史根目录只在完整工程配置。共享来源字段使用仓库相对路径或固定版本的上游链接；本机解包路径、Steam 安装路径和剪贴板路径留在完整工程。
 

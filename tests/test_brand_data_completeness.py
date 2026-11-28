@@ -78,7 +78,7 @@ class BrandDataCompletenessTests(unittest.TestCase):
 
     def test_three_brands_keep_six_sections_and_named_bindings(self):
         entities=identity_catalog.read_json(ROOT/'data/equipment/records.json')['entities']
-        for title, ordinary, named in [('5.11 Tactical', 14, 2), ('战队合金', 6, 2), ('中国光能工业公司', 9, 1)]:
+        for title, ordinary, named in [('5.11 Tactical', 14, 3), ('战队合金', 6, 2), ('中国光能工业公司', 9, 1)]:
             raw = source_for(title).read_text('utf-8')
             identity=re.search(r'\|资料ID=([^\n|}]+)',raw)[1].strip()
             collections=entities[identity]['collections']

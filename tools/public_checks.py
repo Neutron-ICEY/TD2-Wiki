@@ -22,6 +22,7 @@ PRIVATE_TESTS = {
         'test_text_library.HistoricalTextInputTests.test_changed_snapshot_registry_is_rejected',
     ),
     'tests/fixtures/equipment-native/hunter and rogue': (
+        'test_equipment_native.NativeImportTests.test_generation_version_is_read_from_native_table',
         'test_equipment_native.NativeImportTests.test_memento_talent_relation_is_followed_and_missing_target_is_unavailable',
         'test_equipment_native.NativeImportTests.test_real_brand_modes_and_nested_dictionary_percentage',
         'test_equipment_native.NativeImportTests.test_real_memento_pvp_parameter_change_is_independent',

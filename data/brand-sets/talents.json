@@ -1597,6 +1597,66 @@
         "hunter/game system data/juice/talent/talent_weapon_sledgehammer_perfect.mtalent#6CFEC5E662C29A9B000364548A4A662D myUIName/en and myIconSprite",
         "resources/game/current/raw_files/hunter/ui/spritesheets/ui_talents_spritesheet_5.spritesheet.decompiled#perfect_sledgehammer"
       ]
+    },
+    {
+      "id": "weapon_talent_04b83df56acdf1ce001c96dc9cb8eda3",
+      "zh_name": "聚合",
+      "en_name": "Convergent",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "weapon-talent-icon-04b83df56acdf1ce001c96dc9cb8eda3"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_g36_enhanced_assault_rifle.mtalent#04B83DF56ACDF1CE001C96DC9CB8EDA3"
+      ]
+    },
+    {
+      "id": "weapon_talent_205305c86ad8c296000eb24b4b287a68",
+      "zh_name": "科技恐惧症",
+      "en_name": "Technophobia",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "weapon-talent-icon-205305c86ad8c296000eb24b4b287a68"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_technophobia.mtalent#205305C86AD8C296000EB24B4B287A68"
+      ]
+    },
+    {
+      "id": "weapon_talent_205305c86ad8d0420003ec475bc30482",
+      "zh_name": "完美的科技恐惧症",
+      "en_name": "Perfect Technophobia",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "weapon-talent-icon-205305c86ad8d0420003ec475bc30482"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_weapon_technophobia_perfected.mtalent#205305C86AD8D0420003EC475BC30482"
+      ]
+    },
+    {
+      "id": "weapon_talent_40efa9d56ad88e96000385ee26d3d998",
+      "zh_name": "Tool Breaker - WIP!",
+      "en_name": "Tool Breaker - WIP!",
+      "page_title": "",
+      "icon": {
+        "asset_ref": "weapon-talent-icon-40efa9d56ad88e96000385ee26d3d998"
+      },
+      "search_aliases": [],
+      "active": true,
+      "verification": "已核实",
+      "sources": [
+        "hunter/game system data/juice/talent/talent_exotic_smg_tool_breaker.mtalent#40EFA9D56AD88E96000385EE26D3D998"
+      ]
     }
   ],
   "_本地来源": {

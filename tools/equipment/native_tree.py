@@ -6,6 +6,19 @@ unknown game syntax or turn a loot tag into an availability assertion.
 import re
 
 
+GENERATION_VERSIONS = 'hunter/game system data/rejuice/itemgenerationversions.rejuice'
+
+
+def item_generation_version(native):
+    document = parse(native.file(GENERATION_VERSIONS).read_text('utf-8-sig'))
+    versions = child(document, 'ItemGenerationVersions Versions')
+    table = child(versions, 'myNumberOfDataVersionsPerCodeVersionList') if versions else None
+    rows = [text for text, _ in table['properties']] if table else []
+    if len(rows) != 1 or not (match := re.fullmatch(r'int "Code Version 1" (23|24)', rows[0])):
+        raise ValueError('Unreviewed native item generation version')
+    return 'code1_data' + match[1]
+
+
 def parse(text):
     root={'header':'root','properties':[],'children':[],'line':0};stack=[root]
     for number,line in enumerate(text.splitlines(),1):

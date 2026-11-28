@@ -1,5 +1,7 @@
 # 装备资料维护
 
+版本更新可用 `tools.version_update review` 产生新 UID、候选索引和投影差异。已审核资料可使用 `prepare --generate` 依序生成品牌与装备导航、装备组、共享 Catalog 与资产映射、奇特装备、武器及导航、赛季与活动，再执行离线检查。发布前使用 `--full` 运行全套回归。每个阶段使用新的 `--output dist/...`。[完整操作方法](game-resources.md)
+
 固定解包内容保存在 `data/equipment/records.json`，页面引用和人工维护内容保存在 `wiki/pages/brands/`、`gear-sets/`、`exotic-gear/` 和 `equipment/` 的结构化 WikiText。Reader 消费固定事实与页面内容，Editor 只加载页面身份和人工字段。游戏数据更新先投影和比较，再修改已登记的字段。
 
 ## 稳定身份与地址
@@ -69,7 +71,7 @@ node tools/equipment/import.cjs dist/update-input.json dist/update-review
 
 天赋通过声明的父定义解析继承，子级显式字段或集合优先；基础参数、PvP 参数覆盖和说明覆盖分别选择。覆盖类型使用原生枚举及其默认值，说明只引用该模式实际使用的参数。解析器修正时，先对同一份原生输入比较修正前后投影，确认旧指纹与修正前一致，再只校正受影响字段的基准并保留当前资料；不能把解析差异当成游戏更新。新恢复解析的字段按首次基准处理。
 
-核心配置作为关联组比较，次属性槽数和插件槽数独立比较。`rules.py` 沿 ArmorItem 的配置 UID、当前 code1/data23 定义及继承读取规则；型号之间不一致的字段保留原值并报告。已有属性槽与随机池关系继续独立更新。PvP 明确没有覆盖时复用基础定义；覆盖存在但无法解析时保留现有 PvP 内容。
+核心配置作为关联组比较，次属性槽数和插件槽数独立比较。`rules.py` 沿 ArmorItem 的配置 UID 读取版本表指定的配置和继承，当前为 code1/data24。型号之间不一致的字段保留原值并报告。已有属性槽与随机池关系继续独立更新。PvP 明确没有覆盖时复用基础定义，覆盖存在但无法解析时保留现有 PvP 内容。
 
 新映射必须以原生身份和引用核对，不仅靠同名。品牌型号排除原生内部名含 `milestone` 和 `level数字boost` 的奖励或直升预设；制作变体保留真实制作目标和图纸关联，不能仅按显示名合并。完整工程用 `evidence/equipment/excluded-salvaged-models.json` 保存已确认的 29 个回收型号 UID。
 
@@ -95,7 +97,7 @@ node tools/equipment/import.cjs dist/update-input.json dist/update-review
 
 Reader 按 `{category, text}` 展示成品及普通图纸来源，奇特图纸按 `blueprintGroups` 的标题与来源列表排版。同一条目的不同常规来源各占一行。持有前置、特定难度及首次奖励随对应来源显示。部位适用范围保留在成品和配方 UID 关系中，各部位的图纸列在图纸清单。
 
-`native_attributes.py` 按 `identities` 的原生 UID 更新本地化、单位及格式信息。`native_profile` 明确选择 code1/data23 和十条已闭合规则：普通武器控制、暴击几率、技能分阶及七条具名常量预设。常量规则核对品质、池、预设百分位和相关等级段；不推测 Power 端点或取整，不使用百分位简单相乘。其余 25 条继续使用确认值。别名、独立说明和原生未变时的修订保留，原有显示视图在导入时同步。
+`native_attributes.py` 按 `identities` 的原生 UID 更新本地化、单位及格式信息。`native_profile` 登记当前 code1/data24 属性池和十条已闭合规则：普通武器控制、暴击几率、技能分阶及七条具名常量预设。常量规则核对品质、池、预设百分位和相关等级段；不推测 Power 端点或取整，不使用百分位简单相乘。其余 25 条继续使用确认值。别名、独立说明和原生未变时的修订保留，原有显示视图在导入时同步。
 
 幽灵与承包商手套的固定对装甲伤害使用相同属性 UID、池和品质百分位；这可以核实共享预设的映射，但不能单独推出最终 UI 数值。普通 Orange 的 8.0% 保留确认值及来源，不把 Prototype 百分位或未闭合的取整推算作为数值导入。
 
@@ -176,7 +178,7 @@ DPS 由 `weapon_projection.py` 计算。普通模式使用默认单次伤害 × 
 
 控制力条使用 `itemdetail_stats` 实际调用的 `WeaponAccuracyCompareUI` 和 `WeaponStabilityCompareUI`，包括射手步枪的收束时间分支及固定配件加成；`myAccuracyUI` 是改装屏幕字段，不能直接当作物品面板准确度。上述公式位于当前原生 `rogue/game system data/juice/attribute/dictionary/`，图形节点位于 `hunter/ui/compounds/`。
 
-武器控制力图按原生型号 UID 读取 `data/equipment/weapon-charts.json`，由 `tools.equipment.weapons generate` 按枪种生成 Lua 模块。精准度显示默认配置、选定姿态的发射散布半角。「移动瞄准」对所有型号使用 1.9 m/s 的稳定比较速度，忽略一切角色移速加成，按各自的原生阈值和散布修正计算。普通角色平地前进的原生步态均速为 1.89126 m/s。参见移动瞄准调查（完整维护环境的 `audit/2026-11-21/weapon-ads-movement.md`）。镜头后坐采用站立瞄准、八个固定种子及 60 Hz 回放，图中显示各次回放的散布点及代表轨迹。两图的坐标都是距起点 10 米平面上的厘米值。两图每格 25 厘米，方形视口边长从 200 厘米起每档增加 50 厘米。精准度按当前姿态的最外圈选档，原点居中。后坐力按显示的散布点及轨迹选档，原点在底边中央。任一外缘与可扩展的边界相距 12.5 厘米时升档。选定档位后，视口与图形在 240 毫秒内同步过渡，启用减少动态效果时直接显示目标状态。模型可以只提供其中一张图；复仇女神保留控制属性、排除两张模拟图。用 `tools.equipment.weapon_chart_study` 从随库提供的模型和轨迹重建图表目录，再用 `tools.equipment.weapons check` 检查模板、具名入口与八份图表模块。
+武器控制力图按原生型号 UID 读取 `data/equipment/weapon-charts.json`，由 `tools.equipment.weapons generate` 按枪种生成 Lua 模块。精准度显示默认配置、选定姿态的发射散布半角。「移动瞄准」对所有型号使用 1.9 m/s 的稳定比较速度，忽略一切角色移速加成，按各自的原生阈值和散布修正计算。普通角色平地前进的原生步态均速为 1.89126 m/s。参见移动瞄准调查（完整维护环境的 `audit/2026-11-21/weapon-ads-movement.md`）。镜头后坐采用站立瞄准、八个固定种子及 60 Hz 回放，图中显示各次回放的散布点及代表轨迹。两图的坐标都是距起点 10 米平面上的厘米值。两图每格 25 厘米，方形视口边长从 200 厘米起每档增加 50 厘米。精准度按当前姿态的最外圈选档，原点居中。后坐力按显示的散布点及轨迹选档，原点在底边中央。任一外缘与可扩展的边界相距 12.5 厘米时升档。选定档位后，视口与图形在 240 毫秒内同步过渡，启用减少动态效果时直接显示目标状态。模型可以只提供其中一张图；复仇女神保留控制属性、排除两张模拟图。用 `tools.equipment.weapon_chart_study` 从 [26862566 研究输入](../evidence/research/weapon-charts-26862566/control-manifest.json)和同目录的模型与轨迹归档重建图表目录，再用 `tools.equipment.weapons check` 检查模板、具名入口与八份图表模块。
 
 特有武器中，迷你炮机枪展示精准度与后坐力图，TAC-50 C 步枪仅展示精准度图。`weapon_chart_study.py` 按型号 UID 限定两种图表的适用范围，Reader 使用特有武器图表模块中的同一规则。游戏面板的准确度、稳定度和装弹时间独立展示。
 

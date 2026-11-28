@@ -90,6 +90,8 @@
 !/evidence/asset-import/records/shakedown-name-20261116-001.json
 !/evidence/research/weapon-charts-26413016/control-manifest.json
 !/evidence/research/weapon-charts-26413016/control-observations.zip
+!/evidence/research/weapon-charts-26862566/control-manifest.json
+!/evidence/research/weapon-charts-26862566/control-observations.zip
 
 # Local installations, archives, inputs, capture sessions and build outputs.
 /resources/

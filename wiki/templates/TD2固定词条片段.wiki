@@ -11,6 +11,8 @@
 |fixed_minor_forge_shield_health=<span class="td2-text-orange">50.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_shield_health}}</span>
 |fixed_minor_fox_s_prayer_dmg_to_target_out_of_cover=<span class="td2-text-orange">8.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_dmg_to_target_out_of_cover}}</span>
 |fixed_minor_grease_status_effects=<span class="td2-text-orange">16.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_status_effects}}</span>
+|fixed_minor_health_percent_y8s4=<span class="td2-text-gold">{{TD2次属性名称|minor_attribute_health_percent}}</span>
+|fixed_minor_incoming_repairs_y8s4=<span class="td2-text-gold">{{TD2次属性名称|minor_attribute_incoming_repairs}}</span>
 |fixed_minor_motherly_love_skill_health=<span class="td2-text-orange">25.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_skill_health}}</span>
 |fixed_minor_nightwatcher_scanner_pulse_haste=<span class="td2-text-orange">100.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_scanner_pulse_haste}}</span>
 |fixed_minor_p_caro_s_holster_weapon_damage=<span class="td2-text-orange">10.0%</span> <span class="td2-text-gold">{{TD2次属性名称|minor_attribute_weapon_damage}}</span>

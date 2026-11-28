@@ -1,5 +1,6 @@
 """用法：python tools/hunter_cli --help（也支持 python -m tools.hunter_cli）。"""
 import argparse
+from contextlib import ExitStack
 import ctypes as c
 from ctypes import wintypes as w
 import importlib.util
@@ -26,18 +27,28 @@ def emit(value):
 
 class ProtectedHunter:
     """原配置独占只读锁 + 原样 EXE 副本；Job Object 防止守护进程退出后遗留 Hunter。"""
-    def __init__(self,exe,session):
+    def __init__(self,exe,session, allow_missing_config=False):
+        self.allow_missing_config=allow_missing_config
         self.exe,self.session=Path(exe),Path(session)
         self.child=None;self.lock=None;self.job=None
+        self.shutdown = None
 
     def __enter__(self):
         from tools.hunter_cli.windows import k,declare
         self.k=k
         declare(k,'CreateFileW',w.HANDLE,[w.LPCWSTR,w.DWORD,w.DWORD,c.c_void_p,w.DWORD,w.DWORD,w.HANDLE])
         declare(k,'CloseHandle',w.BOOL,[w.HANDLE])
-        if not config_path().is_file(): raise RuntimeError('EXISTING_HUNTER_CONFIG_REQUIRED')
-        self.before=sha(config_path())
-        self.lock=k.CreateFileW(str(config_path()),0x80000000,0,None,3,0x80,None)
+        config = config_path()
+        if config.is_file():
+            self.before = sha(config)
+            self.lock = k.CreateFileW(str(config),0x80000000,0,None,3,0x80,None)
+        elif self.allow_missing_config:
+            config.parent.mkdir(parents=True,exist_ok=True)
+            self.before = None
+            # CREATE_NEW and DELETE_ON_CLOSE leave a pre-existing user configuration untouched.
+            self.lock = k.CreateFileW(str(config),0x80010000,0,None,1,0x04000100,None)
+        else:
+            raise RuntimeError('EXISTING_HUNTER_CONFIG_REQUIRED')
         if self.lock==c.c_void_p(-1).value:
             self.lock=None;raise RuntimeError('CONFIG_LOCK_FAILED')
         try:
@@ -79,14 +90,38 @@ class ProtectedHunter:
             k.CloseHandle(job);raise c.WinError(c.get_last_error())
         return job
 
-    def close(self):
-        if self.child is not None and self.child.poll() is None:
-            self.child.terminate();self.child.wait(timeout=10)
-        if self.job: self.k.CloseHandle(self.job);self.job=None
-        if self.lock: self.k.CloseHandle(self.lock);self.lock=None
+    def close(self, graceful=False):
+        try:
+            if self.child is not None and graceful:
+                if self.child.poll() is None:
+                    from tools.hunter_cli.windows import request_close
+                    self.shutdown = 'window_close_requested'
+                    request_close(self.child.pid)
+                    self.child.wait(timeout=10)
+                    self.shutdown = 'window_close'
+                else:
+                    self.shutdown = 'already_exited'
+                if self.child.returncode != 0:
+                    raise RuntimeError('HUNTER_EXIT_CODE: ' + str(self.child.returncode))
+        finally:
+            try:
+                if self.child is not None and self.child.poll() is None:
+                    self.shutdown = 'forced_after_close_failure' if graceful else 'terminated_on_error'
+                    self.child.terminate()
+                    self.child.wait(timeout=10)
+            finally:
+                if self.job: self.k.CloseHandle(self.job);self.job=None
+                if self.lock: self.k.CloseHandle(self.lock);self.lock=None
 
     def __exit__(self,*args):
-        self.close()
+        try:
+            self.close(graceful=args[0] is None)
+        finally:
+            if self.allow_missing_config:
+                path = config_path()
+                after = sha(path) if path.is_file() else None
+                if self.before != after:
+                    raise RuntimeError('ORIGINAL_HUNTER_CONFIGURATION_CHANGED')
 
 def data_metadata(index):
     return {p.name:[p.stat().st_size,p.stat().st_mtime_ns] for p in Path(index).parent.iterdir() if p.is_file()}
@@ -100,7 +135,7 @@ def worker(session):
     before_meta=data_metadata(settings['index']);write_json(session/'input-metadata-before.json',before_meta)
     state_path=session/'state.json'
     try:
-        with ProtectedHunter(settings['hunter'],session) as guard:
+        with ProtectedHunter(settings['hunter'],session) as guard, ExitStack() as ui:
             state['hunter_pid']=guard.child.pid
             deadline=time.monotonic()+15
             while True:
@@ -108,6 +143,7 @@ def worker(session):
                 except RuntimeError:
                     if guard.child.poll() is not None or time.monotonic()>deadline: raise
                     time.sleep(.2)
+            ui.callback(bridge.close)
             time.sleep(1.5) # Winit 创建 HWND 早于首帧与初始控件可交互时刻。
             # 首先明确设置并回读新输出目录；未通过此步骤时绝不加载或导出。
             initial=session/'initial/hunter/raw';initial.mkdir(parents=True)
@@ -165,7 +201,7 @@ def worker(session):
                         write_json(response,dict(ok=ok,result=result))
                         state['status']='READY'
                         if result.get('receipt_path'): state['last_receipt']=result['receipt_path']
-                        if any(x.get('error') not in (None,'TARGET_NOT_FOUND') for x in result.get('items',[])):
+                        if any(x.get('error') not in (None,'TARGET_NOT_FOUND','AMBIGUOUS_RESOURCE_NAME') for x in result.get('items',[])):
                             state['status']='NEEDS_ATTENTION'
                     except Exception as error:
                         write_json(response,dict(ok=False,error=str(error)))
@@ -206,10 +242,25 @@ def parser():
         if name=='export':q.add_argument('--name',required=True)
         if name=='batch-export':q.add_argument('--manifest',type=Path,required=True,help='JSON 字符串数组，1 至 20 个完整资源名')
         if name in ('export','batch-export'):q.add_argument('--timeout',type=float,default=30)
+    from tools.hunter_cli.bulk import arguments
+    arguments(sub)
     return p
 
 def main(argv=None):
     args=parser().parse_args(argv)
+    if args.command == 'bulk':
+        from tools.hunter_cli.bulk import run
+        try:
+            result = run(args)
+            emit({key: result[key] for key in ('status','source_directory','source_metadata','statistics',
+                                               'known_image_collisions') if key in result})
+            return 0
+        except KeyboardInterrupt:
+            emit({'error':'EXPORT_INTERRUPTED', 'session': str(args.session)})
+            return 130
+        except (RuntimeError, OSError, ValueError, subprocess.SubprocessError) as error:
+            emit({'error': str(error), 'session': str(args.session)})
+            return 2
     if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
     if args.command=='doctor':
         result=dict(windows=os.name=='nt',python=sys.version.split()[0],pillow=bool(importlib.util.find_spec('PIL')),

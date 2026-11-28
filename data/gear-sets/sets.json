@@ -3571,8 +3571,23 @@
       "sources": [
         "resources/game/current/raw_files/hunter/game system data/juice/item/gear_set_c1.mgearset"
       ],
-      "material": null,
-      "dismantle": {},
+      "material": {
+        "name": "巅峰协议材料",
+        "currency_uid": "E03CE5EA6AED93F300038686CF3E98DF",
+        "name_guid": "E03CE5EA6AED927F00038674A3237A6F",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "resources/game/current/raw_files/hunter/game system data/juice/currencies/currencies.rejuice#E03CE5EA6AED93F300038686CF3E98DF",
+          "brand_ref": "set:b00501356a9699cc0007e4333064010a"
+        }
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        }
+      },
       "logo": {
         "evidence": [
           "evidence/asset-import/records/game-update-20261110-001/images.json#apex_protocol"
@@ -3597,6 +3612,56 @@
             "evidence/asset-import/records/game-update-20261110-001/images.json#apex_engine"
           ],
           "asset_ref": "gear-set-c1-talents-icon"
+        }
+      }
+    },
+    {
+      "id": "set:b00501356ae853db00038664b0d01099",
+      "native_uid": "B00501356AE853DB00038664B0D01099",
+      "sources": [
+        "resources/game/current/raw_files/hunter/game system data/juice/item/gear_set_d1.mgearset"
+      ],
+      "material": {
+        "name": "战地将军材料",
+        "currency_uid": "E03CE5EA6AED93F300038687B920A63C",
+        "name_guid": "E03CE5EA6AED927D0003867055E53316",
+        "display": {
+          "icon_key": "brand_material",
+          "quality": "gear_set",
+          "quality_evidence": "resources/game/current/raw_files/hunter/game system data/juice/currencies/currencies.rejuice#E03CE5EA6AED93F300038687B920A63C",
+          "brand_ref": "set:b00501356ae853db00038664b0d01099"
+        }
+      },
+      "dismantle": {
+        "brand_material_amount": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "logo": {
+        "asset_ref": "gear-set-d1-logo",
+        "evidence": [
+          "hunter/game system data/juice/item/gear_set_d1.mgearset#B00501356AE853DB00038664B0D01099"
+        ]
+      },
+      "talent_icons": {
+        "gear_effect:d1_c541aeeb6acce0a000038d387ce4163c": {
+          "asset_ref": "gear-set-d1-talents-icon",
+          "evidence": [
+            "hunter/game system data/juice/talent/talent_gearset_field_general_4pc.mtalent"
+          ]
+        },
+        "gear_effect:d1_c541aeeb6acce0de00038d39261974b3": {
+          "asset_ref": "gear-set-d1-talents-icon",
+          "evidence": [
+            "hunter/game system data/juice/talent/talent_gearset_field_general_chest.mtalent"
+          ]
+        },
+        "gear_effect:d1_c541aeeb6acce0f300038d3a8070fdb3": {
+          "asset_ref": "gear-set-d1-talents-icon",
+          "evidence": [
+            "hunter/game system data/juice/talent/talent_gearset_field_general_backpack.mtalent"
+          ]
         }
       }
     }

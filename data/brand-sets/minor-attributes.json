@@ -386,6 +386,17 @@
       "active": true,
       "verification": "原生 UID 4F5DDEA253F8A5EA00000E15E4C7E82D、Percentage 及简体名称；净化固定属性。数值上限尚未独立核实，不填数值。",
       "sources": []
+    },
+    {
+      "id": "minor_attribute_health_percent",
+      "zh_name": "生命值",
+      "en_name": "Health",
+      "category": "defense",
+      "unit_type": "percent",
+      "active": true,
+      "verification": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict#4F5DDEA25285EFCC00000781F23CF595",
+      "sources": [],
+      "search_aliases": []
     }
   ],
   "_本地来源": {

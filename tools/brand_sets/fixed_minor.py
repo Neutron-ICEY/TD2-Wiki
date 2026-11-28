@@ -39,14 +39,16 @@ def validate_catalog(data, minor_catalog):
                 "固定预设 ID 领域错误或重复")
         seen.add(key)
         require(row["minor_attribute_id"] in minor, "固定预设必须引用 Minor Attribute")
-        value = decimal_text(row["value"])
-        require(re.fullmatch(r"-?(?:0|[1-9]\d*)(?:\.\d+)?", row["value"]) is not None, "固定预设数值须使用十进制文本，可保留显示精度")
+        raw = row["value"]
+        require(isinstance(raw, str), "固定预设数值须为文本")
+        value = decimal_text(raw) if raw else None
+        require(not raw or re.fullmatch(r"-?(?:0|[1-9]\d*)(?:\.\d+)?", raw) is not None, "固定预设数值须使用十进制文本，可保留显示精度")
         require(type(row["active"]) is bool, "active 必须是布尔值")
         aliases(row)
         require(isinstance(row["verification"], str) and row["verification"].strip(), "请填写核实状态")
         require(isinstance(row["sources"], list) and all(isinstance(s, str) and s.startswith("https://") for s in row["sources"]), "来源必须为 HTTPS 列表")
         fact = (row["minor_attribute_id"], value)
-        if row["active"]:
+        if row["active"] and value is not None:
             require(fact not in facts, "同属性同数值的 active 固定预设重复")
             facts.add(fact)
     return data

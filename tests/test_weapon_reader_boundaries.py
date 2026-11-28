@@ -69,8 +69,9 @@ class WeaponReaderBoundaryTests(unittest.TestCase):
     def test_mod_section_depends_on_visible_sockets(self):
         page = WeaponPage()
         sheriff = page.article('警长')
-        self.assertNotIn('>改造模块<', sheriff)
-        self.assertIn('aria-level="3">武器皮肤<', sheriff)
+        self.assertIn('>改造模块<', sheriff)
+        self.assertEqual([n.text for n in nodes(sheriff, 'td2-weapon-mod-value')], ['警长枪口+15.0% 暴击机率'])
+        self.assertIn('aria-level="4">武器皮肤<', sheriff)
         self.assertEqual([n.text for n in nodes(sheriff.split('>武器原型<')[0], 'td2-weapon-skin-name')], ['屠宰场'])
 
         firestarter = page.article('火种')
@@ -92,7 +93,7 @@ class WeaponReaderBoundaryTests(unittest.TestCase):
     def test_exotic_original_uses_the_registered_model_and_gallery_level(self):
         page = WeaponPage()
         for exotic, original, level in [('圣艾尔莫引擎', '警用 M4', 4), ('头牌明星', '特战 Mk20 SSR', 4),
-                                        ('驯鹰人', '军规 P416', 4), ('警长', 'Super 90', 3)]:
+                                        ('驯鹰人', '军规 P416', 4), ('警长', 'Super 90', 4)]:
             with self.subTest(exotic=exotic):
                 article = page.article(exotic)
                 before, card = article.split(f'aria-level="{level}">武器原型<')

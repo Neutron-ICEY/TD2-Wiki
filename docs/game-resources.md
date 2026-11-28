@@ -8,12 +8,25 @@
 
 `resources/game/manifest.jsonl` 逐文件记录相对路径、字节数、SHA-256 和 `source_id`，按路径 `casefold()` 严格递增；`source.json` 保存各来源的游戏 build、容器摘要、来源证据和文件数量。未知 build 必须写 `null`。一次部分导入可能保留多个来源，不能把全库误标成同一新版本。完整性校验只证明已提供文件集的内容，不证明 Hunter 已导出整个游戏。
 
+## 日常版本更新
+
+图片登记按 Hunter 的实际输出类型解析。图集的原生名称和定义中的 DDS 纹理引用对应 `images/…/*.png`，图集定义与反编译件在 `raw_files/` 下。来源批次的 `historical_observations` 标记可查询和校验的历史观察。独立的现行引用仍会把同一路径纳入 daily。若当前登记或发现目录选中了该索引上已核实的同名图片冲突，版本更新会在生成资源计划前列出冲突路径。
+
+```powershell
+& $py -B -m tools.hunter_cli bulk --index $index --session incoming/game-update/wiki-001 --profile daily
+& $py -B -m tools.version_update run --export-session incoming/game-update/wiki-001 --apply-resources --output dist/update-001
+```
+
+`$py` 和 `$index` 见 [Hunter 导出](hunter-cli.md)。省略 `--apply-resources` 时，若检测到变化，命令在生成冻结计划后返回 2。按原计划 apply 可恢复，后续可独立运行 review、prepare 并各用全新的 dist 子目录。维护源接入已审核的资料后，使用 `prepare --generate --full`。工具输出资源事务、候选索引、装备投影、图片映射、页面字段差异和离线发布准备结果。传入上次 review 的 `identities.json`（`--previous-identities`）可比较稳定身份，`--previous-review` 会区分新增、延续和已解决的未知项。
+
+daily 按 `data/asset-import/resource-daily.json` 的目录与现行登记输入取并集，在目录遍历时剪枝。Hunter 可把同类原件一起解出，资源计划按实际导出的类型和原生筛选逐项验证覆盖，再对上述并集计算摘要。调整批次后，覆盖仍满足要求的旧会话和完整三类 bulk 导出都可作输入。日常目录涵盖两个命名空间的物品、配方、属性、天赋与脚本、UI 图、英简本地化。未登记的新物品也能进入身份发现。图纸与制作材料来自 Raw Files。特殊活动、地图、声音或目录外全新素材按证据定向补导，长期需要的来源登记后自动纳入。研究范围沿用下节 wiki 配置，全面审查可用无筛选全量导出。部分导入保留未出现的原件及其原来源。
+
 ## 更新原始库
 
 1. 将新导出放入独立临时目录，例如 `incoming/game-update/update-001/`，其中保留 `raw_files/hunter/...`、`images/hunter/...` 等结构。Hunter 操作按 [Hunter CLI](hunter-cli.md) 的能力与权限执行；不需要可靠的增量解包能力，也不直接导出覆盖 `current/`。
 2. 在导出目录之外创建 `incoming/game-update/update-001.source.json`。`source_id` 必须唯一；已经登记的 ID 不允许重写来源。
 
-Hunter CLI 定向 Raw 导出的成功任务可将 `jobs/<uuid>/hunter/raw/` 作为 `--source`，显式使用 `--unfiltered`，并在来源记录中引用相邻的导出回执。这属于部分导入，不能据此声明整个 `raw_files` 已完整导出；更新全量范围时仍保留人工导出环节。
+Hunter CLI 定向 Raw 导出的成功任务可将 `jobs/<uuid>/hunter/raw/` 作为 `--source`，显式使用 `--unfiltered`，并在来源记录中引用相邻的导出回执。这属于部分导入，不能据此声明整个 `raw_files` 已完整导出；全量使用 bulk 的默认范围。
 
 ```json
 {
@@ -27,8 +40,9 @@ Hunter CLI 定向 Raw 导出的成功任务可将 `jobs/<uuid>/hunter/raw/` 作�
 
 已知 build 以字符串填写，容器 SHA-256 填实测值；`exporter`、`exported_at`、`evidence`、`recorded_export_root`、`observed_installation` 等附加来源字段会原样保留。来源声明不会被工具自动认证。安装目录当前版本与已有导出的版本分开记录，不能仅凭目录时间或同一个索引摘要建立版本关系。
 
+以下示例在仓库根目录执行，`$py` 按 [README](../README.md) 或 [AGENTS](../AGENTS.md#python-与验证) 指向项目 Python 3.12+ 解释器：
+
 ```powershell
-$py = '.\.venv\Scripts\python.exe'
 & $py -B -m tools.game_resources plan `
   --profile wiki `
   --source incoming/game-update/update-001 `
@@ -36,9 +50,9 @@ $py = '.\.venv\Scripts\python.exe'
   --output dist/game-update-001
 ```
 
-这是日常 Wiki 游戏资源更新的标准命令。命令行 `plan` 默认启用 `wiki`，示例仍显式标明，避免复制命令时遗漏用途。标准更新采用部分导入：新增和修改进入计划，未出现的旧文件保留。特殊调查、定向补导等未筛选操作见下文。
+这是原有较宽的研究资源范围。底层命令行 `plan` 默认启用 `wiki`，示例仍显式标明，避免复制命令时遗漏用途。标准更新采用部分导入：新增和修改进入计划，未出现的旧文件保留。特殊调查、定向补导等未筛选操作见下文。
 
-### Wiki 标准范围
+### wiki 研究范围
 
 Hunter Export All 仍保留完整原始导出。Wiki 标准配置适用于具有 `raw_files/`、`images/`、`materials/` 根目录的导出；规则集中在 `data/asset-import/resource-scope.json`，仅跳过：
 
@@ -104,6 +118,12 @@ plan 读取选中输入的完整内容，冻结本次文件集和摘要；apply 
 ```
 
 成功结果是 `REVIEW_CANDIDATE`，包括 `report.json`、`native-definitions.json`、`native-references.json`、`provenance.json` 和 `text-sources-candidate.json`。核对范围变化、未选资源、来源、解析问题及查询结果后，才显式将该目录的 `text-sources-candidate.json` 复制到 `data/asset-import/text-sources.json` 接入，不必改写候选中的路径和身份。临时试验也可输出到全新 `dist/` 子目录；长期使用的索引不能依赖可清理的临时产物。新资源不会因本次导入自动纳入实体映射。
+
+用版本编排器时，可在 run 或 review 增加 `--index-output evidence/asset-import/native/update-001`，直接生成可长期接入的候选。审核后执行下列命令，校验候选内容、前一登记、资源清单及实际查询，再原子切换登记。旧登记与激活回执保存在本次输出目录。重复激活同一候选会记录 already_active。
+
+```powershell
+& $py -B -m tools.version_update activate-index --index-output evidence/asset-import/native/update-001 --output dist/activate-001
+```
 
 已有派生片段只在父文件 SHA-256 未变化时沿用原切片；父文件变化会返回 `DERIVED_INPUT_REQUIRES_REVIEW`，保留报告而不猜新偏移。Wiki 数据生成、图片命名、离线构建及线上发布继续使用各自入口和授权。
 

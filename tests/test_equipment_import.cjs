@@ -12,7 +12,7 @@ test('all current pages reopen exactly and effect edits retain unrelated data',(
     s.edit('其他机制','本地人工说明');const output=s.serialize().raw;assert.equal(local.create(output,[],catalog.options).state.fields.其他机制.value,'本地人工说明');
     count++;
   }
-  assert.equal(count,102);
+  assert.equal(count,104);
 });
 test('new stable records import fieldwise; changed name cannot replace human notes',()=>{
   const raw='{{装备组信息\n|装备组名称=测试\n|装备资料={{装备组装备|装备UID=A|装备名称=人工名称|来源说明=人工说明}}\n}}',t=field=>({field,records:[{field:'装备资料',id:{装备UID:'A'},template:'装备组装备'}]});

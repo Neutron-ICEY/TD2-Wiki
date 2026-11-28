@@ -18,6 +18,8 @@ def bindings(entity):
 
 def richtext(text):
     text=re.sub(r'<br\s*/?>','\n',text,flags=re.I)
+    # Some shipped menu lines omit the closing quote in the opening color tag.
+    text=re.sub(r'<color name="([a-z_ ]+)>', r'<color name="\1">', text)
     stack=[]
     def replace(m):
         if m[1]:
@@ -261,7 +263,11 @@ class Native:
                 try:
                     record=self.bound_record(binding)
                     if binding['kind']=='text':
-                        semantic=self.text(record,binding['property'],binding.get('language','zh'))
+                        try:
+                            semantic=self.text(record,binding['property'],binding.get('language','zh'))
+                        except KeyError:
+                            if 'fallback_language' not in binding:raise
+                            semantic=self.text(record,binding['property'],binding['fallback_language'])
                         if binding['property']=='myUIName':semantic=re.sub(r'</?color\b[^>]*>','',semantic)
                         value=richtext(semantic)
                     elif binding['kind']=='talent':

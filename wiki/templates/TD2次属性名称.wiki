@@ -29,5 +29,6 @@
 |minor_attribute_weapon_damage=武器伤害
 |minor_attribute_armor_regen_flat=装甲回复
 |minor_attribute_incoming_repairs=受到修复
+|minor_attribute_health_percent=生命值
 |#default=未收录次属性
 }}}}</includeonly>

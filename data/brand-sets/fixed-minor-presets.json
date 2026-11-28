@@ -232,6 +232,34 @@
       "verification": "当前Orange固定配置、100%和NamedAttributes常数上限及单位闭合；发行build与active选择未确定",
       "sources": [],
       "active": true
+    },
+    {
+      "id": "fixed_minor_incoming_repairs_y8s4",
+      "minor_attribute_id": "minor_attribute_incoming_repairs",
+      "value": "",
+      "search_aliases": [
+        "强力磁铁",
+        "Magnet",
+        "虹吸",
+        "Siphon"
+      ],
+      "verification": "data24 Orange 具名属性 UID 4F5DDEA253F8A5EA00000E15E4C7E82D；原生预设百分位 196.5，显示值待核实。",
+      "sources": [],
+      "active": true
+    },
+    {
+      "id": "fixed_minor_health_percent_y8s4",
+      "minor_attribute_id": "minor_attribute_health_percent",
+      "value": "",
+      "search_aliases": [
+        "健壮",
+        "Thrive",
+        "热情",
+        "Hearty"
+      ],
+      "verification": "data24 Orange 具名属性 UID 4F5DDEA25285EFCC00000781F23CF595；原生预设百分位 196.5，显示值待核实。",
+      "sources": [],
+      "active": true
     }
   ]
 }

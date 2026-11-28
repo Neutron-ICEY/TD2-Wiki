@@ -620,11 +620,11 @@
 
 <p style="margin:0 0 1.15em;line-height:1.85;">层数由玩家共享，每隔 <span style="color:#FF6A13;">5 秒</span>减少一层；对一名敌人触发嘲讽时，会<span style="color:#FF6A13;">清除其他敌人的叠层</span>。</p>
 
-=== 品牌与具名护膝 ===
+=== 品牌、装备组与具名护膝 ===
 
 <p style="margin:0 0 1.15em;line-height:1.85;">这些配置修改子弹威胁公式中的正、负修正。以下以 <var>W</var> = 2、无其他修正为例：</p>
 
-<div role="region" aria-label="品牌与具名护膝对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
+<div role="region" aria-label="品牌、装备组与具名护膝对照表" tabindex="0" style="overflow-x:auto;max-width:40em;margin:1.35em 0;">
 {| class="td2-threat-data" style="width:100%;border-collapse:collapse;background:transparent;color:inherit;line-height:1.65;"
 |- style="border-bottom:1px solid #484848;"
 ! scope="col" style="padding:.6em .85em;font-size:.875em;font-weight:500;color:#b4b4b4;text-align:left;vertical-align:bottom;white-space:nowrap;" | 来源
@@ -640,6 +640,14 @@
 | style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 4
 |- style="background:#1d1d1d;"
 | style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[品牌套装-戈兰装备有限公司|戈兰装备有限公司]]</span> · 三件套
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +150%（<var>P</var> 增加 1.5）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
+|-
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[装备组-庇护|庇护]]</span> · 两件套
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +150%（<var>P</var> 增加 1.5）
+| style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
+|- style="background:#1d1d1d;"
+| style="padding:.6875em .75em;text-align:left;vertical-align:top;" | <span style="text-decoration:underline;text-underline-offset:.15em;">[[装备组-铸造厂堡垒|铸造厂堡垒]]</span> · 两件套
 | style="padding:.6875em .75em;text-align:left;vertical-align:top;" | +150%（<var>P</var> 增加 1.5）
 | style="padding:.6875em .75em;text-align:right;vertical-align:top;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;" | 5
 |-

@@ -67,6 +67,25 @@ class NativeIndexTests(unittest.TestCase):
             files=len(rows), bytes=sum(r['bytes'] for r in rows), sources={'fixture-current': dict(
                 source_id='fixture-current', origin='SYNTHETIC_TEST', game_build=None, source_container_sha256=None)})))
 
+    def test_reviewed_persistent_index_activation_checks_registration_and_artifacts(self):
+        from tools.version_update import activate_index
+        candidate='evidence/asset-import/native/acceptance'
+        out=self.root/'dist/activation'
+        out.mkdir(parents=True)
+        before=(self.root/'data/asset-import/text-sources.json').read_bytes()
+        build(self.root,candidate)
+        spec=self.root/candidate/'native-definitions.json'
+        original=spec.read_bytes()
+        spec.write_bytes(b'{}')
+        with self.assertRaisesRegex(ValueError,'artifact changed'):
+            activate_index(self.root,out,candidate)
+        self.assertEqual((self.root/'data/asset-import/text-sources.json').read_bytes(),before)
+        spec.write_bytes(original)
+        active = activate_index(self.root,out,candidate)
+        self.assertEqual(active['status'],'activated')
+        self.assertEqual((out/'previous-text-sources.json').read_bytes(),before)
+        self.assertEqual(activate_index(self.root,out,candidate)['status'],'already_active')
+
     def test_changed_definitions_and_menus_form_reviewable_candidate_without_registration(self):
         before = (self.root / 'data/asset-import/text-sources.json').read_bytes()
         report = build(self.root, 'dist/review')

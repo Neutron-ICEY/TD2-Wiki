@@ -44,19 +44,20 @@ class RandomBrandCraftingTests(unittest.TestCase):
         new = WikiSubset(ROOT, acquisition=acquisition)
         paths = list((ROOT/'wiki/pages/brands').glob('*.wiki')) + [ROOT/'wiki/pages/equipment/装备规则-临时制作.wiki']
         self.assertEqual(len(paths), 38)
+        recipes_data = load(ROOT)
         affected = total = 0
         for path in paths:
             raw = path.read_text('utf-8')
             after, before = new.expand(raw, {}), old.expand(raw, {})
             name = re.search(r'\|资料ID=([^\n|}]+)',raw)[1]
-            recipes = for_brand(name, 'unbranded' if path.stem == '临时制作' else '')
+            recipes = for_brand(name, 'unbranded' if path.stem == '临时制作' else '', data=recipes_data)
             if recipes: affected += 1
             total += len(recipes)
             rows = re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', after, re.S)
             blueprint_rows = [(title, body) for title,body in rows if title.endswith('图纸')]
             self.assertEqual(len(blueprint_rows), 6, path.name)
             for slot,(title,body) in zip(['mask','backpack','chest','gloves','holster','kneepads'],blueprint_rows):
-                block = render(name, 'unbranded' if path.stem == '临时制作' else '', slot, icon='<span class="td2-icon">[[File:TD2-UI-LoadoutCircle-Icon.png|24x24px|link=|alt=]]</span>')
+                block = render(name, 'unbranded' if path.stem == '临时制作' else '', slot, data=recipes_data, icon='<span class="td2-icon">[[File:TD2-UI-LoadoutCircle-Icon.png|24x24px|link=|alt=]]</span>')
                 self.assertEqual(body.count('随机品牌制作'), int(bool(block)), (path.name,slot))
                 if block:
                     self.assertTrue(body.endswith(block))

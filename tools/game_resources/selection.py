@@ -34,6 +34,22 @@ def native_include_path(owner, value):
 
 
 def load_selection(root, profile):
+    if profile == 'daily':
+        name = 'data/asset-import/resource-daily.json'
+        blob = child(root, name).read_bytes()
+        rules = json.loads(blob)
+        require(set(rules) == {'schema_version','id','discovery_directories','excluded_directories','export_terms'}
+                and rules['schema_version'] == 1 and rules['id'] == profile, 'INVALID_DAILY_PROFILE')
+        includes = [relative(v).casefold() for v in rules['discovery_directories']]
+        excludes = [relative(v).casefold() for v in rules['excluded_directories']]
+        require(set(DISCOVERY_ROOTS) <= set(includes) and len(includes) == len(set(includes))
+                and not any(i == e or i.startswith(e + '/') or e.startswith(i + '/') for i in includes for e in excludes),
+                'INVALID_DAILY_DISCOVERY_ROOTS')
+        terms = rules['export_terms']
+        require(isinstance(terms,list) and terms and all(isinstance(t,str) and re.fullmatch(r'[a-z0-9 /_]{2,30}',t) for t in terms),
+                'INVALID_HUNTER_DISCOVERY_TERMS')
+        return dict(schema_version=1, export_terms=terms, profile=profile, file=name, sha256=hashlib.sha256(blob).hexdigest(),
+                    discovery_directories=includes, excluded_directories=excludes)
     require(profile == 'wiki', 'UNKNOWN_RESOURCE_PROFILE')
     blob = child(root, PROFILE_FILE).read_bytes()
     rules = json.loads(blob)
@@ -80,7 +96,7 @@ def check_unchanged(root, selection, dependencies, source=None, layer_evidence=N
         require(inspect_layers(source, selection) == layer_evidence, 'LAYER_EVIDENCE_CHANGED')
 
 
-def dependencies(root, selection):
+def dependencies(root, selection, *, required_output=None):
     """Read metadata only, including active image parent evidence and parsed includes.
 
     Unknown resource directories remain selected. This is a registration conflict
@@ -143,7 +159,18 @@ def dependencies(root, selection):
             for item in value:
                 visit(item, base, image_evidence, trail + ('[]',))
         elif isinstance(value, str):
-            path = path_reference(value, base)
+            logical = value.replace('\\','/').strip('"')
+            folded = logical.casefold()
+            atlas_texture = image_evidence and trail in {('provenance', 'texture'), ('original_atlas', 'resource_name')}
+            native_dds = trail[-1:] == ('raw_value',) and folded.endswith('.dds')
+            if image_evidence and folded.startswith(('hunter/raw/images/', 'hunter/raw/raw_files/', 'hunter/raw/materials/')):
+                path = logical[len('hunter/raw/'):]
+            elif (atlas_texture or native_dds) and folded.startswith(('hunter/', 'rogue/', 'snowdrop/')):
+                # Atlas names and native DDS references identify Images in the Hunter export.
+                stem = logical[:-4] if folded.endswith(('.dds', '.png')) else logical
+                path = 'images/' + stem + '.png'
+            else:
+                path = path_reference(value, base)
             if path:
                 required.add(relative(path))
 
@@ -151,6 +178,16 @@ def dependencies(root, selection):
     require(mapping.get('schema_version') == 1 and isinstance(mapping.get('entities'), list),
             'INVALID_NATIVE_DEPENDENCY_REGISTRATION')
     visit(mapping)
+    if selection['profile'] == 'daily':
+        # Maintained recipes contain the exact map buckets and interaction files read by the projector.
+        crafting = read_document('data/equipment/crafting.json')
+        visit(crafting)
+        for sections in crafting.get('source_contexts', {}).values():
+            if isinstance(sections, dict):
+                visit(list(sections))
+        for skin in read_document('data/equipment/weapon-skins.json')['skins']:
+            if skin.get('image_source'):
+                visit(skin['image_source'])
     index = read_document('data/asset-import/text-sources.json')
     require(index.get('schema_version') == 1 and isinstance(index.get('sources'), list),
             'INVALID_TEXT_DEPENDENCY_REGISTRATION')
@@ -174,6 +211,9 @@ def dependencies(root, selection):
     images = RegisteredImages(root)
     require(not images.issues, 'IMAGE_DEPENDENCY_REGISTRATION_UNAVAILABLE: ' + json.dumps(images.issues))
     for record in images.records:
+        if (selection['profile'] == 'daily' and record.get('historical_observation')
+                and not (record['uses'] or record['wiki_asset_id'] or record['target_matches'])):
+            continue
         visit(record, image_evidence=True)
         # Only selected observations, never entire historical batch arrays.
         for evidence in record['evidence']:
@@ -191,5 +231,20 @@ def dependencies(root, selection):
         p.casefold() == prefix or p.casefold().startswith(prefix + '/') for prefix in excluded))
     require(not conflicts, 'REQUIRED_RESOURCE_EXCLUDED: ' + ', '.join(conflicts[:10]))
     check_snapshot(root, inputs)
+    if required_output is not None:
+        required_output.update(required)
     return {'inputs': dict(sorted(inputs.items())), 'required_paths': len(required),
             'required_paths_sha256': hashlib.sha256(encoded(sorted(required))).hexdigest()}
+
+
+class DiscoveryPaths:
+    """Prune at directory boundaries while retaining every registered input."""
+
+    def __init__(self, directories, required):
+        self.directories = {v.casefold() for v in directories}
+        self.paths = {v.casefold() for v in required}
+        self.parents = set()
+        for path in self.directories | self.paths:
+            while '/' in path:
+                path = path.rsplit('/', 1)[0]
+                self.parents.add(path)

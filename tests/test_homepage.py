@@ -43,7 +43,7 @@ class HomepageIndexTests(unittest.TestCase):
         self.assertNotIn("images/borda-medium.otf", release)
         self.assertEqual(re.sub(r'<style>@font-face\{font-family:"Borda Medium";[^<]*</style>', "", example), release)
         self.assertEqual({node.text for node in nodes(example, "td2-home-news-title")},
-                         {"中央公园活动", "“牧羊人”活动", "突击", "肯利学院远征"})
+                         {"中央公园活动", "“牧羊人”活动", "突击", "肯利学院远征", "优化涌动", "倒计时涌动", "精通等阶经验值活动", "红线过载", "腐蚀躯壳", "敬请关注！"})
         self.assertNotIn("版本信息", example)
         self.assertNotIn("Y8S3.3", example)
         self.assertFalse(nodes(empty, "td2-home-season-card"))
@@ -83,7 +83,7 @@ class HomepageIndexTests(unittest.TestCase):
         self.assertEqual(set(active("2026-11-24T07:59:59")), after | {central})
         self.assertEqual(set(active("2026-11-24T08:00:00")), after)
         self.assertEqual(set(active("2026-11-26T07:59:59")), after)
-        self.assertFalse(active("2026-11-26T08:00:00"))
+        self.assertEqual(set(active("2026-11-26T08:00:00")), {"精通等阶经验值活动"})
 
     def test_each_news_panel_keeps_its_heading_when_empty(self):
         wiki = WikiSubset(ROOT, today=date(2026, 11, 21))
@@ -101,21 +101,26 @@ class HomepageIndexTests(unittest.TestCase):
         start, end = 1787817600, 1795680000
         def season(now):
             return wiki.expand("{{#invoke:TD2首页赛季|render|时刻=" + str(now) + "}}", {})
-        upcoming, = nodes(season(start - 1), "td2-home-season-card")
+        def summer_card(now):
+            return next(card for card in nodes(season(now), "td2-home-season-card")
+                        if card.find_all("td2-home-season-name")[0].text == "Y8S3 · 红色地平线")
+        upcoming = summer_card(start - 1)
         self.assertIn('<time datetime="2026-11-26T08:00:00Z">11月26日 16:00 结束（北京时间）</time>', season(start))
         self.assertIn("td2-home-season-off", upcoming.attrs["class"])
         self.assertEqual(upcoming.find_all("td2-home-ring")[0].attrs["style"], "--td2-home-arc:0.0000deg")
         for now, arc, reading in [(start, 0, "13周 0日 0时"), (start + (end - start) // 4, 90, "9周 5日 6时"),
                                   ((start + end) // 2, 180, "6周 3日 12时"),
                                   (end - 1, 360 - 360 / (end - start), "0周 0日 0时")]:
-            card, = nodes(season(now), "td2-home-season-card")
+            card = summer_card(now)
             self.assertNotIn("td2-home-season-off", card.attrs["class"])
             self.assertEqual(card.find_all("td2-home-season-name")[0].text, "Y8S3 · 红色地平线")
             self.assertEqual(card.find_all("td2-home-season-time")[0].text, reading)
             ring, = card.find_all("td2-home-ring")
             self.assertEqual(ring.attrs["style"], f"--td2-home-arc:{arc:.4f}deg")
             self.assertEqual("td2-home-ring-filled" in ring.attrs["class"].split(), now > start)
-        self.assertEqual(season(end), "")
+        next_season, = nodes(season(end), "td2-home-season-card")
+        self.assertEqual(next_season.find_all("td2-home-season-name")[0].text, "Y8S4 · 锋矛覆灭")
+        self.assertEqual(season(1805184000), "")
 
     def test_scheduled_events_include_both_boundary_dates_and_overlap(self):
         def event(name, start, end):

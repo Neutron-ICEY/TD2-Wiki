@@ -159,7 +159,7 @@ def fixed_secondary_stats(native, weapon, bonuses):
 
 class WeaponProjection:
     def __init__(self,native):
-        self.n=native;self.rules=EquipmentRules(native);self.rules.index();self.missing=[]
+        self.n=native;self.rules=EquipmentRules(native);self.missing=[]
         skin_catalog=json.loads((ROOT/'data/equipment/weapon-skins.json').read_text('utf8'))
         self.skin_assets={r['uid']:r['asset_ref'] for r in skin_catalog['skins']}
         self.unreleased_skin_uids=set(skin_catalog.get('unreleased',{}))
@@ -250,6 +250,7 @@ class WeaponProjection:
         return weapon_damage.signature_skill_scale(self.n)
 
     def generation_config(self, item):
+        self.rules.index()
         links = self.n.references(item, 'myItemGenerationConfig')[1]
         choices = self.rules.configs.get(links[0]['target_uid'], []) if len(links) == 1 else []
         if len(choices) != 1:
@@ -384,7 +385,13 @@ class WeaponProjection:
             row=self.external(ref['target_name'],uid,'talent','.mtalent')
             for attribute,value in self.fixed_talent_bonuses(row).items():
                 fixed[attribute]=fixed.get(attribute,0)+value
-            name=richtext(self.n.text(row,'myUIName'))
+            try:
+                name=richtext(self.n.text(row,'myUIName'))
+            except KeyError:
+                # Tool Breaker's Chinese pack contains its description and omits its name.
+                if uid != '40EFA9D56AD88E96000385EE26D3D998':
+                    raise
+                name=richtext(self.n.text(row,'myUIName','en'))
             for mode in ('PvE','PvP'):
                 try:
                     _,description=self.n.talent(row,mode)

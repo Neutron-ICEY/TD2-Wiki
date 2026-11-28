@@ -16,6 +16,29 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 class NativeCraftingTests(unittest.TestCase):
+    def test_reward_highlight_and_mail_delivery_preserve_direct_recipe_grants(self):
+        from tools.equipment.native_blueprint_rewards import direct_recipes
+        uid='C'*32
+        group=tree.parse('RewardGroup Group\n{\n myRewardHighlightType VIP\n myRewards\n {\n  RewardItem Item < uid='+uid+' >\n  {\n   myRewardHighlightType Special\n   mySendToMailboxIfInventoryIsFull FALSE\n   myItemTypeFile "recipe.mitem"\n  }\n }\n}')['children'][0]
+        with patch('tools.equipment.native_blueprint_rewards.reference_nodes'):
+            self.assertEqual(list(direct_recipes(None,group,{'recipe.mitem':[uid]})),[(uid,uid)])
+            item=tree.child(group,'myRewards')['children'][0]
+            item['properties'].append(('myIsRewardUsedAsTeaser TRUE',0))
+            self.assertEqual(list(direct_recipes(None,group,{'recipe.mitem':[uid]})),[])
+            item['properties'][-1]=('myUnknownCondition TRUE',0)
+            self.assertEqual(list(direct_recipes(None,group,{'recipe.mitem':[uid]})),[])
+
+    def test_first_import_resolves_new_projected_weapon_before_catalog_is_saved(self):
+        uid='A'*32
+        dataset={'entities':{'weapon:test':{'template':'武器信息','collections':{}}}}
+        model={'装备UID':uid,'装备名称':'Test','stable_id':'test_new','group':'rifle','kind':'named'}
+        projected={'entities':[{'id':'weapon:test','units':[{'target':{'field':'data'},'semantic':model}]}]}
+        crafting=Crafting(None,ROOT)
+        with patch('tools.equipment.crafting.item_tags',return_value=['Named']),patch('tools.equipment.crafting.scalar',return_value='Orange'):
+            known=crafting.identities(dataset,{uid:{'_source':'item.mitem'}},{},projected)
+        self.assertEqual(known[uid]['record_id'],'test_new')
+        self.assertEqual(known[uid]['tags'],['Named'])
+
     def test_missing_source_translation_keeps_identity_and_tag_relationship(self):
         data=tree.parse('''SourceInfo Hint
 {
@@ -143,8 +166,8 @@ class NativeCraftingTests(unittest.TestCase):
         self.assertEqual(len(data['routes']['reconstructed_cache']),1)
         cache=next(iter(data['routes']['reconstructed_cache'].values()))
         weapon_blueprints=[t for t in cache['targets'] if data['blueprints'][t]['category']=='Weapon']
-        self.assertEqual(len(cache['targets'])-len(weapon_blueprints),60)
-        self.assertEqual(len(weapon_blueprints),75)
+        self.assertEqual(len(cache['targets'])-len(weapon_blueprints),64)
+        self.assertEqual(len(weapon_blueprints),77)
         self.assertTrue(data['routes']['project_reward'])
         self.assertTrue(any(r['conditions']['group'] for r in data['routes']['vendor'].values()))
         self.assertTrue(all(r['verification']=='native_only' for routes in data['routes'].values() for r in routes.values()))

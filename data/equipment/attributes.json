@@ -940,15 +940,27 @@
         "myUINumDecimals": "1",
         "myRoundMode": "NearestHalf"
       }
+    },
+    "minor_attribute_health_percent": {
+      "zh_name": "生命值",
+      "en_name": "Health",
+      "unit_type": "percent",
+      "native_uid": "4F5DDEA25285EFCC00000781F23CF595",
+      "native_source": "rogue/game system data/juice/attribute/dictionary/_bonus_dictionary.mdict",
+      "native_format": {
+        "myBonusType": "Percentage",
+        "myUINumDecimals": "1",
+        "myRoundMode": "NearestTenth"
+      }
     }
   },
   "native_profile": {
-    "attribute_list": "hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data23.mitemgenerationattributelists",
+    "attribute_list": "hunter/game system data/juice/itemgeneration/attributelists/attributelist_code1_data24.mitemgenerationattributelists",
     "constant_rules": [
       {
         "id": "ordinary_minor_weapon_handling",
         "attribute_id": "minor_attribute_weapon_handling",
-        "pool_uid": "B00501356A587CB800023C3757C5863A",
+        "pool_uid": "B00501356AD0DA6C000F735EA6D8ACDE",
         "quality": "Orange",
         "after_power": 930,
         "file": "data/equipment/attributes.json",
@@ -964,7 +976,7 @@
       {
         "id": "ordinary_minor_critical_hit_chance",
         "attribute_id": "minor_attribute_critical_hit_chance",
-        "pool_uid": "B00501356A587CB800023C3757C5863A",
+        "pool_uid": "B00501356AD0DA6C000F735EA6D8ACDE",
         "quality": "Orange",
         "after_power": 930,
         "file": "data/equipment/attributes.json",
@@ -980,7 +992,7 @@
       {
         "id": "core_skill_tier",
         "attribute_id": "core_attribute_skill_tier",
-        "pool_uid": "B00501356A587CB800023C3CC306FD02",
+        "pool_uid": "B00501356AD0DA6C000F736111909306",
         "quality": "Orange",
         "file": "data/brand-sets/equipment-base-rules.json",
         "path": [
@@ -991,7 +1003,7 @@
       {
         "id": "fixed_minor_visionario_optimal_range",
         "attribute_id": "minor_attribute_optimal_range",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1012,7 +1024,7 @@
       {
         "id": "fixed_minor_spot_on_accuracy",
         "attribute_id": "minor_attribute_accuracy",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1033,7 +1045,7 @@
       {
         "id": "fixed_minor_salvo_rate_of_fire",
         "attribute_id": "minor_attribute_rate_of_fire",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1054,7 +1066,7 @@
       {
         "id": "fixed_minor_emperor_s_guard_armor_regen",
         "attribute_id": "minor_attribute_armor_regen",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1075,7 +1087,7 @@
       {
         "id": "fixed_minor_nightwatcher_scanner_pulse_haste",
         "attribute_id": "minor_attribute_scanner_pulse_haste",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1096,7 +1108,7 @@
       {
         "id": "fixed_minor_p_caro_s_holster_weapon_damage",
         "attribute_id": "minor_attribute_weapon_damage",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {
@@ -1117,7 +1129,7 @@
       {
         "id": "fixed_minor_cloak_reduced_threat",
         "attribute_id": "minor_attribute_reduced_threat",
-        "pool_uid": "B00501356A587CB800023C5E9BBE55F9",
+        "pool_uid": "B00501356AD0DA6C000F737C7F1902F9",
         "quality": "Orange",
         "items": [
           {

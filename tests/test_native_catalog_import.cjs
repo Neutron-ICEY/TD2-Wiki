@@ -3,6 +3,14 @@ const test=require('node:test'),assert=require('node:assert/strict');
 const {plan,cell}=require('../tools/equipment/catalog-import.cjs');
 const file='data/equipment/crafting.json';
 const unit=(path,value,semantic=value)=>({file,path,value,semantic});
+test('a new native pool preserves precision of equal fixed-preset display values',()=>{
+  const file='data/brand-sets/fixed-minor-presets.json';
+  const path=['presets','example','value'];
+  const start=plan([{file,path,value:'50.0',semantic:{pool:'previous',value:50}}],null,{});
+  const change=(value,amount)=>plan([{file,path,value,semantic:{pool:'current',value:amount}}],start.hashes,start.catalogs);
+  assert.equal(change('50',50).catalogs[file].presets.example.value,'50.0');
+  assert.equal(change('51',51).catalogs[file].presets.example.value,'51');
+});
 test('catalog baseline preserves human corrections until that exact native field changes',()=>{
   const current={[file]:{schema_version:1,blueprints:{A:{name:'人工修订',targets:['X'],guide:'独立说明'}}}};
   const first=plan([unit(['blueprints','A','name'],'游戏旧名')],null,current);

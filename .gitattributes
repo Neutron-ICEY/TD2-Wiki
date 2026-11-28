@@ -40,13 +40,10 @@ tests/fixtures/equipment-native/rogue/** -text -whitespace
 /.gitignore td2-manual
 /.gitattributes td2-manual
 /README.md td2-manual
+/THIRD_PARTY.md td2-manual
+/assets/.gitkeep td2-manual
 /AGENTS.md td2-manual
-/.agents/skills/td2-wiki/SKILL.md td2-manual
 /data/asset-import/batches.json td2-manual
 /data/asset-import/ui-project-copies.json td2-manual
 /docs/equipment-maintenance.md td2-manual
-/docs/game-resources.md td2-manual
-/docs/hunter-cli.md td2-manual
-/docs/publishing-contract.md td2-manual
-/tests/fixtures/README.md td2-manual
 /docs/readme-assets/** td2-manual
