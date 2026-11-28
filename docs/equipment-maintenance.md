@@ -123,11 +123,11 @@ node tools/equipment/sync.cjs base.wiki local.wiki remote.wiki dist/merged.wiki
 
 ## Reader、Editor 与生成
 
-`wiki/modules/TD2资料记录.lua` 统一效果传输和展示；品牌、装备组、奇特 Reader 保留各自的布局和机制。属性、图标、制作、获取与材料使用共用模板及规则。正式样式在 `ui/brand-sets/`，站点深色样式与字体在 `wiki/pages/site/Common.css`。
+`wiki/modules/TD2资料记录.lua` 统一效果传输和展示；品牌、装备组、奇特 Reader 保留各自的布局和机制。属性、图标、制作、获取与材料使用共用模板及规则。Reader 样式与主命名空间阅读页的深色背景由 `ui/brand-sets/brand-sets.css` 维护。站点公共字体由 `wiki/pages/site/Common.css` 维护。
 
 奇特护具通过 `visuals.inventory.asset_ref` 把库存图传给共用身份卡。优先取物品的 `myIcon`。没有该字段时，用物品文件名、`myMaleVisualGearName` 和部位共同核对生成的库存图。登记 Wiki 图片前按非零 alpha 的外接框裁切，四边各保留至多 2 像素原透明边距，保持原比例与所有可见像素。注册项记录物品 UID 和原图路径。
 
-Editor 的 `mapped-domain.js`、`mapped-ui.js` 和 `page-fields.js` 共用三类页面的人工字段合同。`source-patches.js` 保留未修改字段与记录的原文。`site-session.js` 保留最新修订、冲突保护、预览、保存和重新打开校验。
+Editor 的 `mapped-domain.js`、`mapped-ui.js` 和 `page-fields.js` 共用品牌、装备组、奇特装备和武器四类页面的人工字段合同。`source-patches.js` 保留未修改字段与记录的原文。`site-session.js` 保留最新修订、冲突保护、预览、保存和重新打开校验。
 
 未修改的既有正文原样保留；正文输入合同仅校验实际修改的正文。
 

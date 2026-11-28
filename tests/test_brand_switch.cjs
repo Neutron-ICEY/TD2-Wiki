@@ -79,7 +79,7 @@ for(const height of ["", "0px", "600px"]){
  assert.equal(bar.getAttribute("data-mode"),"PvP");
 }
 vm.runInNewContext(source,sideEnv);
-assert.equal(sideHooks.length,2);assert.equal(sideDoc.querySelectorAll(".td2-brand-mode-controls").length,1);
+assert.equal(sideHooks.length,1);assert.equal(sideDoc.querySelectorAll(".td2-brand-mode-controls").length,1);
 assert.equal(sideDoc.querySelectorAll(".td2-corner-node").length,8);
 sideDoc.removeChild(sideBrand);sideMutation([{addedNodes:[],removedNodes:[sideBrand]}]);
 assert.equal(sideDoc.querySelectorAll(".td2-brand-mode-controls").length,0);
@@ -111,7 +111,7 @@ for (const readyState of ["loading", "interactive", "complete"]) {
  vm.runInNewContext(source,env);
  if(readyState === "loading") {
    assert.equal(doc.querySelectorAll(".td2-brand-mode-controls").length,0);
-   assert.equal(listeners.DOMContentLoaded.length,2);
+   assert.equal(listeners.DOMContentLoaded.length,1);
    doc.readyState="interactive";listeners.DOMContentLoaded.forEach(callback => callback());
  }
  const bar=doc.querySelector(".td2-brand-mode-controls");
@@ -119,19 +119,21 @@ for (const readyState of ["loading", "interactive", "complete"]) {
  bar.children[1].events.click();
  const originalClick=bar.children[1].events.click, originalKey=bar.children[1].events.keydown;
  const runtime=doc._td2BrandSetsRuntime;
- const initCharts = runtime.initWeaponCharts;
- const chartScopes = [];
+ const initCharts = runtime.initWeaponCharts, initVision = runtime.initThreatVision;
+ const chartScopes = [], visionScopes = [];
  runtime.initWeaponCharts = scope => { chartScopes.push(scope); initCharts(scope); };
+ runtime.initThreatVision = scope => { visionScopes.push(scope); initVision(scope); };
  runtime.init(doc);hooks[0]([root]);hooks[0]([root]);
  assert.deepEqual(chartScopes, [doc, doc, doc]);
+ assert.deepEqual(visionScopes, [doc, doc, doc]);
  vm.runInNewContext(source,env); // 重复 evaluate 也不得注册第二组 hook/观察器。
  assert.equal(doc._td2BrandSetsRuntime,runtime);
- assert.equal(hooks.length,2);assert.equal(mutationCount,1);assert.equal(intersectionCount,0);
+ assert.equal(hooks.length,1);assert.equal(mutationCount,1);assert.equal(intersectionCount,0);
  assert.equal(bar.children[1].events.click,originalClick);assert.equal(bar.children[1].events.keydown,originalKey);
  assert.equal(doc.querySelectorAll(".td2-brand-mode-controls").length,1);
  assert.equal(doc.querySelectorAll(".td2-brand-floating-controls").length,0);
  assert.equal(bar.getAttribute("data-mode"),"PvP");assert.equal(bar.children[1].getAttribute("aria-pressed"),"true");
- assert.equal((listeners.DOMContentLoaded || []).length,readyState==="loading" ? 2 : 0);
+ assert.equal((listeners.DOMContentLoaded || []).length,readyState==="loading" ? 1 : 0);
  const panel=new Element("td2-brand-panel td2-brand-pve");panel.nodeType=1;
  root.appendChild(panel);
  mutations[0]([{addedNodes:[panel]}]);

@@ -20,6 +20,7 @@ if(process.argv[2]==='--bind-entry'){
   for(const [role,content] of [['runtime',runtime],['entry',entry]])assert.equal(hash(content),manifest.files.find(f=>f.name===bindings[role].file).sha256);
   assert(entry.includes('REEDIT_RUNTIME_REVISION'));
   assert.equal(entry.split(bindings.runtime.title).length,2);
+  // Entry uses the revision from the exact Runtime readback verified above.
   const bound=entry.replace(/REEDIT_RUNTIME_REVISION/g,String(receipt.revid));
   fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,bindings.entry.file),bound);
   fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify({version:manifest.version,production_approved:false,
@@ -59,8 +60,10 @@ if(process.argv[2]==='--bind-entry'){
   const inputIdentity=[...new Map(inputs.map(i=>[i.source,i])).values()];
   config.version=version(inputIdentity,toolchain);
   const guard='if(location.origin!=="https://td2.huijiwiki.com"||mw.config.get("wgNamespaceNumber")!==0||mw.config.get("wgAction")!=="view"||!mw.config.get("wgUserId")||!(mw.config.get("wgUserGroups")||[]).includes("sysop"))return;';
+  // Runtime and Entry use a local globalThis to keep TD2EditorLab out of the page's globals.
   const runtime='(function(module,exports,require){'+guard+'mw.td2EditorRuntime={version:'+JSON.stringify(config.version)+',open:async function(opts){var adapter;var globalThis={};\n'+bootstrap+'\nadapter=globalThis.TD2EditorLab.mediawikiAdapter.create(new mw.Api(),{origin:location.origin,target:mw.config.get("wgPageName").replace(/_/g," "),pageid:mw.config.get("wgArticleId"),enableWrites:true,contractPages:true});\n'+runtimeModules+'\nvar config='+JSON.stringify(config)+';config.target=mw.config.get("wgPageName").replace(/_/g," ");config.pageid=mw.config.get("wgArticleId");config.standardURL=mw.util.getUrl(config.target,{action:"edit"});return globalThis.TD2EditorLab.siteHost.mount({document:document,window:window,lab:globalThis.TD2EditorLab,config:config,adapter:adapter,onExit:opts.onExit});}};}());';
   const babel=require('../tooling/node_modules/@babel/core'),preset=require.resolve('../tooling/node_modules/@babel/preset-env');
+  // The IE 11 target lowers syntax for Huiji ResourceLoader's ES5 minifier. Runtime still uses modern browser APIs.
   const compile=source=>'(function(){\n'+babel.transformSync(source,{presets:[[preset,{targets:{ie:'11'},modules:false}]],sourceType:'script',babelrc:false,configFile:false}).code+'\n}());';
   const entry=compile('(function(module,exports,require){var globalThis={};\n'+entrySources.replace(/REEDIT_BUILD_VERSION/g,config.version).replace(/ENTRY_BUILD_ID/g,config.version+'-entry')+'\n}());');
   const files={[bindings.runtime.file]:compile(runtime),[bindings.entry.file]:entry};

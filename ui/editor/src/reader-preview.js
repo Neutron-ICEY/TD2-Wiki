@@ -66,6 +66,7 @@
      const sheet=Array.from(document.styleSheets).find(sheet=>sheet.href===e.href);
      css=Array.from(sheet?sheet.cssRules:[]).map(rule=>rule.cssText).join("\n");
     }catch(e){}
+    // Inlining readable Reader CSS lets a local HTTP preview keep the sandbox's HTTPS/inline style policy.
     styles.push(css.includes(".td2-brand")?styleTag(css):'<link rel="stylesheet" href="'+escape(e.href)+'">');
    }
   });

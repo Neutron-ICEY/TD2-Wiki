@@ -18,3 +18,41 @@ test('contentDirty distinguishes summary-only edits and resets after restore or 
  session.editor.editBody('LOCAL TEST ONLY');await session.save();
  assert.equal(session.contentDirty,false);assert.equal(session.dirty,false);assert.equal(session.status,'VERIFIED');
 });
+
+test('clearing terminal body passes exact readback and a changed readback still halts',async()=>{
+  const target='5.11 Tactical',pageid=999;
+  const user={id:1,name:'Admin',groups:['sysop'],rights:['edit']};
+  const template=formal.trimEnd(),timestamp='2026-10-18T12:00:00Z';
+  for(const altered of [false,true]){
+    let content=template+'\n旧正文',revid=10;
+    const api={
+      async get(params){
+        if(params.meta==='tokens')return {query:{tokens:{csrftoken:'fixture-only'}}};
+        const page={title:target,ns:0,pageid,actions:{edit:true}};
+        if(params.rvprop){
+          page.revisions=[{revid,parentid:revid-1,timestamp,sha1:'fixture',
+            slots:{main:{contentmodel:'wikitext',contentformat:'text/x-wiki',content}}}];
+        }
+        return {curtimestamp:timestamp,query:{userinfo:user,pages:[page]}};
+      },
+      async post(params){
+        assert.equal(params.baserevid,10);
+        assert.equal(params.text,template);
+        content=altered ? params.text+'\n' : params.text;
+        return {edit:{result:'Success',title:target,pageid,oldrevid:revid,newrevid:++revid,newtimestamp:timestamp}};
+      }
+    };
+    const adapter=transport.create(api,{origin:transport.ORIGIN,target,pageid,contractPages:true,enableWrites:true});
+    const base=await adapter.load();
+    const editor=require(path.join(src,'local-session')).create(base.raw,[],options);
+    editor.editBody('');
+    const text=editor.serialize().raw;
+    if(altered){
+      await assert.rejects(adapter.save(base,text),{code:'SAVED_RAW_MISMATCH',outcome:'WRITTEN_UNVERIFIED'});
+      assert.equal(adapter.halted,true);
+    }else{
+      assert.equal((await adapter.save(base,text)).revision.raw,template);
+      assert.equal(adapter.halted,false);
+    }
+  }
+});

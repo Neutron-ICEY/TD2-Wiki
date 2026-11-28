@@ -1,6 +1,5 @@
-/* 装备 Reader 的唯一样式源；直接发布到 TD2Reader.css，不手改 dist。
-   不登记为 Common.css。正文继承 Wiki 主题；标题卡临时品质色集中维护，
-   不作用于原生 Infobox 或其它 Wiki 页面。 */
+/* TD2Reader.css 维护源，覆盖装备 Reader、站点阅读背景与页面操作、首页组件和资料图表。
+   站点公共字体由 Common.css 维护。 */
 .td2-brand {
   --td2-icon-size: 24px;
   --td2-content-divider: 1px solid #404040;
@@ -290,7 +289,7 @@ body:has([data-td2-js-editor]) #td2-page-actions :is(a#td2-js-edit-entry, #td2-j
 /* option 的基线由文字决定；图标间距只复用 td2-icon 的 margin，避免 flex gap 叠加。 */
 .td2-major-option { display: inline-block; vertical-align: baseline; font: inherit; line-height: inherit; letter-spacing: inherit; }
 .td2-data-error { font-weight:bold; border-inline-start:3px solid; padding-inline-start:.5rem; }
-/* 只约束品牌分支的长名称和图片，不覆盖站点 .infobox 的布局或主题。 */
+/* 共用身份信息卡约束长名称和图片尺寸。 */
 .td2-brand .td2-brand-bonus-header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 448px); align-items: end; column-gap: 1.25rem; min-width: 0; }
 .td2-brand .td2-brand-bonus-header > h2, .td2-brand .td2-brand-bonus-header > .mw-heading2 { grid-column: 1 / -1; grid-row: 1; min-width: 0; margin: 0; }
 #wiki-body .td2-brand .td2-brand-bonus-header > h2, #wiki-body .td2-brand .td2-brand-bonus-header > .mw-heading2 > h2 { position: relative; margin: 0; padding-block: 0 15px; padding-inline-end: calc(448px + 1.25rem); border: 0; border-block-end: var(--td2-frame-width) solid var(--td2-frame-color); }
@@ -428,7 +427,7 @@ body:has([data-td2-js-editor]) #td2-page-actions :is(a#td2-js-edit-entry, #td2-j
   border-bottom: var(--td2-frame-width) solid var(--td2-frame-color) !important;
 }
 
-/* 2026-10-14 Reader image mapping: original white PNG contrast only in these containers. */
+/* 为白色原图提供局部对比底色。 */
 .td2-brand .td2-slot-image { max-width: 128px; background-color: #30343a; }
 .td2-brand .td2-slot-image img { width: auto; height: auto; max-width: 128px; max-height: 128px; object-fit: contain; }
 /* Approved Reader UI notation and directional hard shadow; original PNG bytes unchanged. */
@@ -484,7 +483,7 @@ body:has([data-td2-js-editor]) #td2-page-actions :is(a#td2-js-edit-entry, #td2-j
 #wiki-body .td2-brand .td2-equipment-grid > .td2-equipment-card > .td2-equipment-heading-card + .td2-materials:has(> li .td2-material-row) > li + li { margin-block-start: .5rem; }
 #wiki-body .td2-brand .td2-equipment-grid > .td2-equipment-card > .td2-equipment-heading-card + .td2-materials:has(> li .td2-material-row) > li:first-child { margin-block-start: 0; }
 
-/* M02/M03：复用 Reader 直属 h2 与公共分隔线，不创建卡片外框。 */
+/* 专精章节沿用 Reader 的章节标题和公共分隔线。 */
 .td2-brand .td2-expertise-card .td2-row-label { flex-basis: 5em; }
 /* state/blue PNG 的不透明主体为 #68a7db；沿用 currentColor 混色适配主题文字对比度。 */
 .td2-brand .td2-expertise-card strong { color: #68a7db; color: color-mix(in srgb, #68a7db 50%, currentColor); }
@@ -660,6 +659,7 @@ html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) body::before {
 .td2-brand .td2-section-toggle[aria-expanded="false"]::before { transform: translateY(-2px) rotate(135deg); }
 .td2-brand .td2-section-toggle:hover { background: rgba(128, 128, 128, .15); }
 .td2-brand .td2-section-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.td2-brand > h2[data-td2-notes-heading][hidden], #toc [data-td2-notes-link][hidden] { display: none !important; }
 @media screen {
   .td2-brand .td2-section-hidden { display: none !important; }
 }
@@ -681,6 +681,7 @@ html:has(body.ns-0.action-view, .td2-brand, [data-td2-js-editor]) body::before {
   margin-inline-start: auto;
 }
 
+/* 展开加成标题容器，让身份卡与英文名共用顶区网格，标题横跨两列。 */
 #wiki-body .td2-brand .td2-brand-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 448px); column-gap: 1.25rem; }
 #wiki-body .td2-brand .td2-brand-top > .td2-brand-name-en { grid-column: 1; grid-row: 1; align-self: start; margin-block: 0; }
 #wiki-body .td2-brand .td2-brand-bonus-header { display: contents; }
