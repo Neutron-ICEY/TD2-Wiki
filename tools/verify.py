@@ -64,12 +64,24 @@ def compare_artifacts(output):
     return result
 
 
+def record_result(output, node, checks, **details):
+    summary = dict(schema_version=1, root=str(ROOT), python=sys.executable, node=node,
+                   passed=all(row['exit_code'] == 0 and not row['skipped'] for row in checks),
+                   checks=checks, artifacts=compare_artifacts(output), publication_performed=False, **details)
+    (output / 'result.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf8', newline='\n')
+    print(str(output / 'result.json'), flush=True)
+    return 0 if summary['passed'] else 1
+
+
 def main(argv=None):
     """Verify without changing maintained sources, binding an Entry or publishing anything."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', help='Fresh directory inside dist')
     parser.add_argument('--resources', action='store_true', help='Also test the installed game export, its manifest and registered resource inputs')
+    parser.add_argument('--public', action='store_true', help='Run the checks supported by the public checkout')
     args = parser.parse_args(argv)
+    if args.public and args.resources:
+        parser.error('--public cannot be combined with --resources')
     output = output_directory(ROOT, args.output)
     temporary = output / 'tmp'
     temporary.mkdir()
@@ -83,6 +95,11 @@ def main(argv=None):
         raise RuntimeError('Node.js is required')
     python = [sys.executable, '-B', '-X', 'utf8']
     dependency_check = "import os,sys; sys.path.insert(0,os.environ.get('TD2_LUA_TEST_PATH','')); import PIL; from PIL import features; from lupa.lua51 import LuaRuntime; import importlib.metadata as m; assert m.version('lupa')=='2.6'; assert features.check('webp'); print('Python, Pillow/WebP and Lua 5.1 dependencies available')"
+    if args.public:
+        from tools.public_checks import run
+        checks, details = run(ROOT, output, python, node, dependency_check,
+                              lambda name, command: run_step(ROOT, output, env, name, command))
+        return record_result(output, node, checks, **details)
     checks = [run_step(ROOT, output, env, 'dependencies', python + ['-c', dependency_check])]
     if checks[0]['exit_code'] == 0:
         steps = [
@@ -108,12 +125,7 @@ def main(argv=None):
             checks.append(run_step(ROOT, output, env, 'resource-manifest', python + ['-m', 'tools.game_resources', 'status']))
             integration = "from tools.asset_import.text_library import TextLibrary; from tools.asset_import.library import Library; t=TextLibrary().query(limit=1); a=Library(); assert not t['issues'],t['issues']; assert not a.issues,a.issues; print('Registered text sources:',len(t['sources']),'asset observations:',len(a.records)); print('Raw payloads are not rehashed by this integration check')"
             checks.append(run_step(ROOT, output, env, 'registered-resources', python + ['-c', integration]))
-    summary = dict(schema_version=1, root=str(ROOT), python=sys.executable, node=node,
-                   passed=all(row['exit_code'] == 0 and not row['skipped'] for row in checks),
-                   checks=checks, artifacts=compare_artifacts(output), publication_performed=False)
-    (output / 'result.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf8', newline='\n')
-    print(str(output / 'result.json'), flush=True)
-    return 0 if summary['passed'] else 1
+    return record_result(output, node, checks)
 
 
 if __name__ == '__main__':

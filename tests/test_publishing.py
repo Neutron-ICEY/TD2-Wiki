@@ -61,6 +61,30 @@ class PublishingTests(unittest.TestCase):
                     self.run_build()
                 self.assertFalse(self.output.exists())
 
+    def test_huiji_asset_rejects_svg_source_or_file_title_before_build(self):
+        self.registry["target"] = self.baseline["target"] = "huijiwiki-td2"
+        for suffix, title in [(".svg", "File:Art.png"), (".png", "File:Art.SVG")]:
+            with self.subTest(suffix=suffix, title=title):
+                self.output = self.root / "dist" / suffix[1:]
+                self.registry["entries"].clear()
+                self.add("art", "assets", title, 6, b"fixture", suffix=suffix)
+                with self.assertRaisesRegex(ValueError, "SVG"):
+                    self.run_build()
+                self.assertFalse(self.output.exists())
+
+    def test_svg_bundle_for_another_target_cannot_be_prepared_for_huiji(self):
+        self.add("art", "assets", "File:Art.svg", 6, b"<svg/>", suffix=".svg")
+        manifest = self.run_build()
+        self.assertIn("File:Art.svg", ManualPublisher().prepare(self.output))
+        manifest["target"] = "huijiwiki-td2"
+        for suffix in (".svg", ".png"):
+            with self.subTest(declared_suffix=suffix):
+                # The existing bundle payload is still art.svg.
+                manifest["entries"][0].update(source="assets/art" + suffix, title="File:Art" + suffix)
+                self.reseal_for_test(manifest)
+                with self.assertRaisesRegex(ValueError, "SVG"):
+                    ManualPublisher().prepare(self.output)
+
     def test_equipment_lua_image_fields_resolve_registered_weapons_and_skins(self):
         images = [self.add(key, 'assets', 'File:'+filename, 6, key.encode(), suffix='.png')
                   for key, filename in [('weapon', 'TD2-Weapon-Test.png'), ('skin', 'TD2-Weapon-Skin-Test.png')]]

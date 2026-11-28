@@ -20,7 +20,7 @@ node ui/editor/production/build.cjs dist/frontend-review
 
 每次使用新输出目录。Reader / Editor 组装检查当前完整输入清单、工具链及产物；该检查不重复编译。`--resources-only` 可仅组装前端资源与 Gadget 登记。
 
-按 `publish-report.md` 的“资产依赖顺序”核对本批文件与消费者。每个消费者的完整前置资产 ID 在 `manifest.json` 的 `asset_relationships` 中。Reader / Editor 完整组装的 `resource-plan.json` 也列出对应 File 标题。
+按 `publish-report.md` 的“资产依赖顺序”核对本批文件与消费者。每个消费者的完整前置资产 ID 在 `manifest.json` 的 `asset_relationships` 中。Reader / Editor 完整组装的 `resource-plan.json` 也列出对应 File 标题。导航新增链接时，先就绪目标页面及具名装备等章节锚点，再更新导航模板。
 
 Runtime 和 Entry 分别位于 `Gadget:TD2EditorRuntime.js`、`Gadget:TD2EditorEntry.js`。Entry 初始为 UNBOUND；获得发布授权、保存并读取实际 Runtime 后，通过 `ui/editor/production/build.cjs --bind-entry <resources-directory> <runtime-receipt.json> <new-bound-directory>` 绑定真实修订。运行时只加载被绑定的版本。构建方法见 [Editor 构建](../ui/editor/production/README.md)。
 
@@ -42,7 +42,7 @@ Runtime 和 Entry 分别位于 `Gadget:TD2EditorRuntime.js`、`Gadget:TD2EditorE
 
 ## 验证范围
 
-复用已有结果的条件见 [AGENTS 的验证规则](../AGENTS.md#python-与验证)。按本次改动选择检查。
+复用已有结果的条件见 [AGENTS 的验证规则](../AGENTS.md#python-与验证)。按本次改动选择检查。公开协作副本使用 `tools.verify --public` 运行源码验证，完整维护工程沿用下列范围。
 
 - 维护说明或命令帮助只改措辞时，核对涉及的链接、参数和实际入口。单页或素材改动检查对应页面与引用。共享 Reader / Editor 改动检查受影响的代表页面及交互。
 - 修改发布工具或契约，涉及清单字段、包内报告的生成、资产依赖排序、地址冲突判定或回执校验时，运行对应专项测试，并用当前候选在新目录执行一次离线 `build` 和 `prepare`。

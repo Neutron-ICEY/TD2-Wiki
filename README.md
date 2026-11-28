@@ -64,10 +64,10 @@ npm ci --prefix ui/editor/tooling --ignore-scripts
 ### 1. 数据与生成一致性检查
 
 ```powershell
-node tools/equipment/catalog.cjs check
-& $py -B -m tools.equipment.weapons check
-node --test tests/test_acquisition_mechanisms.cjs
+& $py -B -m tools.verify --public
 ```
+
+该命令运行公开源码适用的 Python、Node 测试、生成一致性检查和 Reader / Editor 离线组装。结果写入 `dist/verify-*/result.json`。需要私有夹具、登记图片或历史回执的检查列入 `not_applicable`。实际失败或意外跳过会返回非零退出码。
 
 ### 2. 本地离线预览（无需游戏解包）
 

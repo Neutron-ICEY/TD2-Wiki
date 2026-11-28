@@ -21,6 +21,15 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def validate_asset_format(target, source, title, payload):
+    suffix = Path(source).suffix.lower()
+    if target == "huijiwiki-td2":
+        require(".svg" not in (suffix, Path(title).suffix.lower(), payload.suffix.lower()),
+                "灰机 Wiki 不支持上传 SVG: " + title)
+    require(suffix in (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ogg", ".mp3", ".mp4", ".pdf"),
+            "不支持的资产类型")
+
+
 def validate_asset_digest(row, actual=None):
     expected = row.get("content_sha256")
     require(isinstance(expected, str) and HASH.fullmatch(expected),
@@ -350,7 +359,7 @@ def build(root, registry_path, baseline_path, output, snapshot_path=None):
             if kind == "redirects":
                 require(re.fullmatch(r"\s*#(?:REDIRECT|重定向|重新導向)\s*\[\[[^\]\r\n]+\]\]\s*", content, re.I), "redirect 必须是单一重定向指令")
         else:
-            require(path.suffix.lower() in (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ogg", ".mp3", ".mp4", ".pdf"), "不支持的资产类型")
+            validate_asset_format(target, source["source"], title, path)
             require(bool(data), "资产不能为空")
         content_hash = digest(data)
         if kind == "assets":
@@ -489,7 +498,9 @@ def verify_bundle(bundle):
         expected.add(row["file"])
         data = path.read_bytes()
         require(digest(data) == row["content_hash"], "产物 hash 不匹配")
-        if row["kind"] != "assets":
+        if row["kind"] == "assets":
+            validate_asset_format(manifest["target"], row["source"], row["title"], path)
+        else:
             texts[row["id"]] = wiki_text(data, row["source"])
     assets = AssetDependencies(manifest["entries"], lambda row: texts[row["id"]])
     preceding = set()

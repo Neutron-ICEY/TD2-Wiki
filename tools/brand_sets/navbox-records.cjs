@@ -5,10 +5,7 @@ const parser = require(path.join(root, 'ui/editor/src/parser.js'));
 const registry = JSON.parse(fs.readFileSync(path.join(root, 'publishing/registry.json'), 'utf8'));
 const database = require('../equipment/database.cjs').load(root);
 const effectCatalog = require('../equipment/database.cjs').references(database);
-const baseline = JSON.parse(fs.readFileSync(path.join(root, 'publishing/baseline.json'), 'utf8'));
-const pending=JSON.parse(fs.readFileSync(path.join(root,'publishing/pending-moves.json'),'utf8')).entries;
-const published = new Set(baseline.entries.filter(row => row.namespace === 0 && row.revision_id > 0).map(row => row.title));
-const pages = registry.entries.filter(row => row.source.startsWith('wiki/pages/brands/') && row.namespace === 0 && published.has(pending.find(m=>m.id===row.id)?.from_title||row.title));
+const pages = registry.entries.filter(row => row.kind === 'pages' && row.source.startsWith('wiki/pages/brands/') && row.namespace === 0);
 const records = pages.map(row => {
   const raw = fs.readFileSync(path.join(root, row.source), 'utf8');
   const main = parser.parse(raw, {textEnvelope: true}).main;
@@ -26,7 +23,7 @@ const records = pages.map(row => {
 });
 const collator = new Intl.Collator('zh-Hans-CN-u-co-pinyin', {usage: 'sort', sensitivity: 'variant'});
 const namedOrder = records.flatMap(page => page.named).sort((a, b) => collator.compare(a['装备名称'], b['装备名称'])).map(item => item.stable_id);
-const exotics = registry.entries.filter(row => row.namespace === 0 && row.related_entity?.startsWith('exotic:') && published.has(pending.find(m=>m.id===row.id)?.from_title||row.title)).map(row => {
+const exotics = registry.entries.filter(row => row.kind === 'pages' && row.namespace === 0 && row.related_entity?.startsWith('exotic:')).map(row => {
   const raw = fs.readFileSync(path.join(root, row.source), 'utf8');
   const main = parser.parse(raw, {textEnvelope: true}).main;
   if(main.name !== '奇特装备信息') throw new Error('Exotic navigation requires its canonical template');
